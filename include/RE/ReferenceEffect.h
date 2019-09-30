@@ -1,40 +1,54 @@
 #pragma once
 
-#include "RE/BSTempEffect.h"
+#include "skse64/GameRTTI.h"  // RTTI_ReferenceEffect
 
-/*==============================================================================
-class ReferenceEffect +0000 (_vtbl=010C9C54)
-0000: class ReferenceEffect
-0000: |   class BSTempEffect
-0000: |   |   class NiObject
-0000: |   |   |   class NiRefObject
-==============================================================================*/
+#include "RE/BSTempEffect.h"  // BSTempEffect
+
+
 namespace RE
 {
+	class ReferenceEffectController;
+
+
 	class ReferenceEffect : public BSTempEffect
 	{
 	public:
-		// @override class BSTempEffect : (vtbl=010C9C54)
-		//virtual ????   Unk_000(????) override;                           // 00667F50
-		//virtual UInt32 Unk_002(void) override;                           // 00667E10 { return 0x01B2E240; }
-		//virtual ????   Unk_023(????) override;                           // 00667D00
-		//virtual ????   Unk_024(????) override;                           // 006682F0
-		//virtual ????   Unk_026(????) override;                           // 00665530
-		//virtual ????   Unk_027(????) override;                           // 00665550
-		//virtual UInt32 Unk_028(void) override;                           // 00667E20 { return 0x00000008; }
-		//virtual ????   Unk_029(????) override;                           // 00668580
-		//virtual ????   Unk_02A(????) override;                           // 00668610
-		//virtual ????   Unk_02B(????) override;                           // 00667D70
+		inline static const void* RTTI = RTTI_ReferenceEffect;
 
-		// @add
-		//virtual bool   Unk_032(void);                                    // 0092D110 { return false; }
-		//virtual void   Unk_033(void);                                    // 006C50E0 { return; }
-		//virtual void   Unk_034(void);                                    // 006C50E0 { return; }
-		//virtual ????   Unk_035(????);                                    // 00667E30
-		//virtual ????   Unk_036(????);                                    // 00668430
-		//virtual void   Unk_037(void);                                    // 006C50E0 { return; }
-		//virtual ????   Unk_038(????);                                    // 006684E0
-		//virtual bool   Unk_039(void);                                    // 009B86F0 { return true; }
-		//virtual void   Unk_03A(void);                                    // 006C50E0 { return; }
+
+		virtual ~ReferenceEffect();												// 00
+
+		// override (BSTempEffect)
+		virtual const NiRTTI*	GetRTTI() const override;						// 02
+		virtual void			Unk_27(void) override;							// 27
+		virtual void			Unk_28(void) override;							// 28
+		virtual void			Unk_2A(void) override;							// 2A
+		virtual void			Unk_2B(void) override;							// 2B
+		virtual void			Unk_2C(void) override;							// 2C - { return 8; }
+		virtual void			Unk_2D(void) override;							// 2D
+		virtual void			LoadEffect(BGSLoadGameBuffer* a_buf) override;	// 2E
+		virtual void			Unk_2F(void) override;							// 2F
+
+		// add
+		virtual void			Unk_36(void);									// 36 - { return 0; }
+		virtual void			Unk_37(void);									// 37 - { return; }
+		virtual void			Unk_38(void);									// 38 - { return; }
+		virtual void			Unk_39(void);									// 39
+		virtual void			Unk_3A(void);									// 3A
+		virtual void			Unk_3B(void);									// 3B - { return; }
+		virtual void			Unk_3C(void);									// 3C
+		virtual void			Unk_3D(void);									// 3D - { return 1; }
+		virtual void			Unk_3E(void);									// 3E - { return; }
+
+
+		// members
+		ReferenceEffectController*	controller;	// 30
+		RefHandle					unk38;		// 38
+		RefHandle					unk3C;		// 3C
+		UInt8						unk40;		// 40
+		UInt8						unk41;		// 41
+		UInt16						unk42;		// 42
+		UInt32						unk44;		// 44
 	};
-};
+	STATIC_ASSERT(sizeof(ReferenceEffect) == 0x48);
+}
