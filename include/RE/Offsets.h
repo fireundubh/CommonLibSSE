@@ -6,7 +6,7 @@
 namespace RE
 {
 	namespace Offset
-	{
+	{	
 		namespace ActivateHandler
 		{
 			// ??_7ActivateHandler@@6B@
@@ -39,6 +39,13 @@ namespace RE
 			constexpr std::uintptr_t IsRunning = 0x005D1190;					// 1_5_80
 			// IndirectSig: E8 ? ? ? ? EB 1D 8B 4D 7F
 			constexpr std::uintptr_t SendStealAlarm = 0x005DD770;				// 1_5_80
+									
+			constexpr std::uintptr_t EnableAI = 0x005E44F0;						// 1_5_80
+			// E8 ? ? ? ? 48 8B 54 24 68 3B D8 
+			constexpr std::uintptr_t GetSoulSize = 0x006348A0;					// 1_5_80
+			constexpr std::uintptr_t Decapitate = 0x005F2530;					// 1_5_80
+			constexpr std::uintptr_t GetCurrentPackageInternal = 0x005FBA20;	// 1_5_80
+
 			// ??_7Actor@@6B@
 			constexpr std::uintptr_t Vtbl = 0x01655650;							// 1_5_80
 		}
@@ -75,6 +82,10 @@ namespace RE
 			constexpr std::uintptr_t SetInventoryChanges = 0x0010F5C0;	// 1_5_80
 		}
 
+		namespace BGSListForm
+		{
+			constexpr std::uintptr_t AddFormToList = 0x002C53D0;		// 1_5_80
+		}
 
 		namespace BSAudioManager
 		{
@@ -131,6 +142,10 @@ namespace RE
 			}
 		}
 
+		namespace BSTaskPool
+		{
+			constexpr std::uintptr_t func2E9950 = 0x002E9950;	// 1_5_80
+		}
 
 		namespace BSTimeManager
 		{
@@ -564,6 +579,12 @@ namespace RE
 			constexpr std::uintptr_t Vtbl = 0x0166F308;	// 1_5_80
 		}
 
+		namespace Unk141EBEAD0
+		{
+			constexpr std::uintptr_t StopArtObject = 0x006DDA30;	// 1_5_80
+
+			constexpr std::uintptr_t Singleton = 0x01EBEAD0;		// 1_5_80
+		}
 
 		// IndirectSig: E8 ? ? ? ? 83 FE 0C
 		constexpr std::uintptr_t DebugNotification = 0x008DA3D0;	// 1_5_80
@@ -573,5 +594,6 @@ namespace RE
 		constexpr std::uintptr_t RTDynamicCast = 0x0134B900;		// 1_5_80
 		// 48 83 EC 18 F3 41 0F 10 60 04
 		constexpr std::uintptr_t WorldPtToScreenPt3 = 0x00C660D0;	// 1_5_80
+
 	}
 }

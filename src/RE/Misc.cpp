@@ -47,4 +47,11 @@ namespace RE
 		REL::Offset<func_t*> func(Offset::WorldPtToScreenPt3);
 		return func(a_worldToCamMatrix, a_port, a_in, a_xOut, a_yOut, a_zOut, a_zeroTolerance);
 	}
+
+	void func2E9950()
+	{
+		using func_t = function_type_t<decltype(&func2E9950)>;
+		REL::Offset<func_t*> func(Offset::BSTaskPool::func2E9950);
+		return func();
+	}
 }

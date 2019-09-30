@@ -11,6 +11,6 @@ namespace RE
 
 	bool TESObjectLIGH::CanBeCarried() const
 	{
-		return (data.flags & Data::Flag::kCanBeCarried) != Data::Flag::kNone;
+		return (data.flags & Data::Flag::kFlag_Carryable) != Data::Flag::kFlag_TypeOmni;
 	}
 }

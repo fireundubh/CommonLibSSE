@@ -70,6 +70,7 @@ namespace RE
 		{
 			kNone = 0,
 			kAIEnabled = 1 << 1,
+			kIsInWater = 1 << 18,
 			kIsPlayerTeammate = 1 << 26,
 			kIsGuard = 1 << 30
 		};
@@ -422,6 +423,11 @@ namespace RE
 		void						UpdateSkinColor();
 		void						UpdateWeaponAbility(TESForm* a_weapon, BaseExtraList* a_extraData, bool a_leftHand);
 		bool						VisitFactions(llvm::function_ref<bool(RE::TESFaction* a_faction, SInt8 a_rank)> a_visitor);
+
+		void						EnableAI(bool bEnable);
+		UInt8						GetSoulSize() const;
+		void						Decapitate();
+		RE::TESPackage*				GetCurrentPackageInternal();
 
 
 		// members

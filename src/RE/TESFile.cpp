@@ -70,4 +70,26 @@ namespace RE
 		REL::Offset<func_t*> func(Offset::TESFile::SeekNextSubrecord);
 		return func(this);
 	}
+
+	// Checks if a particular formID is part of the mod
+	bool TESFile::IsFormInMod(FormID formID) const
+	{
+		if (!IsLight() && (formID >> 24) == modIndex)
+			return true;
+		if (IsLight() && (formID >> 24) == 0xFE && ((formID & 0x00FFF000) >> 12) == lightIndex)
+			return true;
+		return false;
+	}
+
+	// Returns either a modIndex or a modIndex|lightIndex pair
+	UInt32 TESFile::GetPartialIndex() const
+	{
+		return !IsLight() ? modIndex : (0xFE000 | lightIndex);
+	}
+
+	// Converts the lower bits of a FormID to a full FormID depending on plugin type
+	FormID TESFile::GetFormID(UInt32 formLower) const
+	{
+		return !IsLight() ? UInt32(modIndex) << 24 | (formLower & 0xFFFFFF) : 0xFE000000 | (UInt32(lightIndex) << 12) | (formLower & 0xFFF);
+	}
 }

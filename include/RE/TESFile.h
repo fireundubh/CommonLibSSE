@@ -76,6 +76,12 @@ namespace RE
 		bool		Seek(UInt32 a_offset);
 		bool		SeekNextSubrecord();
 
+		bool		IsFormInMod(FormID formID) const;
+		UInt32	    GetPartialIndex() const;
+		FormID      GetFormID(UInt32 formLower) const;
+
+		bool IsLight() const { return (recordFlags & RecordFlag::kESL) == RecordFlag::kESL; }
+
 
 		// members
 		UInt32						unk000;					// 000

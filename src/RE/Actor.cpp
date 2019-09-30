@@ -365,4 +365,32 @@ namespace RE
 
 		return false;
 	}
+
+	void Actor::EnableAI(bool bEnabled)
+	{
+		using func_t = function_type_t<decltype(&Actor::EnableAI)>;
+		REL::Offset<func_t*> func(Offset::Actor::EnableAI);
+		return func(this, bEnabled);
+	}
+
+	UInt8 Actor::GetSoulSize() const
+	{
+		using func_t = function_type_t<decltype(&Actor::GetSoulSize)>;
+		REL::Offset<func_t*> func(Offset::Actor::GetSoulSize);
+		return func(this);
+	}
+
+	void Actor::Decapitate()
+	{
+		using func_t = function_type_t<decltype(&Actor::Decapitate)>;
+		REL::Offset<func_t*> func(Offset::Actor::Decapitate);
+		return func(this);
+	}
+
+	RE::TESPackage* Actor::GetCurrentPackageInternal()
+	{
+		using func_t = function_type_t<decltype(&Actor::GetCurrentPackageInternal)>;
+		REL::Offset<func_t*> func(Offset::Actor::GetCurrentPackageInternal);
+		return func(this);
+	}
 }

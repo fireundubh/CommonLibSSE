@@ -38,6 +38,8 @@ namespace RE
 		virtual void	Unk_12(void) override;							// 12
 		virtual void	InitItem() override;							// 13
 
+		void AddFormToList(TESForm* form);
+
 
 		// members
 		BSTArray<TESForm*>		forms;			// 20 - LNAM

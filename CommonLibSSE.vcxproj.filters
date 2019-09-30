@@ -715,9 +715,6 @@
     <Filter Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect">
       <UniqueIdentifier>{4f98f23a-d19e-44cc-8b54-6b9d0605ba0d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\RE\FormComponents\Components\ReferenceEffectController">
-      <UniqueIdentifier>{fad1b7a6-eb05-4d2d-9f48-7efb3591c1a5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="include\RE\FormComponents\TESModel">
       <UniqueIdentifier>{8af8cbee-3f6a-461f-9c54-da31d41b7d18}</UniqueIdentifier>
     </Filter>
@@ -1002,6 +999,9 @@
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\IAIWorldLocationHandle">
       <UniqueIdentifier>{4d502242-c66c-4a55-8fa4-0f5ed5fec774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\FormComponents\Components\TempEffects">
+      <UniqueIdentifier>{fad1b7a6-eb05-4d2d-9f48-7efb3591c1a5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1610,6 +1610,15 @@
     </ClCompile>
     <ClCompile Include="src\RE\BSTimeManager.cpp">
       <Filter>src\RE\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Unk141EBEAD0.cpp">
+      <Filter>src\RE\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BGSListForm.cpp">
+      <Filter>src\RE\FormComponents\TESForm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\ExtraLightData.cpp">
+      <Filter>src\RE\BSExtraData</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2520,10 +2529,10 @@
       <Filter>include\RE\FormComponents\Components\ActiveEffect</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ActiveEffectReferenceEffectController.h">
-      <Filter>include\RE\FormComponents\Components\ReferenceEffectController</Filter>
+      <Filter>include\RE\FormComponents\Components\TempEffects</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ReferenceEffectController.h">
-      <Filter>include\RE\FormComponents\Components\ReferenceEffectController</Filter>
+      <Filter>include\RE\FormComponents\Components\TempEffects</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\AbsorbEffect.h">
       <Filter>include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect</Filter>
@@ -4576,6 +4585,21 @@
     </ClInclude>
     <ClInclude Include="include\RE\PackageLocation.h">
       <Filter>include\RE\FormComponents\Components\IAIWorldLocationHandle</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Unk141EBEAD0.h">
+      <Filter>include\RE\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\ShaderReferenceEffect.h">
+      <Filter>include\RE\FormComponents\Components\TempEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSTempEffect.h">
+      <Filter>include\RE\FormComponents\Components\TempEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\ReferenceEffect.h">
+      <Filter>include\RE\FormComponents\Components\TempEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\TESResetEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
