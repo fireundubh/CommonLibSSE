@@ -1096,23 +1096,23 @@
     <Filter Include="include\RE\BSHavok\NetImmerse\bhkCharacterController">
       <UniqueIdentifier>{b3eca426-8a21-4504-99d3-77f921e21c45}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\RE\BSHavok\BS\hkbBindable">
+      <UniqueIdentifier>{2348755b-b9f0-4c4f-8ec7-20f693dd0b8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSHavok\BS\hkbBindable\hkbNode">
+      <UniqueIdentifier>{942d9fc0-512a-4096-89ff-738694fe1b80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSHavok\BS\hkbBindable\hkbNode\hkbGenerator">
+      <UniqueIdentifier>{1d492a8f-7381-48c1-a51b-2002e21bfda2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSHavok\BS\hkbEventBase">
+      <UniqueIdentifier>{d692104a-44ba-425b-9195-254f619b7f6c}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\RE\BSShader">
-      <UniqueIdentifier>{d78828ef-8db2-44a0-bb65-29c622ffe597}</UniqueIdentifier>
+      <UniqueIdentifier>{16a3bbcc-9aa3-4862-8848-7333a2f9e509}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSShader\BSShaderMaterial">
-      <UniqueIdentifier>{57911bab-2482-49a5-9d01-0290c75a4aaa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase">
-      <UniqueIdentifier>{5d889753-44d1-4ea1-8b33-42a06f2e14bd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty">
-      <UniqueIdentifier>{174f2ab9-c2e1-4435-9143-396f424fab11}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShaderProperty">
-      <UniqueIdentifier>{5fdc31ce-d871-4dc8-88fa-b57dac536afe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShaderProperty\BSShaderProperty">
-      <UniqueIdentifier>{497fea47-6cf5-40ce-bdd3-a67c53884199}</UniqueIdentifier>
+      <UniqueIdentifier>{534cccde-8938-421a-9557-a88317203848}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1728,26 +1728,8 @@
     <ClCompile Include="src\RE\NiSkinInstance.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BGSListForm.cpp">
-      <Filter>src\RE\FormComponents\TESForm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\ExtraLightData.cpp">
-      <Filter>src\RE\BSExtraData</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\Unk141EBEAD0.cpp">
-      <Filter>src\RE\Misc</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\BSLightingShaderMaterialBase.cpp">
-      <Filter>src\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\BSLightingShaderMaterial.cpp">
-      <Filter>src\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\BSLightingShaderProperty.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShaderProperty\BSShaderProperty</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\BSShaderTextureSet.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject</Filter>
+      <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2226,27 +2208,6 @@
       <Filter>include\RE\BSHavok\BS</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\hkbRagdollDriver.h">
-      <Filter>include\RE\BSHavok\BS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\hkbStateMachine.h">
-      <Filter>include\RE\BSHavok\BS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\hkbGenerator.h">
-      <Filter>include\RE\BSHavok\BS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\hkbNode.h">
-      <Filter>include\RE\BSHavok\BS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\hkbBindable.h">
-      <Filter>include\RE\BSHavok\BS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\hkbBehaviorGraph.h">
-      <Filter>include\RE\BSHavok\BS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\hkbEventBase.h">
-      <Filter>include\RE\BSHavok\BS</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\hkbEvent.h">
       <Filter>include\RE\BSHavok\BS</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ExtraGhost.h">
@@ -4772,20 +4733,26 @@
     <ClInclude Include="include\RE\bhkCharProxyController.h">
       <Filter>include\RE\BSHavok\NetImmerse\bhkCharacterController</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\TESResetEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
+    <ClInclude Include="include\RE\hkbBindable.h">
+      <Filter>include\RE\BSHavok\BS\hkbBindable</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Unk141EBEAD0.h">
-      <Filter>include\RE\Misc</Filter>
+    <ClInclude Include="include\RE\hkbNode.h">
+      <Filter>include\RE\BSHavok\BS\hkbBindable\hkbNode</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\BSLightingShaderMaterialFacegenTint.h">
-      <Filter>include\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase</Filter>
+    <ClInclude Include="include\RE\hkbGenerator.h">
+      <Filter>include\RE\BSHavok\BS\hkbBindable\hkbNode\hkbGenerator</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\BSShaderTextureSet.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    <ClInclude Include="include\RE\hkbEventBase.h">
+      <Filter>include\RE\BSHavok\BS\hkbEventBase</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\BSLightingShaderMaterialMultiLayerParallax.h">
-      <Filter>include\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase</Filter>
+    <ClInclude Include="include\RE\hkbEvent.h">
+      <Filter>include\RE\BSHavok\BS\hkbEventBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\hkbStateMachine.h">
+      <Filter>include\RE\BSHavok\BS\hkbBindable\hkbNode\hkbGenerator</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\hkbBehaviorGraph.h">
+      <Filter>include\RE\BSHavok\BS\hkbBindable\hkbNode\hkbGenerator</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

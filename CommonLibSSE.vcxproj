@@ -157,6 +157,11 @@
     <None Include="exports.def" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\skse64\skse64.vcxproj">
+      <Project>{7028b79c-06e3-4d9a-b38c-1dc3680b1bdb}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="src\RE\ActiveEffect.cpp" />
     <ClCompile Include="src\RE\Actor.cpp" />
     <ClCompile Include="src\RE\ActorProcessManager.cpp" />
@@ -172,7 +177,6 @@
     <ClCompile Include="src\RE\BGSEntryPointPerkEntry.cpp" />
     <ClCompile Include="src\RE\BGSHeadPart.cpp" />
     <ClCompile Include="src\RE\BGSKeywordForm.cpp" />
-    <ClCompile Include="src\RE\BGSListForm.cpp" />
     <ClCompile Include="src\RE\BGSLocation.cpp" />
     <ClCompile Include="src\RE\BGSPerkEntry.cpp" />
     <ClCompile Include="src\RE\BGSSaveLoadManager.cpp" />
@@ -180,9 +184,7 @@
     <ClCompile Include="src\RE\BSGlobalStringTable.cpp" />
     <ClCompile Include="src\RE\BSHandleRefObject.cpp" />
     <ClCompile Include="src\RE\BSIMusicType.cpp" />
-    <ClCompile Include="src\RE\BSLightingShaderMaterial.cpp" />
     <ClCompile Include="src\RE\BSLightingShaderMaterialBase.cpp" />
-    <ClCompile Include="src\RE\BSLightingShaderProperty.cpp" />
     <ClCompile Include="src\RE\BSResourceNiBinaryStream.cpp" />
     <ClCompile Include="src\RE\BSScaleformMovieLoader.cpp" />
     <ClCompile Include="src\RE\BSScript\Array.cpp" />
@@ -203,7 +205,6 @@
     <ClCompile Include="src\RE\BSScript\VariableInfo.cpp" />
     <ClCompile Include="src\RE\BSScript\ZeroFunctionArguments.cpp" />
     <ClCompile Include="src\RE\BSLock.cpp" />
-    <ClCompile Include="src\RE\BSShaderTextureSet.cpp" />
     <ClCompile Include="src\RE\BSString.cpp" />
     <ClCompile Include="src\RE\BSSystemFileStorage.cpp" />
     <ClCompile Include="src\RE\BSTimeManager.cpp" />
@@ -221,7 +222,6 @@
     <ClCompile Include="src\RE\ExtraForcedTarget.cpp" />
     <ClCompile Include="src\RE\ExtraHealth.cpp" />
     <ClCompile Include="src\RE\ExtraHotkey.cpp" />
-    <ClCompile Include="src\RE\ExtraLightData.cpp" />
     <ClCompile Include="src\RE\ExtraMissingLinkedRefIDs.cpp" />
     <ClCompile Include="src\RE\ExtraOwnership.cpp" />
     <ClCompile Include="src\RE\ExtraRank.cpp" />
@@ -362,7 +362,6 @@
     <ClCompile Include="src\RE\GFxTranslator.cpp" />
     <ClCompile Include="src\RE\UIManager.cpp" />
     <ClCompile Include="src\RE\UIStringHolder.cpp" />
-    <ClCompile Include="src\RE\Unk141EBEAD0.cpp" />
     <ClCompile Include="src\SKSE\API.cpp" />
     <ClCompile Include="src\SKSE\Interfaces.cpp" />
     <ClCompile Include="src\SKSE\Logger.cpp" />
@@ -567,9 +566,7 @@
     <ClInclude Include="include\RE\BSLensFlareRenderData.h" />
     <ClInclude Include="include\RE\BSLightingShaderMaterial.h" />
     <ClInclude Include="include\RE\BSLightingShaderMaterialBase.h" />
-    <ClInclude Include="include\RE\BSLightingShaderMaterialFacegenTint.h" />
     <ClInclude Include="include\RE\BSLightingShaderMaterialHairTint.h" />
-    <ClInclude Include="include\RE\BSLightingShaderMaterialMultiLayerParallax.h" />
     <ClInclude Include="include\RE\BSLightingShaderProperty.h" />
     <ClInclude Include="include\RE\BSMaterialObject.h" />
     <ClInclude Include="include\RE\BSMusicEvent.h" />
@@ -645,7 +642,6 @@
     <ClInclude Include="include\RE\BSShader.h" />
     <ClInclude Include="include\RE\BSShaderMaterial.h" />
     <ClInclude Include="include\RE\BSShaderProperty.h" />
-    <ClInclude Include="include\RE\BSShaderTextureSet.h" />
     <ClInclude Include="include\RE\BSSmallBlockAllocator.h" />
     <ClInclude Include="include\RE\BSLock.h" />
     <ClInclude Include="include\RE\BSStorage.h" />
@@ -1337,7 +1333,6 @@
     <ClInclude Include="include\RE\TESRegionDataSound.h" />
     <ClInclude Include="include\RE\TESRegionDataWeather.h" />
     <ClInclude Include="include\RE\TESRegionList.h" />
-    <ClInclude Include="include\RE\TESResetEvent.h" />
     <ClInclude Include="include\RE\TESShout.h" />
     <ClInclude Include="include\RE\TESSoulGem.h" />
     <ClInclude Include="include\RE\TESSound.h" />
@@ -1366,7 +1361,6 @@
     <ClInclude Include="include\RE\BSTCreateFactoryManager.h" />
     <ClInclude Include="include\RE\UISaveLoadManager.h" />
     <ClInclude Include="include\RE\UIStringHolder.h" />
-    <ClInclude Include="include\RE\Unk141EBEAD0.h" />
     <ClInclude Include="include\RE\UserEventEnabledEvent.h" />
     <ClInclude Include="include\RE\TESFile.h" />
     <ClInclude Include="include\RE\ValueModifierEffect.h" />
@@ -1382,11 +1376,6 @@
     <ClInclude Include="include\SKSE\RegistrationTraits.h" />
     <ClInclude Include="include\Util.h" />
     <ClInclude Include="src\RE\GFxResourceKey.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\skse64\skse64\skse64.vcxproj">
-      <Project>{7028b79c-06e3-4d9a-b38c-1dc3680b1bdb}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
