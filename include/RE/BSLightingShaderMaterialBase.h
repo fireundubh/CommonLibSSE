@@ -30,13 +30,14 @@ namespace RE
 		virtual void				Unk_07(void) override;					// 07 - { return 2; }
 
 		// add
-		virtual void				Unk_08(void);							// 08
-		virtual void				Unk_09(void);							// 09
+		virtual void				SetTexture(UInt32 index, BSTextureSet* texture, SInt32 unk1); // 08
+		virtual void				ReleaseTextures(void); 					// 09 // ReleaseRefs
 		virtual void				Unk_0A(void);							// 0A
 		virtual void				Unk_0B(void);							// 0B
 		virtual void				Unk_0C(void);							// 0C
 		virtual void				Unk_0D(void);							// 0D
 
+		void	CopyFrom(BSLightingShaderMaterialBase* other);
 
 		// members
 		UInt64					unk38;				// 38
@@ -47,7 +48,7 @@ namespace RE
 		NiPointer<NiTexture>	unk60;				// 60
 		NiPointer<NiTexture>	unk68;				// 68
 		UInt64					unk70;				// 70
-		NiPointer<BSTextureSet>	unk78;				// 78
+		NiPointer<BSTextureSet>	textureSet;			// 78
 		float					alpha;				// 80
 		float					unk84;				// 84
 		float					glossiness;			// 88

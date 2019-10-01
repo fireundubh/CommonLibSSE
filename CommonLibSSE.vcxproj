@@ -180,6 +180,9 @@
     <ClCompile Include="src\RE\BSGlobalStringTable.cpp" />
     <ClCompile Include="src\RE\BSHandleRefObject.cpp" />
     <ClCompile Include="src\RE\BSIMusicType.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderMaterial.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderMaterialBase.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderProperty.cpp" />
     <ClCompile Include="src\RE\BSResourceNiBinaryStream.cpp" />
     <ClCompile Include="src\RE\BSScaleformMovieLoader.cpp" />
     <ClCompile Include="src\RE\BSScript\Array.cpp" />
@@ -200,6 +203,7 @@
     <ClCompile Include="src\RE\BSScript\VariableInfo.cpp" />
     <ClCompile Include="src\RE\BSScript\ZeroFunctionArguments.cpp" />
     <ClCompile Include="src\RE\BSLock.cpp" />
+    <ClCompile Include="src\RE\BSShaderTextureSet.cpp" />
     <ClCompile Include="src\RE\BSString.cpp" />
     <ClCompile Include="src\RE\BSSystemFileStorage.cpp" />
     <ClCompile Include="src\RE\BSTimeManager.cpp" />
@@ -563,7 +567,9 @@
     <ClInclude Include="include\RE\BSLensFlareRenderData.h" />
     <ClInclude Include="include\RE\BSLightingShaderMaterial.h" />
     <ClInclude Include="include\RE\BSLightingShaderMaterialBase.h" />
+    <ClInclude Include="include\RE\BSLightingShaderMaterialFacegenTint.h" />
     <ClInclude Include="include\RE\BSLightingShaderMaterialHairTint.h" />
+    <ClInclude Include="include\RE\BSLightingShaderMaterialMultiLayerParallax.h" />
     <ClInclude Include="include\RE\BSLightingShaderProperty.h" />
     <ClInclude Include="include\RE\BSMaterialObject.h" />
     <ClInclude Include="include\RE\BSMusicEvent.h" />
@@ -639,6 +645,7 @@
     <ClInclude Include="include\RE\BSShader.h" />
     <ClInclude Include="include\RE\BSShaderMaterial.h" />
     <ClInclude Include="include\RE\BSShaderProperty.h" />
+    <ClInclude Include="include\RE\BSShaderTextureSet.h" />
     <ClInclude Include="include\RE\BSSmallBlockAllocator.h" />
     <ClInclude Include="include\RE\BSLock.h" />
     <ClInclude Include="include\RE\BSStorage.h" />

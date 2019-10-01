@@ -74,7 +74,7 @@ namespace RE
 		void*				unk0F0;	// 0F0 - smart ptr
 		void*				unk0F8;	// 0F8 - smart ptr
 		TESBoundObject*		unk100;	// 100
-		TESEffectShader*	unk108;	// 108
+		TESEffectShader*	effectShader; // 108
 		UInt64				unk110;	// 110
 		void*				unk118;	// 118 - smart ptr
 		UInt32				unk120;	// 120
