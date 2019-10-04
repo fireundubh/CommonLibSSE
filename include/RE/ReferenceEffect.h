@@ -45,7 +45,7 @@ namespace RE
 
 		// members
 		ReferenceEffectController*	controller;	// 30
-		RefHandle					unk38;		// 38
+		RefHandle					refHandle;	// 38
 		RefHandle					unk3C;		// 3C
 		UInt8						unk40;		// 40
 		UInt8						unk41;		// 41

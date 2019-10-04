@@ -29,5 +29,5 @@ namespace RE
 		NiColor	tintColor;	// A0
 		UInt32	padAC;		// AC
 	};
-	STATIC_ASSERT(sizeof(BSLightingShaderMaterialHairTint) == 0xB0);
+	STATIC_ASSERT(sizeof(BSLightingShaderMaterialFacegenTint) == 0xB0);
 }

@@ -66,7 +66,9 @@ namespace RE
 		BSTArray<void*>		unk060;	// 060 - smart ptrs
 		BSTArray<void*>		unk078;	// 078
 		BSTArray<Data090>	unk090;	// 090
-		BSTArray<void*>		unk0A8;	// 0A8 - smart ptrs
+		UInt64				unk0A8; // 0A8
+		UInt64				unk0B0;	// 0B0
+		BGSArtObject*		artObject; // 0B8
 		UInt64				unk0C0;	// 0C0
 		UInt64				unk0C8;	// 0C8
 		void*				unk0D0;	// 0D0 - smart ptr
@@ -87,4 +89,10 @@ namespace RE
 		UInt32				unk134;	// 134
 	};
 	STATIC_ASSERT(sizeof(ShaderReferenceEffect) == 0x138);
+
+	static_assert(offsetof(ShaderReferenceEffect, artObject) >= 0x0B8, "art is too early!");
+	static_assert(offsetof(ShaderReferenceEffect, artObject) <= 0x0B8, "art is too late!");
+
+	static_assert(offsetof(ShaderReferenceEffect, effectShader) >= 0x0108, "shader is too early!");
+	static_assert(offsetof(ShaderReferenceEffect, effectShader) <= 0x0108, "shader is too late!");
 }

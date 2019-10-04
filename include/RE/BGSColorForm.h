@@ -21,7 +21,7 @@ namespace RE
 		enum { kTypeID = FormType::ColorForm };
 
 
-		enum Flag : UInt32	// FNAM
+		enum class Flag : UInt32	// FNAM
 		{
 			kNone = 0,
 			kPlayable = 1 << 0

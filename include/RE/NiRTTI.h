@@ -53,3 +53,9 @@ To netimmerse_cast(const From* a_from)
 
 	return nullptr;
 }
+
+template <class T_to, class T_from>
+T_to* netimmersePtr_cast(const T_from & src)
+{
+	return static_cast <T_to*>(src.get());
+}

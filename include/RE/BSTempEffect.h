@@ -8,6 +8,8 @@
 
 namespace RE
 {
+	class BGSLoadGameBuffer;
+	
 	class BSTempEffect : public NiObject
 	{
 	public:

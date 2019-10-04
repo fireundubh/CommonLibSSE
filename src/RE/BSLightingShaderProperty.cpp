@@ -14,11 +14,11 @@ namespace RE
 		return func(this, geometry);
 	}
 
-	UInt32 BSLightingShaderProperty::SetMaterial(BSLightingShaderMaterialBase* material, bool unk1))
+	UInt32 BSLightingShaderProperty::SetMaterial(BSLightingShaderMaterialBase* otherMaterial, bool unk1)
 	{
 		using func_t = function_type_t<decltype(&BSLightingShaderProperty::SetMaterial)>;
 		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::BSLightingShaderProperty, SetMaterial, func_t*);
-		return func(this, material, unk1);
+		return func(this, otherMaterial, unk1);
 	}
 
 	UInt64 BSLightingShaderProperty::SetFlags(UInt8 unk1, UInt8 unk2)
@@ -26,13 +26,6 @@ namespace RE
 		using func_t = function_type_t<decltype(&BSLightingShaderProperty::SetFlags)>;
 		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::BSLightingShaderProperty, SetFlags, func_t*);
 		return func(this, unk1, unk2);
-	}
-
-	bool BSLightingShaderProperty::InvalidateMaterial()
-	{
-		using func_t = function_type_t<decltype(&BSLightingShaderProperty::InvalidateMaterial)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::BSLightingShaderProperty, InvalidateMaterial, func_t*);
-		return func(this);
 	}
 
 	bool BSLightingShaderProperty::InvalidateMaterial()

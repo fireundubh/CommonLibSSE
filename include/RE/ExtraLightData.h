@@ -18,7 +18,7 @@ namespace RE
 
 
 		ExtraLightData();
-		virtual ~ExtraLightData();														// 00
+		virtual ~ExtraLightData() = default;											// 00
 
 		// override (BSExtraData)
 		virtual ExtraDataType	GetType() const override;								// 01 - { return kLightData; }

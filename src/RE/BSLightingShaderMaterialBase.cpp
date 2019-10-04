@@ -21,8 +21,17 @@ namespace RE
 	}
 
 
-	void BSLightingShaderMaterialBase::SetTextureSet(NiPointer<BSTextureSet> a_textureSet)
+	void BSLightingShaderMaterialBase::SetTextureSet(BSTextureSet * a_textureSet)
 	{
-		textureSet = a_textureSet;
+		textureSet.reset();
+		textureSet.reset(a_textureSet);
+	}
+
+
+	void BSLightingShaderMaterialBase::CopyFrom(BSLightingShaderMaterialBase* otherMaterial)
+	{
+		using func_t = function_type_t<decltype(&BSLightingShaderMaterialBase::CopyFrom)>;
+		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::BSLightingShaderMaterial, CopyFrom, func_t*);
+		return func(this, otherMaterial);
 	}
 }

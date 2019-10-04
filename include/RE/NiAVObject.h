@@ -6,6 +6,7 @@
 #include "RE/NiObjectNET.h"  // NiObjectNET
 #include "RE/NiSmartPointer.h"  // NiPointer
 #include "RE/NiTransform.h"  // NiTransform
+#include "RE/NiColor.h"
 
 
 namespace RE
@@ -83,6 +84,9 @@ namespace RE
 
 		void UpdateNode(ControllerUpdateContext* a_ctx);
 
+		UInt32 UpdateModelHair(RE::NiColorA** haircolor);
+
+		UInt32 UpdateModelSkin(RE::NiColorA** skincolor);
 
 		// members
 		NiNode*					parent;				// 030

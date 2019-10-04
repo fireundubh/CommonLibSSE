@@ -1114,6 +1114,15 @@
     <Filter Include="src\RE\BSShader\BSShaderMaterial">
       <UniqueIdentifier>{534cccde-8938-421a-9557-a88317203848}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty">
+      <UniqueIdentifier>{0b1a96d3-ec3f-4fe5-957a-e4344193bb5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShaderProperty">
+      <UniqueIdentifier>{ee18a3a6-3dfb-4598-a92e-7731d586e248}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShaderProperty\BSShaderProperty">
+      <UniqueIdentifier>{31bd9d1e-c4cf-4245-96e2-ab2afe8bdc92}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\MenuControls.cpp">
@@ -1730,6 +1739,21 @@
     </ClCompile>
     <ClCompile Include="src\RE\BSLightingShaderMaterialBase.cpp">
       <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\ExtraLightData.cpp">
+      <Filter>src\RE\BSExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderProperty.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShaderProperty\BSShaderProperty</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Unk141EBEAD0.cpp">
+      <Filter>src\RE\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BGSListForm.cpp">
+      <Filter>src\RE\FormComponents\TESForm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSShaderTextureSet.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -4753,6 +4777,12 @@
     </ClInclude>
     <ClInclude Include="include\RE\hkbBehaviorGraph.h">
       <Filter>include\RE\BSHavok\BS\hkbBindable\hkbNode\hkbGenerator</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Unk141EBEAD0.h">
+      <Filter>include\RE\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSShaderTextureSet.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
