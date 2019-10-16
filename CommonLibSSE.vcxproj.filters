@@ -1114,14 +1114,23 @@
     <Filter Include="src\RE\BSShader\BSShaderMaterial">
       <UniqueIdentifier>{534cccde-8938-421a-9557-a88317203848}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty">
-      <UniqueIdentifier>{0b1a96d3-ec3f-4fe5-957a-e4344193bb5a}</UniqueIdentifier>
+    <Filter Include="include\RE\BSShader\ImageSpaceEffectParam">
+      <UniqueIdentifier>{028cb4e8-804f-4d41-a7eb-44c265f03a4f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShaderProperty">
-      <UniqueIdentifier>{ee18a3a6-3dfb-4598-a92e-7731d586e248}</UniqueIdentifier>
+    <Filter Include="include\RE\BSShader\BSShader">
+      <UniqueIdentifier>{7960ce93-145e-4b35-a31b-8dcbe255dc74}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShaderProperty\BSShaderProperty">
-      <UniqueIdentifier>{31bd9d1e-c4cf-4245-96e2-ab2afe8bdc92}</UniqueIdentifier>
+    <Filter Include="include\RE\BSShader\BSShader\BSImagespaceShader">
+      <UniqueIdentifier>{00f999ff-8732-4eba-8dbc-04c6ab26c26c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiCullingProcess">
+      <UniqueIdentifier>{1c4bd067-bca7-4c97-92a3-f0530c7329c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\Menus\IMenu\Components\JournalTab">
+      <UniqueIdentifier>{5149c219-af92-4b9f-b994-3c0b4718ebe2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSDevices\BSIInputDevice\BSInputDevice\BSKeyboardDevice\BSVirtualKeyboardDevice">
+      <UniqueIdentifier>{f4245442-d234-4164-8f5d-18cde2f14d74}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1740,20 +1749,8 @@
     <ClCompile Include="src\RE\BSLightingShaderMaterialBase.cpp">
       <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\ExtraLightData.cpp">
-      <Filter>src\RE\BSExtraData</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\BSLightingShaderProperty.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShaderProperty\BSShaderProperty</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\Unk141EBEAD0.cpp">
-      <Filter>src\RE\Misc</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\BGSListForm.cpp">
       <Filter>src\RE\FormComponents\TESForm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\BSShaderTextureSet.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1937,12 +1934,6 @@
     <ClInclude Include="include\RE\BSString.h">
       <Filter>include\RE\BSCore</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\ImageSpaceEffectParam.h">
-      <Filter>include\RE\BSShader</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\ImageSpaceShaderParam.h">
-      <Filter>include\RE\BSShader</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\AnimationVariableData.h">
       <Filter>include\RE\Animation</Filter>
     </ClInclude>
@@ -1965,15 +1956,6 @@
       <Filter>include\RE\BSShader</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSReloadShaderI.h">
-      <Filter>include\RE\BSShader</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\BSShader.h">
-      <Filter>include\RE\BSShader</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\BSImagespaceShader.h">
-      <Filter>include\RE\BSShader</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\BSImagespaceShaderBlur3.h">
       <Filter>include\RE\BSShader</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSDestructibleObjectForm.h">
@@ -2877,9 +2859,6 @@
       <Filter>include\RE\BSDevices\BSIInputDevice</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSKeyboardDevice.h">
-      <Filter>include\RE\BSDevices\BSIInputDevice\BSInputDevice\BSKeyboardDevice</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\BSVirtualKeyboardDevice.h">
       <Filter>include\RE\BSDevices\BSIInputDevice\BSInputDevice\BSKeyboardDevice</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSPCGamepadDeviceDelegate.h">
@@ -4778,11 +4757,59 @@
     <ClInclude Include="include\RE\hkbBehaviorGraph.h">
       <Filter>include\RE\BSHavok\BS\hkbBindable\hkbNode\hkbGenerator</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Unk141EBEAD0.h">
-      <Filter>include\RE\Misc</Filter>
+    <ClInclude Include="include\RE\BSShader.h">
+      <Filter>include\RE\BSShader\BSShader</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\BSShaderTextureSet.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    <ClInclude Include="include\RE\BSImagespaceShader.h">
+      <Filter>include\RE\BSShader\BSShader\BSImagespaceShader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSImagespaceShaderBlur3.h">
+      <Filter>include\RE\BSShader\BSShader\BSImagespaceShader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\ImageSpaceEffectParam.h">
+      <Filter>include\RE\BSShader\ImageSpaceEffectParam</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\ImageSpaceShaderParam.h">
+      <Filter>include\RE\BSShader\ImageSpaceEffectParam</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiCullingProcess.h">
+      <Filter>include\RE\NetImmerse\NiCullingProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiFrustumPlanes.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiPlane.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSCullingProcess.h">
+      <Filter>include\RE\NetImmerse\NiCullingProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSTLocklessQueue.h">
+      <Filter>include\RE\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\JournalMenu.h">
+      <Filter>include\RE\Menus\IMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\JournalTab.h">
+      <Filter>include\RE\Menus\IMenu\Components\JournalTab</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Journal_QuestsTab.h">
+      <Filter>include\RE\Menus\IMenu\Components\JournalTab</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Journal_StatsTab.h">
+      <Filter>include\RE\Menus\IMenu\Components\JournalTab</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Journal_SystemTab.h">
+      <Filter>include\RE\Menus\IMenu\Components\JournalTab</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSVirtualKeyboardDevice.h">
+      <Filter>include\RE\BSDevices\BSIInputDevice\BSInputDevice\BSKeyboardDevice\BSVirtualKeyboardDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSWin32VirtualKeyboardDevice.h">
+      <Filter>include\RE\BSDevices\BSIInputDevice\BSInputDevice\BSKeyboardDevice\BSVirtualKeyboardDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SkyrimScript\SendPlayerToJailFunctor.h">
+      <Filter>include\RE\SkyrimScript\DelayFunctor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

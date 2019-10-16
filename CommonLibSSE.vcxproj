@@ -545,6 +545,7 @@
     <ClInclude Include="include\RE\BSAudioManagerThread.h" />
     <ClInclude Include="include\RE\BSBound.h" />
     <ClInclude Include="include\RE\BSCoreTypes.h" />
+    <ClInclude Include="include\RE\BSCullingProcess.h" />
     <ClInclude Include="include\RE\BSExtraData.h" />
     <ClInclude Include="include\RE\BSFaceGenNiNode.h" />
     <ClInclude Include="include\RE\BSFadeNode.h" />
@@ -656,6 +657,7 @@
     <ClInclude Include="include\RE\BSTFreeList.h" />
     <ClInclude Include="include\RE\BSThread.h" />
     <ClInclude Include="include\RE\BSTimeManager.h" />
+    <ClInclude Include="include\RE\BSTLocklessQueue.h" />
     <ClInclude Include="include\RE\BSTMessageQueue.h" />
     <ClInclude Include="include\RE\BSTSmartPointer.h" />
     <ClInclude Include="include\RE\BSTArray.h" />
@@ -667,6 +669,7 @@
     <ClInclude Include="include\RE\BSUIScaleformData.h" />
     <ClInclude Include="include\RE\BSVolumetricLightingRenderData.h" />
     <ClInclude Include="include\RE\BSWin32SaveDataSystemUtility.h" />
+    <ClInclude Include="include\RE\BSWin32VirtualKeyboardDevice.h" />
     <ClInclude Include="include\RE\BSXAudio2GameSound.h" />
     <ClInclude Include="include\RE\ChestsLooted.h" />
     <ClInclude Include="include\RE\Clouds.h" />
@@ -1077,6 +1080,11 @@
     <ClInclude Include="include\RE\ItemsPickpocketed.h" />
     <ClInclude Include="include\RE\IUIMessageData.h" />
     <ClInclude Include="include\RE\IXAudio2VoiceCallback.h" />
+    <ClInclude Include="include\RE\JournalMenu.h" />
+    <ClInclude Include="include\RE\JournalTab.h" />
+    <ClInclude Include="include\RE\Journal_QuestsTab.h" />
+    <ClInclude Include="include\RE\Journal_StatsTab.h" />
+    <ClInclude Include="include\RE\Journal_SystemTab.h" />
     <ClInclude Include="include\RE\LevelUpMenu.h" />
     <ClInclude Include="include\RE\LocalMapCamera.h" />
     <ClInclude Include="include\RE\LocalMapMenu.h" />
@@ -1117,16 +1125,19 @@
     <ClInclude Include="include\RE\NiColorInterpolator.h" />
     <ClInclude Include="include\RE\NiColorKey.h" />
     <ClInclude Include="include\RE\NiColor.h" />
+    <ClInclude Include="include\RE\NiCullingProcess.h" />
     <ClInclude Include="include\RE\NiExtraData.h" />
     <ClInclude Include="include\RE\NiFloatData.h" />
     <ClInclude Include="include\RE\NiFloatInterpolator.h" />
     <ClInclude Include="include\RE\NiFloatKey.h" />
     <ClInclude Include="include\RE\NiFrustum.h" />
+    <ClInclude Include="include\RE\NiFrustumPlanes.h" />
     <ClInclude Include="include\RE\NiGeometryData.h" />
     <ClInclude Include="include\RE\NiInterpolator.h" />
     <ClInclude Include="include\RE\NiKeyBasedInterpolator.h" />
     <ClInclude Include="include\RE\NiMath.h" />
     <ClInclude Include="include\RE\NiMatrix3.h" />
+    <ClInclude Include="include\RE\NiPlane.h" />
     <ClInclude Include="include\RE\NiPoint2.h" />
     <ClInclude Include="include\RE\NiProperty.h" />
     <ClInclude Include="include\RE\NiQuaternion.h" />
@@ -1225,6 +1236,7 @@
     <ClInclude Include="include\RE\SkyrimScript\RemoveItemFunctor.h" />
     <ClInclude Include="include\RE\SkyrimScript\SavePatcher.h" />
     <ClInclude Include="include\RE\SkyrimScript\ObjectBindPolicy.h" />
+    <ClInclude Include="include\RE\SkyrimScript\SendPlayerToJailFunctor.h" />
     <ClInclude Include="include\RE\SkyrimScript\SetMotionTypeFunctor.h" />
     <ClInclude Include="include\RE\SkyrimScript\SetPositionFunctor.h" />
     <ClInclude Include="include\RE\SkyrimScript\Store.h" />
