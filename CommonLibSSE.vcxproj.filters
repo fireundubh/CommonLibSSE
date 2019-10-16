@@ -1132,6 +1132,15 @@
     <Filter Include="include\RE\BSDevices\BSIInputDevice\BSInputDevice\BSKeyboardDevice\BSVirtualKeyboardDevice">
       <UniqueIdentifier>{f4245442-d234-4164-8f5d-18cde2f14d74}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty">
+      <UniqueIdentifier>{a73bbf38-f8c1-40a1-82c9-ff083cafd88c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShaderProperty">
+      <UniqueIdentifier>{2bc9455a-ecc8-4c64-9ebb-0e1ad9264507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShaderProperty\BSShaderProperty">
+      <UniqueIdentifier>{a8bc74e8-b476-4545-9140-04ee46fbac4a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\MenuControls.cpp">
@@ -1751,6 +1760,18 @@
     </ClCompile>
     <ClCompile Include="src\RE\BGSListForm.cpp">
       <Filter>src\RE\FormComponents\TESForm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\ExtraLightData.cpp">
+      <Filter>src\RE\BSExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Unk141EBEAD0.cpp">
+      <Filter>src\RE\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSShaderTextureSet.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderProperty.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShaderProperty\BSShaderProperty</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -4810,6 +4831,12 @@
     </ClInclude>
     <ClInclude Include="include\RE\SkyrimScript\SendPlayerToJailFunctor.h">
       <Filter>include\RE\SkyrimScript\DelayFunctor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Unk141EBEAD0.h">
+      <Filter>include\RE\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSShaderTextureSet.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
