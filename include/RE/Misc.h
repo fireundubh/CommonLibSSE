@@ -13,5 +13,5 @@ namespace RE
 	void		PlaySound(const char* a_editorID);
 	bool		WorldPtToScreenPt3(float a_worldToCamMatrix[4][4], NiRect<float>& a_port, const NiPoint3& a_in, float& a_xOut, float& a_yOut, float& a_zOut, float a_zeroTolerance);
 
-	void		func2E9950();
+	void		func2E9950(void);
 }

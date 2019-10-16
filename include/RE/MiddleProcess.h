@@ -145,7 +145,7 @@ namespace RE
 		UInt32										unk2C0;					// 2C0
 		UInt32										unk2C4;					// 2C4
 		float										actorAlpha;				// 2C8 - init'd to 1
-		UInt32										unk2CC;					// 2CC
+		float										actorRefraction;		// 2CC
 		UInt64										unk2D0;					// 2D0
 		UInt64										unk2D8;					// 2D8
 		UInt64										unk2E0;					// 2E0
