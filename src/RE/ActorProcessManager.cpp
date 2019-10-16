@@ -4,6 +4,9 @@
 
 #include "SKSE/API.h"  // NiNodeUpdateEvent
 
+#include "RE/Offsets.h"
+#include "REL/Relocation.h"
+
 
 namespace RE
 {
@@ -55,5 +58,13 @@ namespace RE
 	bool ActorProcessManager::IsGhost() const
 	{
 		return unk050 && (unk050->flags2 & Data050::Flag2::kGhost) != Data050::Flag2::kNone;
+	}
+
+
+	void ActorProcessManager::SetActorRefraction(float a_refraction)
+	{
+		using func_t = function_type_t<decltype(&ActorProcessManager::SetActorRefraction)>;
+		REL::Offset<func_t*> func(Offset::ActorProcessManager::SetActorRefraction);
+		return func(this, a_refraction);
 	}
 }

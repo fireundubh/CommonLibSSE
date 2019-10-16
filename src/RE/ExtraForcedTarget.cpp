@@ -1,4 +1,4 @@
-#include "RE/Skyrim.h"
+#include "RE/ExtraForcedTarget.h"
 
 #include "skse64/GameExtraData.h"  // s_ExtraForcedTargetVtbl
 

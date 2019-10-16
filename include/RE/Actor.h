@@ -283,7 +283,7 @@ namespace RE
 		virtual void							Unk_C0(void);																																														// 0C0 - { return; }
 		virtual void							Unk_C1(void);																																														// 0C1 - { return; }
 		virtual void							Unk_C2(void);																																														// 0C2
-		virtual void							Unk_C3(void);																																														// 0C3
+		virtual void							UpdateRefractionProperty(UInt8 a1, float refraction);  																																														// 0C3
 		virtual void							Unk_C4(void);																																														// 0C4 - { return; }
 		virtual void							Unk_C5(void);																																														// 0C5 - { return 1; }
 		virtual void							Unk_C6(void) = 0;																																													// 0C6
@@ -312,8 +312,8 @@ namespace RE
 		virtual void							Unk_DD(void);																																														// 0DD
 		virtual void							Unk_DE(void);																																														// 0DE
 		virtual void							Unk_DF(void);																																														// 0DF
-		virtual void							Unk_E0(void);																																														// 0E0
-		virtual void							Unk_E1(void);																																														// 0E1
+		virtual void							UpdateRefractionWithExtraData(void); //E0																																														// 0E0
+		virtual void							UpdateRefraction(float a1 = 1.0);	 //E1																																														// 0E1
 		virtual void							Unk_E2(void);																																														// 0E2
 		virtual bool							IsInCombat();																																														// 0E3
 		virtual void							Unk_E4(void);																																														// 0E4

@@ -399,6 +399,7 @@ namespace RE
 		TESForm*	GetEquippedLeftHand();
 		TESForm*	GetEquippedRightHand();
 		bool		IsGhost() const;
+		void		SetActorRefraction(float a_refraction);
 
 
 		// members

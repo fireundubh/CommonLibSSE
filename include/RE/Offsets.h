@@ -51,6 +51,11 @@ namespace RE
 		}
 
 
+		namespace ActorProcessManager
+		{
+			constexpr std::uintptr_t SetActorRefraction = 0x00680DB0;			// 1_5_80
+		}
+
 		namespace ActorValueOwner
 		{
 			// IndirectSig: E8 ? ? ? ? F3 44 0F 2C C0
