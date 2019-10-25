@@ -196,7 +196,7 @@ namespace RE
 		virtual void					Unk_4E(void);																																												// 4E - setter for ExtraSayTopicInfo
 		virtual void					Unk_4F(void);																																												// 4F
 		virtual void					SetActorCause(void* a_cause);																																								// 50
-		virtual void*					GetActorCause() const;																																										// 51
+		virtual RefHandle*				GetActorCause() const;																																										// 51
 		virtual void					GetStartingRotation(NiPoint3& a_rotation);																																					// 52
 		virtual void					GetStartingPosition(NiPoint3& a_position);																																					// 53
 		virtual void					Unk_54(void);																																												// 54

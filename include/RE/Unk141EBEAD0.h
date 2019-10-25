@@ -39,7 +39,7 @@ namespace RE
 		BSTArray<RefHandle>  actorsMiddleHigh; // 078
 		UInt32  unk90[(0xF0 - 0x7C) / sizeof(UInt32)]; 
 		BSTArray<ShaderReferenceEffect*> activeEffectShaders; // 108
-		mutable BSReadWriteLock	 activeEffectShadersLock; // 120
+		mutable BSUniqueLock			 activeEffectShadersLock; // 120
 	};
 	static_assert(offsetof(Unk141EBEAD0, numActorsInHighProcess) >= 0x10, "Unknown012E32E8::actorsHigh is too early!");
 	static_assert(offsetof(Unk141EBEAD0, numActorsInHighProcess) <= 0x10, "Unknown012E32E8::actorsHigh is too late!");
