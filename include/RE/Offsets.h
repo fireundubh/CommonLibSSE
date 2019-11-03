@@ -41,10 +41,15 @@ namespace RE
 			constexpr std::uintptr_t SendStealAlarm = 0x005DD770;				// 1_5_80
 									
 			constexpr std::uintptr_t EnableAI = 0x005E44F0;						// 1_5_80
+ 
 			// E8 ? ? ? ? 48 8B 54 24 68 3B D8 
 			constexpr std::uintptr_t GetSoulSize = 0x006348A0;					// 1_5_80
+			
 			constexpr std::uintptr_t Decapitate = 0x005F2530;					// 1_5_80
+			
 			constexpr std::uintptr_t GetCurrentPackageInternal = 0x005FBA20;	// 1_5_80
+			
+			constexpr std::uintptr_t InstantKill = 0x005FB640;					// 1_5_80
 
 			// ??_7Actor@@6B@
 			constexpr std::uintptr_t Vtbl = 0x01655650;							// 1_5_80

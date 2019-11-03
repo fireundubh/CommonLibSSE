@@ -428,6 +428,7 @@ namespace RE
 		UInt8						GetSoulSize() const;
 		void						Decapitate();
 		RE::TESPackage*				GetCurrentPackageInternal();
+		bool						InstantKill() const;
 
 
 		// members

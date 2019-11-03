@@ -393,4 +393,12 @@ namespace RE
 		REL::Offset<func_t*> func(Offset::Actor::GetCurrentPackageInternal);
 		return func(this);
 	}
+
+
+	bool Actor::InstantKill() const
+	{
+		using func_t = function_type_t<decltype(&Actor::InstantKill)>;
+		REL::Offset<func_t*> func(Offset::Actor::InstantKill);;
+		return func(this);
+	}
 }

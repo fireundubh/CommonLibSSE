@@ -58,11 +58,13 @@ namespace RE
 
 		enum class SecondaryAnimState : UInt8
 		{
-			kNotDead = 0,
+			kAlive = 0,
 			kDying = 1,
 			kDead = 2,
 			kUnconscious3 = 3,
-			kUnkDeathState = 5,
+			kReanimate = 4,
+			kRecycle = 5,
+			kRestrained = 6,
 			kBleedOut7 = 7,
 			kBleedOut8 = 8
 		};
