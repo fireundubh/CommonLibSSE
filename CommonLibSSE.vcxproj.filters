@@ -4844,5 +4844,8 @@
     <ClInclude Include="include\RE\BleedoutCameraState.h">
       <Filter>include\RE\Camera\TESCameraState</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\TESLockChangedEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
