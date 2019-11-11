@@ -155,6 +155,8 @@ namespace RE
 		namespace BSTaskPool
 		{
 			constexpr std::uintptr_t func2E9950 = 0x002E9950;	// 1_5_80
+			
+			constexpr std::uintptr_t func5C1AF0 = 0x005C1AF0;	// 1_5_80
 		}
 
 		namespace BSTimeManager

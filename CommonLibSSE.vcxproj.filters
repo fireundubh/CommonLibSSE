@@ -4838,5 +4838,11 @@
     <ClInclude Include="include\RE\BSShaderTextureSet.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\TESDeathEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BleedoutCameraState.h">
+      <Filter>include\RE\Camera\TESCameraState</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

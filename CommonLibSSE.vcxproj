@@ -538,6 +538,7 @@
     <ClInclude Include="include\RE\bhkThreadMemorySource.h" />
     <ClInclude Include="include\RE\bhkWorldObject.h" />
     <ClInclude Include="include\RE\Biped.h" />
+    <ClInclude Include="include\RE\BleedoutCameraState.h" />
     <ClInclude Include="include\RE\BSAnimationGraphChannel.h" />
     <ClInclude Include="include\RE\BSAnimationGraphEvent.h" />
     <ClInclude Include="include\RE\BSAnimationGraphManager.h" />
@@ -1277,6 +1278,7 @@
     <ClInclude Include="include\RE\TESContainerChangedEvent.h" />
     <ClInclude Include="include\RE\TESCustomPackageData.h" />
     <ClInclude Include="include\RE\TESDataHandler.h" />
+    <ClInclude Include="include\RE\TESDeathEvent.h" />
     <ClInclude Include="include\RE\TESDescription.h" />
     <ClInclude Include="include\RE\TESEffectShader.h" />
     <ClInclude Include="include\RE\TESEnchantableForm.h" />
