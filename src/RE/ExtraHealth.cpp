@@ -1,17 +1,14 @@
 #include "RE/ExtraHealth.h"
 
-#include "skse64/GameExtraData.h"  // s_ExtraHealthVtbl
+#include "RE/Offsets.h"
+#include "REL/Relocation.h"
 
 
 namespace RE
 {
 	ExtraHealth::ExtraHealth() :
-		BSExtraData(),
-		health(1.0),
-		pad14(0.0)
-	{
-		((std::uintptr_t*)this)[0] = s_ExtraHealthVtbl.GetUIntPtr();
-	}
+		ExtraHealth(1.0)
+	{}
 
 
 	ExtraHealth::ExtraHealth(float a_health) :
@@ -19,7 +16,8 @@ namespace RE
 		health(a_health),
 		pad14(0.0)
 	{
-		((std::uintptr_t*)this)[0] = s_ExtraHealthVtbl.GetUIntPtr();
+		REL::Offset<std::uintptr_t> vtbl(Offset::ExtraHealth::Vtbl);
+		((std::uintptr_t*)this)[0] = vtbl.GetAddress();
 	}
 
 

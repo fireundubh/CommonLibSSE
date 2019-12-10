@@ -1,19 +1,19 @@
 #pragma once
 
-#include <tuple>  // tuple
+#include <tuple>
 #include <type_traits>
 #include <utility>
 
-#include "RE/BSScript/Internal/VirtualMachine.h"  // BSScript::Internal::VirtualMachine
-#include "RE/BSScript/NF_util/NativeFunctionBase.h"  // BSScript::NF_util::NativeFunctionBase
-#include "RE/BSScript/PackUnpack.h"  // GetTypeID, PackValue, UnpackValue
-#include "RE/BSScript/Stack.h"  // BSScript::Stack
-#include "RE/BSScript/TypeTraits.h"  // BSScript::is_static_base
-#include "RE/BSScript/Variable.h"  // BSScript::Variable
-#include "RE/BSScript/IObjectHandlePolicy.h"  // BSScript::IObjectHandlePolicy
-#include "RE/BSScript/StackFrame.h"  // BSScript::StackFrame
-#include "RE/BSScript/VMArray.h"  // BSScript::VMArray
-#include "RE/BSTSmartPointer.h"  // BSTSmartPointer
+#include "RE/BSScript/Internal/VirtualMachine.h"
+#include "RE/BSScript/NF_util/NativeFunctionBase.h"
+#include "RE/BSScript/PackUnpack.h"
+#include "RE/BSScript/Stack.h"
+#include "RE/BSScript/TypeTraits.h"
+#include "RE/BSScript/Variable.h"
+#include "RE/BSScript/IObjectHandlePolicy.h"
+#include "RE/BSScript/StackFrame.h"
+#include "RE/BSScript/VMArray.h"
+#include "RE/BSTSmartPointer.h"
 
 
 namespace RE
@@ -36,18 +36,18 @@ namespace RE
 			}
 
 
-			template <class... Args, std::size_t... Is>
-			std::tuple<Args...> MakeTupleImpl(StackFrame* a_frame, UInt32 a_offset, std::index_sequence<Is...>)
+			template <class... Args, std::size_t... I>
+			std::tuple<Args...> MakeTupleImpl(StackFrame* a_frame, std::index_sequence<I...>)
 			{
-				return std::forward_as_tuple(Args{ a_frame->Get(Is, a_offset)->Unpack<Args>() }...);
+				return std::forward_as_tuple(Args{ a_frame->args[I].Unpack<Args>() }...);
 			}
 
 
 			// tuple element construction order isn't guaranteed, so we need to wrap it
 			template <class... Args>
-			std::tuple<Args...> MakeTuple(StackFrame* a_frame, UInt32 a_offset)
+			std::tuple<Args...> MakeTuple(StackFrame* a_frame)
 			{
-				return MakeTupleImpl<Args...>(a_frame, a_offset, std::make_index_sequence<sizeof...(Args)>{});
+				return MakeTupleImpl<Args...>(a_frame, std::make_index_sequence<sizeof...(Args)>{});
 			}
 		}
 
@@ -87,8 +87,6 @@ namespace RE
 
 			virtual bool Run(Variable* a_baseValue, Internal::VirtualMachine* a_vm, UInt32 a_stackID, Variable* a_resultValue, StackFrame* a_frame) override	// 16
 			{
-				auto chunkIdx = a_frame->stack->GetChunkIdx(a_frame);
-
 				base_type base{};
 				if constexpr (std::negation<is_static_base<base_type>>::value) {
 					base = a_baseValue->Unpack<base_type>();
@@ -98,7 +96,7 @@ namespace RE
 				}
 
 				UInt32 i = sizeof...(Args);
-				auto args = Impl::MakeTuple<Args...>(a_frame, chunkIdx);
+				auto args = Impl::MakeTuple<Args...>(a_frame);
 				if constexpr (std::is_void<result_type>::value) {
 					if constexpr (IS_LONG) {
 						Impl::CallBack(_callback, std::move(args), a_vm, a_stackID, std::move(base));

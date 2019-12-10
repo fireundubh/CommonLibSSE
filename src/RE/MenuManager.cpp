@@ -1,24 +1,28 @@
 #include "RE/MenuManager.h"
 
-#include "skse64/GameMenus.h"  // MenuManager
-
-#include "RE/IMenu.h"  // IMenu
+#include "RE/IMenu.h"
+#include "RE/Offsets.h"
+#include "REL/Relocation.h"
 
 
 namespace RE
 {
 	MenuManager* MenuManager::GetSingleton()
 	{
-		using func_t = function_type_t<decltype(&MenuManager::GetSingleton)>;
-		func_t* func = unrestricted_cast<func_t*>(&::MenuManager::GetSingleton);
-		return func();
+		REL::Offset<MenuManager**> singleton(Offset::MenuManager::Singleton);
+		return *singleton;
 	}
 
 
-	bool MenuManager::IsMenuOpen(const std::string_view& a_menuName)
+	bool MenuManager::GameIsPaused()
 	{
-		auto menu = GetMenu(a_menuName);
-		return menu ? menu->IsOpen() : false;
+		return numPauseGame > 0;
+	}
+
+
+	bool MenuManager::CrosshairIsPaused()
+	{
+		return numStopCrosshairUpdate > 0;
 	}
 
 
@@ -36,9 +40,10 @@ namespace RE
 	}
 
 
-	void MenuManager::ShowMenus(bool a_show)
+	bool MenuManager::IsMenuOpen(const std::string_view& a_menuName)
 	{
-		showMenus = a_show;
+		auto menu = GetMenu(a_menuName);
+		return menu ? menu->IsOpen() : false;
 	}
 
 
@@ -54,14 +59,8 @@ namespace RE
 	}
 
 
-	bool MenuManager::GameIsPaused()
+	void MenuManager::ShowMenus(bool a_show)
 	{
-		return numPauseGame > 0;
-	}
-
-
-	bool MenuManager::CrosshairIsPaused()
-	{
-		return numStopCrosshairUpdate > 0;
+		showMenus = a_show;
 	}
 }

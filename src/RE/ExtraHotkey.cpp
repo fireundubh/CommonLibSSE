@@ -1,19 +1,14 @@
 #include "RE/ExtraHotkey.h"
 
-#include "skse64/GameExtraData.h"  // s_ExtraHotkeyVtbl
+#include "RE/Offsets.h"
+#include "REL/Relocation.h"
 
 
 namespace RE
 {
 	ExtraHotkey::ExtraHotkey() :
-		BSExtraData(),
-		hotkey(Hotkey::kUnbound),
-		unk11(0),
-		unk12(0),
-		unk14(0)
-	{
-		((std::uintptr_t*)this)[0] = s_ExtraHotkeyVtbl.GetUIntPtr();
-	}
+		ExtraHotkey(Hotkey::kUnbound)
+	{}
 
 
 	ExtraHotkey::ExtraHotkey(Hotkey a_hotkey) :
@@ -23,7 +18,8 @@ namespace RE
 		unk12(0),
 		unk14(0)
 	{
-		((std::uintptr_t*)this)[0] = s_ExtraHotkeyVtbl.GetUIntPtr();
+		REL::Offset<std::uintptr_t> vtbl(Offset::ExtraHotkey::Vtbl);
+		((std::uintptr_t*)this)[0] = vtbl.GetAddress();
 	}
 
 

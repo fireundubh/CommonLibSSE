@@ -1,7 +1,7 @@
 #pragma once
 
-#include "RE/BSTEvent.h"  // BSTEventSource
-#include "RE/BSTSingleton.h"  // BSTSingletonSDM
+#include "RE/BSTEvent.h"
+#include "RE/BSTSingleton.h"
 
 
 namespace RE
@@ -17,8 +17,8 @@ namespace RE
 
 
 	class InputManager :
-		public BSTEventSource<InputEvent*>,
-		public BSTSingletonSDM<InputManager>
+		public BSTEventSource<InputEvent*>,		// 00
+		public BSTSingletonSDM<InputManager>	// 58
 	{
 	public:
 		struct Devices

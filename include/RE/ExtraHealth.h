@@ -1,9 +1,7 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_ExtraHealth
-
-#include "RE/BSExtraData.h"  // BSExtraData
-#include "RE/ExtraDataTypes.h"  // ExtraDataType
+#include "RE/BSExtraData.h"
+#include "RE/ExtraDataTypes.h"
 
 
 namespace RE
@@ -18,7 +16,7 @@ namespace RE
 
 
 		ExtraHealth();
-		ExtraHealth(float a_health);
+		explicit ExtraHealth(float a_health);
 		virtual ~ExtraHealth() = default;												// 00
 
 		// override (BSExtraData)

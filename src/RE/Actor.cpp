@@ -1,28 +1,73 @@
 #include "RE/Actor.h"
 
-#include "skse64/GameReferences.h"  // Actor
+#include "skse64/GameReferences.h"
 
-#include "RE/ActorProcessManager.h"  // ActorProcessManager
-#include "RE/BGSAttackData.h"  // BGSAttackData
-#include "RE/ExtraFactionChanges.h"  // ExtraFactionChanges
-#include "RE/InventoryChanges.h"  // InventoryChanges
-#include "RE/InventoryEntryData.h"  // InventoryEntryData
-#include "RE/MiddleProcess.h"  // MiddleProcess
+#include "RE/AIProcess.h"
+#include "RE/AIProcessManager.h"
+#include "RE/BGSAttackData.h"
+#include "RE/BGSColorForm.h"
+#include "RE/BSFaceGenAnimationData.h"
+#include "RE/ExtraCanTalkToPlayer.h"
+#include "RE/ExtraFactionChanges.h"
+#include "RE/HighProcess.h"
+#include "RE/InventoryChanges.h"
+#include "RE/InventoryEntryData.h"
+#include "RE/MiddleProcess.h"
+#include "RE/Misc.h"
+#include "RE/NiColor.h"
+#include "RE/NiNode.h"
 #include "RE/Offsets.h"
-#include "RE/TESActorBaseData.h"  // TESActorBaseData
-#include "RE/TESFaction.h"  // TESFaction
-#include "RE/TESNPC.h"  // TESNPC
-#include "RE/TESRace.h"  // TESRace
+#include "RE/TESActorBaseData.h"
+#include "RE/TESFaction.h"
+#include "RE/TESNPC.h"
+#include "RE/TESRace.h"
+#include "RE/TESWorldSpace.h"
 #include "REL/Relocation.h"
 
 
 namespace RE
 {
+	NiPointer<Actor> Actor::LookupByHandle(RefHandle a_refHandle)
+	{
+		NiPointer<Actor> ref;
+		LookupReferenceByHandle(a_refHandle, ref);
+		return ref;
+	}
+
+
+	bool Actor::LookupByHandle(RefHandle a_refHandle, NiPointer<Actor>& a_refrOut)
+	{
+		return LookupReferenceByHandle(a_refHandle, a_refrOut);
+	}
+
+
 	bool Actor::AddSpell(SpellItem* a_spell)
 	{
 		using func_t = function_type_t<decltype(&Actor::AddSpell)>;
 		REL::Offset<func_t*> func(Offset::Actor::AddSpell);
 		return func(this, a_spell);
+	}
+
+
+	void Actor::AllowBleedoutDialogue(bool a_canTalk)
+	{
+		if (a_canTalk) {
+			flags2 |= Flag2::kAllowBleedoutDialogue;
+		} else {
+			flags2 &= ~Flag2::kAllowBleedoutDialogue;
+		}
+	}
+
+
+	void Actor::AllowPCDialogue(bool a_talk)
+	{
+		auto xTalk = extraData.GetByType<ExtraCanTalkToPlayer>();
+		if (xTalk) {
+			xTalk = new ExtraCanTalkToPlayer();
+			extraData.Add(xTalk);
+		}
+
+		xTalk->canTalkToPlayer = a_talk;
 	}
 
 
@@ -33,6 +78,40 @@ namespace RE
 		return func(this, a_entryData, a_numItems, a_multiplyValueByRemainingItems);
 	}
 
+
+	bool Actor::CanFlyHere() const
+	{
+		auto worldSpace = GetWorldspace();
+		return worldSpace && worldSpace->HasMaxHeightData();
+	}
+
+
+	void Actor::ClearArrested()
+	{
+		if (aiProcess && aiProcess->IsArrested()) {
+			aiProcess->SetArrested(false);
+			ResetAI(0, 0);
+			auto procManager = AIProcessManager::GetSingleton();
+			procManager->SetCombatAlarmState(this, true);
+		}
+	}
+
+
+	void Actor::ClearExpressionOverride()
+	{
+		auto faceGen = GetFaceGenAnimationData();
+		if (faceGen) {
+			faceGen->ClearExpressionOverride();
+		}
+	}
+
+
+	void Actor::ClearExtraArrows()
+	{
+		extraData.RemoveByType(ExtraDataType::kAttachedArrows3D);
+	}
+
+
 	void Actor::DispelWornItemEnchantments()
 	{
 		using func_t = function_type_t<decltype(&Actor::DispelWornItemEnchantments)>;
@@ -41,7 +120,13 @@ namespace RE
 	}
 
 
-	TESNPC* Actor::GetActorBase() const
+	TESNPC* Actor::GetActorBase()
+	{
+		return baseForm->As<TESNPC*>();
+	}
+
+
+	const TESNPC* Actor::GetActorBase() const
 	{
 		return baseForm->As<TESNPC*>();
 	}
@@ -49,12 +134,12 @@ namespace RE
 
 	InventoryEntryData* Actor::GetAttackingWeapon()
 	{
-		if (!processManager || !processManager->unk010 || !processManager->unk010->attackData || !processManager->middleProcess) {
+		if (!aiProcess || !aiProcess->highProcess || !aiProcess->highProcess->attackData || !aiProcess->middleProcess) {
 			return 0;
 		}
 
-		auto attackData = processManager->unk010->attackData;
-		auto middleProcess = processManager->middleProcess;
+		auto attackData = aiProcess->highProcess->attackData;
+		auto middleProcess = aiProcess->middleProcess;
 
 		return attackData->IsLeftAttack() ? middleProcess->leftHand : middleProcess->rightHand;
 	}
@@ -62,35 +147,59 @@ namespace RE
 
 	const InventoryEntryData* Actor::GetAttackingWeapon() const
 	{
-		if (!processManager || !processManager->unk010 || !processManager->unk010->attackData || !processManager->middleProcess) {
+		if (!aiProcess || !aiProcess->highProcess || !aiProcess->highProcess->attackData || !aiProcess->middleProcess) {
 			return 0;
 		}
 
-		auto attackData = processManager->unk010->attackData;
-		auto middleProcess = processManager->middleProcess;
+		auto attackData = aiProcess->highProcess->attackData;
+		auto middleProcess = aiProcess->middleProcess;
 
 		return attackData->IsLeftAttack() ? middleProcess->leftHand : middleProcess->rightHand;
 	}
 
 
-	InventoryEntryData* Actor::GetEquippedEntryData(bool a_leftHand)
+	TESFaction* Actor::GetCrimeFaction()
 	{
-		if (!processManager || !processManager->middleProcess) {
+		auto thisPtr = const_cast<const Actor*>(this);
+		auto fac = thisPtr->GetCrimeFaction();
+		return const_cast<TESFaction*>(fac);
+	}
+
+
+	const TESFaction* Actor::GetCrimeFaction() const
+	{
+		if (IsCommandedActor()) {
 			return 0;
 		}
 
-		auto middleProcess = processManager->middleProcess;
+		auto xFac = extraData.GetByType<ExtraFactionChanges>();
+		if (xFac && (xFac->crimeFaction || xFac->noTrackCrime)) {
+			return xFac->crimeFaction;
+		}
+
+		auto base = GetActorBase();
+		return base ? base->crimeFaction : 0;
+	}
+
+
+	InventoryEntryData* Actor::GetEquippedEntryData(bool a_leftHand)
+	{
+		if (!aiProcess || !aiProcess->middleProcess) {
+			return 0;
+		}
+
+		auto middleProcess = aiProcess->middleProcess;
 		return a_leftHand ? middleProcess->leftHand : middleProcess->rightHand;
 	}
 
 
 	const InventoryEntryData* Actor::GetEquippedEntryData(bool a_leftHand) const
 	{
-		if (!processManager || !processManager->middleProcess) {
+		if (!aiProcess || !aiProcess->middleProcess) {
 			return 0;
 		}
 
-		auto middleProcess = processManager->middleProcess;
+		auto middleProcess = aiProcess->middleProcess;
 		return a_leftHand ? middleProcess->leftHand : middleProcess->rightHand;
 	}
 
@@ -105,11 +214,11 @@ namespace RE
 
 	TESForm* Actor::GetEquippedObject(bool a_leftHand) const
 	{
-		if (processManager) {
+		if (aiProcess) {
 			if (a_leftHand) {
-				return processManager->GetEquippedLeftHand();
+				return aiProcess->GetEquippedLeftHand();
 			} else {
-				return processManager->GetEquippedRightHand();
+				return aiProcess->GetEquippedRightHand();
 			}
 		} else {
 			return 0;
@@ -156,7 +265,7 @@ namespace RE
 	UInt16 Actor::GetLevel() const
 	{
 		using func_t = function_type_t<decltype(&Actor::GetLevel)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::Actor, GetLevel, func_t*);
+		REL::Offset<func_t*> func(Offset::Actor::GetLevel);
 		return func(this);
 	}
 
@@ -171,7 +280,7 @@ namespace RE
 	bool Actor::HasPerk(BGSPerk* a_perk) const
 	{
 		using func_t = function_type_t<decltype(&Actor::HasPerk)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::Actor, HasPerk, func_t*);
+		REL::Offset<func_t*> func(Offset::Actor::HasPerk);
 		return func(this, a_perk);
 	}
 
@@ -200,6 +309,21 @@ namespace RE
 	}
 
 
+	bool Actor::IsFactionInCrimeGroup(const TESFaction* a_faction) const
+	{
+		auto crimFac = GetCrimeFaction();
+		if (!crimFac) {
+			return false;
+		}
+
+		if (crimFac == a_faction) {
+			return true;
+		} else {
+			return crimFac->IsFactionInCrimeGroup(a_faction);
+		}
+	}
+
+
 	bool Actor::IsGhost() const
 	{
 		using func_t = function_type_t<decltype(&Actor::IsGhost)>;
@@ -217,7 +341,7 @@ namespace RE
 	bool Actor::IsHostileToActor(Actor* a_actor) const
 	{
 		using func_t = function_type_t<decltype(&Actor::IsHostileToActor)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::Actor, IsHostileToActor, func_t*);
+		REL::Offset<func_t*> func(Offset::Actor::IsHostileToActor);
 		return func(this, a_actor);
 	}
 
@@ -282,15 +406,15 @@ namespace RE
 	void Actor::QueueNiNodeUpdate(bool a_updateWeight)
 	{
 		using func_t = function_type_t<decltype(&Actor::QueueNiNodeUpdate)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::Actor, QueueNiNodeUpdate, func_t*);
+		REL::Offset<func_t*> func(Offset::Actor::QueueNiNodeUpdate);
 		return func(this, a_updateWeight);
 	}
 
 
-	void Actor::ResetAI(bool a_arg1, bool a_arg2)
+	void Actor::ResetAI(UInt32 a_arg1, UInt32 a_arg2)
 	{
 		using func_t = function_type_t<decltype(&Actor::ResetAI)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::Actor, ResetAI, func_t*);
+		REL::Offset<func_t*> func(Offset::Actor::ResetAI);
 		return func(this, a_arg1, a_arg2);
 	}
 
@@ -306,7 +430,7 @@ namespace RE
 	void Actor::SetRace(TESRace* a_race, bool a_isPlayer)
 	{
 		using func_t = function_type_t<decltype(&Actor::SetRace)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::Actor, SetRace, func_t*);
+		REL::Offset<func_t*> func(Offset::Actor::SetRace);
 		return func(this, a_race, a_isPlayer);
 	}
 
@@ -314,31 +438,59 @@ namespace RE
 	void Actor::UpdateArmorAbility(TESForm* a_armor, BaseExtraList* a_extraData)
 	{
 		using func_t = function_type_t<decltype(&Actor::UpdateArmorAbility)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::Actor, UpdateArmorAbility, func_t*);
+		REL::Offset<func_t*> func(Offset::Actor::UpdateArmorAbility);
 		return func(this, a_armor, a_extraData);
 	}
 
 
 	void Actor::UpdateHairColor()
 	{
-		using func_t = function_type_t<decltype(&Actor::UpdateHairColor)>;
-		func_t* func = unrestricted_cast<func_t*>(&::Actor::UpdateHairColor);
-		return func(this);
+		auto npc = GetActorBase();
+		if (npc && npc->headData) {
+			auto hairColor = npc->headData->hairColor;
+			if (hairColor) {
+				NiColorA val;
+				val.red = hairColor->color.red / 128.0;
+				val.green = hairColor->color.green / 128.0;
+				val.blue = hairColor->color.blue / 128.0;
+				auto color = &val;
+
+				auto model = GetNiRootNode(0);
+				if (model) {
+					model->UpdateModelHair(&color);
+				}
+			}
+		}
 	}
 
 
 	void Actor::UpdateSkinColor()
 	{
-		using func_t = function_type_t<decltype(&Actor::UpdateSkinColor)>;
-		func_t* func = unrestricted_cast<func_t*>(&::Actor::UpdateSkinColor);
-		return func(this);
+		auto npc = GetActorBase();
+		if (npc) {
+			NiColorA val;
+			val.red = npc->textureLighting.red / 255.0;
+			val.green = npc->textureLighting.green / 255.0;
+			val.blue = npc->textureLighting.blue / 255.0;
+			auto color = &val;
+
+			auto thirdPerson = GetNiRootNode(0);
+			if (thirdPerson) {
+				thirdPerson->UpdateModelSkin(&color);
+			}
+
+			auto firstPerson = GetNiRootNode(1);
+			if (firstPerson) {
+				firstPerson->UpdateModelSkin(&color);
+			}
+		}
 	}
 
 
 	void Actor::UpdateWeaponAbility(TESForm* a_weapon, BaseExtraList* a_extraData, bool a_leftHand)
 	{
 		using func_t = function_type_t<decltype(&Actor::UpdateWeaponAbility)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::Actor, UpdateWeaponAbility, func_t*);
+		REL::Offset<func_t*> func(Offset::Actor::UpdateWeaponAbility);
 		return func(this, a_weapon, a_extraData, a_leftHand);
 	}
 

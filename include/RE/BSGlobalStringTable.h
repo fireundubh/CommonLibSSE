@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RE/BSLock.h"  // BSUniqueLock
+#include "RE/BSLock.h"
 
 
 namespace RE
@@ -67,6 +67,9 @@ namespace RE
 			CharT			_data[0];			// 18
 		};
 		STATIC_ASSERT(sizeof(Entry) == 0x18);
+
+
+		static BSGlobalStringTable* GetSingleton();
 
 
 		// members

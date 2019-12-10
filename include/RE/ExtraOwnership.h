@@ -1,9 +1,7 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_ExtraOwnership
-
-#include "RE/BSExtraData.h"  // BSExtraData
-#include "RE/ExtraDataTypes.h"  // ExtraDataType
+#include "RE/BSExtraData.h"
+#include "RE/ExtraDataTypes.h"
 
 
 namespace RE
@@ -21,7 +19,7 @@ namespace RE
 
 
 		ExtraOwnership();
-		ExtraOwnership(TESForm* a_owner);
+		explicit ExtraOwnership(TESForm* a_owner);
 		virtual ~ExtraOwnership() = default;											// 00
 
 		// override (BSExtraData)

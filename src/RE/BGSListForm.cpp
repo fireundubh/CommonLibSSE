@@ -1,6 +1,6 @@
 #include "RE/BGSListForm.h"
 
-#include <algorithm>  // find
+#include <algorithm>
 #include "skse64/GameForms.h"  // Form
 
 #include "RE/Offsets.h"

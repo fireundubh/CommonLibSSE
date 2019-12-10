@@ -1,14 +1,10 @@
 #pragma once
 
-#include "RE/BSFixedString.h"  // BSFixedString
-#include "RE/BSTHashMap.h"  // BSTHashMap
-#include "RE/BSTMessageQueue.h"  // BSTCommonStaticMessageQueue
-#include "RE/BSTSingleton.h"  // BSTSingletonSDM
-#include "RE/UIMessage.h"  // UIMessage
-
-
-class UIDelegate;
-class UIDelegate_v1;
+#include "RE/BSFixedString.h"
+#include "RE/BSTHashMap.h"
+#include "RE/BSTMessageQueue.h"
+#include "RE/BSTSingleton.h"
+#include "RE/UIMessage.h"
 
 
 namespace RE
@@ -25,10 +21,8 @@ namespace RE
 		static UIManager* GetSingleton();
 
 		void			AddMessage(const BSFixedString& a_menuName, UIMessage::Message a_msgID, IUIMessageData* a_data);
-		IUIMessageData*	CreateUIMessageData(const BSFixedString& a_name);
+		IUIMessageData*	CreateUIMessageData(const BSFixedString& a_name);	// uses unk348, but doesn't seem to work like the skse thinks it does
 		void			ProcessCommands();
-		void			QueueCommand(UIDelegate* a_cmd);
-		void			QueueCommand(UIDelegate_v1* a_cmd);
 
 
 		// members

@@ -4,11 +4,22 @@
 #define _WIN32_WINNT 0x0601	// SSE requires minimum windows 7
 
 #include <WinSock2.h>
+#include <xmmintrin.h>
 
-#undef min
-#undef max
+#undef far
 #undef GetClassName
+#undef GetFileAttributes
+#undef GetObject
+#undef LoadIcon
+#undef max
+#undef min
+#undef near
 #undef PlaySound
+
+#undef FAR
+#undef NEAR
+#define FAR
+#define NEAR
 
 #pragma warning(disable: 4018)	// signed/unsigned mismatch
 #pragma warning(disable: 4200)	// nonstandard extension used : zero-sized array in struct/union
@@ -41,6 +52,9 @@ using SInt64 = signed long long;
 
 #include "Atomic.h"
 #include "Util.h"
+
+#include "skse64/GameRTTI.h"
+#include "skse64/NiRTTI.h"
 
 #include "RE/BSCoreTypes.h"
 #include "RE/SFTypes.h"

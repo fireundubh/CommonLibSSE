@@ -1,19 +1,17 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_TESObjectCELL
-
-#include "RE/BaseExtraList.h"  // BaseExtraList
-#include "RE/BSLock.h"  // BSUniqueLock
-#include "RE/BSTArray.h"  // BSTArray
-#include "RE/BSTHashMap.h"  // BSTHashSet
-#include "RE/BSTList.h"  // BSSimpleList
-#include "RE/Color.h"  // Color
-#include "RE/DirectionalAmbientLightingColor.h"  // DirectionalAmbientLightingColor
-#include "RE/FormTypes.h"  // FormType
-#include "RE/NiSmartPointer.h"  // NiPointer
-#include "RE/TESForm.h"  // TESForm
-#include "RE/TESFullName.h"  // TESFullName
-#include "RE/TESObjectREFR.h"  // TESObjectREFR
+#include "RE/BaseExtraList.h"
+#include "RE/BSLock.h"
+#include "RE/BSTArray.h"
+#include "RE/BSTHashMap.h"
+#include "RE/BSTList.h"
+#include "RE/Color.h"
+#include "RE/DirectionalAmbientLightingColor.h"
+#include "RE/FormTypes.h"
+#include "RE/NiSmartPointer.h"
+#include "RE/TESForm.h"
+#include "RE/TESFullName.h"
+#include "RE/TESObjectREFR.h"
 
 
 namespace RE
@@ -211,7 +209,7 @@ namespace RE
 		Coordinates*	GetCoordinates();
 		TESFaction*		GetFactionOwner();
 		Lighting*		GetLighting();
-		double			GetNorthRotation();
+		float			GetNorthRotation();
 		TESForm*		GetOwner();
 		bool			IsAttached() const;
 		bool			IsExteriorCell() const;
@@ -241,7 +239,7 @@ namespace RE
 		TESObjectLAND*							land;					// 068
 		float									waterHeight;			// 070 - XCLW
 		BSTArray<BSTSmartPointer<NavMesh>>*		navMeshes;				// 078
-		BSTHashSet<NiPointer<TESObjectREFR>>	persistentRefMap;		// 080
+		BSTHashSet<NiPointer<TESObjectREFR>>	objectMap;				// 080
 		TESForm*								unk0B0;					// 0B0 - REFR owner of cell?
 		BSTArray<TESObjectREFR*>				objectList;				// 0B8 - persistent
 		BSTArray<void*>							unk0D0;					// 0D0
@@ -253,7 +251,5 @@ namespace RE
 		BGSLightingTemplate*					lightingTemplate;		// 130 - LTMP
 		UInt64									unk138;					// 138
 	};
-	STATIC_ASSERT(offsetof(TESObjectCELL, persistentRefMap) == 0x80);
-	STATIC_ASSERT(offsetof(TESObjectCELL, objectList) == 0xB8);
 	STATIC_ASSERT(sizeof(TESObjectCELL) == 0x140);
 }

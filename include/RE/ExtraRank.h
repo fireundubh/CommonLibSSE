@@ -1,9 +1,7 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_ExtraRank
-
-#include "RE/BSExtraData.h"  // BSExtraData
-#include "RE/ExtraDataTypes.h"  // ExtraDataType
+#include "RE/BSExtraData.h"
+#include "RE/ExtraDataTypes.h"
 
 
 namespace RE
@@ -18,7 +16,7 @@ namespace RE
 
 
 		ExtraRank();
-		ExtraRank(UInt32 a_rank);
+		explicit ExtraRank(UInt32 a_rank);
 		virtual ~ExtraRank() = default;													// 00
 
 		// override (BSExtraData)

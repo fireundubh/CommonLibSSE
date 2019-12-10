@@ -1,7 +1,7 @@
 #pragma once
 
-#include "RE/BGSNamedPackageData.h"  // BGSNamedPackageData
-#include "RE/BSFixedString.h"  // BSFixedString
+#include "RE/BGSNamedPackageData.h"
+#include "RE/BSFixedString.h"
 
 
 namespace RE
@@ -9,7 +9,7 @@ namespace RE
 	class TESFile;
 
 
-	template <class Parent, class Pointer, const BSFixedString& TYPE_NAME>
+	template <class Parent, class Pointer /*, const BSFixedString& TYPE_NAME*/>
 	class BGSPackageDataPointerTemplate : public BGSNamedPackageData<Parent>
 	{
 	public:

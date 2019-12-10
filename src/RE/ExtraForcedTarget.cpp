@@ -1,19 +1,17 @@
 #include "RE/ExtraForcedTarget.h"
 
-#include "skse64/GameExtraData.h"  // s_ExtraForcedTargetVtbl
+#include "skse64/GameReferences.h"
 
-#include "RE/TESObjectREFR.h"  // TESObjectREFR
+#include "RE/Offsets.h"
+#include "RE/TESObjectREFR.h"
+#include "REL/Relocation.h"
 
 
 namespace RE
 {
 	ExtraForcedTarget::ExtraForcedTarget() :
-		BSExtraData(),
-		handle(*g_invalidRefHandle),
-		pad14(0)
-	{
-		((std::uintptr_t*)this)[0] = s_ExtraForcedTargetVtbl.GetUIntPtr();
-	}
+		ExtraForcedTarget(*g_invalidRefHandle)
+	{}
 
 
 	ExtraForcedTarget::ExtraForcedTarget(RefHandle a_handle) :
@@ -21,7 +19,8 @@ namespace RE
 		handle(a_handle),
 		pad14(0)
 	{
-		((std::uintptr_t*)this)[0] = s_ExtraForcedTargetVtbl.GetUIntPtr();
+		REL::Offset<std::uintptr_t> vtbl(Offset::ExtraForcedTarget::Vtbl);
+		((std::uintptr_t*)this)[0] = vtbl.GetAddress();
 	}
 
 
@@ -40,8 +39,6 @@ namespace RE
 
 	NiPointer<TESObjectREFR> ExtraForcedTarget::GetTarget()
 	{
-		NiPointer<TESObjectREFR> refr;
-		RE::TESObjectREFR::LookupByHandle(handle, refr);
-		return refr;
+		return TESObjectREFR::LookupByHandle(handle);
 	}
 }

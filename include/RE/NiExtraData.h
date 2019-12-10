@@ -1,10 +1,7 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_NiExtraData
-#include "skse64/NiRTTI.h"  // NiRTTI_NiExtraData
-
-#include "RE/BSFixedString.h"  // BSFixedString
-#include "RE/NiObject.h"  // NiObject
+#include "RE/BSFixedString.h"
+#include "RE/NiObject.h"
 
 
 namespace RE
@@ -31,6 +28,9 @@ namespace RE
 		virtual void			Unk_26(void);										// 26 - { return 1; }
 
 		static NiExtraData* Create(std::size_t a_size, std::uintptr_t a_vtbl);
+
+		const BSFixedString&	GetName() const;
+		void					SetName(const BSFixedString& a_name);
 
 
 		// members

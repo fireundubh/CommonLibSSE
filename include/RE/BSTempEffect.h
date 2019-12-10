@@ -1,15 +1,13 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_BSTempEffect
-#include "skse64/NiRTTI.h"  // NiRTTI_BSTempEffect
-
-#include "RE/NiObject.h"  // NiObject
+#include "RE/NiObject.h"
 
 
 namespace RE
 {
 	class BGSLoadGameBuffer;
-	
+
+
 	class BSTempEffect : public NiObject
 	{
 	public:

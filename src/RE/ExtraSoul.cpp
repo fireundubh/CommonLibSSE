@@ -1,19 +1,14 @@
 #include "RE/ExtraSoul.h"
 
-#include "skse64/GameExtraData.h"  // s_ExtraSoulVtbl
+#include "RE/Offsets.h"
+#include "REL/Relocation.h"
 
 
 namespace RE
 {
 	ExtraSoul::ExtraSoul() :
-		BSExtraData(),
-		level(SoulLevel::kNone),
-		pad11(0),
-		pad12(0),
-		pad14(0)
-	{
-		((std::uintptr_t*)this)[0] = s_ExtraSoulVtbl.GetUIntPtr();
-	}
+		ExtraSoul(SoulLevel::kNone)
+	{}
 
 
 	ExtraSoul::ExtraSoul(SoulLevel a_level) :
@@ -23,7 +18,8 @@ namespace RE
 		pad12(0),
 		pad14(0)
 	{
-		((std::uintptr_t*)this)[0] = s_ExtraSoulVtbl.GetUIntPtr();
+		REL::Offset<std::uintptr_t> vtbl(Offset::ExtraSoul::Vtbl);
+		((std::uintptr_t*)this)[0] = vtbl.GetAddress();
 	}
 
 

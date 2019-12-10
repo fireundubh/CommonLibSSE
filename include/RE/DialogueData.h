@@ -1,18 +1,24 @@
 #pragma once
 
-#include "RE/BSFixedString.h"  // BSFixedString
-#include "RE/BSString.h"  // BSString
-#include "RE/BSTList.h"  // BSSimpleList
-#include "RE/FormTypes.h"  // TESIdleForm, TESTopicInfo, TESTopic, TESQuest, Actor
-#include "RE/TESMemoryManager.h"  // TES_HEAP_REDEFINE_NEW
+#include "RE/BSFixedString.h"
+#include "RE/BSIntrusiveRefCounted.h"
+#include "RE/BSString.h"
+#include "RE/BSTList.h"
+#include "RE/TESMemoryManager.h"
 
 
 namespace RE
 {
+	class Actor;
+	class BGSSoundDescriptorForm;
 	class ExtraSayToTopicInfo;
+	class TESIdleForm;
+	class TESQuest;
+	class TESTopic;
+	class TESTopicInfo;
 
 
-	class DialogueData
+	class DialogueData : public BSIntrusiveRefCounted
 	{
 	public:
 		struct ResponseData
@@ -60,7 +66,6 @@ namespace RE
 
 
 		// members
-		UInt32								unk00;				// 00
 		UInt32								pad04;				// 04
 		BSSimpleList<ResponseData*>			responses;			// 08
 		BSSimpleList<ResponseData*>::Node*	currentResponse;	// 18

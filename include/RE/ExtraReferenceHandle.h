@@ -1,10 +1,8 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_ExtraReferenceHandle
-
-#include "RE/BSExtraData.h"  // BSExtraData
-#include "RE/ExtraDataTypes.h"  // ExtraDataType
-#include "RE/NiSmartPointer.h"  // NiSmartPointer
+#include "RE/BSExtraData.h"
+#include "RE/ExtraDataTypes.h"
+#include "RE/NiSmartPointer.h"
 
 
 namespace RE
@@ -22,7 +20,7 @@ namespace RE
 
 
 		ExtraReferenceHandle();
-		ExtraReferenceHandle(RefHandle a_refHandle);
+		explicit ExtraReferenceHandle(RefHandle a_refHandle);
 		virtual ~ExtraReferenceHandle() = default;											// 00
 
 		// override (BSExtraData)

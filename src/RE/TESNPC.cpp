@@ -1,7 +1,7 @@
 #include "RE/TESNPC.h"
 
-#include "skse64/GameData.h"  // GetNumActorBaseOverlays
-#include "skse64/GameObjects.h"  // TESNPC
+#include "RE/Offsets.h"
+#include "REL/Relocation.h"
 
 
 namespace RE
@@ -15,7 +15,7 @@ namespace RE
 	void TESNPC::ChangeHeadPart(BGSHeadPart* a_target)
 	{
 		using func_t = function_type_t<decltype(&TESNPC::ChangeHeadPart)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::TESNPC, ChangeHeadPart, func_t*);
+		REL::Offset<func_t*> func(Offset::TESNPC::ChangeHeadPart);
 		return func(this, a_target);
 	}
 
@@ -23,16 +23,14 @@ namespace RE
 	BGSHeadPart** TESNPC::GetBaseOverlays() const
 	{
 		using func_t = function_type_t<decltype(&TESNPC::GetBaseOverlays)>;
-		func_t* func = unrestricted_cast<func_t*>(GetActorBaseOverlays.GetUIntPtr());
+		REL::Offset<func_t*> func(Offset::TESNPC::GetBaseOverlays);
 		return func(this);
 	}
 
 
 	TESNPC::Sex TESNPC::GetSex()
 	{
-		using func_t = function_type_t<decltype(&TESNPC::GetSex)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::TESNPC, GetSex, func_t*);
-		return func(this);
+		return IsFemale() ? Sex::kFemale : Sex::kMale;
 	}
 
 
@@ -73,7 +71,7 @@ namespace RE
 	UInt32 TESNPC::GetNumBaseOverlays() const
 	{
 		using func_t = function_type_t<decltype(&TESNPC::GetNumBaseOverlays)>;
-		func_t* func = unrestricted_cast<func_t*>(GetNumActorBaseOverlays.GetUIntPtr());
+		REL::Offset<func_t*> func(Offset::TESNPC::GetNumBaseOverlays);
 		return func(this);
 	}
 
@@ -105,7 +103,7 @@ namespace RE
 	bool TESNPC::HasOverlays()
 	{
 		using func_t = function_type_t<decltype(&TESNPC::HasOverlays)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::TESNPC, HasOverlays, func_t*);
+		REL::Offset<func_t*> func(Offset::TESNPC::HasOverlays);
 		return func(this);
 	}
 
@@ -134,18 +132,18 @@ namespace RE
 	}
 
 
-	void TESNPC::SetSkinFromTint(NiColorA* a_result, TintMask* a_tintMask, UInt32 a_compute)
+	void TESNPC::SetSkinFromTint(NiColorA* a_result, TintMask* a_tintMask, bool a_fromTint)
 	{
 		using func_t = function_type_t<decltype(&TESNPC::SetSkinFromTint)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::TESNPC, SetSkinFromTint, func_t*);
-		return func(this, a_result, a_tintMask, a_compute);
+		REL::Offset<func_t*> func(Offset::TESNPC::SetSkinFromTint);
+		return func(this, a_result, a_tintMask, a_fromTint);
 	}
 
 
 	void TESNPC::UpdateNeck(BSFaceGenNiNode* a_faceNode)
 	{
 		using func_t = function_type_t<decltype(&TESNPC::UpdateNeck)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::TESNPC, UpdateNeck, func_t*);
+		REL::Offset<func_t*> func(Offset::TESNPC::UpdateNeck);
 		return func(this, a_faceNode);
 	}
 }

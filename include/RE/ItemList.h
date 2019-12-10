@@ -1,8 +1,8 @@
 #pragma once
 
-#include "RE/GFxValue.h"  // GFxValue
-#include "RE/GPtr.h"  // GPtr
-#include "RE/StandardItemData.h"  // StandardItemData
+#include "RE/GFxValue.h"
+#include "RE/GPtr.h"
+#include "RE/StandardItemData.h"
 
 
 namespace RE
@@ -16,7 +16,7 @@ namespace RE
 		struct Item
 		{
 			StandardItemData	data;	// 00
-			GFxValue			object;	// 18 - kObject
+			GFxValue			obj;	// 18 - kObject
 			UInt64				unk30;	// 30
 			UInt64				unk38;	// 38
 		};
@@ -24,8 +24,9 @@ namespace RE
 
 
 		Item*	GetSelectedItem();
+		void	Update();
 		void	Update(TESObjectREFR* a_owner);
-
+		
 
 		// members
 		GPtr<GFxMovieView>	view;		// 00
@@ -36,6 +37,9 @@ namespace RE
 		UInt8				pad51;		// 51
 		UInt16				pad52;		// 52
 		UInt32				pad54;		// 54
+
+	protected:
+		void Update_Impl(TESObjectREFR* a_owner);
 	};
 	STATIC_ASSERT(sizeof(ItemList) == 0x58);
 }

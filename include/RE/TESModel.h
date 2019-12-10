@@ -1,10 +1,8 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_TESModel
-
-#include "RE/BaseFormComponent.h"  // BaseFormComponent
-#include "RE/BSFixedString.h"  // BSFixedString
-#include "RE/FileHash.h"  // FileHash
+#include "RE/BaseFormComponent.h"
+#include "RE/BSFixedString.h"
+#include "RE/FileHash.h"
 
 
 namespace RE
@@ -32,7 +30,7 @@ namespace RE
 		// add
 		virtual const char*	GetModelName() const;								// 04 - { return modelName.c_str(); }
 		virtual void		SetModelName(const char* a_modelName);				// 05 - { modelName = name; }
-		virtual void		Unk_06(void);										// 06 - { return 0; }
+		virtual void		Unk_06(void);										// 06 - { return 0; } - set file name?
 
 
 		// members

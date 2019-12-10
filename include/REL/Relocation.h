@@ -1,85 +1,172 @@
 #pragma once
 
-#include "skse64_common/BranchTrampoline.h"  // g_branchTrampoline
+#include "skse64_common/BranchTrampoline.h"
 
-#include <cassert>  // assert
-#include <cstdlib>  // size_t
-#include <cstdint>  // uint8_t, uintptr_t
-#include <string>  // stoi
-#include <string_view>  // basic_string_view
-#include <vector>  // vector
+#include <array>
+#include <cassert>
+#include <string>
+#include <string_view>
+#include <vector>
 
-#include <libloaderapi.h>  // GetModuleHandle
+
+namespace RE
+{
+	namespace RTTI
+	{
+		struct CompleteObjectLocator;
+		struct TypeDescriptor;
+	}
+}
 
 
 namespace REL
 {
-	namespace
+	namespace Impl
 	{
+		// msvc's safety checks increase debug builds' execution time by several orders of magnitude
+		// so i've introduced this class to speed up debug builds which leverage exe scanning
+		template <class T>
+		class Array
+		{
+		public:
+			using value_type = T;
+			using size_type = std::size_t;
+			using reference = value_type&;
+			using const_reference = const value_type&;
+			using pointer = value_type*;
+
+
+			Array() = delete;
+
+
+			Array(size_type a_size) :
+				_data(0),
+				_size(a_size),
+				_owned(true)
+			{
+				_data = new value_type[_size];
+			}
+
+
+			Array(pointer a_data, size_type a_size) :
+				_data(a_data),
+				_size(a_size),
+				_owned(false)
+			{}
+
+
+			Array(const std::vector<value_type>& a_vec) :
+				_data(0),
+				_size(0),
+				_owned(true)
+			{
+				_size = a_vec.size();
+				_data = new value_type[_size];
+				for (size_type i = 0; i < _size; ++i) {
+					_data[i] = a_vec[i];
+				}
+			}
+
+
+			~Array()
+			{
+				if (_owned) {
+					delete[] _data;
+				}
+			}
+
+
+			reference operator[](size_type a_pos)
+			{
+				return _data[a_pos];
+			}
+
+
+			const_reference operator[](size_type a_pos) const
+			{
+				return _data[a_pos];
+			}
+
+
+			size_type size() const
+			{
+				return _size;
+			}
+
+		private:
+			pointer _data;
+			size_type _size;
+			bool _owned;
+		};
+
+
 		// https://en.wikipedia.org/wiki/Knuth-Morris-Pratt_algorithm
-		constexpr std::size_t NPOS = static_cast<std::size_t>(-1);
+		constexpr auto NPOS = static_cast<std::size_t>(-1);
 
+		void kmp_table(const Array<std::uint8_t>& W, Array<std::size_t>& T);
+		void kmp_table(const Array<std::uint8_t>& W, const Array<bool>& M, Array<std::size_t>& T);
 
-		void kmp_table(const std::vector<std::uint8_t>& W, const std::vector<bool>& M, std::vector<std::size_t>& T)
-		{
-			std::size_t pos = 1;
-			std::size_t cnd = 0;
-
-			T[0] = NPOS;
-
-			while (pos < W.size()) {
-				if (!M[pos] || !M[cnd] || W[pos] == W[cnd]) {
-					T[pos] = T[cnd];
-				} else {
-					T[pos] = cnd;
-					cnd = T[cnd];
-					while (cnd != NPOS && M[pos] && M[cnd] && W[pos] != W[cnd]) {
-						cnd = T[cnd];
-					}
-				}
-				++pos;
-				++cnd;
-			}
-
-			T[pos] = cnd;
-		}
-
-
-		std::size_t kmp_search(const std::basic_string_view<std::uint8_t>& S, const std::vector<std::uint8_t>& W, const std::vector<bool>& M)
-		{
-			std::size_t j = 0;
-			std::size_t k = 0;
-			std::vector<std::size_t> T(W.size() + 1);
-			kmp_table(W, M, T);
-
-			while (j < S.size()) {
-				if (!M[k] || W[k] == S[j]) {
-					++j;
-					++k;
-					if (k == W.size()) {
-						return j - k;
-					}
-				} else {
-					k = T[k];
-					if (k == NPOS) {
-						++j;
-						++k;
-					}
-				}
-			}
-
-			return 0xDEADBEEF;
-		}
+		std::size_t kmp_search(const Array<std::uint8_t>& S, const Array<std::uint8_t>& W);
+		std::size_t kmp_search(const Array<std::uint8_t>& S, const Array<std::uint8_t>& W, const Array<bool>& M);
 	}
 
 
 	class Module
 	{
 	public:
-		inline static std::uintptr_t BaseAddr()
+		struct IDs
 		{
-			return _info.base;
-		}
+			enum ID
+			{
+				kTextX,
+				kIData,
+				kRData,
+				kData,
+				kPData,
+				kTLS,
+				kTextW,
+				kGFIDs,
+
+				kTotal
+			};
+		};
+		using ID = IDs::ID;
+
+
+		class Section
+		{
+		public:
+			constexpr Section() :
+				addr(0xDEADBEEF),
+				size(0xDEADBEEF),
+				rva(0xDEADBEEF)
+			{}
+
+
+			std::uint32_t RVA() const;
+			std::uintptr_t BaseAddr() const;
+			std::size_t Size() const;
+
+
+			template <class T = void>
+			inline T* BasePtr() const
+			{
+				return reinterpret_cast<T*>(BaseAddr());
+			}
+
+		protected:
+			friend class Module;
+
+
+			std::uintptr_t addr;
+			std::size_t size;
+			std::uint32_t rva;
+		};
+
+
+		static std::uintptr_t BaseAddr();
+		static std::size_t Size();
+		static Section GetSection(ID a_id);
 
 
 		template <class T = void>
@@ -88,30 +175,45 @@ namespace REL
 			return reinterpret_cast<T*>(_info.base);
 		}
 
-
-		inline static std::uintptr_t Size()
-		{
-			return _info.size;
-		}
-
 	private:
 		struct ModuleInfo
 		{
-			ModuleInfo()
+			struct Sections
 			{
-				base = reinterpret_cast<std::uintptr_t>(GetModuleHandle(0));
-				auto dosHeader = reinterpret_cast<const IMAGE_DOS_HEADER*>(base);
-				auto ntHeader = reinterpret_cast<const IMAGE_NT_HEADERS64*>(reinterpret_cast<const std::uint8_t*>(dosHeader) + dosHeader->e_lfanew);
-				size = ntHeader->OptionalHeader.SizeOfCode;
-			}
+				struct Elem
+				{
+					constexpr Elem(std::string_view a_view, UInt32 a_flags = 0) :
+						name(a_view),
+						section(),
+						flags(a_flags)
+					{}
+
+
+					std::string_view name;
+					Section	section;
+					UInt32 flags;
+				};
+
+
+				constexpr Sections() :
+					arr{ Elem(".text", IMAGE_SCN_MEM_EXECUTE), ".idata", ".rdata", ".data", ".pdata", ".tls", Elem(".text", IMAGE_SCN_MEM_WRITE), ".gfids" }
+				{}
+
+
+				std::array<Elem, ID::kTotal> arr;
+			};
+
+
+			ModuleInfo();
 
 
 			std::uintptr_t base;
 			std::size_t size;
+			Sections sections;
 		};
 
 
-		inline static ModuleInfo _info;
+		static ModuleInfo _info;
 	};
 
 
@@ -127,9 +229,24 @@ namespace REL
 		{}
 
 
-		operator T() const
+		template <class U = T, typename std::enable_if_t<std::is_pointer<U>::value, int> = 0>
+		std::add_lvalue_reference_t<std::remove_pointer_t<U>> operator*() const
 		{
-			return unrestricted_cast<T>(GetAddress());
+			return *GetType();
+		}
+
+
+		template <class U = T, typename std::enable_if_t<std::is_pointer<U>::value, int> = 0>
+		U operator->() const
+		{
+			return GetType();
+		}
+
+
+		template <class... Args, class U = std::decay_t<T>, typename std::enable_if_t<std::is_invocable<U, Args...>::value, int> = 0>
+		std::invoke_result_t<U, Args...> operator()(Args&&... a_args) const
+		{
+			return GetType()(std::forward<Args>(a_args)...);
 		}
 
 
@@ -142,6 +259,12 @@ namespace REL
 		std::uintptr_t GetAddress() const
 		{
 			return _address;
+		}
+
+
+		std::uintptr_t GetOffset() const
+		{
+			return GetAddress() - Module::BaseAddr();
 		}
 
 	private:
@@ -186,20 +309,19 @@ namespace REL
 				}
 			}
 
-			std::basic_string_view<std::uint8_t> str(Module::BasePtr<std::uint8_t>(), Module::Size());
-			_address = kmp_search(str, sig, mask);
+			auto text = Module::GetSection(Module::ID::kTextX);
+			Impl::Array<std::uint8_t> haystack(text.BasePtr<std::uint8_t>(), text.Size());
+			Impl::Array<std::uint8_t> needle(sig.data(), sig.size());
+			Impl::Array<bool> needleMask(mask);
+			_address = Impl::kmp_search(haystack, needle, needleMask);
 
 			if (_address == 0xDEADBEEF) {
 				_FATALERROR("Sig scan failed for pattern (%s)!\n", a_sig);
 				assert(false);
 			} else {
-				_address += Module::BaseAddr();
+				_address += text.BaseAddr();
 			}
 		}
-
-
-		~DirectSig()
-		{}
 
 
 		operator T() const
@@ -218,6 +340,12 @@ namespace REL
 		{
 			assert(_address != 0xDEADBEEF);
 			return _address;
+		}
+
+
+		std::uintptr_t GetOffset() const
+		{
+			return GetAddress() - Module::BaseAddr();
 		}
 
 	protected:
@@ -240,10 +368,30 @@ namespace REL
 			auto nextOp = _address + 5;
 			_address = nextOp + *offset;
 		}
+	};
 
 
-		~IndirectSig()
-		{}
+	// scans exe for type descriptor name, then retrieves vtbl address at specified offset
+	class VTable
+	{
+	public:
+		VTable() = delete;
+		VTable(const char* a_name, std::uint32_t a_offset = 0);
+
+		void* GetPtr() const;
+		std::uintptr_t GetAddress() const;
+		std::uintptr_t GetOffset() const;
+
+	private:
+		using ID = Module::ID;
+
+
+		RE::RTTI::TypeDescriptor* LocateTypeDescriptor(const char* a_name) const;
+		RE::RTTI::CompleteObjectLocator* LocateCOL(RE::RTTI::TypeDescriptor* a_typeDesc, std::uint32_t a_offset) const;
+		void* LocateVtbl(RE::RTTI::CompleteObjectLocator* a_col) const;
+
+
+		std::uintptr_t _address;
 	};
 
 

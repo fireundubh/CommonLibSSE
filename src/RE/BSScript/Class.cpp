@@ -1,6 +1,7 @@
 #include "RE/BSScript/Class.h"
 
-#include "skse64/PapyrusVM.h"  // VMClassInfo
+#include "RE/Offsets.h"
+#include "REL/Relocation.h"
 
 
 namespace RE
@@ -36,7 +37,7 @@ namespace RE
 
 		Class::~Class()
 		{
-			Dtor();
+			ReleaseData();
 		}
 
 
@@ -241,10 +242,10 @@ namespace RE
 		}
 
 
-		void Class::Dtor()
+		void Class::ReleaseData()
 		{
-			using func_t = function_type_t<decltype(&Class::Dtor)>;
-			func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::VMClassInfo, Destroy, func_t*);
+			using func_t = function_type_t<decltype(&Class::ReleaseData)>;
+			REL::Offset<func_t*> func(Offset::BSScript::Class::ReleaseData);
 			return func(this);
 		}
 	}

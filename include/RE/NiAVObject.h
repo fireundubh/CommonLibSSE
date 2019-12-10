@@ -1,17 +1,15 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_NiAVObject
-#include "skse64/NiRTTI.h"  // NiRTTI_NiAVObject
-
-#include "RE/NiObjectNET.h"  // NiObjectNET
-#include "RE/NiSmartPointer.h"  // NiPointer
-#include "RE/NiTransform.h"  // NiTransform
+#include "RE/NiObjectNET.h"
+#include "RE/NiSmartPointer.h"
+#include "RE/NiTransform.h"
 #include "RE/NiColor.h"
 
 
 namespace RE
 {
 	class BSFixedString;
+	class NiColorA;
 	class NiNode;
 	class NiPoint3;
 	class NiProperty;
@@ -82,7 +80,9 @@ namespace RE
 		virtual void			Unk_33(void);																						// 33
 		virtual void			Unk_34(void);																						// 34 - { return; }
 
-		void UpdateNode(ControllerUpdateContext* a_ctx);
+		void	UpdateModelHair(NiColorA** a_color);
+		void	UpdateModelSkin(NiColorA** a_color);
+		void	UpdateNode(ControllerUpdateContext* a_ctx);
 
 		UInt32 UpdateModelHair(RE::NiColorA** haircolor);
 
@@ -100,7 +100,7 @@ namespace RE
 		float					unkE8;				// 0E8
 		float					unkEC;				// 0EC
 		float					unkF0;				// 0F0
-		UInt32					flags;				// 0F4 - bitfield
+		Flag					flags;				// 0F4
 		float					unkF8;				// 0F8
 		UInt32					unkFC;				// 0FC
 		float					unk100;				// 100

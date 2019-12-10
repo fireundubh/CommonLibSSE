@@ -1,20 +1,17 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_BGSPackageDataLocation
-
-#include "RE/BGSPackageDataPointerTemplate.h"  // BGSPackageDataPointerTemplate
-#include "RE/IPackageDataAIWorldLocationHandle.h"  // IPackageDataAIWorldLocationHandle
+#include "RE/BGSPackageDataPointerTemplate.h"
+#include "RE/IPackageDataAIWorldLocationHandle.h"
 
 
 namespace RE
 {
 	class PackageLocation;
 
+	//const BSFixedString kPackageDataLocationTypeName("Location");
 
-	const BSFixedString kPackageDataLocationTypeName("Location");
 
-
-	class BGSPackageDataLocation : public BGSPackageDataPointerTemplate<IPackageDataAIWorldLocationHandle, PackageLocation, kPackageDataLocationTypeName>
+	class BGSPackageDataLocation : public BGSPackageDataPointerTemplate<IPackageDataAIWorldLocationHandle, PackageLocation /*, kPackageDataLocationTypeName*/>
 	{
 	public:
 		inline static const void* RTTI = RTTI_BGSPackageDataLocation;

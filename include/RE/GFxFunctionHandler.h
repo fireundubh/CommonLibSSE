@@ -1,9 +1,7 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_GFxFunctionHandler
-
-#include "RE/GRefCountBase.h"  // GRefCountBase
-#include "RE/GStats.h"  // GStatGroups
+#include "RE/GRefCountBase.h"
+#include "RE/GStats.h"
 
 
 namespace RE
@@ -37,4 +35,5 @@ namespace RE
 		// add
 		virtual void Call(Params& a_params) = 0;	// 01
 	};
+	STATIC_ASSERT(sizeof(GFxFunctionHandler) == 0x10);
 }

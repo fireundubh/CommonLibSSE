@@ -1,9 +1,7 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_ExtraHotkey
-
-#include "RE/BSExtraData.h"  // BSExtraData
-#include "RE/ExtraDataTypes.h"  // ExtraDataType
+#include "RE/BSExtraData.h"
+#include "RE/ExtraDataTypes.h"
 
 
 namespace RE
@@ -32,7 +30,7 @@ namespace RE
 
 
 		ExtraHotkey();
-		ExtraHotkey(Hotkey a_hotkey);
+		explicit ExtraHotkey(Hotkey a_hotkey);
 		virtual ~ExtraHotkey() = default;												// 00
 
 		// override (BSExtraData)

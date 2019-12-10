@@ -1,17 +1,16 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_TESObjectREFR
-
-#include "RE/BaseExtraList.h"  // BaseExtraList
-#include "RE/BSFixedString.h"  // BSFixedString
-#include "RE/BSHandleRefObject.h"  // BSHandleRefObject
-#include "RE/BSTEvent.h"  // BSTEventSink
-#include "RE/BSTSmartPointer.h"  // BSTSmartPointer
-#include "RE/FormTypes.h"  // FormTypes
-#include "RE/IAnimationGraphManagerHolder.h"  // IAnimationGraphManagerHolder
-#include "RE/NiPoint3.h"  // NiPoint3
-#include "RE/NiSmartPointer.h"  // NiSmartPointer
-#include "RE/TESForm.h"  // TESForm
+#include "RE/BaseExtraList.h"
+#include "RE/BSFixedString.h"
+#include "RE/BSHandleRefObject.h"
+#include "BSTArray.h"
+#include "RE/BSTEvent.h"
+#include "RE/BSTSmartPointer.h"
+#include "RE/FormTypes.h"
+#include "RE/IAnimationGraphManagerHolder.h"
+#include "RE/NiPoint3.h"
+#include "RE/NiSmartPointer.h"
+#include "RE/TESForm.h"
 
 
 namespace RE
@@ -126,11 +125,22 @@ namespace RE
 
 		struct LoadedState
 		{
-			UInt8	todo[0x68];	// 00
-			NiNode*	node;		// 68
-			// ... probably more
+			BSTSmallArray<void*>	unk00;	// 00
+			UInt64					unk18;	// 18
+			UInt64					unk20;	// 20
+			UInt64					unk28;	// 28
+			UInt64					unk30;	// 30 - AIProcess::Data0B8
+			UInt64					unk38;	// 38
+			UInt64					unk40;	// 40
+			UInt64					unk48;	// 48
+			UInt64					unk50;	// 50
+			UInt64					unk58;	// 58
+			UInt64					unk60;	// 60
+			NiPointer<NiNode>		node;	// 68
+			UInt64					unk70;	// 70 - smart ptr
 		};
 		STATIC_ASSERT(offsetof(LoadedState, node) == 0x68);
+		STATIC_ASSERT(sizeof(LoadedState) == 0x78);
 
 
 		virtual ~TESObjectREFR();																																																	// 00
@@ -266,7 +276,7 @@ namespace RE
 		virtual void					Unk_94(void);																																												// 94 - { return; }
 		virtual void					Unk_95(void);																																												// 95 - { return; }
 		virtual void					Unk_96(void);																																												// 96 - related to lockpicking
-		virtual TESObjectCELL*			GetParentOrPersistentCell();																																								// 97
+		virtual TESObjectCELL*			GetParentOrPersistentCell() const;																																							// 97
 		virtual void					Unk_98(void);																																												// 98
 		virtual bool					IsDead(bool a_bleedout);																																									// 99
 		virtual BSAnimNoteReceiver*		CreateAnimNoteReceiver();																																									// 9A
@@ -279,7 +289,8 @@ namespace RE
 		virtual void					UnequipItem(UInt64 a_arg1, TESForm* a_item);																																				// A1 - { return; }
 
 
-		static bool LookupByHandle(const RefHandle& a_refHandle, TESObjectREFRPtr& a_refrOut);
+		static NiPointer<TESObjectREFR>	LookupByHandle(RefHandle a_refHandle);
+		static bool						LookupByHandle(RefHandle a_refHandle, NiPointer<TESObjectREFR>& a_refrOut);
 
 		void				ActivateRefChildren(TESObjectREFR* a_activator);
 		RefHandle			CreateRefHandle();
@@ -336,8 +347,6 @@ namespace RE
 		UInt32			pad94;			// 94
 
 	private:
-		static void CreateRefHandle_Impl(RefHandle& a_refHandle, TESObjectREFR* a_refrTo);
-
 		void MoveTo_Impl(RefHandle& a_targetHandle, TESObjectCELL* a_targetCell, TESWorldSpace* a_selfWorldSpace, NiPoint3& a_position, NiPoint3& a_rotation);
 	};
 	STATIC_ASSERT(offsetof(TESObjectREFR, extraData) == 0x70);

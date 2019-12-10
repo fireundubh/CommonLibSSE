@@ -1,10 +1,8 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_InventoryChanges__IItemChangeVisitor
-
-#include "RE/BSTList.h"  // BSSimpleList
-#include "RE/FormTypes.h"  // TESForm, TESObjectREFR
-#include "RE/TESMemoryManager.h"  // TES_HEAP_REDEFINE_NEW
+#include "RE/BSTList.h"
+#include "RE/FormTypes.h"
+#include "RE/TESMemoryManager.h"
 
 
 namespace RE
@@ -35,7 +33,6 @@ namespace RE
 		explicit InventoryChanges(TESObjectREFR* a_ref);
 
 		void	SetUniqueID(BaseExtraList* a_itemList, TESForm* a_oldForm, TESForm* a_newForm);
-		void	TransferItemUID(BaseExtraList* a_extraList, TESForm* a_oldForm, TESForm* a_newForm, UInt32 a_arg4);
 		void	InitContainer();
 		void	GenerateLeveledListChanges();
 		void	SendContainerChangedEvent(BaseExtraList* a_itemExtraList, TESObjectREFR* a_fromRefr, TESForm* a_item, SInt32 a_count);

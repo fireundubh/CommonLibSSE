@@ -1,9 +1,9 @@
 #pragma once
 
-#include "RE/ActorValues.h"  // ActorValue
-#include "RE/BSTEvent.h"  // BSTEventSink
-#include "RE/GFxValue.h"  // GFxValue
-#include "RE/IMenu.h"  // IMenu
+#include "RE/ActorValues.h"
+#include "RE/BSTEvent.h"
+#include "RE/GFxValue.h"
+#include "RE/IMenu.h"
 
 
 namespace RE
@@ -16,6 +16,9 @@ namespace RE
 		public BSTEventSink<MenuOpenCloseEvent>	// 30
 	{
 	public:
+		inline static const void* RTTI = RTTI_TrainingMenu;
+
+
 		virtual ~TrainingMenu();																									// 00
 
 		// override (IMenu)

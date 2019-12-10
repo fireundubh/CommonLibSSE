@@ -1,14 +1,18 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_TESActorBaseData
-
-#include "RE/BaseFormComponent.h"  // BaseFormComponent
-#include "RE/BSTArray.h"  // BSTArray
-#include "RE/FormTypes.h"  // BGSVoiceType, TESLevItem, TESNPC
+#include "RE/BaseFormComponent.h"
+#include "RE/BSTArray.h"
 
 
 namespace RE
 {
+	class BGSVoiceType;
+	class TESFaction;
+	class TESForm;
+	class TESLevItem;
+	class TESNPC;
+
+
 	class TESActorBaseData : public BaseFormComponent	// ACBS
 	{
 	public:
@@ -83,21 +87,21 @@ namespace RE
 		virtual bool	IsInvulnerable();	// 06 - { test flags, 80000000h; }
 		virtual void	Unk_07(void);		// 07 - { return 1; }
 
-		bool			IsFemale();
-		bool			IsPreset();
-		bool			IsEssential();
-		bool			Respawns();
-		bool			HasAutoCalcStats();
-		bool			IsUnique();
-		bool			AffectsStealthMeter();
-		bool			HasPCLevelMult();
-		bool			UsesTemplate();
-		bool			Protected();
-		bool			IsSummonable();
-		bool			Bleeds();
-		bool			HasBleedoutOverride();
-		bool			UsesOppositeGenderAnims();
-		bool			IsSimpleActor();
+		bool			IsFemale() const;
+		bool			IsPreset() const;
+		bool			IsEssential() const;
+		bool			Respawns() const;
+		bool			HasAutoCalcStats() const;
+		bool			IsUnique() const;
+		bool			AffectsStealthMeter() const;
+		bool			HasPCLevelMult() const;
+		bool			UsesTemplate() const;
+		bool			Protected() const;
+		bool			IsSummonable() const;
+		bool			Bleeds() const;
+		bool			HasBleedoutOverride() const;
+		bool			UsesOppositeGenderAnims() const;
+		bool			IsSimpleActor() const;
 
 
 		// members

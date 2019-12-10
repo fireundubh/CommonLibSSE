@@ -1,10 +1,8 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_ExtraForcedTarget
-
-#include "RE/BSExtraData.h"  // BSExtraData
-#include "RE/ExtraDataTypes.h"  // ExtraDataType
-#include "RE/NiSmartPointer.h"  // NiPointer
+#include "RE/BSExtraData.h"
+#include "RE/ExtraDataTypes.h"
+#include "RE/NiSmartPointer.h"
 
 
 namespace RE
@@ -22,7 +20,7 @@ namespace RE
 
 
 		ExtraForcedTarget();
-		ExtraForcedTarget(RefHandle a_handle);
+		explicit ExtraForcedTarget(RefHandle a_handle);
 		virtual ~ExtraForcedTarget() = default;											// 00
 
 		// override (BSExtraData)

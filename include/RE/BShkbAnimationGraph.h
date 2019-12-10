@@ -1,15 +1,13 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_BShkbAnimationGraph
-
-#include "RE/BSFixedString.h"  // BSFixedString
-#include "RE/BSIntrusiveRefCounted.h"  // BSIntrusiveRefCounted
-#include "RE/BSIRagdollDriver.h"  // BSIRagdollDriver
-#include "RE/BSTArray.h"  // BSTArray
-#include "RE/BSTEvent.h"  // BSTEventSource
-#include "RE/BSTSmartPointer.h"  // BSSmartPointer
-#include "RE/FileHash.h"  // FileHash
-#include "RE/hkbCharacter.h"  // hkbCharacter
+#include "RE/BSFixedString.h"
+#include "RE/BSIntrusiveRefCounted.h"
+#include "RE/BSIRagdollDriver.h"
+#include "RE/BSTArray.h"
+#include "RE/BSTEvent.h"
+#include "RE/BSTSmartPointer.h"
+#include "RE/FileHash.h"
+#include "RE/hkbCharacter.h"
 
 
 namespace RE
@@ -52,8 +50,7 @@ namespace RE
 		virtual void	Unk_0C(void) override;					// 0C
 		virtual void	Unk_0D(void) override;					// 0D
 
-		BSTEventSource<BSTransformDeltaEvent>*	GetBSTransformDeltaEventSource();
-		BSTEventSource<BSAnimationGraphEvent>*	GetBSAnimationGraphEventSource();
+		template <class T> inline BSTEventSource<T>* GetEventSource();
 
 
 		// members
@@ -82,4 +79,11 @@ namespace RE
 		UInt64							unk248;			// 248
 	};
 	STATIC_ASSERT(sizeof(BShkbAnimationGraph) == 0x250);
+
+
+	template <class T>
+	BSTEventSource<T>* BShkbAnimationGraph::GetEventSource()
+	{
+		return static_cast<BSTEventSource<T>*>(this);
+	}
 }

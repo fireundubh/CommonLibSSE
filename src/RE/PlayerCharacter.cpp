@@ -1,9 +1,7 @@
 #include "RE/PlayerCharacter.h"
 
-#include "skse64/GameReferences.h"  // PlayerCharacter
-
 #include "RE/Offsets.h"
-#include "RE/TESObjectREFR.h"  // TESObjectREFR
+#include "RE/TESObjectREFR.h"
 #include "REL/Relocation.h"
 
 
@@ -19,7 +17,8 @@ namespace RE
 
 	PlayerCharacter* PlayerCharacter::GetSingleton()
 	{
-		return reinterpret_cast<PlayerCharacter*>(*g_thePlayer);
+		REL::Offset<NiPointer<PlayerCharacter>*> singleton(Offset::PlayerCharacter::Singleton);
+		return singleton->get();
 	}
 
 
@@ -33,8 +32,7 @@ namespace RE
 
 	Actor* PlayerCharacter::GetActorInFavorState() const
 	{
-		RE::TESObjectREFRPtr ref;
-		RE::TESObjectREFR::LookupByHandle(actorInFavorState, ref);
+		auto ref = TESObjectREFR::LookupByHandle(actorInFavorState);
 		return static_cast<Actor*>(ref.get());
 	}
 
@@ -42,7 +40,7 @@ namespace RE
 	float PlayerCharacter::GetArmorValue(InventoryEntryData* a_form)
 	{
 		using func_t = function_type_t<decltype(&PlayerCharacter::GetArmorValue)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::PlayerCharacter, GetArmorValue, func_t*);
+		REL::Offset<func_t*> func(Offset::PlayerCharacter::GetArmorValue);
 		return func(this, a_form);
 	}
 
@@ -50,24 +48,21 @@ namespace RE
 	float PlayerCharacter::GetDamage(InventoryEntryData* a_form)
 	{
 		using func_t = function_type_t<decltype(&PlayerCharacter::GetDamage)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::PlayerCharacter, GetDamage, func_t*);
+		REL::Offset<func_t*> func(Offset::PlayerCharacter::GetDamage);
 		return func(this, a_form);
 	}
 
 
 	NiPointer<TESObjectREFR> PlayerCharacter::GetGrabbedRef()
 	{
-		TESObjectREFRPtr refPtr;
-		UInt32 handle = grabbedHandle;
-		TESObjectREFR::LookupByHandle(handle, refPtr);
-		return refPtr;
+		return TESObjectREFR::LookupByHandle(grabbedHandle);
 	}
 
 
 	UInt32 PlayerCharacter::GetNumTints(UInt32 a_tintType)
 	{
 		using func_t = function_type_t<decltype(&PlayerCharacter::GetNumTints)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::PlayerCharacter, GetNumTints, func_t*);
+		REL::Offset<func_t*> func(Offset::PlayerCharacter::GetNumTints);
 		return func(this, a_tintType);
 	}
 
@@ -96,7 +91,7 @@ namespace RE
 	TintMask* PlayerCharacter::GetTintMask(UInt32 a_tintType, UInt32 a_index)
 	{
 		using func_t = function_type_t<decltype(&PlayerCharacter::GetTintMask)>;
-		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::PlayerCharacter, GetTintMask, func_t*);
+		REL::Offset<func_t*> func(Offset::PlayerCharacter::GetTintMask);
 		return func(this, a_tintType, a_index);
 	}
 

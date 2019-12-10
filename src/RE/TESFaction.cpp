@@ -1,7 +1,7 @@
 #include "RE/TESFaction.h"
 
-#include "RE/BGSListForm.h"  // BGSListForm
-#include "RE/PlayerCharacter.h"  // PlayerCharacter
+#include "RE/BGSListForm.h"
+#include "RE/PlayerCharacter.h"
 
 
 namespace RE
@@ -104,6 +104,12 @@ namespace RE
 	bool TESFaction::HasSpecialCombatState() const
 	{
 		return (flags & Flag::kSpecialCombat) != Flag::kNone;
+	}
+
+
+	bool TESFaction::HasStealMultiplier() const
+	{
+		return crimeValues.stealMultiplier > 0.0;
 	}
 
 

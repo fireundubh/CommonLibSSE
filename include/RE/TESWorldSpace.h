@@ -1,17 +1,15 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_TESWorldSpace
-
-#include "RE/BSString.h"  // BSString
-#include "RE/BSTArray.h"  // BSTArray
-#include "RE/BSTHashMap.h"  // BSTHashMap
-#include "RE/BSTList.h"  // BSSimpleList
-#include "RE/FormTypes.h"  // FormType, TESForm
-#include "RE/NiTPointerMap.h"  // NiTPointerMap
-#include "RE/TESForm.h"  // FormType
-#include "RE/TESFullName.h"  // TESFullName
-#include "RE/TESModel.h"  // TESModel
-#include "RE/TESTexture.h"  // TESTexture
+#include "RE/BSString.h"
+#include "RE/BSTArray.h"
+#include "RE/BSTHashMap.h"
+#include "RE/BSTList.h"
+#include "RE/FormTypes.h"
+#include "RE/NiTPointerMap.h"
+#include "RE/TESForm.h"
+#include "RE/TESFullName.h"
+#include "RE/TESModel.h"
+#include "RE/TESTexture.h"
 
 
 namespace RE
@@ -153,6 +151,24 @@ namespace RE
 		STATIC_ASSERT(sizeof(LandData) == 0x8);
 
 
+		virtual ~TESWorldSpace();													// 00
+
+		// override (TESForm)
+		virtual void		InitDefaults() override;								// 04
+		virtual void		ReleaseManagedData() override;							// 05
+		virtual bool		LoadForm(TESFile* a_mod) override;						// 06
+		virtual void		Unk_07(void) override;									// 07
+		virtual TESForm*	DupulicateForm(void* a_arg1, void* a_arg2) override;	// 09
+		virtual void		Unk_0C(void) override;									// 0C
+		virtual void		InitItem() override;									// 13
+		virtual const char*	GetEditorID() override;									// 32 - { return editorID.c_str(); }
+		virtual bool		SetEditorID(const char* a_str) override;				// 33 - { editorID = a_str; }
+		virtual void		Unk_34(void) override;									// 34 - { return 1; }
+		virtual void		Unk_36(void) override;									// 36
+
+		bool HasMaxHeightData() const;
+
+
 		BSTHashMap<UnkKey, UnkValue>							unk058;						// 058
 		TESObjectCELL*											cell;						// 088
 		void*													unk90;						// 090
@@ -197,7 +213,8 @@ namespace RE
 		UInt64													unk2E0;						// 2E0
 		BSTHashMap<UnkKey, UnkValue>							unk2E8;						// 2E8
 		BSTHashMap<UnkKey, UnkValue>							unk318;						// 318
-		UInt64													unk348;						// 348
+		float													northRotation;				// 348
+		UInt32													unk34C;						// 34C
 		UInt8*													maxHeightData;				// 350 - MHDT (it's an array, but idk how big it is)
 	};
 	STATIC_ASSERT(offsetof(TESWorldSpace, cell) == 0x088);

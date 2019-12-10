@@ -1,17 +1,14 @@
 #include "RE/ExtraRank.h"
 
-#include "skse64/GameExtraData.h"  // s_ExtraRankVtbl
+#include "RE/Offsets.h"
+#include "REL/Relocation.h"
 
 
 namespace RE
 {
 	ExtraRank::ExtraRank() :
-		BSExtraData(),
-		rank(0),
-		pad14(0)
-	{
-		((std::uintptr_t*)this)[0] = s_ExtraRankVtbl.GetUIntPtr();
-	}
+		ExtraRank(0)
+	{}
 
 
 	ExtraRank::ExtraRank(UInt32 a_rank) :
@@ -19,7 +16,8 @@ namespace RE
 		rank(a_rank),
 		pad14(0)
 	{
-		((std::uintptr_t*)this)[0] = s_ExtraRankVtbl.GetUIntPtr();
+		REL::Offset<std::uintptr_t> vtbl(Offset::ExtraRank::Vtbl);
+		((std::uintptr_t*)this)[0] = vtbl.GetAddress();
 	}
 
 

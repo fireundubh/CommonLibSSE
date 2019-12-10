@@ -1,11 +1,8 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_NiNode
-#include "skse64/NiRTTI.h"  // NiRTTI_NiNode
-
-#include "RE/NiAVObject.h"  // NiAVObject
-#include "RE/NiSmartPointer.h"  // NiPointer
-#include "RE/NiTArray.h"  // NiTObjectArray
+#include "RE/NiAVObject.h"
+#include "RE/NiSmartPointer.h"
+#include "RE/NiTArray.h"
 
 
 namespace RE
@@ -52,13 +49,16 @@ namespace RE
 		virtual void			Unk_3C(void);																								// 3C
 		virtual void			UpdateUpwardPass();																							// 3D
 
-		static NiNode* Create(UInt32 a_arrBufLen = 0);
+		static NiNode* Create(UInt16 a_arrBufLen = 0);
 
 		bool SetMotionType(UInt32 a_motionType, UInt8 a_arg2, UInt8 a_arg3, bool a_allowActivate);
 
 
 		// members
 		NiTObjectArray<NiPointer<NiAVObject>> children;	// 110
+
+	protected:
+		NiNode* Ctor(UInt16 a_arrBufLen);
 	};
 	STATIC_ASSERT(sizeof(NiNode) == 0x128);
 }

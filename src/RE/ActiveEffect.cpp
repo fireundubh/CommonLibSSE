@@ -1,9 +1,9 @@
 #include "RE/ActiveEffect.h"
 
-#include "RE/Actor.h"  // Actor
-#include "RE/Effect.h"  // Effect
+#include "RE/Actor.h"
+#include "RE/Effect.h"
 #include "RE/Offsets.h"
-#include "RE/TESObjectREFR.h"  // TESObjectREFR
+#include "RE/TESObjectREFR.h"
 #include "REL/Relocation.h"
 
 
@@ -31,16 +31,14 @@ namespace RE
 
 	Actor* ActiveEffect::GetCasterActor()
 	{
-		RE::TESObjectREFRPtr ref;
-		RE::TESObjectREFR::LookupByHandle(casterActor, ref);
+		auto ref = TESObjectREFR::LookupByHandle(casterActor);
 		return static_cast<Actor*>(ref.get());
 	}
 
 
 	const Actor* ActiveEffect::GetCasterActor() const
 	{
-		RE::TESObjectREFRPtr ref;
-		RE::TESObjectREFR::LookupByHandle(casterActor, ref);
+		auto ref = TESObjectREFR::LookupByHandle(casterActor);
 		return static_cast<const Actor*>(ref.get());
 	}
 

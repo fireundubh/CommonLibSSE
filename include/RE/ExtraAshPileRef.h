@@ -1,9 +1,7 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_ExtraAshPileRef
-
-#include "RE/BSExtraData.h"  // BSExtraData
-#include "RE/ExtraDataTypes.h"  // ExtraDataType
+#include "RE/BSExtraData.h"
+#include "RE/ExtraDataTypes.h"
 
 
 namespace RE
@@ -17,7 +15,9 @@ namespace RE
 		enum { kExtraTypeID = ExtraDataType::kAshPileRef };
 
 
-		virtual ~ExtraAshPileRef();						// 00
+		ExtraAshPileRef();
+		explicit ExtraAshPileRef(RefHandle a_refHandle);
+		virtual ~ExtraAshPileRef() = default;			// 00
 
 		// override (BSExtraData)
 		virtual ExtraDataType GetType() const override;	// 01 - { return kAshPileRef; }

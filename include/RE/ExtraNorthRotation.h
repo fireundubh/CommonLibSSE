@@ -1,9 +1,7 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_ExtraNorthRotation
-
-#include "RE/BSExtraData.h"  // BSExtraData
-#include "RE/ExtraDataTypes.h"  // ExtraDataType
+#include "RE/BSExtraData.h"
+#include "RE/ExtraDataTypes.h"
 
 
 namespace RE
@@ -24,7 +22,8 @@ namespace RE
 
 
 		// members
-		UInt64 unk10;	// 10
+		float	rotation;	// 10
+		UInt32	pad14;	// 14
 	};
 	STATIC_ASSERT(sizeof(ExtraNorthRotation) == 0x18);
 }
