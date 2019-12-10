@@ -28,9 +28,9 @@ namespace RE
 	}
 
 
-	void BSLightingShaderMaterialBase::CopyFrom(BSLightingShaderMaterialBase* otherMaterial)
+	void BSLightingShaderMaterialBase::CopyBaseMaterial(BSLightingShaderMaterialBase* otherMaterial)
 	{
-		using func_t = function_type_t<decltype(&BSLightingShaderMaterialBase::CopyFrom)>;
+		using func_t = function_type_t<decltype(&BSLightingShaderMaterialBase::CopyBaseMaterial)>;
 		func_t* func = EXTRACT_SKSE_MEMBER_FN_ADDR(::BSLightingShaderMaterial, CopyFrom, func_t*);
 		return func(this, otherMaterial);
 	}

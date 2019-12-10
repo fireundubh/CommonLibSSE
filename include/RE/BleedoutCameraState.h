@@ -11,10 +11,7 @@ namespace RE
 	class NiNode;
 
 
-	class BleedoutCameraState :
-		public ThirdPersonState,
-		public TESCameraState,
-		public PlayerInputHandler
+	class BleedoutCameraState : public ThirdPersonState
 	{
 	public:
 		virtual ~BleedoutCameraState();

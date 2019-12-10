@@ -14,6 +14,4 @@ namespace RE
 	bool		WorldPtToScreenPt3(float a_worldToCamMatrix[4][4], NiRect<float>& a_port, const NiPoint3& a_in, float& a_xOut, float& a_yOut, float& a_zOut, float a_zeroTolerance);
 
 	void		func2E9950(void); //FEC - Frame Hook
-	UInt32		func5C1AF0(void); //EE - Frame Hook
-
 }

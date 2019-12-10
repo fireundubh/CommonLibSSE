@@ -6,7 +6,7 @@
 namespace RE
 {
 	namespace Offset
-	{	
+	{
 		namespace ActivateHandler
 		{
 			// ??_7ActivateHandler@@6B@
@@ -39,16 +39,16 @@ namespace RE
 			constexpr std::uintptr_t IsRunning = 0x005D1190;					// 1_5_80
 			// IndirectSig: E8 ? ? ? ? EB 1D 8B 4D 7F
 			constexpr std::uintptr_t SendStealAlarm = 0x005DD770;				// 1_5_80
-									
+
 			constexpr std::uintptr_t EnableAI = 0x005E44F0;						// 1_5_80
- 
+
 			// E8 ? ? ? ? 48 8B 54 24 68 3B D8 
 			constexpr std::uintptr_t GetSoulSize = 0x006348A0;					// 1_5_80
-			
+
 			constexpr std::uintptr_t Decapitate = 0x005F2530;					// 1_5_80
-			
+
 			constexpr std::uintptr_t GetCurrentPackageInternal = 0x005FBA20;	// 1_5_80
-			
+
 			constexpr std::uintptr_t InstantKill = 0x005FB640;					// 1_5_80
 
 			// ??_7Actor@@6B@
@@ -154,8 +154,10 @@ namespace RE
 
 		namespace BSTaskPool
 		{
+			constexpr std::uintptr_t Singleton = 0x02F38978;	// 1_5_80
+
 			constexpr std::uintptr_t func2E9950 = 0x002E9950;	// 1_5_80
-			
+
 			constexpr std::uintptr_t func5C1AF0 = 0x005C1AF0;	// 1_5_80
 		}
 
@@ -165,6 +167,11 @@ namespace RE
 			constexpr std::uintptr_t Singleton = 0x01EC0A80;	// 1_5_80
 		}
 
+		namespace BGSFootstepManager
+		{
+			//
+			constexpr std::uintptr_t Singleton = 0x02F27150;	// 1_5_80
+		}
 
 		namespace BSWin32SaveDataSystemUtility
 		{

@@ -7,19 +7,18 @@
 
 namespace RE
 {
-	class BSLightingShaderMaterialMultiLayerParallax : public BSLightingShaderMaterialBase
+	class BSLightingShaderMaterialParallaxOcc : public BSLightingShaderMaterialBase
 	{
 	public:
-		inline static const void* RTTI = RTTI_BSLightingShaderMaterialMultiLayerParallax;
+		inline static const void* RTTI = RTTI_BSLightingShaderMaterialParallaxOcc;
 
-
-		virtual ~BSLightingShaderMaterialMultiLayerParallax();						// 00
+		virtual ~BSLightingShaderMaterialParallaxOcc();						// 00
 
 		// override (BSShaderMaterial)
 		virtual BSShaderMaterial*   Create() override;						// 01
 		virtual void				Copy(BSShaderMaterial* a_src) override;	// 02
 		virtual void				Unk_04(void) override;					// 04
-		virtual Type				GetType() const override;				// 06 - { return Type::kMLP; }
+		virtual Type				GetType() const override;				// 06 - { return Type::kParallaxOcculsion; }
 
 		// override (BSLightingShaderMaterialBase)
 		virtual void				SetTexture(UInt32 index, BSTextureSet* texture, SInt32 unk1) override;									//08
@@ -31,14 +30,10 @@ namespace RE
 
 
 		// members
-		NiPointer<NiTexture> spLayerTexture;			// A0
-		NiPointer<NiTexture> spEnvTexture;				// A8
-		NiPointer<NiTexture> spEnvMaskTexture;			// B0
-		float fParallaxLayerThickness;					// B8
-		float fParallaxRefractionScale;					// BC
-		float fParallaxInnerLayerUScale;				// C0
-		float fParallaxInnerLayerVScale;				// C4
-		float fEnvmapScale;								// C8
+		NiPointer<NiTexture> spHeightTexture;
+		float fParallaxOccMaxPasses;
+		float fParallaxOccScale;
+
 	};
-	STATIC_ASSERT(sizeof(BSLightingShaderMaterialMultiLayerParallax) == 0xD0);
+	STATIC_ASSERT(sizeof(BSLightingShaderMaterialParallaxOcc) == 0xB0);
 }

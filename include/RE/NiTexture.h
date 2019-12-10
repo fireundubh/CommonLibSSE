@@ -8,6 +8,8 @@
 
 namespace RE
 {
+	NiSmartPointer(NiTexture);
+	
 	class NiTexture : public NiObject
 	{
 	public:

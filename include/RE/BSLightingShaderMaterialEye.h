@@ -3,23 +3,23 @@
 #include "skse64/GameRTTI.h"  // RTTI_BSLightingShaderMaterialHairTint
 #include "RE/BSTextureSet.h"  // NiSourceTexture
 #include "RE/BSLightingShaderMaterialBase.h"  // BSLightingShaderMaterialBase
+#include "RE/NiPoint3.h" // NiPoint3
 
 
 namespace RE
 {
-	class BSLightingShaderMaterialMultiLayerParallax : public BSLightingShaderMaterialBase
+	class BSLightingShaderMaterialEye : public BSLightingShaderMaterialBase
 	{
 	public:
-		inline static const void* RTTI = RTTI_BSLightingShaderMaterialMultiLayerParallax;
+		inline static const void* RTTI = RTTI_BSLightingShaderMaterialEye;
 
-
-		virtual ~BSLightingShaderMaterialMultiLayerParallax();						// 00
+		virtual ~BSLightingShaderMaterialEye();						// 00
 
 		// override (BSShaderMaterial)
-		virtual BSShaderMaterial*   Create() override;						// 01
+		virtual BSShaderMaterial*	Create() override;						// 01
 		virtual void				Copy(BSShaderMaterial* a_src) override;	// 02
 		virtual void				Unk_04(void) override;					// 04
-		virtual Type				GetType() const override;				// 06 - { return Type::kMLP; }
+		virtual Type				GetType() const override;				// 06 - { return Type::kEye; }
 
 		// override (BSLightingShaderMaterialBase)
 		virtual void				SetTexture(UInt32 index, BSTextureSet* texture, SInt32 unk1) override;									//08
@@ -31,14 +31,11 @@ namespace RE
 
 
 		// members
-		NiPointer<NiTexture> spLayerTexture;			// A0
-		NiPointer<NiTexture> spEnvTexture;				// A8
-		NiPointer<NiTexture> spEnvMaskTexture;			// B0
-		float fParallaxLayerThickness;					// B8
-		float fParallaxRefractionScale;					// BC
-		float fParallaxInnerLayerUScale;				// C0
-		float fParallaxInnerLayerVScale;				// C4
-		float fEnvmapScale;								// C8
+		NiPointer<NiTexture> spEnvTexture;
+		NiPointer<NiTexture> spEnvMaskTexture;
+		float fEnvmapScale;
+		NiPoint3 kEyeCenter[2];
+
 	};
-	STATIC_ASSERT(sizeof(BSLightingShaderMaterialMultiLayerParallax) == 0xD0);
+	STATIC_ASSERT(sizeof(BSLightingShaderMaterialEye) == 0xD0);
 }

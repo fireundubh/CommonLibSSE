@@ -272,7 +272,7 @@ namespace SKSE
 
 		UInt32		infoVersion;
 		const char*	name;
-		UInt32		version;
+		float		version;
 	};
 	STATIC_ASSERT(PluginInfo::kVersion == ::PluginInfo::kInfoVersion);
 	STATIC_ASSERT(offsetof(PluginInfo, infoVersion) == offsetof(::PluginInfo, infoVersion));

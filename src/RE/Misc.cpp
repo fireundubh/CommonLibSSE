@@ -48,6 +48,7 @@ namespace RE
 		return func(a_worldToCamMatrix, a_port, a_in, a_xOut, a_yOut, a_zOut, a_zeroTolerance);
 	}
 
+
 	void func2E9950(void) //FEC - Frame Hook
 	{
 		using func_t = function_type_t<decltype(&func2E9950)>;
@@ -55,10 +56,4 @@ namespace RE
 		return func();
 	}
 
-	UInt32 func5C1AF0(void) //EE - Frame Hook
-	{
-		using func_t = function_type_t<decltype(&func5C1AF0)>;
-		REL::Offset<func_t*> func(Offset::BSTaskPool::func5C1AF0);
-		return func();
-	}
 }

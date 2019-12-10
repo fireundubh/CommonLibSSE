@@ -170,6 +170,8 @@
     <ClCompile Include="src\RE\BGSDefaultObjectManager.cpp" />
     <ClCompile Include="src\RE\BGSEntryPointFunctionDataActivateChoice.cpp" />
     <ClCompile Include="src\RE\BGSEntryPointPerkEntry.cpp" />
+    <ClCompile Include="src\RE\BGSFootstepEvent.cpp" />
+    <ClCompile Include="src\RE\BGSFootstepManager.cpp" />
     <ClCompile Include="src\RE\BGSHeadPart.cpp" />
     <ClCompile Include="src\RE\BGSKeywordForm.cpp" />
     <ClCompile Include="src\RE\BGSListForm.cpp" />
@@ -205,6 +207,7 @@
     <ClCompile Include="src\RE\BSShaderTextureSet.cpp" />
     <ClCompile Include="src\RE\BSString.cpp" />
     <ClCompile Include="src\RE\BSSystemFileStorage.cpp" />
+    <ClCompile Include="src\RE\BSTaskPool.cpp" />
     <ClCompile Include="src\RE\BSTimeManager.cpp" />
     <ClCompile Include="src\RE\BSWin32SaveDataSystemUtility.cpp" />
     <ClCompile Include="src\RE\ChestsLooted.cpp" />
@@ -414,6 +417,8 @@
     <ClInclude Include="include\RE\BGSEntryPointFunctionDataOneValue.h" />
     <ClInclude Include="include\RE\BGSExplosion.h" />
     <ClInclude Include="include\RE\BGSFootstep.h" />
+    <ClInclude Include="include\RE\BGSFootstepEvent.h" />
+    <ClInclude Include="include\RE\BGSFootstepManager.h" />
     <ClInclude Include="include\RE\BGSFootstepSet.h" />
     <ClInclude Include="include\RE\BGSHazard.h" />
     <ClInclude Include="include\RE\BGSIdleCollection.h" />
@@ -568,7 +573,17 @@
     <ClInclude Include="include\RE\BSLensFlareRenderData.h" />
     <ClInclude Include="include\RE\BSLightingShaderMaterial.h" />
     <ClInclude Include="include\RE\BSLightingShaderMaterialBase.h" />
+    <ClInclude Include="include\RE\BSLightingShaderMaterialEnvmap.h" />
+    <ClInclude Include="include\RE\BSLightingShaderMaterialEye.h" />
+    <ClInclude Include="include\RE\BSLightingShaderMaterialFacegen.h" />
+    <ClInclude Include="include\RE\BSLightingShaderMaterialFacegenTint.h" />
+    <ClInclude Include="include\RE\BSLightingShaderMaterialGlowmap.h" />
     <ClInclude Include="include\RE\BSLightingShaderMaterialHairTint.h" />
+    <ClInclude Include="include\RE\BSLightingShaderMaterialLandscape.h" />
+    <ClInclude Include="include\RE\BSLightingShaderMaterialMultiLayerParallax.h" />
+    <ClInclude Include="include\RE\BSLightingShaderMaterialParallax.h" />
+    <ClInclude Include="include\RE\BSLightingShaderMaterialParallaxOcc.h" />
+    <ClInclude Include="include\RE\BSLightingShaderMaterialSnow.h" />
     <ClInclude Include="include\RE\BSLightingShaderProperty.h" />
     <ClInclude Include="include\RE\BSMaterialObject.h" />
     <ClInclude Include="include\RE\BSMusicEvent.h" />
@@ -651,6 +666,7 @@
     <ClInclude Include="include\RE\BSString.h" />
     <ClInclude Include="include\RE\BSSystemFileStorage.h" />
     <ClInclude Include="include\RE\BSTAnimationGraphDataChannel.h" />
+    <ClInclude Include="include\RE\BSTaskPool.h" />
     <ClInclude Include="include\RE\BSTCaseInsensitiveStringMap.h" />
     <ClInclude Include="include\RE\BSTDerivedCreator.h" />
     <ClInclude Include="include\RE\BSTempEffect.h" />
