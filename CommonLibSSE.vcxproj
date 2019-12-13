@@ -157,6 +157,7 @@
     <None Include="exports.def" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\NiBooleanExtraData.cpp" />
     <ClCompile Include="src\REL\Relocation.cpp" />
     <ClCompile Include="src\RE\ActiveEffect.cpp" />
     <ClCompile Include="src\RE\Actor.cpp" />
@@ -233,6 +234,7 @@
     <ClCompile Include="src\RE\ExtraRank.cpp" />
     <ClCompile Include="src\RE\ExtraSoul.cpp" />
     <ClCompile Include="src\RE\ExtraUniqueID.cpp" />
+    <ClCompile Include="src\RE\FaceGen.cpp" />
     <ClCompile Include="src\RE\FxDelegate.cpp" />
     <ClCompile Include="src\RE\FxDelegateArgs.cpp" />
     <ClCompile Include="src\RE\GameSettingCollection.cpp" />
@@ -281,7 +283,9 @@
     <ClCompile Include="src\RE\NiColorKey.cpp" />
     <ClCompile Include="src\RE\NiExtraData.cpp" />
     <ClCompile Include="src\RE\NiFloatData.cpp" />
+    <ClCompile Include="src\RE\NiFloatExtraData.cpp" />
     <ClCompile Include="src\RE\NiFloatKey.cpp" />
+    <ClCompile Include="src\RE\NiIntegersExtraData.cpp" />
     <ClCompile Include="src\RE\NiMath.cpp" />
     <ClCompile Include="src\RE\NiMatrix3.cpp" />
     <ClCompile Include="src\RE\NiMemManager.cpp" />
@@ -289,6 +293,7 @@
     <ClCompile Include="src\RE\NiRefObject.cpp" />
     <ClCompile Include="src\RE\NiRTTI.cpp" />
     <ClCompile Include="src\RE\NiSkinInstance.cpp" />
+    <ClCompile Include="src\RE\NiStringsExtraData.cpp" />
     <ClCompile Include="src\RE\NiSystem.cpp" />
     <ClCompile Include="src\RE\NiTexture.cpp" />
     <ClCompile Include="src\RE\RemoveCallbackVisitor.cpp" />
@@ -369,7 +374,6 @@
     <ClCompile Include="src\RE\GFxTranslator.cpp" />
     <ClCompile Include="src\RE\UIManager.cpp" />
     <ClCompile Include="src\RE\UIStringHolder.cpp" />
-    <ClCompile Include="src\RE\Unk141EBEAD0.cpp" />
     <ClCompile Include="src\SKSE\API.cpp" />
     <ClCompile Include="src\SKSE\Interfaces.cpp" />
     <ClCompile Include="src\SKSE\Logger.cpp" />
@@ -895,6 +899,7 @@
     <ClInclude Include="include\RE\ExtraWeaponIdleSound.h" />
     <ClInclude Include="include\RE\ExtraWorn.h" />
     <ClInclude Include="include\RE\ExtraWornLeft.h" />
+    <ClInclude Include="include\RE\FaceGen.h" />
     <ClInclude Include="include\RE\FaderMenu.h" />
     <ClInclude Include="include\RE\FavoritesHandler.h" />
     <ClInclude Include="include\RE\FavoritesMenu.h" />
@@ -1169,6 +1174,7 @@
     <ClInclude Include="include\RE\NiAVObject.h" />
     <ClInclude Include="include\RE\NiBinaryStream.h" />
     <ClInclude Include="include\RE\NiBoneMatrixSetterI.h" />
+    <ClInclude Include="include\RE\NiBooleanExtraData.h" />
     <ClInclude Include="include\RE\NiBound.h" />
     <ClInclude Include="include\RE\NiCamera.h" />
     <ClInclude Include="include\RE\NiColorData.h" />
@@ -1178,11 +1184,13 @@
     <ClInclude Include="include\RE\NiCullingProcess.h" />
     <ClInclude Include="include\RE\NiExtraData.h" />
     <ClInclude Include="include\RE\NiFloatData.h" />
+    <ClInclude Include="include\RE\NiFloatExtraData.h" />
     <ClInclude Include="include\RE\NiFloatInterpolator.h" />
     <ClInclude Include="include\RE\NiFloatKey.h" />
     <ClInclude Include="include\RE\NiFrustum.h" />
     <ClInclude Include="include\RE\NiFrustumPlanes.h" />
     <ClInclude Include="include\RE\NiGeometryData.h" />
+    <ClInclude Include="include\RE\NiIntegersExtraData.h" />
     <ClInclude Include="include\RE\NiInterpolator.h" />
     <ClInclude Include="include\RE\NiKeyBasedInterpolator.h" />
     <ClInclude Include="include\RE\NiMath.h" />
@@ -1414,6 +1422,7 @@
     <ClInclude Include="include\RE\TESSoulGem.h" />
     <ClInclude Include="include\RE\TESSound.h" />
     <ClInclude Include="include\RE\TESSpellList.h" />
+    <ClInclude Include="include\RE\TESSwitchRaceCompleteEvent.h" />
     <ClInclude Include="include\RE\TESTexture.h" />
     <ClInclude Include="include\RE\TESTexture1024.h" />
     <ClInclude Include="include\RE\TESTopic.h" />
@@ -1440,7 +1449,6 @@
     <ClInclude Include="include\RE\BSTCreateFactoryManager.h" />
     <ClInclude Include="include\RE\UISaveLoadManager.h" />
     <ClInclude Include="include\RE\UIStringHolder.h" />
-    <ClInclude Include="include\RE\Unk141EBEAD0.h" />
     <ClInclude Include="include\RE\UserEventEnabledEvent.h" />
     <ClInclude Include="include\RE\TESFile.h" />
     <ClInclude Include="include\RE\ValueModifierEffect.h" />

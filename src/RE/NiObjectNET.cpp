@@ -24,7 +24,8 @@ namespace RE
 
 		if (!a_extra->GetName().empty()) {
 			a_extra->SetName(a_key);
-		} else if (a_key != a_extra->GetName()) {
+		}
+		else if (a_key != a_extra->GetName()) {
 			return false;
 		}
 
@@ -61,7 +62,8 @@ namespace RE
 				a_extra->SetName(generatedKey);
 
 				NiFree(generatedKey);
-			} else {
+			}
+			else {
 				assert(false);
 			}
 		}
@@ -114,9 +116,11 @@ namespace RE
 
 			if (compare == 0) {
 				return extra[middle];
-			} else if (compare > 0) {
+			}
+			else if (compare > 0) {
 				bottom = middle + 1;
-			} else {
+			}
+			else {
 				top = middle - 1;
 			}
 		}
@@ -151,7 +155,8 @@ namespace RE
 			extra = NiAlloc<NiExtraData*>(maxSize);
 			extra[0] = a_extra;
 			return true;
-		} else if (extraDataSize == maxSize) {
+		}
+		else if (extraDataSize == maxSize) {
 			maxSize = (maxSize * 2) + 1;
 			auto newExtra = NiAlloc<NiExtraData*>(maxSize);
 
@@ -177,11 +182,13 @@ namespace RE
 			if (compare == 0) {
 				DeleteExtraData(i);
 				return false;
-			} else if (compare > 0) {
+			}
+			else if (compare > 0) {
 				auto tmp = extra[i - 1];
 				extra[i - 1] = extra[i];
 				extra[i] = tmp;
-			} else {
+			}
+			else {
 				break;
 			}
 		}
@@ -227,9 +234,48 @@ namespace RE
 			if (compare == 0) {
 				DeleteExtraData(middle);
 				return true;
-			} else if (compare > 0) {
+			}
+			else if (compare > 0) {
 				bottom = middle + 1;
-			} else {
+			}
+			else {
+				top = middle - 1;
+			}
+		}
+
+		return false;
+	}
+
+
+	bool NiObjectNET::RemoveExtraData(NiExtraData* a_extra)
+	{
+		if (extraDataSize == 0) {
+			return false;
+		}
+		
+		if (extra == 0) {
+			return false;
+		}
+
+		assert(extraDataSize < std::numeric_limits<SInt16>::max());
+
+		SInt16 bottom = 0;
+		SInt16 top = static_cast<SInt16>(extraDataSize - 1);
+		SInt16 middle = 0;
+
+		while (bottom <= top) {
+			middle = (top + bottom) >> 1;
+
+			std::ptrdiff_t compare = a_extra->GetName().c_str() - extra[middle]->GetName().c_str();
+
+			if (compare == 0) {
+				DeleteExtraData(middle);
+				return true;
+			}
+			else if (compare > 0) {
+				bottom = middle + 1;
+			}
+			else {
 				top = middle - 1;
 			}
 		}
@@ -262,7 +308,8 @@ namespace RE
 			extra = NiAlloc<NiExtraData*>(maxSize);
 
 			extraDataSize = 0;
-		} else {
+		}
+		else {
 			maxSize = a_size;
 
 			auto newExtra = NiAlloc<NiExtraData*>(maxSize);

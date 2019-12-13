@@ -106,7 +106,7 @@ namespace RE
 		void		SetBaseScale(float a_scale);
 		void		SetEquipFlag(Flag a_flag);
 		void		UpdateEquipment(Actor* a_actor);
-
+		void		SetActorRefraction(float a_refraction);
 
 		// members
 		UInt32*					unk000;							// 000

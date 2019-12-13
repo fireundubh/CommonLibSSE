@@ -75,6 +75,14 @@ namespace RE
 		virtual const BSFixedString&	GetTypeString() const = 0;	// 03
 
 		bool							IsQuestObject() const;
+		bool							IsEssential() const;
+		bool							IsProtected() const;
+
+		void							SetEssential();
+		void							SetProtected();
+
+		void							SetUnessential();
+		void							SetUnprotected();
 
 
 		// members

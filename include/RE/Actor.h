@@ -434,11 +434,13 @@ namespace RE
 		void						UpdateWeaponAbility(TESForm* a_weapon, BaseExtraList* a_extraData, bool a_leftHand);
 		bool						VisitFactions(llvm::function_ref<bool(RE::TESFaction* a_faction, SInt8 a_rank)> a_visitor);
 
-		void						EnableAI(bool bEnable);
+		void						EnableAI(bool a_enable);
 		UInt8						GetSoulSize() const;
 		void						Decapitate();
-		RE::TESPackage*				GetCurrentPackageInternal();
-		bool						InstantKill() const;
+		TESPackage*					GetCurrentPackageInternal() const;
+		bool						InstantKill();
+		bool						RemoveSpell(SpellItem * a_spell);
+		bool						IsProtected() const;
 
 
 		// members

@@ -9,7 +9,8 @@ namespace RE
 	class Actor;
 	class BSTempEffect;
 	class ReferenceEffect;
-
+	class TESObjectREFR;
+	class BGSArtObject;
 
 	class AIProcessManager : public BSTSingletonSDM<AIProcessManager>
 	{
@@ -17,7 +18,7 @@ namespace RE
 		static AIProcessManager* GetSingleton();
 
 		void SetCombatAlarmState(Actor* a_actor, bool a_enabled);
-
+		void StopArtObject(TESObjectREFR* a_ref, BGSArtObject* a_art);
 
 		// members
 		bool						enableDetection;				// 001

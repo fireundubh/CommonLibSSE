@@ -1782,6 +1782,36 @@
     <ClCompile Include="src\RE\BSFaceGenAnimationData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderProperty.cpp">
+      <Filter>src\RE\BSShader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\ExtraLightData.cpp">
+      <Filter>src\RE\BSExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BGSFootstepManager.cpp">
+      <Filter>src\RE\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BGSFootstepEvent.cpp">
+      <Filter>src\RE\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSShaderTextureSet.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\FaceGen.cpp">
+      <Filter>src\RE\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NiBooleanExtraData.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\NiFloatExtraData.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\NiIntegersExtraData.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\NiStringsExtraData.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\PlayerControls.h">
@@ -4829,17 +4859,11 @@
     <ClInclude Include="include\RE\SkyrimScript\SendPlayerToJailFunctor.h">
       <Filter>include\RE\SkyrimScript\DelayFunctor</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Unk141EBEAD0.h">
-      <Filter>include\RE\Misc</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\BSShaderTextureSet.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESDeathEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\BleedoutCameraState.h">
-      <Filter>include\RE\Camera\TESCameraState</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESLockChangedEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
@@ -4984,6 +5008,60 @@
     </ClInclude>
     <ClInclude Include="include\RE\StealthMeter.h">
       <Filter>include\RE\Menus\HUDObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSLightingShaderMaterialEnvmap.h">
+      <Filter>include\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSLightingShaderMaterialEye.h">
+      <Filter>include\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSLightingShaderMaterialFacegen.h">
+      <Filter>include\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSLightingShaderMaterialFacegenTint.h">
+      <Filter>include\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSLightingShaderMaterialGlowmap.h">
+      <Filter>include\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSLightingShaderMaterialLandscape.h">
+      <Filter>include\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSLightingShaderMaterialMultiLayerParallax.h">
+      <Filter>include\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSLightingShaderMaterialParallax.h">
+      <Filter>include\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSLightingShaderMaterialParallaxOcc.h">
+      <Filter>include\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSLightingShaderMaterialSnow.h">
+      <Filter>include\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSTaskPool.h">
+      <Filter>include\RE\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BGSFootstepManager.h">
+      <Filter>include\RE\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BGSFootstepEvent.h">
+      <Filter>include\RE\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\FaceGen.h">
+      <Filter>include\RE\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiBooleanExtraData.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiFloatExtraData.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiIntegersExtraData.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\TESSwitchRaceCompleteEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

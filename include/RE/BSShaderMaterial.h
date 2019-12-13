@@ -11,8 +11,9 @@ namespace RE
 		inline static const void* RTTI = RTTI_BSShaderMaterial;
 
 
-		enum class Type : UInt32
+		enum class Type : SInt32
 		{
+			kNull = -1,
 			kDefault = 0,
 			kEnvironmentMap = 1,
 			kGlowMap = 2,

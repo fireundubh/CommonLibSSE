@@ -1,14 +1,21 @@
 #include "RE/BSShaderTextureSet.h"
-
-#include "skse64/GameObjects.h"  // PlayerControls
+#include "RE/Offsets.h"
+#include "REL/Relocation.h"
 
 
 namespace RE
 {
+	BSShaderTextureSet* BSShaderTextureSet::ctor()
+	{
+		using func_t = function_type_t<decltype(&BSShaderTextureSet::ctor)>;
+		REL::Offset<func_t*> func(Offset::BSShaderTextureSet::Ctor);
+		return func(this);
+	}
+	
 	BSShaderTextureSet* BSShaderTextureSet::Create()
 	{
-		using func_t = function_type_t<decltype(&BSShaderTextureSet::Create)>;
-		func_t* func = unrestricted_cast<func_t*>(&::BSShaderTextureSet::Create);
-		return func();
+		auto textureset = malloc<BSShaderTextureSet>();
+		textureset->ctor();
+		return textureset;
 	}
 }

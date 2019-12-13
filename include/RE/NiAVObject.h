@@ -84,10 +84,6 @@ namespace RE
 		void	UpdateModelSkin(NiColorA** a_color);
 		void	UpdateNode(ControllerUpdateContext* a_ctx);
 
-		UInt32 UpdateModelHair(RE::NiColorA** haircolor);
-
-		UInt32 UpdateModelSkin(RE::NiColorA** skincolor);
-
 		// members
 		NiNode*					parent;				// 030
 		UInt32					unk038;				// 038

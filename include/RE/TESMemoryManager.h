@@ -170,7 +170,7 @@ namespace RE
 
 		UInt64					unk400;			// 400
 		UInt64					unk408;			// 408
-		ScrapHeap*				unk410;			// 410
+		ScrapHeap*				scrapHeap;		// 410
 		UInt64					unk418;			// 418
 		UInt64					unk420;			// 420
 		UInt64					unk428;			// 428

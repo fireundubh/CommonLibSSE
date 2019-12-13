@@ -309,6 +309,12 @@ namespace RE
 	}
 
 
+	bool Actor::IsProtected() const
+	{
+		return (flags2 & Flag2::kIsProtected) != Flag2::kNone;
+	}
+
+
 	bool Actor::IsFactionInCrimeGroup(const TESFaction* a_faction) const
 	{
 		auto crimFac = GetCrimeFaction();
@@ -518,11 +524,11 @@ namespace RE
 		return false;
 	}
 
-	void Actor::EnableAI(bool bEnabled)
+	void Actor::EnableAI(bool a_enabled)
 	{
 		using func_t = function_type_t<decltype(&Actor::EnableAI)>;
 		REL::Offset<func_t*> func(Offset::Actor::EnableAI);
-		return func(this, bEnabled);
+		return func(this, a_enabled);
 	}
 
 	UInt8 Actor::GetSoulSize() const
@@ -539,7 +545,7 @@ namespace RE
 		return func(this);
 	}
 
-	RE::TESPackage* Actor::GetCurrentPackageInternal()
+	TESPackage* Actor::GetCurrentPackageInternal() const
 	{
 		using func_t = function_type_t<decltype(&Actor::GetCurrentPackageInternal)>;
 		REL::Offset<func_t*> func(Offset::Actor::GetCurrentPackageInternal);
@@ -547,10 +553,18 @@ namespace RE
 	}
 
 
-	bool Actor::InstantKill() const
+	bool Actor::InstantKill() 
 	{
 		using func_t = function_type_t<decltype(&Actor::InstantKill)>;
 		REL::Offset<func_t*> func(Offset::Actor::InstantKill);;
 		return func(this);
+	}
+
+
+	bool Actor::RemoveSpell(SpellItem * a_spell)
+	{
+		using func_t = function_type_t<decltype(&Actor::RemoveSpell)>;
+		REL::Offset<func_t*> func(Offset::Actor::RemoveSpell);;
+		return func(this, a_spell);
 	}
 }

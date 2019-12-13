@@ -5,14 +5,14 @@
 
 namespace RE
 {
-	class NiStringsExtraData : public NiExtraData
+	class NiIntegersExtraData : public NiExtraData
 	{
 	public:
-		inline static const void* RTTI = RTTI_NiStringsExtraData;
-		inline static const void* Ni_RTTI = NiRTTI_NiStringsExtraData;
+		inline static const void* RTTI = RTTI_NiIntegersExtraData;
+		inline static const void* Ni_RTTI = NiRTTI_NiIntegersExtraData;
 
 
-		virtual ~NiStringsExtraData();												// 00
+		virtual ~NiIntegersExtraData();												// 00
 
 		// override (NiExtraData)
 		virtual const NiRTTI*	GetRTTI() const override;							// 02
@@ -23,18 +23,16 @@ namespace RE
 		virtual void			SaveBinary(NiStream& a_stream) override;			// 1B
 		virtual bool			IsEqual(NiObject* a_object) override;				// 1C
 
+		static NiIntegersExtraData * Create(BSFixedString name, SInt32 * integer, UInt32 size);
 
-		static NiStringsExtraData * Create(BSFixedString name, UInt32 size);
-
-		SInt32 GetIndexOf(char * element);
-		bool InsertElement(const char * element);
-		bool RemoveElement(const char * element);
-
+		SInt32 GetIndexOf(SInt32 element);
+		bool InsertElement(SInt32 element);
+		bool RemoveElement(SInt32 element);
 
 		// members
-		UInt32	size;	// 18
-		UInt32	pad1C;	// 1C
-		char**	value;	// 20
+		UInt32	size;		// 18
+		UInt32	pad;		// 1C
+		SInt32* value;		// 20
 	};
-	STATIC_ASSERT(sizeof(NiStringsExtraData) == 0x28);
+	STATIC_ASSERT(sizeof(NiIntegersExtraData) == 0x28);
 }

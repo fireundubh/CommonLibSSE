@@ -55,20 +55,17 @@ namespace RE
 			constexpr std::uintptr_t UpdateWeaponAbility = 0x006313D0;			// 1_5_97
 			// VTable: .?AVActor@@
 			constexpr std::uintptr_t Vtbl = 0x01655640;							// 1_5_97
-			
-			constexpr std::uintptr_t EnableAI = 0x005E44F0;						// 1_5_80
-			constexpr std::uintptr_t GetSoulSize = 0x006348A0;					// 1_5_80
-			constexpr std::uintptr_t Decapitate = 0x005F2530;	
-			constexpr std::uintptr_t GetCurrentPackageInternal = 0x005FBA20;	// 1_5_80
-			constexpr std::uintptr_t InstantKill = 0x005FB640;					// 1_5_80
+
+			// po3
+			constexpr std::uintptr_t EnableAI = 0x005E44F0;						// 1_5_97
+			constexpr std::uintptr_t GetSoulSize = 0x006348A0;					// 1_5_97
+			constexpr std::uintptr_t Decapitate = 0x005F2530;					// 1_5_97
+			constexpr std::uintptr_t GetCurrentPackageInternal = 0x005FBA20;	// 1_5_97
+			constexpr std::uintptr_t InstantKill = 0x005FB640;					// 1_5_97
+			constexpr std::uintptr_t RemoveSpell = 0x0062F720;					// 1_5_97
 
 		}
 
-
-		namespace ActorProcessManager
-		{
-			constexpr std::uintptr_t SetActorRefraction = 0x00680DB0;			// 1_5_80
-		}
 
 		namespace ActorValueOwner
 		{
@@ -85,6 +82,9 @@ namespace RE
 			constexpr std::uintptr_t SetEquipFlag = 0x0067E3B0;		// 1_5_97
 			// IndirectSig: E8 ? ? ? ? E9 ? ? ? ? 8B 4F 08
 			constexpr std::uintptr_t UpdateEquipment = 0x00650DF0;	// 1_5_97
+
+			//po3
+			constexpr std::uintptr_t SetActorRefraction = 0x00680DB0;	// 1_5_97
 		}
 
 
@@ -94,6 +94,8 @@ namespace RE
 			constexpr std::uintptr_t SetCombatAlarmState = 0x006D9490;	// 1_5_97
 			// 4C 8B F9 48 89 0D ? ? ? ?
 			constexpr std::uintptr_t Singleton = 0x01EBEAD0;			// 1_5_97
+
+			constexpr std::uintptr_t StopArtObject = 0x006DDA30;		// 1_5_97
 		}
 
 
@@ -141,7 +143,7 @@ namespace RE
 
 		namespace BGSListForm
 		{
-			constexpr std::uintptr_t AddFormToList = 0x002C53D0;		// 1_5_80
+			constexpr std::uintptr_t AddFormToList = 0x002C53D0;		// 1_5_97
 		}
 
 		namespace BSAudioManager
@@ -188,8 +190,19 @@ namespace RE
 		{
 			// IndirectSig: E8 ? ? ? ? 45 33 C0 33 D2 48 8B CF 4C 8B F0
 			constexpr std::uintptr_t CreateMaterial = 0x012CFBC0;	// 1_5_97
+			//po3
+			constexpr std::uintptr_t CopyBaseMaterial = 0x012CEF40; // 1_5_97
 		}
 
+		namespace BSLightingShaderProperty
+		{
+			//po3
+			constexpr std::uintptr_t InitializeShader = 0x012C56D0;		// 1_5_97
+			constexpr std::uintptr_t SetMaterial =	0x01291D40;			// 1_5_97
+			constexpr std::uintptr_t SetFlags = 0x01291C30;				// 1_5_97
+			constexpr std::uintptr_t InvalidateMaterial = 0x0019C3B0;	// 1_5_97
+			constexpr std::uintptr_t InvalidateTextures = 0x012C5AB0;	// 1_5_97
+		}
 
 		namespace BSReadWriteLock
 		{
@@ -288,6 +301,13 @@ namespace RE
 		}
 
 
+		namespace BSShaderTextureSet
+		{
+			//po3
+			constexpr std::uintptr_t Ctor = 0x012C9320;	// 1_5_97
+		}
+
+
 		namespace BSString
 		{
 			// DirectSig: 40 57 41 54 41 55 41 56 41 57 48 83 EC 30 48 C7 44 24 ? ? ? ? ? 48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 41 8B F8
@@ -296,11 +316,11 @@ namespace RE
 
 		namespace BSTaskPool
 		{
-			constexpr std::uintptr_t Singleton = 0x02F38978;	// 1_5_80
+			constexpr std::uintptr_t Singleton = 0x02F38978;	// 1_5_97
 
-			constexpr std::uintptr_t func2E9950 = 0x002E9950;	// 1_5_80
+			constexpr std::uintptr_t func2E9950 = 0x002E9950;	// 1_5_97
 
-			constexpr std::uintptr_t func5C1AF0 = 0x005C1AF0;	// 1_5_80
+			constexpr std::uintptr_t func5C1AF0 = 0x005C1AF0;	// 1_5_97
 		}
 
 		namespace BSTimeManager
@@ -312,7 +332,7 @@ namespace RE
 		namespace BGSFootstepManager
 		{
 			//
-			constexpr std::uintptr_t Singleton = 0x02F27150;	// 1_5_80
+			constexpr std::uintptr_t Singleton = 0x02F27150;	// 1_5_97
 		}
 
 		namespace BSWin32SaveDataSystemUtility
@@ -469,6 +489,13 @@ namespace RE
 		}
 
 
+		namespace ExtraLightData
+		{
+			// VTable: ?AVExtraLight@@
+			constexpr std::uintptr_t Vtbl = 0x0152CA00;	// 1_5_97
+		}
+
+
 		namespace ExtraOwnership
 		{
 			// VTable: .?AVExtraOwnership@@
@@ -510,6 +537,13 @@ namespace RE
 		{
 			// VTable: .?AVExtraUniqueID@@
 			constexpr std::uintptr_t Vtbl = 0x0152CBA0;	// 1_5_97
+		}
+
+
+		namespace FaceGen
+		{
+			constexpr std::uintptr_t Singleton = 0x01EBEB40;		// 1_5_97
+			constexpr std::uintptr_t RegenerateHead = 0x003D2A60;	// 1_5_97
 		}
 
 
@@ -797,6 +831,12 @@ namespace RE
 		}
 
 
+		namespace NiBooleanExtraData
+		{
+			constexpr std::uintptr_t Vtbl = 0x0176B240; // 1_5_97
+		}
+
+
 		namespace NiAVObject
 		{
 			//
@@ -812,6 +852,18 @@ namespace RE
 		{
 			// IndirectSig: E8 ? ? ? ? 48 8B E8 E8 ? ? ? ?
 			constexpr std::uintptr_t GetSequenceByName = 0x00189B00;	// 1_5_97
+		}
+
+
+		namespace NiFloatExtraData
+		{
+			constexpr std::uintptr_t Vtbl = 0x0176B7D0; // 1_5_97
+		}
+
+		
+		namespace NiIntegersExtraData
+		{
+			constexpr std::uintptr_t Vtbl = 0x0176BF00;	// 1_5_97
 		}
 
 
@@ -849,6 +901,12 @@ namespace RE
 		{
 			// DirectSig: 40 53 48 83 EC 20 48 8B D9 E8 ? ? ? ? 48 8D 05 ? ? ? ? 48 89 03 48 8D 4B 60
 			constexpr std::uintptr_t Ctor = 0x00C7EB60;	// 1_5_97
+		}
+
+
+		namespace NiStringsExtraData
+		{
+			constexpr std::uintptr_t Vtbl = 0x01766B50;
 		}
 
 
@@ -1026,6 +1084,11 @@ namespace RE
 			constexpr std::uintptr_t SeekNextSubrecord = 0x0017D960;		// 1_5_97
 		}
 
+		namespace TESForm
+		{
+			constexpr std::uintptr_t GetWeight = 0x001A1730;				// 1_5_97
+		}
+
 
 		namespace TESMemoryManager
 		{
@@ -1131,12 +1194,6 @@ namespace RE
 			constexpr std::uintptr_t Singleton = 0x01EC0A70;			// 1_5_97
 		}
 
-		namespace Unk141EBEAD0
-		{
-			constexpr std::uintptr_t StopArtObject = 0x006DDA30;	// 1_5_80
-
-			constexpr std::uintptr_t Singleton = 0x01EBEAD0;		// 1_5_80
-		}
 
 		namespace UIStringHolder
 		{

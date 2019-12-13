@@ -59,10 +59,12 @@ namespace RE
 			weight = a_refr->GetWeight();
 		}
 
-		// Determines whether to factor weight into the name, -1 true, 1 false
-		if (a_weightOverride >= 0.0) {
-			weight = a_weightOverride * 100.0;
+		weight /= 100.0;
+		if (a_weightOverride >= 0.0) // Determines whether to factor weight into the name, -1 true, 1 false
+		{
+			weight = a_weightOverride;
 		}
+		weight *= 100.0;
 
 		UInt32 sex = npc ? static_cast<UInt32>(npc->GetSex()) : 0;
 		sprintf_s(a_dstBuff, MAX_PATH, " (%08X)[%d]/ (%08X) [%2.0f%%]", formID, sex, a_armor->formID, weight);

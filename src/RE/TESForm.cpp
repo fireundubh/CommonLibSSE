@@ -9,6 +9,9 @@
 #include "RE/TESObjectREFR.h"
 #include "RE/TESValueForm.h"
 
+#include "RE/Offsets.h"
+#include "REL/Relocation.h"
+
 
 namespace RE
 {
@@ -101,6 +104,9 @@ namespace RE
 		auto weightForm = form->As<TESWeightForm*>();
 		if (weightForm) {
 			return weightForm->weight;
+		} else if (form->Is(FormType::NPC)) {
+			auto npc = static_cast<const TESNPC*>(form);
+			return npc->weight;
 		} else {
 			return -1.0;
 		}

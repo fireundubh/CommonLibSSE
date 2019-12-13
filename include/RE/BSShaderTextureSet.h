@@ -13,6 +13,9 @@ namespace RE
 		static BSShaderTextureSet* Create();
 		
 		const char* textures[9];
+
+	private:
+		BSShaderTextureSet * ctor();
 	};
 	STATIC_ASSERT(sizeof(BSShaderTextureSet) == 0x58);
 }
