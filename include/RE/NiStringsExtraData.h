@@ -24,7 +24,7 @@ namespace RE
 		virtual bool			IsEqual(NiObject* a_object) override;				// 1C
 
 
-		static NiStringsExtraData * Create(BSFixedString name, UInt32 size);
+		static NiStringsExtraData * Create(BSFixedString name, BSFixedString * stringData, UInt32 size);
 
 		SInt32 GetIndexOf(char * element);
 		bool InsertElement(const char * element);
