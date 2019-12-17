@@ -1437,9 +1437,6 @@
     <ClCompile Include="src\RE\LocalMapCamera.cpp">
       <Filter>src\RE\Camera\TESCamera</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BaseExtraList.cpp">
-      <Filter>src\RE\Inventory</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\MagicTarget.cpp">
       <Filter>src\RE\FormComponents\Components</Filter>
     </ClCompile>
@@ -1811,6 +1808,24 @@
     </ClCompile>
     <ClCompile Include="src\RE\NiStringsExtraData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Biped.cpp">
+      <Filter>src\RE\FormComponents\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\ExtraContainerChanges.cpp">
+      <Filter>src\RE\BSExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\ExtraDataList.cpp">
+      <Filter>src\RE\BSExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\TESObjectMISC.cpp">
+      <Filter>src\RE\FormComponents\TESForm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\GFxWWHelper.cpp">
+      <Filter>src\RE\Scaleform\GFxString</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\GStd.cpp">
+      <Filter>src\RE\Scaleform</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2422,9 +2437,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\ExtraTerminalState.h">
       <Filter>include\RE\BSExtraData</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\BaseExtraList.h">
-      <Filter>include\RE\Inventory</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ExtraObjectHealth.h">
       <Filter>include\RE\BSExtraData</Filter>
@@ -5062,6 +5074,21 @@
     </ClInclude>
     <ClInclude Include="include\RE\TESSwitchRaceCompleteEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\ExtraDataList.h">
+      <Filter>include\RE\BSExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\TESMoveAttachDetachEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSTriShape.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\GFxWWHelper.h">
+      <Filter>include\RE\Scaleform\GFxString</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\GStd.h">
+      <Filter>include\RE\Scaleform</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
