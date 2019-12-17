@@ -2,6 +2,8 @@
 
 #include "skse64/GameReferences.h"
 
+#include <type_traits>
+
 #include "RE/AIProcess.h"
 #include "RE/AIProcessManager.h"
 #include "RE/BGSAttackData.h"
@@ -10,16 +12,15 @@
 #include "RE/ExtraCanTalkToPlayer.h"
 #include "RE/ExtraFactionChanges.h"
 #include "RE/HighProcess.h"
-#include "RE/InventoryChanges.h"
 #include "RE/InventoryEntryData.h"
 #include "RE/MiddleProcess.h"
 #include "RE/Misc.h"
 #include "RE/NiColor.h"
 #include "RE/NiNode.h"
 #include "RE/Offsets.h"
-#include "RE/TESActorBaseData.h"
 #include "RE/TESFaction.h"
 #include "RE/TESNPC.h"
+#include "RE/TESObjectMISC.h"
 #include "RE/TESRace.h"
 #include "RE/TESWorldSpace.h"
 #include "REL/Relocation.h"
@@ -228,29 +229,14 @@ namespace RE
 
 	SInt32 Actor::GetGoldAmount()
 	{
-		SInt32 gold = 0;
+		auto inv = GetInventory([](TESBoundObject* a_object) -> bool
+		{
+			return a_object->IsGold();
+		});
 
-		auto invChanges = GetInventoryChanges();
-		if (invChanges && invChanges->entryList) {
-			for (auto& entry : *invChanges->entryList) {
-				if (entry->type && entry->type->IsGold()) {
-					gold += entry->countDelta;
-				}
-			}
-		}
-
-		auto cont = GetContainer();
-		if (cont) {
-			cont->ForEach([&](RE::TESContainer::Entry* a_entry) -> bool
-			{
-				if (a_entry->form && a_entry->form->IsGold()) {
-					gold += a_entry->count;
-				}
-				return true;
-			});
-		}
-
-		return gold;
+		auto gold = TESObjectMISC::GetGoldForm();
+		auto it = inv.find(gold);
+		return it != inv.end() ? it->second.first : 0;
 	}
 
 
@@ -441,7 +427,7 @@ namespace RE
 	}
 
 
-	void Actor::UpdateArmorAbility(TESForm* a_armor, BaseExtraList* a_extraData)
+	void Actor::UpdateArmorAbility(TESForm* a_armor, ExtraDataList* a_extraData)
 	{
 		using func_t = function_type_t<decltype(&Actor::UpdateArmorAbility)>;
 		REL::Offset<func_t*> func(Offset::Actor::UpdateArmorAbility);
@@ -493,7 +479,7 @@ namespace RE
 	}
 
 
-	void Actor::UpdateWeaponAbility(TESForm* a_weapon, BaseExtraList* a_extraData, bool a_leftHand)
+	void Actor::UpdateWeaponAbility(TESForm* a_weapon, ExtraDataList* a_extraData, bool a_leftHand)
 	{
 		using func_t = function_type_t<decltype(&Actor::UpdateWeaponAbility)>;
 		REL::Offset<func_t*> func(Offset::Actor::UpdateWeaponAbility);
@@ -501,7 +487,7 @@ namespace RE
 	}
 
 
-	bool Actor::VisitFactions(llvm::function_ref<bool(RE::TESFaction* a_faction, SInt8 a_rank)> a_visitor)
+	bool Actor::VisitFactions(llvm::function_ref<bool(TESFaction* a_faction, SInt8 a_rank)> a_visitor)
 	{
 		auto base = GetActorBase();
 		if (base) {

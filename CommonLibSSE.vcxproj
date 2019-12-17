@@ -166,7 +166,8 @@
     <ClCompile Include="src\RE\ActorValueOwner.cpp" />
     <ClCompile Include="src\RE\AddCallbackVisitor.cpp" />
     <ClCompile Include="src\RE\AIProcessManager.cpp" />
-    <ClCompile Include="src\RE\BaseExtraList.cpp" />
+    <ClCompile Include="src\RE\ExtraContainerChanges.cpp" />
+    <ClCompile Include="src\RE\ExtraDataList.cpp" />
     <ClCompile Include="src\RE\BGSAttackData.cpp" />
     <ClCompile Include="src\RE\BGSBaseAlias.cpp" />
     <ClCompile Include="src\RE\BGSBipedObjectForm.cpp" />
@@ -181,6 +182,7 @@
     <ClCompile Include="src\RE\BGSLocation.cpp" />
     <ClCompile Include="src\RE\BGSPerkEntry.cpp" />
     <ClCompile Include="src\RE\BGSSaveLoadManager.cpp" />
+    <ClCompile Include="src\RE\Biped.cpp" />
     <ClCompile Include="src\RE\BSAudioManager.cpp" />
     <ClCompile Include="src\RE\BSFaceGenAnimationData.cpp" />
     <ClCompile Include="src\RE\BSGlobalStringTable.cpp" />
@@ -250,12 +252,14 @@
     <ClCompile Include="src\RE\GFxStateBag.cpp" />
     <ClCompile Include="src\RE\GFxValue.cpp" />
     <ClCompile Include="src\RE\GFxWStringBuffer.cpp" />
+    <ClCompile Include="src\RE\GFxWWHelper.cpp" />
     <ClCompile Include="src\RE\GMemory.cpp" />
     <ClCompile Include="src\RE\GMemoryHeap.cpp" />
     <ClCompile Include="src\RE\GRefCountImpl.cpp" />
     <ClCompile Include="src\RE\GRefCountImplCore.cpp" />
     <ClCompile Include="src\RE\GRefCountNTSImpl.cpp" />
     <ClCompile Include="src\RE\GRenderer.cpp" />
+    <ClCompile Include="src\RE\GStd.cpp" />
     <ClCompile Include="src\RE\GString.cpp" />
     <ClCompile Include="src\RE\GViewport.cpp" />
     <ClCompile Include="src\RE\hkBaseObject.cpp" />
@@ -362,6 +366,7 @@
     <ClCompile Include="src\RE\TESObjectBOOK.cpp" />
     <ClCompile Include="src\RE\TESObjectCELL.cpp" />
     <ClCompile Include="src\RE\TESObjectLIGH.cpp" />
+    <ClCompile Include="src\RE\TESObjectMISC.cpp" />
     <ClCompile Include="src\RE\TESObjectREFR.cpp" />
     <ClCompile Include="src\RE\TESObjectWEAP.cpp" />
     <ClCompile Include="src\RE\TESQuest.cpp" />
@@ -693,6 +698,7 @@
     <ClInclude Include="include\RE\BSTimeManager.h" />
     <ClInclude Include="include\RE\BSTLocklessQueue.h" />
     <ClInclude Include="include\RE\BSTMessageQueue.h" />
+    <ClInclude Include="include\RE\BSTriShape.h" />
     <ClInclude Include="include\RE\BSTSmartPointer.h" />
     <ClInclude Include="include\RE\BSTArray.h" />
     <ClInclude Include="include\RE\BSTEvent.h" />
@@ -972,6 +978,7 @@
     <ClInclude Include="include\RE\GFxTranslator.h" />
     <ClInclude Include="include\RE\GFxValue.h" />
     <ClInclude Include="include\RE\GFxWStringBuffer.h" />
+    <ClInclude Include="include\RE\GFxWWHelper.h" />
     <ClInclude Include="include\RE\GHash.h" />
     <ClInclude Include="include\RE\GHashNode.h" />
     <ClInclude Include="include\RE\GHashSet.h" />
@@ -1000,6 +1007,7 @@
     <ClInclude Include="include\RE\GRenderer.h" />
     <ClInclude Include="include\RE\GRendererEventHandler.h" />
     <ClInclude Include="include\RE\GStats.h" />
+    <ClInclude Include="include\RE\GStd.h" />
     <ClInclude Include="include\RE\GString.h" />
     <ClInclude Include="include\RE\GTexture.h" />
     <ClInclude Include="include\RE\GViewport.h" />
@@ -1113,7 +1121,7 @@
     <ClInclude Include="include\RE\InputEvent.h" />
     <ClInclude Include="include\RE\InputManager.h" />
     <ClInclude Include="include\RE\InputMappingManager.h" />
-    <ClInclude Include="include\RE\BaseExtraList.h" />
+    <ClInclude Include="include\RE\ExtraDataList.h" />
     <ClInclude Include="include\RE\BGSBipedObjectForm.h" />
     <ClInclude Include="include\RE\Inventory.h" />
     <ClInclude Include="include\RE\InventoryMenu.h" />
@@ -1384,6 +1392,7 @@
     <ClInclude Include="include\RE\TESModelRDT.h" />
     <ClInclude Include="include\RE\TESModelTextureSwap.h" />
     <ClInclude Include="include\RE\TESModelTri.h" />
+    <ClInclude Include="include\RE\TESMoveAttachDetachEvent.h" />
     <ClInclude Include="include\RE\TESNPC.h" />
     <ClInclude Include="include\RE\TESObject.h" />
     <ClInclude Include="include\RE\TESObjectACTI.h" />

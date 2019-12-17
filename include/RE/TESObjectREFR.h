@@ -1,11 +1,16 @@
 #pragma once
 
-#include "RE/BaseExtraList.h"
+#include <unordered_map>
+#include <utility>
+
+#include "function_ref.h"
+
 #include "RE/BSFixedString.h"
 #include "RE/BSHandleRefObject.h"
 #include "BSTArray.h"
 #include "RE/BSTEvent.h"
 #include "RE/BSTSmartPointer.h"
+#include "RE/ExtraDataList.h"
 #include "RE/FormTypes.h"
 #include "RE/IAnimationGraphManagerHolder.h"
 #include "RE/NiPoint3.h"
@@ -15,12 +20,12 @@
 
 namespace RE
 {
-	class BaseExtraList;
 	class BSAnimNoteReceiver;
 	class BSFaceGenAnimationData;
 	class BSFaceGenNiNode;
 	class BSFlattenedBoneTree;
 	class InventoryChanges;
+	class InventoryEntryData;
 	class MagicCaster;
 	class MagicTarget;
 	class NiAVObject;
@@ -45,6 +50,10 @@ namespace RE
 	{
 	public:
 		inline static const void* RTTI = RTTI_TESObjectREFR;
+
+
+		using Count = SInt32;
+		using InventoryMap = std::unordered_map<TESBoundObject*, std::pair<Count, InventoryEntryData*>>;
 
 
 		enum { kTypeID = FormType::Reference };
@@ -211,11 +220,11 @@ namespace RE
 		virtual void					GetStartingPosition(NiPoint3& a_position);																																					// 53
 		virtual void					Unk_54(void);																																												// 54
 		virtual void					Unk_55(void);																																												// 55
-		virtual RefHandle&				RemoveItem(RefHandle& a_dropHandle, TESForm* a_item, SInt32 a_count, RemoveType a_mode, BaseExtraList* a_extraList, TESObjectREFR* a_moveToRef, void* a_arg7 = 0, void* a_arg8 = 0);		// 56
-		virtual bool					EquipItem(TESForm* a_item, SInt32 a_count, bool a_arg3, UInt32 a_arg4, UInt32 a_arg5);																										// 57
+		virtual RefHandle&				RemoveItem(RefHandle& a_dropHandle, TESBoundObject* a_item, SInt32 a_count, RemoveType a_mode, ExtraDataList* a_extraList, TESObjectREFR* a_moveToRef, void* a_arg7 = 0, void* a_arg8 = 0);	// 56
+		virtual bool					EquipItem(TESBoundObject* a_item, SInt32 a_count, bool a_arg3, UInt32 a_arg4, UInt32 a_arg5);																								// 57
 		virtual void					Unk_58(void);																																												// 58 - { return; }
 		virtual void					Unk_59(void);																																												// 59 - { return; }
-		virtual void					AddItem(TESForm* a_item, BaseExtraList* a_extraList, SInt32 a_count, TESObjectREFR* a_fromRefr);																							// 5A
+		virtual void					AddItem(TESBoundObject* a_item, ExtraDataList* a_extraList, SInt32 a_count, TESObjectREFR* a_fromRefr);																						// 5A
 		virtual void					GetMarkerPosition(NiPoint3& a_pos);																																							// 5B
 		virtual MagicCaster*			GetMagicCaster(UInt32 a_slot) const;																																						// 5C
 		virtual MagicTarget*			GetMagicTarget() const;																																										// 5D
@@ -286,7 +295,7 @@ namespace RE
 		virtual void					Unk_9E(void);																																												// 9E - { return 0; }
 		virtual void*					GetDecalGroup();																																											// 9F
 		virtual void					Unk_A0(void);																																												// A0
-		virtual void					UnequipItem(UInt64 a_arg1, TESForm* a_item);																																				// A1 - { return; }
+		virtual void					UnequipItem(UInt64 a_arg1, TESBoundObject* a_item);																																			// A1 - { return; }
 
 
 		static NiPointer<TESObjectREFR>	LookupByHandle(RefHandle a_refHandle);
@@ -299,6 +308,7 @@ namespace RE
 		float				GetBaseScale() const;
 		TESContainer*		GetContainer() const;
 		TESFaction*			GetFactionOwner() const;
+		InventoryMap		GetInventory(llvm::function_ref<bool(TESBoundObject*)> a_filter);
 		InventoryChanges*	GetInventoryChanges();	// Creates inventory changes if none found
 		TESObjectREFR*		GetLinkedRef(BGSKeyword* a_keyword);
 		SInt32				GetLockLevel() const;
@@ -339,7 +349,7 @@ namespace RE
 		NiPoint3		pos;			// 54
 		TESObjectCELL*	parentCell;		// 60
 		LoadedState*	loadedState;	// 68
-		BaseExtraList	extraData;		// 70
+		ExtraDataList	extraData;		// 70
 		UInt64			unk88;			// 88
 		UInt16			scale;			// 90
 		UInt8			unk92;			// 92
