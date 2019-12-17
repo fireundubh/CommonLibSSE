@@ -1,9 +1,8 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_BSLightingShaderMaterialHairTint
-#include "RE/BSTextureSet.h"  // NiSourceTexture
-#include "RE/BSLightingShaderMaterialBase.h"  // BSLightingShaderMaterialBase
-#include "RE/NiColor.h" // NiColor
+#include "RE/BSLightingShaderMaterialBase.h"  
+#include "RE/BSTextureSet.h"  
+#include "RE/NiColor.h" 
 
 
 namespace RE
