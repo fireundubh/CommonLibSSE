@@ -10,13 +10,14 @@ namespace RE
 	{
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiStringsExtraData::Vtbl);
 
-		NiStringsExtraData* data = (NiStringsExtraData*)NiExtraData::Create(sizeof(NiStringsExtraData), vtbl.GetAddress());
+		NiStringsExtraData* data = static_cast<NiStringsExtraData*>(NiExtraData::Create(sizeof(NiStringsExtraData), vtbl.GetAddress()));
 		data->name = const_cast<char*>(name.c_str());
+		data->value = NiAlloc<char*>(size);
 		data->size = size;
 
-		for (int i = 0; i < size; i++)
+		for (UInt32 i = 0; i < size; i++)
 		{
-			auto string = stringData[i].c_str();
+			const char * string = stringData[i].c_str();
 
 			if (string && *string != '/0')
 			{
