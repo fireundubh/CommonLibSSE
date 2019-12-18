@@ -1,4 +1,4 @@
-#include "RE/TESHitEvent.h"
+#include "RE/Events/TESHitEvent.h"
 
 #include "RE/TESObjectREFR.h"
 

@@ -1036,6 +1036,12 @@
     <Filter Include="src\RE\BSHavok\hkpCharacterProxyListener">
       <UniqueIdentifier>{3d7e060a-28ae-491a-ab5a-950bedc72783}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry">
+      <UniqueIdentifier>{cf65cbb3-ec32-4978-add4-bfa2a9492d93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\Scaleform\GFxWWHelper">
+      <UniqueIdentifier>{8e7bff46-affe-4c7a-99f8-cd718e18f916}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\MenuControls.cpp">
@@ -1479,9 +1485,6 @@
     <ClCompile Include="src\RE\BSScript\VariableInfo.cpp">
       <Filter>src\RE\BSScript\IFunction\Components</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\TESHitEvent.cpp">
-      <Filter>src\RE\Events\ScriptEvent</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\DialogueData.cpp">
       <Filter>src\RE\FormComponents\Components</Filter>
     </ClCompile>
@@ -1638,9 +1641,6 @@
     <ClCompile Include="src\RE\FaceGen.cpp">
       <Filter>src\RE\Misc</Filter>
     </ClCompile>
-    <ClCompile Include="src\NiBooleanExtraData.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\NiFloatExtraData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
     </ClCompile>
@@ -1718,6 +1718,12 @@
     </ClCompile>
     <ClCompile Include="src\RE\InterfaceStrings.cpp">
       <Filter>src\RE\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Events\TESHitEvent.cpp">
+      <Filter>src\RE\Events\ScriptEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\NiBooleanExtraData.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2084,35 +2090,11 @@
     <ClInclude Include="include\RE\ScriptEventSourceHolder.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\TESCellFullyLoadedEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\TESEquipEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\TESLoadGameEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\TESMagicEffectApplyEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\TESObjectLoadedEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\TESTrackedStatsEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\UserEventEnabledEvent.h">
       <Filter>include\RE\Events\MenuEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\MenuOpenCloseEvent.h">
       <Filter>include\RE\Events\MenuEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\TESCombatEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\TESContainerChangedEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ExtraFlags.h">
       <Filter>include\RE\BSExtraData</Filter>
@@ -2299,9 +2281,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\ExtraObjectHealth.h">
       <Filter>include\RE\BSExtraData</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\TESUniqueIDChangeEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\SKSE\RegistrationSet.h">
       <Filter>include\SKSE</Filter>
@@ -3584,9 +3563,6 @@
     <ClInclude Include="include\RE\bhkThreadMemorySource.h">
       <Filter>include\RE\Memory\IMemoryStoreBase\IMemoryStore\IMemoryHeap</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\TESWaitStopEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\FormTraits.h">
       <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
@@ -3652,9 +3628,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\BSScript\Internal\RawFuncCallQuery.h">
       <Filter>include\RE\BSScript\Internal\IFuncCallQuery</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\TESInitScriptEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\bgs\saveload\Request.h">
       <Filter>include\RE\bgs\saveload</Filter>
@@ -4103,12 +4076,6 @@
     <ClInclude Include="include\RE\RTTI.h">
       <Filter>include\RE</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\TESHitEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\TESActiveEffectApplyRemoveEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\GlobalLookupInfo.h">
       <Filter>include\RE\FileIO</Filter>
     </ClInclude>
@@ -4355,9 +4322,6 @@
     <ClInclude Include="include\RE\BSFaceGenNiNode.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\BSGeometry.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\NiSkinInstance.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClInclude>
@@ -4525,12 +4489,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\BSShaderTextureSet.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\TESDeathEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\TESLockChangedEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BarterMenu.h">
       <Filter>include\RE\Menus\IMenu</Filter>
@@ -4721,14 +4679,8 @@
     <ClInclude Include="include\RE\NiIntegersExtraData.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\TESSwitchRaceCompleteEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\ExtraDataList.h">
       <Filter>include\RE\BSExtraData</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\TESMoveAttachDetachEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ProcessLists.h">
       <Filter>include\RE\AI</Filter>
@@ -4990,6 +4942,72 @@
     </ClInclude>
     <ClInclude Include="include\RE\InterfaceStrings.h">
       <Filter>include\RE\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESActiveEffectApplyRemoveEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESCellFullyLoadedEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESCombatEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESContainerChangedEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESDeathEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESEquipEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESHitEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESInitScriptEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESLoadGameEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESLockChangedEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESMagicEffectApplyEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESMoveAttachDetachEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESObjectLoadedEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESResetEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESSwitchRaceCompleteEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESTrackedStatsEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESUniqueIDChangeEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESWaitStopEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSGeometry.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSTriShape.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\GStd.h">
+      <Filter>include\RE\Scaleform</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\GFxWWHelper.h">
+      <Filter>include\RE\Scaleform\GFxWWHelper</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

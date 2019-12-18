@@ -19,4 +19,12 @@ namespace RE
 		REL::Offset<func_t*> func(Offset::ProcessLists::SetCombatAlarmState);
 		return func(this, a_actor, a_enabled);
 	}
+
+	void ProcessLists::StopArtObject(TESObjectREFR* a_ref, BGSArtObject * a_art)
+	{
+		using func_t = function_type_t<decltype(&ProcessLists::StopArtObject)>;
+		REL::Offset<func_t*> func(Offset::ProcessLists::StopArtObject);
+		return func(this, a_ref, a_art);
+	}
+
 }

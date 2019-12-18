@@ -99,8 +99,6 @@ namespace RE
 		}
 
 
-
-			constexpr std::uintptr_t StopArtObject = 0x006DDA30;		// 1_5_97
 		namespace AttackBlockHandler
 		{
 			// VTable: .?AUAttackBlockHandler@@
@@ -985,6 +983,8 @@ namespace RE
 			constexpr std::uintptr_t SetCombatAlarmState = 0x006D9490;	// 1_5_97
 			// 4C 8B F9 48 89 0D ? ? ? ?
 			constexpr std::uintptr_t Singleton = 0x01EBEAD0;			// 1_5_97
+			//
+			constexpr std::uintptr_t StopArtObject = 0x006DDA30;		// 1_5_97
 		}
 
 
