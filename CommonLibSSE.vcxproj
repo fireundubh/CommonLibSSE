@@ -437,6 +437,8 @@
     <ClInclude Include="include\RE\Events\TESWaitStopEvent.h" />
     <ClInclude Include="include\RE\NiCollisionObject.h" />
     <ClInclude Include="include\RE\NiIntegerExtraData.h" />
+    <ClInclude Include="include\RE\NiInterpController.h" />
+    <ClInclude Include="include\RE\NiMultiTargetTransformController.h" />
     <ClInclude Include="include\RE\NiTSet.h" />
     <ClInclude Include="include\RE\ProcessLists.h" />
     <ClInclude Include="include\RE\BGSApparatus.h" />
