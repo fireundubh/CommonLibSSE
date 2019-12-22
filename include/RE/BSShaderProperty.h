@@ -5,7 +5,7 @@
 
 namespace RE
 {
-	class BSLightingShaderMaterial;
+	class BSLightingShaderMaterialBase;
 
 
 	class BSShaderProperty : public NiShadeProperty
@@ -137,7 +137,7 @@ namespace RE
 		UInt64						unk60;			// 60
 		void*						unk68;			// 68 - smart ptr
 		UInt64						unk70;			// 70
-		BSLightingShaderMaterial*	material;		// 78
+		BSLightingShaderMaterialBase*	material;		// 78
 		UInt64						unk80;			// 80
 	};
 	STATIC_ASSERT(sizeof(BSShaderProperty) == 0x88);

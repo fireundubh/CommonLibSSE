@@ -14,18 +14,22 @@ namespace RE
 {
 	bool NiObjectNET::AddExtraData(const BSFixedString& a_key, NiExtraData* a_extra)
 	{
-		if (!a_key.empty()) {
+		if (!a_key.empty())
+		{
 			return false;
 		}
 
-		if (!a_extra) {
+		if (!a_extra)
+		{
 			return false;
 		}
 
-		if (!a_extra->GetName().empty()) {
+		if (!a_extra->GetName().empty())
+		{
 			a_extra->SetName(a_key);
 		}
-		else if (a_key != a_extra->GetName()) {
+		else if (a_key != a_extra->GetName())
+		{
 			return false;
 		}
 
@@ -35,21 +39,25 @@ namespace RE
 
 	bool NiObjectNET::AddExtraData(NiExtraData* a_extra)
 	{
-		if (!a_extra) {
+		if (!a_extra)
+		{
 			return false;
 		}
 
-		if (a_extra->GetName().empty()) {
+		if (a_extra->GetName().empty())
+		{
 			auto rtti = a_extra->GetRTTI()->GetName();
 
-			if (rtti && (std::strlen(rtti) > 0)) {
+			if (rtti && (std::strlen(rtti) > 0))
+			{
 				assert(extraDataSize < 1000);
 				char suffix[6];
 				NiSprintf(suffix, 6, "ED%03d", extraDataSize);
 
 				auto substr = std::strstr(rtti, "ExtraData");
 				UInt32 strLength = 0;
-				if (substr > rtti) {
+				if (substr > rtti)
+				{
 					strLength = substr - rtti;
 				}
 
@@ -63,7 +71,8 @@ namespace RE
 
 				NiFree(generatedKey);
 			}
-			else {
+			else
+			{
 				assert(false);
 			}
 		}
@@ -74,15 +83,18 @@ namespace RE
 
 	void NiObjectNET::DeleteExtraData(UInt16 a_extraDataIndex)
 	{
-		if (a_extraDataIndex >= extraDataSize) {
+		if (a_extraDataIndex >= extraDataSize)
+		{
 			return;
 		}
 
-		if (extra[a_extraDataIndex]) {
+		if (extra[a_extraDataIndex])
+		{
 			extra[a_extraDataIndex]->DecRefCount();
 		}
 
-		for (UInt16 i = a_extraDataIndex; i < (extraDataSize - 1); ++i) {
+		for (UInt16 i = a_extraDataIndex; i < (extraDataSize - 1); ++i)
+		{
 			extra[i] = extra[i + 1];
 		}
 
@@ -99,7 +111,8 @@ namespace RE
 
 	NiExtraData* NiObjectNET::GetExtraData(const BSFixedString& a_key) const
 	{
-		if (a_key.empty()) {
+		if (a_key.empty())
+		{
 			return 0;
 		}
 
@@ -109,18 +122,22 @@ namespace RE
 		SInt16 top = static_cast<SInt16>(extraDataSize - 1);
 		SInt16 middle = 0;
 
-		while (bottom <= top) {
+		while (bottom <= top)
+		{
 			middle = (top + bottom) >> 1;
 
 			std::ptrdiff_t compare = a_key.c_str() - extra[middle]->GetName().c_str();
 
-			if (compare == 0) {
+			if (compare == 0)
+			{
 				return extra[middle];
 			}
-			else if (compare > 0) {
+			else if (compare > 0)
+			{
 				bottom = middle + 1;
 			}
-			else {
+			else
+			{
 				top = middle - 1;
 			}
 		}
@@ -144,19 +161,22 @@ namespace RE
 
 	bool NiObjectNET::InsertExtraData(NiExtraData* a_extra)
 	{
-		if (!a_extra) {
+		if (!a_extra)
+		{
 			return false;
 		}
 
 		a_extra->IncRefCount();
 
-		if (maxSize < 1) {
+		if (maxSize < 1)
+		{
 			extraDataSize = maxSize = 1;
 			extra = NiAlloc<NiExtraData*>(maxSize);
 			extra[0] = a_extra;
 			return true;
 		}
-		else if (extraDataSize == maxSize) {
+		else if (extraDataSize == maxSize)
+		{
 			maxSize = (maxSize * 2) + 1;
 			auto newExtra = NiAlloc<NiExtraData*>(maxSize);
 
@@ -172,23 +192,28 @@ namespace RE
 		extra[extraDataSize] = a_extra;
 		++extraDataSize;
 
-		for (i = extraDataSize; i < maxSize; ++i) {
+		for (i = extraDataSize; i < maxSize; ++i)
+		{
 			extra[i] = 0;
 		}
 
-		for (i = (extraDataSize - 1); i > 0; --i) {
+		for (i = (extraDataSize - 1); i > 0; --i)
+		{
 			std::ptrdiff_t compare = extra[i - 1]->GetName().c_str() - extra[i]->GetName().c_str();
 
-			if (compare == 0) {
+			if (compare == 0)
+			{
 				DeleteExtraData(i);
 				return false;
 			}
-			else if (compare > 0) {
+			else if (compare > 0)
+			{
 				auto tmp = extra[i - 1];
 				extra[i - 1] = extra[i];
 				extra[i] = tmp;
 			}
-			else {
+			else
+			{
 				break;
 			}
 		}
@@ -199,7 +224,8 @@ namespace RE
 
 	void NiObjectNET::RemoveAllExtraData()
 	{
-		for (SInt16 i = (static_cast<SInt16>(extraDataSize) - 1); i >= 0; --i) {
+		for (SInt16 i = (static_cast<SInt16>(extraDataSize) - 1); i >= 0; --i)
+		{
 			DeleteExtraData(static_cast<UInt16>(i));
 		}
 
@@ -212,11 +238,13 @@ namespace RE
 
 	bool NiObjectNET::RemoveExtraData(const BSFixedString& a_key)
 	{
-		if (extraDataSize == 0) {
+		if (extraDataSize == 0)
+		{
 			return false;
 		}
 
-		if (a_key.empty()) {
+		if (a_key.empty())
+		{
 			return false;
 		}
 
@@ -226,19 +254,23 @@ namespace RE
 		SInt16 top = static_cast<SInt16>(extraDataSize - 1);
 		SInt16 middle = 0;
 
-		while (bottom <= top) {
+		while (bottom <= top)
+		{
 			middle = (top + bottom) >> 1;
 
 			std::ptrdiff_t compare = a_key.c_str() - extra[middle]->GetName().c_str();
 
-			if (compare == 0) {
+			if (compare == 0)
+			{
 				DeleteExtraData(middle);
 				return true;
 			}
-			else if (compare > 0) {
+			else if (compare > 0)
+			{
 				bottom = middle + 1;
 			}
-			else {
+			else
+			{
 				top = middle - 1;
 			}
 		}
@@ -246,14 +278,20 @@ namespace RE
 		return false;
 	}
 
-
 	bool NiObjectNET::RemoveExtraData(NiExtraData* a_extra)
 	{
-		if (extraDataSize == 0) {
+		if (extraDataSize == 0)
+		{
 			return false;
 		}
-		
-		if (extra == 0) {
+
+		if (!a_extra)
+		{
+			return false;
+		}
+
+		if (!a_extra->name.empty())
+		{
 			return false;
 		}
 
@@ -263,19 +301,23 @@ namespace RE
 		SInt16 top = static_cast<SInt16>(extraDataSize - 1);
 		SInt16 middle = 0;
 
-		while (bottom <= top) {
+		while (bottom <= top)
+		{
 			middle = (top + bottom) >> 1;
 
-			std::ptrdiff_t compare = a_extra->GetName().c_str() - extra[middle]->GetName().c_str();
+			std::ptrdiff_t compare = a_extra->name.c_str() - extra[middle]->GetName().c_str();
 
-			if (compare == 0) {
+			if (compare == 0)
+			{
 				DeleteExtraData(middle);
 				return true;
 			}
-			else if (compare > 0) {
+			else if (compare > 0)
+			{
 				bottom = middle + 1;
 			}
-			else {
+			else
+			{
 				top = middle - 1;
 			}
 		}
@@ -286,7 +328,8 @@ namespace RE
 
 	bool NiObjectNET::RemoveExtraDataAt(UInt16 a_extraDataIndex)
 	{
-		if (a_extraDataIndex < extraDataSize) {
+		if (a_extraDataIndex < extraDataSize)
+		{
 			DeleteExtraData(a_extraDataIndex);
 			return true;
 		}
@@ -297,19 +340,22 @@ namespace RE
 
 	bool NiObjectNET::SetExtraDataSize(UInt16 a_size)
 	{
-		if (a_size == 0) {
+		if (a_size == 0)
+		{
 			return false;
 		}
 
 		assert(a_size < 1000);
 
-		if (maxSize == 0) {
+		if (maxSize == 0)
+		{
 			maxSize = a_size;
 			extra = NiAlloc<NiExtraData*>(maxSize);
 
 			extraDataSize = 0;
 		}
-		else {
+		else
+		{
 			maxSize = a_size;
 
 			auto newExtra = NiAlloc<NiExtraData*>(maxSize);

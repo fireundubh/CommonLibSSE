@@ -87,7 +87,7 @@ namespace RE
 	}
 
 
-	void func2E9950(void) //FEC - Frame Hook
+	void func2E9950() //FEC - Frame Hook
 	{
 		using func_t = function_type_t<decltype(&func2E9950)>;
 		REL::Offset<func_t*> func(Offset::BSTaskPool::func2E9950);

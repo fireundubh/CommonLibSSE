@@ -6,20 +6,20 @@
 
 namespace RE
 {
-	NiStringsExtraData* NiStringsExtraData::Create(BSFixedString name, BSFixedString * stringData, UInt32 size)
+	NiStringsExtraData* NiStringsExtraData::Create(const BSFixedString& name, BSFixedString * stringData, UInt32 size)
 	{
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiStringsExtraData::Vtbl);
 
-		NiStringsExtraData* data = static_cast<NiStringsExtraData*>(NiExtraData::Create(sizeof(NiStringsExtraData), vtbl.GetAddress()));
-		data->name = const_cast<char*>(name.c_str());
+		NiStringsExtraData* data = (NiStringsExtraData*)NiExtraData::Create(sizeof(NiStringsExtraData), vtbl.GetAddress());
+		data->name = name;
 		data->value = NiAlloc<char*>(size);
 		data->size = size;
 
-		for (UInt32 i = 0; i < size; i++)
+		for (int i = 0; i < size; i++)
 		{
 			const char * string = stringData[i].c_str();
 
-			if (string && *string != '/0')
+			if (string && *string != '\0')
 			{
 				UInt32 strLength = strlen(string) + 1;
 				data->value[i] = NiAlloc<char>(strLength);
@@ -32,7 +32,7 @@ namespace RE
 
 	SInt32 NiStringsExtraData::GetIndexOf(char* element)
 	{
-		if (element == nullptr || element[0] == '\0')
+		if (!element || *element == '\0')
 		{
 			return -1;
 		}

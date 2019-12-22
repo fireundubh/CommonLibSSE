@@ -13,7 +13,7 @@ namespace RE
 
 		enum class Type : SInt32
 		{
-			kNull = -1,
+			kNone = -1,
 			kDefault = 0,
 			kEnvironmentMap = 1,
 			kGlowMap = 2,

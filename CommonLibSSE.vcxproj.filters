@@ -5009,5 +5009,11 @@
     <ClInclude Include="include\RE\GFxWWHelper.h">
       <Filter>include\RE\Scaleform\GFxWWHelper</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\NiInterpController.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiMultiTargetTransformController.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

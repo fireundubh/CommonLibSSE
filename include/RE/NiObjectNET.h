@@ -50,11 +50,16 @@ namespace RE
 	{
 		std::tuple<S, S, B, B, F, I, std::vector<S>, std::vector<S>> t;
 
+		if (!extra || extraDataSize == 0)
+		{	
+			return t;
+		}
+
 		for (UInt16 i = 0; i < extraDataSize; i++)
 		{
 			auto extraData = extra[i];
 			
-			if (!extra)
+			if (!extraData)
 			{
 				continue;
 			}
