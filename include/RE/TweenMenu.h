@@ -11,6 +11,9 @@ namespace RE
 	struct FileHash;
 
 
+	// menuDepth = 0
+	// flags = kPausesGame | kUpdateUsesCursor | kAllowSaving | kDontHideCursorWhenTopmost | kCustomRendering
+	// context = kMenuMode
 	class TweenMenu : public IMenu
 	{
 	public:
@@ -31,7 +34,7 @@ namespace RE
 		// override (IMenu)
 		virtual void	Accept(CallbackProcessor* a_processor) override;	// 01
 		virtual Result	ProcessMessage(UIMessage* a_message) override;		// 04
-		virtual void	Render() override;									// 06
+		virtual void	PostDisplay() override;								// 06
 
 
 		// members

@@ -16,10 +16,11 @@ namespace RE
 	struct ItemList;
 
 
+	// menuDepth = 0
+	// flags = kPausesGame | kDisablePauseMenu | kUpdateUsesCursor | kInventoryItemMenu | kCustomRendering
+	// context = kInvalid
 	class InventoryMenu : public IMenu
 	{
-		// menuDepth = 0
-		// flags = kPauseGame | kPreventGameLoad | kUnk0400 | kItemMenu | kUnk8000
 	public:
 		inline static const void* RTTI = RTTI_InventoryMenu;
 		constexpr static std::string_view MENU_NAME = "InventoryMenu";
@@ -30,7 +31,7 @@ namespace RE
 		// override (IMenu)
 		virtual void	Accept(CallbackProcessor* a_processor) override;	// 01
 		virtual Result	ProcessMessage(UIMessage* a_message) override;		// 04
-		virtual void	Render() override;									// 06
+		virtual void	PostDisplay() override;								// 06
 
 
 		// members

@@ -23,6 +23,10 @@ namespace RE
 	class StatsNode;
 
 
+	// menuDepth = 3
+	// flags = kPausesGame | kUsesMenuContext | kDisablePauseMenu | kRequiresUpdate | kCustomRendering
+	// kUsesCursor if gamepad disabled
+	// context = kStats
 	class StatsMenu :
 		public IMenu,			// 000
 		public MenuEventHandler	// 030
@@ -58,7 +62,7 @@ namespace RE
 		virtual void	Accept(CallbackProcessor* a_processor) override;		// 01
 		virtual void	Unk_03(void) override;									// 03 - { unk321 = 1; }
 		virtual Result	ProcessMessage(UIMessage* a_message) override;			// 04
-		virtual void	Render() override;										// 06
+		virtual void	PostDisplay() override;									// 06
 
 		// override (MenuEventHandler)
 		virtual bool	CanProcess(InputEvent* a_event) override;				// 01

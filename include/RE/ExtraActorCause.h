@@ -1,11 +1,15 @@
 #pragma once
 
 #include "RE/BSExtraData.h"
+#include "RE/BSTSmartPointer.h"
 #include "RE/ExtraDataTypes.h"
 
 
 namespace RE
 {
+	class ActorCause;
+
+
 	class ExtraActorCause : public BSExtraData
 	{
 	public:
@@ -22,7 +26,7 @@ namespace RE
 
 
 		// members
-		void* unk10;	// 10
+		BSTSmartPointer<ActorCause> actorCause;	// 10
 	};
 	STATIC_ASSERT(sizeof(ExtraActorCause) == 0x18);
 }

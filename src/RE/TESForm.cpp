@@ -69,7 +69,7 @@ namespace RE
 		auto form = this;
 		auto objRef = As<TESObjectREFR*>();
 		if (objRef) {
-			form = objRef->baseForm;
+			form = objRef->GetBaseObject();
 			auto xEnch = objRef->extraData.GetByType<ExtraEnchantment>();
 			if (xEnch && xEnch->objectEffect) {
 				value += xEnch->objectEffect->CalculateTotalGoldValue();
@@ -95,14 +95,20 @@ namespace RE
 	const char* TESForm::GetName() const
 	{
 		auto fullName = As<TESFullName*>();
-		return fullName ? fullName->GetFullName() : "";
+		if (fullName) {
+			auto str = fullName->GetFullName();
+			return str ? str : "";
+		} else {
+			return "";
+		}
 	}
 
 
 	float TESForm::GetWeight() const
 	{
 		auto ref = As<TESObjectREFR*>();
-		auto form = ref ? ref->baseForm : this;
+		auto baseObj = ref ? ref->GetBaseObject() : 0;
+		auto form = baseObj ? baseObj : this;
 		auto weightForm = form->As<TESWeightForm*>();
 		if (weightForm) {
 			return weightForm->weight;

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <type_traits>
+
 #include "RE/BSIntrusiveRefCounted.h"
 
 
@@ -11,9 +13,9 @@ namespace RE
 		inline static const void* RTTI = RTTI_BSShaderMaterial;
 
 
-		enum class Type : SInt32
+		enum class Type : UInt32
 		{
-			kNone = -1,
+			kNone = static_cast<std::underlying_type_t<Type>>(-1),
 			kDefault = 0,
 			kEnvironmentMap = 1,
 			kGlowMap = 2,

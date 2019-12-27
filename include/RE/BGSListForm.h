@@ -29,14 +29,14 @@ namespace RE
 		virtual ~BGSListForm();											// 00
 
 		// override (TESForm)
-		virtual void	ReleaseManagedData() override;					// 05
-		virtual bool	LoadForm(TESFile* a_mod) override;				// 06
-		virtual void	SaveBuffer(BGSSaveFormBuffer* a_buf) override;	// 0E
-		virtual void	LoadBuffer(BGSLoadFormBuffer* a_buf) override;	// 0F
-		virtual void	Unk_12(void) override;							// 12
-		virtual void	InitItem() override;							// 13
+		virtual void	ClearData() override;							// 05
+		virtual bool	Load(TESFile* a_mod) override;					// 06
+		virtual void	SaveGame(BGSSaveFormBuffer* a_buf) override;	// 0E
+		virtual void	LoadGame(BGSLoadFormBuffer* a_buf) override;	// 0F
+		virtual void	Revert(void* a_arg1) override;					// 12
+		virtual void	InitItemImpl() override;						// 13
 
-		void AddFormToList(TESForm* form);
+		void	AddForm(TESForm* a_form);
 		
 		bool	HasForm(const TESForm* a_form) const;
 		bool	HasForm(FormID a_formID) const;

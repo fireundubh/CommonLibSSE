@@ -120,6 +120,20 @@ namespace RE
 		}
 
 
+		namespace BGSFootstepManager
+		{
+			// E8 ? ? ? ? 90 48 89 1D ? ? ? ? 48 8D 0D ? ? ? ?
+			constexpr std::uintptr_t Singleton = 0x02F27150;	// 1_5_97
+		}
+
+
+		namespace BGSListForm
+		{
+			// IndirectSig: E8 ? ? ? ? E9 ? ? ? ? 48 83 7B ? ? 75 5E
+			constexpr std::uintptr_t AddForm = 0x002C53D0;	// 1_5_97
+		}
+
+
 		namespace BGSSaveLoadManager
 		{
 			// DirectSig: 44 89 44 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ?
@@ -496,14 +510,14 @@ namespace RE
 
 		namespace ExtraHotkey
 		{
-			// VTable: ?AVExtraHotkey@@
+			// VTable: .?AVExtraHotkey@@
 			constexpr std::uintptr_t Vtbl = 0x0152C120;	// 1_5_97
 		}
 
 
 		namespace ExtraLightData
 		{
-			// VTable: ?AVExtraLight@@
+			// VTable: .?AVExtraLightData@@
 			constexpr std::uintptr_t Vtbl = 0x0152CA00;	// 1_5_97
 		}
 
@@ -819,6 +833,13 @@ namespace RE
 		}
 
 
+		namespace Main
+		{
+			// 74 04 8B 40 28
+			constexpr std::uintptr_t Singleton = 0x02F26BF8;	// 1_5_97
+		}
+
+
 		namespace MemoryManager
 		{
 			// DirectSig: 48 85 D2 0F 84 ? ? ? ? 48 89 5C 24 ? 48 89 54 24 ? 57 48 83 EC 20 80 39 00
@@ -838,13 +859,6 @@ namespace RE
 		{
 			// 48 89 2D ? ? ? ? 48 8D 05 ? ? ? ? 48 89 01 48 8D 05 ? ? ? ? 48 89 41 08 48 8D 59 18
 			constexpr std::uintptr_t Singleton = 0x02F003F8;	// 1_5_97
-		}
-
-
-		namespace MenuManager
-		{
-			// 48 89 0D ? ? ? ? 48 83 C1 08 E8 ? ? ? ? 90 48 8D 4F 60
-			constexpr std::uintptr_t Singleton = 0x01EBEB20;	// 1_5_97
 		}
 
 
@@ -877,6 +891,8 @@ namespace RE
 
 		namespace NiAVObject
 		{
+			// IndirectSig: E8 ? ? ? ? 44 88 65 6F
+			constexpr std::uintptr_t SetMotionType = 0x00DA81E0;	// 1_5_97
 			//
 			constexpr std::uintptr_t UpdateModelHair = 0x003DC7E0;	// 1_5_97
 			//
@@ -908,9 +924,7 @@ namespace RE
 		namespace NiNode
 		{
 			// IndirectSig: E8 ? ? ? ? 48 8B F8 48 8B 0E 48 3B CF
-			constexpr std::uintptr_t Ctor = 0x00C57A60;				// 1_5_97
-			// IndirectSig: E8 ? ? ? ? 44 88 65 6F
-			constexpr std::uintptr_t SetMotionType = 0x00DA81E0;	// 1_5_97
+			constexpr std::uintptr_t Ctor = 0x00C57A60;	// 1_5_97
 		}
 
 
@@ -1212,6 +1226,13 @@ namespace RE
 		{
 			// VTable: .?AUToggleRunHandler@@
 			constexpr std::uintptr_t Vtbl = 0x0166F2F8;	// 1_5_97
+		}
+
+
+		namespace UI
+		{
+			// 48 89 0D ? ? ? ? 48 83 C1 08 E8 ? ? ? ? 90 48 8D 4F 60
+			constexpr std::uintptr_t Singleton = 0x01EBEB20;	// 1_5_97
 		}
 
 

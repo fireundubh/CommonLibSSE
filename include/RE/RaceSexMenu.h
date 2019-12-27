@@ -9,6 +9,9 @@
 
 namespace RE
 {
+	// menuDepth = 3
+	// flags = kPausesGame | kUsesMenuContext | kRequiresUpdate | kTopmostRenderedMenu | kUpdateUsesCursor
+	// context = kItemMenu
 	class RaceSexMenu :
 		public IMenu,			// 00
 		public MenuEventHandler	// 30
@@ -26,19 +29,19 @@ namespace RE
 		};
 
 
-		virtual ~RaceSexMenu();													// 00
+		virtual ~RaceSexMenu();															// 00
 
 		// override (IMenu)
-		virtual void	Accept(CallbackProcessor* a_processor) override;		// 01
-		virtual void	OnOpen() override;										// 02
-		virtual Result	ProcessMessage(UIMessage* a_message) override;			// 04
-		virtual void	NextFrame(float a_arg1, UInt32 a_currentTime) override;	// 05
+		virtual void	Accept(CallbackProcessor* a_processor) override;				// 01
+		virtual void	PostCreate() override;											// 02
+		virtual Result	ProcessMessage(UIMessage* a_message) override;					// 04
+		virtual void	AdvanceMovie(float a_interval, UInt32 a_currentTime) override;	// 05
 
 		// override (MenuEventHandler)
-		virtual bool	CanProcess(InputEvent* a_event) = 0;					// 01
-		virtual bool	ProcessThumbstick(ThumbstickEvent* a_event);			// 03
-		virtual bool	ProcessMouseMove(MouseMoveEvent* a_event);				// 04
-		virtual bool	ProcessButton(ButtonEvent* a_event);					// 05
+		virtual bool	CanProcess(InputEvent* a_event) = 0;							// 01
+		virtual bool	ProcessThumbstick(ThumbstickEvent* a_event);					// 03
+		virtual bool	ProcessMouseMove(MouseMoveEvent* a_event);						// 04
+		virtual bool	ProcessButton(ButtonEvent* a_event);							// 05
 
 
 		// members

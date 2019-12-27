@@ -7,6 +7,7 @@
 
 #include "RE/BSFixedString.h"
 #include "RE/ExtraContainerChanges.h"
+#include "RE/ExtraDroppedItemList.h"
 #include "RE/ExtraFlags.h"
 #include "RE/ExtraLock.h"
 #include "RE/ExtraOwnership.h"
@@ -16,7 +17,10 @@
 #include "RE/InventoryChanges.h"
 #include "RE/InventoryEntryData.h"
 #include "RE/Misc.h"
-#include "RE/NiNode.h"
+#include "RE/NiAVObject.h"
+#include "RE/NiControllerManager.h"
+#include "RE/NiControllerSequence.h"
+#include "RE/NiTimeController.h"
 #include "RE/Offsets.h"
 #include "RE/TESContainer.h"
 #include "RE/TESFaction.h"
@@ -58,7 +62,7 @@ namespace RE
 	}
 
 
-	TESNPC* TESObjectREFR::GetActorOwner() const
+	TESNPC* TESObjectREFR::GetActorOwner()
 	{
 		auto xOwnership = extraData.GetByType<ExtraOwnership>();
 		if (xOwnership && xOwnership->owner && xOwnership->owner->Is(FormType::ActorCharacter)) {
@@ -69,9 +73,39 @@ namespace RE
 	}
 
 
-	TESBoundObject* TESObjectREFR::GetBaseObject() const
+	NiPoint3 TESObjectREFR::GetAngle() const
 	{
-		return baseForm;
+		return data.angle;
+	}
+
+
+	float TESObjectREFR::GetAngleX() const
+	{
+		return data.angle.x;
+	}
+
+
+	float TESObjectREFR::GetAngleY() const
+	{
+		return data.angle.y;
+	}
+
+
+	float TESObjectREFR::GetAngleZ() const
+	{
+		return data.angle.z;
+	}
+
+
+	TESBoundObject* TESObjectREFR::GetBaseObject()
+	{
+		return data.objectReference;
+	}
+
+
+	const TESBoundObject* TESObjectREFR::GetBaseObject() const
+	{
+		return data.objectReference;
 	}
 
 
@@ -83,13 +117,58 @@ namespace RE
 	}
 
 
-	TESContainer* TESObjectREFR::GetContainer() const
+	TESContainer* TESObjectREFR::GetContainer()
 	{
-		return baseForm ? baseForm->As<TESContainer*>() : 0;
+		auto obj = GetBaseObject();
+		return obj ? obj->As<TESContainer*>() : 0;
 	}
 
 
-	TESFaction* TESObjectREFR::GetFactionOwner() const
+	auto TESObjectREFR::GetDroppedInventory()
+		-> DroppedInventoryMap
+	{
+		return GetDroppedInventory([]([[maybe_unused]] TESBoundObject*) -> bool
+		{
+			return true;
+		});
+	}
+
+
+	auto TESObjectREFR::GetDroppedInventory(llvm::function_ref<bool(TESBoundObject*)> a_filter)
+		-> DroppedInventoryMap
+	{
+		using mapped_type = typename DroppedInventoryMap::mapped_type;
+
+		DroppedInventoryMap results;
+
+		auto droppedList = extraData.GetByType<ExtraDroppedItemList>();
+		if (!droppedList) {
+			return results;
+		}
+
+		for (auto& handle : droppedList->handles) {
+			auto ref = LookupByHandle(handle);
+			if (!ref) {
+				continue;
+			}
+
+			auto object = ref->GetBaseObject();
+			if (!object || !a_filter(object)) {
+				continue;
+			}
+
+			auto count = ref->extraData.GetCount();
+			auto entry = std::make_unique<InventoryEntryData>(object, count);
+			entry->AddExtraList(&ref->extraData);
+			auto it = results.insert(std::make_pair(object, mapped_type(count, std::move(entry))));
+			assert(it.second);
+		}
+
+		return results;
+	}
+
+
+	TESFaction* TESObjectREFR::GetFactionOwner()
 	{
 		auto xOwnership = extraData.GetByType<ExtraOwnership>();
 		if (xOwnership && xOwnership->owner && xOwnership->owner->Is(FormType::Faction)) {
@@ -97,6 +176,16 @@ namespace RE
 		} else {
 			return 0;
 		}
+	}
+
+
+	auto TESObjectREFR::GetInventory()
+		-> InventoryMap
+	{
+		return GetInventory([]([[maybe_unused]] TESBoundObject*) -> bool
+		{
+			return true;
+		});
 	}
 
 
@@ -173,23 +262,28 @@ namespace RE
 	}
 
 
-	LockState* TESObjectREFR::GetLockState() const
+	LockState* TESObjectREFR::GetLockState()
 	{
-		using func_t = function_type_t<decltype(&TESObjectREFR::GetLockState)>;
-		REL::Offset<func_t*> func(Offset::TESObjectREFR::GetLockState);
-		return func(this);
+		return const_cast<LockState*>(GetLockState_Impl());
+	}
+
+
+	const LockState* TESObjectREFR::GetLockState() const
+	{
+		return GetLockState_Impl();
 	}
 
 
 	const char* TESObjectREFR::GetName() const
 	{
-		return baseForm ? baseForm->GetName() : "";
+		auto obj = GetBaseObject();
+		return obj ? obj->GetName() : "";
 	}
 
 
 	NiAVObject* TESObjectREFR::GetNodeByName(const BSFixedString& a_nodeName)
 	{
-		auto node = GetNiNode();
+		auto node = Get3D();
 		return node ? node->GetObjectByName(a_nodeName) : 0;
 	}
 
@@ -202,7 +296,7 @@ namespace RE
 	}
 
 
-	TESForm* TESObjectREFR::GetOwner() const
+	TESForm* TESObjectREFR::GetOwner()
 	{
 		using func_t = function_type_t<decltype(&TESObjectREFR::GetOwner)>;
 		REL::Offset<func_t*> func(Offset::TESObjectREFR::GetOwner);
@@ -210,27 +304,39 @@ namespace RE
 	}
 
 
-	TESObjectCELL* TESObjectREFR::GetParentCell() const
+	TESObjectCELL* TESObjectREFR::GetParentCell()
 	{
 		return parentCell;
 	}
 
 
+	NiPoint3 TESObjectREFR::GetPosition() const
+	{
+		return data.location;
+	}
+
+
 	float TESObjectREFR::GetPositionX() const
 	{
-		return pos.x;
+		return data.location.x;
 	}
 
 
 	float TESObjectREFR::GetPositionY() const
 	{
-		return pos.y;
+		return data.location.y;
 	}
 
 
 	float TESObjectREFR::GetPositionZ() const
 	{
-		return pos.z;
+		return data.location.z;
+	}
+
+
+	UInt32 TESObjectREFR::GetRefCount() const
+	{
+		return BSHandleRefObject::GetRefCount();
 	}
 
 
@@ -244,7 +350,8 @@ namespace RE
 
 	float TESObjectREFR::GetWeight() const
 	{
-		return baseForm->GetWeight();
+		auto obj = GetBaseObject();
+		return obj->GetWeight();
 	}
 
 
@@ -279,7 +386,7 @@ namespace RE
 
 	bool TESObjectREFR::Is3DLoaded() const
 	{
-		return GetNiNode() != 0;
+		return Get3D() != 0;
 	}
 
 
@@ -319,7 +426,7 @@ namespace RE
 
 	bool TESObjectREFR::MoveToNode(TESObjectREFR* a_target, const BSFixedString& a_nodeName)
 	{
-		auto node = a_target->GetNiNode();
+		auto node = a_target->Get3D();
 		if (!node) {
 			_DMESSAGE("Cannot move the target because it does not have 3D");
 			return false;
@@ -346,11 +453,36 @@ namespace RE
 	}
 
 
-	void TESObjectREFR::PlayAnimation(NiControllerManager* a_manager, NiControllerSequence* a_toSeq, NiControllerSequence* a_fromSeq, bool a_arg4)
+	void TESObjectREFR::PlayAnimation(std::string_view a_from, std::string_view a_to)
 	{
-		using func_t = function_type_t<decltype(&TESObjectREFR::PlayAnimation)>;
-		REL::Offset<func_t*> func(Offset::TESObjectREFR::PlayAnimation);
-		return func(this, a_manager, a_toSeq, a_fromSeq, a_arg4);
+		auto node = Get3D();
+		if (!node) {
+			return;
+		}
+
+		auto controller = node->GetControllers();
+		if (!controller) {
+			return;
+		}
+
+		auto manager = controller->GetAsNiControllerManager();
+		if (!manager) {
+			return;
+		}
+
+		auto fromSeq = manager->GetSequenceByName(a_from);
+		auto toSeq = manager->GetSequenceByName(a_to);
+		if (!fromSeq || !toSeq) {
+			return;
+		}
+
+		PlayAnimation(manager, toSeq, fromSeq);
+	}
+
+
+	void TESObjectREFR::PlayAnimation(NiControllerManager* a_manager, NiControllerSequence* a_toSeq, NiControllerSequence* a_fromSeq)
+	{
+		PlayAnimation_Impl(a_manager, a_toSeq, a_fromSeq);
 	}
 
 
@@ -395,7 +527,7 @@ namespace RE
 
 	bool TESObjectREFR::SetMotionType(MotionType a_motionType, bool a_allowActivate)
 	{
-		auto node = GetNiNode();
+		auto node = Get3D();
 		if (!node) {
 			_DMESSAGE("Target does not have 3D");
 			return false;
@@ -413,7 +545,15 @@ namespace RE
 
 	void TESObjectREFR::SetPosition(NiPoint3 a_pos)
 	{
-		MoveTo_Impl(*g_invalidRefHandle, GetParentCell(), GetWorldspace(), a_pos, rot);
+		MoveTo_Impl(*g_invalidRefHandle, GetParentCell(), GetWorldspace(), a_pos, data.location);
+	}
+
+
+	const LockState* TESObjectREFR::GetLockState_Impl() const
+	{
+		using func_t = function_type_t<decltype(&TESObjectREFR::GetLockState_Impl)>;
+		REL::Offset<func_t*> func(Offset::TESObjectREFR::GetLockState);
+		return func(this);
 	}
 
 
@@ -422,5 +562,13 @@ namespace RE
 		using func_t = function_type_t<decltype(&TESObjectREFR::MoveTo_Impl)>;
 		REL::Offset<func_t*> func(Offset::TESObjectREFR::MoveTo);
 		return func(this, a_targetHandle, a_targetCell, a_selfWorldSpace, a_position, a_rotation);
+	}
+
+
+	void TESObjectREFR::PlayAnimation_Impl(NiControllerManager* a_manager, NiControllerSequence* a_toSeq, NiControllerSequence* a_fromSeq, bool a_arg4)
+	{
+		using func_t = function_type_t<decltype(&TESObjectREFR::PlayAnimation_Impl)>;
+		REL::Offset<func_t*> func(Offset::TESObjectREFR::PlayAnimation);
+		return func(this, a_manager, a_toSeq, a_fromSeq, a_arg4);
 	}
 }

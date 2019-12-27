@@ -24,11 +24,13 @@ namespace RE
 
 
 		// members
-		float	modFOV;     // 10
+		float	modFOV;		// 10
 		UInt32	modFade;	// 14
 		UInt32	unk18;		// 18
 		float	depthBias;	// 1C
 		UInt8	unk20;		// 20
+		UInt8	pad21;		// 21
+		UInt16	pad22;		// 22
 		UInt32	pad24;		// 24
 	};
 	STATIC_ASSERT(sizeof(ExtraLightData) == 0x28);

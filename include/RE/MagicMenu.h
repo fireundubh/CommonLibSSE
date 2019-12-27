@@ -12,6 +12,9 @@ namespace RE
 	struct ItemCard;
 
 
+	// menuDepth = 0
+	// flags = kPausesGame | kUsesMenuContext | kDisablePauseMenu | kUpdateUsesCursor | kInventoryItemMenu | kCustomRendering
+	// context = kItemMenu
 	class MagicMenu : public IMenu
 	{
 	public:
@@ -24,7 +27,7 @@ namespace RE
 		// override (IMenu)
 		virtual void	Accept(CallbackProcessor* a_processor) override;	// 01
 		virtual Result	ProcessMessage(UIMessage* a_message) override;		// 04
-		virtual void	Render() override;									// 06
+		virtual void	PostDisplay() override;								// 06
 
 
 		// members

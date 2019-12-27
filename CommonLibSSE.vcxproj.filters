@@ -1042,6 +1042,15 @@
     <Filter Include="include\RE\Scaleform\GFxWWHelper">
       <UniqueIdentifier>{8e7bff46-affe-4c7a-99f8-cd718e18f916}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\RE\NetImmerse\NiTListBase">
+      <UniqueIdentifier>{754bf9ec-d4c4-4bc9-b2ab-f8c0b4550b6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiTListBase\NiTPointerListBase">
+      <UniqueIdentifier>{ce049434-079b-4499-861b-376a21cb3169}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\Camera\TESCameraState\ThirdPersonState">
+      <UniqueIdentifier>{23054d63-1b30-4f8c-8367-840fb0bd001c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\MenuControls.cpp">
@@ -1055,9 +1064,6 @@
     </ClCompile>
     <ClCompile Include="src\RE\TESActorBaseData.cpp">
       <Filter>src\RE\FormComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\MenuManager.cpp">
-      <Filter>src\RE\Menus</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\BSTArray.cpp">
       <Filter>src\RE\BSCore</Filter>
@@ -1725,6 +1731,21 @@
     <ClCompile Include="src\RE\NiBooleanExtraData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\Main.cpp">
+      <Filter>src\RE\BSMain</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BGSFootstepManager.cpp">
+      <Filter>src\RE\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\ActorCause.cpp">
+      <Filter>src\RE\FormComponents\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\ExtraLightData.cpp">
+      <Filter>src\RE\BSExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\UI.cpp">
+      <Filter>src\RE\Menus</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\PlayerControls.h">
@@ -1735,9 +1756,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\BGSBipedObjectForm.h">
       <Filter>include\RE\FormComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\MenuManager.h">
-      <Filter>include\RE\Menus</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\MenuControls.h">
       <Filter>include\RE\BSDevices</Filter>
@@ -2853,9 +2871,6 @@
       <Filter>include\RE\Camera\TESCamera</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESCameraState.h">
-      <Filter>include\RE\Camera\TESCameraState</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\ThirdPersonState.h">
       <Filter>include\RE\Camera\TESCameraState</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\FirstPersonState.h">
@@ -5020,6 +5035,48 @@
     </ClInclude>
     <ClInclude Include="include\RE\GridCellArray.h">
       <Filter>include\RE\FileIO\ICellAttachDetachEventSource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\ActorCause.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BGSFootstepManager.h">
+      <Filter>include\RE\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BGSFootstepEvent.h">
+      <Filter>include\RE\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\TESDeathEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\TESResetEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\TESSwitchRaceCompleteEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\UI.h">
+      <Filter>include\RE\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\ModManagerMenu.h">
+      <Filter>include\RE\Menus\IMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\LoadWaitSpinner.h">
+      <Filter>include\RE\Menus\IMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiTList.h">
+      <Filter>include\RE\NetImmerse\NiTListBase\NiTPointerListBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiTPointerListBase.h">
+      <Filter>include\RE\NetImmerse\NiTListBase\NiTPointerListBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiTListBase.h">
+      <Filter>include\RE\NetImmerse\NiTListBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\ThirdPersonState.h">
+      <Filter>include\RE\Camera\TESCameraState\ThirdPersonState</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BleedoutCameraState.h">
+      <Filter>include\RE\Camera\TESCameraState\ThirdPersonState</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

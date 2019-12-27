@@ -123,13 +123,15 @@ namespace RE
 
 	TESNPC* Actor::GetActorBase()
 	{
-		return baseForm->As<TESNPC*>();
+		auto obj = GetBaseObject();
+		return obj ? obj->As<TESNPC*>() : 0;
 	}
 
 
 	const TESNPC* Actor::GetActorBase() const
 	{
-		return baseForm->As<TESNPC*>();
+		auto obj = GetBaseObject();
+		return obj ? obj->As<TESNPC*>() : 0;
 	}
 
 
@@ -447,7 +449,7 @@ namespace RE
 				val.blue = hairColor->color.blue / 128.0;
 				auto color = &val;
 
-				auto model = GetNiRootNode(0);
+				auto model = Get3D(0);
 				if (model) {
 					model->UpdateModelHair(&color);
 				}
@@ -466,12 +468,12 @@ namespace RE
 			val.blue = npc->textureLighting.blue / 255.0;
 			auto color = &val;
 
-			auto thirdPerson = GetNiRootNode(0);
+			auto thirdPerson = Get3D(0);
 			if (thirdPerson) {
 				thirdPerson->UpdateModelSkin(&color);
 			}
 
-			auto firstPerson = GetNiRootNode(1);
+			auto firstPerson = Get3D(1);
 			if (firstPerson) {
 				firstPerson->UpdateModelSkin(&color);
 			}
