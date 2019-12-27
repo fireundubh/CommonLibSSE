@@ -354,6 +354,10 @@ namespace RE
 		float					GetPositionZ() const;
 		UInt32					GetRefCount() const;
 		const char*				GetReferenceName() const;
+		NiPoint3				GetRotation() const;
+		float					GetRotationX() const;
+		float					GetRotationY() const;
+		float					GetRotationZ() const;
 		float					GetWeight() const;
 		TESWorldSpace*			GetWorldspace() const;
 		bool					HasCollision() const;

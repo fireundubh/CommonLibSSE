@@ -348,6 +348,29 @@ namespace RE
 	}
 
 
+	NiPoint3 TESObjectREFR::GetRotation() const
+	{
+		return data.angle;
+	}
+
+	float TESObjectREFR::GetRotationX() const
+	{
+		return data.angle.x;
+	}
+
+
+	float TESObjectREFR::GetRotationY() const
+	{
+		return data.angle.y;
+	}
+
+
+	float TESObjectREFR::GetRotationZ() const
+	{
+		return data.angle.z;
+	}
+	
+	
 	float TESObjectREFR::GetWeight() const
 	{
 		auto obj = GetBaseObject();

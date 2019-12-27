@@ -334,11 +334,6 @@ namespace RE
 			constexpr std::uintptr_t GetSingleton = 0x00C2A4D0;	// 1_5_97
 		}
 
-		namespace BGSFootstepManager
-		{
-			//
-			constexpr std::uintptr_t Singleton = 0x02F27150;	// 1_5_97
-		}
 
 		namespace BSWin32SaveDataSystemUtility
 		{

@@ -129,8 +129,6 @@
 #include "RE/BGSReferenceEffect.h"
 #include "RE/BGSRelationship.h"
 #include "RE/BGSReverbParameters.h"
-#include "RE/BGSFootstepEvent.h"
-#include "RE/BGSFootstepManager.h"
 #include "RE/BGSSaveLoadManager.h"
 #include "RE/BGSScene.h"
 #include "RE/BGSSceneAction.h"

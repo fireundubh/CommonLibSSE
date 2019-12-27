@@ -1,14 +1,17 @@
 #pragma once
 
-#include "RE/NiSmartPointer.h"  
+#include "RE/NiSmartPointer.h"
+
 
 namespace RE
 {
-	class Actor;
-	
+	class TESObjectREFR;
+
+
 	struct TESSwitchRaceCompleteEvent
 	{
-		NiPointer<Actor> subject; // 00
+		// members
+		NiPointer<TESObjectREFR> ref;	// 0
 	};
 	STATIC_ASSERT(sizeof(TESSwitchRaceCompleteEvent) == 0x8);
 }

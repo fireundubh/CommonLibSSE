@@ -67,7 +67,7 @@ namespace RE
 		{
 			kNone = 0,
 			kAIEnabled = 1 << 1,
-			kNotSpeaking = 1 << 5
+			kNotSpeaking = 1 << 5,
 			kIsInWater = 1 << 18,
 			kIsPlayerTeammate = 1 << 26,
 			kIsGuard = 1 << 30

@@ -1,25 +1,22 @@
 #pragma once
 
-#include "RE/NiSmartPointer.h"  // NiPointer
+#include "RE/NiSmartPointer.h"
+
 
 namespace RE
 {
 	class TESObjectREFR;
 
+
 	struct TESDeathEvent
 	{
-		// OnDying, OnDeath
-		//
-	    // This fires TWICE for an actor's death: once when they are fated to die, and 
-	    // again when they're actually dead; this is the distinction between Papyrus 
-	    // OnDying and OnDeath. The (isDead) bool indicates whether the actor is dying 
-	    // (false) or dead (true). Calls to victim->IsDead(0) should return the same 
-	    // result.
-	    //
-		NiPointer<TESObjectREFR> victim; // 00
-		NiPointer<TESObjectREFR> killer; // 08
-		bool					 isDead; // 10
+		// members
+		NiPointer<TESObjectREFR>	victim;	// 00
+		NiPointer<TESObjectREFR>	killer;	// 08
+		bool						isDead;	// 10
+		UInt8						pad11;	// 11
+		UInt16						pad12;	// 12
+		UInt32						pad14;	// 14
 	};
 	STATIC_ASSERT(sizeof(TESDeathEvent) == 0x18);
 }
-

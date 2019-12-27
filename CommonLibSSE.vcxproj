@@ -165,9 +165,7 @@
     <ClCompile Include="src\RE\ActorState.cpp" />
     <ClCompile Include="src\RE\ActorValueOwner.cpp" />
     <ClCompile Include="src\RE\AddCallbackVisitor.cpp" />
-    <ClCompile Include="src\RE\BGSFootstepManager.cpp" />
     <ClCompile Include="src\RE\BSXFlags.cpp" />
-    <ClCompile Include="src\RE\ExtraLightData.cpp" />
     <ClCompile Include="src\RE\NiBooleanExtraData.cpp" />
     <ClCompile Include="src\RE\Main.cpp" />
     <ClCompile Include="src\RE\ProcessLists.cpp" />
@@ -179,7 +177,6 @@
     <ClCompile Include="src\RE\BGSDefaultObjectManager.cpp" />
     <ClCompile Include="src\RE\BGSEntryPointFunctionDataActivateChoice.cpp" />
     <ClCompile Include="src\RE\BGSEntryPointPerkEntry.cpp" />
-    <ClCompile Include="src\RE\BGSFootstepEvent.cpp" />
     <ClCompile Include="src\RE\BGSFootstepManager.cpp" />
     <ClCompile Include="src\RE\BGSHeadPart.cpp" />
     <ClCompile Include="src\RE\BGSKeywordForm.cpp" />
@@ -417,8 +414,6 @@
     <ClInclude Include="include\RE\BeamProjectile.h" />
     <ClInclude Include="include\RE\BGSAbilityPerkEntry.h" />
     <ClInclude Include="include\RE\BGSAddonNode.h" />
-    <ClInclude Include="include\RE\BGSFootstepEvent.h" />
-    <ClInclude Include="include\RE\BGSFootstepManager.h" />
     <ClInclude Include="include\RE\bhkCollisionObject.h" />
     <ClInclude Include="include\RE\bhkNiCollisionObject.h" />
     <ClInclude Include="include\RE\BleedoutCameraState.h" />
@@ -427,6 +422,7 @@
     <ClInclude Include="include\RE\Events\TESActiveEffectApplyRemoveEvent.h" />
     <ClInclude Include="include\RE\Events\TESCellFullyLoadedEvent.h" />
     <ClInclude Include="include\RE\Events\TESCombatEvent.h" />
+    <ClInclude Include="include\RE\Events\TESDeathEvent.h" />
     <ClInclude Include="include\RE\LoadWaitSpinner.h" />
     <ClInclude Include="include\RE\ModManagerMenu.h" />
     <ClInclude Include="include\RE\Events\TESEquipEvent.h" />
@@ -1297,9 +1293,6 @@
     <ClInclude Include="include\RE\Script.h" />
     <ClInclude Include="include\RE\ScriptEventSourceHolder.h" />
     <ClInclude Include="include\RE\ExtraContainerChanges.h" />
-    <ClInclude Include="include\RE\TESDeathEvent.h" />
-    <ClInclude Include="include\RE\TESResetEvent.h" />
-    <ClInclude Include="include\RE\TESSwitchRaceCompleteEvent.h" />
     <ClInclude Include="include\RE\UserEvents.h" />
     <ClInclude Include="include\RE\InventoryChanges.h" />
     <ClInclude Include="include\RE\InventoryEntryData.h" />

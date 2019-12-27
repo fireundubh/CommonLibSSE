@@ -1638,9 +1638,6 @@
     <ClCompile Include="src\RE\BGSFootstepManager.cpp">
       <Filter>src\RE\Misc</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BGSFootstepEvent.cpp">
-      <Filter>src\RE\Events</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\BSShaderTextureSet.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClCompile>
@@ -1724,9 +1721,6 @@
     </ClCompile>
     <ClCompile Include="src\RE\InterfaceStrings.cpp">
       <Filter>src\RE\Menus</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\Events\TESHitEvent.cpp">
-      <Filter>src\RE\Events\ScriptEvent</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\NiBooleanExtraData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
@@ -4967,12 +4961,6 @@
     <ClInclude Include="include\RE\Events\TESCombatEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Events\TESContainerChangedEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\Events\TESDeathEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\Events\TESEquipEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
@@ -5045,15 +5033,6 @@
     <ClInclude Include="include\RE\BGSFootstepEvent.h">
       <Filter>include\RE\Events</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\TESDeathEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\TESResetEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\TESSwitchRaceCompleteEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\UI.h">
       <Filter>include\RE\Menus</Filter>
     </ClInclude>
@@ -5077,6 +5056,9 @@
     </ClInclude>
     <ClInclude Include="include\RE\BleedoutCameraState.h">
       <Filter>include\RE\Camera\TESCameraState\ThirdPersonState</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESDeathEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

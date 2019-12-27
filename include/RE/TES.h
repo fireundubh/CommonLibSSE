@@ -17,6 +17,7 @@ namespace RE
 	struct PositionPlayerEvent;
 	class TESWorldSpace;
 	class GridCellArray;
+	class Sky;
 
 
 	class TES :

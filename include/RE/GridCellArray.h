@@ -22,9 +22,10 @@ namespace RE
 
 		TESObjectCELL* GetCell(UInt32 x, UInt32 y)
 		{ 
-			UInt32 length = length;
 			if (x >= length || y >= length)
+			{
 				return nullptr;
+			}
 			return cells[(x * length) + y];
 		};
 	};
