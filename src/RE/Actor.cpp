@@ -125,14 +125,14 @@ namespace RE
 	TESNPC* Actor::GetActorBase()
 	{
 		auto obj = GetBaseObject();
-		return obj ? obj->As<TESNPC*>() : 0;
+		return obj ? obj->As<TESNPC>() : 0;
 	}
 
 
 	const TESNPC* Actor::GetActorBase() const
 	{
 		auto obj = GetBaseObject();
-		return obj ? obj->As<TESNPC*>() : 0;
+		return obj ? obj->As<TESNPC>() : 0;
 	}
 
 

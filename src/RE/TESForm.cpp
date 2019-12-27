@@ -67,7 +67,7 @@ namespace RE
 	{
 		SInt32 value = 0;
 		auto form = this;
-		auto objRef = As<TESObjectREFR*>();
+		auto objRef = As<TESObjectREFR>();
 		if (objRef) {
 			form = objRef->GetBaseObject();
 			auto xEnch = objRef->extraData.GetByType<ExtraEnchantment>();
@@ -76,11 +76,11 @@ namespace RE
 			}
 		}
 
-		auto valueForm = form->As<TESValueForm*>();
+		auto valueForm = form->As<TESValueForm>();
 		if (valueForm) {
 			value += valueForm->value;
 		} else {
-			auto magicItem = form->As<MagicItem*>();
+			auto magicItem = form->As<MagicItem>();
 			if (magicItem) {
 				value += magicItem->CalculateTotalGoldValue();
 			} else {
@@ -94,7 +94,7 @@ namespace RE
 
 	const char* TESForm::GetName() const
 	{
-		auto fullName = As<TESFullName*>();
+		auto fullName = As<TESFullName>();
 		if (fullName) {
 			auto str = fullName->GetFullName();
 			return str ? str : "";
@@ -106,10 +106,10 @@ namespace RE
 
 	float TESForm::GetWeight() const
 	{
-		auto ref = As<TESObjectREFR*>();
+		auto ref = As<TESObjectREFR>();
 		auto baseObj = ref ? ref->GetBaseObject() : 0;
 		auto form = baseObj ? baseObj : this;
-		auto weightForm = form->As<TESWeightForm*>();
+		auto weightForm = form->As<TESWeightForm>();
 		if (weightForm) {
 			return weightForm->weight;
 		} else if (form->Is(FormType::NPC)) {
@@ -140,7 +140,7 @@ namespace RE
 
 	bool TESForm::HasWorldModel() const
 	{
-		return As<TESModel*>() != 0;
+		return As<TESModel>() != 0;
 	}
 
 
