@@ -435,6 +435,8 @@
     <ClInclude Include="include\RE\Events\TESTrackedStatsEvent.h" />
     <ClInclude Include="include\RE\Events\TESUniqueIDChangeEvent.h" />
     <ClInclude Include="include\RE\Events\TESWaitStopEvent.h" />
+    <ClInclude Include="include\RE\GridArray.h" />
+    <ClInclude Include="include\RE\GridCellArray.h" />
     <ClInclude Include="include\RE\NiCollisionObject.h" />
     <ClInclude Include="include\RE\NiIntegerExtraData.h" />
     <ClInclude Include="include\RE\NiInterpController.h" />

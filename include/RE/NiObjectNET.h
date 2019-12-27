@@ -64,7 +64,7 @@ namespace RE
 				continue;
 			}
 			
-			std::string name = extraData->name.c_str();
+			std::string name = extraData->GetName().c_str();
 
 			if (name.empty())
 			{

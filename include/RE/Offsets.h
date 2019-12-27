@@ -1188,6 +1188,12 @@ namespace RE
 		}
 
 
+		namespace TESWorldSpace
+		{
+			constexpr std::uintptr_t GetOrCreateUnk0F8Cell = 0x002B63B0;	// 1_5_97
+		}
+
+
 		namespace ThirdPersonState
 		{
 			// VTable: .?AVThirdPersonState@@

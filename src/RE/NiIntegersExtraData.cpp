@@ -14,18 +14,10 @@ namespace RE
 		if (data)
 		{
 			data->name = name;
+			data->size = size;
 
-			if (size > 0)
-			{
-				data->value = NiAlloc<SInt32>(size);
-				memcpy(data->value, integer, size);
-				data->size = size;
-			}
-			else
-			{
-				data->value = NULL;
-				data->size = 0;
-			}
+			data->value = NiAlloc<SInt32>(size);
+			memcpy(data->value, integer, size);
 		}
 
 		return data;
@@ -59,7 +51,6 @@ namespace RE
 			{
 				value[i] = oldValue[i];
 			}
-
 			value[size] = element;
 
 			NiFree(oldValue);
@@ -95,7 +86,7 @@ namespace RE
 			NiFree(oldValue);
 			oldValue = nullptr;
 
-			size = oldSize - 1;
+			size--;
 
 			return true;
 		}

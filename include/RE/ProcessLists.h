@@ -73,7 +73,7 @@ namespace RE
 		BSTArray<ReferenceEffect*>	referenceEffects;				// 108
 		mutable BSUniqueLock		referenceEffectsLock;			// 120
 		BSTArray<void*>				unk128;							// 128
-		UInt64						unk140;							// 140
+		mutable BSUniqueLock		unk128Lock;						// 140
 		UInt64						unk148;							// 148
 		UInt64						unk150;							// 150
 		BSTArray<RefHandle>			unk158;							// 158

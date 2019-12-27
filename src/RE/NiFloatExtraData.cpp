@@ -11,8 +11,11 @@ namespace RE
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiFloatExtraData::Vtbl);
 		
 		NiFloatExtraData* data = (NiFloatExtraData*)NiExtraData::Create(sizeof(NiFloatExtraData), vtbl.GetAddress());
-		data->name = name;
-		data->data = value;
+		if (data)
+		{
+			data->name = name;
+			data->data = value;
+		}
 
 		return data;
 	}

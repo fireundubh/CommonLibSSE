@@ -26,7 +26,7 @@ namespace RE
 
 		static NiStringsExtraData * Create(const BSFixedString& name, BSFixedString * stringData, UInt32 size);
 
-		SInt32 GetIndexOf(char * element);
+		SInt32 GetIndexOf(const char * element);
 		bool InsertElement(const char * element);
 		bool RemoveElement(const char * element);
 

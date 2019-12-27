@@ -290,7 +290,7 @@ namespace RE
 			return false;
 		}
 
-		if (!a_extra->name.empty())
+		if (!a_extra->GetName().empty())
 		{
 			return false;
 		}
@@ -305,7 +305,7 @@ namespace RE
 		{
 			middle = (top + bottom) >> 1;
 
-			std::ptrdiff_t compare = a_extra->name.c_str() - extra[middle]->GetName().c_str();
+			std::ptrdiff_t compare = a_extra->GetName().c_str() - extra[middle]->GetName().c_str();
 
 			if (compare == 0)
 			{

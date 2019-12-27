@@ -167,7 +167,7 @@ namespace RE
 		virtual void		Unk_36(void) override;									// 36
 
 		bool HasMaxHeightData() const;
-
+		TESObjectCELL* GetOrCreateUnk0F8Cell();
 
 		BSTHashMap<UnkKey, UnkValue>							unk058;						// 058
 		TESObjectCELL*											cell;						// 088

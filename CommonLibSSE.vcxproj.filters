@@ -5015,5 +5015,11 @@
     <ClInclude Include="include\RE\NiMultiTargetTransformController.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\GridArray.h">
+      <Filter>include\RE\FileIO\ICellAttachDetachEventSource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\GridCellArray.h">
+      <Filter>include\RE\FileIO\ICellAttachDetachEventSource</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

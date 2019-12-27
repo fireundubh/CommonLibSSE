@@ -6,42 +6,43 @@
 
 namespace RE
 {
-	NiStringsExtraData* NiStringsExtraData::Create(const BSFixedString& name, BSFixedString * stringData, UInt32 size)
+	NiStringsExtraData* NiStringsExtraData::Create(const BSFixedString& name, BSFixedString* stringData, UInt32 size)
 	{
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiStringsExtraData::Vtbl);
 
 		NiStringsExtraData* data = (NiStringsExtraData*)NiExtraData::Create(sizeof(NiStringsExtraData), vtbl.GetAddress());
-		data->name = name;
-		data->value = NiAlloc<char*>(size);
-		data->size = size;
-
-		for (int i = 0; i < size; i++)
+		if (data)
 		{
-			const char * string = stringData[i].c_str();
+			data->name = name;
+			data->value = NiAlloc<char*>(size);
+			data->size = size;
 
-			if (string && *string != '\0')
+			for (int i = 0; i < size; i++)
 			{
-				UInt32 strLength = strlen(string) + 1;
-				data->value[i] = NiAlloc<char>(strLength);
-				memcpy(data->value[i], string, sizeof(char) * strLength);
+				auto string = stringData[i].c_str();
+
+				if (string && *string != '\0')
+				{
+					UInt32 strLength = strlen(string) + 1;
+					data->value[i] = NiAlloc<char>(strLength);
+					memcpy(data->value[i], string, sizeof(char) * strLength);
+				}
 			}
 		}
 
 		return data;
 	}
 
-	SInt32 NiStringsExtraData::GetIndexOf(char* element)
+	SInt32 NiStringsExtraData::GetIndexOf(const char* element)
 	{
-		if (!element || *element == '\0')
+		if (element && *element != '\0')
 		{
-			return -1;
-		}
-
-		for (UInt32 i = 0; i < size; i++)
-		{
-			if (value[i] == element)
+			for (UInt32 i = 0; i < size; i++)
 			{
-				return i;
+				if (strcmp(value[i], element) == 0)
+				{
+					return i;
+				}
 			}
 		}
 
@@ -50,7 +51,7 @@ namespace RE
 
 	bool NiStringsExtraData::InsertElement(const char* element)
 	{
-		SInt32 index = GetIndexOf(const_cast<char*>(element));
+		SInt32 index = GetIndexOf(element);
 
 		if (index == -1)
 		{
@@ -106,7 +107,7 @@ namespace RE
 			NiFree(oldData);
 			oldData = nullptr;
 
-			size = oldSize - 1;
+			size--;
 
 			return true;
 		}
