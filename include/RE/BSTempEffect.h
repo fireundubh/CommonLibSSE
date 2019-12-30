@@ -61,15 +61,15 @@ namespace RE
 
 
 		// members
-		UInt32	unk10;	// 10
-		UInt32	unk14;	// 14
-		UInt64	unk18;	// 18
-		UInt32	unk20;	// 20
-		UInt8	unk24;	// 24
-		UInt8	unk25;	// 25
-		UInt16	unk26;	// 26
-		UInt32	unk28;	// 28
-		UInt32	unk2C;	// 2C
+		float			time;	// 10
+		UInt32			unk14;	// 14
+		TESObjectCELL *	cell;	// 18
+		UInt32			unk20;	// 20
+		UInt8			unk24;	// 24
+		UInt8			unk25;	// 25
+		UInt16			unk26;	// 26
+		UInt32			unk28;	// 28
+		UInt32			unk2C;	// 2C
 	};
 	STATIC_ASSERT(sizeof(BSTempEffect) == 0x30);
 }

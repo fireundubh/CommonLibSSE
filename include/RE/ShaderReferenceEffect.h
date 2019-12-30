@@ -77,9 +77,8 @@ namespace RE
 		UInt64				unk110;	// 110
 		void*				unk118;	// 118 - smart ptr
 		UInt32				unk120;	// 120
-		UInt32				unk124;	// 124
-		UInt32				unk128;	// 128
-		UInt32				unk12C;	// 12C
+		float				unk124;	// 124 - 1.0f
+		float				unk128;	// 128 - 1.0f
 		UInt32				unk130;	// 130 - flags
 		UInt32				unk134;	// 134
 	};
