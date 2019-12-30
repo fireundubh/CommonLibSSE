@@ -351,6 +351,7 @@ namespace RE
 		static bool						LookupByHandle(RefHandle a_refHandle, NiPointer<TESObjectREFR>& a_refrOut);
 
 		void					ActivateRefChildren(TESObjectREFR* a_activator);
+		RefHandle*				CreateRefHandle_Native(RefHandle* handle);
 		ObjectRefHandle			CreateRefHandle();
 		TESNPC*					GetActorOwner();
 		NiPoint3				GetAngle() const;

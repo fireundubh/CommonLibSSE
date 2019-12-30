@@ -1211,6 +1211,8 @@ namespace RE
 			constexpr std::uintptr_t MoveTo = 0x009AE5C0;				// 1_5_97
 			// IndirectSig: E8 ? ? ? ? 41 B4 01 EB 1B
 			constexpr std::uintptr_t PlayAnimation = 0x00189E30;		// 1_5_97
+			//
+			constexpr std::uintptr_t CreateRefHandle_Native = 0x0029B980;	// 1_5_97
 		}
 
 
