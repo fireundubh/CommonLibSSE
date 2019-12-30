@@ -5042,9 +5042,6 @@
     <ClInclude Include="include\RE\BSSoundHandle.h">
       <Filter>include\RE\BSAudio</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\InputDevice.h">
-      <Filter>include\RE\BSDevices\Enums</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\PCGamepadType.h">
       <Filter>include\RE\BSDevices\Enums</Filter>
     </ClInclude>
@@ -5120,11 +5117,11 @@
     <ClInclude Include="include\RE\BGSDirectionalAmbientLightingColors.h">
       <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Events\TESDeathEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
+    <ClInclude Include="include\RE\InputDevices.h">
+      <Filter>include\RE\BSDevices\Enums</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\OwnedCameraEffectController.h">
-      <Filter>include\RE\FormComponents\Components\ReferenceEffectController\OwnedController</Filter>
+    <ClInclude Include="include\RE\BSTimer.h">
+      <Filter>include\RE\BSSystem</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\OwnedController.h">
       <Filter>include\RE\FormComponents\Components\ReferenceEffectController\OwnedController</Filter>

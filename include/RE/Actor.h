@@ -32,6 +32,91 @@ namespace RE
 	class PerkEntryVisitor;
 
 
+	enum class ACTOR_CRITICAL_STAGE : UInt32
+	{
+		kNone = 0,
+		kGooStart = 1,
+		kGooEnd = 2,
+		kDisintegrateStart = 3,
+		kDisintegrateEnd = 4,
+
+		kTotal
+	};
+
+
+	struct AITimeStamp
+	{
+		float timeStamp;	// 0
+	};
+	STATIC_ASSERT(sizeof(AITimeStamp) == 0x4);
+
+
+	struct Modifiers
+	{
+		struct Mods
+		{
+			enum Mod
+			{
+				kPermanent = 0,
+				kTemporary,
+				kDamage,
+
+				kTotal
+			};
+		};
+		using Mod = Mods::Mod;
+
+
+		// members
+		float modifiers[Mod::kTotal];	// 0
+	};
+	STATIC_ASSERT(sizeof(Modifiers) == 0xC);
+
+
+	struct ActorValueStorage
+	{
+		template <class T>
+		struct LocalMap
+		{
+			T* operator[](ActorValue8 a_actorValue)
+			{
+				auto akVals = reinterpret_cast<const ActorValue8*>(actorValues.data());
+				if (akVals && entries) {
+					UInt32 idx = 0;
+					while (akVals[idx] != static_cast<ActorValue8>(0)) {
+						if (akVals[idx] == a_actorValue) {
+							break;
+						}
+						++idx;
+					}
+					if (akVals[idx] != static_cast<ActorValue8>(0)) {
+						return &entries[idx];
+					}
+				}
+				return 0;
+			}
+
+
+			T* operator[](ActorValue a_actorValue)
+			{
+				return operator[](static_cast<ActorValue8>(a_actorValue));
+			}
+
+
+			// members
+			BSFixedString	actorValues;	// 00
+			T*				entries;		// 08
+		};
+		STATIC_ASSERT(sizeof(LocalMap<float>) == 0x10);
+
+
+		// members
+		LocalMap<float>		baseValues;	// 00
+		LocalMap<Modifiers>	modifiers;	// 10
+	};
+	STATIC_ASSERT(sizeof(ActorValueStorage) == 0x20);
+
+
 	class Actor :
 		public TESObjectREFR,								// 000
 		public MagicTarget,									// 098
@@ -73,18 +158,6 @@ namespace RE
 			kIsInWater = 1 << 18,
 			kIsPlayerTeammate = 1 << 26,
 			kIsGuard = 1 << 30
-		};
-
-
-		enum class CriticalStage : UInt32
-		{
-			kNone = 0,
-			kGooStart = 1,
-			kGooEnd = 2,
-			kDisintegrateStart = 3,
-			kDisintegrateEnd = 4,
-
-			kTotal
 		};
 
 
@@ -136,79 +209,6 @@ namespace RE
 				kDontHavokSettle = 1 << 29
 			};
 		};
-
-
-		struct AITimeStamp
-		{
-			float timeStamp;	// 0
-		};
-		STATIC_ASSERT(sizeof(AITimeStamp) == 0x4);
-
-
-		struct Modifiers
-		{
-			struct Mods
-			{
-				enum Mod
-				{
-					kPermanent = 0,
-					kTemporary,
-					kDamage,
-
-					kTotal
-				};
-			};
-			using Mod = Mods::Mod;
-
-
-			// members
-			float modifiers[Mod::kTotal];	// 0
-		};
-		STATIC_ASSERT(sizeof(Modifiers) == 0xC);
-
-
-		struct ActorValueStorage
-		{
-			template <class T>
-			struct LocalMap
-			{
-				T* operator[](ActorValue8 a_actorValue)
-				{
-					auto akVals = reinterpret_cast<const ActorValue8*>(actorValues.data());
-					if (akVals && entries) {
-						UInt32 idx = 0;
-						while (akVals[idx] != static_cast<ActorValue8>(0)) {
-							if (akVals[idx] == a_actorValue) {
-								break;
-							}
-							++idx;
-						}
-						if (akVals[idx] != static_cast<ActorValue8>(0)) {
-							return &entries[idx];
-						}
-					}
-					return 0;
-				}
-
-
-				T* operator[](ActorValue a_actorValue)
-				{
-					return operator[](static_cast<ActorValue8>(a_actorValue));
-				}
-
-
-				// members
-				BSFixedString	actorValues;	// 00
-				T*				entries;		// 08
-			};
-			STATIC_ASSERT(sizeof(LocalMap<float>) == 0x10);
-
-
-			// members
-			LocalMap<float>		baseValues;	// 00
-			LocalMap<Modifiers>	modifiers;	// 10
-		};
-		STATIC_ASSERT(sizeof(ActorValueStorage) == 0x20);
 
 
 		virtual	~Actor();																																																								// 000
@@ -494,7 +494,7 @@ namespace RE
 		// members
 		Flag1									flags1;								// 0E0
 		float									updateTargetTimer;					// 0E4
-		CriticalStage							criticalStage;						// 0E8
+		ACTOR_CRITICAL_STAGE					criticalStage;						// 0E8
 		UInt32									pad0EC;								// 0EC
 		AIProcess*								currentProcess;						// 0F0
 		RefHandle								dialogueItemTarget;					// 0F8
