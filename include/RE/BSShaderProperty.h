@@ -126,7 +126,7 @@ namespace RE
 
 
 		// members
-		UInt32							unk30;			// 30
+		float							unk30;			// 30 - 1.0f
 		UInt32							unk34;			// 34
 		ShaderFlag1						shaderFlags1;	// 38
 		ShaderFlag2						shaderFlags2;	// 3C
