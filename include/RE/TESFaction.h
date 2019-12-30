@@ -12,7 +12,7 @@
 
 namespace RE
 {
-	class Condition;
+	class TESCondition;
 	class PackageLocation;
 
 
@@ -46,6 +46,17 @@ namespace RE
 			kVendor = 1 << 14,
 			kCanBeOwner = 1 << 15,
 			kIgnoresCrimes_Werewolf = 1 << 16
+		};
+
+
+		struct ChangeFlags
+		{
+			enum ChangeFlag : UInt32
+			{
+				kFactionFlags = 1 << 1,
+				kFactionReactions = 1 << 2,
+				kFactionCrimeCounts = (UInt32)1 << 31
+			};
 		};
 
 
@@ -156,7 +167,7 @@ namespace RE
 		VendorValues					vendorValues;				// 0A8 - VENV
 		UInt32							pad0B4;						// 0B4
 		PackageLocation*				location;					// 0B8 - PLVD
-		Condition*						conditions;					// 0C0
+		TESCondition*					conditions;					// 0C0
 		BGSListForm*					vendorBuySellList;			// 0C8 - VEND
 		TESObjectREFR*					merchantContainer;			// 0D0 - VENC
 		UInt32							unk0D8;						// 0D8

@@ -191,6 +191,13 @@ namespace RE
 		}
 
 
+		namespace BSInputDeviceManager
+		{
+			// 74 0D 48 83 C0 A8
+			constexpr std::uintptr_t Singleton = 0x02F257A8;	// 1_5_97
+		}
+
+
 		namespace BSLightingShaderMaterialBase
 		{
 			// IndirectSig: E8 ? ? ? ? 45 33 C0 33 D2 48 8B CF 4C 8B F0
@@ -305,12 +312,30 @@ namespace RE
 			}
 		}
 
+		
 
 		namespace BSShaderTextureSet
 		{
 			//po3
 			constexpr std::uintptr_t Ctor = 0x012C9320;	// 1_5_97
 		}
+
+
+		
+		namespace BSSoundHandle
+		{
+			// IndirectSig: E8 ? ? ? ? 84 C0 75 5C 49 8B 85 ? ? ? ?
+			constexpr std::uintptr_t IsValid = 0x00BED690;				// 1_5_97
+			// IndirectSig: E8 ? ? ? ? EB 0E 84 C0
+			constexpr std::uintptr_t Play = 0x00BED530;					// 1_5_97
+			// IndirectSig: E8 ? ? ? ? F3 0F 10 5D 9F
+			constexpr std::uintptr_t SetObjectToFollow = 0x00BEDB10;	// 1_5_97
+			// IndirectSig: E8 ? ? ? ? 4C 8D 7E 20
+			constexpr std::uintptr_t SetPosition = 0x00BED920;			// 1_5_97
+			// IndirectSig: E8 ? ? ? ? 48 8B CE E8 ? ? ? ? E9 ? ? ? ? B9 ? ? ? ?
+			constexpr std::uintptr_t Stop = 0x00BED600;					// 1_5_97
+		}
+
 
 
 		namespace BSString
@@ -332,6 +357,13 @@ namespace RE
 		{
 			// IndirectSig: E8 ? ? ? ? 41 8B FE 41 8B CE
 			constexpr std::uintptr_t GetSingleton = 0x00C2A4D0;	// 1_5_97
+		}
+
+
+		namespace BSUntypedPointerHandle
+		{
+			// 8B 05 ? ? ? ? 89 44 24 78 48 8D 44 24 ? 8B 00
+			constexpr std::uintptr_t InvalidHandle = 0x01EBEABC;	// 1_5_97
 		}
 
 
@@ -362,20 +394,6 @@ namespace RE
 			constexpr std::uintptr_t FirstConsoleCommand = 0x01DC6F60;	// 1_5_97
 			// 48 8D 1D ? ? ? ? BF ? ? ? ? 0F 1F 00
 			constexpr std::uintptr_t FirstScriptCommand = 0x01DB8910;	// 1_5_97
-		}
-
-
-		namespace Condition
-		{
-			namespace Node
-			{
-				// IndirectSig: E8 ? ? ? ? 44 0F B6 C0 45 84 F6
-				constexpr std::uintptr_t Run = 0x004454C0;	// 1_5_97
-			}
-
-
-			// IndirectSig: E8 ? ? ? ? 0F B6 D8 EB 08
-			constexpr std::uintptr_t Run = 0x004447A0;	// 1_5_97
 		}
 
 
@@ -703,13 +721,6 @@ namespace RE
 		}
 
 
-		namespace InputManager
-		{
-			// 74 0D 48 83 C0 A8
-			constexpr std::uintptr_t Singleton = 0x02F257A8;	// 1_5_97
-		}
-
-
 		namespace InterfaceStrings
 		{
 			// E8 ? ? ? ? 90 48 89 05 ? ? ? ? 48 8B 0D ? ? ? ? E8 ? ? ? ? 48 83 3D ? ? ? ? ? 75 20
@@ -968,28 +979,30 @@ namespace RE
 			}
 
 
-			// 0F 94 C3 88 1D ? ? ? ?
-			constexpr std::uintptr_t CollisionDisabled = 0x01EBEB50;	// 1_5_97
-			// IndirectSig: E8 ? ? ? ? 0F 28 F0 48 85 FF 0F 84 ? ? ? ?
-			constexpr std::uintptr_t GetArmorValue = 0x00692CD0;		// 1_5_97
-			// IndirectSig: E8 ? ? ? ? F3 0F 2C C8 8B C7
-			constexpr std::uintptr_t GetDamage = 0x00693050;			// 1_5_97
-			// DirectSig: 44 8B 81 ? ? ? ? 33 C0 45 85 C0 74 27
-			constexpr std::uintptr_t GetNumTints = 0x006B5450;			// 1_5_97
-			// DirectSig: 48 83 EC 38 80 7C 24 70 00
-			constexpr std::uintptr_t GetPickpocketChance = 0x003BCF40;	// 1_5_97
-			// DirectSig: 48 89 5C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 44 8B 99 ? ? ? ? 45 33 C9
-			constexpr std::uintptr_t GetTintMask = 0x006B52A0;			// 1_5_97
-			// IndirectSig: E8 ? ? ? ? 44 89 65 67
-			constexpr std::uintptr_t PlayPickupEvent = 0x0069FE60;		// 1_5_97
-			// E8 ? ? ? ? 48 89 35 ? ? ? ? 48 8B C6
-			constexpr std::uintptr_t Singleton = 0x02F26EF8;			// 1_5_97
 			// IndirectSig: E8 ? ? ? ? 66 C7 43 18 00 00
-			constexpr std::uintptr_t StartActivation = 0x006A9F90;		// 1_5_97
+			constexpr std::uintptr_t ActivatePickRef = 0x006A9F90;			// 1_5_97
+			// 0F 94 C3 88 1D ? ? ? ?
+			constexpr std::uintptr_t CollisionDisabled = 0x01EBEB50;		// 1_5_97
+			// IndirectSig: E8 ? ? ? ? 0F 28 F0 48 85 FF 0F 84 ? ? ? ?
+			constexpr std::uintptr_t GetArmorValue = 0x00692CD0;			// 1_5_97
+			// IndirectSig: E8 ? ? ? ? F3 0F 2C C8 8B C7
+			constexpr std::uintptr_t GetDamage = 0x00693050;				// 1_5_97
+			// DirectSig: 44 8B 81 ? ? ? ? 33 C0 45 85 C0 74 27
+			constexpr std::uintptr_t GetNumTints = 0x006B5450;				// 1_5_97
+			// DirectSig: 48 83 EC 38 80 7C 24 70 00
+			constexpr std::uintptr_t GetPickpocketChance = 0x003BCF40;		// 1_5_97
+			// DirectSig: 48 89 5C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 44 8B 99 ? ? ? ? 45 33 C9
+			constexpr std::uintptr_t GetTintMask = 0x006B52A0;				// 1_5_97
+			// IndirectSig: E8 ? ? ? ? 44 89 65 67
+			constexpr std::uintptr_t PlayPickupEvent = 0x0069FE60;			// 1_5_97
+			// E8 ? ? ? ? 48 89 35 ? ? ? ? 48 8B C6
+			constexpr std::uintptr_t Singleton = 0x02F26EF8;				// 1_5_97
+			// IndirectSig: E8 ? ? ? ? 48 8B 05 ? ? ? ? 83 B8 ? ? ? ? ? 0F 95 C0
+			constexpr std::uintptr_t StartGrabObject = 0x006AA260;			// 1_5_97
 			// IndirectSig: E8 ? ? ? ? 84 C0 75 08 40 32 F6
-			constexpr std::uintptr_t TryToPickPocket = 0x006B2530;		// 1_5_97
+			constexpr std::uintptr_t TryToPickPocket = 0x006B2530;			// 1_5_97
 			// VTable: .?AVPlayerCharacter@@
-			constexpr std::uintptr_t Vtbl = 0x016635E0;					// 1_5_97
+			constexpr std::uintptr_t Vtbl = 0x016635E0;						// 1_5_97
 		}
 
 
@@ -1004,10 +1017,11 @@ namespace RE
 
 		namespace ProcessLists
 		{
-			// IndirectSig: E8 ? ? ? ? 48 8B 13 48 8B CB FF 92 ? ? ? ? 33 D2
-			constexpr std::uintptr_t SetCombatAlarmState = 0x006D9490;	// 1_5_97
 			// 4C 8B F9 48 89 0D ? ? ? ?
-			constexpr std::uintptr_t Singleton = 0x01EBEAD0;			// 1_5_97
+			constexpr std::uintptr_t Singleton = 0x01EBEAD0;					// 1_5_97
+			// IndirectSig: E8 ? ? ? ? 48 8B 13 48 8B CB FF 92 ? ? ? ? 33 D2
+			constexpr std::uintptr_t StopCombatAndAlarmOnActor = 0x006D9490;	// 1_5_97
+			
 			//
 			constexpr std::uintptr_t StopArtObject = 0x006DDA30;		// 1_5_97
 		}
@@ -1071,17 +1085,6 @@ namespace RE
 		}
 
 
-		namespace SoundData
-		{
-			// IndirectSig: E8 ? ? ? ? EB 0E 84 C0
-			constexpr std::uintptr_t Play = 0x00BED530;			// 1_5_97
-			// IndirectSig: E8 ? ? ? ? F3 0F 10 5D 9F
-			constexpr std::uintptr_t SetNode = 0x00BEDB10;		// 1_5_97
-			// IndirectSig: E8 ? ? ? ? 4C 8D 7E 20
-			constexpr std::uintptr_t SetPosition = 0x00BED920;	// 1_5_97
-		}
-
-
 		namespace SprintHandler
 		{
 			// VTable: .?AUSprintHandler@@
@@ -1100,6 +1103,20 @@ namespace RE
 		{
 			// DirectSig: 48 89 5C 24 ? 57 48 83 EC 20 48 8B F9 48 8B DA 48 8B 49 28 48 85 C9 74 06
 			constexpr std::uintptr_t SetCameraState = 0x004F5C80;	// 1_5_97
+		}
+
+
+		namespace TESCondition
+		{
+			namespace Node
+			{
+				// IndirectSig: E8 ? ? ? ? 44 0F B6 C0 45 84 F6
+				constexpr std::uintptr_t Run = 0x004454C0;	// 1_5_97
+			}
+
+
+			// IndirectSig: E8 ? ? ? ? 0F B6 D8 EB 08
+			constexpr std::uintptr_t Run = 0x004447A0;	// 1_5_97
 		}
 
 

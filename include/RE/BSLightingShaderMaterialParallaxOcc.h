@@ -1,38 +1,39 @@
 #pragma once
 
-#include "RE/BSLightingShaderMaterialBase.h" 
-#include "RE/BSTextureSet.h"
+#include "RE/BSLightingShaderMaterialBase.h"
+#include "RE/NiSmartPointer.h"
 
 
 namespace RE
 {
+	class NiSourceTexture;
+
+
 	class BSLightingShaderMaterialParallaxOcc : public BSLightingShaderMaterialBase
 	{
 	public:
 		inline static const void* RTTI = RTTI_BSLightingShaderMaterialParallaxOcc;
 
-		virtual ~BSLightingShaderMaterialParallaxOcc();						// 00
 
-		// override (BSShaderMaterial)
-		virtual BSShaderMaterial*   Create() override;						// 01
-		virtual void				Copy(BSShaderMaterial* a_src) override;	// 02
-		virtual void				Unk_04(void) override;					// 04
-		virtual Type				GetType() const override;				// 06 - { return Type::kParallaxOcculsion; }
+		virtual ~BSLightingShaderMaterialParallaxOcc();								// 00
 
 		// override (BSLightingShaderMaterialBase)
-		virtual void				SetTexture(UInt32 index, BSTextureSet* texture, SInt32 unk1) override;									//08
-		virtual void				ReleaseTextures(void) override; 																		//09 - ReleaseRefs	
-		virtual void				Unk_0A(UInt8 unk1, UInt8 unk2, UInt8 unk3, UInt8 unk4, UInt8 unk5, UInt32 unk6, UInt32 unk7) override;	//0A - AddRefs
-		virtual void				Unk_0B(void* unk1, UInt32 unk2) override;																//0B
-		virtual void				Unk_0C(void) override;																					//0C
-		virtual void				Unk_0D(void) override;																					//0D
+		virtual BSShaderMaterial*	Create() override;								// 01
+		virtual void				CopyMembers(BSShaderMaterial* a_src) override;	// 02
+		virtual UInt32				ComputeCRC32(void) override;					// 04
+		virtual Feature				GetFeature() const override;					// 06 - { return Feature::kParallaxOcc; }
+		virtual void				OnLoadTextureSet(void) override;				// 08
+		virtual void				ClearTextures(void) override;					// 09
+		virtual void				ReceiveValuesFromRootMaterial(void) override;	// 0A
+		virtual void				GetTextures(void) override;						// 0B
+		virtual void				SaveBinary(void) override;						// 0C
+		virtual void				LoadBinary(void) override;						// 0D
 
 
 		// members
-		NiPointer<NiTexture> spHeightTexture;
-		float fParallaxOccMaxPasses;
-		float fParallaxOccScale;
-
+		NiPointer<NiSourceTexture>	heightTexture;			// A0
+		float						parallaxOccMaxPasses;	// A8
+		float						parallaxOccScale;		// AC
 	};
 	STATIC_ASSERT(sizeof(BSLightingShaderMaterialParallaxOcc) == 0xB0);
 }

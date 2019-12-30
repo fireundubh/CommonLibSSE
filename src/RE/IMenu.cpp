@@ -2,9 +2,9 @@
 
 #include <type_traits>
 
+#include "RE/BSInputDeviceManager.h"
 #include "RE/BSUIScaleformData.h"
 #include "RE/GFxValue.h"
-#include "RE/InputManager.h"
 #include "RE/InterfaceStrings.h"
 #include "RE/UI.h"
 #include "RE/UIMessage.h"
@@ -19,7 +19,7 @@ namespace RE
 		pad19(0),
 		pad20(0),
 		flags(Flag::kNone),
-		context(Context::kInvalid),
+		context(Context::kNone),
 		pad24(0),
 		fxDelegate(0)
 	{}
@@ -84,7 +84,7 @@ namespace RE
 	{
 		using Message = UIMessage::Message;
 
-		auto inputManager = InputManager::GetSingleton();
+		auto inputManager = BSInputDeviceManager::GetSingleton();
 		auto gamepad = inputManager->IsGamepadEnabled();
 		if (view && view->IsAvailable("_root.SetPlatform")) {
 			GFxValue args[2];
@@ -114,103 +114,103 @@ namespace RE
 
 	bool IMenu::AdvancesUnderPauseMenu() const
 	{
-		return (flags & Flag::kAdvancesUnderPauseMenu) == Flag::kNone;
+		return (flags & Flag::kAdvancesUnderPauseMenu) != Flag::kNone;
 	}
 
 
 	bool IMenu::AllowSaving() const
 	{
-		return (flags & Flag::kAllowSaving) == Flag::kNone;
+		return (flags & Flag::kAllowSaving) != Flag::kNone;
 	}
 
 
 	bool IMenu::AlwaysOpen() const
 	{
-		return (flags & Flag::kAlwaysOpen) == Flag::kNone;
+		return (flags & Flag::kAlwaysOpen) != Flag::kNone;
 	}
 
 
 	bool IMenu::ApplicationMenu() const
 	{
-		return (flags & Flag::kApplicationMenu) == Flag::kNone;
+		return (flags & Flag::kApplicationMenu) != Flag::kNone;
 	}
 
 
 	bool IMenu::AssignCursorToRenderer() const
 	{
-		return (flags & Flag::kAssignCursorToRenderer) == Flag::kNone;
+		return (flags & Flag::kAssignCursorToRenderer) != Flag::kNone;
 	}
 
 
 	bool IMenu::CustomRendering() const
 	{
-		return (flags & Flag::kCustomRendering) == Flag::kNone;
+		return (flags & Flag::kCustomRendering) != Flag::kNone;
 	}
 
 
 	bool IMenu::CompanionAppAllowed() const
 	{
-		return (flags & Flag::kCompanionAppAllowed) == Flag::kNone;
+		return (flags & Flag::kCompanionAppAllowed) != Flag::kNone;
 	}
 
 
 	bool IMenu::DisablePauseMenu() const
 	{
-		return (flags & Flag::kDisablePauseMenu) == Flag::kNone;
+		return (flags & Flag::kDisablePauseMenu) != Flag::kNone;
 	}
 
 
 	bool IMenu::DontHideCursorWhenTopmost() const
 	{
-		return (flags & Flag::kDontHideCursorWhenTopmost) == Flag::kNone;
+		return (flags & Flag::kDontHideCursorWhenTopmost) != Flag::kNone;
 	}
 
 
 	bool IMenu::FreezeFrameBackground() const
 	{
-		return (flags & Flag::kFreezeFrameBackground) == Flag::kNone;
+		return (flags & Flag::kFreezeFrameBackground) != Flag::kNone;
 	}
 
 
 	bool IMenu::FreezeFramePause() const
 	{
-		return (flags & Flag::kFreezeFramePause) == Flag::kNone;
+		return (flags & Flag::kFreezeFramePause) != Flag::kNone;
 	}
 
 
 	bool IMenu::HasButtonBar() const
 	{
-		return (flags & Flag::kHasButtonBar) == Flag::kNone;
+		return (flags & Flag::kHasButtonBar) != Flag::kNone;
 	}
 
 
 	bool IMenu::InventoryItemMenu() const
 	{
-		return (flags & Flag::kInventoryItemMenu) == Flag::kNone;
+		return (flags & Flag::kInventoryItemMenu) != Flag::kNone;
 	}
 
 
 	bool IMenu::IsTopButtonBar() const
 	{
-		return (flags & Flag::kIsTopButtonBar) == Flag::kNone;
+		return (flags & Flag::kIsTopButtonBar) != Flag::kNone;
 	}
 
 
 	bool IMenu::LargeScaleformRenderCacheMode() const
 	{
-		return (flags & Flag::kLargeScaleformRenderCacheMode) == Flag::kNone;
+		return (flags & Flag::kLargeScaleformRenderCacheMode) != Flag::kNone;
 	}
 
 
 	bool IMenu::Modal() const
 	{
-		return (flags & Flag::kModal) == Flag::kNone;
+		return (flags & Flag::kModal) != Flag::kNone;
 	}
 
 
 	bool IMenu::OnStack() const
 	{
-		return (flags & Flag::kOnStack) == Flag::kNone;
+		return (flags & Flag::kOnStack) != Flag::kNone;
 	}
 
 

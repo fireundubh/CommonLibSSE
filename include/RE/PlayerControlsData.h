@@ -5,17 +5,16 @@
 
 namespace RE
 {
-	struct MovementData
+	class PlayerControlsData
 	{
-		NiPoint2	movement;		// 00
-		NiPoint2	unk08;			// 08
-		float		unk10;			// 10
-		float		unk14;			// 14
-		float		unk18;			// 18
-		float		unk1C;			// 1C
+	public:
+		NiPoint2	moveInputVec;	// 00
+		NiPoint2	lookInputVec;	// 08
+		NiPoint2	prevMoveVec;	// 10
+		NiPoint2	prevLookVec;	// 18
 		UInt32		unk20;			// 20
-		UInt8		autoRun;		// 24
-		UInt8		runMode;		// 25
+		bool		autoMove;		// 24
+		bool		running;		// 25
 		UInt8		unk26;			// 26
 		bool		fovSlideMode;	// 27
 		bool		povScriptMode;	// 28
@@ -26,5 +25,5 @@ namespace RE
 		UInt8		unk2D;			// 2D
 		UInt16		unk2E;			// 2E
 	};
-	STATIC_ASSERT(sizeof(MovementData) == 0x30);
+	STATIC_ASSERT(sizeof(PlayerControlsData) == 0x30);
 }

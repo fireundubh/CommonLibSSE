@@ -1,8 +1,7 @@
 #pragma once
 
-#include "skse64/GameRTTI.h"  // RTTI_BSLightingShaderMaterialHairTint
-#include "RE/BSLightingShaderMaterialBase.h"  // BSLightingShaderMaterialBase
-#include "RE/NiColor.h" // NiColor
+#include "RE/BSLightingShaderMaterialBase.h"
+#include "RE/NiColor.h"
 
 
 namespace RE
@@ -12,18 +11,20 @@ namespace RE
 	public:
 		inline static const void* RTTI = RTTI_BSLightingShaderMaterialSnow;
 
-		virtual ~BSLightingShaderMaterialSnow();							// 00
 
-		// override (BSShaderMaterialBase)
-		virtual BSShaderMaterial*	Create() override;						// 01
-		virtual void				Copy(BSShaderMaterial* a_src) override;	// 02
-		virtual void				Unk_04(void) override;					// 04
-		virtual Type				GetType() const override;				// 06 - { return Type::kSnow; }
+		virtual ~BSLightingShaderMaterialSnow();									// 00
+
+		// override (BSLightingShaderMaterialBase)
+		virtual BSShaderMaterial*	Create() override;								// 01
+		virtual void				CopyMembers(BSShaderMaterial* a_src) override;	// 02
+		virtual UInt32				ComputeCRC32(void) override;					// 04
+		virtual Feature				GetFeature() const override;					// 06 - { return Feature::kMultiIndexTriShapeSnow; }
+		virtual void				SaveBinary(void) override;						// 0C
+		virtual void				LoadBinary(void) override;						// 0D
 
 
 		// members
-		NiColorA kSparkleParams;
-
+		NiColorA sparkleParams;	// A0
 	};
 	STATIC_ASSERT(sizeof(BSLightingShaderMaterialSnow) == 0xB0);
 }

@@ -31,7 +31,7 @@ namespace RE
 
 		static ProcessLists* GetSingleton();
 
-		void SetCombatAlarmState(Actor* a_actor, bool a_enabled);
+		void StopCombatAndAlarmOnActor(Actor* a_actor, bool a_dontEndAlarm);
 		void StopArtObject(TESObjectREFR* a_ref, BGSArtObject* a_art);
 
 		// members

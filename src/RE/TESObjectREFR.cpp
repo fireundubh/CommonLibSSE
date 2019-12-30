@@ -1,7 +1,5 @@
 #include "RE/TESObjectREFR.h"
 
-#include "skse64/GameReferences.h"
-
 #include <cassert>
 #include <limits>
 
@@ -52,13 +50,9 @@ namespace RE
 	}
 
 
-	RefHandle TESObjectREFR::CreateRefHandle()
+	ObjectRefHandle TESObjectREFR::CreateRefHandle()
 	{
-		RefHandle refHandle = *g_invalidRefHandle;
-		if (GetRefCount() > 0) {
-			RE::CreateRefHandle(refHandle, this);
-		}
-		return refHandle;
+		return ObjectRefHandle(this);
 	}
 
 
@@ -470,7 +464,7 @@ namespace RE
 		auto& position = a_node->worldTransform.translate;
 		NiPoint3 rotation;
 		a_node->worldTransform.rotate.ToEulerAnglesXYZ(rotation);
-		RefHandle handle = a_target->CreateRefHandle();
+		auto handle = a_target->CreateRefHandle();
 		MoveTo_Impl(handle, a_target->GetParentCell(), GetWorldspace(), position, rotation);
 		return true;
 	}
@@ -511,7 +505,7 @@ namespace RE
 
 	void TESObjectREFR::SetActivationBlocked(bool a_blocked)
 	{
-		extraData.SetExtraFlags(ExtraFlags::Flag::kActivationBlocked, a_blocked);
+		extraData.SetExtraFlags(ExtraFlags::Flag::kBlockActivate, a_blocked);
 	}
 
 
@@ -568,7 +562,8 @@ namespace RE
 
 	void TESObjectREFR::SetPosition(NiPoint3 a_pos)
 	{
-		MoveTo_Impl(*g_invalidRefHandle, GetParentCell(), GetWorldspace(), a_pos, data.location);
+		static ObjectRefHandle invalid;
+		MoveTo_Impl(invalid, GetParentCell(), GetWorldspace(), a_pos, data.location);
 	}
 
 
@@ -580,7 +575,7 @@ namespace RE
 	}
 
 
-	void TESObjectREFR::MoveTo_Impl(RefHandle& a_targetHandle, TESObjectCELL* a_targetCell, TESWorldSpace* a_selfWorldSpace, NiPoint3& a_position, NiPoint3& a_rotation)
+	void TESObjectREFR::MoveTo_Impl(ObjectRefHandle& a_targetHandle, TESObjectCELL* a_targetCell, TESWorldSpace* a_selfWorldSpace, NiPoint3& a_position, NiPoint3& a_rotation)
 	{
 		using func_t = function_type_t<decltype(&TESObjectREFR::MoveTo_Impl)>;
 		REL::Offset<func_t*> func(Offset::TESObjectREFR::MoveTo);

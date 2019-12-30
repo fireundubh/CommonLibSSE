@@ -30,10 +30,17 @@ namespace RE
 	}
 
 
-	Actor* PlayerCharacter::GetActorInFavorState() const
+	void PlayerCharacter::ActivatePickRef()
 	{
-		auto ref = TESObjectREFR::LookupByHandle(actorInFavorState);
-		return static_cast<Actor*>(ref.get());
+		using func_t = function_type_t<decltype(&PlayerCharacter::ActivatePickRef)>;
+		REL::Offset<func_t*> func(Offset::PlayerCharacter::ActivatePickRef);
+		return func(this);
+	}
+
+
+	NiPointer<Actor> PlayerCharacter::GetActorDoingPlayerCommand() const
+	{
+		return actorDoingPlayerCommand.get();
 	}
 
 
@@ -55,7 +62,7 @@ namespace RE
 
 	NiPointer<TESObjectREFR> PlayerCharacter::GetGrabbedRef()
 	{
-		return TESObjectREFR::LookupByHandle(grabbedHandle);
+		return grabbedObject.get();
 	}
 
 
@@ -116,10 +123,10 @@ namespace RE
 	}
 
 	
-	void PlayerCharacter::StartActivation()
+	void PlayerCharacter::StartGrabObject()
 	{
-		using func_t = function_type_t<decltype(&PlayerCharacter::StartActivation)>;
-		REL::Offset<func_t*> func(Offset::PlayerCharacter::StartActivation);
+		using func_t = function_type_t<decltype(&PlayerCharacter::StartGrabObject)>;
+		REL::Offset<func_t*> func(Offset::PlayerCharacter::StartGrabObject);
 		return func(this);
 	}
 

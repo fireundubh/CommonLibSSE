@@ -5,25 +5,25 @@ namespace RE
 {
 	bool BSInputDevice::IsKeyboard() const
 	{
-		return deviceType == DeviceType::kKeyboard;
+		return device == InputDevice::kKeyboard;
 	}
 
 
 	bool BSInputDevice::IsMouse() const
 	{
-		return deviceType == DeviceType::kMouse;
+		return device == InputDevice::kMouse;
 	}
 
 
 	bool BSInputDevice::IsGamepad() const
 	{
-		return deviceType == DeviceType::kGamepad;
+		return device == InputDevice::kGamepad;
 	}
 
 
 	bool BSInputDevice::IsPressed(UInt32 a_keyCode) const
 	{
-		auto it = keyToMapping.find(a_keyCode);
-		return (it != keyToMapping.end()) && (it->second->timer > 0.0);
+		auto it = deviceButtons.find(a_keyCode);
+		return (it != deviceButtons.end()) && (it->second->heldDownSecs > 0.0);
 	}
 }
