@@ -1063,6 +1063,13 @@
     <Filter Include="include\RE\FormComponents\Components\ReferenceEffectController\OwnedController">
       <UniqueIdentifier>{75bc12ad-37f7-4752-beb3-da5480ff0445}</UniqueIdentifier>
     </Filter>
+
+    <Filter Include="include\RE\BSResource\FileID">
+      <UniqueIdentifier>{eafffdc2-9764-4b0b-8e01-95d003876e51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSAudio\BSIMusicTrack\BGSMusicTrack">
+      <UniqueIdentifier>{d4365b09-2bab-48e0-9e6b-19171af4f54b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\MenuControls.cpp">
@@ -1494,9 +1501,6 @@
     <ClCompile Include="src\RE\BSScript\VariableInfo.cpp">
       <Filter>src\RE\BSScript\IFunction\Components</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\DialogueData.cpp">
-      <Filter>src\RE\FormComponents\Components</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\BSScript\IObjectHandlePolicy.cpp">
       <Filter>src\RE\BSScript</Filter>
     </ClCompile>
@@ -1653,24 +1657,18 @@
     <ClCompile Include="src\RE\NiStringsExtraData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\Biped.cpp">
-      <Filter>src\RE\FormComponents\Components</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\ExtraContainerChanges.cpp">
       <Filter>src\RE\BSExtraData</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\ExtraDataList.cpp">
       <Filter>src\RE\BSExtraData</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\TESObjectMISC.cpp">
-      <Filter>src\RE\FormComponents\TESForm</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\GFxWWHelper.cpp">
       <Filter>src\RE\Scaleform\GFxString</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\GStd.cpp">
       <Filter>src\RE\Scaleform</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\ProcessLists.cpp">
       <Filter>src\RE\AI</Filter>
     </ClCompile>
@@ -1754,6 +1752,13 @@
     </ClCompile>
     <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp">
       <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    </ClCompile>
+   </ClCompile>
+    <ClCompile Include="src\RE\BipedAnim.cpp">
+      <Filter>src\RE\FormComponents\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\DialogueItem.cpp">
+      <Filter>src\RE\FormComponents\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1909,9 +1914,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\BSString.h">
       <Filter>include\RE\BSCore</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\AnimationVariableData.h">
-      <Filter>include\RE\Animation</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESSpellList.h">
       <Filter>include\RE\FormComponents</Filter>
@@ -2406,18 +2408,6 @@
       <Filter>include\RE\BSAudio</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSIMusicTrack.h">
-      <Filter>include\RE\BSAudio\BSIMusicTrack</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\BGSMusicTrack.h">
-      <Filter>include\RE\BSAudio\BSIMusicTrack</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\BGSMusicPaletteTrack.h">
-      <Filter>include\RE\BSAudio\BSIMusicTrack</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\BGSMusicSilenceTrack.h">
-      <Filter>include\RE\BSAudio\BSIMusicTrack</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\BGSMusicSingleTrack.h">
       <Filter>include\RE\BSAudio\BSIMusicTrack</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\IXAudio2VoiceCallback.h">
@@ -2921,9 +2911,6 @@
     <ClInclude Include="include\RE\Color.h">
       <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\FileHash.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\PerkEntryVisitor.h">
       <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
@@ -3069,9 +3056,6 @@
       <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSTypedItem.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\DialogueData.h">
       <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\SetEventData.h">
@@ -4034,9 +4018,6 @@
     <ClInclude Include="include\RE\MagicCaster.h">
       <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Biped.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\BSUIScaleformData.h">
       <Filter>include\RE\Menus\IUIMessageData</Filter>
     </ClInclude>
@@ -4132,12 +4113,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\Misc.h">
       <Filter>include\RE\Misc</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\WeaponStrikeData.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\PackageData.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Main.h">
       <Filter>include\RE\BSMain</Filter>
@@ -4572,12 +4547,6 @@
       <Filter>include\RE\SkyrimScript\DelayFunctor</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\AIProcess.h">
-      <Filter>include\RE\AI</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\HighProcess.h">
-      <Filter>include\RE\AI</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\MiddleProcess.h">
       <Filter>include\RE\AI</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSAttackData.h">
@@ -5125,6 +5094,75 @@
     </ClInclude>
     <ClInclude Include="include\RE\BSTimer.h">
       <Filter>include\RE\BSSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BipedAnim.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\ActorPackage.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\MiddleHighProcessData.h">
+      <Filter>include\RE\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\MagicSystem.h">
+      <Filter>include\RE\FormComponents\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BGSEntryPoint.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\AITimeStamp.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\DoNothingUnhandledPolicy.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSResponse.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\IHandlerFunctor.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\HighProcessData.h">
+      <Filter>include\RE\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BGSAnimationSequencer.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\DialogueItem.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\ContainerItemExtra.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSResource\FileID.h">
+      <Filter>include\RE\BSResource\FileID</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSResource\ID.h">
+      <Filter>include\RE\BSResource\FileID</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BGSBodyPartDefs.h">
+      <Filter>include\RE\FormComponents\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\DialogueTypes.h">
+      <Filter>include\RE\FormComponents\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Movement.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BGSMusicTrack.h">
+      <Filter>include\RE\BSAudio\BSIMusicTrack\BGSMusicTrack</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BGSMusicPaletteTrack.h">
+      <Filter>include\RE\BSAudio\BSIMusicTrack\BGSMusicTrack</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BGSMusicSilenceTrack.h">
+      <Filter>include\RE\BSAudio\BSIMusicTrack\BGSMusicTrack</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BGSMusicSingleTrack.h">
+      <Filter>include\RE\BSAudio\BSIMusicTrack\BGSMusicTrack</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\EffectArchetypes.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\OwnedController.h">
       <Filter>include\RE\FormComponents\Components\ReferenceEffectController\OwnedController</Filter>

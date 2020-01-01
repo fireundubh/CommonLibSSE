@@ -1,6 +1,7 @@
 #include "RE/TESNPC.h"
 
 #include "RE/Offsets.h"
+#include "RE/TESRace.h"
 #include "REL/Relocation.h"
 
 
@@ -28,19 +29,19 @@ namespace RE
 	}
 
 
-	TESNPC::Sex TESNPC::GetSex()
+	TESNPC::Sex TESNPC::GetSex() const
 	{
 		return IsFemale() ? Sex::kFemale : Sex::kMale;
 	}
 
 
-	BGSHeadPart* TESNPC::GetCurrentHeadPartByType(BGSHeadPart::Type a_type)
+	BGSHeadPart* TESNPC::GetCurrentHeadPartByType(HeadPartType a_type)
 	{
 		return HasOverlays() ? GetHeadPartOverlayByType(a_type) : GetHeadPartByType(a_type);
 	}
 
 
-	BGSHeadPart* TESNPC::GetHeadPartByType(BGSHeadPart::Type a_type)
+	BGSHeadPart* TESNPC::GetHeadPartByType(HeadPartType a_type)
 	{
 		if (headparts) {
 			for (UInt8 i = 0; i < numHeadParts; ++i) {
@@ -53,7 +54,7 @@ namespace RE
 	}
 
 
-	BGSHeadPart* TESNPC::GetHeadPartOverlayByType(BGSHeadPart::Type a_type)
+	BGSHeadPart* TESNPC::GetHeadPartOverlayByType(HeadPartType a_type)
 	{
 		auto numOverlays = GetNumBaseOverlays();
 		auto overlays = GetBaseOverlays();
@@ -65,6 +66,23 @@ namespace RE
 			}
 		}
 		return 0;
+	}
+
+
+	float TESNPC::GetHeight() const
+	{
+		if (!race) {
+			return height;
+		}
+
+		switch (GetSex()) {
+		case Sex::kMale:
+			return race->data.maleHeight * height;
+		case Sex::kFemale:
+			return race->data.femaleHeight * height;
+		default:
+			return 0.0;
+		}
 	}
 
 

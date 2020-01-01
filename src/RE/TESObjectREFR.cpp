@@ -99,6 +99,18 @@ namespace RE
 	}
 
 
+	float TESObjectREFR::GetBaseHeight() const
+	{
+		float height = refScale / 100;
+		auto obj = GetBaseObject();
+		auto npc = obj ? obj->As<TESNPC>() : 0;
+		if (npc) {
+			height *= npc->GetHeight();
+		}
+		return height;
+	}
+
+
 	TESBoundObject* TESObjectREFR::GetBaseObject()
 	{
 		return data.objectReference;
@@ -108,14 +120,6 @@ namespace RE
 	const TESBoundObject* TESObjectREFR::GetBaseObject() const
 	{
 		return data.objectReference;
-	}
-
-
-	float TESObjectREFR::GetBaseScale() const
-	{
-		using func_t = function_type_t<decltype(&TESObjectREFR::GetBaseScale)>;
-		REL::Offset<func_t*> func(Offset::TESObjectREFR::GetBaseScale);
-		return func(this);
 	}
 
 
@@ -210,14 +214,14 @@ namespace RE
 
 		auto container = GetContainer();
 		if (container) {
-			container->ForEach([&](TESContainer::Entry* a_entry) -> bool
+			container->ForEachContainerObject([&](ContainerObject* a_entry) -> bool
 			{
-				if (a_entry->object && a_filter(a_entry->object)) {
-					auto it = results.find(a_entry->object);
+				if (a_entry->obj && a_filter(a_entry->obj)) {
+					auto it = results.find(a_entry->obj);
 					if (it == results.end()) {
-						auto entryData = new InventoryEntryData(a_entry->object, 0);
+						auto entryData = new InventoryEntryData(a_entry->obj, 0);
 						invChanges->AddEntryData(entryData);
-						auto insIt = results.insert(std::make_pair(a_entry->object, mapped_type(a_entry->count, entryData)));
+						auto insIt = results.insert(std::make_pair(a_entry->obj, mapped_type(a_entry->count, entryData)));
 						assert(insIt.second);
 					} else {
 						it->second.first += a_entry->count;
@@ -391,7 +395,7 @@ namespace RE
 
 	bool TESObjectREFR::HasCollision() const
 	{
-		return (flags & RecordFlags::kCollisionsDisabled) == 0;
+		return (formFlags & RecordFlags::kCollisionsDisabled) == 0;
 	}
 
 
@@ -418,7 +422,7 @@ namespace RE
 
 	bool TESObjectREFR::IsDisabled() const
 	{
-		return (flags & RecordFlags::kInitiallyDisabled) != 0;
+		return (formFlags & RecordFlags::kInitiallyDisabled) != 0;
 	}
 
 
@@ -431,7 +435,7 @@ namespace RE
 
 	bool TESObjectREFR::IsMarkedForDeletion() const
 	{
-		return (flags & RecordFlags::kDeleted) != 0;
+		return (formFlags & RecordFlags::kDeleted) != 0;
 	}
 
 
@@ -514,9 +518,9 @@ namespace RE
 	void TESObjectREFR::SetCollision(bool a_enable)
 	{
 		if (a_enable) {
-			flags &= ~RecordFlags::kCollisionsDisabled;
+			formFlags &= ~RecordFlags::kCollisionsDisabled;
 		} else {
-			flags |= RecordFlags::kCollisionsDisabled;
+			formFlags |= RecordFlags::kCollisionsDisabled;
 		}
 	}
 

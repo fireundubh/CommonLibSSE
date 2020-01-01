@@ -16,10 +16,10 @@ namespace RE
 		enum { kTypeID = FormType::AssociationType };
 
 
-		enum class Flag : UInt32	// DATA
+		enum class FLAGS : UInt32	// DATA
 		{
 			kNone = 0,
-			kFamilyAssociation = 1 << 0
+			kFamily = 1 << 0
 		};
 
 
@@ -33,6 +33,30 @@ namespace RE
 		};
 
 
+		struct Members
+		{
+			enum
+			{
+				kParent,
+				kChild,
+
+				kTotal
+			};
+		};
+
+
+		struct Sexes
+		{
+			enum
+			{
+				kMale,
+				kFemale,
+
+				kTotal
+			};
+		};
+
+
 		virtual ~BGSAssociationType();					// 00
 
 		// override (TESForm)
@@ -41,12 +65,9 @@ namespace RE
 
 
 		// members
-		BSFixedString	maleParentTitle;	// 20 - MPRT
-		BSFixedString	femaleParentTitle;	// 28 - FPRT
-		BSFixedString	maleChildTitle;		// 30 - MCHT
-		BSFixedString	femaleChildTitle;	// 38 - FCHT
-		Flag			flags;				// 40 - DATA
-		UInt32			pad44;				// 44
+		BSFixedString	associationLabels[Members::kTotal][Sexes::kTotal];	// 20 - MPRT - FCHT
+		FLAGS			flags;												// 40 - DATA
+		UInt32			pad44;												// 44
 	};
 	STATIC_ASSERT(sizeof(BGSAssociationType) == 0x48);
 }

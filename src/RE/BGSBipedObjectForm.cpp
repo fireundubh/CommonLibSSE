@@ -3,66 +3,70 @@
 
 namespace RE
 {
-	BGSBipedObjectForm::FirstPersonFlag BGSBipedObjectForm::GetSlotMask() const
+	auto BGSBipedObjectForm::AddSlotToMask(BipedObjectSlot a_slot)
+		-> BipedObjectSlot
 	{
-		return bipedBodyTemplate.firstPersonFlag;
+		bipedModelData.bipedObjectSlots |= a_slot;
+		return bipedModelData.bipedObjectSlots;
 	}
 
 
-	void BGSBipedObjectForm::SetSlotMask(FirstPersonFlag a_mask)
+	auto BGSBipedObjectForm::GetArmorType() const
+		-> ArmorType
 	{
-		bipedBodyTemplate.firstPersonFlag = a_mask;
+		return bipedModelData.armorType;
 	}
 
 
-	bool BGSBipedObjectForm::HasPartOf(FirstPersonFlag a_flag) const
+	auto BGSBipedObjectForm::GetSlotMask() const
+		-> BipedObjectSlot
 	{
-		return (bipedBodyTemplate.firstPersonFlag & a_flag) != FirstPersonFlag::kNone;
+		return bipedModelData.bipedObjectSlots;
 	}
 
 
-	BGSBipedObjectForm::ArmorType BGSBipedObjectForm::GetArmorType() const
+	bool BGSBipedObjectForm::HasPartOf(BipedObjectSlot a_flag) const
 	{
-		return bipedBodyTemplate.armorType;
-	}
-
-
-	bool BGSBipedObjectForm::IsLightArmor() const
-	{
-		return bipedBodyTemplate.armorType == ArmorType::kLightArmor;
-	}
-
-
-	bool BGSBipedObjectForm::IsHeavyArmor() const
-	{
-		return bipedBodyTemplate.armorType == ArmorType::kHeavyArmor;
+		return (bipedModelData.bipedObjectSlots & a_flag) != BipedObjectSlot::kNone;
 	}
 
 
 	bool BGSBipedObjectForm::IsClothing() const
 	{
-		return bipedBodyTemplate.armorType == ArmorType::kClothing;
+		return bipedModelData.armorType == ArmorType::kClothing;
+	}
+
+
+	bool BGSBipedObjectForm::IsHeavyArmor() const
+	{
+		return bipedModelData.armorType == ArmorType::kHeavyArmor;
+	}
+
+
+	bool BGSBipedObjectForm::IsLightArmor() const
+	{
+		return bipedModelData.armorType == ArmorType::kLightArmor;
 	}
 
 
 	bool BGSBipedObjectForm::IsShield() const
 	{
-		return (bipedBodyTemplate.firstPersonFlag & FirstPersonFlag::kShield) != FirstPersonFlag::kNone;
+		return (bipedModelData.bipedObjectSlots & BipedObjectSlot::kShield) != BipedObjectSlot::kNone;
 	}
 
 
-	BGSBipedObjectForm::FirstPersonFlag BGSBipedObjectForm::AddSlotToMask(FirstPersonFlag a_slot)
+	auto BGSBipedObjectForm::RemoveSlotFromMask(BipedObjectSlot a_slot)
+		-> BipedObjectSlot
 	{
-		bipedBodyTemplate.firstPersonFlag |= a_slot;
-		return bipedBodyTemplate.firstPersonFlag;
-	}
-
-
-	BGSBipedObjectForm::FirstPersonFlag BGSBipedObjectForm::RemoveSlotFromMask(FirstPersonFlag a_slot)
-	{
-		if (a_slot != FirstPersonFlag::kNone) {
-			bipedBodyTemplate.firstPersonFlag &= ~a_slot;
+		if (a_slot != BipedObjectSlot::kNone) {
+			bipedModelData.bipedObjectSlots &= ~a_slot;
 		}
-		return bipedBodyTemplate.firstPersonFlag;
+		return bipedModelData.bipedObjectSlots;
+	}
+
+
+	void BGSBipedObjectForm::SetSlotMask(BipedObjectSlot a_mask)
+	{
+		bipedModelData.bipedObjectSlots = a_mask;
 	}
 }
