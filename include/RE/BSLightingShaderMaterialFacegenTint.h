@@ -22,6 +22,7 @@ namespace RE
 		virtual void				SaveBinary(void) override;							// 0C
 		virtual void				LoadBinary(void) override;							// 0D
 
+		static BSLightingShaderMaterialFacegenTint * CreateFacegenTintMaterial();
 
 		// members
 		NiColor	tintColor;	// A0

@@ -1752,6 +1752,9 @@
     <ClCompile Include="src\RE\NiTexture.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiTexture</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp">
+      <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\PlayerControls.h">
@@ -5126,5 +5129,7 @@
     <ClInclude Include="include\RE\OwnedController.h">
       <Filter>include\RE\FormComponents\Components\ReferenceEffectController\OwnedController</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\Events\TESDeathEvent.h" />
+    <ClInclude Include="include\RE\OwnedCameraEffectController.h" />
   </ItemGroup>
 </Project>

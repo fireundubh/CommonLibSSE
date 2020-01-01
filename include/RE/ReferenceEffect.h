@@ -42,8 +42,8 @@ namespace RE
 
 		// members
 		ReferenceEffectController*	controller;	// 30
-		RefHandle					refHandle;	// 38
-		RefHandle					unk3C;		// 3C
+		ObjectRefHandle				refHandle;	// 38
+		ObjectRefHandle				unk3C;		// 3C
 		UInt8						unk40;		// 40 - set to 1 when effect removed
 		UInt8						unk41;		// 41 - set to 1 when effect added
 		UInt16						unk42;		// 42

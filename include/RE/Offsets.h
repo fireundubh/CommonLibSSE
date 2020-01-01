@@ -206,6 +206,14 @@ namespace RE
 			constexpr std::uintptr_t CopyBaseMaterial = 0x012CEF40; // 1_5_97
 		}
 
+
+		namespace BSLightingShaderMaterialFacegenTint
+		{
+			// IndirectSig: E8 ? ? ? ? 45 33 C0 33 D2 48 8B CF 4C 8B F0
+			constexpr std::uintptr_t CreateFacegenTintMaterial = 0x012D26F0;	// 1_5_97
+		}
+
+
 		namespace BSLightingShaderProperty
 		{
 			//po3

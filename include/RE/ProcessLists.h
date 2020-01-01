@@ -75,7 +75,7 @@ namespace RE
 		BSTArray<ReferenceEffect*>	referenceEffects;				// 108
 		mutable BSSpinLock			referenceEffectsLock;			// 120
 		BSTArray<void*>				unk128;							// 128
-		mutable BSSpinLock		unk128Lock;						// 140
+		mutable BSSpinLock			unk128Lock;						// 140
 		UInt64						unk148;							// 148
 		UInt64						unk150;							// 150
 		BSTArray<ActorHandle>		unk158;							// 158
