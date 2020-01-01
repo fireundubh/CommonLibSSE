@@ -5135,5 +5135,14 @@
     <ClInclude Include="include\RE\GridArray.h">
       <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\hkpSolverInfo.h">
+      <Filter>include\RE\BSHavok</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\hkAabb.h">
+      <Filter>include\RE\BSHavok</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\hkpWorldCinfo.h">
+      <Filter>include\RE\BSHavok\hkBaseObject\hkReferencedObject</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

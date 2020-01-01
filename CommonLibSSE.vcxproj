@@ -437,6 +437,9 @@
     <ClInclude Include="include\RE\DialogueTypes.h" />
     <ClInclude Include="include\RE\DoNothingUnhandledPolicy.h" />
     <ClInclude Include="include\RE\EffectArchetypes.h" />
+    <ClInclude Include="include\RE\hkAabb.h" />
+    <ClInclude Include="include\RE\hkpSolverInfo.h" />
+    <ClInclude Include="include\RE\hkpWorldCinfo.h" />
     <ClInclude Include="include\RE\IHandlerFunctor.h" />
     <ClInclude Include="include\RE\LoadWaitSpinner.h" />
     <ClInclude Include="include\RE\MagicSystem.h" />
