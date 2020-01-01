@@ -166,7 +166,10 @@
     <ClCompile Include="src\RE\ActorValueOwner.cpp" />
     <ClCompile Include="src\RE\AddCallbackVisitor.cpp" />
     <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp" />
+    <ClCompile Include="src\RE\BSTaskPool.cpp" />
     <ClCompile Include="src\RE\BSXFlags.cpp" />
+    <ClCompile Include="src\RE\Events\TESHitEvent.cpp" />
+    <ClCompile Include="src\RE\ExtraPoison.cpp" />
     <ClCompile Include="src\RE\NiBooleanExtraData.cpp" />
     <ClCompile Include="src\RE\Main.cpp" />
     <ClCompile Include="src\RE\ProcessLists.cpp" />
@@ -437,6 +440,12 @@
     <ClInclude Include="include\RE\DialogueTypes.h" />
     <ClInclude Include="include\RE\DoNothingUnhandledPolicy.h" />
     <ClInclude Include="include\RE\EffectArchetypes.h" />
+    <ClInclude Include="include\RE\Events\TESActiveEffectApplyRemoveEvent.h" />
+    <ClInclude Include="include\RE\Events\TESCellFullyLoadedEvent.h" />
+    <ClInclude Include="include\RE\Events\TESCombatEvent.h" />
+    <ClInclude Include="include\RE\Events\TESContainerChangedEvent.h" />
+    <ClInclude Include="include\RE\Events\TESDeathEvent.h" />
+    <ClInclude Include="include\RE\Events\TESEquipEvent.h" />
     <ClInclude Include="include\RE\hkAabb.h" />
     <ClInclude Include="include\RE\hkpSolverInfo.h" />
     <ClInclude Include="include\RE\hkpWorldCinfo.h" />
