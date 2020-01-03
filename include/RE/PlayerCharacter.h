@@ -20,7 +20,6 @@
 namespace RE
 {
 	class Actor;
-	class BGSInstancedQuestObjective;
 	class BGSLocation;
 	class bhkMouseSpringAction;
 	class BSFadeNode;
@@ -35,14 +34,15 @@ namespace RE
 	class NiNode;
 	class ObjectListItem;
 	class TESObjectREFR;
-	class TESQuestStageItem;
 	class TintMask;
 	class UserEventEnabledEvent;
 	struct BGSActorCellEvent;
 	struct BGSActorDeathEvent;
+	struct BGSInstancedQuestObjective;
 	struct BipedAnim;
 	struct PerkRankData;
 	struct PositionPlayerEvent;
+	struct TESQuestStageItem;
 	struct TESTrackedStatsEvent;
 
 
@@ -335,7 +335,7 @@ namespace RE
 		ImageSpaceModifierInstanceDOF*							vatsDOFInstance;				// 6E8
 		ImageSpaceModifierInstanceDOF*							dynamicDOFInstance;				// 6F0
 		float													dynamicDOFFocusTime;			// 6F8
-		bool													DynamicDOFFocused;				// 6FC
+		bool													dynamicDOFFocused;				// 6FC
 		UInt8													unk6FD;							// 6FD
 		UInt16													unk6FE;							// 6FE
 		NiPoint3												dynamicDOFLastAngle;			// 700

@@ -7,9 +7,9 @@
 
 namespace RE
 {
-	TESNPC::HeadData::HeadData() :
+	TESNPC::HeadRelatedData::HeadRelatedData() :
 		hairColor(0),
-		headTexture(0)
+		faceDetails(0)
 	{}
 
 
@@ -29,9 +29,9 @@ namespace RE
 	}
 
 
-	TESNPC::Sex TESNPC::GetSex() const
+	SEX TESNPC::GetSex() const
 	{
-		return IsFemale() ? Sex::kFemale : Sex::kMale;
+		return IsFemale() ? SEX::kFemale : SEX::kMale;
 	}
 
 
@@ -43,10 +43,10 @@ namespace RE
 
 	BGSHeadPart* TESNPC::GetHeadPartByType(HeadPartType a_type)
 	{
-		if (headparts) {
+		if (headParts) {
 			for (UInt8 i = 0; i < numHeadParts; ++i) {
-				if (headparts[i] && headparts[i]->type == a_type) {
-					return headparts[i];
+				if (headParts[i] && headParts[i]->type == a_type) {
+					return headParts[i];
 				}
 			}
 		}
@@ -75,11 +75,11 @@ namespace RE
 			return height;
 		}
 
-		switch (GetSex()) {
-		case Sex::kMale:
-			return race->data.maleHeight * height;
-		case Sex::kFemale:
-			return race->data.femaleHeight * height;
+		auto sex = GetSex();
+		switch (sex) {
+		case SEX::kMale:
+		case SEX::kFemale:
+			return race->data.height[sex] * height;
 		default:
 			return 0.0;
 		}
@@ -102,11 +102,9 @@ namespace RE
 
 	TESNPC* TESNPC::GetRootTemplate()
 	{
-		auto node = nextTemplate;
-		if (node) {
-			while (node->nextTemplate) {
-				node = node->nextTemplate;
-			}
+		auto node = this;
+		while (!node->UsesTemplate() && node->sounds->soundCreature) {
+			node = node->sounds->soundCreature;
 		}
 		return node;
 	}
@@ -128,24 +126,24 @@ namespace RE
 
 	void TESNPC::SetFaceTexture(BGSTextureSet* a_textureSet)
 	{
-		if (!headData && a_textureSet) {
-			headData = new HeadData();
+		if (!headRelatedData && a_textureSet) {
+			headRelatedData = new HeadRelatedData();
 		}
 
-		if (headData) {
-			headData->headTexture = a_textureSet;
+		if (headRelatedData) {
+			headRelatedData->faceDetails = a_textureSet;
 		}
 	}
 
 
 	void TESNPC::SetHairColor(BGSColorForm* a_hairColor)
 	{
-		if (!headData && a_hairColor) {
-			headData = new HeadData();
+		if (!headRelatedData && a_hairColor) {
+			headRelatedData = new HeadRelatedData();
 		}
 
-		if (headData) {
-			headData->hairColor = a_hairColor;
+		if (headRelatedData) {
+			headRelatedData->hairColor = a_hairColor;
 		}
 	}
 

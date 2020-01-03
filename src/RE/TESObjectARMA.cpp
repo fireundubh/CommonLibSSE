@@ -16,12 +16,12 @@ namespace RE
 		}
 
 		// Check if this race inherits the source race
-		TESRace* armorRace = a_sourceRace->armorRace;
+		TESRace* armorRace = a_sourceRace->armorParentRace;
 		while (armorRace) {
 			if (armorRace == a_targetRace) {
 				return true;
 			}
-			armorRace = armorRace->armorRace;
+			armorRace = armorRace->armorParentRace;
 		}
 
 		return false;
@@ -51,11 +51,9 @@ namespace RE
 		float weight = 100.0;
 		auto baseObj = a_refr->GetBaseObject();
 		auto npc = baseObj ? baseObj->As<TESNPC>() : 0;
-		if (npc && npc->nextTemplate) {
-			auto templ = npc->GetRootTemplate();
-			if (templ) {
-				weight = templ->weight;
-			}
+		if (npc) {
+			npc = npc->GetRootTemplate();
+			weight = npc->weight;
 		} else {
 			weight = a_refr->GetWeight();
 		}

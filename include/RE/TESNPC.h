@@ -10,6 +10,7 @@
 #include "RE/Color.h"
 #include "RE/FormTypes.h"
 #include "RE/MemoryManager.h"
+#include "RE/Sexes.h"
 #include "RE/SoundLevels.h"
 #include "RE/TESActorBase.h"
 #include "RE/TESRaceForm.h"
@@ -21,6 +22,13 @@ namespace RE
 	class MenuOpenCloseEvent;
 	class NiColorA;
 	class TintMask;
+
+
+	struct CreatureSounds
+	{
+		BSTArray<void*>* unk00[8];	// 00
+	};
+	STATIC_ASSERT(sizeof(CreatureSounds) == 0x40);
 
 
 	class TESNPC :
@@ -37,14 +45,6 @@ namespace RE
 
 
 		enum { kTypeID = FormType::NPC };
-
-
-		enum class Sex : UInt8
-		{
-			kError = static_cast<std::underlying_type_t<Sex>>(-1),
-			kMale = 0,
-			kFemale = 1
-		};
 
 
 		struct ChangeFlags
@@ -118,19 +118,27 @@ namespace RE
 		STATIC_ASSERT(sizeof(Skills) == 0x30);
 
 
-		struct HeadData
+		struct HeadRelatedData
 		{
-			HeadData();
-			~HeadData() = default;
+			HeadRelatedData();
+			~HeadRelatedData() = default;
 
 			TES_HEAP_REDEFINE_NEW();
 
 
 			// members
 			BGSColorForm*	hairColor;		// 00 - HCLF
-			BGSTextureSet*	headTexture;	// 08 - FTST
+			BGSTextureSet*	faceDetails;	// 08 - FTST
 		};
-		STATIC_ASSERT(sizeof(HeadData) == 0x10);
+		STATIC_ASSERT(sizeof(HeadRelatedData) == 0x10);
+
+
+		union Sounds
+		{
+			TESNPC*			soundCreature;
+			CreatureSounds*	creatureSounds;
+		};
+		STATIC_ASSERT(sizeof(Sounds) == 0x8);
 
 
 		struct FaceData
@@ -238,7 +246,7 @@ namespace RE
 		UInt32			GetNumBaseOverlays() const;
 		TESRace*		GetRace();
 		TESNPC*			GetRootTemplate();
-		Sex				GetSex() const;
+		SEX				GetSex() const;
 		bool			HasOverlays();
 		void			SetFaceTexture(BGSTextureSet* a_textureSet);
 		void			SetHairColor(BGSColorForm* a_hairColor);
@@ -249,30 +257,30 @@ namespace RE
 		// members
 		Skills						playerSkills;		// 190 - DNAM
 		TESClass*					npcClass;			// 1C0 - CNAM
-		HeadData*					headData;			// 1C8
+		HeadRelatedData*			headRelatedData;	// 1C8
 		BGSListForm*				giftFilter;			// 1D0 - GNAM
 		TESCombatStyle*				combatStyle;		// 1D8 - ZNAM
-		Color						unk1E0;				// 1E0
+		UInt32						fileOffset;			// 1E0
 		UInt32						pad1E4;				// 1E4
-		TESRace*					overlayRace;		// 1E8
-		TESNPC*						nextTemplate;		// 1F0
+		TESRace*					originalRace;		// 1E8
+		TESNPC*						faceNPC;			// 1F0
 		float						height;				// 1F8 - NAM6
 		float						weight;				// 1FC - NAM7
-		TESNPC*						inheritsSoundsFrom;	// 200 - CSCR
+		Sounds*						sounds;				// 200 - CSCR
 		BSFixedString				shortName;			// 208 - SHRT
-		TESObjectARMO*				farAwayModel;		// 210 - ANAM
+		TESObjectARMO*				farSkin;			// 210 - ANAM
 		BGSOutfit*					defaultOutfit;		// 218 - DOFT
-		BGSOutfit*					sleepingOutfit;		// 220 - SOFT
-		BGSListForm*				defaultPackageList;	// 228 - DPLT
+		BGSOutfit*					sleepOutfit;		// 220 - SOFT
+		BGSListForm*				defaultPackList;	// 228 - DPLT
 		TESFaction*					crimeFaction;		// 230 - CRIF
-		BGSHeadPart**				headparts;			// 238 - PNAM
-		UInt8						numHeadParts;		// 240
+		BGSHeadPart**				headParts;			// 238 - PNAM
+		SInt8						numHeadParts;		// 240
 		UInt8						unk241;				// 241
 		UInt8						unk242;				// 242
 		UInt8						unk243;				// 243
 		UInt8						unk244;				// 244
 		SOUND_LEVEL_8				soundLevel;			// 245 - NAM8
-		Color						textureLighting;	// 246 - QNAM
+		Color						bodyTintColor;		// 246 - QNAM
 		UInt16						pad24A;				// 24A
 		UInt32						pad24C;				// 24C
 		BSTArray<BGSRelationship*>*	relationships;		// 250

@@ -351,7 +351,6 @@
     <ClCompile Include="src\RE\PlayerCharacter.cpp" />
     <ClCompile Include="src\RE\PlayerControls.cpp" />
     <ClCompile Include="src\RE\PlayerInputHandler.cpp" />
-    <ClCompile Include="src\RE\SpellItem.cpp" />
     <ClCompile Include="src\RE\TES.cpp" />
     <ClCompile Include="src\RE\TESActorBaseData.cpp" />
     <ClCompile Include="src\RE\TESAIForm.cpp" />
@@ -418,6 +417,7 @@
     <ClInclude Include="include\RE\BaseFormComponent.h" />
     <ClInclude Include="include\RE\BeamProjectile.h" />
     <ClInclude Include="include\RE\BGSAbilityPerkEntry.h" />
+    <ClInclude Include="include\RE\BGSActorEvent.h" />
     <ClInclude Include="include\RE\BGSAddonNode.h" />
     <ClInclude Include="include\RE\BGSAnimationSequencer.h" />
     <ClInclude Include="include\RE\BGSBodyPartDefs.h" />
@@ -427,8 +427,12 @@
     <ClInclude Include="include\RE\BGSLocalizedStringDL.h" />
     <ClInclude Include="include\RE\bhkCollisionObject.h" />
     <ClInclude Include="include\RE\bhkNiCollisionObject.h" />
+    <ClInclude Include="include\RE\BipedObjects.h" />
     <ClInclude Include="include\RE\BleedoutCameraState.h" />
     <ClInclude Include="include\RE\BSAnimNoteListener.h" />
+    <ClInclude Include="include\RE\BSBitField.h" />
+    <ClInclude Include="include\RE\BSMultiBoundNode.h" />
+    <ClInclude Include="include\RE\BSNiNode.h" />
     <ClInclude Include="include\RE\BSPointerHandle.h" />
     <ClInclude Include="include\RE\BSResource\FileID.h" />
     <ClInclude Include="include\RE\BSResource\ID.h" />
@@ -438,6 +442,7 @@
     <ClInclude Include="include\RE\BSUntypedPointerHandle.h" />
     <ClInclude Include="include\RE\BSXFlags.h" />
     <ClInclude Include="include\RE\ContainerItemExtra.h" />
+    <ClInclude Include="include\RE\DecalData.h" />
     <ClInclude Include="include\RE\DialoguePackage.h" />
     <ClInclude Include="include\RE\DialogueTypes.h" />
     <ClInclude Include="include\RE\DoNothingUnhandledPolicy.h" />
@@ -449,9 +454,14 @@
     <ClInclude Include="include\RE\Events\TESDeathEvent.h" />
     <ClInclude Include="include\RE\Events\TESEquipEvent.h" />
     <ClInclude Include="include\RE\hkAabb.h" />
+    <ClInclude Include="include\RE\hkpMoppCode.h" />
     <ClInclude Include="include\RE\hkpSolverInfo.h" />
     <ClInclude Include="include\RE\hkpWorldCinfo.h" />
     <ClInclude Include="include\RE\IHandlerFunctor.h" />
+    <ClInclude Include="include\RE\ImageSpaceModifierInstance.h" />
+    <ClInclude Include="include\RE\ImageSpaceModifierInstanceDOF.h" />
+    <ClInclude Include="include\RE\ImageSpaceModifierInstanceTemp.h" />
+    <ClInclude Include="include\RE\InteriorData.h" />
     <ClInclude Include="include\RE\LoadWaitSpinner.h" />
     <ClInclude Include="include\RE\MagicSystem.h" />
     <ClInclude Include="include\RE\ModManagerMenu.h" />
@@ -782,6 +792,7 @@
     <ClInclude Include="include\RE\CommandTable.h" />
     <ClInclude Include="include\RE\ConcreteFormFactory.h" />
     <ClInclude Include="include\RE\ConcreteObjectFormFactory.h" />
+    <ClInclude Include="include\RE\Sexes.h" />
     <ClInclude Include="include\RE\TESCondition.h" />
     <ClInclude Include="include\RE\ConeProjectile.h" />
     <ClInclude Include="include\RE\Console.h" />
