@@ -125,6 +125,12 @@ namespace RE
 		}
 
 
+		namespace BGSImpactManager
+		{
+			constexpr std::uintptr_t Singleton = 0x02F003F0;	// 1_5_97
+		}
+
+
 		namespace BGSListForm
 		{
 			// IndirectSig: E8 ? ? ? ? E9 ? ? ? ? 48 83 7B ? ? 75 5E

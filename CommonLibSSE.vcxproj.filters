@@ -1782,6 +1782,9 @@
     <ClCompile Include="src\RE\Events\TESHitEvent.cpp">
       <Filter>src\RE\Events\ScriptEvent</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\BGSImpactManager.cpp">
+      <Filter>src\RE\Events</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\PlayerControls.h">
@@ -5170,6 +5173,9 @@
     </ClInclude>
     <ClInclude Include="include\RE\Events\TESEquipEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BGSImpactManager.h">
+      <Filter>include\RE\Events</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -87,6 +87,7 @@
 #include "RE/BGSIdleMarker.h"
 #include "RE/BGSImpactData.h"
 #include "RE/BGSImpactDataSet.h"
+#include "RE/BGSImpactManager.h"
 #include "RE/BGSInstancedQuestObjective.h"
 #include "RE/BGSKeyword.h"
 #include "RE/BGSKeywordForm.h"

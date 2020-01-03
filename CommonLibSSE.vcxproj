@@ -165,6 +165,7 @@
     <ClCompile Include="src\RE\ActorState.cpp" />
     <ClCompile Include="src\RE\ActorValueOwner.cpp" />
     <ClCompile Include="src\RE\AddCallbackVisitor.cpp" />
+    <ClCompile Include="src\RE\BGSImpactManager.cpp" />
     <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp" />
     <ClCompile Include="src\RE\BSTaskPool.cpp" />
     <ClCompile Include="src\RE\BSXFlags.cpp" />
@@ -421,6 +422,7 @@
     <ClInclude Include="include\RE\BGSAnimationSequencer.h" />
     <ClInclude Include="include\RE\BGSBodyPartDefs.h" />
     <ClInclude Include="include\RE\BGSEntryPoint.h" />
+    <ClInclude Include="include\RE\BGSImpactManager.h" />
     <ClInclude Include="include\RE\BGSInstancedQuestObjective.h" />
     <ClInclude Include="include\RE\BGSLocalizedStringDL.h" />
     <ClInclude Include="include\RE\bhkCollisionObject.h" />

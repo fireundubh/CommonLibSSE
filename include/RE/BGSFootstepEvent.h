@@ -8,7 +8,7 @@ namespace RE
 	struct BGSFootstepEvent
 	{
 		// members
-		RefHandle		handle;	// 00
+		ActorHandle		handle;	// 00
 		UInt32			pad04;	// 04
 		BSFixedString	str;	// 08
 	};

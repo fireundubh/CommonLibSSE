@@ -59,4 +59,6 @@ namespace RE
 			kVampireLord = 46
 		};
 	};
+
+	using Archetype = EffectArchetypes::ArchetypeID;
 }

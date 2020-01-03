@@ -332,7 +332,7 @@ namespace RE
 
 	bool Actor::IsProtected() const
 	{
-		return (flags2 & Flag2::kIsProtected) != Flag2::kNone;
+		return (boolFlags & BOOL_FLAGS::kProtected) != BOOL_FLAGS::kNone;
 	}
 
 
