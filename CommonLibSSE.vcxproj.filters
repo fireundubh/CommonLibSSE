@@ -5219,5 +5219,8 @@
     <ClInclude Include="include\RE\OwnedCameraEffectController.h">
       <Filter>include\RE\FormComponents\Components\ReferenceEffectController</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\BGSDecalGroup.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
