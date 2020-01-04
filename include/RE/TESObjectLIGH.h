@@ -32,9 +32,8 @@ namespace RE
 		kSpotShadow = 1 << 10,
 		kHemiShadow = 1 << 11,
 		kOmniShadow = 1 << 12,
-		kPortalStrict = 1 << 13
-		kType = kSpotlight | kSpotShadow | kHemiShadow | kOmniShadow,
-
+		kPortalStrict = 1 << 13,
+		kType = kSpotlight | kSpotShadow | kHemiShadow | kOmniShadow
 	};
 
 
