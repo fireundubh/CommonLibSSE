@@ -21,7 +21,7 @@ namespace RE
 		virtual ~NiObjectNET();														// 00
 
 		// override (NiObject)
-		virtual const NiRTTI* GetRTTI() const override;							// 02
+		virtual const NiRTTI*	GetRTTI() const override;							// 02
 		virtual void			LoadBinary(NiStream& a_stream) override;			// 18
 		virtual void			LinkObject(NiStream& a_stream) override;			// 19
 		virtual bool			RegisterStreamables(NiStream& a_stream) override;	// 1A

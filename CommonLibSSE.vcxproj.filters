@@ -1075,12 +1075,6 @@
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiProperty\NiShadeProperty\BSShaderPropery">
       <UniqueIdentifier>{29edcef6-4b84-4309-87d5-9e8046d69f33}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\RE\Memory\Inventory">
-      <UniqueIdentifier>{9c902473-086f-40d9-a348-20edac18af80}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\Memory\Inventory\ArmorRatingVisitorBase">
-      <UniqueIdentifier>{74bf67cc-4d6b-4366-a70c-ff797ce8c427}</UniqueIdentifier>
-    </Filter>
     <Filter Include="include\RE\Events">
       <UniqueIdentifier>{7cc250ab-e557-449b-a10f-864e3914dcb3}</UniqueIdentifier>
     </Filter>
@@ -1098,6 +1092,12 @@
     </Filter>
     <Filter Include="include\RE\Events\BGSActorEvent">
       <UniqueIdentifier>{f14eb727-0f67-47cd-8996-4dd2b5fe6a02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\Inventory">
+      <UniqueIdentifier>{9c902473-086f-40d9-a348-20edac18af80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\Inventory\ArmorRatingVisitorBase">
+      <UniqueIdentifier>{74bf67cc-4d6b-4366-a70c-ff797ce8c427}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1758,9 +1758,6 @@
     <ClCompile Include="src\RE\DialogueItem.cpp">
       <Filter>src\RE\FormComponents\Components</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\Events\TESHitEvent.cpp">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\BSTaskPool.cpp">
       <Filter>src\RE\Misc</Filter>
     </ClCompile>
@@ -1791,6 +1788,9 @@
     <ClCompile Include="src\RE\BSShaderTextureSet.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\Events\TESHitEvent.cpp">
+      <Filter>src\RE\Events\ScriptEvent</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\PlayerControls.h">
@@ -1815,7 +1815,7 @@
       <Filter>include\RE\BSCore</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\InventoryEntryData.h">
-      <Filter>include\RE\Memory\Inventory</Filter>
+      <Filter>include\RE\Inventory</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESActorBaseData.h">
       <Filter>include\RE\FormComponents</Filter>
@@ -1839,7 +1839,7 @@
       <Filter>include\RE\BSCore</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\InventoryChanges.h">
-      <Filter>include\RE\Memory\Inventory</Filter>
+      <Filter>include\RE\Inventory</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSTList.h">
       <Filter>include\RE\BSCore</Filter>
@@ -3567,10 +3567,10 @@
       <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ArmorRatingVisitorBase.h">
-      <Filter>include\RE\Memory\Inventory\ArmorRatingVisitorBase</Filter>
+      <Filter>include\RE\Inventory\ArmorRatingVisitorBase</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ArmorRatingVisitor.h">
-      <Filter>include\RE\Memory\Inventory\ArmorRatingVisitorBase</Filter>
+      <Filter>include\RE\Inventory\ArmorRatingVisitorBase</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ExtraLinkedRef.h">
       <Filter>include\RE\BSExtraData</Filter>
@@ -4614,7 +4614,7 @@
       <Filter>include\RE\Scaleform\GStd</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ExtraDataList.h">
-      <Filter>include\RE\Memory\Inventory</Filter>
+      <Filter>include\RE\Inventory</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSGeometry.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
@@ -4863,7 +4863,7 @@
       <Filter>include\RE\BSHavok</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ActorEquipManager.h">
-      <Filter>include\RE\Memory\Inventory</Filter>
+      <Filter>include\RE\Inventory</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSStringPool.h">
       <Filter>include\RE\BSCore</Filter>

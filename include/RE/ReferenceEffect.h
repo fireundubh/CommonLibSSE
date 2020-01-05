@@ -41,13 +41,13 @@ namespace RE
 
 
 		// members
-		ReferenceEffectController*	controller;	// 30
-		ObjectRefHandle				refHandle;	// 38
-		ObjectRefHandle				unk3C;		// 3C
-		UInt8						unk40;		// 40 - set to 1 when effect removed
-		UInt8						unk41;		// 41 - set to 1 when effect added
-		UInt16						unk42;		// 42
-		UInt32						unk44;		// 44
+		ReferenceEffectController*	controller;			// 30
+		ObjectRefHandle				target;				// 38
+		ObjectRefHandle				aimAtTarget;		// 3C
+		bool						finished;			// 40 - set to 1 when effect removed
+		bool						ownedController;	// 41 
+		UInt16						unk42;				// 42
+		UInt32						unk44;				// 44
 	};
 	STATIC_ASSERT(sizeof(ReferenceEffect) == 0x48);
 }

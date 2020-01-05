@@ -128,6 +128,8 @@ namespace RE
 		namespace BGSImpactManager
 		{
 			constexpr std::uintptr_t Singleton = 0x02F003F0;	// 1_5_97
+			//
+			constexpr std::uintptr_t PlayImpactEffect = 0x005A2C60;	// 1_5_97
 		}
 
 
