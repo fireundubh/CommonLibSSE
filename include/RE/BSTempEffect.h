@@ -6,6 +6,7 @@
 namespace RE
 {
 	class BGSLoadGameBuffer;
+	class TESObjectCELL;
 
 
 	class BSTempEffect : public NiObject
@@ -62,14 +63,14 @@ namespace RE
 
 		// members
 		float			lifetime;		// 10
-		UInt32			unk14;			// 14
-		TESObjectCELL *	cell;			// 18
+		UInt32			pad14;			// 14
+		TESObjectCELL*	cell;			// 18
 		float			age;			// 20
 		bool			initialized;	// 24
-		UInt8			unk25;			// 25
-		UInt16			unk26;			// 26
-		UInt32			unk28;			// 28
-		UInt32			unk2C;			// 2C
+		UInt8			pad25;			// 25
+		UInt16			pad26;			// 26
+		UInt32			effectID;		// 28
+		UInt32			pad2C;			// 2C
 	};
 	STATIC_ASSERT(sizeof(BSTempEffect) == 0x30);
 }

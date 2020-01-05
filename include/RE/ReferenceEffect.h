@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/BSPointerHandle.h"
 #include "RE/BSTempEffect.h"
 
 
@@ -41,13 +42,13 @@ namespace RE
 
 
 		// members
-		ReferenceEffectController*	controller;			// 30
-		ObjectRefHandle				target;				// 38
-		ObjectRefHandle				aimAtTarget;		// 3C
-		bool						finished;			// 40 - set to 1 when effect removed
-		bool						ownedController;	// 41 
-		UInt16						unk42;				// 42
-		UInt32						unk44;				// 44
+		ReferenceEffectController*	controller;		// 30
+		ObjectRefHandle				target;			// 38
+		ObjectRefHandle				aimAtTarget;	// 3C
+		bool						finished;		// 40
+		bool						ownController;	// 41
+		UInt16						pad42;			// 42
+		UInt32						pad44;			// 44
 	};
 	STATIC_ASSERT(sizeof(ReferenceEffect) == 0x48);
 }
