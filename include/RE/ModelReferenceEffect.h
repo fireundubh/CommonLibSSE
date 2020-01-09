@@ -30,7 +30,7 @@ namespace RE
 		virtual void			Unk_28(void) override;							// 28
 		virtual void			Unk_29(void) override;							// 29 - { return unkC8; }
 		virtual void			Unk_2C(void) override;							// 2C - { return 9; }
-		virtual void			Unk_2D(void) override;							// 2D
+		virtual void			SaveEffect(BGSSaveGameBuffer* a_buf) override;	// 2D
 		virtual void			LoadEffect(BGSLoadGameBuffer* a_buf) override;	// 2E
 		virtual void			Unk_36(void) override;							// 36
 		virtual void			Unk_3A(void) override;							// 3A

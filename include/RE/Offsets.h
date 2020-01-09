@@ -111,6 +111,13 @@ namespace RE
 		}
 
 
+		namespace BGSDecalManager
+		{
+			// IndirectSig: E8 ? ? ? ? 4C 63 C3
+			constexpr std::uintptr_t Singleton = 0x01EC4320;	// 1_5_97
+		}
+
+
 		namespace BGSDefaultObjectManager
 		{
 			// IndirectSig: E8 ? ? ? ? 4C 63 C3

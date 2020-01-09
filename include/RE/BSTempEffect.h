@@ -6,6 +6,7 @@
 namespace RE
 {
 	class BGSLoadGameBuffer;
+	class BGSSaveGameBuffer;
 	class TESObjectCELL;
 
 
@@ -50,7 +51,7 @@ namespace RE
 		virtual void							Unk_2A(void);									// 2A - { return 1; }
 		virtual void							Unk_2B(void);									// 2B - { return 1; }
 		virtual void							Unk_2C(void);									// 2C - { return 7; }
-		virtual void							Unk_2D(void);									// 2D
+		virtual void							SaveEffect(BGSSaveGameBuffer* a_buf);			// 2D
 		virtual void							LoadEffect(BGSLoadGameBuffer* a_buf);			// 2E
 		virtual void							Unk_2F(void);									// 2F - { return; }
 		virtual void							Unk_30(void);									// 30 - { return 0; }

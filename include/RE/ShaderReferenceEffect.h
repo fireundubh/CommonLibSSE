@@ -40,7 +40,7 @@ namespace RE
 		virtual void			Unk_28(void) override;							// 28
 		virtual void			Unk_29(void) override;							// 29 - { return unk0F8; }
 		virtual void			Unk_2C(void) override;							// 2C - { return 10; }
-		virtual void			Unk_2D(void) override;							// 2D
+		virtual void			SaveEffect(BGSSaveGameBuffer* a_buf) override;	// 2D
 		virtual void			LoadEffect(BGSLoadGameBuffer* a_buf) override;	// 2E
 		virtual void			Unk_2F(void) override;							// 2F - { return ReferenceEffect::Unk_2F(); }
 		virtual void			Unk_30(void) override;							// 30 - { return (unk130 >> 1) & 1; }
@@ -59,28 +59,28 @@ namespace RE
 
 
 		// members
-		BSTArray<Data048>	unk048;	// 048
-		BSTArray<void*>		unk060;	// 060 - smart ptrs
-		BSTArray<void*>		unk078;	// 078
-		BSTArray<Data090>	unk090;	// 090
-		BSTArray<void*>		unk0A8;	// 0A8 - smart ptrs
-		UInt64				unk0C0;	// 0C0
-		UInt64				unk0C8;	// 0C8
-		void*				unk0D0;	// 0D0 - smart ptr
-		void*				unk0D8;	// 0D8 - smart ptr
-		void*				unk0E0;	// 0E0 - smart ptr
-		void*				unk0E8;	// 0E8 - smart ptr
-		void*				unk0F0;	// 0F0 - smart ptr
-		void*				unk0F8;	// 0F8 - smart ptr
-		TESBoundObject*		unk100;	// 100
+		BSTArray<Data048>	unk048;			// 048
+		BSTArray<void*>		unk060;			// 060 - smart ptrs
+		BSTArray<void*>		unk078;			// 078
+		BSTArray<Data090>	unk090;			// 090
+		BSTArray<void*>		unk0A8;			// 0A8 - smart ptrs
+		BSSoundHandle		soundHandle;	// 0C0
+		UInt32				unk0C8;			// 0C8
+		void*				unk0D0;			// 0D0 - smart ptr
+		void*				unk0D8;			// 0D8 - smart ptr
+		void*				unk0E0;			// 0E0 - smart ptr
+		void*				unk0E8;			// 0E8 - smart ptr
+		void*				unk0F0;			// 0F0 - smart ptr
+		NiAVObject*			unk0F8;			// 0F8 - smart ptr
+		TESBoundObject*		unk100;			// 100
 		TESEffectShader*	effectShader;	// 108
-		UInt64				unk110;	// 110
-		void*				unk118;	// 118 - smart ptr
-		UInt32				unk120;	// 120
-		float				unk124;	// 124 - 1.0f
-		float				unk128;	// 128 - 1.0f
-		UInt32				unk130;	// 130 - flags
-		UInt32				unk134;	// 134
+		UInt64				unk110;			// 110
+		void*				unk118;			// 118 - smart ptr
+		UInt32				unk120;			// 120
+		float				unk124;			// 124 - 1.0f
+		float				unk128;			// 128 - 1.0f
+		UInt32				unk130;			// 130 - flags
+		UInt32				unk134;			// 134
 	};
 	STATIC_ASSERT(sizeof(ShaderReferenceEffect) == 0x138);
 

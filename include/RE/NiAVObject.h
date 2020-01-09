@@ -104,6 +104,8 @@ namespace RE
 		void	UpdateModelSkin(NiColorA** a_color);
 		void	UpdateNode(ControllerUpdateContext* a_ctx);
 
+		TESObjectREFR* GetOwner();
+
 		// members
 		NiNode*							parent;				// 030
 		UInt64							unk038;				// 038

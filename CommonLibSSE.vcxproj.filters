@@ -1791,6 +1791,9 @@
     <ClCompile Include="src\RE\Events\TESHitEvent.cpp">
       <Filter>src\RE\Events\ScriptEvent</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\BGSDecalManager.cpp">
+      <Filter>src\RE\Misc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\PlayerControls.h">
@@ -5221,6 +5224,30 @@
     </ClInclude>
     <ClInclude Include="include\RE\BGSDecalGroup.h">
       <Filter>include\RE\FormComponents\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSTempEffectWeaponBlood.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSTempEffectSimpleDecal.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSTempEffectGeometryDecal.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BGSDecalManager.h">
+      <Filter>include\RE\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BGSDecalNode.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSTempEffectSPG.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSTempEffectDebris.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSTempEffectParticle.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

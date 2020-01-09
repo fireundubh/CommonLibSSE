@@ -165,6 +165,7 @@
     <ClCompile Include="src\RE\ActorState.cpp" />
     <ClCompile Include="src\RE\ActorValueOwner.cpp" />
     <ClCompile Include="src\RE\AddCallbackVisitor.cpp" />
+    <ClCompile Include="src\RE\BGSDecalManager.cpp" />
     <ClCompile Include="src\RE\BGSImpactManager.cpp" />
     <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp" />
     <ClCompile Include="src\RE\BSTaskPool.cpp" />
@@ -422,6 +423,8 @@
     <ClInclude Include="include\RE\BGSAnimationSequencer.h" />
     <ClInclude Include="include\RE\BGSBodyPartDefs.h" />
     <ClInclude Include="include\RE\BGSDecalGroup.h" />
+    <ClInclude Include="include\RE\BGSDecalManager.h" />
+    <ClInclude Include="include\RE\BGSDecalNode.h" />
     <ClInclude Include="include\RE\BGSEntryPoint.h" />
     <ClInclude Include="include\RE\BGSImpactManager.h" />
     <ClInclude Include="include\RE\BGSInstancedQuestObjective.h" />
@@ -438,6 +441,12 @@
     <ClInclude Include="include\RE\BSResource\FileID.h" />
     <ClInclude Include="include\RE\BSResource\ID.h" />
     <ClInclude Include="include\RE\BSResponse.h" />
+    <ClInclude Include="include\RE\BSTempEffectDebris.h" />
+    <ClInclude Include="include\RE\BSTempEffectGeometryDecal.h" />
+    <ClInclude Include="include\RE\BSTempEffectParticle.h" />
+    <ClInclude Include="include\RE\BSTempEffectSimpleDecal.h" />
+    <ClInclude Include="include\RE\BSTempEffectSPG.h" />
+    <ClInclude Include="include\RE\BSTempEffectWeaponBlood.h" />
     <ClInclude Include="include\RE\BSTimer.h" />
     <ClInclude Include="include\RE\BSTTuple.h" />
     <ClInclude Include="include\RE\BSUntypedPointerHandle.h" />

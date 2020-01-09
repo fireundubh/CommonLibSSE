@@ -25,7 +25,7 @@ namespace RE
 		virtual void			Unk_2A(void) override;							// 2A
 		virtual void			Unk_2B(void) override;							// 2B
 		virtual void			Unk_2C(void) override;							// 2C - { return 8; }
-		virtual void			Unk_2D(void) override;							// 2D
+		virtual void			SaveEffect(BGSSaveGameBuffer* a_buf) override;	// 2D
 		virtual void			LoadEffect(BGSLoadGameBuffer* a_buf) override;	// 2E
 		virtual void			Unk_2F(void) override;							// 2F
 

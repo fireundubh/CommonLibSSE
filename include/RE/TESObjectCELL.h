@@ -222,7 +222,7 @@ namespace RE
 		BSTArray<void*>						unk0D0;				// 0D0
 		BSTArray<void*>						unk0F8;				// 0F8
 		BSTArray<void*>						unk100;				// 100
-		mutable BSSpinLock					cellRefLock;			// 118
+		mutable BSSpinLock					cellRefLock;		// 118
 		TESWorldSpace*						worldSpace;			// 120
 		LOADED_CELL_DATA*					loadedData;			// 128
 		BGSLightingTemplate*				lightingTemplate;	// 130 - LTMP

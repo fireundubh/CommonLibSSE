@@ -1,9 +1,8 @@
 #include "RE/NiAVObject.h"
+#include "RE/NiNode.h"
 
 #include "RE/Offsets.h"
 #include "REL/Relocation.h"
-
-#include "skse64/GameData.h"
 
 
 namespace RE
@@ -37,5 +36,20 @@ namespace RE
 		using func_t = function_type_t<decltype(&NiAVObject::UpdateNode)>;
 		REL::Offset<func_t*> func(Offset::NiAVObject::UpdateNode);
 		return func(this, a_ctx);
+	}
+
+	TESObjectREFR* NiAVObject::GetOwner()
+	{
+		if (userData)
+		{
+			return userData;
+		}
+
+		if (parent)
+		{
+			parent->GetOwner();
+		}
+
+		return nullptr;
 	}
 }
