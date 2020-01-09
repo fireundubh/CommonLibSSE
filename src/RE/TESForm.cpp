@@ -63,6 +63,12 @@ namespace RE
 	}
 
 
+	FormType TESForm::GetFormType() const
+	{
+		return formType;
+	}
+
+
 	SInt32 TESForm::GetGoldValue() const
 	{
 		SInt32 value = 0;
@@ -71,8 +77,8 @@ namespace RE
 		if (objRef) {
 			form = objRef->GetBaseObject();
 			auto xEnch = objRef->extraList.GetByType<ExtraEnchantment>();
-			if (xEnch && xEnch->objectEffect) {
-				value += xEnch->objectEffect->CalculateTotalGoldValue();
+			if (xEnch && xEnch->enchantment) {
+				value += xEnch->enchantment->CalculateTotalGoldValue();
 			}
 		}
 
@@ -128,13 +134,13 @@ namespace RE
 			return false;
 		}
 
-		auto policy = vm->GetHandlePolicy();
+		auto policy = vm->GetObjectHandlePolicy();
 		if (!policy) {
 			return false;
 		}
 
-		auto handle = policy->GetHandle(formType, this);
-		return handle != policy->GetInvalidHandle();
+		auto handle = policy->GetHandleForObject(formType, this);
+		return handle != policy->EmptyHandle();
 	}
 
 

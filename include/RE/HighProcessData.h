@@ -24,6 +24,7 @@ namespace RE
 	class NiBillboardNode;
 	class NiRefObject;
 	class StandardDetectionListener;
+	struct Crime;
 	struct QueuedDialogueType;
 
 
@@ -52,6 +53,18 @@ namespace RE
 	class HighProcessData
 	{
 	public:
+		enum class FADE_STATE : UInt32
+		{
+			kNormal = 0,
+			kIn = 1,
+			kOut = 2,
+			kTeleportIn = 3,
+			kTeleportOut = 4,
+			kOutDisable = 5,
+			kOutDelete = 6
+		};
+
+
 		struct Data190 : public BSIntrusiveRefCounted
 		{
 			struct Data
@@ -159,7 +172,8 @@ namespace RE
 		float													unk124;							// 124
 		float													unk128;							// 128
 		float													unk12C;							// 12C
-		UInt64													unk130;							// 130
+		FADE_STATE												fadeState;						// 130
+		UInt32													unk134;							// 134
 		UInt64													unk138;							// 138
 		UInt64													unk140;							// 140
 		UInt64													unk148;							// 148
@@ -270,7 +284,7 @@ namespace RE
 		NiPoint3												animationAngleMod;				// 424
 		BSTSmartPointer<IAnimationSetCallbackFunctor>			unk430;							// 430
 		UInt64													unk438;							// 438
-		UInt64													unk440;							// 440
+		Crime*													crimeToReactTo;					// 440
 		UInt64													unk448;							// 448
 		UInt64													unk450;							// 450
 		UInt64													unk458;							// 458

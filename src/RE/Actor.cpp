@@ -71,11 +71,11 @@ namespace RE
 			extraList.Add(xTalk);
 		}
 
-		xTalk->canTalkToPlayer = a_talk;
+		xTalk->talk = a_talk;
 	}
 
 
-	SInt32 Actor::CalcEntryValue(InventoryEntryData* a_entryData, UInt32 a_numItems, bool a_multiplyValueByRemainingItems) const
+	SInt32 Actor::CalcEntryValue(const InventoryEntryData* a_entryData, UInt32 a_numItems, bool a_multiplyValueByRemainingItems) const
 	{
 		using func_t = function_type_t<decltype(&Actor::CalcEntryValue)>;
 		REL::Offset<func_t*> func(Offset::Actor::CalcEntryValue);
@@ -87,6 +87,27 @@ namespace RE
 	{
 		auto worldSpace = GetWorldspace();
 		return worldSpace && worldSpace->HasMaxHeightData();
+	}
+
+
+	bool Actor::CanPickpocket() const
+	{
+		if (!race) {
+			return false;
+		}
+
+		return race->AllowsPickpocket() && !IsPlayerTeammate();
+	}
+
+
+	bool Actor::CanTalkToPlayer() const
+	{
+		auto xTalk = extraList.GetByType<ExtraCanTalkToPlayer>();
+		if (xTalk) {
+			return xTalk->talk;
+		} else {
+			return race ? race->AllowsPCDialogue() : false;
+		}
 	}
 
 
@@ -185,7 +206,7 @@ namespace RE
 		}
 
 		auto xFac = extraList.GetByType<ExtraFactionChanges>();
-		if (xFac && (xFac->crimeFaction || xFac->noTrackCrime)) {
+		if (xFac && (xFac->crimeFaction || xFac->removeCrimeFaction)) {
 			return xFac->crimeFaction;
 		}
 
@@ -470,6 +491,14 @@ namespace RE
 	}
 
 
+	void Actor::Update3DModel()
+	{
+		if (currentProcess) {
+			currentProcess->Update3DModel(this);
+		}
+	}
+
+
 	void Actor::UpdateHairColor()
 	{
 		auto npc = GetActorBase();
@@ -534,8 +563,8 @@ namespace RE
 
 			auto factionChanges = extraList.GetByType<ExtraFactionChanges>();
 			if (factionChanges) {
-				for (auto& info : factionChanges->factions) {
-					if (a_visitor(info.faction, info.rank)) {
+				for (auto& change : factionChanges->factionChanges) {
+					if (a_visitor(change.faction, change.rank)) {
 						return true;
 					}
 				}

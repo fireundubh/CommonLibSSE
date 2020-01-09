@@ -12,6 +12,7 @@
 #include "RE/BSPointerHandle.h"
 #include "RE/BSTArray.h"
 #include "RE/BSTEvent.h"
+#include "RE/BSTList.h"
 #include "RE/BSTSmartPointer.h"
 #include "RE/ExtraDataList.h"
 #include "RE/FormTypes.h"
@@ -42,7 +43,7 @@ namespace RE
 	struct BGSDecalGroup;
 	struct BipedAnim;
 	struct BSAnimationGraphEvent;
-	struct LockState;
+	struct REFR_LOCK;
 
 
 	enum class ITEM_REMOVE_REASON : UInt32
@@ -102,7 +103,7 @@ namespace RE
 
 		using Count = SInt32;
 		using InventoryMap = std::unordered_map<TESBoundObject*, std::pair<Count, InventoryEntryData*>>;
-		using DroppedInventoryMap = std::unordered_map<TESBoundObject*, std::pair<Count, std::unique_ptr<InventoryEntryData>>>;
+		using DroppedInventoryMap = std::unordered_map<TESBoundObject*, std::pair<Count, NiPointer<TESObjectREFR>>>;
 
 
 		enum { kTypeID = FormType::Reference };
@@ -235,12 +236,12 @@ namespace RE
 		virtual BSEventNotifyControl	ProcessEvent(const BSAnimationGraphEvent* a_event, BSTEventSource<BSAnimationGraphEvent>* a_dispatcher) override;																							// 01
 
 		// override (IAnimationGraphManagerHolder)
-		virtual bool					GetAnimationGraphManager(BSTSmartPointer<BSAnimationGraphManager>& a_out) override;																															// 02
-		virtual bool					SetAnimationGraphManager(BSTSmartPointer<BSAnimationGraphManager>& a_in) override;																															// 03
-		virtual bool					PopulateGraphNodesToTarget(void* a_arg1) override;																																							// 04
+		virtual bool					GetAnimationGraphManagerImpl(BSTSmartPointer<BSAnimationGraphManager>& a_out) override;																														// 02
+		virtual bool					SetAnimationGraphManagerImpl(BSTSmartPointer<BSAnimationGraphManager>& a_in) override;																														// 03
+		virtual bool					PopulateGraphNodesToTarget(BSScrapArray<NiAVObject*>& a_nodes) override;																																	// 04
 		virtual bool					ConstructAnimationGraph(BSTSmartPointer<BShkbAnimationGraph>& a_out) override;																																// 05
-		virtual bool					SetupAnimEventSinks(BSTSmartPointer<BShkbAnimationGraph>& a_animGraph) override;																															// 08
-		virtual void					PostChangeAnimationManager(void* a_arg1, void* a_arg2) override;																																			// 0D
+		virtual bool					SetupAnimEventSinks(const BSTSmartPointer<BShkbAnimationGraph>& a_animGraph) override;																														// 08
+		virtual void					PostChangeAnimationManager(const BSTSmartPointer<BShkbAnimationGraph>& a_arg1, const BSTSmartPointer<BShkbAnimationGraph>& a_arg2) override;																// 0D
 
 		// add
 		virtual void					Predestroy();																																																// 3B
@@ -256,7 +257,7 @@ namespace RE
 		virtual void					GetSequencer(void);																																															// 45
 		virtual bool					QCanUpdateSync(void);																																														// 46 - { return true; }
 		virtual bool					GetAllowPromoteToPersistent(void);																																											// 47 - { return true; }
-		virtual bool					HasKeywordHelper(BGSKeyword* a_keyword);																																									// 48
+		virtual bool					HasKeywordHelper(BGSKeyword* a_keyword) const;																																								// 48
 		virtual void					CheckForCurrentAliasPackage(void);																																											// 49 - { return 0; }
 		virtual BGSScene*				GetCurrentScene() const;																																													// 4A
 		virtual void					SetCurrentScene(BGSScene* a_scene);																																											// 4B
@@ -337,7 +338,7 @@ namespace RE
 		virtual void					Unk_96(void);																																																// 96 - related to lockpicking
 		virtual TESObjectCELL*			GetParentOrPersistentCell() const;																																											// 97
 		virtual void					Unk_98(void);																																																// 98
-		virtual bool					IsDead(bool a_noDying = true);																																												// 99
+		virtual bool					IsDead(bool a_acceptBleedout = true);																																										// 99
 		virtual BSAnimNoteReceiver*		CreateAnimNoteReceiver();																																													// 9A
 		virtual BSAnimNoteReceiver*		GetAnimNoteReceiver();																																														// 9B
 		virtual void					Unk_9C(void);																																																// 9C
@@ -371,8 +372,8 @@ namespace RE
 		InventoryChanges*		GetInventoryChanges();	// Creates inventory changes if none found
 		TESObjectREFR*			GetLinkedRef(BGSKeyword* a_keyword);
 		SInt32					GetLockLevel() const;
-		LockState*				GetLockState();
-		const LockState*		GetLockState() const;
+		REFR_LOCK*				GetLockState();
+		const REFR_LOCK*		GetLockState() const;
 		const char*				GetName() const;
 		NiAVObject*				GetNodeByName(const BSFixedString& a_nodeName);
 		UInt32					GetNumItems(bool a_useDataHandlerChanges = false, bool a_arg2 = false);
@@ -390,10 +391,12 @@ namespace RE
 		float					GetWeight() const;
 		TESWorldSpace*			GetWorldspace() const;
 		bool					HasCollision() const;
+		bool					HasKeyword(BGSKeyword* a_keyword) const;
 		bool					HasInventoryChanges() const;
 		bool					Is3DLoaded() const;
 		bool					IsActivationBlocked() const;
 		bool					IsDisabled() const;
+		bool					IsHorse() const;
 		bool					IsLocked() const;
 		bool					IsMarkedForDeletion() const;
 		bool					IsOffLimits() const;
@@ -421,7 +424,7 @@ namespace RE
 		UInt32				pad94;			// 94
 
 	private:
-		const LockState*	GetLockState_Impl() const;
+		const REFR_LOCK*	GetLockState_Impl() const;
 		void				MoveTo_Impl(ObjectRefHandle& a_targetHandle, TESObjectCELL* a_targetCell, TESWorldSpace* a_selfWorldSpace, NiPoint3& a_position, NiPoint3& a_rotation);
 		void				PlayAnimation_Impl(NiControllerManager* a_manager, NiControllerSequence* a_toSeq, NiControllerSequence* a_fromSeq, bool a_arg4 = false);
 	};

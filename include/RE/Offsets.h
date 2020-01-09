@@ -90,7 +90,7 @@ namespace RE
 			// DirectSig: 48 8B 41 08 48 85 C0 74 06 08 90 ? ? ? ?
 			constexpr std::uintptr_t SetEquipFlag = 0x0067E3B0;		// 1_5_97
 			// IndirectSig: E8 ? ? ? ? E9 ? ? ? ? 8B 4F 08
-			constexpr std::uintptr_t UpdateEquipment = 0x00650DF0;	// 1_5_97
+			constexpr std::uintptr_t Update3DModel = 0x00650DF0;	// 1_5_97
 
 			//po3
 			constexpr std::uintptr_t SetActorRefraction = 0x00680DB0;	// 1_5_97
@@ -161,6 +161,17 @@ namespace RE
 		{
 			constexpr std::uintptr_t AddFormToList = 0x002C53D0;		// 1_5_97
 		}
+
+		namespace BGSStoryTeller
+		{
+			// DirectSig: 40 56 57 41 56 48 83 EC 40 48 C7 44 24 ? ? ? ? ? 48 89 5C 24 ? 48 89 6C 24 ? 48 8B FA 48 8B E9 44 8B 05 ? ? ? ? 65 48 8B 04 25 ? ? ? ? B9 ? ? ? ? 4A 8B 34 C0 48 03 F1 8B 1E 89 5C 24 68
+			constexpr std::uintptr_t BeginShutDownQuest = 0x004D80A0;	// 1_5_97
+			// IndirectSig: E8 ? ? ? ? 4C 8D 35 ? ? ? ? 40 84 F6
+			constexpr std::uintptr_t BeginStartUpQuest = 0x004D7F80;	// 1_5_97
+			// 48 8B 0D ? ? ? ? 48 8B D3 45 84 C0
+			constexpr std::uintptr_t Singleton = 0x01EC3B80;			// 1_5_97
+		}
+
 
 		namespace BipedAnim
 		{
@@ -281,13 +292,6 @@ namespace RE
 
 		namespace BSScript
 		{
-			namespace Class
-			{
-				// IndirectSig: E8 ? ? ? ? 90 48 8D 4B 18 E8 ? ? ? ? 90 48 8B 4B 10
-				constexpr std::uintptr_t ReleaseData = 0x012386D0;	// 1_5_97
-			}
-
-
 			namespace Object
 			{
 				// IndirectSig: E8 ? ? ? ? 49 8B CE E8 ? ? ? ? 48 85 DB 74 08
@@ -296,6 +300,13 @@ namespace RE
 				constexpr std::uintptr_t IncRefCount = 0x01234360;	// 1_5_97
 				// IndirectSig: E8 ? ? ? ? 85 C0 75 10 49 8B CE
 				constexpr std::uintptr_t DecRefCount = 0x01234410;	// 1_5_97
+			}
+
+
+			namespace ObjectTypeInfo
+			{
+				// IndirectSig: E8 ? ? ? ? 90 48 8D 4B 18 E8 ? ? ? ? 90 48 8B 4B 10
+				constexpr std::uintptr_t ReleaseData = 0x012386D0;	// 1_5_97
 			}
 
 
@@ -321,7 +332,7 @@ namespace RE
 				namespace NativeFunctionBase
 				{
 					// DirectSig: 48 8B C4 4C 89 48 20 4C 89 40 18 55 56 57 41 54 41 55 41 56 41 57 48 8D A8 ? ? ? ? 48 81 EC ? ? ? ? 48 C7 44 24 ? ? ? ? ? 48 89 58 08
-					constexpr std::uintptr_t Invoke = 0x012507F0;	// 1_5_97
+					constexpr std::uintptr_t Call = 0x012507F0;	// 1_5_97
 				}
 			}
 
@@ -374,17 +385,17 @@ namespace RE
 			constexpr std::uintptr_t func5C1AF0 = 0x005C1AF0;	// 1_5_97
 		}
 
-		namespace BSStringPool
-		{
-			// IndirectSig: E8 ? ? ? ? 41 8B FE 41 8B CE
-			constexpr std::uintptr_t GetSingleton = 0x00C2A4D0;	// 1_5_97
-		}
-
-
 		namespace BSUntypedPointerHandle
 		{
 			// 8B 05 ? ? ? ? 89 44 24 78 48 8D 44 24 ? 8B 00
 			constexpr std::uintptr_t InvalidHandle = 0x01EBEABC;	// 1_5_97
+		}
+
+
+		namespace BucketTable
+		{
+			// IndirectSig: E8 ? ? ? ? 41 8B FE 41 8B CE
+			constexpr std::uintptr_t GetSingleton = 0x00C2A4D0;	// 1_5_97
 		}
 
 
@@ -821,13 +832,6 @@ namespace RE
 		}
 
 
-		namespace LockState
-		{
-			// IndirectSig: E8 ? ? ? ? 66 0F 6E C0 0F 5B C0 0F 5A C8 F2 0F 11 0F
-			constexpr std::uintptr_t GetLockLevel = 0x00134A90;	// 1_5_97
-		}
-
-
 		namespace LookHandler
 		{
 			// VTable: .?AULookHandler@@
@@ -1046,6 +1050,13 @@ namespace RE
 		}
 
 
+		namespace REFR_LOCK
+		{
+			// IndirectSig: E8 ? ? ? ? 66 0F 6E C0 0F 5B C0 0F 5A C8 F2 0F 11 0F
+			constexpr std::uintptr_t GetLockLevel = 0x00134A90;	// 1_5_97
+		}
+
+
 		namespace RunHandler
 		{
 			// VTable: .?AURunHandler@@
@@ -1232,6 +1243,13 @@ namespace RE
 			constexpr std::uintptr_t PlayAnimation = 0x00189E30;		// 1_5_97
 			//
 			constexpr std::uintptr_t CreateRefHandle_Native = 0x0029B980;	// 1_5_97
+		}
+
+		
+		namespace TESQuest
+		{
+			// IndirectSig: E8 ? ? ? ? 48 8B 54 24 ? 0F B6 8A ? ? ? ?
+			constexpr std::uintptr_t Reset = 0x00370E90;	// 1_5_97
 		}
 
 

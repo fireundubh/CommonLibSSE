@@ -3,6 +3,8 @@
 #include <cassert>
 #include <limits>
 
+#include "RE/BGSDefaultObjectManager.h"
+#include "RE/BGSKeyword.h"
 #include "RE/BSFixedString.h"
 #include "RE/ExtraContainerChanges.h"
 #include "RE/ExtraDroppedItemList.h"
@@ -147,13 +149,13 @@ namespace RE
 
 		DroppedInventoryMap results;
 
-		auto droppedList = extraList.GetByType<ExtraDroppedItemList>();
-		if (!droppedList) {
+		auto xDrop = extraList.GetByType<ExtraDroppedItemList>();
+		if (!xDrop) {
 			return results;
 		}
 
-		for (auto& handle : droppedList->handles) {
-			auto ref = LookupByHandle(handle);
+		for (auto& handle : xDrop->droppedItemList) {
+			auto ref = handle.get();
 			if (!ref) {
 				continue;
 			}
@@ -164,9 +166,7 @@ namespace RE
 			}
 
 			auto count = ref->extraList.GetCount();
-			auto entry = std::make_unique<InventoryEntryData>(object, count);
-			entry->AddExtraList(&ref->extraList);
-			auto it = results.insert(std::make_pair(object, mapped_type(count, std::move(entry))));
+			auto it = results.insert(std::make_pair(object, mapped_type(count, std::move(ref))));
 			assert(it.second);
 		}
 
@@ -268,13 +268,13 @@ namespace RE
 	}
 
 
-	LockState* TESObjectREFR::GetLockState()
+	REFR_LOCK* TESObjectREFR::GetLockState()
 	{
-		return const_cast<LockState*>(GetLockState_Impl());
+		return const_cast<REFR_LOCK*>(GetLockState_Impl());
 	}
 
 
-	const LockState* TESObjectREFR::GetLockState() const
+	const REFR_LOCK* TESObjectREFR::GetLockState() const
 	{
 		return GetLockState_Impl();
 	}
@@ -399,6 +399,12 @@ namespace RE
 	}
 
 
+	bool TESObjectREFR::HasKeyword(BGSKeyword* a_keyword) const
+	{
+		return HasKeywordHelper(a_keyword);
+	}
+
+
 	bool TESObjectREFR::HasInventoryChanges() const
 	{
 		auto xContainerChanges = extraList.GetByType<ExtraContainerChanges>();
@@ -426,10 +432,18 @@ namespace RE
 	}
 
 
+	bool TESObjectREFR::IsHorse() const
+	{
+		auto dobj = BGSDefaultObjectManager::GetSingleton();
+		auto keyword = dobj->GetObject<BGSKeyword>(DEFAULT_OBJECT::kKeywordHorse);
+		return keyword ? HasKeyword(keyword) : false;
+	}
+
+
 	bool TESObjectREFR::IsLocked() const
 	{
 		auto state = GetLockState();
-		return state && state->lockLevel > 0;
+		return state && state->baseLevel > 0;
 	}
 
 
@@ -531,10 +545,10 @@ namespace RE
 
 		auto xTextData = extraList.GetByType<ExtraTextDisplayData>();
 		if (xTextData) {
-			bool inUse = xTextData->message || xTextData->owner;
+			bool inUse = xTextData->displayNameText || xTextData->ownerQuest;
 			if (inUse && a_force) {
-				xTextData->message = 0;
-				xTextData->owner = 0;
+				xTextData->displayNameText = 0;
+				xTextData->ownerQuest = 0;
 			}
 			renamed = !inUse || a_force;
 			xTextData->SetName(a_name.c_str());
@@ -569,11 +583,11 @@ namespace RE
 	void TESObjectREFR::SetPosition(NiPoint3 a_pos)
 	{
 		static ObjectRefHandle invalid;
-		MoveTo_Impl(invalid, GetParentCell(), GetWorldspace(), a_pos, data.location);
+		MoveTo_Impl(invalid, GetParentCell(), GetWorldspace(), a_pos, data.angle);
 	}
 
 
-	const LockState* TESObjectREFR::GetLockState_Impl() const
+	const REFR_LOCK* TESObjectREFR::GetLockState_Impl() const
 	{
 		using func_t = function_type_t<decltype(&TESObjectREFR::GetLockState_Impl)>;
 		REL::Offset<func_t*> func(Offset::TESObjectREFR::GetLockState);
