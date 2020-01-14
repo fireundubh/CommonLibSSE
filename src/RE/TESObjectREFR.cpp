@@ -66,6 +66,18 @@ namespace RE
 	}
 
 
+	NiAVObject* TESObjectREFR::Get3D() const
+	{
+		return Get3D2();
+	}
+
+
+	NiAVObject* TESObjectREFR::Get3D(bool a_firstPerson) const
+	{
+		return Get3D1(a_firstPerson);
+	}
+
+
 	TESNPC* TESObjectREFR::GetActorOwner()
 	{
 		auto xOwnership = extraList.GetByType<ExtraOwnership>();
@@ -122,6 +134,18 @@ namespace RE
 	const TESBoundObject* TESObjectREFR::GetBaseObject() const
 	{
 		return data.objectReference;
+	}
+
+
+	const BSTSmartPointer<BipedAnim>& TESObjectREFR::GetBiped() const
+	{
+		return GetBiped2();
+	}
+
+
+	const BSTSmartPointer<BipedAnim>& TESObjectREFR::GetBiped(bool a_firstPerson) const
+	{
+		return GetBiped1(a_firstPerson);
 	}
 
 
