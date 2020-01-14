@@ -166,12 +166,13 @@
     <ClCompile Include="src\RE\ActorState.cpp" />
     <ClCompile Include="src\RE\ActorValueOwner.cpp" />
     <ClCompile Include="src\RE\AddCallbackVisitor.cpp" />
-    <ClCompile Include="src\RE\BGSDecalManager.cpp" />
+    <ClCompile Include="src\RE\BGSColorForm.cpp" />
     <ClCompile Include="src\RE\BGSImpactManager.cpp" />
     <ClCompile Include="src\RE\BGSStoryTeller.cpp" />
     <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp" />
     <ClCompile Include="src\RE\BSScript\ByteCode\PackedInstructionStream.cpp" />
     <ClCompile Include="src\RE\BSScript\Internal\VDescTable.cpp" />
+    <ClCompile Include="src\RE\BSScript\IVirtualMachine.cpp" />
     <ClCompile Include="src\RE\BSScript\MemoryPage.cpp" />
     <ClCompile Include="src\RE\BSShaderProperty.cpp" />
     <ClCompile Include="src\RE\BSTaskPool.cpp" />
@@ -203,7 +204,6 @@
     <ClCompile Include="src\RE\BSFaceGenAnimationData.cpp" />
     <ClCompile Include="src\RE\BSStringPool.cpp" />
     <ClCompile Include="src\RE\BSHandleRefObject.cpp" />
-    <ClCompile Include="src\RE\BSIMusicType.cpp" />
     <ClCompile Include="src\RE\BSLightingShaderMaterialBase.cpp" />
     <ClCompile Include="src\RE\BSResourceNiBinaryStream.cpp" />
     <ClCompile Include="src\RE\BSScaleformManager.cpp" />
@@ -448,6 +448,9 @@
     <ClInclude Include="include\RE\BSMultiBoundNode.h" />
     <ClInclude Include="include\RE\BSNiNode.h" />
     <ClInclude Include="include\RE\BSPointerHandle.h" />
+    <ClInclude Include="include\RE\BSPointerHandleManager.h" />
+    <ClInclude Include="include\RE\BSPointerHandleManagerInterface.h" />
+    <ClInclude Include="include\RE\BSPointerHandleSmartPointer.h" />
     <ClInclude Include="include\RE\BSResource\FileID.h" />
     <ClInclude Include="include\RE\BSResource\ID.h" />
     <ClInclude Include="include\RE\BSResponse.h" />
@@ -476,7 +479,7 @@
     <ClInclude Include="include\RE\Events\TESCellFullyLoadedEvent.h" />
     <ClInclude Include="include\RE\FactionRank.h" />
     <ClInclude Include="include\RE\FightReactions.h" />
-    <ClInclude Include="include\RE\Events\TESCombatEvent.h" />
+    <ClInclude Include="include\RE\HandleManager.h" />
     <ClInclude Include="include\RE\Events\TESContainerChangedEvent.h" />
     <ClInclude Include="include\RE\Events\TESDeathEvent.h" />
     <ClInclude Include="include\RE\Events\TESEquipEvent.h" />
