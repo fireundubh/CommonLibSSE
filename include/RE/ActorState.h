@@ -77,12 +77,9 @@ namespace RE
 		kRidingMount = kIsSitting,
 
 		kWantToStand = 4,
-			kAlive = 0,
-			kDying = 1,
-			kDead = 2,
-			kReanimate = 4,
-			kRecycle = 5,
-			kRestrained = 6,
+
+		kWantToSleep = 5,
+		kWaitingForSleepAnim = 6,
 		kIsSleeping = 7,
 		kWantToWake = 8
 	};

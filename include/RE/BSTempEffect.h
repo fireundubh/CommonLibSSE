@@ -61,6 +61,7 @@ namespace RE
 		virtual void							Unk_34(void);									// 34 - { return; }
 		virtual void							Unk_35(void);									// 35 - { return; }
 
+		void exist();
 
 		// members
 		float			lifetime;		// 10

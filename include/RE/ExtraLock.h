@@ -17,6 +17,10 @@ namespace RE
 		};
 
 
+		REFR_LOCK();
+		~REFR_LOCK() = default;
+
+
 		SInt32	GetLockLevel(const TESObjectREFR* a_containerRef) const;
 		void	SetLocked(bool a_locked);
 
@@ -46,7 +50,8 @@ namespace RE
 		enum { kExtraTypeID = ExtraDataType::kLock };
 
 
-		virtual ~ExtraLock();															// 00
+		ExtraLock();
+		virtual ~ExtraLock() = default;													// 00
 
 		// override (BSExtraData)
 		virtual ExtraDataType	GetType() const override;								// 01 - { return kLock; }

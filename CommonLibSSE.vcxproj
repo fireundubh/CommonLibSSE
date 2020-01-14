@@ -136,9 +136,10 @@
       <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <OptimizeReferences>true</OptimizeReferences>
+      <OptimizeReferences>false</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -166,15 +167,21 @@
     <ClCompile Include="src\RE\ActorValueOwner.cpp" />
     <ClCompile Include="src\RE\AddCallbackVisitor.cpp" />
     <ClCompile Include="src\RE\BGSDecalManager.cpp" />
+    <ClCompile Include="src\RE\BGSImpactManager.cpp" />
     <ClCompile Include="src\RE\BGSStoryTeller.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp" />
     <ClCompile Include="src\RE\BSScript\ByteCode\PackedInstructionStream.cpp" />
     <ClCompile Include="src\RE\BSScript\Internal\VDescTable.cpp" />
     <ClCompile Include="src\RE\BSScript\MemoryPage.cpp" />
+    <ClCompile Include="src\RE\BSShaderProperty.cpp" />
+    <ClCompile Include="src\RE\BSTaskPool.cpp" />
+    <ClCompile Include="src\RE\BSTempEffect.cpp" />
     <ClCompile Include="src\RE\BSXFlags.cpp" />
     <ClCompile Include="src\RE\Events\TESHitEvent.cpp" />
     <ClCompile Include="src\RE\ExtraPoison.cpp" />
     <ClCompile Include="src\RE\IAnimationGraphManagerHolder.cpp" />
     <ClCompile Include="src\RE\Main.cpp" />
+    <ClCompile Include="src\RE\NiBooleanExtraData.cpp" />
     <ClCompile Include="src\RE\ProcessLists.cpp" />
     <ClCompile Include="src\RE\ExtraContainerChanges.cpp" />
     <ClCompile Include="src\RE\ExtraDataList.cpp" />
@@ -198,7 +205,6 @@
     <ClCompile Include="src\RE\BSHandleRefObject.cpp" />
     <ClCompile Include="src\RE\BSIMusicType.cpp" />
     <ClCompile Include="src\RE\BSLightingShaderMaterialBase.cpp" />
-    <ClCompile Include="src\RE\BSLightingShaderProperty.cpp" />
     <ClCompile Include="src\RE\BSResourceNiBinaryStream.cpp" />
     <ClCompile Include="src\RE\BSScaleformManager.cpp" />
     <ClCompile Include="src\RE\BSScript\Array.cpp" />
@@ -438,6 +444,7 @@
     <ClInclude Include="include\RE\BSAnimNoteListener.h" />
     <ClInclude Include="include\RE\BSBatchRenderer.h" />
     <ClInclude Include="include\RE\BSBitField.h" />
+    <ClInclude Include="include\RE\BSEffectShaderProperty.h" />
     <ClInclude Include="include\RE\BSMultiBoundNode.h" />
     <ClInclude Include="include\RE\BSNiNode.h" />
     <ClInclude Include="include\RE\BSPointerHandle.h" />
@@ -448,6 +455,10 @@
     <ClInclude Include="include\RE\BSScript\Internal\VDescTable.h" />
     <ClInclude Include="include\RE\BSScript\MemoryPage.h" />
     <ClInclude Include="include\RE\BSScript\PropertyTypeInfo.h" />
+    <ClInclude Include="include\RE\BSTempEffectDebris.h" />
+    <ClInclude Include="include\RE\BSTempEffectGeometryDecal.h" />
+    <ClInclude Include="include\RE\BSTempEffectParticle.h" />
+    <ClInclude Include="include\RE\BSTempEffectSimpleDecal.h" />
     <ClInclude Include="include\RE\BSTempEffectSPG.h" />
     <ClInclude Include="include\RE\BSTempEffectWeaponBlood.h" />
     <ClInclude Include="include\RE\BSTimer.h" />
@@ -461,6 +472,8 @@
     <ClInclude Include="include\RE\DialogueTypes.h" />
     <ClInclude Include="include\RE\DoNothingUnhandledPolicy.h" />
     <ClInclude Include="include\RE\EffectArchetypes.h" />
+    <ClInclude Include="include\RE\Events\TESActiveEffectApplyRemoveEvent.h" />
+    <ClInclude Include="include\RE\Events\TESCellFullyLoadedEvent.h" />
     <ClInclude Include="include\RE\FactionRank.h" />
     <ClInclude Include="include\RE\FightReactions.h" />
     <ClInclude Include="include\RE\Events\TESCombatEvent.h" />
@@ -495,6 +508,7 @@
     <ClInclude Include="include\RE\Events\TESWaitStopEvent.h" />
     <ClInclude Include="include\RE\GridArray.h" />
     <ClInclude Include="include\RE\GridCellArray.h" />
+    <ClInclude Include="include\RE\NiAlphaProperty.h" />
     <ClInclude Include="include\RE\NiCollisionObject.h" />
     <ClInclude Include="include\RE\NiIntegerExtraData.h" />
     <ClInclude Include="include\RE\NiInterpController.h" />

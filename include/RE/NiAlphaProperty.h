@@ -22,8 +22,6 @@ namespace RE
 		virtual void			SaveBinary(NiStream& a_stream) override;			// 1B 
 		virtual bool			IsEqual(NiObject* a_object) override;				// 1C - { return NiObjectNET::IsEqual(a_object); }
 		virtual void			ProcessClone(NiCloningProcess& a_cloning) override;	// 1D
-
-		// add
 		virtual Type			GetType() const override;							// 25 - { return 0; }
 
 

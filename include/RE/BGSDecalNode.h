@@ -5,7 +5,7 @@
 
 namespace RE
 {
-	class BSTempEffectGeometryDecal;
+	class BSTempEffect;
 	
 	class BGSDecalNode : public NiNode
 	{
@@ -23,11 +23,11 @@ namespace RE
 
 		//add
 		virtual UInt8			Unk_3E();																				// 3E - { return 1; }
-		virtual void			AttachGeometryDecal(BSTempEffectGeometryDecal* a_decal, bool a_firstAvail);				// 3F
+		virtual void			AttachDecal(BSTempEffect* a_decal, bool a_firstAvail);									// 3F
 
 		// members
-		BSTArray<BSTempEffectGeometryDecal*>	geometryDecals;	// 128
-		UInt8									unk140;			// 140
+		BSTArray<BSTempEffect*>	decals;	// 128
+		UInt8					unk140;	// 140
 	};
 	STATIC_ASSERT(sizeof(BGSDecalNode) == 0x148);
 }

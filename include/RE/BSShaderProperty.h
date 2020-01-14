@@ -1,11 +1,53 @@
 #pragma once
 
 #include "RE/NiShadeProperty.h"
-
+#include "RE/NiSmartPointer.h"
+#include "RE/BSIntrusiveRefCounted.h"
+#include "RE/NiColor.h"
 
 namespace RE
 {
+
 	class BSLightingShaderMaterialBase;
+	class NiSourceTexture;
+
+
+	class BSEffectShaderData : public BSIntrusiveRefCounted
+	{
+	public:
+
+		bool(__cdecl* pNodeFilterFunction)(BSFixedString*);
+
+		NiPointer<NiSourceTexture>	baseTexture;				// 10
+		NiPointer<NiSourceTexture>	paletteTexture;				// 18
+		NiPointer<NiSourceTexture>	blockOutTexture;			// 20
+		UInt32						textureClampMode;			// 28
+		NiColorA					fillColor;					// 2C
+		NiColorA					rimColor;					// 3C
+		float						baseFillScale;				// 4C
+		float						baseFillAlpha;				// 50
+		float						baseRimAlpha;				// 54
+		UInt32						UOffset;					// 58
+		UInt32						VOffset;					// 5C
+		float						UScale;						// 60
+		float                       VScale;						// 64		
+		float						edgeEffectFalloff;			// 68	
+		float						boundDiameter;				// 6C
+		UInt32						sourceBlendMode;            // 70
+		UInt32						destBlendMode;				// 74
+		UInt32						ZTestFunction;				// 78
+		UInt8						holesStartVal;				// 7C
+		bool						kGreyscaleToColor;			// 7D
+		bool						kGreyscaleToAlpha;			// 7E
+		bool						kIgnoreTexAlpha;			// 7F
+		bool						kFillTexProjectedUV;		// 80
+		bool						kIgnoreBaseGeomTexAlpha;	// 81
+		bool						kLighting;					// 82
+		bool						kAlpha;						// 83
+	};
+	STATIC_ASSERT(sizeof(BSEffectShaderData) == 0x88);
+	static_assert(offsetof(BSEffectShaderData, baseRimAlpha) >= 0x54);
+	static_assert(offsetof(BSEffectShaderData, baseRimAlpha) <= 0x54);
 
 
 	class BSShaderProperty : public NiShadeProperty
@@ -124,19 +166,26 @@ namespace RE
 		virtual void			Unk_3E(void);										// 3E - { return 0; }
 
 
+		UInt32  InitializeShader(BSGeometry* geometry);
+		UInt32	SetMaterial(BSLightingShaderMaterialBase* otherMaterial, bool unk1); // unk1 usually 1
+		UInt64	SetFlags(UInt8 unk1, UInt8 unk2);
+		bool	InvalidateMaterial();
+		void	InvalidateTextures(UInt32 unk1); // unk1 usually 0, called after material Releases textures
+
+
 		// members
-		float							unk30;			// 30 - 1.0f
-		UInt32							unk34;			// 34
-		ShaderFlag						shaderFlags;	// 38
-		void*							unk40;			// 40
-		UInt64							unk48;			// 48
-		void*							unk50;			// 50
-		UInt64							unk58;			// 58
-		UInt64							unk60;			// 60
-		void*							unk68;			// 68 - smart ptr
-		UInt64							unk70;			// 70
-		BSLightingShaderMaterialBase*	material;		// 78
-		UInt64							unk80;			// 80
+		float							unk30;				// 30 - 1.0f
+		UInt32							unk34;				// 34
+		ShaderFlag						shaderFlags;		// 38
+		void*							unk40;				// 40
+		UInt64							unk48;				// 48
+		void*							unk50;				// 50
+		UInt64							unk58;				// 58
+		UInt64							unk60;				// 60
+		BSEffectShaderData*				effectShaderData;	// 68 - smart ptr
+		UInt64							unk70;				// 70
+		BSLightingShaderMaterialBase*	material;			// 78
+		UInt64							unk80;				// 80
 	};
 	STATIC_ASSERT(sizeof(BSShaderProperty) == 0x88);
 }

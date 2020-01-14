@@ -9,7 +9,7 @@ namespace RE
 	class NiCamera;
 	class BSShaderAccumulator;
 	class BGSDecalNode;
-	class BSTempEffectSimpleDecal;
+	class BSTempEffect;
 
 	class BGSDecalManager : public BSTSingletonSDM<BGSDecalManager>
 	{
@@ -20,9 +20,9 @@ namespace RE
 		UInt32								unk04;
 		UInt32								unk08;
 		UInt32								unk0C;
-		UInt32								unk10;
-		UInt32								pad14;
-		BSTArray<BSTempEffectSimpleDecal*>	simpleDecals;
+		UInt32								unk10;	//count?
+		UInt32								unk14;
+		BSTArray<BSTempEffect*>				decals;
 		BSTArray<void*>						unk30;
 		BSTArray<BGSDecalNode*>				decalNodes;
 		BSTArray<void*>						unk60;
@@ -30,6 +30,6 @@ namespace RE
 		BSShaderAccumulator*				shaderAccumulator;
 		UInt32								unk88;
 	};
-	static_assert(offsetof(BGSDecalManager, simpleDecals) >= 0x18, "simple decals too early");
-	static_assert(offsetof(BGSDecalManager, simpleDecals) <= 0x18, "simple decals too late");
+	static_assert(offsetof(BGSDecalManager, decals) >= 0x18, "simple decals too early");
+	static_assert(offsetof(BGSDecalManager, decals) <= 0x18, "simple decals too late");
 };
