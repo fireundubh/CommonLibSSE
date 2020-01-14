@@ -1818,6 +1818,9 @@
     <ClCompile Include="src\RE\BSShaderProperty.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\BGSDecalManager.cpp">
+      <Filter>src\RE\Misc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\PlayerControls.h">
@@ -5319,6 +5322,9 @@
       <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Events\TESWaitStopEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESCombatEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
   </ItemGroup>

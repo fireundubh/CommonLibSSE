@@ -167,6 +167,7 @@
     <ClCompile Include="src\RE\ActorValueOwner.cpp" />
     <ClCompile Include="src\RE\AddCallbackVisitor.cpp" />
     <ClCompile Include="src\RE\BGSColorForm.cpp" />
+    <ClCompile Include="src\RE\BGSDecalManager.cpp" />
     <ClCompile Include="src\RE\BGSImpactManager.cpp" />
     <ClCompile Include="src\RE\BGSStoryTeller.cpp" />
     <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp" />
@@ -477,6 +478,7 @@
     <ClInclude Include="include\RE\EffectArchetypes.h" />
     <ClInclude Include="include\RE\Events\TESActiveEffectApplyRemoveEvent.h" />
     <ClInclude Include="include\RE\Events\TESCellFullyLoadedEvent.h" />
+    <ClInclude Include="include\RE\Events\TESCombatEvent.h" />
     <ClInclude Include="include\RE\FactionRank.h" />
     <ClInclude Include="include\RE\FightReactions.h" />
     <ClInclude Include="include\RE\HandleManager.h" />
