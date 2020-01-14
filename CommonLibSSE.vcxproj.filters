@@ -1087,12 +1087,6 @@
     <Filter Include="include\RE\BSCore\BSPointerHandleManager">
       <UniqueIdentifier>{68e1f63c-ef98-4afa-8b63-77e0b6e072bf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty">
-      <UniqueIdentifier>{591cfbf6-d222-463c-88b1-54b6c25f987f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty">
-      <UniqueIdentifier>{17013140-df96-4244-b380-0df7a2634a56}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\RE\FormComponents\Components">
       <UniqueIdentifier>{bc475c18-3779-451f-a9b7-06ce2e9c927b}</UniqueIdentifier>
     </Filter>
@@ -1110,6 +1104,9 @@
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect">
       <UniqueIdentifier>{50601cb8-7b69-4ef4-80c5-4c78d066550f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty">
+      <UniqueIdentifier>{0dff2b2f-2447-41de-a489-ebf7e2c886a2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1788,9 +1785,6 @@
     <ClCompile Include="src\RE\NiFloatExtraData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BGSDecalManager.cpp">
-      <Filter>src\RE\Misc</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\BSShaderTextureSet.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClCompile>
@@ -1803,9 +1797,6 @@
     <ClCompile Include="src\RE\BGSImpactManager.cpp">
       <Filter>src\RE\Misc</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BSShaderProperty.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp">
       <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
     </ClCompile>
@@ -1817,6 +1808,15 @@
     </ClCompile>
     <ClCompile Include="src\RE\BSTempEffect.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\NiIntegersExtraData.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\NiStringsExtraData.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSShaderProperty.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -5246,9 +5246,6 @@
     <ClInclude Include="include\RE\Events\TESContainerChangedEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Events\TESCombatEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\BSTempEffectSPG.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
     </ClInclude>
@@ -5311,6 +5308,18 @@
     </ClInclude>
     <ClInclude Include="include\RE\BSEffectShaderProperty.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESActiveEffectApplyRemoveEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESCellFullyLoadedEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESUniqueIDChangeEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESWaitStopEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
