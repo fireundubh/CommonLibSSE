@@ -445,9 +445,12 @@
     <ClInclude Include="include\RE\BSAnimNoteListener.h" />
     <ClInclude Include="include\RE\BSBatchRenderer.h" />
     <ClInclude Include="include\RE\BSBitField.h" />
+    <ClInclude Include="include\RE\BSDynamicTriShape.h" />
     <ClInclude Include="include\RE\BSEffectShaderProperty.h" />
     <ClInclude Include="include\RE\BSMultiBoundNode.h" />
     <ClInclude Include="include\RE\BSNiNode.h" />
+    <ClInclude Include="include\RE\BSParticleShaderGeometry.h" />
+    <ClInclude Include="include\RE\BSParticleShaderProperty.h" />
     <ClInclude Include="include\RE\BSPointerHandle.h" />
     <ClInclude Include="include\RE\BSPointerHandleManager.h" />
     <ClInclude Include="include\RE\BSPointerHandleManagerInterface.h" />

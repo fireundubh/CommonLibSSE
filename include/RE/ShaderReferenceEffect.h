@@ -71,7 +71,7 @@ namespace RE
 		NiPointer<NiTexture>		fillTexture;			// 0E0
 		NiPointer<NiTexture>		holesTexture;			// 0E8
 		NiPointer<NiTexture>		paletteTexture;			// 0F0
-		NiAVObject*					unk0F8;					// 0F8 - smart ptr
+		NiNode*						particleShaderGeometry; // 0F8 - smart ptr
 		TESBoundObject*				unk100;					// 100
 		TESEffectShader*			effectShader;			// 108
 		BSEffectShaderData*			effectShaderData;		// 110 
@@ -79,6 +79,7 @@ namespace RE
 		float						unk120;					// 120
 		float						unk124;					// 124 - 1.0f
 		float						unk128;					// 128 - 1.0f
+		UInt32						unk12C;					// 12C 
 		UInt32						unk130;					// 130 - flags
 		UInt32						unk134;					// 134
 	};

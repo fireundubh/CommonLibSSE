@@ -360,11 +360,11 @@ namespace RE
 		virtual void								UnequipItem(UInt64 a_arg1, TESBoundObject* a_item);																																						// A1 - { return; }
 
 
-		static NiPointer<TESObjectREFR>	LookupByHandle(RefHandle a_refHandle);
-		static bool						LookupByHandle(RefHandle a_refHandle, NiPointer<TESObjectREFR>& a_refrOut);
+		static NiPointer<TESObjectREFR>		LookupByHandle(RefHandle a_refHandle);
+		static bool							LookupByHandle(RefHandle a_refHandle, NiPointer<TESObjectREFR>& a_refrOut);
 
 		void								ActivateRefChildren(TESObjectREFR* a_activator);
-		RefHandle*				CreateRefHandle_Native(RefHandle* handle);
+		RefHandle*							CreateRefHandle_Native(RefHandle* handle);
 		ObjectRefHandle						CreateRefHandle();
 		NiAVObject*							Get3D() const;
 		NiAVObject*							Get3D(bool a_firstPerson) const;
@@ -399,10 +399,10 @@ namespace RE
 		float								GetPositionY() const;
 		float								GetPositionZ() const;
 		const char*							GetReferenceName() const;
-		NiPoint3				GetRotation() const;
-		float					GetRotationX() const;
-		float					GetRotationY() const;
-		float					GetRotationZ() const;
+		NiPoint3							GetRotation() const;
+		float								GetRotationX() const;
+		float								GetRotationY() const;
+		float								GetRotationZ() const;
 		float								GetWeight() const;
 		TESWorldSpace*						GetWorldspace() const;
 		bool								HasCollision() const;
