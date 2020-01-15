@@ -183,6 +183,7 @@
     <ClCompile Include="src\RE\ExtraPoison.cpp" />
     <ClCompile Include="src\RE\IAnimationGraphManagerHolder.cpp" />
     <ClCompile Include="src\RE\Main.cpp" />
+    <ClCompile Include="src\RE\NiInterpolator.cpp" />
     <ClCompile Include="src\RE\NiBooleanExtraData.cpp" />
     <ClCompile Include="src\RE\ProcessLists.cpp" />
     <ClCompile Include="src\RE\ExtraContainerChanges.cpp" />
@@ -340,6 +341,7 @@
     <ClCompile Include="src\RE\ScriptEventSourceHolder.cpp" />
     <ClCompile Include="src\RE\ExtraLock.cpp" />
     <ClCompile Include="src\RE\GFxLoader.cpp" />
+    <ClCompile Include="src\RE\UIBlurManager.cpp" />
     <ClCompile Include="src\RE\UserEvents.cpp" />
     <ClCompile Include="src\RE\Misc.cpp" />
     <ClCompile Include="src\RE\IMenu.cpp" />
@@ -475,6 +477,7 @@
     <ClInclude Include="include\RE\ContainerItemExtra.h" />
     <ClInclude Include="include\RE\Crime.h" />
     <ClInclude Include="include\RE\DecalData.h" />
+    <ClInclude Include="include\RE\DefaultObjectsReadyEvent.h" />
     <ClInclude Include="include\RE\DialoguePackage.h" />
     <ClInclude Include="include\RE\DialogueTypes.h" />
     <ClInclude Include="include\RE\DoNothingUnhandledPolicy.h" />
@@ -830,6 +833,7 @@
     <ClInclude Include="include\RE\ConcreteObjectFormFactory.h" />
     <ClInclude Include="include\RE\RefActivateData.h" />
     <ClInclude Include="include\RE\Sexes.h" />
+    <ClInclude Include="include\RE\SkyrimScript\FragmentSystem.h" />
     <ClInclude Include="include\RE\TESCondition.h" />
     <ClInclude Include="include\RE\ConeProjectile.h" />
     <ClInclude Include="include\RE\Console.h" />
@@ -1372,6 +1376,7 @@
     <ClInclude Include="include\RE\ExtraContainerChanges.h" />
     <ClInclude Include="include\RE\TESGrabReleaseEvent.h" />
     <ClInclude Include="include\RE\TESQuestStageItem.h" />
+    <ClInclude Include="include\RE\UIBlurManager.h" />
     <ClInclude Include="include\RE\UserEventEnabled.h" />
     <ClInclude Include="include\RE\UserEvents.h" />
     <ClInclude Include="include\RE\InventoryChanges.h" />
