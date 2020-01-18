@@ -347,7 +347,6 @@
 #include "RE/DecalData.h"
 #include "RE/DefaultObjectsReadyEvent.h"
 #include "RE/DetectionListener.h"
-#include "RE/DetectionPriorities.h"
 #include "RE/DetectionState.h"
 #include "RE/DialogueItem.h"
 #include "RE/DialogueMenu.h"

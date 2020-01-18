@@ -69,14 +69,14 @@ namespace RE
 
 		const BSFixedString&	GetTypeString() const;
 		bool					IsQuestObject() const;
-		bool							IsEssential() const;
-		bool							IsProtected() const;
+		bool					IsEssential() const;
+		bool					IsProtected() const;
 
-		void							SetEssential();
-		void							SetProtected();
+		void					SetEssential();
+		void					SetProtected();
 
-		void							SetUnessential();
-		void							SetUnprotected();
+		void					SetUnessential();
+		void					SetUnprotected();
 
 
 		// members
