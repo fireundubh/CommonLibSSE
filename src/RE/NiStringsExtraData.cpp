@@ -10,12 +10,12 @@ namespace RE
 	{
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiStringsExtraData::Vtbl);
 
-		NiStringsExtraData* data = (NiStringsExtraData*)NiExtraData::Create(sizeof(NiStringsExtraData), vtbl.GetAddress());
+		NiStringsExtraData* data = static_cast<NiStringsExtraData*>(NiExtraData::Create(sizeof(NiStringsExtraData), vtbl.GetAddress()));
 		if (data)
 		{
 			data->name = name;
-			data->value = NiAlloc<char*>(size);
 			data->size = size;
+			data->value = NiAlloc<char*>(size);
 
 			for (int i = 0; i < size; i++)
 			{

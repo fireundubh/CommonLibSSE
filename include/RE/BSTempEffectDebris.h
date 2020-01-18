@@ -14,12 +14,12 @@ namespace RE
 		inline static const void* RTTI = RTTI_BSTempEffectDebris;
 		inline static const void* Ni_RTTI = NiRTTI_BSTempEffectDebris;
 
-		virtual ~BSTempEffectDebris();												// 00
+		virtual ~BSTempEffectDebris();											// 00
 
-		virtual const NiRTTI*	GetRTTI() const override;						// 02
-		virtual void			Unk_28(void) override;							// 28
-		virtual void			Unk_29(void) override;							// 29
-		virtual void			Unk_2C(void) override;							// 2C - { return 5; }
+		virtual const NiRTTI*		GetRTTI() const override;					// 02
+		virtual bool				Update(float a_arg1) override;				// 28
+		virtual NiAVObject*			Get3D() const override;						// 29
+		virtual TEMP_EFFECT_TYPE	GetType() const;;							// 2C - { return kDebris; }
 
 		// members;
 		NiPointer<NiAVObject> 	unk30;					// 030

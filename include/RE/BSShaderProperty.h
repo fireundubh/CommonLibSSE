@@ -166,9 +166,10 @@ namespace RE
 		virtual void			Unk_3E(void);										// 3E - { return 0; }
 
 
-		UInt32  InitializeShader(BSGeometry* geometry);
+		UInt32	InitializeMaterial(BSGeometry* geometry);
+		UInt32	InitializeShader(BSGeometry* geometry);
 		UInt32	SetMaterial(BSLightingShaderMaterialBase* otherMaterial, bool unk1); // unk1 usually 1
-		UInt64	SetFlags(UInt8 unk1, UInt8 unk2);
+		UInt64	SetFlags(UInt8 flag, UInt8 set);
 		bool	InvalidateMaterial();
 		void	InvalidateTextures(UInt32 unk1); // unk1 usually 0, called after material Releases textures
 

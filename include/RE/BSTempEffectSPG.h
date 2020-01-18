@@ -13,15 +13,15 @@ namespace RE
 		inline static const void* RTTI = RTTI_BSTempEffectSPG;
 		inline static const void* Ni_RTTI = NiRTTI_BSTempEffectSPG;
 
-		virtual ~BSTempEffectSPG();												// 00
+		virtual ~BSTempEffectSPG();														// 00
 
-		virtual const NiRTTI*	GetRTTI() const override;						// 02
-		virtual void			Unk_27(void) override;							// 27
-		virtual void			Unk_28(void) override;							// 28
-		virtual void			Unk_2C(void) override;							// 2C - { return 6; }
-		virtual void			SaveEffect(BGSSaveGameBuffer* a_buf) override;	// 2D
-		virtual void			LoadEffect(BGSLoadGameBuffer* a_buf) override;	// 2E
-		virtual void			Unk_2F(void) override;							// 2F 
+		virtual const NiRTTI*		GetRTTI() const override;							// 02
+		virtual void				Detach() override;									// 27
+		virtual bool				Update(float a_arg1) override;						// 28
+		virtual TEMP_EFFECT_TYPE	GetType() const override;							// 2C - { return kSPG; }
+		virtual void				SaveGame(BGSSaveGameBuffer* a_buf) override;		// 2D
+		virtual void				LoadGame(BGSLoadGameBuffer* a_buf) override;		// 2E
+		virtual void				FinishLoadGame(BGSLoadGameBuffer* a_buf) override;	// 2F 
 
 		// members;
 		UInt64			unk30;								// 030

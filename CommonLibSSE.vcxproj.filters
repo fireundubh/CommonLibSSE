@@ -1090,18 +1090,6 @@
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiInterpolator">
       <UniqueIdentifier>{4e0a76c3-a0d2-4f73-b60b-b0c3808570d0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\RE\FormComponents\Components\ActiveEffect">
-      <UniqueIdentifier>{b2345563-eccb-483e-a8cf-f90423c3e916}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\RE\FormComponents\Components\BGSBaseAlias">
-      <UniqueIdentifier>{6398f176-ca51-49aa-95e4-d4b4089d6c75}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\RE\FormComponents\Components\BGSPerkEntry">
-      <UniqueIdentifier>{88cec994-6d64-4477-b0f6-2a3081833aaa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\RE\FormComponents\Components\BGSEntryPointFunctionData">
-      <UniqueIdentifier>{1300f9be-6f78-4b68-ae2c-1ee5042cc4e7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect">
       <UniqueIdentifier>{50601cb8-7b69-4ef4-80c5-4c78d066550f}</UniqueIdentifier>
     </Filter>
@@ -1202,9 +1190,6 @@
     </ClCompile>
     <ClCompile Include="src\RE\ScriptEventSourceHolder.cpp">
       <Filter>src\RE\Events\ScriptEvent</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\ActorValueOwner.cpp">
-      <Filter>src\RE\FormComponents\Components</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\IMenu.cpp">
       <Filter>src\RE\Menus\IMenu</Filter>
@@ -1353,12 +1338,6 @@
     <ClCompile Include="src\RE\LocalMapCamera.cpp">
       <Filter>src\RE\Camera\TESCamera</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\MagicTarget.cpp">
-      <Filter>src\RE\FormComponents\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\ActiveEffect.cpp">
-      <Filter>src\RE\FormComponents\Components\ActiveEffect</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\EffectSetting.cpp">
       <Filter>src\RE\FormComponents\TESForm</Filter>
     </ClCompile>
@@ -1385,18 +1364,6 @@
     </ClCompile>
     <ClCompile Include="src\RE\TESTopicInfo.cpp">
       <Filter>src\RE\FormComponents\TESForm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\BGSBaseAlias.cpp">
-      <Filter>src\RE\FormComponents\Components\BGSBaseAlias</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\BGSPerkEntry.cpp">
-      <Filter>src\RE\FormComponents\Components\BGSPerkEntry</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\BGSEntryPointPerkEntry.cpp">
-      <Filter>src\RE\FormComponents\Components\BGSPerkEntry</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\BGSEntryPointFunctionDataActivateChoice.cpp">
-      <Filter>src\RE\FormComponents\Components\BGSEntryPointFunctionData</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\BGSDefaultObjectManager.cpp">
       <Filter>src\RE\FormComponents\TESForm</Filter>
@@ -1544,9 +1511,6 @@
     </ClCompile>
     <ClCompile Include="src\RE\GFxState.cpp">
       <Filter>src\RE\Scaleform\GFxLoader</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\Effect.cpp">
-      <Filter>src\RE\FormComponents\Components</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\GRenderer.cpp">
       <Filter>src\RE\Scaleform\GRenderer</Filter>
@@ -1725,9 +1689,6 @@
     <ClCompile Include="src\RE\BGSFootstepManager.cpp">
       <Filter>src\RE\Events</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\ActorCause.cpp">
-      <Filter>src\RE\FormComponents\Components</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\ExtraLightData.cpp">
       <Filter>src\RE\BSExtraData</Filter>
     </ClCompile>
@@ -1740,17 +1701,8 @@
     <ClCompile Include="src\RE\BSInputDeviceManager.cpp">
       <Filter>src\RE\BSDevices</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\TESCondition.cpp">
-      <Filter>src\RE\FormComponents\Components</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\NiTexture.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiTexture</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\BipedAnim.cpp">
-      <Filter>src\RE\FormComponents\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\DialogueItem.cpp">
-      <Filter>src\RE\FormComponents\Components</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\BSScript\TypeInfo.cpp">
       <Filter>src\RE\BSScript</Filter>
@@ -1817,6 +1769,51 @@
     </ClCompile>
     <ClCompile Include="src\RE\BGSDecalManager.cpp">
       <Filter>src\RE\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\ActiveEffect.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\ActorCause.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\ActorValueOwner.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BGSBaseAlias.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BGSEntryPointFunctionDataActivateChoice.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BGSEntryPointPerkEntry.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BGSPerkEntry.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BipedAnim.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\DialogueItem.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Effect.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\MagicTarget.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\TESCondition.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSShaderTextureSet.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\FaceGen.cpp">
+      <Filter>src\RE\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\NiFloatExtraData.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -5329,6 +5326,18 @@
     </ClInclude>
     <ClInclude Include="include\RE\BSParticleShaderProperty.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESTrackedStatsEvent.h">
+      <Filter>src\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESSwitchRaceCompleteEvent.h">
+      <Filter>src\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESResetEvent.h">
+      <Filter>src\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESObjectLoadedEvent.h">
+      <Filter>src\RE\Events\ScriptEvent</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

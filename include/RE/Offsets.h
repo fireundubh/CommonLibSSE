@@ -276,7 +276,8 @@ namespace RE
 		namespace BSShaderProperty
 		{
 			//po3
-			constexpr std::uintptr_t InitializeShader = 0x012C56D0;		// 1_5_97
+			constexpr std::uintptr_t InitializeMaterial = 0x012C5540;	// 1_5_97
+			constexpr std::uintptr_t InitializeShader =	 0x012C56D0;	// 1_5_97
 			constexpr std::uintptr_t SetMaterial = 0x01291D40;			// 1_5_97
 			constexpr std::uintptr_t SetFlags = 0x01291C30;				// 1_5_97
 			constexpr std::uintptr_t InvalidateMaterial = 0x0019C3B0;	// 1_5_97

@@ -15,13 +15,13 @@ namespace RE
         inline static const void* RTTI = RTTI_BSTempEffectSimpleDecal;
         inline static const void* Ni_RTTI = NiRTTI_BSTempEffectSimpleDecal;
 
-        virtual ~BSTempEffectSimpleDecal();			                    // 00
+        virtual ~BSTempEffectSimpleDecal();			                        // 00
 
-        virtual const NiRTTI*   GetRTTI() const override;	            // 02
-        virtual void			Unk_25(void) override;	                // 25 
-        virtual void			Unk_26(void) override;		            // 26
-        virtual void	        Unk_28(void) override;                  // 28
-        virtual void			Unk_29(void) override;	                // 29
+        virtual const NiRTTI*       GetRTTI() const override;	            // 02
+        virtual void				Initialize() override;	                // 25 
+        virtual void				Attach() override;		                // 26
+        virtual bool				Update(float a_arg1) override;          // 28
+        virtual NiAVObject*         Get3D() const override;	                // 29
 
         // members
         UInt8           unk30;          // 030
@@ -31,14 +31,14 @@ namespace RE
         UInt64          unk38;
         UInt32          unk40;
         UInt32          unk44;;
-        NiAVObject* effectObject;   // 048
+        NiAVObject*     effectObject;   // 048
         UInt32          unk50;
         UInt8           unk54;
         UInt8           unk55;
         UInt8           unk56;
         UInt8           unk57;
-        BGSTextureSet* textureSet;
-        BGSTextureSet* textureSet2;
+        BGSTextureSet*  textureSet;
+        BGSTextureSet*  textureSet2;
         NiPoint3        origin;
         NiPoint3        direction;
         NiPoint3        surfaceNormal;
@@ -57,8 +57,8 @@ namespace RE
         UInt64          unk148;
         UInt64          unk150;
         BSTArray<void*> unk158;
-        NiAVObject* decalNode;      // 0170
-        NiAVObject* avObject;       // 0178
+        NiAVObject*     decalNode;      // 0170
+        NiAVObject*     avObject;       // 0178
         float           unk180;
         float           unk184;
         UInt64          unk188;

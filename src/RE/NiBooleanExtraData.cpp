@@ -10,7 +10,7 @@ namespace RE
 	{
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiBooleanExtraData::Vtbl);
 		
-		NiBooleanExtraData* data = (NiBooleanExtraData*)NiExtraData::Create(sizeof(NiBooleanExtraData), vtbl.GetAddress());
+		NiBooleanExtraData* data = static_cast<NiBooleanExtraData*>(NiExtraData::Create(sizeof(NiBooleanExtraData), vtbl.GetAddress()));
 		if (data)
 		{
 			data->name = name;

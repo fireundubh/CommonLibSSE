@@ -19,7 +19,7 @@ namespace RE
 		virtual const NiRTTI*	GetRTTI() const override;																// 02
 		virtual NiObject*		CreateClone(NiCloningProcess& a_cloning) override;										// 17
 		virtual void			ProcessClone(NiCloningProcess& a_cloning) override;										// 1D
-		virtual void			Unk_34(void) override;																	// 34
+		virtual void			OnVisible(NiCullingProcess& a_process) override;										// 34
 
 		//add
 		virtual UInt8			Unk_3E();																				// 3E - { return 1; }

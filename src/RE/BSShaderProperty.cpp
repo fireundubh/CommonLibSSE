@@ -5,6 +5,14 @@
 
 namespace RE
 {
+	UInt32 BSShaderProperty::InitializeMaterial(BSGeometry* geometry)
+	{
+		using func_t = function_type_t<decltype(&BSShaderProperty::InitializeMaterial)>;
+		REL::Offset<func_t*> func(Offset::BSShaderProperty::InitializeMaterial);
+		return func(this, geometry);
+	}
+	
+	
 	UInt32 BSShaderProperty::InitializeShader(BSGeometry* geometry)
 	{
 		using func_t = function_type_t<decltype(&BSShaderProperty::InitializeShader)>;
@@ -19,11 +27,11 @@ namespace RE
 		return func(this, otherMaterial, unk1);			
 	}
 
-	UInt64 BSShaderProperty::SetFlags(UInt8 unk1, UInt8 unk2)
+	UInt64 BSShaderProperty::SetFlags(UInt8 flag, UInt8 set)
 	{
 		using func_t = function_type_t<decltype(&BSShaderProperty::SetFlags)>;
 		REL::Offset<func_t*> func(Offset::BSShaderProperty::SetFlags);
-		return func(this, unk1, unk2);
+		return func(this, flag, set);
 	}
 
 	bool BSShaderProperty::InvalidateMaterial()

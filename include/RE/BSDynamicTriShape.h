@@ -16,7 +16,7 @@ namespace RE
 
 		// override (BSGeometry)
 		virtual const NiRTTI*		GetRTTI() const override;							// 02
-		virtual BSDynamicTriShape*	GetAsBSDynamicTriShape() override;					// 0C
+		virtual BSDynamicTriShape*	AsDynamicTriShape() override;						// 0C
 		virtual NiObject*			CreateClone(NiCloningProcess& a_cloning) override;	// 17
 		virtual void				LoadBinary(NiStream& a_stream) override;			// 18
 		virtual void				LinkObject(NiStream& a_stream) override;			// 19 - { BSGeometry::LinkObject(a_stream); }
