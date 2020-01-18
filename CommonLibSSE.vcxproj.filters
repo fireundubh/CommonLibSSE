@@ -5339,5 +5339,8 @@
     <ClInclude Include="include\RE\Events\TESObjectLoadedEvent.h">
       <Filter>src\RE\Events\ScriptEvent</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\DetectionPriorities.h">
+      <Filter>include\RE\FormComponents\Enums</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

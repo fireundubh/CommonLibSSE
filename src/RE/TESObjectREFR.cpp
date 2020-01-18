@@ -44,11 +44,9 @@ namespace RE
 	}
 
 
-	void TESObjectREFR::ActivateRefChildren(TESObjectREFR* a_activator)
+	ObjectRefHandle TESObjectREFR::CreateRefHandle()
 	{
-		using func_t = function_type_t<decltype(&TESObjectREFR::ActivateRefChildren)>;
-		REL::Offset<func_t*> func(Offset::TESObjectREFR::ActivateRefChildren);
-		return func(this, a_activator);
+		return ObjectRefHandle(this);
 	}
 
 
@@ -60,9 +58,15 @@ namespace RE
 	}
 
 
-	ObjectRefHandle TESObjectREFR::CreateRefHandle()
+	void TESObjectREFR::DoTrap(TrapData& a_data)
 	{
-		return ObjectRefHandle(this);
+		return DoTrap1(a_data);
+	}
+
+
+	void TESObjectREFR::DoTrap(TrapEntry* a_trap, TargetEntry* a_target)
+	{
+		return DoTrap2(a_trap, a_target);
 	}
 
 
@@ -156,8 +160,16 @@ namespace RE
 	}
 
 
+	const char* TESObjectREFR::GetDisplayFullName()
+	{
+		using func_t = function_type_t<decltype(&TESObjectREFR::GetDisplayFullName)>;
+		REL::Offset<func_t*> func(Offset::TESObjectREFR::GetDisplayFullName);
+		return func(this);
+	}
+
+
 	auto TESObjectREFR::GetDroppedInventory()
-		-> DroppedInventoryMap
+		-> InventoryDropMap
 	{
 		return GetDroppedInventory([]([[maybe_unused]] TESBoundObject*) -> bool
 		{
@@ -167,11 +179,11 @@ namespace RE
 
 
 	auto TESObjectREFR::GetDroppedInventory(llvm::function_ref<bool(TESBoundObject*)> a_filter)
-		-> DroppedInventoryMap
+		-> InventoryDropMap
 	{
-		using mapped_type = typename DroppedInventoryMap::mapped_type;
+		using container_t = InventoryDropMap::mapped_type::second_type;
 
-		DroppedInventoryMap results;
+		InventoryDropMap results;
 
 		auto xDrop = extraList.GetByType<ExtraDroppedItemList>();
 		if (!xDrop) {
@@ -190,8 +202,16 @@ namespace RE
 			}
 
 			auto count = ref->extraList.GetCount();
-			auto it = results.insert(std::make_pair(object, mapped_type(count, std::move(ref))));
-			assert(it.second);
+			auto it = results.find(object);
+			if (it != results.end()) {
+				it->second.first += count;
+				it->second.second.push_back(std::move(ref));
+			} else {
+				auto mapped = std::make_pair(count, container_t());
+				mapped.second.push_back(std::move(ref));
+				auto insIt = results.insert(std::make_pair(object, std::move(mapped)));
+				assert(insIt.second);
+			}
 		}
 
 		return results;
@@ -210,7 +230,7 @@ namespace RE
 
 
 	auto TESObjectREFR::GetInventory()
-		-> InventoryMap
+		-> InventoryItemMap
 	{
 		return GetInventory([]([[maybe_unused]] TESBoundObject*) -> bool
 		{
@@ -220,17 +240,16 @@ namespace RE
 
 
 	auto TESObjectREFR::GetInventory(llvm::function_ref<bool(TESBoundObject*)> a_filter)
-		-> InventoryMap
+		-> InventoryItemMap
 	{
-		using mapped_type = typename InventoryMap::mapped_type;
-
-		InventoryMap results;
+		InventoryItemMap results;
 
 		auto invChanges = GetInventoryChanges();
-		if (invChanges->entryList) {
+		if (invChanges && invChanges->entryList) {
 			for (auto& entry : *invChanges->entryList) {
 				if (entry && entry->object && a_filter(entry->object)) {
-					auto it = results.insert(std::make_pair(entry->object, mapped_type(entry->countDelta, entry)));
+					auto mapped = std::make_pair(entry->countDelta, std::make_unique<InventoryEntryData>(*entry));
+					auto it = results.insert(std::make_pair(entry->object, std::move(mapped)));
 					assert(it.second);
 				}
 			}
@@ -243,9 +262,8 @@ namespace RE
 				if (a_entry->obj && a_filter(a_entry->obj)) {
 					auto it = results.find(a_entry->obj);
 					if (it == results.end()) {
-						auto entryData = new InventoryEntryData(a_entry->obj, 0);
-						invChanges->AddEntryData(entryData);
-						auto insIt = results.insert(std::make_pair(a_entry->obj, mapped_type(a_entry->count, entryData)));
+						auto mapped = std::make_pair(a_entry->count, std::make_unique<InventoryEntryData>(a_entry->obj, 0));
+						auto insIt = results.insert(std::make_pair(a_entry->obj, std::move(mapped)));
 						assert(insIt.second);
 					} else {
 						it->second.first += a_entry->count;
@@ -259,23 +277,71 @@ namespace RE
 	}
 
 
+	SInt32 TESObjectREFR::GetInventoryCount()
+	{
+		auto counts = GetInventoryCounts();
+		SInt32 total = 0;
+		for (auto& elem : counts) {
+			total += elem.second;
+		}
+		return total;
+	}
+
+
+	auto TESObjectREFR::GetInventoryCounts()
+		-> InventoryCountMap
+	{
+		return GetInventoryCounts([]([[maybe_unused]] TESBoundObject*) -> bool
+		{
+			return true;
+		});
+	}
+
+
+	auto TESObjectREFR::GetInventoryCounts(llvm::function_ref<bool(TESBoundObject*)> a_filter)
+		-> InventoryCountMap
+	{
+		InventoryCountMap results;
+
+		auto invChanges = GetInventoryChanges();
+		if (invChanges && invChanges->entryList) {
+			for (auto& entry : *invChanges->entryList) {
+				if (entry && entry->object && a_filter(entry->object)) {
+					auto it = results.insert(std::make_pair(entry->object, entry->countDelta));
+					assert(it.second);
+				}
+			}
+		}
+
+		auto container = GetContainer();
+		if (container) {
+			container->ForEachContainerObject([&](ContainerObject* a_entry) -> bool
+			{
+				if (a_entry->obj && a_filter(a_entry->obj)) {
+					auto it = results.find(a_entry->obj);
+					if (it == results.end()) {
+						auto insIt = results.insert(std::make_pair(a_entry->obj, a_entry->count));
+						assert(insIt.second);
+					} else {
+						it->second += a_entry->count;
+					}
+				}
+				return true;
+			});
+		}
+
+		return results;
+	}
+
+
 	InventoryChanges* TESObjectREFR::GetInventoryChanges()
 	{
+		if (!extraList.HasType<ExtraContainerChanges>()) {
+			InitInventoryIfRequired();
+		}
+
 		auto xContChanges = extraList.GetByType<ExtraContainerChanges>();
-		if (!xContChanges) {
-			xContChanges = new ExtraContainerChanges();
-			extraList.Add(xContChanges);
-		}
-
-		auto invChanges = xContChanges->changes;
-		if (!invChanges) {
-			invChanges = new InventoryChanges(this);
-			invChanges->InitContainer();
-			invChanges->GenerateLeveledListChanges();
-			xContChanges->changes = invChanges;
-		}
-
-		return invChanges;
+		return xContChanges ? xContChanges->changes : 0;
 	}
 
 
@@ -285,22 +351,18 @@ namespace RE
 	}
 
 
-	SInt32 TESObjectREFR::GetLockLevel() const
+	REFR_LOCK* TESObjectREFR::GetLock() const
 	{
-		auto state = GetLockState();
-		return state ? state->GetLockLevel(this) : -1 * std::numeric_limits<SInt32>::max();
+		using func_t = function_type_t<decltype(&TESObjectREFR::GetLock)>;
+		REL::Offset<func_t*> func(Offset::TESObjectREFR::GetLock);
+		return func(this);
 	}
 
 
-	REFR_LOCK* TESObjectREFR::GetLockState()
+	LOCK_LEVEL TESObjectREFR::GetLockLevel() const
 	{
-		return const_cast<REFR_LOCK*>(GetLockState_Impl());
-	}
-
-
-	const REFR_LOCK* TESObjectREFR::GetLockState() const
-	{
-		return GetLockState_Impl();
+		auto state = GetLock();
+		return state ? state->GetLockLevel(this) : LOCK_LEVEL::kUnlocked;
 	}
 
 
@@ -318,15 +380,7 @@ namespace RE
 	}
 
 
-	UInt32 TESObjectREFR::GetNumItems(bool a_useDataHandlerChanges, bool a_arg2)
-	{
-		using func_t = function_type_t<decltype(&TESObjectREFR::GetNumItems)>;
-		REL::Offset<func_t*> func(Offset::TESObjectREFR::GetNumItems);
-		return func(this, a_useDataHandlerChanges, a_arg2);
-	}
-
-
-	TESForm* TESObjectREFR::GetOwner()
+	TESForm* TESObjectREFR::GetOwner() const
 	{
 		using func_t = function_type_t<decltype(&TESObjectREFR::GetOwner)>;
 		REL::Offset<func_t*> func(Offset::TESObjectREFR::GetOwner);
@@ -364,11 +418,11 @@ namespace RE
 	}
 
 
-	const char* TESObjectREFR::GetReferenceName() const
+	UInt32 TESObjectREFR::GetStealValue(const InventoryEntryData* a_entryData, UInt32 a_numItems, bool a_useMult) const
 	{
-		using func_t = function_type_t<decltype(&TESObjectREFR::GetReferenceName)>;
-		REL::Offset<func_t*> func(Offset::TESObjectREFR::GetReferenceName);
-		return func(this);
+		using func_t = function_type_t<decltype(&Actor::GetStealValue)>;
+		REL::Offset<func_t*> func(Offset::TESObjectREFR::GetStealValue);
+		return func(this, a_entryData, a_numItems, a_useMult);
 	}
 
 
@@ -429,11 +483,19 @@ namespace RE
 	}
 
 
-	bool TESObjectREFR::HasInventoryChanges() const
+	void TESObjectREFR::InitChildActivates(TESObjectREFR* a_activator)
 	{
-		auto xContainerChanges = extraList.GetByType<ExtraContainerChanges>();
-		auto changes = xContainerChanges ? xContainerChanges->changes : 0;
-		return changes != 0;
+		using func_t = function_type_t<decltype(&TESObjectREFR::InitChildActivates)>;
+		REL::Offset<func_t*> func(Offset::TESObjectREFR::InitChildActivates);
+		return func(this, a_activator);
+	}
+
+
+	bool TESObjectREFR::InitInventoryIfRequired(bool a_skipExtra)
+	{
+		using func_t = function_type_t<decltype(&TESObjectREFR::InitInventoryIfRequired)>;
+		REL::Offset<func_t*> func(Offset::TESObjectREFR::InitInventoryIfRequired);
+		return func(this, a_skipExtra);
 	}
 
 
@@ -447,6 +509,14 @@ namespace RE
 	{
 		auto xFlags = extraList.GetByType<ExtraFlags>();
 		return xFlags && xFlags->IsActivationBlocked();
+	}
+
+
+	bool TESObjectREFR::IsCrimeToActivate()
+	{
+		using func_t = function_type_t<decltype(&TESObjectREFR::IsCrimeToActivate)>;
+		REL::Offset<func_t*> func(Offset::TESObjectREFR::IsCrimeToActivate);
+		return func(this);
 	}
 
 
@@ -472,8 +542,7 @@ namespace RE
 
 	bool TESObjectREFR::IsLocked() const
 	{
-		auto state = GetLockState();
-		return state && state->baseLevel > 0;
+		return GetLockLevel() != LOCK_LEVEL::kUnlocked;
 	}
 
 
@@ -483,11 +552,9 @@ namespace RE
 	}
 
 
-	bool TESObjectREFR::IsOffLimits() const
+	bool TESObjectREFR::IsOffLimits()
 	{
-		using func_t = function_type_t<decltype(&TESObjectREFR::IsOffLimits)>;
-		REL::Offset<func_t*> func(Offset::TESObjectREFR::IsOffLimits);
-		return func(this);
+		return IsCrimeToActivate();
 	}
 
 
@@ -619,15 +686,7 @@ namespace RE
 	}
 
 
-	const REFR_LOCK* TESObjectREFR::GetLockState_Impl() const
-	{
-		using func_t = function_type_t<decltype(&TESObjectREFR::GetLockState_Impl)>;
-		REL::Offset<func_t*> func(Offset::TESObjectREFR::GetLockState);
-		return func(this);
-	}
-
-
-	void TESObjectREFR::MoveTo_Impl(ObjectRefHandle& a_targetHandle, TESObjectCELL* a_targetCell, TESWorldSpace* a_selfWorldSpace, NiPoint3& a_position, NiPoint3& a_rotation)
+	void TESObjectREFR::MoveTo_Impl(const ObjectRefHandle& a_targetHandle, TESObjectCELL* a_targetCell, TESWorldSpace* a_selfWorldSpace, const NiPoint3& a_position, const NiPoint3& a_rotation)
 	{
 		using func_t = function_type_t<decltype(&TESObjectREFR::MoveTo_Impl)>;
 		REL::Offset<func_t*> func(Offset::TESObjectREFR::MoveTo);
