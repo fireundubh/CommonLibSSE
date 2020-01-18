@@ -35,14 +35,11 @@ namespace RE
 
 	SInt32 NiStringsExtraData::GetIndexOf(const char* element)
 	{
-		if (element && *element != '\0')
+		for (UInt32 i = 0; i < size; i++)
 		{
-			for (UInt32 i = 0; i < size; i++)
+			if (strcmp(value[i], element) == 0)
 			{
-				if (strcmp(value[i], element) == 0)
-				{
-					return i;
-				}
+				return i;
 			}
 		}
 
@@ -51,33 +48,34 @@ namespace RE
 
 	bool NiStringsExtraData::InsertElement(const char* element)
 	{
-		SInt32 index = GetIndexOf(element);
-
-		if (index == -1)
+		if (element && *element != '\0')
 		{
-			auto oldValue = value;
-			auto oldSize = size;
+			SInt32 index = GetIndexOf(element);
 
-			value = NiAlloc<char*>(oldSize + 1);
-
-			for (UInt32 i = 0; i < oldSize; i++)
+			if (index == -1)
 			{
-				value[i] = oldValue[i];
+				auto temp = NiAlloc<char*>(size + 1);
 
-				NiFree(oldValue[i]);
-				oldValue[i] = nullptr;
+				for (SInt32 i = 0; i < size; i++)
+				{
+					UInt32 strLength = strlen(value[i]) + 1;
+					temp[i] = NiAlloc<char>(strLength);
+					memcpy(temp[i], value[i], sizeof(char) * strLength);
+
+					NiFree(value[i]);
+					value[i] = nullptr;
+				}
+
+				UInt32 strLength = strlen(element) + 1;
+				temp[size] = NiAlloc<char>(strLength);
+				memcpy(temp[size], element, sizeof(char) * strLength);
+
+				NiFree(value);
+				value = temp;
+				size++;
+
+				return true;
 			}
-
-			UInt32 strLength = strlen(element) + 1;
-			value[size] = NiAlloc<char>(strLength);
-			memcpy(value[size], element, sizeof(char) * strLength);
-
-			NiFree(oldValue);
-			oldValue = nullptr;
-
-			size++;
-
-			return true;
 		}
 
 		return false;
@@ -85,31 +83,32 @@ namespace RE
 
 	bool NiStringsExtraData::RemoveElement(const char* element)
 	{
-		SInt32 index = GetIndexOf(const_cast<char*>(element));
-
-		if (index != -1)
+		if (element && *element != '\0')
 		{
-			auto oldData = value;
-			auto oldSize = size;
+			SInt32 index = GetIndexOf(element);
 
-			value = NiAlloc<char*>(oldSize - 1);
-
-			for (SInt32 i = 0; i < oldSize; i++)
+			if (index != -1)
 			{
-				if (i != index)
+				auto temp = NiAlloc<char*>(size - 1);
+
+				for (SInt32 i = 0; i < size; i++)
 				{
-					value[i] = oldData[i];
+					if (i != index)
+					{
+						UInt32 strLength = strlen(value[i]) + 1;
+						temp[i] = NiAlloc<char>(strLength);
+						memcpy(temp[i], value[i], sizeof(char) * strLength);
+					}
+					NiFree(value[i]);
+					value[i] = nullptr;
 				}
-				NiFree(oldData[i]);
-				oldData[i] = nullptr;
+
+				NiFree(value);
+				value = temp;
+				size--;
+
+				return true;
 			}
-
-			NiFree(oldData);
-			oldData = nullptr;
-
-			size--;
-
-			return true;
 		}
 
 		return false;

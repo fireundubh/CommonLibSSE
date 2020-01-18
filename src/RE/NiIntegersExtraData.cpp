@@ -42,20 +42,17 @@ namespace RE
 
 		if (index == -1)
 		{
-			auto oldValue = value;
-			auto oldSize = size;
+			auto temp = NiAlloc<SInt32>(size + 1);
 
-			value = NiAlloc<SInt32>(oldSize + 1);
-
-			for (UInt32 i = 0; i < oldSize; i++)
+			for (SInt32 i = 0; i < size; i++)
 			{
-				value[i] = oldValue[i];
+				temp[i] = value[i];
 			}
-			value[size] = element;
 
-			NiFree(oldValue);
-			oldValue = nullptr;
+			temp[size] = element;
 
+			NiFree(value);
+			value = temp;
 			size++;
 
 			return true;
@@ -70,21 +67,18 @@ namespace RE
 
 		if (index != -1)
 		{
-			auto oldValue = value;
-			auto oldSize = size;
+			auto temp = NiAlloc<SInt32>(size - 1);
 
-			value = NiAlloc<SInt32>(oldSize - 1);
-
-			for (SInt32 i = 0; i < oldSize; i++)
+			for (SInt32 i = 0; i < size; i++)
 			{
 				if (i != index)
 				{
-					value[i] = oldValue[i];
+					temp[i] = value[i];
 				}
 			}
 
-			NiFree(oldValue);
-			oldValue = nullptr;
+			NiFree(value);
+			value = temp;
 
 			size--;
 
