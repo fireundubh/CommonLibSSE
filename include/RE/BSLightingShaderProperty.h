@@ -65,7 +65,8 @@ namespace RE
 		NiColor*		emissiveColor;	// 0F0
 		float			emissiveMult;	// 0F8
 		UInt32			unk0FC;			// 0FC
-		UInt64			unk100;			// 100
+		float			unk100;			// 100
+		float			unk104;			// 100
 		UInt64			unk108;			// 108
 		UInt64			unk110;			// 110
 		UInt64			unk118;			// 118
@@ -74,7 +75,7 @@ namespace RE
 		UInt64			unk130;			// 130
 		BSTArray<void*>	unk138;			// 138
 		UInt64			unk150;			// 150
-		UInt64			unk158;			// 158
+		UInt8			unk158;			// 158
 	};
 	STATIC_ASSERT(sizeof(BSLightingShaderProperty) == 0x160);
 }

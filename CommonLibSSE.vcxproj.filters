@@ -5342,5 +5342,8 @@
     <ClInclude Include="include\RE\DetectionPriorities.h">
       <Filter>include\RE\FormComponents\Enums</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\SummonPlacementEffect.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

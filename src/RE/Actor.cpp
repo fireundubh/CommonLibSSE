@@ -562,12 +562,14 @@ namespace RE
 		return false;
 	}
 
+
 	void Actor::EnableAI(bool a_enabled)
 	{
 		using func_t = function_type_t<decltype(&Actor::EnableAI)>;
 		REL::Offset<func_t*> func(Offset::Actor::EnableAI);
 		return func(this, a_enabled);
 	}
+
 
 	UInt8 Actor::GetSoulSize() const
 	{
@@ -576,17 +578,11 @@ namespace RE
 		return func(this);
 	}
 
+
 	void Actor::Decapitate()
 	{
 		using func_t = function_type_t<decltype(&Actor::Decapitate)>;
 		REL::Offset<func_t*> func(Offset::Actor::Decapitate);
-		return func(this);
-	}
-
-	TESPackage* Actor::GetCurrentPackageInternal() const
-	{
-		using func_t = function_type_t<decltype(&Actor::GetCurrentPackageInternal)>;
-		REL::Offset<func_t*> func(Offset::Actor::GetCurrentPackageInternal);
 		return func(this);
 	}
 

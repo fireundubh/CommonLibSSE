@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RE/BSTempEffect.h"
+#include "RE/NiSmartPointer.h"
 
 class NiAVObject;
 
@@ -24,10 +25,10 @@ namespace RE
 		virtual void				FinishLoadGame(BGSLoadGameBuffer* a_buf) override;	// 2F 
 
 		// members;
-		UInt64			unk30;								// 030
-		NiAVObject*		unk38;								// 038
-		UInt64			unk40;								// 040
-		UInt8			unk48;								// 048
+		UInt64					unk30;								// 030
+		NiPointer<NiAVObject>	unk38;								// 038
+		UInt64					unk40;								// 040
+		UInt8					unk48;								// 048
 	};
 	STATIC_ASSERT(sizeof(BSTempEffectSPG) == 0x50);
 }

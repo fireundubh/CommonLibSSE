@@ -26,8 +26,8 @@ namespace RE
 		virtual void			AttachDecal(BSTempEffect* a_decal, bool a_firstAvail);									// 3F
 
 		// members
-		BSTArray<BSTempEffect*>	decals;	// 128
-		UInt8					unk140;	// 140
+		BSTArray<BSTempEffect*>	decals;		// 128
+		UInt8					isSkinned;	// 140
 	};
 	STATIC_ASSERT(sizeof(BGSDecalNode) == 0x148);
 }

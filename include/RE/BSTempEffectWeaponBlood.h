@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RE/BSTempEffect.h"
+#include "RE/NiSmartPointer.h"
 
 class NiAVObject;
 
@@ -18,8 +19,8 @@ namespace RE
 		virtual TEMP_EFFECT_TYPE	GetType() const override;		// 2C - { return 1; }
 
 		// members;
-		NiAVObject*		weapon;								// 030
-		float			alphaThreshold;						// 038
+		NiPointer<NiAVObject>	weapon;								// 030
+		float					alphaThreshold;						// 038
 	};
 	STATIC_ASSERT(sizeof(BSTempEffectWeaponBlood) == 0x40);
 }

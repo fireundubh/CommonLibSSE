@@ -56,7 +56,6 @@ namespace RE
 			constexpr std::uintptr_t EnableAI = 0x005E44F0;						// 1_5_97
 			constexpr std::uintptr_t GetSoulSize = 0x006348A0;					// 1_5_97
 			constexpr std::uintptr_t Decapitate = 0x005F2530;					// 1_5_97
-			constexpr std::uintptr_t GetCurrentPackageInternal = 0x005FBA20;	// 1_5_97
 			constexpr std::uintptr_t InstantKill = 0x005FB640;					// 1_5_97
 			constexpr std::uintptr_t RemoveSpell = 0x0062F720;					// 1_5_97
 
@@ -278,6 +277,7 @@ namespace RE
 			constexpr std::uintptr_t SetFlags = 0x01291C30;				// 1_5_97
 			constexpr std::uintptr_t InvalidateMaterial = 0x0019C3B0;	// 1_5_97
 			constexpr std::uintptr_t InvalidateTextures = 0x012C5AB0;	// 1_5_97
+			constexpr std::uintptr_t SetBSEffectShaderData = 0x00218980; // 1_5_97
 		}
 
 

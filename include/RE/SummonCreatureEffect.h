@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RE/ActiveEffect.h"
+#include "RE/SummonPlacementEffect.h"
 
 
 namespace RE
@@ -27,12 +28,15 @@ namespace RE
 
 
 		// members
-		UInt64	unk90;	// 90
-		UInt64	unk98;	// 98
-		UInt64	unkA0;	// A0
-		UInt64	unkA8;	// A8
-		UInt64	unkB0;	// B0
-		UInt64	unkB8;	// B8
+		NiPoint3				location;				// 90
+		NiPoint3				angle;					// 9C
+		ActorHandle				summonedActor;			// A8
+		UInt32					unkAC;					// AC
+		SummonPlacementEffect*	summonPlacementEffect;	// B0
+		UInt8					unkB8;					// B8
+		UInt8					unkB9;					// B9
+		UInt8					unkBA;					// BA
+		UInt8					padBB;					// BB
 	};
 	STATIC_ASSERT(sizeof(SummonCreatureEffect) == 0xC0);
 }

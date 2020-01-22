@@ -38,6 +38,7 @@ namespace RE
 		return func(this, a_data);
 	}
 
+
 	TESObjectREFR* NiAVObject::GetOwner()
 	{
 		if (userData)

@@ -16,19 +16,23 @@ namespace RE
 	public:
 		static BGSDecalManager* GetSingleton();
 
-		UInt16								pad02;
-		UInt32								unk04;
-		UInt32								unk08;
-		UInt32								unk0C;
-		UInt32								unk10;	//count?
-		UInt32								unk14;
-		BSTArray<BSTempEffect*>				decals;
-		BSTArray<void*>						unk30;
-		BSTArray<BGSDecalNode*>				decalNodes;
-		BSTArray<void*>						unk60;
-		NiCamera*							niCamera;
-		BSShaderAccumulator*				shaderAccumulator;
-		UInt32								unk88;
+		UInt8								pad01;				// 01
+		UInt8								pad02;				// 02
+		UInt8								pad03;				// 03
+		UInt32								unk04;				// 04
+		UInt8								pad08;				// 08
+		UInt8								pad09;				// 09
+		UInt8								pad0A;				// 0A
+		UInt32								unk0C;				// 0C - simpleDecal count?			
+		UInt32								unk10;				// 10 - count?
+		UInt32								unk14;				// 14 
+		BSTArray<BSTempEffect*>				decals;				// 18
+		BSTArray<void*>						unk30;				// 30
+		BSTArray<BGSDecalNode*>				decalNodes;			// 48
+		BSTArray<void*>						unk60;				// 60
+		NiCamera*							niCamera;			// 78
+		BSShaderAccumulator*				shaderAccumulator;	// 80
+		UInt32								unk88;				// 88
 	};
 	static_assert(offsetof(BGSDecalManager, decals) >= 0x18, "simple decals too early");
 	static_assert(offsetof(BGSDecalManager, decals) <= 0x18, "simple decals too late");

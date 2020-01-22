@@ -8,7 +8,7 @@
 namespace RE
 {
 
-	class BSLightingShaderMaterialBase;
+	class BSShaderMaterial;
 	class NiSourceTexture;
 
 
@@ -46,8 +46,6 @@ namespace RE
 		bool						kAlpha;						// 83
 	};
 	STATIC_ASSERT(sizeof(BSEffectShaderData) == 0x88);
-	static_assert(offsetof(BSEffectShaderData, baseRimAlpha) >= 0x54);
-	static_assert(offsetof(BSEffectShaderData, baseRimAlpha) <= 0x54);
 
 
 	class BSShaderProperty : public NiShadeProperty
@@ -166,12 +164,13 @@ namespace RE
 		virtual void			Unk_3E(void);										// 3E - { return 0; }
 
 
-		UInt32	InitializeMaterial(BSGeometry* geometry);
-		UInt32	InitializeShader(BSGeometry* geometry);
-		UInt32	SetMaterial(BSLightingShaderMaterialBase* otherMaterial, bool unk1); // unk1 usually 1
-		UInt64	SetFlags(UInt8 flag, UInt8 set);
+		void	InitializeMaterial(BSGeometry* a_geometry);
+		void	InitializeShader(BSGeometry* a_geometry);
+		void	SetMaterial(BSShaderMaterial* a_otherMaterial, bool a_unk1); // unk1 usually 1
+		void	SetFlags(ShaderFlag a_flag, UInt8 a_toggle);
 		bool	InvalidateMaterial();
 		void	InvalidateTextures(UInt32 unk1); // unk1 usually 0, called after material Releases textures
+		void    SetBSEffectShaderData(BSEffectShaderData* a_data);
 
 
 		// members
@@ -185,7 +184,7 @@ namespace RE
 		UInt64							unk60;				// 60
 		BSEffectShaderData*				effectShaderData;	// 68 - smart ptr
 		UInt64							unk70;				// 70
-		BSLightingShaderMaterialBase*	material;			// 78
+		BSShaderMaterial*				material;			// 78
 		UInt64							unk80;				// 80
 	};
 	STATIC_ASSERT(sizeof(BSShaderProperty) == 0x88);
