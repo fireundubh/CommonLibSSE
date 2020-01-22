@@ -181,6 +181,8 @@
     <ClCompile Include="src\RE\BSXFlags.cpp" />
     <ClCompile Include="src\RE\Events\TESHitEvent.cpp" />
     <ClCompile Include="src\RE\ExtraPoison.cpp" />
+    <ClCompile Include="src\RE\bhkCharProxyController.cpp" />
+    <ClCompile Include="src\RE\hkpMaterial.cpp" />
     <ClCompile Include="src\RE\IAnimationGraphManagerHolder.cpp" />
     <ClCompile Include="src\RE\Main.cpp" />
     <ClCompile Include="src\RE\NiInterpolator.cpp" />
@@ -397,6 +399,7 @@
     <ClCompile Include="src\SKSE\Logger.cpp" />
     <ClCompile Include="src\SKSE\RegistrationMap.cpp" />
     <ClCompile Include="src\SKSE\RegistrationSet.cpp" />
+    <ClCompile Include="src\SKSE\Trampoline.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ForceInclude.h" />
@@ -474,6 +477,8 @@
     <ClInclude Include="include\RE\BSTTuple.h" />
     <ClInclude Include="include\RE\BSUntypedPointerHandle.h" />
     <ClInclude Include="include\RE\BSXFlags.h" />
+    <ClInclude Include="include\RE\CFilter.h" />
+    <ClInclude Include="include\RE\CollisionLayers.h" />
     <ClInclude Include="include\RE\ContainerItemExtra.h" />
     <ClInclude Include="include\RE\Crime.h" />
     <ClInclude Include="include\RE\DecalData.h" />
@@ -1573,6 +1578,7 @@
     <ClInclude Include="include\SKSE\RegistrationSet.h" />
     <ClInclude Include="include\SKSE\API.h" />
     <ClInclude Include="include\SKSE\RegistrationTraits.h" />
+    <ClInclude Include="include\SKSE\Trampoline.h" />
     <ClInclude Include="include\Util.h" />
     <ClInclude Include="src\RE\GFxResourceKey.cpp" />
   </ItemGroup>
