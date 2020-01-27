@@ -295,9 +295,9 @@ namespace RE
 				// IndirectSig: E8 ? ? ? ? 49 8B CE E8 ? ? ? ? 48 85 DB 74 08
 				constexpr std::uintptr_t Dtor = 0x01233670;			// 1_5_97
 				// IndirectSig: E8 ? ? ? ? 49 89 3F
-				constexpr std::uintptr_t IncRefCount = 0x01234360;	// 1_5_97
+				constexpr std::uintptr_t IncRef = 0x01234360;	// 1_5_97
 				// IndirectSig: E8 ? ? ? ? 85 C0 75 10 49 8B CE
-				constexpr std::uintptr_t DecRefCount = 0x01234410;	// 1_5_97
+				constexpr std::uintptr_t DecRef = 0x01234410;	// 1_5_97
 			}
 
 
@@ -841,6 +841,13 @@ namespace RE
 		}
 
 
+		namespace LooseFileStream
+		{
+			// IndirectSig: E8 ? ? ? ? 48 8B F8 EB 02 33 FF 40 F6 C6 02 74 11
+			constexpr std::uintptr_t Ctor = 0x00C4B990;	// 1_5_97
+		}
+
+
 		namespace MagicItem
 		{
 			// IndirectSig: E8 ? ? ? ? E8 ? ? ? ? F3 0F 2C C0
@@ -919,10 +926,6 @@ namespace RE
 			constexpr std::uintptr_t SetMotionType = 0x00DA81E0;	// 1_5_97
 			// IndirectSig: E8 ? ? ? ? EB 09 48 8B CB E8 ? ? ? ? 90 48 8B 8C 24 ? ? ? ?
 			constexpr std::uintptr_t Update = 0x00C56B50;			// 1_5_97
-			//
-			constexpr std::uintptr_t UpdateModelHair = 0x003DC7E0;	// 1_5_97
-			//
-			constexpr std::uintptr_t UpdateModelSkin = 0x003DC720;	// 1_5_97
 		}
 
 

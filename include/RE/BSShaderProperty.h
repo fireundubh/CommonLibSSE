@@ -7,7 +7,6 @@
 
 namespace RE
 {
-
 	class BSShaderMaterial;
 	class NiSourceTexture;
 
@@ -50,79 +49,80 @@ namespace RE
 
 	class BSShaderProperty : public NiShadeProperty
 	{
+	private:
+		static constexpr auto BIT64 = static_cast<UInt64>(1);
+
 	public:
 		inline static const void* RTTI = RTTI_BSShaderProperty;
 		inline static const void* Ni_RTTI = NiRTTI_BSShaderProperty;
 
 
-		enum class ShaderFlag : UInt64
+		enum class EShaderPropertyFlag : UInt64
 		{
-			kSpecular = 0x0,
-			kSkinned = 0x1,
-			kTempRefraction = 0x2,
-			kVertexAlpha = 0x3,
-			kGrayscaleToPaletteColor = 0x4,
-			kGrayscaleToPaletteAlpha = 0x5,
-			kFalloff = 0x6,
-			kEnvironmentMapping = 0x7,
-			kReceiveShadows = 0x8,
-			kCastShadows = 0x9,
-			kFacegenDetailMap = 0xA,
-			kParallax = 0xB,
-			kModelSpaceNormals = 0xC,
-			kNonProjectiveShadows = 0xD,
-			kLandscape = 0xE,
-			kRefraction = 0xF,
-			kRefractionFire = 0x10,
-			kEyeEnvironmentMapping = 0x11,
-			kHairSoftLighting = 0x12,
-			kScreendoorAlphaFade = 0x13,
-			kLocalmapHideSecret = 0x14,
-			kFaceGenRGBTint = 0x15,
-			kOwnEmit = 0x16,
-			kProjectedUV = 0x17,
-			kMultipleTextures = 0x18,
-			kRemappableTextures = 0x19,
-			kDecal = 0x1A,
-			kDynamicDecal = 0x1B,
-			kParallaxOcclusion = 0x1C,
-			kExternalEmittance = 0x1D,
-			kSoftEffect = 0x1E,
-			kZBufferTest = 0x1F,
-			kZBufferWrite = 0x20,
-			kLODLandscape = 0x21,
-			kLODObjects = 0x22,
-			kNoFade = 0x23,
-			kTwoSided = 0x24,
-			kVertexColors = 0x25,
-			kGlowMap = 0x26,
-			kAssumeShadowmask = 0x27,
-			kCharacterLighting = 0x28,
-			kMultiIndexSnow = 0x29,
-			kVertexLighting = 0x2A,
-			kUniformScale = 0x2B,
-			kFitSlope = 0x2C,
-			kBillboard = 0x2D,
-			kNoLODLandBlend = 0x2E,
-			kEnvmapLightFade = 0x2F,
-			kWireframe = 0x30,
-			kWeaponBlood = 0x31,
-			kHideOnLocalMap = 0x32,
-			kPremultAlpha = 0x33,
-			kCloudLOD = 0x34,
-			kAnisotropicLighting = 0x35,
-			kNoTransparencyMultisampling = 0x36,
-			kUnused01 = 0x37,
-			kMultiLayerParallax = 0x38,
-			kSoftLighting = 0x39,
-			kRimLighting = 0x3A,
-			kBackLighting = 0x3B,
-			kSnow = 0x3C,
-			kTreeAnim = 0x3D,
-			kEffectLighting = 0x3E,
-			kHDLODObjects = 0x3F,
-
-			kCount = 0x40
+			kSpecular = BIT64 << 0,
+			kSkinned = BIT64 << 1,
+			kTempRefraction = BIT64 << 2,
+			kVertexAlpha = BIT64 << 3,
+			kGrayscaleToPaletteColor = BIT64 << 4,
+			kGrayscaleToPaletteAlpha = BIT64 << 5,
+			kFalloff = BIT64 << 6,
+			kEnvMap = BIT64 << 7,
+			kRGBFalloff = BIT64 << 8,
+			kCastShadows = BIT64 << 9,
+			kFace = BIT64 << 10,
+			kUIMaskRects = BIT64 << 11,
+			kModelSpaceNormals = BIT64 << 12,
+			kRefractionClamp = BIT64 << 13,
+			kMultiTextureLandscape = BIT64 << 14,
+			kRefraction = BIT64 << 15,
+			kRefractionFalloff = BIT64 << 16,
+			kEyeReflect = BIT64 << 17,
+			kHairTint = BIT64 << 18,
+			kScreendoorAlphaFade = BIT64 << 19,
+			kLocalMapClear = BIT64 << 20,
+			kFaceGenRGBTint = BIT64 << 21,
+			kOwnEmit = BIT64 << 22,
+			kProjectedUV = BIT64 << 23,
+			kMultipleTextures = BIT64 << 24,
+			kTesselate = BIT64 << 25,
+			kDecal = BIT64 << 26,
+			kDynamicDecal = BIT64 << 27,
+			kCharacterLight = BIT64 << 28,
+			kExternalEmittance = BIT64 << 29,
+			kSoftEffect = BIT64 << 30,
+			kZBufferTest = BIT64 << 31,
+			kZBufferWrite = BIT64 << 32,
+			kLODLandscape = BIT64 << 33,
+			kLODObjects = BIT64 << 34,
+			kNoFade = BIT64 << 35,
+			kTwoSided = BIT64 << 36,
+			kVertexColors = BIT64 << 37,
+			kGlowMap = BIT64 << 38,
+			kTransformChanged = BIT64 << 39,
+			kDismembermentMeatCuff = BIT64 << 40,
+			kTint = BIT64 << 41,
+			kVertexLighting = BIT64 << 42,
+			kUniformScale = BIT64 << 43,
+			kFitSlope = BIT64 << 44,
+			kBillboard = BIT64 << 45,
+			kLODLandBlend = BIT64 << 46,
+			kDismemberment = BIT64 << 47,
+			kWireframe = BIT64 << 48,
+			kWeaponBlood = BIT64 << 49,
+			kHideOnLocalMap = BIT64 << 50,
+			kPremultAlpha = BIT64 << 51,
+			kVATSTarget = BIT64 << 52,
+			kAnisotropicLighting = BIT64 << 53,
+			kSkewSpecularAlpha = BIT64 << 54,
+			kMenuScreen = BIT64 << 55,
+			kMultiLayerParallax = BIT64 << 56,
+			kAlphaTest = BIT64 << 57,
+			kInvertedFadePattern = BIT64 << 58,
+			kVATSTargetDrawAll = BIT64 << 59,
+			kPipboyScreen = BIT64 << 60,
+			kTreeAnim = BIT64 << 61,
+			kEffectLighting = BIT64 << 62,
+			kRefractionWritesDepth = BIT64 << 63
 		};
 
 
@@ -174,18 +174,18 @@ namespace RE
 
 
 		// members
-		float							unk30;				// 30 - 1.0f
-		UInt32							unk34;				// 34
-		ShaderFlag						shaderFlags;		// 38
-		void*							unk40;				// 40
-		UInt64							unk48;				// 48
-		void*							unk50;				// 50
-		UInt64							unk58;				// 58
-		UInt64							unk60;				// 60
+		float				alpha;					// 30
+		SInt32				lastRenderPassState;	// 34
+		EShaderPropertyFlag	flags;					// 38
+		void*				unk40;					// 40
+		UInt64				unk48;					// 48
+		void*				unk50;					// 50
+		UInt64				unk58;					// 58
+		UInt64				unk60;					// 60
 		BSEffectShaderData*				effectShaderData;	// 68 - smart ptr
-		UInt64							unk70;				// 70
-		BSShaderMaterial*				material;			// 78
-		UInt64							unk80;				// 80
+		UInt64				unk70;					// 70
+		BSShaderMaterial*	material;				// 78
+		UInt64				unk80;					// 80
 	};
 	STATIC_ASSERT(sizeof(BSShaderProperty) == 0x88);
 }

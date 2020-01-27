@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/BSResource/BSSystemFile.h"
 #include "RE/BSFixedString.h"
 
 
@@ -10,11 +11,10 @@ namespace RE
 		struct LooseFileStreamBase
 		{
 		public:
-			BSFixedString	curDir;		// 00
-			BSFixedString	relDir;		// 08
+			BSFixedString	prefix;		// 00
+			BSFixedString	dirName;	// 08
 			BSFixedString	fileName;	// 10
-			UInt64			unk18;		// 18
-			HANDLE			handle;		// 20
+			BSSystemFile	file;		// 18
 		};
 		STATIC_ASSERT(sizeof(LooseFileStreamBase) == 0x28);
 	}

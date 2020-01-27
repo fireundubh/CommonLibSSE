@@ -1090,11 +1090,17 @@
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiInterpolator">
       <UniqueIdentifier>{4e0a76c3-a0d2-4f73-b60b-b0c3808570d0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect">
-      <UniqueIdentifier>{50601cb8-7b69-4ef4-80c5-4c78d066550f}</UniqueIdentifier>
+    <Filter Include="src\RE\BSResource">
+      <UniqueIdentifier>{6b0b1cca-64c4-4597-9f9b-92e6f746a6d8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty">
-      <UniqueIdentifier>{0dff2b2f-2447-41de-a489-ebf7e2c886a2}</UniqueIdentifier>
+    <Filter Include="src\RE\BSResource\Location">
+      <UniqueIdentifier>{a84139b8-035c-4170-88f3-00d03b3d25fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\BSResource\StreamBase">
+      <UniqueIdentifier>{34996911-17ed-4022-9368-e489e2a297fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\BSResource\StreamBase\Stream">
+      <UniqueIdentifier>{2677b5e6-c3d8-44ac-8e0c-3172a10f5d8f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1157,9 +1163,6 @@
     </ClCompile>
     <ClCompile Include="src\RE\TESDescription.cpp">
       <Filter>src\RE\FormComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\BSString.cpp">
-      <Filter>src\RE\BSCore</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\TESAIForm.cpp">
       <Filter>src\RE\FormComponents</Filter>
@@ -1749,26 +1752,26 @@
     <ClCompile Include="src\RE\bhkCharProxyController.cpp">
       <Filter>src\RE\BSHavok\hkpCharacterProxyListener</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BSTaskPool.cpp">
-      <Filter>src\RE\Misc</Filter>
+    <ClCompile Include="src\RE\BSResource\Location.cpp">
+      <Filter>src\RE\BSResource\Location</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\NiBooleanExtraData.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    <ClCompile Include="src\RE\RTTI.cpp">
+      <Filter>src\RE</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BSTempEffect.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    <ClCompile Include="src\RE\BSResource\BSSystemFile.cpp">
+      <Filter>src\RE\BSResource</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\NiIntegersExtraData.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    <ClCompile Include="src\RE\BSResource\LooseFileStream.cpp">
+      <Filter>src\RE\BSResource\StreamBase\Stream</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\NiStringsExtraData.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    <ClCompile Include="src\RE\BSResource\StreamBase.cpp">
+      <Filter>src\RE\BSResource\StreamBase</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BSShaderProperty.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty</Filter>
+    <ClCompile Include="src\RE\BSResource\Stream.cpp">
+      <Filter>src\RE\BSResource\StreamBase\Stream</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BGSDecalManager.cpp">
-      <Filter>src\RE\Misc</Filter>
+    <ClCompile Include="src\RE\BSVisit.cpp">
+      <Filter>src\RE\NetImmerse</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\ActiveEffect.cpp">
       <Filter>src\RE\FormComponents</Filter>
@@ -5348,20 +5351,20 @@
     <ClInclude Include="include\RE\CollisionLayers.h">
       <Filter>include\RE\FormComponents\Enums</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\SummonPlacementEffect.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
+    <ClInclude Include="include\RE\BSResource\ErrorCodes.h">
+      <Filter>include\RE\BSResource</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Events\TESObjectLoadedEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
+    <ClInclude Include="include\RE\BSResource\Info.h">
+      <Filter>include\RE\BSResource</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Events\TESResetEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
+    <ClInclude Include="include\RE\BSResource\BSSystemFile.h">
+      <Filter>include\RE\BSResource</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Events\TESSwitchRaceCompleteEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
+    <ClInclude Include="include\RE\BSResource\AsyncStream.h">
+      <Filter>include\RE\BSResource\StreamBase</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Events\TESTrackedStatsEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
+    <ClInclude Include="include\RE\BSVisit.h">
+      <Filter>include\RE\NetImmerse</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

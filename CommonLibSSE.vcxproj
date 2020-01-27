@@ -171,11 +171,17 @@
     <ClCompile Include="src\RE\BGSImpactManager.cpp" />
     <ClCompile Include="src\RE\BGSStoryTeller.cpp" />
     <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp" />
+    <ClCompile Include="src\RE\BSResource\BSSystemFile.cpp" />
+    <ClCompile Include="src\RE\BSResource\Location.cpp" />
+    <ClCompile Include="src\RE\BSResource\LooseFileStream.cpp" />
+    <ClCompile Include="src\RE\BSResource\Stream.cpp" />
+    <ClCompile Include="src\RE\BSResource\StreamBase.cpp" />
     <ClCompile Include="src\RE\BSScript\ByteCode\PackedInstructionStream.cpp" />
     <ClCompile Include="src\RE\BSScript\Internal\VDescTable.cpp" />
     <ClCompile Include="src\RE\BSScript\IVirtualMachine.cpp" />
     <ClCompile Include="src\RE\BSScript\MemoryPage.cpp" />
     <ClCompile Include="src\RE\BSShaderProperty.cpp" />
+    <ClCompile Include="src\RE\BSVisit.cpp" />
     <ClCompile Include="src\RE\BSTaskPool.cpp" />
     <ClCompile Include="src\RE\BSTempEffect.cpp" />
     <ClCompile Include="src\RE\BSXFlags.cpp" />
@@ -227,7 +233,6 @@
     <ClCompile Include="src\RE\BSScript\ZeroFunctionArguments.cpp" />
     <ClCompile Include="src\RE\BSLock.cpp" />
     <ClCompile Include="src\RE\BSShaderTextureSet.cpp" />
-    <ClCompile Include="src\RE\BSString.cpp" />
     <ClCompile Include="src\RE\BSSystemFileStorage.cpp" />
     <ClCompile Include="src\RE\BSTCreateFactoryManager.cpp" />
     <ClCompile Include="src\RE\Calendar.cpp" />
@@ -318,6 +323,7 @@
     <ClCompile Include="src\RE\NiSystem.cpp" />
     <ClCompile Include="src\RE\NiTexture.cpp" />
     <ClCompile Include="src\RE\RemoveCallbackVisitor.cpp" />
+    <ClCompile Include="src\RE\RTTI.cpp" />
     <ClCompile Include="src\RE\Script.cpp" />
     <ClCompile Include="src\RE\Setting.cpp" />
     <ClCompile Include="src\RE\Sky.cpp" />
@@ -460,8 +466,12 @@
     <ClInclude Include="include\RE\BSPointerHandleManager.h" />
     <ClInclude Include="include\RE\BSPointerHandleManagerInterface.h" />
     <ClInclude Include="include\RE\BSPointerHandleSmartPointer.h" />
+    <ClInclude Include="include\RE\BSResource\AsyncStream.h" />
+    <ClInclude Include="include\RE\BSResource\BSSystemFile.h" />
+    <ClInclude Include="include\RE\BSResource\ErrorCodes.h" />
     <ClInclude Include="include\RE\BSResource\FileID.h" />
     <ClInclude Include="include\RE\BSResource\ID.h" />
+    <ClInclude Include="include\RE\BSResource\Info.h" />
     <ClInclude Include="include\RE\BSResponse.h" />
     <ClInclude Include="include\RE\BSScript\ByteCode\PackedInstructionStream.h" />
     <ClInclude Include="include\RE\BSScript\Internal\VDescTable.h" />
@@ -476,6 +486,7 @@
     <ClInclude Include="include\RE\BSTimer.h" />
     <ClInclude Include="include\RE\BSTTuple.h" />
     <ClInclude Include="include\RE\BSUntypedPointerHandle.h" />
+    <ClInclude Include="include\RE\BSVisit.h" />
     <ClInclude Include="include\RE\BSXFlags.h" />
     <ClInclude Include="include\RE\CFilter.h" />
     <ClInclude Include="include\RE\CollisionLayers.h" />
