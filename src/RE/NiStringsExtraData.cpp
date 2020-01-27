@@ -54,7 +54,7 @@ namespace RE
 
 			if (index == -1)
 			{
-				auto temp = NiAlloc<char*>(++size);
+				auto temp = NiAlloc<char*>(size + 1);
 
 				for (SInt32 i = 0; i < size - 1; i++)
 				{
@@ -68,10 +68,11 @@ namespace RE
 
 				UInt32 strLength = strlen(element) + 1;
 				temp[size] = NiAlloc<char>(strLength);
-				memcpy(temp[size - 1], element, sizeof(char) * strLength);
+				memcpy(temp[size], element, sizeof(char) * strLength);
 
 				NiFree(value);
 				value = temp;
+				size++;
 
 				return true;
 			}

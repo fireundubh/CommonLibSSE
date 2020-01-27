@@ -1815,6 +1815,15 @@
     <ClCompile Include="src\RE\NiFloatExtraData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\BGSImpactManager.cpp">
+      <Filter>src\RE\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp">
+      <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Events\TESHitEvent.cpp">
+      <Filter>src\RE\Events\ScriptEvent</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\PlayerControls.h">
@@ -5327,18 +5336,6 @@
     <ClInclude Include="include\RE\BSParticleShaderProperty.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Events\TESTrackedStatsEvent.h">
-      <Filter>src\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\Events\TESSwitchRaceCompleteEvent.h">
-      <Filter>src\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\Events\TESResetEvent.h">
-      <Filter>src\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\Events\TESObjectLoadedEvent.h">
-      <Filter>src\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\DetectionPriorities.h">
       <Filter>include\RE\FormComponents\Enums</Filter>
     </ClInclude>
@@ -5353,6 +5350,18 @@
     </ClInclude>
     <ClInclude Include="include\RE\SummonPlacementEffect.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESObjectLoadedEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESResetEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESSwitchRaceCompleteEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESTrackedStatsEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
