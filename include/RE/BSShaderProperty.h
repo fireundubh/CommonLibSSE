@@ -167,7 +167,7 @@ namespace RE
 		void	InitializeMaterial(BSGeometry* a_geometry);
 		void	InitializeShader(BSGeometry* a_geometry);
 		void	SetMaterial(BSShaderMaterial* a_otherMaterial, bool a_unk1); // unk1 usually 1
-		void	SetFlags(ShaderFlag a_flag, UInt8 a_toggle);
+		void	SetFlags(EShaderPropertyFlag a_flag, UInt8 a_toggle);
 		bool	InvalidateMaterial();
 		void	InvalidateTextures(UInt32 unk1); // unk1 usually 0, called after material Releases textures
 		void    SetBSEffectShaderData(BSEffectShaderData* a_data);
@@ -182,7 +182,7 @@ namespace RE
 		void*				unk50;					// 50
 		UInt64				unk58;					// 58
 		UInt64				unk60;					// 60
-		BSEffectShaderData*				effectShaderData;	// 68 - smart ptr
+		BSEffectShaderData*	effectShaderData;		// 68 - smart ptr
 		UInt64				unk70;					// 70
 		BSShaderMaterial*	material;				// 78
 		UInt64				unk80;					// 80

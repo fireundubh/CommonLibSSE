@@ -171,6 +171,7 @@ namespace RE
 			kUnlocksDoorsAtPackageEnd = 1 << 7,
 			kContinueIfPCNear = 1 << 9,
 			kOncePerDay = 1 << 10,
+			kDeleteWhenDone = 1 << 11,
 			kPreferredSpeed = 1 << 13,
 			kAlwaysSneak = 1 << 17,
 			kAllowSwimming = 1 << 18,

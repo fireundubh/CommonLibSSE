@@ -76,7 +76,7 @@ namespace RE
 		UInt32	    GetPartialIndex() const;
 		FormID      GetFormID(UInt32 formLower) const;
 
-		bool IsLight() const { return (recordFlags & RecordFlag::kESL) == RecordFlag::kESL; }
+		bool IsLight() const { return (recordFlags & RecordFlag::kSmallFile) == RecordFlag::kSmallFile; }
 
 
 		// members
