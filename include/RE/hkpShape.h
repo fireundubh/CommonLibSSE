@@ -18,6 +18,7 @@ namespace RE
 	class hkpShapeContainer;
 	class hkpShapeRayBundleCastInput;
 	class hkpShapeRayBundleCastOutput;
+	class hkVector4;
 	struct hkpShapeRayCastInput;
 	struct hkpShapeRayCastOutput;
 
@@ -51,6 +52,8 @@ namespace RE
 
 		struct CalcSizeForSpuInput
 		{
+		public:
+			// members
 			bool	midphaseAgent3Registered;	// 0
 			bool	isFixedOrKeyframed;			// 1
 			bool	hasDynamicMotionSaved;		// 2
@@ -60,6 +63,8 @@ namespace RE
 
 		struct ShapeFuncs
 		{
+		public:
+			// members
 			GetSupportingVertexFunc*		getSupportingVertexFunc;	// 00
 			ConvertVertexIdsToVerticesFunc*	convertVertexIdsToVertices;	// 08
 			WeldContactPointFunc*			weldContactPointFunc;		// 10
@@ -78,6 +83,8 @@ namespace RE
 
 		struct ShapeFuncs2
 		{
+		public:
+			// members
 			alignas(0x40) GetSupportingVertexFunc*	getSupportingVertexFunc;	// 00
 			ConvertVertexIdsToVerticesFunc*			convertVertexIdsToVertices;	// 08
 			WeldContactPointFunc*					weldContactPointFunc;		// 10

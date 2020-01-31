@@ -24,6 +24,8 @@ namespace RE
 
 		struct BoundingVolumeData
 		{
+		public:
+			// members
 			UInt32			min[3];						// 00
 			UInt8			expansionMin[3];			// 0C
 			UInt8			expansionShift;				// 0F
@@ -37,6 +39,10 @@ namespace RE
 			hkpShapeKey*	childShapeKeys;				// 30
 		};
 		STATIC_ASSERT(sizeof(BoundingVolumeData) == 0x38);
+
+
+		void* GetOwner() const;
+		template <class T> T* GetOwner() const { return static_cast<T*>(GetOwner()); }
 
 
 		// members
