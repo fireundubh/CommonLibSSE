@@ -1827,8 +1827,8 @@
     <ClCompile Include="src\RE\hkpWorldObject.cpp">
       <Filter>src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BGSEntryPointPerkEntry.cpp">
-      <Filter>src\RE\FormComponents</Filter>
+    <ClCompile Include="src\RE\MagicFavorites.cpp">
+      <Filter>src\RE\Menus</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\BGSPerkEntry.cpp">
       <Filter>src\RE\FormComponents</Filter>
@@ -5489,8 +5489,8 @@
     <ClInclude Include="include\RE\hkpMoppAabbCastVirtualMachine.h">
       <Filter>include\RE\BSHavok</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Events\TESSwitchRaceCompleteEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
+    <ClInclude Include="include\RE\MagicFavorites.h">
+      <Filter>include\RE\Menus</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Events\TESTrackedStatsEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
