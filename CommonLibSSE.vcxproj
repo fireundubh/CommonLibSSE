@@ -354,6 +354,7 @@
     <ClCompile Include="src\RE\ExtraLock.cpp" />
     <ClCompile Include="src\RE\GFxLoader.cpp" />
     <ClCompile Include="src\RE\TESHavokUtilities.cpp" />
+    <ClCompile Include="src\RE\TESPackage.cpp" />
     <ClCompile Include="src\RE\UIBlurManager.cpp" />
     <ClCompile Include="src\RE\UserEvents.cpp" />
     <ClCompile Include="src\RE\Misc.cpp" />

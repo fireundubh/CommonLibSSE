@@ -363,6 +363,7 @@ namespace RE
 		virtual bool		IsTargetAtLocation(Actor* a_actor, SInt32 a_arg2);												// 3E
 		virtual bool		IsPackageOwner(Actor* a_actor);																	// 3F - { return true; }
 
+		static TESPackage* CreatePackage(PACKAGE_PROCEDURE_TYPE a_type);
 
 		// members
 		PACKAGE_DATA			packData;		// 20 - PKDT

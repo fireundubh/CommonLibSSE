@@ -143,7 +143,7 @@ namespace RE
 		virtual bool		IsFormTypeChild(FormType a_type) override;					// 36
 
 		bool HasMaxHeightData() const;
-		TESObjectCELL* GetOrCreateUnk0F8Cell();
+		TESObjectCELL* GetOrCreateSkyCell();
 
 		// members
 		BSTHashMap<SInt32, TESObjectCELL*>						cellMap;					// 058

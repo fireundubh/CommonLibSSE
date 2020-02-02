@@ -10,10 +10,10 @@ namespace RE
 		return maxHeightData != 0;
 	}
 
-	TESObjectCELL* TESWorldSpace::GetOrCreateUnk0F8Cell()
+	TESObjectCELL* TESWorldSpace::GetOrCreateSkyCell()
 	{
-		using func_t = function_type_t<decltype(&TESWorldSpace::GetOrCreateUnk0F8Cell)>;
-		REL::Offset<func_t*> func(Offset::TESWorldSpace::GetOrCreateUnk0F8Cell);
+		using func_t = function_type_t<decltype(&TESWorldSpace::GetOrCreateSkyCell)>;
+		REL::Offset<func_t*> func(Offset::TESWorldSpace::GetOrCreateSkyCell);
 		return func(this);
 	}
 }

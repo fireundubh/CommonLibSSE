@@ -1261,7 +1261,13 @@ namespace RE
 			constexpr std::uintptr_t CreateRefHandle_Native = 0x0029B980;	// 1_5_97
 		}
 
+
+		namespace TESPackage
+		{
+			constexpr std::uintptr_t CreatePackage = 0x004348C0;		// 1_5_97
+		}
 		
+
 		namespace TESQuest
 		{
 			// DirectSig: 48 89 5C 24 ? 56 48 83 EC 20 C6 02 00
@@ -1273,7 +1279,7 @@ namespace RE
 
 		namespace TESWorldSpace
 		{
-			constexpr std::uintptr_t GetOrCreateUnk0F8Cell = 0x002B63B0;	// 1_5_97
+			constexpr std::uintptr_t GetOrCreateSkyCell = 0x002B63B0;	// 1_5_97
 		}
 
 

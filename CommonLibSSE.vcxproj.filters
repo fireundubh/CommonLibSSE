@@ -1135,6 +1135,12 @@
     <Filter Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject">
       <UniqueIdentifier>{52afe667-262c-4986-8e38-70ebba6a42f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect">
+      <UniqueIdentifier>{278d31f6-0907-4100-8b08-5201a8ccdfad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty">
+      <UniqueIdentifier>{79a29736-015e-43ab-a73a-6d0e82dc08a8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\MenuControls.cpp">
@@ -1878,8 +1884,26 @@
     <ClCompile Include="src\RE\BSTempEffect.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\ActiveEffect.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\ActorCause.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\ActorValueOwner.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BGSBaseAlias.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BGSEntryPointFunctionDataActivateChoice.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
     <ClCompile Include="src\RE\BSShaderProperty.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiProperty\NiShadeProperty\BSShaderProperty</Filter>
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\TESPackage.cpp">
+      <Filter>src\RE\FormComponents\TESForm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -5464,6 +5488,21 @@
     </ClInclude>
     <ClInclude Include="include\RE\hkpMoppAabbCastVirtualMachine.h">
       <Filter>include\RE\BSHavok</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESSwitchRaceCompleteEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESTrackedStatsEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESResetEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESObjectLoadedEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SummonPlacementEffect.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
