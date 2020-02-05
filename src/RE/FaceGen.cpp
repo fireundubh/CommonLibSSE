@@ -14,8 +14,8 @@ namespace RE
 
 	void FaceGen::RegenerateHead(BSFaceGenNiNode* a_headNode, BGSHeadPart* a_head, TESNPC* a_npc)
 	{
-		using func_t = function_type_t<decltype(&FaceGen::RegenerateHead)>;
-		REL::Offset<func_t*> func(Offset::FaceGen::RegenerateHead);
+		using func_t = decltype(&FaceGen::RegenerateHead);
+		REL::Offset<func_t> func(Offset::FaceGen::RegenerateHead);
 		return func(this, a_headNode, a_head, a_npc);
 	}
 }

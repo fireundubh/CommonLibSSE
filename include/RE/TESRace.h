@@ -92,6 +92,7 @@ namespace RE
 			kNone = 0,
 			kUseAdvancedAvoidance = 1 << 0,
 			kNonHostile = 1 << 1,
+			kIsTypeHorse = 1 << 3,
 			kAllowMountedCombat = 1 << 4
 		};
 

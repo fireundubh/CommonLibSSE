@@ -205,7 +205,7 @@ namespace RE
 		UInt32													unk1F0;							// 1F0
 		float													unk1F4;							// 1F4
 		UInt32													unk1F8;							// 1F8
-		float													unk1FC;							// 1FC
+		SInt32													unk1FC;							// 1FC
 		float													unk200;							// 200
 		UInt32													pad204;							// 204
 		Data208*												unk208;							// 208

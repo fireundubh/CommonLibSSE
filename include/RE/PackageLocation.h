@@ -57,7 +57,7 @@ namespace RE
 		Type	locType;	// 08
 		UInt8	pad09;		// 09
 		UInt16	pad0A;		// 0A
-		UInt32	rad;		// 0C
+		UInt32	radius;		// 0C
 		Data	data;		// 10
 	};
 	STATIC_ASSERT(sizeof(PackageLocation) == 0x18);

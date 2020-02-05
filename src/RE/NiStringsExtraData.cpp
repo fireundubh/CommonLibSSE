@@ -54,25 +54,23 @@ namespace RE
 
 			if (index == -1)
 			{
-				auto temp = NiAlloc<char*>(size + 1);
+				auto oldData = value;
+				value = NiAlloc<char*>(++size);
 
 				for (SInt32 i = 0; i < size - 1; i++)
 				{
-					UInt32 strLength = strlen(value[i]) + 1;
-					temp[i] = NiAlloc<char>(strLength);
-					memcpy(temp[i], value[i], sizeof(char) * strLength);
+					UInt32 strLength = strlen(oldData[i]) + 1;
+					value[i] = NiAlloc<char>(strLength);
+					memcpy(value[i], oldData[i], sizeof(char) * strLength);
 
-					NiFree(value[i]);
-					value[i] = nullptr;
+					NiFree(oldData[i]);
+					oldData[i] = nullptr;
 				}
+				NiFree(oldData);
 
 				UInt32 strLength = strlen(element) + 1;
-				temp[size] = NiAlloc<char>(strLength);
-				memcpy(temp[size], element, sizeof(char) * strLength);
-
-				NiFree(value);
-				value = temp;
-				size++;
+				value[size-1] = NiAlloc<char>(strLength);
+				memcpy(value[size-1], element, sizeof(char) * strLength);
 
 				return true;
 			}
@@ -89,23 +87,21 @@ namespace RE
 
 			if (index != -1)
 			{
-				auto temp = NiAlloc<char*>(size - 1);
+				auto oldData = value;
+				value = NiAlloc<char*>(--size);
 
-				for (SInt32 i = 0; i < size; i++)
+				for (SInt32 i = 0; i < size + 1; i++)
 				{
 					if (i != index)
 					{
-						UInt32 strLength = strlen(value[i]) + 1;
-						temp[i] = NiAlloc<char>(strLength);
-						memcpy(temp[i], value[i], sizeof(char) * strLength);
+						UInt32 strLength = strlen(oldData[i]) + 1;
+						value[i] = NiAlloc<char>(strLength);
+						memcpy(value[i], oldData[i], sizeof(char) * strLength);
 					}
-					NiFree(value[i]);
-					value[i] = nullptr;
+					NiFree(oldData[i]);
+					oldData[i] = nullptr;
 				}
-
-				NiFree(value);
-				value = temp;
-				size--;
+				NiFree(oldData);
 
 				return true;
 			}

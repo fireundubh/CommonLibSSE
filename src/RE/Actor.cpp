@@ -569,40 +569,40 @@ namespace RE
 
 	void Actor::EnableAI(bool a_enabled)
 	{
-		using func_t = function_type_t<decltype(&Actor::EnableAI)>;
-		REL::Offset<func_t*> func(Offset::Actor::EnableAI);
+		using func_t = decltype(&Actor::EnableAI);
+		REL::Offset<func_t> func(Offset::Actor::EnableAI);
 		return func(this, a_enabled);
 	}
 
 
 	UInt8 Actor::GetSoulSize() const
 	{
-		using func_t = function_type_t<decltype(&Actor::GetSoulSize)>;
-		REL::Offset<func_t*> func(Offset::Actor::GetSoulSize);
+		using func_t = decltype(&Actor::GetSoulSize);
+		REL::Offset<func_t> func(Offset::Actor::GetSoulSize);
 		return func(this);
 	}
 
 
 	void Actor::Decapitate()
 	{
-		using func_t = function_type_t<decltype(&Actor::Decapitate)>;
-		REL::Offset<func_t*> func(Offset::Actor::Decapitate);
+		using func_t = decltype(&Actor::Decapitate);
+		REL::Offset<func_t> func(Offset::Actor::Decapitate);
 		return func(this);
 	}
 
 
 	bool Actor::InstantKill() 
 	{
-		using func_t = function_type_t<decltype(&Actor::InstantKill)>;
-		REL::Offset<func_t*> func(Offset::Actor::InstantKill);;
+		using func_t = decltype(&Actor::InstantKill);
+		REL::Offset<func_t> func(Offset::Actor::InstantKill);;
 		return func(this);
 	}
 
 
 	bool Actor::RemoveSpell(SpellItem * a_spell)
 	{
-		using func_t = function_type_t<decltype(&Actor::RemoveSpell)>;
-		REL::Offset<func_t*> func(Offset::Actor::RemoveSpell);;
+		using func_t = decltype(&Actor::RemoveSpell);
+		REL::Offset<func_t> func(Offset::Actor::RemoveSpell);;
 		return func(this, a_spell);
 	}
 }

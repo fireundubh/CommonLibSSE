@@ -400,7 +400,7 @@ namespace RE
 		virtual void							EndDialogue();																																																		// 0DA
 		virtual Actor*							SetUpTalkingActivatorActor(Actor* a_arg1, Actor*& a_arg2);																																							// 0DB
 		virtual void							Unk_DC(void);																																																		// 0DC - { return; }
-		virtual void							InitiateFlee(TESObjectREFR* a_arg1, bool a_arg2, bool a_arg3, bool a_arg4, TESObjectCELL* a_arg5, TESObjectREFR* a_arg6, float a_arg7, float a_arg8);																// 0DD
+		virtual void							InitiateFlee(TESObjectREFR* a_arg1, bool a_arg2, bool a_arg3, bool a_arg4, TESObjectCELL* a_arg5, TESObjectREFR* a_arg6, float a_value, float a_radius);																// 0DD
 		virtual void							InitiateGetUpPackage();																																																// 0DE
 		virtual void							PutCreatedPackage(TESPackage* a_arg1, bool a_arg2, bool a_arg3, bool a_arg4);																																		// 0DF
 		virtual void							UpdateAlpha();																																																		// 0E0

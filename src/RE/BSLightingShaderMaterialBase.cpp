@@ -30,8 +30,8 @@ namespace RE
 
 	void BSLightingShaderMaterialBase::CopyBaseMaterial(BSLightingShaderMaterialBase* otherMaterial)
 	{
-		using func_t = function_type_t<decltype(&BSLightingShaderMaterialBase::CopyBaseMaterial)>;
-		REL::Offset<func_t*> func(Offset::BSLightingShaderMaterialBase::CopyBaseMaterial);
+		using func_t = decltype(&BSLightingShaderMaterialBase::CopyBaseMaterial);
+		REL::Offset<func_t> func(Offset::BSLightingShaderMaterialBase::CopyBaseMaterial);
 		return func(this, otherMaterial);
 	}
 }

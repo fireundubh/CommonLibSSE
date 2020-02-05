@@ -60,8 +60,8 @@ namespace RE
 
 	RefHandle * TESObjectREFR::CreateRefHandle_Native(RefHandle * handle)
 	{
-		using func_t = function_type_t<decltype(&TESObjectREFR::CreateRefHandle_Native)>;
-		REL::Offset<func_t*> func(Offset::TESObjectREFR::CreateRefHandle_Native);
+		using func_t = decltype(&TESObjectREFR::CreateRefHandle_Native);
+		REL::Offset<func_t> func(Offset::TESObjectREFR::CreateRefHandle_Native);
 		return func(this, handle);
 	}
 

@@ -139,8 +139,8 @@ namespace RE
 
 	void AIProcess::SetActorRefraction(float a_refraction)
 	{
-		using func_t = function_type_t<decltype(&AIProcess::SetActorRefraction)>;
-		REL::Offset<func_t*> func(Offset::AIProcess::SetActorRefraction);
+		using func_t = decltype(&AIProcess::SetActorRefraction);
+		REL::Offset<func_t> func(Offset::AIProcess::SetActorRefraction);
 		return func(this, a_refraction);
 	}
 }

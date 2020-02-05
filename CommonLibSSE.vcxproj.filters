@@ -1905,6 +1905,9 @@
     <ClCompile Include="src\RE\TESPackage.cpp">
       <Filter>src\RE\FormComponents\TESForm</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\BGSEntryPointPerkEntry.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\PlayerControls.h">
@@ -5503,6 +5506,9 @@
     </ClInclude>
     <ClInclude Include="include\RE\SummonPlacementEffect.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESSwitchRaceCompleteEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

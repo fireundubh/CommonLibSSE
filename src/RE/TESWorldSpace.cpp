@@ -12,8 +12,8 @@ namespace RE
 
 	TESObjectCELL* TESWorldSpace::GetOrCreateSkyCell()
 	{
-		using func_t = function_type_t<decltype(&TESWorldSpace::GetOrCreateSkyCell)>;
-		REL::Offset<func_t*> func(Offset::TESWorldSpace::GetOrCreateSkyCell);
+		using func_t = decltype(&TESWorldSpace::GetOrCreateSkyCell);
+		REL::Offset<func_t> func(Offset::TESWorldSpace::GetOrCreateSkyCell);
 		return func(this);
 	}
 }
