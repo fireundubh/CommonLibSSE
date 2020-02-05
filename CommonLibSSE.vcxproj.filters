@@ -1135,11 +1135,17 @@
     <Filter Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject">
       <UniqueIdentifier>{52afe667-262c-4986-8e38-70ebba6a42f7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect">
-      <UniqueIdentifier>{278d31f6-0907-4100-8b08-5201a8ccdfad}</UniqueIdentifier>
+    <Filter Include="include\RE\Memory\IMemoryStoreBase\CompactingStore">
+      <UniqueIdentifier>{cb774dc5-d112-49f6-826f-734f0e4d77ae}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty">
-      <UniqueIdentifier>{79a29736-015e-43ab-a73a-6d0e82dc08a8}</UniqueIdentifier>
+    <Filter Include="include\RE\Memory\HeapBlock">
+      <UniqueIdentifier>{2409b811-f739-4c4f-9530-9e16b23972a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\Memory\IMemoryStoreBase">
+      <UniqueIdentifier>{e6aca693-affa-4ef4-a847-06fdcbae2efe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\Memory\IMemoryStoreBase\IMemoryStore">
+      <UniqueIdentifier>{55dd25e6-cf7f-4d03-83bb-834cbce371e4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1830,11 +1836,11 @@
     <ClCompile Include="src\RE\MagicFavorites.cpp">
       <Filter>src\RE\Menus</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BGSPerkEntry.cpp">
-      <Filter>src\RE\FormComponents</Filter>
+    <ClCompile Include="src\RE\HeapBlock.cpp">
+      <Filter>src\RE\Memory</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BipedAnim.cpp">
-      <Filter>src\RE\FormComponents</Filter>
+    <ClCompile Include="src\RE\IMemoryStore.cpp">
+      <Filter>src\RE\Memory\IMemoryStoreBase\IMemoryStore</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\DialogueItem.cpp">
       <Filter>src\RE\FormComponents</Filter>
@@ -2029,9 +2035,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\ExtraReferenceHandle.h">
       <Filter>include\RE\BSExtraData</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\BSTSmartPointer.h">
-      <Filter>include\RE\BSSystem</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSIntrusiveRefCounted.h">
       <Filter>include\RE\BSSystem</Filter>
@@ -5495,20 +5498,23 @@
     <ClInclude Include="include\RE\MagicFavorites.h">
       <Filter>include\RE\Menus</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Events\TESTrackedStatsEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
+    <ClInclude Include="include\RE\BSTPointerAndFlags.h">
+      <Filter>include\RE\BSCore</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Events\TESResetEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
+    <ClInclude Include="include\RE\BSTSmartPointer.h">
+      <Filter>include\RE\BSCore</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Events\TESObjectLoadedEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
+    <ClInclude Include="include\RE\BSScript\Internal\AttachedScript.h">
+      <Filter>include\RE\BSScript\Internal</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\SummonPlacementEffect.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
+    <ClInclude Include="include\RE\CompactingStore\Store.h">
+      <Filter>include\RE\Memory\IMemoryStoreBase\CompactingStore</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Events\TESSwitchRaceCompleteEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
+    <ClInclude Include="include\RE\HeapBlock.h">
+      <Filter>include\RE\Memory\HeapBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\HeapBlockFreeHead.h">
+      <Filter>include\RE\Memory\HeapBlock</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
