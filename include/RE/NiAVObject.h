@@ -123,7 +123,8 @@ namespace RE
 
 		// members
 		NiNode*							parent;				// 030
-		UInt64							unk038;				// 038
+		SInt32							unk038;				// 038
+		UInt32							unk03C;				// 03C
 		NiPointer<NiCollisionObject>	collisionObject;	// 040
 		NiTransform						local;				// 048
 		NiTransform						world;				// 07C

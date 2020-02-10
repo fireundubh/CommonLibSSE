@@ -499,6 +499,7 @@
     <ClInclude Include="include\RE\BSTPointerAndFlags.h" />
     <ClInclude Include="include\RE\BSTTuple.h" />
     <ClInclude Include="include\RE\BSUntypedPointerHandle.h" />
+    <ClInclude Include="include\RE\BSValueNode.h" />
     <ClInclude Include="include\RE\BSVisit.h" />
     <ClInclude Include="include\RE\BSXFlags.h" />
     <ClInclude Include="include\RE\CFilter.h" />
@@ -569,7 +570,9 @@
     <ClInclude Include="include\RE\NiCollisionObject.h" />
     <ClInclude Include="include\RE\NiIntegerExtraData.h" />
     <ClInclude Include="include\RE\NiInterpController.h" />
+    <ClInclude Include="include\RE\NiLight.h" />
     <ClInclude Include="include\RE\NiMultiTargetTransformController.h" />
+    <ClInclude Include="include\RE\NiPointLight.h" />
     <ClInclude Include="include\RE\NiSourceTexture.h" />
     <ClInclude Include="include\RE\NiTList.h" />
     <ClInclude Include="include\RE\NiTListBase.h" />

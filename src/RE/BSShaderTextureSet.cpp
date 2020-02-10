@@ -15,7 +15,6 @@ namespace RE
 	BSShaderTextureSet* BSShaderTextureSet::Create()
 	{
 		auto textureset = malloc<BSShaderTextureSet>();
-		assert(textureset != 0);
 		textureset->ctor();
 		return textureset;
 	}

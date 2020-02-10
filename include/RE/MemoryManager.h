@@ -57,7 +57,7 @@ namespace RE
 		IMemoryHeap*			bigAllocHeap;						// 420
 		IMemoryHeap*			emergencyHeap;						// 428
 		BSSmallBlockAllocator*	smallBlockAllocator;				// 430
-		CompactingStore::Store*	compactingStore;					// 438
+		CompactingStore::Store* compactingStore;					// 438
 		IMemoryHeap*			externalHavokAllocator;				// 440
 		bool					specialHeaps;						// 448
 		bool					allowPoolUse;						// 449
@@ -231,7 +231,8 @@ namespace RE
 
 		SimpleArray() :
 			_data(0)
-		{}
+		{
+		}
 
 
 		explicit SimpleArray(size_type a_count) :
@@ -350,8 +351,10 @@ namespace RE
 
 		void clear()
 		{
-			if (_data) {
-				for (auto& elem : *this) {
+			if (_data)
+			{
+				for (auto& elem : *this)
+				{
 					elem.~value_type();
 				}
 				free(get_head());
@@ -364,8 +367,10 @@ namespace RE
 		{
 			auto oldSize = resize_impl(a_count);
 
-			if (oldSize < a_count) {
-				for (size_type i = oldSize; i < a_count; ++i) {
+			if (oldSize < a_count)
+			{
+				for (size_type i = oldSize; i < a_count; ++i)
+				{
 					new(std::addressof(_data->entries[i])) value_type{};
 				}
 			}
@@ -376,8 +381,10 @@ namespace RE
 		{
 			auto oldSize = resize_impl(a_count);
 
-			if (oldSize < a_count) {
-				for (size_type i = oldSize; i < a_count; ++i) {
+			if (oldSize < a_count)
+			{
+				for (size_type i = oldSize; i < a_count; ++i)
+				{
 					new(std::addressof(_data->entries[i])) value_type{ a_value };
 				}
 			}
@@ -394,9 +401,12 @@ namespace RE
 		size_type resize_impl(size_type a_newSize)
 		{
 			auto oldSize = size();
-			if (a_newSize == oldSize) {
+			if (a_newSize == oldSize)
+			{
 				return oldSize;
-			} else if (a_newSize == 0) {
+			}
+			else if (a_newSize == 0)
+			{
 				clear();
 				return oldSize;
 			}
@@ -404,14 +414,19 @@ namespace RE
 			auto newHead = malloc<Head>(sizeof(Head) + (sizeof(value_type) * a_newSize));
 			newHead->size = a_newSize;
 			auto newData = reinterpret_cast<Data*>(newHead + 1);
-			if (_data) {
+			if (_data)
+			{
 				size_type toCopy;
-				if (a_newSize < oldSize) {
-					for (size_type i = a_newSize; i < oldSize; ++i) {
+				if (a_newSize < oldSize)
+				{
+					for (size_type i = a_newSize; i < oldSize; ++i)
+					{
 						_data->entries[i].~value_type();
 					}
 					toCopy = a_newSize;
-				} else {
+				}
+				else
+				{
 					toCopy = oldSize;
 				}
 				std::memcpy(newData->entries, data(), toCopy * sizeof(size_type));

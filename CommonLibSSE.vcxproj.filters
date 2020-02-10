@@ -1147,6 +1147,15 @@
     <Filter Include="src\RE\Memory\IMemoryStoreBase\IMemoryStore">
       <UniqueIdentifier>{55dd25e6-cf7f-4d03-83bb-834cbce371e4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect">
+      <UniqueIdentifier>{95515fdb-6fda-4483-836f-384cc7e4edef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiProperty">
+      <UniqueIdentifier>{b94a61dd-ad36-4111-a758-2ccfe600a934}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight">
+      <UniqueIdentifier>{eca9f89b-195a-4904-a2b6-94a57f809d72}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\MenuControls.cpp">
@@ -1887,9 +1896,6 @@
     <ClCompile Include="src\RE\BSTaskPool.cpp">
       <Filter>src\RE\Misc</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BSTempEffect.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\ActiveEffect.cpp">
       <Filter>src\RE\FormComponents</Filter>
     </ClCompile>
@@ -1905,14 +1911,23 @@
     <ClCompile Include="src\RE\BGSEntryPointFunctionDataActivateChoice.cpp">
       <Filter>src\RE\FormComponents</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BSShaderProperty.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\TESPackage.cpp">
       <Filter>src\RE\FormComponents\TESForm</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\BGSEntryPointPerkEntry.cpp">
       <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BGSPerkEntry.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BipedAnim.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSTempEffect.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSShaderProperty.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiProperty</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -5515,6 +5530,30 @@
     </ClInclude>
     <ClInclude Include="include\RE\HeapBlockFreeHead.h">
       <Filter>include\RE\Memory\HeapBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESObjectLoadedEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESSwitchRaceCompleteEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESResetEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESTrackedStatsEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SummonPlacementEffect.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiLight.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiPointLight.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSValueNode.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BSNiNode</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
