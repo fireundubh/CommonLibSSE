@@ -1147,8 +1147,8 @@
     <Filter Include="src\RE\Memory\IMemoryStoreBase\IMemoryStore">
       <UniqueIdentifier>{55dd25e6-cf7f-4d03-83bb-834cbce371e4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect">
-      <UniqueIdentifier>{95515fdb-6fda-4483-836f-384cc7e4edef}</UniqueIdentifier>
+    <Filter Include="src\RE\FormComponents\TESForm\TESObject\TESBoundObject\TESObjectSTAT">
+      <UniqueIdentifier>{3d1aee06-b163-423c-abf8-e72dec1e9942}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiProperty">
       <UniqueIdentifier>{b94a61dd-ad36-4111-a758-2ccfe600a934}</UniqueIdentifier>
@@ -1851,14 +1851,14 @@
     <ClCompile Include="src\RE\IMemoryStore.cpp">
       <Filter>src\RE\Memory\IMemoryStoreBase\IMemoryStore</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\DialogueItem.cpp">
-      <Filter>src\RE\FormComponents</Filter>
+    <ClCompile Include="src\RE\TESObjectSTAT.cpp">
+      <Filter>src\RE\FormComponents\TESForm\TESObject\TESBoundObject\TESObjectSTAT</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\Effect.cpp">
-      <Filter>src\RE\FormComponents</Filter>
+    <ClCompile Include="src\RE\BGSSoundCategory.cpp">
+      <Filter>src\RE\FormComponents\TESForm</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\MagicTarget.cpp">
-      <Filter>src\RE\FormComponents</Filter>
+    <ClCompile Include="src\SKSE\CodeGenerator.cpp">
+      <Filter>src\SKSE</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\TESCondition.cpp">
       <Filter>src\RE\FormComponents</Filter>
@@ -5531,11 +5531,11 @@
     <ClInclude Include="include\RE\HeapBlockFreeHead.h">
       <Filter>include\RE\Memory\HeapBlock</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Events\TESObjectLoadedEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
+    <ClInclude Include="include\RE\ImpactResults.h">
+      <Filter>include\RE\FormComponents\Enums</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Events\TESSwitchRaceCompleteEvent.h">
-      <Filter>include\RE\Events\ScriptEvent</Filter>
+    <ClInclude Include="include\SKSE\CodeGenerator.h">
+      <Filter>include\SKSE</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Events\TESResetEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>

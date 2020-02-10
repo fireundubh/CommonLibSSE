@@ -745,6 +745,7 @@
 #include "RE/IMovementPlannerDirectControl.h"
 #include "RE/IMovementSelectIdle.h"
 #include "RE/IMovementState.h"
+#include "RE/ImpactResults.h"
 #include "RE/IngredientItem.h"
 #include "RE/INIPrefSettingCollection.h"
 #include "RE/INISettingCollection.h"

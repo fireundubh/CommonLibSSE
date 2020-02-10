@@ -169,7 +169,8 @@
     <ClCompile Include="src\RE\BGSColorForm.cpp" />
     <ClCompile Include="src\RE\BGSDecalManager.cpp" />
     <ClCompile Include="src\RE\BGSImpactManager.cpp" />
-    <ClCompile Include="src\RE\BGSStoryTeller.cpp" />
+   <ClCompile Include="src\RE\BGSSoundCategory.cpp" />
+     <ClCompile Include="src\RE\BGSStoryTeller.cpp" />
     <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp" />
     <ClCompile Include="src\RE\BSResource\BSSystemFile.cpp" />
     <ClCompile Include="src\RE\BSResource\Location.cpp" />
@@ -358,6 +359,7 @@
     <ClCompile Include="src\RE\GFxLoader.cpp" />
     <ClCompile Include="src\RE\TESHavokUtilities.cpp" />
     <ClCompile Include="src\RE\TESPackage.cpp" />
+    <ClCompile Include="src\RE\TESObjectSTAT.cpp" />
     <ClCompile Include="src\RE\UIBlurManager.cpp" />
     <ClCompile Include="src\RE\UserEvents.cpp" />
     <ClCompile Include="src\RE\Misc.cpp" />
@@ -410,6 +412,7 @@
     <ClCompile Include="src\RE\UIMessageQueue.cpp" />
     <ClCompile Include="src\RE\InterfaceStrings.cpp" />
     <ClCompile Include="src\SKSE\API.cpp" />
+    <ClCompile Include="src\SKSE\CodeGenerator.cpp" />
     <ClCompile Include="src\SKSE\Interfaces.cpp" />
     <ClCompile Include="src\SKSE\Logger.cpp" />
     <ClCompile Include="src\SKSE\RegistrationMap.cpp" />
@@ -545,6 +548,7 @@
     <ClInclude Include="include\RE\ImageSpaceModifierInstance.h" />
     <ClInclude Include="include\RE\ImageSpaceModifierInstanceDOF.h" />
     <ClInclude Include="include\RE\ImageSpaceModifierInstanceTemp.h" />
+    <ClInclude Include="include\RE\ImpactResults.h" />
     <ClInclude Include="include\RE\InteriorData.h" />
     <ClInclude Include="include\RE\LoadWaitSpinner.h" />
     <ClInclude Include="include\RE\MagicFavorites.h" />
@@ -1615,6 +1619,7 @@
     <ClInclude Include="include\RE\ValueModifierEffect.h" />
     <ClInclude Include="include\RE\WeatherType.h" />
     <ClInclude Include="include\RE\ZeroOverheadHeap.h" />
+    <ClInclude Include="include\SKSE\CodeGenerator.h" />
     <ClInclude Include="include\SKSE\Events.h" />
     <ClInclude Include="include\SKSE\Interfaces.h" />
     <ClInclude Include="include\SKSE\Logger.h" />
