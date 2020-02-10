@@ -1923,11 +1923,17 @@
     <ClCompile Include="src\RE\BipedAnim.cpp">
       <Filter>src\RE\FormComponents</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BSTempEffect.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\BSShaderProperty.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiProperty</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Effect.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\DialogueItem.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\MagicTarget.cpp">
+      <Filter>src\RE\FormComponents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -5554,6 +5560,12 @@
     </ClInclude>
     <ClInclude Include="include\RE\BSValueNode.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BSNiNode</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESObjectLoadedEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\TESSwitchRaceCompleteEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

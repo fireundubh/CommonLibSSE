@@ -169,8 +169,8 @@
     <ClCompile Include="src\RE\BGSColorForm.cpp" />
     <ClCompile Include="src\RE\BGSDecalManager.cpp" />
     <ClCompile Include="src\RE\BGSImpactManager.cpp" />
-   <ClCompile Include="src\RE\BGSSoundCategory.cpp" />
-     <ClCompile Include="src\RE\BGSStoryTeller.cpp" />
+    <ClCompile Include="src\RE\BGSSoundCategory.cpp" />
+    <ClCompile Include="src\RE\BGSStoryTeller.cpp" />
     <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp" />
     <ClCompile Include="src\RE\BSResource\BSSystemFile.cpp" />
     <ClCompile Include="src\RE\BSResource\Location.cpp" />
@@ -184,7 +184,6 @@
     <ClCompile Include="src\RE\BSShaderProperty.cpp" />
     <ClCompile Include="src\RE\BSVisit.cpp" />
     <ClCompile Include="src\RE\BSTaskPool.cpp" />
-    <ClCompile Include="src\RE\BSTempEffect.cpp" />
     <ClCompile Include="src\RE\BSXFlags.cpp" />
     <ClCompile Include="src\RE\Events\TESHitEvent.cpp" />
     <ClCompile Include="src\RE\ExtraPoison.cpp" />
