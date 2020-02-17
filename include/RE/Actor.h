@@ -33,6 +33,7 @@ namespace RE
 	class bhkCharacterMoveFinishEvent;
 	class BipedAnim;
 	class BSTransformDeltaEvent;
+	class CombatController;
 	class CombatGroup;
 	class ExtraDataList;
 	class InventoryEntryData;
