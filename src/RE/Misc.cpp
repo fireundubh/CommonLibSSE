@@ -84,12 +84,4 @@ namespace RE
 		return func();
 	}
 
-
-	void ShakeCamera(float a_strength, const NiPoint3& a_pos, float a_duration)
-	{
-		using func_t = decltype(&ShakeCamera);
-		REL::Offset<func_t> func(Offset::ShakeCamera);
-		return func(a_strength, a_pos, a_duration);
-	}
-
 }

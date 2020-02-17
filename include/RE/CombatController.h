@@ -5,17 +5,17 @@
 #include "RE/CombatGroup.h"
 #include "RE/CombatTargetSelectorStandard.h"
 #include "RE/CombatAreaStandard.h"
+#include "RE/CombatControllerData08.h"
+#include "RE/TESCombatStyle.h"
+
 
 namespace RE
 {
-    class CombatHandler
+    class CombatController
     {
     public:
 
-        struct Data08
-        {
-
-        };
+        typedef CombatControllerData08 Data08;
 
         struct Data10
         {
@@ -32,14 +32,13 @@ namespace RE
 
         };
 
-        virtual ~CombatHandler();	// 00
 
         // members
         CombatGroup*                    combatGroup;            // 00
         Data08*                         data08;                 // 08
         Data10*                         data10;                 // 10    
         Data18*                         data18;                 // 18
-        Data20*                         unk20;                  // 20
+        Data20*                         data20;                 // 20
         ActorHandle                     unk28;                  // 28
         ActorHandle                     unk2C;                  // 2C
         UInt32                          unk30;                  // 30
@@ -69,7 +68,6 @@ namespace RE
         UInt64                          unkD0;                  // D0
 
     };
-    static_assert(offsetof(CombatHandler, unkD0) == 0xD0);
-    STATIC_ASSERT(sizeof(CombatHandler) == 0xD8);
+    STATIC_ASSERT(sizeof(CombatController) == 0xD8);
 }
 

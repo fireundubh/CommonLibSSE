@@ -16,5 +16,4 @@ namespace RE
 	bool		LookupReferenceByHandle(const RefHandle& a_handle, NiPointer<TESObjectREFR>& a_refrOut);
 	void		PlaySound(const char* a_editorID);
 	void		func2E9950(); //FEC - Frame Hook
-	void		ShakeCamera(float a_strength, const NiPoint3& a_pos, float a_duration);
 }

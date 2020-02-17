@@ -480,8 +480,8 @@ namespace RE
 		virtual bool							ShouldRespondToActorCollision(const MovementMessageActorCollision& a_msg, const ActorHandlePtr& a_target);																										// 126
 		virtual float							CheckClampDamageModifier(ActorValue a_av, float a_delta);																																						// 127
 
-		static NiPointer<Actor>	LookupByHandle(RefHandle a_refHandle);
-		static bool				LookupByHandle(RefHandle a_refHandle, NiPointer<Actor>& a_refrOut);
+		static NiPointer<Actor>		LookupByHandle(RefHandle a_refHandle);
+		static bool					LookupByHandle(RefHandle a_refHandle, NiPointer<Actor>& a_refrOut);
 
 		bool						AddSpell(SpellItem* a_spell);
 		void						AllowBleedoutDialogue(bool a_canTalk);
@@ -569,7 +569,7 @@ namespace RE
 		ActorMover*								actorMover;							// 140
 		BSTSmartPointer<MovementControllerNPC>	movementController;					// 148
 		void*									unk150;								// 150
-		CombatHandler*							unk158;								// 158
+		CombatController*						combatController;					// 158
 		TESFaction*								vendorFaction;						// 160
 		AITimeStamp								calculateVendorFactionTimer;		// 168
 		UInt32									unk16C;								// 16C

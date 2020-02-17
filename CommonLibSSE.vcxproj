@@ -513,8 +513,8 @@
     <ClInclude Include="include\RE\CombatAreaRadius.h" />
     <ClInclude Include="include\RE\CombatAreaStandard.h" />
     <ClInclude Include="include\RE\CombatGroup.h" />
-    <ClInclude Include="include\RE\CombatHandler.h" />
-    <ClInclude Include="include\RE\CombatHandlerData08.h" />
+    <ClInclude Include="include\RE\CombatController.h" />
+    <ClInclude Include="include\RE\CombatControllerData08.h" />
     <ClInclude Include="include\RE\CombatManager.h" />
     <ClInclude Include="include\RE\CombatObject.h" />
     <ClInclude Include="include\RE\CombatTargetSelector.h" />

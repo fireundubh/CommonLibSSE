@@ -31,6 +31,7 @@ namespace RE
         UInt32                          combatCount;    // 5C
         UInt32                          groupCount;     // 60
         UInt32                          unk64;          // 64
+
 	};
 	STATIC_ASSERT(sizeof(CombatManager) == 0x68);
 }

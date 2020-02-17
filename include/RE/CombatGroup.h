@@ -54,15 +54,13 @@ namespace RE
         struct Data120
         {
             NiPoint3    unk00;  // 00
-            UInt32      unk04;  // 04
+            UInt32      unk0C;  // 0C
             TESForm*    unk10;  // 10
             float       unk18;  // 18
             float       unk20;  // 1C
         };	
         STATIC_ASSERT(sizeof(Data120) == 0x20);
         
-
-        virtual ~CombatGroup();	                                // 00
 
 		// members
         UInt16                          index;                  // 000
@@ -106,6 +104,5 @@ namespace RE
         BSReadWriteLock                 unk160;                 // 160
 
 	};
-    static_assert(offsetof(CombatGroup, unk160) == 0x160);
     STATIC_ASSERT(sizeof(CombatGroup) == 0x168);
 }

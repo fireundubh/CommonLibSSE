@@ -1,12 +1,13 @@
 #pragma once
 
 #include "RE/CombatObject.h"
-#include "RE/CombatHandler.h"
+#include "RE/CombatController.h"
 
 namespace RE
 {
 	class BGSLoadGameBuffer;
 	class BGSSaveGameBuffer;
+	class CombatController;
 	
 	class CombatArea : public CombatObject
 	{
@@ -29,11 +30,11 @@ namespace RE
 
 
 		//members
-		CombatHandler*	unk10;	// 10
-		UInt64			unk18;	// 18
-		UInt64			unk20;	// 20
-		UInt32			unk28;	// 28
-		UInt16			unk2C;	// 2C
+		CombatController*	unk10;	// 10
+		UInt64				unk18;	// 18
+		UInt64				unk20;	// 20
+		UInt32				unk28;	// 28
+		UInt16				unk2C;	// 2C
 
 	};
 	STATIC_ASSERT(sizeof(CombatArea) == 0x30);
