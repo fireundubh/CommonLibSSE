@@ -1156,6 +1156,24 @@
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight">
       <UniqueIdentifier>{eca9f89b-195a-4904-a2b6-94a57f809d72}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry">
+      <UniqueIdentifier>{f1329bd2-908a-4b7c-ae19-fe31bfe3f21c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\CombatObject">
+      <UniqueIdentifier>{8075b568-cc30-45c2-9afa-0947d9f6bb4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea">
+      <UniqueIdentifier>{d6978f53-0084-4ecc-8045-eb4ba5653f64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea\CombatAreaRadius">
+      <UniqueIdentifier>{2ef63c4e-1f8f-41dd-a181-63f19ad18913}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector">
+      <UniqueIdentifier>{35f4636c-edf4-4c47-8011-cefb73c83f38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\Combat">
+      <UniqueIdentifier>{077391e2-908a-47d7-bab7-40433085dec2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\MenuControls.cpp">
@@ -1934,6 +1952,9 @@
     </ClCompile>
     <ClCompile Include="src\RE\MagicTarget.cpp">
       <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSGeometry.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -5566,6 +5587,36 @@
     </ClInclude>
     <ClInclude Include="include\RE\Events\TESSwitchRaceCompleteEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatManager.h">
+      <Filter>include\RE\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatObject.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatArea.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatAreaRadius.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea\CombatAreaRadius</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatAreaStandard.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea\CombatAreaRadius</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatTargetSelector.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatTargetSelectorStandard.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatHandler.h">
+      <Filter>include\RE\Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatGroup.h">
+      <Filter>include\RE\Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatHandlerData08.h">
+      <Filter>include\RE\Combat</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

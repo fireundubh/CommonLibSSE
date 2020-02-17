@@ -141,4 +141,30 @@ namespace RE
 		cross.Unitize();
 		return cross;
 	}
+
+
+	float NiPoint3::GetArcTangent() const
+	{
+		float angle;
+		if (y == 0.0) {
+			if (x > 0.0) {
+				angle = 1.5707964;
+				goto LABEL_9;
+			}
+			angle = 4.712389;
+		}
+		else {
+			angle = atanf(x/y);
+			if (y < 0.0) {
+				angle = angle + 3.1415927;
+			}
+		}
+		for (; angle < 0.0; angle = angle + 6.2831855)
+			;
+	LABEL_9:
+		while (angle > 6.2831855) {
+			angle = angle + -6.2831855;
+		}
+		return angle;
+	}
 }

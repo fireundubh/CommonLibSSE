@@ -171,6 +171,7 @@
     <ClCompile Include="src\RE\BGSImpactManager.cpp" />
     <ClCompile Include="src\RE\BGSSoundCategory.cpp" />
     <ClCompile Include="src\RE\BGSStoryTeller.cpp" />
+    <ClCompile Include="src\RE\BSGeometry.cpp" />
     <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp" />
     <ClCompile Include="src\RE\BSResource\BSSystemFile.cpp" />
     <ClCompile Include="src\RE\BSResource\Location.cpp" />
@@ -506,6 +507,16 @@
     <ClInclude Include="include\RE\BSXFlags.h" />
     <ClInclude Include="include\RE\CFilter.h" />
     <ClInclude Include="include\RE\CollisionLayers.h" />
+    <ClInclude Include="include\RE\CombatArea.h" />
+    <ClInclude Include="include\RE\CombatAreaRadius.h" />
+    <ClInclude Include="include\RE\CombatAreaStandard.h" />
+    <ClInclude Include="include\RE\CombatGroup.h" />
+    <ClInclude Include="include\RE\CombatHandler.h" />
+    <ClInclude Include="include\RE\CombatHandlerData08.h" />
+    <ClInclude Include="include\RE\CombatManager.h" />
+    <ClInclude Include="include\RE\CombatObject.h" />
+    <ClInclude Include="include\RE\CombatTargetSelector.h" />
+    <ClInclude Include="include\RE\CombatTargetSelectorStandard.h" />
     <ClInclude Include="include\RE\CompactingStore\Store.h" />
     <ClInclude Include="include\RE\ContainerItemExtra.h" />
     <ClInclude Include="include\RE\Crime.h" />

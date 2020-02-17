@@ -185,7 +185,15 @@ namespace RE
 			kNone = 0,
 			kHealthTutorialShown = 1 << 3,
 			kMagickaTutorialShown = 1 << 4,
-			kStaminaTutorialShown = 1 << 5
+			kStaminaTutorialShown = 1 << 5,
+			kJailTutorialShown = 1 << 6
+		};
+
+
+		enum class FlagBDD : UInt8
+		{
+			kNone = 0,
+			kIsSunGazing = 1 << 1
 		};
 
 
@@ -413,8 +421,8 @@ namespace RE
 		AITimeStamp												cachedVelocityTimeStamp;						// AD0
 		float													telekinesisDistance;							// AD4
 		float													commandTimer;									// AD8
-		UInt32													unkADC;											// ADC
-		TESImageSpaceModifier*									unkAE0;											// AE0
+		float													sunGazeTimer;									// ADC
+		TESImageSpaceModifier*									sunGazeImageSpaceModifier;						// AE0
 		SInt32													unkAE8;											// AE8
 		UInt32													unkAEC;											// AEC
 		UInt32													unkAF0;											// AF0
@@ -450,7 +458,7 @@ namespace RE
 		UInt8													unkBDA;											// BDA
 		FlagBDB													unkBDB;											// BDB
 		FlagBDC													unkBDC;											// BDC
-		UInt8													unkBDD;											// BDD
+		FlagBDD													unkBDD;											// BDD
 		UInt16													padBDE;											// BDE
 	};
 	STATIC_ASSERT(sizeof(PlayerCharacter) == 0xBE0);

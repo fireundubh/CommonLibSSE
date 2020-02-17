@@ -139,9 +139,10 @@ namespace RE
 		// override (BGSKeywordForm)
 		virtual bool		HasKeyword(const BGSKeyword* a_keyword) const override;	// 04
 
-		ActorValue	GetMagickSkill() const;
-		UInt32		GetMinimumSkillLevel() const;
-		bool		HasArchetype(Archetype a_type) const;
+		ActorValue		GetMagickSkill() const;
+		UInt32			GetMinimumSkillLevel() const;
+		bool			HasArchetype(Archetype a_type) const;
+		BSFixedString	GetArchetypeAsString() const;
 
 
 		// members

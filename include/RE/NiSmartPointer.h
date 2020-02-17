@@ -250,10 +250,4 @@ namespace RE
 			return CRC32Hash<std::uintptr_t>()((std::uintptr_t)a_key.get());
 		}
 	};
-
-	template <class T_to, class T_from>
-	T_to* niptr_cast(const T_from& src)
-	{
-		return static_cast <T_to*>(src.get());
-	}
 }

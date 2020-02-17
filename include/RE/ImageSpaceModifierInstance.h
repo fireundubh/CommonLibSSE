@@ -25,11 +25,12 @@ namespace RE
 
 
 		// members
-		float					strength;	// 00
-		UInt32					pad04;		// 04
-		NiPointer<NiAVObject>	target;		// 08
-		float					age;		// 10
-		UInt32					flags;		// 14
+		UInt8					pad10;		// 10
+		float					strength;	// 14
+		NiPointer<NiAVObject>	target;		// 18
+		float					age;		// 20
+		UInt32					flags;		// 24
 	};
 	STATIC_ASSERT(sizeof(ImageSpaceModifierInstance) == 0x28);
+	static_assert(offsetof(ImageSpaceModifierInstance, strength) == 0x14);
 }

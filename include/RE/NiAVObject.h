@@ -5,6 +5,7 @@
 #include "RE/NiSmartPointer.h"
 #include "RE/NiTransform.h"
 #include "RE/NiColor.h"
+#include "RE/BSShaderMaterial.h"
 
 
 namespace RE
@@ -18,6 +19,7 @@ namespace RE
 	class NiNode;
 	class NiPoint3;
 	class TESObjectREFR;
+	class BSShaderTextureSet;
 
 
 	class NiUpdateData
@@ -115,12 +117,17 @@ namespace RE
 		virtual void			OnVisible(NiCullingProcess& a_process);																// 34 - { return; }
 
 		bool	GetAppCulled() const;
+		void	SetAppCulled(bool a_cull);
 		bool	SetMotionType(UInt32 a_motionType, bool a_arg2 = true, bool a_arg3 = false, bool a_allowActivate = true);
 		void	Update(NiUpdateData& a_data);
 		void	UpdateBodyTint(const NiColor& a_color);
 		void	UpdateHairColor(const NiColor& a_color);
 
-		TESObjectREFR* GetOwner();
+		TESObjectREFR*	GetOwner();
+		void			UpdateVisibility(bool a_visible);
+		void			UpdateMaterialAlpha(float a_alpha, bool a_skin);
+		bool			HasShaderType(BSShaderMaterial::Feature a_type);
+		BSGeometry*		GetFirstGeometryOfShaderType(BSShaderMaterial::Feature a_type);
 
 		// members
 		NiNode*							parent;				// 030

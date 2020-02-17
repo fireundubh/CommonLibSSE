@@ -21,6 +21,7 @@
 #include "RE/NiSmartPointer.h"
 #include "RE/TESNPC.h"
 #include "RE/TESObjectREFR.h"
+#include "RE/CombatHandler.h"
 
 
 namespace RE
@@ -568,7 +569,7 @@ namespace RE
 		ActorMover*								actorMover;							// 140
 		BSTSmartPointer<MovementControllerNPC>	movementController;					// 148
 		void*									unk150;								// 150
-		void*									unk158;								// 158
+		CombatHandler*							unk158;								// 158
 		TESFaction*								vendorFaction;						// 160
 		AITimeStamp								calculateVendorFactionTimer;		// 168
 		UInt32									unk16C;								// 16C

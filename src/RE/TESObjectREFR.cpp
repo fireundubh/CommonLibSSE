@@ -712,6 +712,22 @@ namespace RE
 	}
 
 
+	float TESObjectREFR::GetHeadingAngle(TESObjectREFR* a_ref)
+	{
+		auto dPos = a_ref->GetPosition() - GetPosition();
+		auto result = (dPos.GetArcTangent() - GetRotationZ()) * 57.295776;
+		if (result <= 180.0) {
+			if (result < -180.0) {
+				result = fmodf(result - -180.0, 360.0) + 180.0;
+			}
+		}
+		else {
+			result = fmodf(result - -180.0, 360.0) - 180.0;
+		}
+		return result;
+	}
+
+
 	void TESObjectREFR::MoveTo_Impl(const ObjectRefHandle& a_targetHandle, TESObjectCELL* a_targetCell, TESWorldSpace* a_selfWorldSpace, const NiPoint3& a_position, const NiPoint3& a_rotation)
 	{
 		using func_t = decltype(&TESObjectREFR::MoveTo_Impl);

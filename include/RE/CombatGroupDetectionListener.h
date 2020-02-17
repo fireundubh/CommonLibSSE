@@ -1,7 +1,7 @@
 #pragma once
 
 #include "RE/DetectionListener.h"
-
+#include "RE/CombatGroup.h"
 
 namespace RE
 {
@@ -21,7 +21,7 @@ namespace RE
 
 
 		// members
-		void* unk10;	// 10
+		CombatGroup* combatGroup;	// 10
 	};
 	STATIC_ASSERT(sizeof(CombatGroupDetectionListener) == 0x18);
 }

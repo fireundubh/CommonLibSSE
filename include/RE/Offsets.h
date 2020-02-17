@@ -1363,5 +1363,7 @@ namespace RE
 		constexpr std::uintptr_t TlsIndex = 0x03497408;					// 1_5_97
 		// DirectSig: 48 83 EC 18 F3 41 0F 10 60 04
 		constexpr std::uintptr_t WorldPtToScreenPt3 = 0x00C66580;		// 1_5_97
+		//
+		constexpr std::uintptr_t ShakeCamera = 0x004F5420;              // 1_5_97
 	}
 }
