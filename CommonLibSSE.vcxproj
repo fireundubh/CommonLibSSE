@@ -199,6 +199,7 @@
     <ClCompile Include="src\RE\IMemoryStore.cpp" />
     <ClCompile Include="src\RE\MagicFavorites.cpp" />
     <ClCompile Include="src\RE\Main.cpp" />
+    <ClCompile Include="src\RE\NiCamera.cpp" />
     <ClCompile Include="src\RE\NiInterpolator.cpp" />
     <ClCompile Include="src\RE\NiBooleanExtraData.cpp" />
     <ClCompile Include="src\RE\ProcessLists.cpp" />
@@ -473,6 +474,7 @@
     <ClInclude Include="include\RE\BSDynamicTriShape.h" />
     <ClInclude Include="include\RE\BSEffectShaderProperty.h" />
     <ClInclude Include="include\RE\BSMultiBoundNode.h" />
+    <ClInclude Include="include\RE\BSMultiIndexTriShape.h" />
     <ClInclude Include="include\RE\BSNiNode.h" />
     <ClInclude Include="include\RE\BSParticleShaderGeometry.h" />
     <ClInclude Include="include\RE\BSParticleShaderProperty.h" />

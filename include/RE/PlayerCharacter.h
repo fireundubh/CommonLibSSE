@@ -186,7 +186,7 @@ namespace RE
 			kHealthTutorialShown = 1 << 3,
 			kMagickaTutorialShown = 1 << 4,
 			kStaminaTutorialShown = 1 << 5,
-			kJailTutorialShown = 1 << 6
+			kGoToJailQueued = 1 << 6
 		};
 
 

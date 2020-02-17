@@ -776,7 +776,7 @@ namespace RE
 			constexpr std::uintptr_t SendContainerChangedEvent = 0x001ECE20;	// 1_5_97
 			// IndirectSig: E8 ? ? ? ? 80 BC 24 ? ? ? ? ? 74 0D
 			constexpr std::uintptr_t SetUniqueID = 0x001ECC60;					// 1_5_97
-			// IndirectSig: 
+			// IndirectSig:
 			constexpr std::uintptr_t TransferItemUID = 0x001ECE20;				// 1_5_97
 		}
 
@@ -935,6 +935,13 @@ namespace RE
 			constexpr std::uintptr_t Update = 0x00C56B50;			// 1_5_97
 		}
 
+		
+		namespace NiCamera
+		{
+			// DirectSig: 48 83 EC 18 F3 41 0F 10 60 04
+			constexpr std::uintptr_t WorldPtToScreenPt3 = 0x00C66580;		// 1_5_97
+		}
+
 
 		namespace NiFloatExtraData
 		{
@@ -946,7 +953,6 @@ namespace RE
 		{
 			constexpr std::uintptr_t Vtbl = 0x0176BF00;	// 1_5_97
 		}
-
 
 		namespace NiMemManager
 		{
@@ -1361,8 +1367,6 @@ namespace RE
 		constexpr std::uintptr_t RTDynamicCast = 0x0134BDB0;			// 1_5_97
 		//
 		constexpr std::uintptr_t TlsIndex = 0x03497408;					// 1_5_97
-		// DirectSig: 48 83 EC 18 F3 41 0F 10 60 04
-		constexpr std::uintptr_t WorldPtToScreenPt3 = 0x00C66580;		// 1_5_97
 		//
 		constexpr std::uintptr_t ShakeCamera = 0x004F5420;              // 1_5_97
 	}

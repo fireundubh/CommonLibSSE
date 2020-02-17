@@ -25,7 +25,7 @@ namespace RE
 
 
 		// members
-		UInt8					pad10;		// 10
+		UInt32					unk10;		// 10
 		float					strength;	// 14
 		NiPointer<NiAVObject>	target;		// 18
 		float					age;		// 20
