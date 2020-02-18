@@ -597,6 +597,7 @@
     <ClInclude Include="include\RE\OwnedCameraEffectController.h" />
     <ClInclude Include="include\RE\OwnedController.h" />
     <ClInclude Include="include\RE\PCGamepadType.h" />
+    <ClInclude Include="include\RE\POS_DATA.h" />
     <ClInclude Include="include\RE\ProcessLists.h" />
     <ClInclude Include="include\RE\BGSApparatus.h" />
     <ClInclude Include="include\RE\BGSArtObject.h" />

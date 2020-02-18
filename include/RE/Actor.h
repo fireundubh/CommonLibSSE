@@ -21,7 +21,7 @@
 #include "RE/NiSmartPointer.h"
 #include "RE/TESNPC.h"
 #include "RE/TESObjectREFR.h"
-#include "RE/CombatHandler.h"
+#include "RE/CombatController.h"
 
 
 namespace RE

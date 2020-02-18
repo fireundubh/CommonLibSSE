@@ -1177,6 +1177,12 @@
     <Filter Include="include\RE\Combat">
       <UniqueIdentifier>{077391e2-908a-47d7-bab7-40433085dec2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\RE\Combat\CombatGroup">
+      <UniqueIdentifier>{b050b399-9fff-443b-a811-68cbd5f4f353}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\Combat\CombatController">
+      <UniqueIdentifier>{bff9cdd0-36f6-433d-85b2-4719d193b232}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\MenuControls.cpp">
@@ -5597,9 +5603,6 @@
     <ClInclude Include="include\RE\Events\TESSwitchRaceCompleteEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\CombatManager.h">
-      <Filter>include\RE\Misc</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\CombatObject.h">
       <Filter>include\RE\NetImmerse\NiRefObject\CombatObject</Filter>
     </ClInclude>
@@ -5619,13 +5622,19 @@
       <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\CombatGroup.h">
-      <Filter>include\RE\Combat</Filter>
+      <Filter>include\RE\Combat\CombatGroup</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\CombatController.h">
-      <Filter>include\RE\Combat</Filter>
+      <Filter>include\RE\Combat\CombatController</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\CombatControllerData08.h">
+      <Filter>include\RE\Combat\CombatController</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatManager.h">
       <Filter>include\RE\Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\POS_DATA.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

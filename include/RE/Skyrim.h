@@ -340,7 +340,7 @@
 #include "RE/CombatAreaStandard.h"
 #include "RE/CombatGroup.h"
 #include "RE/CombatGroupDetectionListener.h"
-#include "RE/CombatHandler.h"
+#include "RE/CombatController.h"
 #include "RE/CombatManager.h"
 #include "RE/CombatObject.h"
 #include "RE/CombatTargetSelector.h"

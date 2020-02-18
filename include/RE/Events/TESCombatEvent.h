@@ -5,7 +5,7 @@
 
 namespace RE
 {
-	class TESObjectREFR;
+	class Actor;
 
 
 	enum class ACTOR_COMBAT_STATE : UInt32
@@ -19,8 +19,8 @@ namespace RE
 	struct TESCombatEvent
 	{
 		// members
-		NiPointer<TESObjectREFR>	actor;			// 00
-		NiPointer<TESObjectREFR>	targetActor;	// 08
+		NiPointer<Actor>			actor;			// 00
+		NiPointer<Actor>			targetActor;	// 08
 		ACTOR_COMBAT_STATE			state;			// 10
 		UInt32						pad14;			// 14
 	};
