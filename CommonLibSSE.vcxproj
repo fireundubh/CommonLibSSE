@@ -186,6 +186,7 @@
     <ClCompile Include="src\RE\BSVisit.cpp" />
     <ClCompile Include="src\RE\BSTaskPool.cpp" />
     <ClCompile Include="src\RE\BSXFlags.cpp" />
+    <ClCompile Include="src\RE\CombatManager.cpp" />
     <ClCompile Include="src\RE\Events\TESHitEvent.cpp" />
     <ClCompile Include="src\RE\ExtraPoison.cpp" />
     <ClCompile Include="src\RE\bhkCharProxyController.cpp" />
@@ -435,6 +436,7 @@
     <ClInclude Include="include\RE\ActorValueInfo.h" />
     <ClInclude Include="include\RE\ActorValueMeter.h" />
     <ClInclude Include="include\RE\AddCallbackVisitor.h" />
+    <ClInclude Include="include\RE\AITimer.h" />
     <ClInclude Include="include\RE\AITimeStamp.h" />
     <ClInclude Include="include\RE\AlchemyItem.h" />
     <ClInclude Include="include\RE\AlchemyMenu.h" />

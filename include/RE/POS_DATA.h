@@ -8,8 +8,8 @@ namespace RE
 {
     struct POS_DATA
     {
-        NiPoint3        pos;                // 00
-        TESForm* cellOrWorldSpace;   // 0C
+        NiPoint3    pos;                // 00
+        TESForm*    cellOrWorldSpace;   // 0C
     };
     STATIC_ASSERT(sizeof(POS_DATA) == 0x18);
 }

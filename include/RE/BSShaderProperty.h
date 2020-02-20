@@ -10,7 +10,6 @@ namespace RE
 	class BSShaderMaterial;
 	class NiSourceTexture;
 
-
 	class BSEffectShaderData : public BSIntrusiveRefCounted
 	{
 	public:
@@ -165,12 +164,11 @@ namespace RE
 
 
 		void	InitializeMaterial(BSGeometry* a_geometry);
-		void	InitializeShader(BSGeometry* a_geometry);
-		void	SetMaterial(BSShaderMaterial* a_otherMaterial, bool a_unk1); // unk1 usually 1
-		void	SetFlags(EShaderPropertyFlag a_flag, UInt8 a_toggle);
+		UInt32	InitializeShader(BSGeometry* a_geometry);
+		UInt32	SetMaterial(BSShaderMaterial* a_material, bool a_unk1);
+		UInt64	SetFlags(EShaderPropertyFlag a_flag, UInt8 a_toggle);
 		bool	InvalidateMaterial();
-		void	InvalidateTextures(UInt32 unk1); // unk1 usually 0, called after material Releases textures
-		void    SetBSEffectShaderData(BSEffectShaderData* a_data);
+		void	InvalidateTextures(UInt32 unk1);
 
 
 		// members

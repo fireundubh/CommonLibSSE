@@ -121,9 +121,9 @@ namespace RE
 		{
 			UInt64					unk00;	// 00
 			UInt64					unk08;	// 08
-			NiPointer<NiRefObject>	unk10;	// 10
-			NiPointer<NiRefObject>	unk18;	// 18
-			NiPointer<NiRefObject>	unk20;	// 20
+			NiPointer<NiAVObject>	unk10;	// 10
+			NiPointer<NiAVObject>	unk18;	// 18
+			NiPointer<NiAVObject>	unk20;	// 20
 			UInt64					unk28;	// 28
 			UInt64					unk30;	// 30
 			UInt64					unk38;	// 38

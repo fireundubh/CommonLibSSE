@@ -13,6 +13,15 @@ namespace RE
     {
     public:
 
+        struct Data80
+        {
+            POS_DATA    unk00;  // 10
+            AITimeStamp unk18;  // 18
+            float       unk20;  // 20
+        };
+        STATIC_ASSERT(sizeof(Data80) == 0x20);
+        
+
         // members
         float               unk00;                          // 00
         bool                unk04;                          // 04
@@ -25,37 +34,30 @@ namespace RE
         UInt8               unk0B;                          // 0B
         UInt32              unk0C;                          // 0C
         NiPoint3            unk10;                          // 10
-        float               activeCombatantLastSeenTimer;   // 1C
-        float               unk20;                          // 20
-        float               unk24;                          // 24
-        float               unk28;                          // 28
-        float               timer2C;                        // 2C
-        UInt32              unk30;                          // 30
-        float               timer34;                        // 34
-        UInt32              tauntTimer;                     // 38
-        float               timer3C;                        // 3C
-        UInt32              unk40;                          // 40
-        float               timer44;                        // 44
-        UInt32              unk48;                          // 48
+        AITimeStamp         activeCombatantLastSeenTimer;   // 1C
+        AITimeStamp         unk20;                          // 20
+        AITimeStamp         unk24;                          // 24
+        AITimeStamp         unk28;                          // 28
+        AITimer             unk2C;                          // 2C
+        AITimer             tauntTimer;                     // 34
+        AITimer             unk3C;                          // 3C
+        AITimer             unk44;                          // 44
         UInt32              unk4C;                          // 4C
         BSTArray<void*>     unk50;                          // 50
-        float               unk68;                          // 68
+        AITimeStamp         unk68;                          // 68
         UInt8               unk6C;                          // 6C
         UInt8               unk6D;                          // 6D
         float               confidence;                     // 70     
         float               unk74;                          // 74
         float               unk78;                          // 78
         UInt32              unk7C;                          // 7C
-        BSTArray<void*>     unk80;                          // 80
+        BSTArray<Data80>    unk80;                          // 80
         CombatController*   unk98;                          // 98
         UInt8               unkA0;                          // A0
-        float               timerA4;                        // A4
-        UInt32              unkA8;                          // A8
-        float               timerAC;                        // AC
-        UInt32              unkB0;                          // B0
-        float               timerB4;                        // B4
-        float               unkB8;                          // B8
+        AITimer             unkA4;                          // A4
+        AITimer             unkAC;                          // AC
+        AITimer             unkB4;                          // B4
 
-    };
+    };    
     STATIC_ASSERT(sizeof(CombatControllerData08) == 0xC0);
 }

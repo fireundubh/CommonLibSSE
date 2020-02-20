@@ -13,7 +13,7 @@ namespace RE
 	}
 	
 	
-	void BSShaderProperty::InitializeShader(BSGeometry* a_geometry)
+	UInt32 BSShaderProperty::InitializeShader(BSGeometry* a_geometry)
 	{
 		using func_t = decltype(&BSShaderProperty::InitializeShader);
 		REL::Offset<func_t> func(Offset::BSShaderProperty::InitializeShader);
@@ -21,15 +21,15 @@ namespace RE
 	}
 
 
-	void BSShaderProperty::SetMaterial(BSShaderMaterial* a_otherMaterial, bool a_unk1)
+	UInt32 BSShaderProperty::SetMaterial(BSShaderMaterial* a_material, bool a_unk1)
 	{
 		using func_t = decltype(&BSShaderProperty::SetMaterial);
 		REL::Offset<func_t> func(Offset::BSShaderProperty::SetMaterial);
-		return func(this, a_otherMaterial, a_unk1);			
+		return func(this, a_material, a_unk1);			
 	}
 
 
-	void BSShaderProperty::SetFlags(EShaderPropertyFlag a_flag, UInt8 a_toggle)
+	UInt64 BSShaderProperty::SetFlags(EShaderPropertyFlag a_flag, UInt8 a_toggle)
 	{
 		using func_t = decltype(&BSShaderProperty::SetFlags);
 		REL::Offset<func_t> func(Offset::BSShaderProperty::SetFlags);
@@ -52,11 +52,4 @@ namespace RE
 		return func(this, unk1);
 	}
 
-
-	void BSShaderProperty::SetBSEffectShaderData(BSEffectShaderData * a_data)
-	{
-		using func_t = decltype(&BSShaderProperty::SetBSEffectShaderData);
-		REL::Offset<func_t> func(Offset::BSShaderProperty::SetBSEffectShaderData);
-		return func(this, a_data);
-	}
 }

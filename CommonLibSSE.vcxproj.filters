@@ -1183,6 +1183,9 @@
     <Filter Include="include\RE\Combat\CombatController">
       <UniqueIdentifier>{bff9cdd0-36f6-433d-85b2-4719d193b232}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\RE\Combat">
+      <UniqueIdentifier>{3a53f4bd-df25-437e-ae27-146d827aaa99}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\MenuControls.cpp">
@@ -1967,6 +1970,9 @@
     </ClCompile>
     <ClCompile Include="src\RE\BSGeometry.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\CombatManager.cpp">
+      <Filter>src\RE\Combat</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -5634,6 +5640,9 @@
       <Filter>include\RE\Combat</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\POS_DATA.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\AITimer.h">
       <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
   </ItemGroup>

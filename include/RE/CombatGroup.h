@@ -1,5 +1,8 @@
 #pragma once
 
+
+#include "RE/AITimer.h"
+#include "RE/AITimeStamp.h"
 #include "RE/POS_DATA.h"
 #include "RE/BSPointerHandle.h"
 #include "RE/CombatGroupDetectionListener.h"
@@ -23,16 +26,15 @@ namespace RE
             POS_DATA    unk40;          // 40
             POS_DATA    unk58;          // 58
             POS_DATA    unk70;          // 70
-            float       unk88;          // 88
-            float       unk8C;          // 8C
-            float       unk90;          // 9C
-            float       unk94;          // 94
-            float       unk98;          // 98
-            float       unk9C;          // 9C
+            AITimeStamp unk88;          // 88
+            AITimeStamp unk8C;          // 8C
+            AITimeStamp unk90;          // 9C
+            AITimeStamp unk94;          // 94
+            AITimeStamp unk98;          // 98
+            AITimeStamp unk9C;          // 9C
             ActorHandle attackedMember; // A0
             UInt16      unkA4;          // A4 | target count
-            UInt8       unkA6;          // A6 | flags
-            UInt8       unkA7;          // A7
+            UInt16      unkA6;          // A6 | flags
         };
         STATIC_ASSERT(sizeof(TargetData) == 0xA8);
 
@@ -45,19 +47,12 @@ namespace RE
         };
         STATIC_ASSERT(sizeof(MemberData) == 0x0C);
 
-
-        struct Timers
-        {
-            float   aiTimer;    // 00
-            float   timer;      // 04
-        };
-        STATIC_ASSERT(sizeof(MemberData) == 0x0C);
-
-              
+             
         struct Data120
         {
             POS_DATA    unk00;  // 10
-            Timers      unk18;  // 18
+            AITimeStamp unk18;  // 18
+            float       unk20;  // 20
         };	
         STATIC_ASSERT(sizeof(Data120) == 0x20);
 
@@ -79,13 +74,13 @@ namespace RE
         BSTArray<TargetData>            targets;                        // 008
         BSTArray<MemberData>            members;                        // 020
         CombatGroupDetectionListener*   detectionListener;              // 038
-        UInt64                          unk40;                          // 040
-        UInt64                          unk48;                          // 048
-        Timers                          groupStrengthUpdateTimer;       // 050
-        Timers                          dialogues[11];                  // 058
-        Timers                          unkB0;                          // 0B0
-        Timers                          musicThreatRatioTimer;          // 0B8
-        Timers                          unkC0;                          // 0C0
+        AITimer                         unk40;                          // 040
+        AITimer                         unk48;                          // 048
+        AITimer                         groupStrengthUpdateTimer;       // 050
+        AITimer                         dialogues[11];                  // 058
+        AITimer                         unkB0;                          // 0B0
+        AITimer                         musicThreatRatioTimer;          // 0B8
+        AITimer                         unkC0;                          // 0C0
         float                           unkC8;                          // 0C8
         float                           unkCC;                          // 0CC
         float                           unkD0;                          // 0D0
@@ -93,11 +88,9 @@ namespace RE
         UInt32                          unkD8;                          // 0D8
         UInt32                          unkDC;                          // 0DC
         BSPathingLOSGridMap*            gridMap;                        // 0E0
-        UInt32                          unkE8;                          // 0E8
-        float                           unkEC;                          // 0EC
-        UInt32                          unkF0;                          // 0F0
-        float                           searchAreaUpdateTimer;          // 0F4
-        float                           unkF8;                          // 0F8
+        AITimer                         unkE8;                          // 0E8
+        AITimer                         searchAreaUpdateTimer;          // 0F0
+        AITimeStamp                     unkF8;                          // 0F8
         ActorHandle                     unkFC;                          // 0FC
         POS_DATA                        unk100;                         // 100
         float                           searchRadius;                   // 118

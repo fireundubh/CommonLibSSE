@@ -13,6 +13,7 @@
 #include "RE/BSTList.h"
 #include "RE/BSTSmartPointer.h"
 #include "RE/BSTTuple.h"
+#include "RE/CombatController.h"
 #include "RE/DetectionPriorities.h"
 #include "RE/FormTypes.h"
 #include "RE/IPostAnimationChannelUpdateFunctor.h"
@@ -21,7 +22,6 @@
 #include "RE/NiSmartPointer.h"
 #include "RE/TESNPC.h"
 #include "RE/TESObjectREFR.h"
-#include "RE/CombatController.h"
 
 
 namespace RE

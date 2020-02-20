@@ -31,10 +31,11 @@ namespace RE
 
 		//members
 		CombatController*	unk10;	// 10
-		UInt64				unk18;	// 18
-		UInt64				unk20;	// 20
+		TESForm*			unk18;	// 18
+		AITimer				unk20;	// 20
 		UInt32				unk28;	// 28
-		UInt16				unk2C;	// 2C
+		UInt8				unk2C;	// 2C
+		UInt8				unk2D;	// 2D
 
 	};
 	STATIC_ASSERT(sizeof(CombatArea) == 0x30);

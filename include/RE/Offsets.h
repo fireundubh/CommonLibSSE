@@ -408,6 +408,13 @@ namespace RE
 		}
 
 
+		namespace CombatManager
+		{
+			//
+			constexpr std::uintptr_t Singleton = 0x02F4AD88;	// 1_5_97
+		}
+
+
 		namespace Console
 		{
 			// 48 8D 0D ? ? ? ? E8 ? ? ? ? 83 3D ? ? ? ? ? 74 13 48 8D 15 ? ? ? ? 48 8D 0D ? ? ? ? E8 ? ? ? ? 45 33 C9 45 33 C0 BA ? ? ? ? 48 8D 0D ? ? ? ? E8 ? ? ? ? 48 89 44 24 ?
@@ -1052,10 +1059,9 @@ namespace RE
 			// 4C 8B F9 48 89 0D ? ? ? ?
 			constexpr std::uintptr_t Singleton = 0x01EBEAD0;					// 1_5_97
 			// IndirectSig: E8 ? ? ? ? 48 8B 13 48 8B CB FF 92 ? ? ? ? 33 D2
-			constexpr std::uintptr_t StopCombatAndAlarmOnActor = 0x006D9490;	// 1_5_97
-			
+			constexpr std::uintptr_t StopCombatAndAlarmOnActor = 0x006D9490;	// 1_5_97			
 			//
-			constexpr std::uintptr_t StopArtObject = 0x006DDA30;		// 1_5_97
+			constexpr std::uintptr_t StopArtObject = 0x006DDA30;				// 1_5_97
 		}
 
 

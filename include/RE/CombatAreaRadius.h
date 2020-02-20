@@ -29,8 +29,7 @@ namespace RE
 
 
 		//members
-		NiPoint3		pos;	// 30
-		TESObjectCELL*	cell;	// 40
+		POS_DATA		pos;	// 30
 		float			radius;	// 48
 
 	};
