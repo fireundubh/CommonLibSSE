@@ -503,6 +503,7 @@
     <ClInclude Include="include\RE\BSTempEffectSPG.h" />
     <ClInclude Include="include\RE\BSTempEffectWeaponBlood.h" />
     <ClInclude Include="include\RE\BSTimer.h" />
+    <ClInclude Include="include\RE\BSTPoint.h" />
     <ClInclude Include="include\RE\BSTPointerAndFlags.h" />
     <ClInclude Include="include\RE\BSTTuple.h" />
     <ClInclude Include="include\RE\BSUntypedPointerHandle.h" />

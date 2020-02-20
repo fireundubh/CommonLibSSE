@@ -5645,5 +5645,8 @@
     <ClInclude Include="include\RE\AITimer.h">
       <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\BSTPoint.h">
+      <Filter>include\RE\BSCore</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
