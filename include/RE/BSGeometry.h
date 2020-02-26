@@ -76,7 +76,6 @@ namespace RE
 		virtual BSSkinnedDecalTriShape*	AsSkinnedDecalTriShape();																					// 36 - { return 0; }
 		virtual void					Unk_37(void);																								// 37 - { return 0; }
 
-		void	MakeFaceTintable();
 		void	SetMaterialAlpha(float a_alpha, bool a_skin);
 		void	SetShaderType(BSGeometry* a_geometry);
 

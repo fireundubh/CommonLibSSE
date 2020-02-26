@@ -5639,14 +5639,14 @@
     <ClInclude Include="include\RE\CombatManager.h">
       <Filter>include\RE\Combat</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\POS_DATA.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\AITimer.h">
       <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSTPoint.h">
       <Filter>include\RE\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatLocation.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

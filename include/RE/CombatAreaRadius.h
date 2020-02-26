@@ -29,7 +29,7 @@ namespace RE
 
 
 		//members
-		POS_DATA		pos;	// 30
+		CombatLocation	pos;	// 30
 		float			radius;	// 48
 
 	};

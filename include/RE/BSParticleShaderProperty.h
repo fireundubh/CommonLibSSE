@@ -18,14 +18,14 @@ namespace RE
 		inline static const void* Ni_RTTI = NiRTTI_BSParticleShaderProperty;
 
 
-		virtual ~BSParticleShaderProperty();										// 00
+		virtual ~BSParticleShaderProperty();										        // 00
 
 		// override (BSShaderProperty)
-		virtual const NiRTTI*       GetRTTI() const override;						// 02
-		virtual void			    Unk_27(void) override;							// 27 - { particleShaderGeometry = newGeometry; }
-        virtual void			    Unk_2A(void) override;							// 2A
-		virtual void			    Unk_35(void) override;							// 35 - { return 5; }
-		virtual void                Unk_37(void) override;							// 37 - { return particleShaderTexture; }
+		virtual const NiRTTI*       GetRTTI() const override;						        // 02
+        virtual UInt8				InitializeGeometry(BSGeometry* a_geometry) override;    // 27 - { particleShaderGeometry = newGeometry; }
+        virtual void			    Unk_2A(void) override;							        // 2A
+		virtual void			    Unk_35(void) override;							        // 35 - { return 5; }
+        virtual NiSourceTexture*    GetPrimaryTexture() override;							// 37 - { return particleShaderTexture; }
 
 
 		// members

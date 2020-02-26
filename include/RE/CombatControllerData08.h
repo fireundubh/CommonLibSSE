@@ -15,9 +15,9 @@ namespace RE
 
         struct Data80
         {
-            POS_DATA    unk00;  // 10
-            AITimeStamp unk18;  // 18
-            float       unk20;  // 20
+            CombatLocation    unk00;  // 10
+            AITimeStamp       unk18;  // 18
+            float             unk20;  // 20
         };
         STATIC_ASSERT(sizeof(Data80) == 0x20);
         

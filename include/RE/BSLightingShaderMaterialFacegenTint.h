@@ -22,11 +22,14 @@ namespace RE
 		virtual void				SaveBinary(void) override;							// 0C
 		virtual void				LoadBinary(void) override;							// 0D
 
-		static BSLightingShaderMaterialFacegenTint * CreateFacegenTintMaterial();
+		static BSLightingShaderMaterialFacegenTint * CreateMaterial();
 
 		// members
 		NiColor	tintColor;	// A0
 		UInt32	padAC;		// AC
+
+	private:
+		BSLightingShaderMaterialFacegenTint* ctor();
 	};
 	STATIC_ASSERT(sizeof(BSLightingShaderMaterialFacegenTint) == 0xB0);
 }

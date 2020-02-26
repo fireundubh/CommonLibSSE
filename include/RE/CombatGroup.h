@@ -3,7 +3,7 @@
 
 #include "RE/AITimer.h"
 #include "RE/AITimeStamp.h"
-#include "RE/POS_DATA.h"
+#include "RE/CombatLocation.h"
 #include "RE/BSPointerHandle.h"
 #include "RE/CombatGroupDetectionListener.h"
 
@@ -17,24 +17,24 @@ namespace RE
       
         struct TargetData
         {
-            ActorHandle target;         // 00
-            SInt32      detectLevel;    // 04 | -1000 
-            float       stealthPoints;  // 08 | fCombatStealthPointMax - 1.0
-            float       unk0C;          // 0C
-            POS_DATA    unk10;          // 10
-            POS_DATA    unk28;          // 28
-            POS_DATA    unk40;          // 40
-            POS_DATA    unk58;          // 58
-            POS_DATA    unk70;          // 70
-            AITimeStamp unk88;          // 88
-            AITimeStamp unk8C;          // 8C
-            AITimeStamp unk90;          // 9C
-            AITimeStamp unk94;          // 94
-            AITimeStamp unk98;          // 98
-            AITimeStamp unk9C;          // 9C
-            ActorHandle attackedMember; // A0
-            UInt16      unkA4;          // A4 | target count
-            UInt16      unkA6;          // A6 | flags
+            ActorHandle     target;         // 00
+            SInt32          detectLevel;    // 04 | -1000 
+            float           stealthPoints;  // 08 | fCombatStealthPointMax - 1.0
+            float           unk0C;          // 0C
+            CombatLocation  unk10;          // 10
+            CombatLocation  unk28;          // 28
+            CombatLocation  unk40;          // 40
+            CombatLocation  unk58;          // 58
+            CombatLocation  unk70;          // 70
+            AITimeStamp     unk88;          // 88
+            AITimeStamp     unk8C;          // 8C
+            AITimeStamp     unk90;          // 9C
+            AITimeStamp     unk94;          // 94
+            AITimeStamp     unk98;          // 98
+            AITimeStamp     unk9C;          // 9C
+            ActorHandle     attackedMember; // A0
+            UInt16          unkA4;          // A4 | target count
+            UInt16          unkA6;          // A6 | flags
         };
         STATIC_ASSERT(sizeof(TargetData) == 0xA8);
 
@@ -50,7 +50,7 @@ namespace RE
              
         struct Data120
         {
-            POS_DATA    unk00;  // 10
+            CombatLocation    unk00;  // 10
             AITimeStamp unk18;  // 18
             float       unk20;  // 20
         };	
@@ -85,14 +85,14 @@ namespace RE
         float                           unkCC;                          // 0CC
         float                           unkD0;                          // 0D0
         float                           unkD4;                          // 0D4
-        UInt32                          unkD8;                          // 0D8
+        UInt32                          isSearching;                    // 0D8
         UInt32                          unkDC;                          // 0DC
         BSPathingLOSGridMap*            gridMap;                        // 0E0
-        AITimer                         unkE8;                          // 0E8
+        AITimer                         searchUpdateTimer;              // 0E8
         AITimer                         searchAreaUpdateTimer;          // 0F0
         AITimeStamp                     unkF8;                          // 0F8
         ActorHandle                     unkFC;                          // 0FC
-        POS_DATA                        unk100;                         // 100
+        CombatLocation                  searchLocation;                 // 100
         float                           searchRadius;                   // 118
         UInt32                          unk11C;                         // 11C
         BSTArray<Data120>               unk120;                         // 120

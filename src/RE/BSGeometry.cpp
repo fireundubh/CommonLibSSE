@@ -15,30 +15,6 @@
 
 namespace RE
 {
-	void BSGeometry::MakeFaceTintable()
-	{
-		using Feature = BSShaderMaterial::Feature;
-		
-		auto effect = properties[States::kEffect].get();
-		if (effect) {
-			auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
-			if (lightingShader) {
-				auto material = lightingShader->material;
-				if (material && material->GetFeature() == Feature::kFaceGen) {				
-					auto tintedMaterial = BSLightingShaderMaterialFacegenTint::CreateFacegenTintMaterial();
-					tintedMaterial->CopyBaseMaterial(static_cast<BSLightingShaderMaterialBase*>(material));
-					lightingShader->SetFlags(BSShaderProperty::EShaderPropertyFlag::kFace, false);
-					lightingShader->SetFlags(BSShaderProperty::EShaderPropertyFlag::kFaceGenRGBTint, true);
-					lightingShader->SetMaterial(tintedMaterial, true);
-					lightingShader->InitializeShader(this);
-					tintedMaterial->~BSLightingShaderMaterialFacegenTint();
-					free(tintedMaterial);
-				}
-			}
-		}
-	}
-
-
 	void BSGeometry::SetMaterialAlpha(float a_alpha, bool a_skin)
 	{
 		using Feature = BSShaderMaterial::Feature;
@@ -83,13 +59,9 @@ namespace RE
 
 				if (material && templateMaterial) {
 					auto newMaterial = static_cast<BSLightingShaderMaterialBase*>(templateMaterial->Create());
-
 					newMaterial->CopyMembers(templateMaterial);
-					lightingShader->flags = templateLightingShader->flags;
-
 					newMaterial->ClearTextures();
 					newMaterial->SetTextureSet(templateMaterial->textureSet.get());
-
 					lightingShader->SetMaterial(newMaterial, 1);
 					lightingShader->InvalidateTextures(0);
 					lightingShader->InitializeShader(this);

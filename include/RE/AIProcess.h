@@ -3,6 +3,7 @@
 #include <type_traits>
 
 #include "RE/ActorPackage.h"
+#include "RE/AITimer.h"
 #include "RE/BSTArray.h"
 #include "RE/BSTList.h"
 
@@ -11,8 +12,10 @@ namespace RE
 {
 	enum class RESET_3D_FLAGS : UInt8;
 	class Actor;
+	class BGSListForm;
 	class bhkCharacterController;
 	class HighProcess;
+	class TESBoundObject;
 	class TESForm;
 	struct HighProcessData;
 	struct MiddleHighProcessData;

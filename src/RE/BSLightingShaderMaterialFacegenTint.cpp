@@ -6,10 +6,18 @@
 
 namespace RE
 {
-	BSLightingShaderMaterialFacegenTint* BSLightingShaderMaterialFacegenTint::CreateFacegenTintMaterial()
+	BSLightingShaderMaterialFacegenTint* BSLightingShaderMaterialFacegenTint::ctor()
 	{
-		using func_t = decltype(&BSLightingShaderMaterialFacegenTint::CreateFacegenTintMaterial);
-		REL::Offset<func_t> func(Offset::BSLightingShaderMaterialFacegenTint::CreateFacegenTintMaterial);
-		return func();
+		using func_t = decltype(&BSLightingShaderMaterialFacegenTint::ctor);
+		REL::Offset<func_t> func(Offset::BSLightingShaderMaterialFacegenTint::Ctor);
+		return func(this);
+	}
+
+
+	BSLightingShaderMaterialFacegenTint* BSLightingShaderMaterialFacegenTint::CreateMaterial()
+	{
+		auto material = malloc<BSLightingShaderMaterialFacegenTint>();
+		material->ctor();
+		return material;
 	}
 }

@@ -52,7 +52,7 @@ namespace RE
         bool                                    ignoringCombat;         // 42
         bool                                    unk43;                  // 43
         AITimer                                 unk44;                  // 44
-        UInt32                                  unk4C;                  // 4C
+        float                                   unk4C;                  // 4C
         BSTArray<void*>                         unk50;                  // 50
         UInt64                                  unk68;                  // 68
         UInt64                                  unk70;                  // 70
