@@ -9,7 +9,7 @@ namespace RE
 	class SummonCreatureEffect : public ActiveEffect
 	{
 	public:
-		inline static const void* RTTI = RTTI_SummonCreatureEffect;
+		inline static constexpr auto RTTI = RTTI_SummonCreatureEffect;
 
 
 		// override (ActiveEffect)

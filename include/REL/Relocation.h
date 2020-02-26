@@ -2,13 +2,19 @@
 
 #include <array>
 #include <cassert>
+#include <cstdint>
+#include <exception>
 #include <functional>
+#include <istream>
 #include <string>
 #include <string_view>
 #include <type_traits>
+#include <unordered_map>
+#include <variant>
 #include <vector>
 
-#include "skse64_common/SafeWrite.h"
+#include "SKSE/SafeWrite.h"
+#include "SKSE/Version.h"
 
 
 namespace RE
@@ -328,6 +334,7 @@ namespace REL
 		static std::uintptr_t BaseAddr();
 		static std::size_t Size();
 		static Section GetSection(ID a_id);
+		static SKSE::Version GetVersion() noexcept;
 
 
 		template <class T = void>
@@ -339,12 +346,18 @@ namespace REL
 	private:
 		struct ModuleInfo
 		{
+		public:
 			struct Sections
 			{
 				struct Elem
 				{
-					constexpr Elem(std::string_view a_view, UInt32 a_flags = 0) :
-						name(a_view),
+					constexpr Elem(const char* a_name) :
+						Elem(a_name, 0)
+					{}
+
+
+					constexpr Elem(const char* a_name, DWORD a_flags) :
+						name(std::move(a_name)),
 						section(),
 						flags(a_flags)
 					{}
@@ -357,7 +370,15 @@ namespace REL
 
 
 				constexpr Sections() :
-					arr{ Elem(".text", IMAGE_SCN_MEM_EXECUTE), ".idata", ".rdata", ".data", ".pdata", ".tls", Elem(".text", IMAGE_SCN_MEM_WRITE), ".gfids" }
+					arr{
+					Elem(".text", static_cast<DWORD>(IMAGE_SCN_MEM_EXECUTE)),
+					".idata",
+					".rdata",
+					".data",
+					".pdata",
+					".tls",
+					Elem(".text", static_cast<DWORD>(IMAGE_SCN_MEM_WRITE)),
+					".gfids" }
 				{}
 
 
@@ -368,13 +389,175 @@ namespace REL
 			ModuleInfo();
 
 
+			HMODULE handle;
 			std::uintptr_t base;
 			std::size_t size;
 			Sections sections;
+			SKSE::Version version;
+
+		private:
+			void BuildVersionInfo();
 		};
 
 
 		static ModuleInfo _info;
+	};
+
+
+	class IDDatabase
+	{
+	public:
+		[[nodiscard]] static bool Init();
+
+#ifdef _DEBUG
+		[[nodiscard]] static std::uint64_t OffsetToID(std::uint64_t a_address);
+#endif
+		[[nodiscard]] static std::uint64_t IDToOffset(std::uint64_t a_id);
+
+	private:
+		IDDatabase() = delete;
+		IDDatabase(const IDDatabase&) = delete;
+		IDDatabase(IDDatabase&&) = delete;
+
+		IDDatabase& operator=(const IDDatabase&) = delete;
+		IDDatabase& operator=(IDDatabase&&) = delete;
+
+
+		class IDDatabaseImpl
+		{
+		public:
+			[[nodiscard]] bool Load();
+			[[nodiscard]] bool Load(std::uint16_t a_major, std::uint16_t a_minor, std::uint16_t a_revision, std::uint16_t a_build);
+			[[nodiscard]] bool Load(SKSE::Version a_version);
+
+#ifdef _DEBUG
+			[[nodiscard]] std::uint64_t OffsetToID(std::uint64_t a_address);
+#endif
+			[[nodiscard]] std::uint64_t IDToOffset(std::uint64_t a_id);
+
+		private:
+			class IStream
+			{
+			public:
+				using stream_type = std::istream;
+				using pointer = stream_type*;
+				using const_pointer = const stream_type*;
+				using reference = stream_type&;
+				using const_reference = const stream_type&;
+
+				constexpr IStream(stream_type& a_stream) :
+					_stream(a_stream)
+				{}
+
+				[[nodiscard]] constexpr reference operator*() noexcept { return _stream; }
+				[[nodiscard]] constexpr const_reference operator*() const noexcept { return _stream; }
+
+				[[nodiscard]] constexpr pointer operator->() noexcept { return std::addressof(_stream); }
+				[[nodiscard]] constexpr const_pointer operator->() const noexcept { return std::addressof(_stream); }
+
+				template <class T>
+				inline void readin(T& a_val)
+				{
+					_stream.read(reinterpret_cast<char*>(std::addressof(a_val)), sizeof(T));
+				}
+
+				template <class T, typename std::enable_if_t<std::is_arithmetic_v<T>, int> = 0>
+				inline T readout()
+				{
+					T val;
+					readin(val);
+					return val;
+				}
+
+			private:
+				stream_type& _stream;
+			};
+
+
+			class Header
+			{
+			public:
+				inline Header() noexcept :
+					_exeName(),
+					_part1(),
+					_part2()
+				{}
+
+				void Read(IStream& a_input);
+
+				[[nodiscard]] constexpr decltype(auto) AddrCount() const noexcept { return static_cast<std::size_t>(_part2.addressCount); }
+				[[nodiscard]] constexpr decltype(auto) PSize() const noexcept { return static_cast<std::uint64_t>(_part2.pointerSize); }
+				[[nodiscard]] inline decltype(auto) GetVersion() const { return SKSE::Version(_part1.version); }
+
+			private:
+				struct Part1
+				{
+					constexpr Part1() :
+						format(0),
+						version{ 0 },
+						nameLen(0)
+					{}
+
+					void Read(IStream& a_input);
+
+					std::int32_t format;
+					std::int32_t version[4];
+					std::int32_t nameLen;
+				};
+
+				struct Part2
+				{
+					constexpr Part2() :
+						pointerSize(0),
+						addressCount(0)
+					{}
+
+					void Read(IStream& a_input);
+
+					std::int32_t pointerSize;
+					std::int32_t addressCount;
+				};
+
+				std::string _exeName;
+				Part1 _part1;
+				Part2 _part2;
+			};
+
+
+			[[nodiscard]] bool DoLoad(IStream& a_input);
+			void DoLoadImpl(IStream& a_input, Header& a_header);
+
+
+			std::vector<std::uint64_t> _offsets;
+#ifdef _DEBUG
+			std::unordered_map<std::uint64_t, std::uint64_t> _ids;
+#endif
+		};
+
+
+		static IDDatabaseImpl _db;
+	};
+
+
+	// converts an id within the database to its equivalent offset
+	class ID
+	{
+	public:
+		constexpr ID() noexcept :
+			ID(static_cast<std::uint64_t>(0))
+		{}
+
+		explicit constexpr ID(std::uint64_t a_id) noexcept :
+			_id(a_id)
+		{}
+
+		constexpr ID& operator=(std::uint64_t a_id) noexcept { _id = a_id; return *this; }
+
+		[[nodiscard]] std::uint64_t operator*() const;
+		[[nodiscard]] std::uint64_t GetOffset() const;
+
+	private:
+		std::uint64_t _id;
 	};
 
 
@@ -389,45 +572,61 @@ namespace REL
 		Offset() = delete;
 
 
-		Offset(std::uintptr_t a_offset) :
-			_address(a_offset)
+		constexpr Offset(std::uintptr_t a_offset) :
+			_impl(a_offset)
+		{}
+
+
+		explicit constexpr Offset(ID a_id) :
+			Offset(std::move(a_id), 0)
+		{}
+
+
+		constexpr Offset(ID a_id, std::size_t a_mod) :
+			_impl(std::make_pair(a_id, a_mod))
 		{}
 
 
 		template <class U = T, typename std::enable_if_t<std::is_pointer<U>::value, int> = 0>
-		std::add_lvalue_reference_t<std::remove_pointer_t<U>> operator*() const
+		std::add_lvalue_reference_t<std::remove_pointer_t<U>> operator*()
 		{
 			return *GetType();
 		}
 
 
 		template <class U = T, typename std::enable_if_t<std::is_pointer<U>::value, int> = 0>
-		U operator->() const
+		U operator->()
 		{
 			return GetType();
 		}
 
 
 		template <class... Args, class F = T, typename std::enable_if_t<std::is_invocable<F, Args...>::value, int> = 0>
-		decltype(auto) operator()(Args&&... a_args) const
+		decltype(auto) operator()(Args&&... a_args)
 		{
 			return Invoke(GetType(), std::forward<Args>(a_args)...);
 		}
 
 
-		value_type GetType() const
+		value_type GetType()
 		{
 			return unrestricted_cast<value_type>(GetAddress());
 		}
 
 
-		std::uintptr_t GetAddress() const
+		std::uintptr_t GetAddress()
 		{
-			return Module::BaseAddr() + _address;
+			switch (_impl.index()) {
+			case kID:
+				_impl = *std::get<kID>(_impl).first + std::get<kID>(_impl).second;
+				break;
+			}
+
+			return Module::BaseAddr() + std::get<kRaw>(_impl);
 		}
 
 
-		std::uintptr_t GetOffset() const
+		std::uintptr_t GetOffset()
 		{
 			return GetAddress() - Module::BaseAddr();
 		}
@@ -439,7 +638,7 @@ namespace REL
 			constexpr auto PSIZE = sizeof(void*);
 			auto addr = GetAddress() + (PSIZE * a_idx);
 			auto result = *reinterpret_cast<std::uintptr_t*>(addr);
-			SafeWrite64(addr, a_newFunc);
+			SKSE::SafeWrite64(addr, a_newFunc);
 			return result;
 		}
 
@@ -451,7 +650,9 @@ namespace REL
 		}
 
 	private:
-		std::uintptr_t _address;
+		enum : std::size_t { kRaw, kID };
+
+		std::variant<std::uintptr_t, std::pair<ID, std::size_t>> _impl;
 	};
 
 
@@ -502,8 +703,7 @@ namespace REL
 			_address = Impl::kmp_search(haystack, needle, needleMask);
 
 			if (_address == 0xDEADBEEF) {
-				_FATALERROR("Sig scan failed for pattern (%s)!\n", a_sig);
-				assert(false);
+				assert(false);	// sig scan failed
 			} else {
 				_address += text.BaseAddr();
 			}
@@ -569,6 +769,10 @@ namespace REL
 			auto nextOp = _address + 5;
 			_address = nextOp + *offset;
 		}
+
+	protected:
+		using Base = DirectSig<T>;
+		using Base::_address;
 	};
 
 
@@ -705,16 +909,16 @@ namespace REL
 
 		[[nodiscard]] explicit operator bool() const noexcept
 		{
-			return !empty();
+			return !Empty();
 		}
 
 
 		template <class... Args, class F = function_type, typename std::enable_if_t<std::is_invocable<F, Args...>::value, int> = 0>
 		std::invoke_result_t<F, Args...> operator()(Args&&... a_args) const
 		{
-			assert(in_range());
+			assert(InRange());
 
-			if (empty()) {
+			if (Empty()) {
 				throw std::bad_function_call();
 			}
 
@@ -725,13 +929,13 @@ namespace REL
 		enum : std::uintptr_t { kEmpty = 0 };
 
 
-		[[nodiscard]] bool empty() const noexcept
+		[[nodiscard]] bool Empty() const noexcept
 		{
 			return _storage.address == kEmpty;
 		}
 
 
-		[[nodiscard]] bool in_range() const noexcept
+		[[nodiscard]] bool InRange() const noexcept
 		{
 			auto xText = Module::GetSection(Module::ID::kTextX);
 			return xText.BaseAddr() <= _storage.address && _storage.address < xText.BaseAddr() + xText.Size();
@@ -770,7 +974,7 @@ namespace REL
 			explicit Storage(std::uintptr_t a_rhs) :
 				address(a_rhs)
 			{}
-				
+
 
 			Storage& operator=(const Storage& a_rhs)
 			{

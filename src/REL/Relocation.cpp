@@ -1,6 +1,16 @@
 #include "REL/Relocation.h"
 
+#include <cassert>
+#include <filesystem>
+#include <fstream>
+#include <exception>
+#include <ios>
+#include <sstream>
+#include <system_error>
+
 #include "RE/RTTI.h"
+
+#include "SKSE/Logger.h"
 
 
 namespace REL
@@ -153,12 +163,21 @@ namespace REL
 	}
 
 
+	auto Module::GetVersion() noexcept
+		-> SKSE::Version
+	{
+		return _info.version;
+	}
+
+
 	Module::ModuleInfo::ModuleInfo() :
+		handle(GetModuleHandle(0)),
 		base(0),
 		sections(),
-		size(0)
+		size(0),
+		version()
 	{
-		base = reinterpret_cast<std::uintptr_t>(GetModuleHandle(0));
+		base = reinterpret_cast<std::uintptr_t>(handle);
 
 		auto dosHeader = reinterpret_cast<const IMAGE_DOS_HEADER*>(base);
 		auto ntHeader = reinterpret_cast<const IMAGE_NT_HEADERS64*>(reinterpret_cast<const std::uint8_t*>(dosHeader) + dosHeader->e_lfanew);
@@ -177,10 +196,294 @@ namespace REL
 				}
 			}
 		}
+
+		BuildVersionInfo();
+	}
+
+
+	void Module::ModuleInfo::BuildVersionInfo()
+	{
+		char fileName[MAX_PATH];
+		if (!GetModuleFileNameA(handle, fileName, MAX_PATH)) {
+			assert(false);
+			return;
+		}
+
+		DWORD dummy;
+		std::vector<char> buf(GetFileVersionInfoSizeA(fileName, &dummy));
+		if (buf.size() == 0) {
+			assert(false);
+			return;
+		}
+
+		if (!GetFileVersionInfoA(fileName, 0, buf.size(), buf.data())) {
+			assert(false);
+			return;
+		}
+
+		LPVOID verBuf;
+		UINT verLen;
+		if (!VerQueryValueA(buf.data(), "\\StringFileInfo\\040904B0\\ProductVersion", &verBuf, &verLen)) {
+			assert(false);
+			return;
+		}
+
+		std::istringstream ss(static_cast<const char*>(verBuf));
+		std::string token;
+		for (std::size_t i = 0; i < 4 && std::getline(ss, token, '.'); ++i) {
+			version[i] = static_cast<std::uint16_t>(std::stoi(token));
+		}
 	}
 
 
 	decltype(Module::_info) Module::_info;
+
+
+	bool IDDatabase::Init()
+	{
+		return _db.Load();
+	}
+
+
+#ifdef _DEBUG
+	std::uint64_t IDDatabase::OffsetToID(std::uint64_t a_address)
+	{
+		return _db.OffsetToID(a_address);
+	}
+#endif
+
+
+	std::uint64_t IDDatabase::IDToOffset(std::uint64_t a_id)
+	{
+		return _db.IDToOffset(a_id);
+	}
+
+
+	bool IDDatabase::IDDatabaseImpl::Load()
+	{
+		auto version = Module::GetVersion();
+		return Load(std::move(version));
+	}
+
+
+	bool IDDatabase::IDDatabaseImpl::Load(std::uint16_t a_major, std::uint16_t a_minor, std::uint16_t a_revision, std::uint16_t a_build)
+	{
+		SKSE::Version version(a_major, a_minor, a_revision, a_build);
+		return Load(std::move(version));
+	}
+
+
+	bool IDDatabase::IDDatabaseImpl::Load(SKSE::Version a_version)
+	{
+		std::string fileName = "Data/SKSE/Plugins/version-";
+		fileName += std::to_string(a_version[0]);
+		fileName += '-';
+		fileName += std::to_string(a_version[1]);
+		fileName += '-';
+		fileName += std::to_string(a_version[2]);
+		fileName += '-';
+		fileName += std::to_string(a_version[3]);
+		fileName += ".bin";
+
+		std::error_code ec;
+		std::filesystem::path path(fileName);
+		if (!std::filesystem::exists(path, ec) || ec) {
+			assert(false);
+			return false;
+		}
+
+		std::ifstream file(path, std::ios_base::in | std::ios_base::binary);
+		file.exceptions(std::ios_base::badbit | std::ios_base::failbit | std::ios_base::eofbit);
+		if (!file.is_open()) {
+			assert(false);
+			return false;
+		}
+
+		try {
+			IStream input(file);
+			return DoLoad(input);
+		} catch (std::exception& e) {
+			_ERROR("%s", e.what());
+			assert(false);
+			return false;
+		}
+	}
+
+
+#ifdef _DEBUG
+	std::uint64_t IDDatabase::IDDatabaseImpl::OffsetToID(std::uint64_t a_address)
+	{
+		auto it = _ids.find(a_address);
+		if (it != _ids.end()) {
+			return it->second;
+		} else {
+			throw std::runtime_error("Failed to find address in ID database");
+		}
+	}
+#endif
+
+
+	std::uint64_t IDDatabase::IDDatabaseImpl::IDToOffset(std::uint64_t a_id)
+	{
+		return _offsets[a_id];
+	}
+
+
+	void IDDatabase::IDDatabaseImpl::Header::Read(IStream& a_input)
+	{
+		_part1.Read(a_input);
+		_exeName.resize(_part1.nameLen);
+		a_input->read(_exeName.data(), _exeName.size());
+		_part2.Read(a_input);
+	}
+
+
+	void IDDatabase::IDDatabaseImpl::Header::Part1::Read(IStream& a_input)
+	{
+		a_input->read(reinterpret_cast<char*>(this), sizeof(Part1));
+		if (format != 1) {
+			throw std::runtime_error("Unexpected format");
+		}
+	}
+
+
+	void IDDatabase::IDDatabaseImpl::Header::Part2::Read(IStream& a_input)
+	{
+		a_input->read(reinterpret_cast<char*>(this), sizeof(Part2));
+	}
+
+
+	bool IDDatabase::IDDatabaseImpl::DoLoad(IStream& a_input)
+	{
+		Header header;
+		header.Read(a_input);
+
+		if (Module::GetVersion() != header.GetVersion()) {
+			assert(false);
+			return false;
+		}
+
+		_offsets.reserve(header.AddrCount());
+#ifdef _DEBUG
+		_ids.reserve(header.AddrCount());
+#endif
+
+		bool success = true;
+		try {
+			DoLoadImpl(a_input, header);
+		} catch ([[maybe_unused]] std::exception& e) {
+			assert(false);
+			_ERROR("%s in ID database", e.what());
+			success = false;
+		}
+
+		_offsets.shrink_to_fit();
+		return success;
+	}
+
+
+	void IDDatabase::IDDatabaseImpl::DoLoadImpl(IStream& a_input, Header& a_header)
+	{
+		std::uint8_t type;
+		std::uint64_t id;
+		std::uint64_t offset;
+		std::uint64_t prevID = 0;
+		std::uint64_t prevOffset = 0;
+		for (std::size_t i = 0; i < a_header.AddrCount(); ++i) {
+			a_input.readin(type);
+			std::uint8_t lo = type & 0xF;
+			std::uint8_t hi = type >> 4;
+
+			switch (lo) {
+			case 0:
+				a_input.readin(id);
+				break;
+			case 1:
+				id = prevID + 1;
+				break;
+			case 2:
+				id = prevID + a_input.readout<std::uint8_t>();
+				break;
+			case 3:
+				id = prevID - a_input.readout<std::uint8_t>();
+				break;
+			case 4:
+				id = prevID + a_input.readout<std::uint16_t>();
+				break;
+			case 5:
+				id = prevID - a_input.readout<std::uint16_t>();
+				break;
+			case 6:
+				id = a_input.readout<std::uint16_t>();
+				break;
+			case 7:
+				id = a_input.readout<std::uint32_t>();
+				break;
+			default:
+				throw std::runtime_error("Unhandled type");
+			}
+
+			std::uint64_t tmp = (hi & 8) != 0 ? (prevOffset / a_header.PSize()) : prevOffset;
+
+			switch (hi & 7) {
+			case 0:
+				a_input.readin(offset);
+				break;
+			case 1:
+				offset = tmp + 1;
+				break;
+			case 2:
+				offset = tmp + a_input.readout<std::uint8_t>();
+				break;
+			case 3:
+				offset = tmp - a_input.readout<std::uint8_t>();
+				break;
+			case 4:
+				offset = tmp + a_input.readout<std::uint16_t>();
+				break;
+			case 5:
+				offset = tmp - a_input.readout<std::uint16_t>();
+				break;
+			case 6:
+				offset = a_input.readout<std::uint16_t>();
+				break;
+			case 7:
+				offset = a_input.readout<std::uint32_t>();
+				break;
+			default:
+				throw std::runtime_error("Unhandled type");
+			}
+
+			if ((hi & 8) != 0) {
+				offset *= a_header.PSize();
+			}
+
+			if (id >= _offsets.size()) {
+				_offsets.resize(id + 1, 0);
+			}
+			_offsets[id] = offset;
+#ifdef _DEBUG
+			_ids[offset] = id;
+#endif
+
+			prevOffset = offset;
+			prevID = id;
+		}
+	}
+
+
+	decltype(IDDatabase::_db) IDDatabase::_db;
+
+
+	std::uint64_t ID::operator*() const
+	{
+		return GetOffset();
+	}
+
+	std::uint64_t ID::GetOffset() const
+	{
+		return IDDatabase::IDToOffset(_id);
+	}
 
 
 	VTable::VTable(const char* a_name, std::uint32_t a_offset) :

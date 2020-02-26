@@ -26,7 +26,7 @@ namespace RE
 		public BSTEventSink<PositionPlayerEvent>					// 068
 	{
 	public:
-		inline static const void* RTTI = RTTI_TES;
+		inline static constexpr auto RTTI = RTTI_TES;
 
 		struct NPCDeadCount
 		{
@@ -37,7 +37,7 @@ namespace RE
 		class SystemEventAdapter : public BSTEventSink<BSSystemEvent>
 		{
 		public:
-			inline static const void* RTTI = RTTI_TES;
+			inline static constexpr auto RTTI = RTTI_TES;
 
 
 			virtual ~SystemEventAdapter();																									// 00

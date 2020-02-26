@@ -1,9 +1,7 @@
 #include "SKSE/Interfaces.h"
 
-#include "skse64/PluginAPI.h"
-#include "skse64_common/skse_version.h"
-
 #include "RE/BSScript/Internal/VirtualMachine.h"
+
 #include "SKSE/API.h"
 
 
@@ -21,9 +19,14 @@ namespace SKSE
 	}
 
 
-	UInt32 QueryInterface::RuntimeVersion() const
+	Version QueryInterface::RuntimeVersion() const
 	{
-		return GetProxy()->runtimeVersion;
+		auto packed = GetProxy()->runtimeVersion;
+		auto major = static_cast<std::uint16_t>((packed & 0xFF000000) >> 24);
+		auto minor = static_cast<std::uint16_t>((packed & 0x00FF0000) >> 16);
+		auto revision = static_cast<std::uint16_t>((packed & 0x0000FFF0) >> 4);
+		auto build = static_cast<std::uint16_t>((packed & 0x0000000F) >> 0);
+		return Version(major, minor, revision, build);
 	}
 
 
@@ -33,29 +36,9 @@ namespace SKSE
 	}
 
 
-	std::string QueryInterface::UnmangledRuntimeVersion() const
+	const Impl::SKSEInterface* QueryInterface::GetProxy() const
 	{
-		std::string verString;
-		auto version = RuntimeVersion();
-
-		verString = std::move(std::to_string(GET_EXE_VERSION_MAJOR(version)));
-		verString.push_back('.');
-
-		verString += std::to_string(GET_EXE_VERSION_MINOR(version));
-		verString.push_back('.');
-
-		verString += std::to_string(GET_EXE_VERSION_BUILD(version));
-		verString.push_back('.');
-
-		verString += std::to_string(GET_EXE_VERSION_SUB(version));
-
-		return verString;
-	}
-
-
-	const SKSEInterface* QueryInterface::GetProxy() const
-	{
-		return reinterpret_cast<const SKSEInterface*>(this);
+		return reinterpret_cast<const Impl::SKSEInterface*>(this);
 	}
 
 
@@ -85,7 +68,7 @@ namespace SKSE
 
 	bool ScaleformInterface::Register(RegCallback* a_callback, const char* a_name) const
 	{
-		auto result = GetProxy()->Register(a_name, reinterpret_cast<SKSEScaleformInterface::RegisterCallback>(a_callback));
+		auto result = GetProxy()->Register(a_name, a_callback);
 		if (!result) {
 			_ERROR("Failed to register %s for scaleform interface callback", a_name);
 		}
@@ -95,13 +78,13 @@ namespace SKSE
 
 	void ScaleformInterface::Register(RegInvCallback* a_callback) const
 	{
-		GetProxy()->RegisterForInventory(reinterpret_cast<SKSEScaleformInterface::RegisterInventoryCallback>(a_callback));
+		GetProxy()->RegisterForInventory(a_callback);
 	}
 
 
-	const SKSEScaleformInterface* ScaleformInterface::GetProxy() const
+	const Impl::SKSEScaleformInterface* ScaleformInterface::GetProxy() const
 	{
-		return reinterpret_cast<const SKSEScaleformInterface*>(this);
+		return reinterpret_cast<const Impl::SKSEScaleformInterface*>(this);
 	}
 
 
@@ -119,25 +102,25 @@ namespace SKSE
 
 	void SerializationInterface::SetFormDeleteCallback(FormDeleteCallback* a_callback) const
 	{
-		GetProxy()->SetFormDeleteCallback(GetPluginHandle(), reinterpret_cast<SKSESerializationInterface::FormDeleteCallback>(a_callback));
+		GetProxy()->SetFormDeleteCallback(GetPluginHandle(), a_callback);
 	}
 
 
 	void SerializationInterface::SetLoadCallback(EventCallback* a_callback) const
 	{
-		GetProxy()->SetLoadCallback(GetPluginHandle(), reinterpret_cast<SKSESerializationInterface::EventCallback>(a_callback));
+		GetProxy()->SetLoadCallback(GetPluginHandle(), a_callback);
 	}
 
 
 	void SerializationInterface::SetRevertCallback(EventCallback* a_callback) const
 	{
-		GetProxy()->SetRevertCallback(GetPluginHandle(), reinterpret_cast<SKSESerializationInterface::EventCallback>(a_callback));
+		GetProxy()->SetRevertCallback(GetPluginHandle(), a_callback);
 	}
 
 
 	void SerializationInterface::SetSaveCallback(EventCallback* a_callback) const
 	{
-		GetProxy()->SetSaveCallback(GetPluginHandle(), reinterpret_cast<SKSESerializationInterface::EventCallback>(a_callback));
+		GetProxy()->SetSaveCallback(GetPluginHandle(), a_callback);
 	}
 
 
@@ -183,9 +166,9 @@ namespace SKSE
 	}
 
 
-	const SKSESerializationInterface* SerializationInterface::GetProxy() const
+	const Impl::SKSESerializationInterface* SerializationInterface::GetProxy() const
 	{
-		return reinterpret_cast<const SKSESerializationInterface*>(this);
+		return reinterpret_cast<const Impl::SKSESerializationInterface*>(this);
 	}
 
 
@@ -253,9 +236,9 @@ namespace SKSE
 	}
 
 
-	const SKSETaskInterface* TaskInterface::GetProxy() const
+	const Impl::SKSETaskInterface* TaskInterface::GetProxy() const
 	{
-		return reinterpret_cast<const SKSETaskInterface*>(this);
+		return reinterpret_cast<const Impl::SKSETaskInterface*>(this);
 	}
 
 
@@ -272,7 +255,7 @@ namespace SKSE
 			a_fn(vm);
 			return true;
 		} else {
-			auto result = GetProxy()->Register(reinterpret_cast<SKSEPapyrusInterface::RegisterFunctions>(a_fn));
+			auto result = GetProxy()->Register(a_fn);
 			if (!result) {
 				_ERROR("Failed to register for papyrus interface");
 			}
@@ -288,7 +271,7 @@ namespace SKSE
 			a_fn(vm);
 			return true;
 		} else {
-			auto result = GetProxy()->Register(reinterpret_cast<SKSEPapyrusInterface::RegisterFunctions>(a_fn));
+			auto result = GetProxy()->Register(a_fn);
 			if (!result) {
 				_ERROR("Failed to register for papyrus interface");
 			}
@@ -297,9 +280,9 @@ namespace SKSE
 	}
 
 
-	const SKSEPapyrusInterface* PapyrusInterface::GetProxy() const
+	const Impl::SKSEPapyrusInterface* PapyrusInterface::GetProxy() const
 	{
-		return reinterpret_cast<const SKSEPapyrusInterface*>(this);
+		return reinterpret_cast<const Impl::SKSEPapyrusInterface*>(this);
 	}
 
 
@@ -327,7 +310,7 @@ namespace SKSE
 
 	bool MessagingInterface::RegisterListener(const char* a_sender, EventCallback* a_callback) const
 	{
-		auto result = GetProxy()->RegisterListener(GetPluginHandle(), a_sender, reinterpret_cast<SKSEMessagingInterface::EventCallback>(a_callback));
+		auto result = GetProxy()->RegisterListener(GetPluginHandle(), a_sender, a_callback);
 		if (!result) {
 			_ERROR("Failed to register messaging listener for %s", a_sender);
 		}
@@ -335,9 +318,9 @@ namespace SKSE
 	}
 
 
-	const SKSEMessagingInterface* MessagingInterface::GetProxy() const
+	const Impl::SKSEMessagingInterface* MessagingInterface::GetProxy() const
 	{
-		return reinterpret_cast<const SKSEMessagingInterface*>(this);
+		return reinterpret_cast<const Impl::SKSEMessagingInterface*>(this);
 	}
 
 
@@ -365,8 +348,8 @@ namespace SKSE
 	}
 
 
-	const SKSEObjectInterface* ObjectInterface::GetProxy() const
+	const Impl::SKSEObjectInterface* ObjectInterface::GetProxy() const
 	{
-		return reinterpret_cast<const SKSEObjectInterface*>(this);
+		return reinterpret_cast<const Impl::SKSEObjectInterface*>(this);
 	}
 }

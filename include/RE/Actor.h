@@ -134,7 +134,7 @@ namespace RE
 		using EntryPoint = BGSEntryPointPerkEntry::EntryPoint;
 
 	public:
-		inline static const void* RTTI = RTTI_Actor;
+		inline static constexpr auto RTTI = RTTI_Actor;
 
 
 		enum { kTypeID = FormType::ActorCharacter };
@@ -520,6 +520,7 @@ namespace RE
 		bool						IsFactionInCrimeGroup(const TESFaction* a_faction) const;
 		bool						IsGhost() const;
 		bool						IsGuard() const;
+		bool						IsHorse() const;
 		bool						IsHostileToActor(Actor* a_actor);
 		bool						IsInKillMove() const;
 		bool						IsOnMount() const;

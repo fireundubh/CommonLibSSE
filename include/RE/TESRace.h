@@ -151,7 +151,7 @@ namespace RE
 		public BGSAttackDataForm	// 088
 	{
 	public:
-		inline static const void* RTTI = RTTI_TESRace;
+		inline static constexpr auto RTTI = RTTI_TESRace;
 
 
 		enum { kTypeID = FormType::Race };

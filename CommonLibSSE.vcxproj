@@ -77,7 +77,8 @@
       <TreatSpecificWarningsAsErrors>%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
       <TreatWarningAsError>true</TreatWarningAsError>
       <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
-      <ConformanceMode>false</ConformanceMode>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/experimental:external /external:I "$(SolutionDir)/skse64" /external:W0 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
@@ -101,6 +102,9 @@
       <Message>
       </Message>
     </PostBuildEvent>
+    <Lib>
+      <AdditionalDependencies>Version.lib;Dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -130,7 +134,8 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
       <DisableSpecificWarnings>4201;4100;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <ConformanceMode>false</ConformanceMode>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/experimental:external /external:I "$(SolutionDir)/skse64" /external:W0 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
@@ -153,6 +158,9 @@
       <Command>
       </Command>
     </PostBuildEvent>
+    <Lib>
+      <AdditionalDependencies>Version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="exports.def" />
@@ -347,6 +355,7 @@
     <ClCompile Include="src\RE\BSIntrusiveRefCounted.cpp" />
     <ClCompile Include="src\RE\ButtonEvent.cpp" />
     <ClCompile Include="src\RE\CommandTable.cpp" />
+    <ClCompile Include="src\RE\TaskQueueInterface.cpp" />
     <ClCompile Include="src\RE\TESCondition.cpp" />
     <ClCompile Include="src\RE\ConsoleLog.cpp" />
     <ClCompile Include="src\RE\EffectSetting.cpp" />
@@ -419,6 +428,7 @@
     <ClCompile Include="src\SKSE\Logger.cpp" />
     <ClCompile Include="src\SKSE\RegistrationMap.cpp" />
     <ClCompile Include="src\SKSE\RegistrationSet.cpp" />
+    <ClCompile Include="src\SKSE\SafeWrite.cpp" />
     <ClCompile Include="src\SKSE\Trampoline.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -440,6 +450,7 @@
     <ClInclude Include="include\RE\AITimeStamp.h" />
     <ClInclude Include="include\RE\AlchemyItem.h" />
     <ClInclude Include="include\RE\AlchemyMenu.h" />
+    <ClInclude Include="include\RE\Archive.h" />
     <ClInclude Include="include\RE\ArmorRatingVisitor.h" />
     <ClInclude Include="include\RE\ArmorRatingVisitorBase.h" />
     <ClInclude Include="include\RE\ArrowProjectile.h" />
@@ -471,9 +482,11 @@
     <ClInclude Include="include\RE\BipedObjects.h" />
     <ClInclude Include="include\RE\BleedoutCameraState.h" />
     <ClInclude Include="include\RE\BSAnimNoteListener.h" />
+    <ClInclude Include="include\RE\BSArchive.h" />
+    <ClInclude Include="include\RE\BSArchiveHeader.h" />
     <ClInclude Include="include\RE\BSBatchRenderer.h" />
     <ClInclude Include="include\RE\BSBitField.h" />
-    <ClInclude Include="include\RE\BSDynamicTriShape.h" />
+    <ClInclude Include="include\RE\BSFile.h" />
     <ClInclude Include="include\RE\BSEffectShaderProperty.h" />
     <ClInclude Include="include\RE\BSMultiBoundNode.h" />
     <ClInclude Include="include\RE\BSMultiIndexTriShape.h" />
@@ -587,6 +600,7 @@
     <ClInclude Include="include\RE\GridCellArray.h" />
     <ClInclude Include="include\RE\NiAlphaProperty.h" />
     <ClInclude Include="include\RE\NiCollisionObject.h" />
+    <ClInclude Include="include\RE\NiFile.h" />
     <ClInclude Include="include\RE\NiIntegerExtraData.h" />
     <ClInclude Include="include\RE\NiInterpController.h" />
     <ClInclude Include="include\RE\NiLight.h" />
@@ -597,8 +611,8 @@
     <ClInclude Include="include\RE\NiTListBase.h" />
     <ClInclude Include="include\RE\NiTPointerListBase.h" />
     <ClInclude Include="include\RE\NiTSet.h" />
-    <ClInclude Include="include\RE\OwnedCameraEffectController.h" />
-    <ClInclude Include="include\RE\OwnedController.h" />
+    <ClInclude Include="include\RE\Offsets_NiRTTI.h" />
+    <ClInclude Include="include\RE\Offsets_RTTI.h" />
     <ClInclude Include="include\RE\PCGamepadType.h" />
     <ClInclude Include="include\RE\CombatLocation.h" />
     <ClInclude Include="include\RE\ProcessLists.h" />
@@ -903,7 +917,7 @@
     <ClInclude Include="include\RE\RefActivateData.h" />
     <ClInclude Include="include\RE\Sexes.h" />
     <ClInclude Include="include\RE\SkyrimScript\FragmentSystem.h" />
-    <ClInclude Include="include\RE\SummonPlacementEffect.h" />
+    <ClInclude Include="include\RE\TaskQueueInterface.h" />
     <ClInclude Include="include\RE\TESCondition.h" />
     <ClInclude Include="include\RE\ConeProjectile.h" />
     <ClInclude Include="include\RE\Console.h" />
@@ -1643,7 +1657,10 @@
     <ClInclude Include="include\SKSE\RegistrationSet.h" />
     <ClInclude Include="include\SKSE\API.h" />
     <ClInclude Include="include\SKSE\RegistrationTraits.h" />
+    <ClInclude Include="include\SKSE\SafeWrite.h" />
+    <ClInclude Include="include\SKSE\Stubs.h" />
     <ClInclude Include="include\SKSE\Trampoline.h" />
+    <ClInclude Include="include\SKSE\Version.h" />
     <ClInclude Include="include\Util.h" />
     <ClInclude Include="src\RE\GFxResourceKey.cpp" />
   </ItemGroup>
