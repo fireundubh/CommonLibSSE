@@ -1920,8 +1920,8 @@
     <ClCompile Include="src\RE\TaskQueueInterface.cpp">
       <Filter>src\RE\Misc</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\NiFloatExtraData.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    <ClCompile Include="src\SKSE\VArgFormatter.cpp">
+      <Filter>src\SKSE</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\BGSImpactManager.cpp">
       <Filter>src\RE\Misc</Filter>
@@ -5666,8 +5666,8 @@
     <ClInclude Include="include\RE\TaskQueueInterface.h">
       <Filter>include\RE\Misc</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\BSShaderTextureSet.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>
+    <ClInclude Include="include\SKSE\VArgFormatter.h">
+      <Filter>include\SKSE</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSTextureSet.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>

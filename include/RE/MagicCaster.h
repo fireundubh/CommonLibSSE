@@ -20,8 +20,7 @@ namespace RE
 
 
 		enum class State : UInt32
-		{
-		};
+		{};
 
 		using CastingSource = MagicSystem::CastingSource;
 
