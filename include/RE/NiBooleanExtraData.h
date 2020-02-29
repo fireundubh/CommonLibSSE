@@ -8,8 +8,8 @@ namespace RE
 	class NiBooleanExtraData : public NiExtraData
 	{
 	public:
-		inline static const void* RTTI = RTTI_NiBooleanExtraData;
-		inline static const void* Ni_RTTI = NiRTTI_NiBooleanExtraData;
+		inline static constexpr auto RTTI = RTTI_NiBooleanExtraData;
+		inline static constexpr auto Ni_RTTI = NiRTTI_NiBooleanExtraData;
 		
 
 		virtual ~NiBooleanExtraData();												// 00
@@ -24,6 +24,7 @@ namespace RE
 		virtual bool			IsEqual(NiObject* a_object) override;				// 1C
 
 		static NiBooleanExtraData * Create(const BSFixedString& name, bool value);
+
 
 		// members
 		bool	data;	// 18

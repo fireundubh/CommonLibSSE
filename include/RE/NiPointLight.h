@@ -2,13 +2,14 @@
 
 #include "RE/NiLight.h"
 
+
 namespace RE
 {
 	class NiPointLight : public NiLight
 	{
 	public:
-		inline static const void* RTTI = RTTI_NiPointLight;
-		inline static const void* Ni_RTTI = NiRTTI_NiPointLight;
+		inline static constexpr auto RTTI = RTTI_NiPointLight;
+		inline static constexpr auto Ni_RTTI = NiRTTI_NiPointLight;
 
 
 		virtual ~NiPointLight();																									// 00

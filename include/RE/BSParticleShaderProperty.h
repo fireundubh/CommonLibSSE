@@ -11,11 +11,12 @@ namespace RE
 	class NiColorA;
     class NiSourceTexture;
 
+
 	class BSParticleShaderProperty : public BSShaderProperty
 	{
 	public:
-		inline static const void* RTTI = RTTI_BSParticleShaderProperty;
-		inline static const void* Ni_RTTI = NiRTTI_BSParticleShaderProperty;
+		inline static constexpr auto RTTI = RTTI_BSParticleShaderProperty;
+		inline static constexpr auto Ni_RTTI = NiRTTI_BSParticleShaderProperty;
 
 
 		virtual ~BSParticleShaderProperty();										        // 00
@@ -81,6 +82,5 @@ namespace RE
         UInt32                      unk18C;
         UInt64                      unk190;
 	};
-	static_assert(sizeof(BSParticleShaderProperty) >= 0x198, "too small");
-    static_assert(sizeof(BSParticleShaderProperty) <= 0x198, "too big");
+	STATIC_ASSERT(sizeof(BSParticleShaderProperty) == 0x198);
 }

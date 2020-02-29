@@ -8,8 +8,8 @@ namespace RE
 	class BSEffectShaderProperty : public BSShaderProperty
 	{
 	public:
-		inline static const void* RTTI = RTTI_BSEffectShaderProperty;
-		inline static const void* Ni_RTTI = NiRTTI_BSEffectShaderProperty;
+		inline static constexpr auto RTTI = RTTI_BSEffectShaderProperty;
+		inline static constexpr auto Ni_RTTI = NiRTTI_BSEffectShaderProperty;
 
 
 		virtual ~BSEffectShaderProperty();													// 00

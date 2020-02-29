@@ -2,12 +2,13 @@
 
 #include "RE/OwnedController.h"
 
+
 namespace RE
 {
 	class OwnedCameraEffectController : public OwnedController
 	{
 	public:
-		inline static const void* RTTI = RTTI_OwnedCameraEffectController;
+		inline static constexpr auto RTTI = RTTI_OwnedCameraEffectController;
 
 
 		virtual ~OwnedCameraEffectController();	// 00
@@ -21,9 +22,8 @@ namespace RE
 
 
 		// members   
-		UInt8			facingRotation;						// 30
+		UInt8	facingRotation;	// 30
 
 	};
 	STATIC_ASSERT(sizeof(OwnedCameraEffectController) == 0x38);
-	static_assert(offsetof(OwnedCameraEffectController, facingRotation) == 0x30);
 }

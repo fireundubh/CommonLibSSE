@@ -1,14 +1,15 @@
 #pragma once
 
 #include "RE/ReferenceEffectController.h"
-#include <CommonLibSSE\include\RE\TESEffectShader.h>
+#include "RE/TESEffectShader.h"
+
 
 namespace RE
 {
 	class OwnedController : public ReferenceEffectController
 	{
 	public:
-		inline static const void* RTTI = RTTI_OwnedController;
+		inline static constexpr auto RTTI = RTTI_OwnedController;
 
 
 		virtual ~OwnedController();	// 00
@@ -26,13 +27,13 @@ namespace RE
 
 
 		// members   
-		RefHandle			refHandle;				// 08
-		UInt32				pad0C;					// 0C
-		TESEffectShader*	effectShader;			// 10
-		BGSArtObject*		artObject;				// 18
-		RefHandle			facingRefHandle;		// 20
-		UInt32				pad024;					// 24
-		UInt64				unk28;					// 28
+		RefHandle			refHandle;			// 08
+		UInt32				pad0C;				// 0C
+		TESEffectShader*	effectShader;		// 10
+		BGSArtObject*		artObject;			// 18
+		RefHandle			facingRefHandle;	// 20
+		UInt32				pad024;				// 24
+		UInt64				unk28;				// 28
 	};
 	STATIC_ASSERT(sizeof(OwnedController) == 0x30);
 }

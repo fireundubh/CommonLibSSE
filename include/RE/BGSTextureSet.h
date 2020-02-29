@@ -41,6 +41,29 @@ namespace RE
 		};
 
 
+		struct Textures
+		{
+			enum Texture : UInt32
+			{
+				kDiffuse = 0,
+				kNormal,
+				kGloss = kNormal,
+				kEnvironmentMask,
+				kSubsurfaceTint = kEnvironmentMask,
+				kGlowMap,
+				kDetailMap = kGlowMap,
+				kHeight,
+				kEnvironment,
+				kMultilayer,
+				kBacklightMask,
+				kSpecular = kBacklightMask,
+
+				kTotal = 8
+			};
+		};
+		using Texture = Textures::Texture;
+
+
 		virtual ~BGSTextureSet();													// 00
 
 		// override (TESBoundObject)

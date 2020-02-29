@@ -68,6 +68,7 @@ namespace RE
 		virtual BGSKeyword*	GetDefaultKeyword() const override;				// 05
 
 		float GetArmorRating();
+		TESObjectARMA* GetArmorAddonByMask(TESRace* a_race, BGSBipedObjectForm::BipedObjectSlot a_slot);
 
 
 		// members

@@ -5,14 +5,15 @@
 #include "RE/CombatTargetSelectorStandard.h"
 #include "RE/CombatAreaStandard.h"
 
+
 namespace RE
 {
     class CombatController;
-    
+   
+
     class CombatControllerData08
     {
     public:
-
         struct Data80
         {
             CombatLocation    unk00;  // 10
@@ -54,10 +55,9 @@ namespace RE
         BSTArray<Data80>    unk80;                          // 80
         CombatController*   unk98;                          // 98
         UInt8               unkA0;                          // A0
-        AITimer             unkA4;                          // A4
-        AITimer             unkAC;                          // AC
-        AITimer             unkB4;                          // B4
-
+        AITimer             strengthUpdateTimer;            // A4
+        AITimer             threatRatioUpdateTimer;         // AC
+        AITimer             threatUpdateTimer;              // B4
     };    
     STATIC_ASSERT(sizeof(CombatControllerData08) == 0xC0);
 }

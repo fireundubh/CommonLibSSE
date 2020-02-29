@@ -7,12 +7,11 @@
 
 namespace RE
 {
-	//shape type == 11
 	class BSParticleShaderGeometry : public BSDynamicTriShape
 	{
 	public:
-		inline static const void* RTTI = RTTI_BSParticleShaderGeometry;
-		inline static const void* Ni_RTTI = NiRTTI_BSDynamicTriShape;
+		inline static constexpr auto RTTI = RTTI_BSParticleShaderGeometry;
+		inline static constexpr auto Ni_RTTI = NiRTTI_BSDynamicTriShape;
 
 
 		virtual ~BSParticleShaderGeometry();														// 00

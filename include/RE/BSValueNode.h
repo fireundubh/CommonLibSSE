@@ -8,15 +8,15 @@ namespace RE
 	class BSValueNode : public BSNiNode
 	{
 	public:
-		inline static const void* RTTI = RTTI_BSValueNode;
-		inline static const void* Ni_RTTI = NiRTTI_BSValueNode;
+		inline static constexpr auto RTTI = RTTI_BSValueNode;
+		inline static constexpr auto Ni_RTTI = NiRTTI_BSValueNode;
 
 
-		virtual ~BSValueNode();													// 00
+		virtual ~BSValueNode();														// 00
 
 		// override (NiNode)
-		virtual const NiRTTI* GetRTTI() const override;							// 02
-		virtual NiObject* CreateClone(NiCloningProcess& a_cloning) override;	// 17
+		virtual const NiRTTI*	GetRTTI() const override;							// 02
+		virtual NiObject*		CreateClone(NiCloningProcess& a_cloning) override;	// 17
 
 
 		// members

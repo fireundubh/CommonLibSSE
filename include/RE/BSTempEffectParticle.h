@@ -4,22 +4,26 @@
 #include "RE/NiTransform.h"
 #include "RE/NiSmartPointer.h"
 
-class NiAVObject;
 
 namespace RE
 {
+    class NiAVObject;
+
+
     class BSTempEffectParticle : public BSTempEffect
     {
     public:
-        inline static const void* RTTI = RTTI_BSTempEffectParticle;
-        inline static const void* Ni_RTTI = NiRTTI_BSTempEffectParticle;
+        inline static constexpr auto RTTI = RTTI_BSTempEffectParticle;
+        inline static constexpr auto Ni_RTTI = NiRTTI_BSTempEffectParticle;
 
-        virtual ~BSTempEffectParticle();			                    // 00
 
-        virtual const NiRTTI*       GetRTTI() const override;	            // 02
-        virtual void			    Detach() override;		                // 27
-        virtual bool			    Update(float a_arg1) override;          // 28
-        virtual TEMP_EFFECT_TYPE    GetType() const override;				// 2C - { return kParticle; }
+        virtual ~BSTempEffectParticle();			                // 00
+
+        virtual const NiRTTI*       GetRTTI() const override;	    // 02
+        virtual void			    Detach() override;		        // 27
+        virtual bool			    Update(float a_arg1) override;  // 28
+        virtual TEMP_EFFECT_TYPE    GetType() const override;		// 2C - { return kParticle; }
+
 
         // members
         UInt64                  unk30;

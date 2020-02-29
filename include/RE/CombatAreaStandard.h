@@ -2,15 +2,18 @@
 
 #include "RE/CombatAreaRadius.h"
 
+
 namespace RE
 {
 	class BGSLoadGameBuffer;
 	class BGSSaveGameBuffer;
 
+
 	class CombatAreaStandard : public CombatAreaRadius
 	{
 	public:
-		inline static const void* RTTI = RTTI_CombatAreaStandard;
+		inline static constexpr auto RTTI = RTTI_CombatAreaStandard;
+
 
 		virtual ~CombatAreaStandard();									// 00
 

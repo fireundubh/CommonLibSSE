@@ -3,18 +3,21 @@
 #include "RE/BSTempEffect.h"
 #include "RE/NiSmartPointer.h"
 
-class BSGeometry;
-class NiAVObject;
 
 namespace RE
 {
-	class BSTempEffectGeometryDecal : public BSTempEffect
+    class BSGeometry;
+    class NiAVObject;
+
+
+    class BSTempEffectGeometryDecal : public BSTempEffect
 	{
 	public:
-		inline static const void* RTTI = RTTI_BSTempEffectGeometryDecal;
-		inline static const void* Ni_RTTI = NiRTTI_BSTempEffectGeometryDecal;
+		inline static constexpr auto RTTI = RTTI_BSTempEffectGeometryDecal;
+		inline static constexpr auto Ni_RTTI = NiRTTI_BSTempEffectGeometryDecal;
 
-		virtual ~BSTempEffectGeometryDecal();			                // 00
+
+		virtual ~BSTempEffectGeometryDecal();			                    // 00
 
         virtual const NiRTTI*       GetRTTI() const override;	            // 02
         virtual void			    Initialize() override;	                // 25 
@@ -22,6 +25,7 @@ namespace RE
         virtual bool			    Update(float a_arg1) override;          // 28
         virtual NiAVObject*         Get3D() const override;	                // 29
         virtual TEMP_EFFECT_TYPE    GetType() const override;				// 2C - { return kGeometryDecal; }
+
 
 		// members
         NiPointer<BSGeometry>   decal;

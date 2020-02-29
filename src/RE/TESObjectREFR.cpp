@@ -20,8 +20,11 @@
 #include "RE/NiAVObject.h"
 #include "RE/NiControllerManager.h"
 #include "RE/NiControllerSequence.h"
+#include "RE/NiRTTI.h"
 #include "RE/NiTimeController.h"
 #include "RE/Offsets.h"
+#include "RE/ProcessLists.h"
+#include "RE/ReferenceEffect.h"
 #include "RE/TESContainer.h"
 #include "RE/TESFaction.h"
 #include "RE/TESNPC.h"
@@ -246,6 +249,22 @@ namespace RE
 		} else {
 			return 0;
 		}
+	}
+
+
+	float TESObjectREFR::GetHeadingAngle(TESObjectREFR* a_ref)
+	{
+		auto dPos = a_ref->GetPosition() - GetPosition();
+		auto result = (dPos.GetArcTangent() - GetRotationZ()) * 57.295776;
+		if (result <= 180.0) {
+			if (result < -180.0) {
+				result = fmodf(result - -180.0, 360.0) + 180.0;
+			}
+		}
+		else {
+			result = fmodf(result - -180.0, 360.0) - 180.0;
+		}
+		return result;
 	}
 
 
@@ -712,19 +731,23 @@ namespace RE
 	}
 
 
-	float TESObjectREFR::GetHeadingAngle(TESObjectREFR* a_ref)
+	void TESObjectREFR::StopAllShaders()
 	{
-		auto dPos = a_ref->GetPosition() - GetPosition();
-		auto result = (dPos.GetArcTangent() - GetRotationZ()) * 57.295776;
-		if (result <= 180.0) {
-			if (result < -180.0) {
-				result = fmodf(result - -180.0, 360.0) + 180.0;
+		auto singleton = ProcessLists::GetSingleton();
+
+		singleton->magicEffectsLock.Lock();
+		for (auto& tempEffect : singleton->magicEffects) {
+			if (tempEffect.get()) {
+				auto referenceEffect = netimmerse_cast<ReferenceEffect*>(tempEffect.get());
+				if (referenceEffect) {
+					auto refHandle = CreateRefHandle();
+					if (referenceEffect->target == refHandle) {
+						referenceEffect->finished = 1;
+					}
+				}
 			}
 		}
-		else {
-			result = fmodf(result - -180.0, 360.0) - 180.0;
-		}
-		return result;
+		singleton->magicEffectsLock.Unlock();
 	}
 
 

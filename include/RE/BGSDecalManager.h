@@ -11,11 +11,13 @@ namespace RE
 	class BGSDecalNode;
 	class BSTempEffect;
 
+
 	class BGSDecalManager : public BSTSingletonSDM<BGSDecalManager>
 	{
 	public:
 		static BGSDecalManager* GetSingleton();
 
+		//members
 		UInt8								pad01;				// 01
 		UInt8								pad02;				// 02
 		UInt8								pad03;				// 03
@@ -34,6 +36,5 @@ namespace RE
 		BSShaderAccumulator*				shaderAccumulator;	// 80
 		UInt32								unk88;				// 88
 	};
-	static_assert(offsetof(BGSDecalManager, decals) >= 0x18, "simple decals too early");
-	static_assert(offsetof(BGSDecalManager, decals) <= 0x18, "simple decals too late");
+	STATIC_ASSERT(sizeof(BGSDecalManager) == 0x90);
 };

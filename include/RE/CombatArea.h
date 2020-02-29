@@ -3,22 +3,26 @@
 #include "RE/CombatObject.h"
 #include "RE/CombatController.h"
 
+
 namespace RE
 {
 	class BGSLoadGameBuffer;
 	class BGSSaveGameBuffer;
 	class CombatController;
-	
+
+
 	class CombatArea : public CombatObject
 	{
 	public:
-		inline static const void* RTTI = RTTI_CombatArea;
+		inline static constexpr auto RTTI = RTTI_CombatArea;
+
 
 		virtual ~CombatArea();											// 00
 
 		// override
 		virtual void	SaveGame(BGSSaveGameBuffer* a_buf) override;	// 03
 		virtual void	LoadGame(BGSLoadGameBuffer* a_buf) override;	// 04
+
 		// add
 		virtual void	Unk_05() = 0;									// 05
 		virtual void	Unk_06() = 0;									// 06
@@ -36,7 +40,6 @@ namespace RE
 		UInt32				unk28;	// 28
 		UInt8				unk2C;	// 2C
 		UInt8				unk2D;	// 2D
-
 	};
 	STATIC_ASSERT(sizeof(CombatArea) == 0x30);
 }

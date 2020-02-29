@@ -9,6 +9,7 @@
 #include "SKSE/Stubs.h"
 #include "SKSE/Trampoline.h"
 #include "SKSE/Version.h"
+#include "SKSE/Utilities.h"
 
 
 namespace SKSE

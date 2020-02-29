@@ -155,7 +155,8 @@ namespace RE
 		void						SetCachedHeight(float a_height);
 		void						Set3DUpdateFlag(RESET_3D_FLAGS a_flags);
 		void						Update3DModel(Actor* a_actor);
-		void		SetActorRefraction(float a_refraction);
+		void						SetActorRefraction(float a_refraction);
+
 
 		// members
 		MiddleLowProcessData*			middleLow;						// 000

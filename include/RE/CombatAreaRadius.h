@@ -4,15 +4,18 @@
 #include "RE/NiPoint3.h"
 #include "RE/TESObjectCELL.h"
 
+
 namespace RE
 {
 	class BGSLoadGameBuffer;
 	class BGSSaveGameBuffer;
 
+
 	class CombatAreaRadius : public CombatArea
 	{
 	public:
-		inline static const void* RTTI = RTTI_CombatAreaRadius;
+		inline static constexpr auto RTTI = RTTI_CombatAreaRadius;
+
 
 		virtual ~CombatAreaRadius();						// 00
 
@@ -31,7 +34,6 @@ namespace RE
 		//members
 		CombatLocation	pos;	// 30
 		float			radius;	// 48
-
 	};
 	STATIC_ASSERT(sizeof(CombatAreaRadius) == 0x50);
 }

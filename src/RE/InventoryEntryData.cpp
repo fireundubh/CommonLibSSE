@@ -1,5 +1,7 @@
 #include "RE/InventoryEntryData.h"
 
+#include "RE/BGSBaseAlias.h"
+#include "RE/ExtraAliasInstanceArray.h"
 #include "RE/ExtraDataList.h"
 #include "RE/GameSettingCollection.h"
 #include "RE/Offsets.h"
@@ -195,5 +197,41 @@ namespace RE
 		using func_t = decltype(&InventoryEntryData::IsOwnedBy_Impl);
 		REL::Offset<func_t> func(Offset::InventoryEntryData::IsOwnedBy);
 		return func(this, a_actor, a_itemOwner, a_defaultTo);
+	}
+
+
+	bool InventoryEntryData::CanItemBeTaken(bool a_noEquipped, bool a_noFavourited, bool a_noQuestItem)
+	{
+		if (extraLists) {
+			for (auto& xList : *extraLists) {
+				if (!xList) {
+					continue;
+				}
+				if (a_noEquipped) {
+					if (xList->HasType(ExtraDataType::kWorn) || xList->HasType(ExtraDataType::kWornLeft)) {
+						return false;
+					}
+				}
+				if (a_noFavourited) {
+					if (xList->HasType(ExtraDataType::kHotkey)) {
+						return false;
+					}
+				}
+				if (a_noQuestItem) {
+					auto xAliases = static_cast<ExtraAliasInstanceArray*>(xList->GetByType(ExtraDataType::kAliasInstanceArray));
+					if (xAliases) {
+						for (auto& alias : xAliases->aliases) {
+							TESQuest* quest = alias->quest;
+							auto refAlias = alias->alias;
+							if (quest && refAlias && refAlias->IsQuestObject()) {
+								return false;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		return true;
 	}
 }

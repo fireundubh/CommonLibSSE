@@ -1,5 +1,7 @@
 #pragma once
 
+#include "RE/BSScript/Internal/VirtualMachine.h"
+
 
 namespace RE
 {
@@ -15,5 +17,15 @@ namespace RE
 	bool		LookupReferenceByHandle(const RefHandle& a_handle, NiPointer<Actor>& a_refrOut);
 	bool		LookupReferenceByHandle(const RefHandle& a_handle, NiPointer<TESObjectREFR>& a_refrOut);
 	void		PlaySound(const char* a_editorID);
-	void		func2E9950(); //FEC - Frame Hook
+	void		func2E9950();	// FEC - Frame Hook
+
+	namespace Util
+	{
+		void	SanitizeTexturePath(std::string& a_path);
+	}
+
+	namespace Papyrus
+	{
+		void	ApplyHavokImpulse(BSScript::Internal::VirtualMachine* vm, UInt32 stackID, TESObjectREFR* target, float afX, float afY, float afZ, float magnitude);
+	}
 }

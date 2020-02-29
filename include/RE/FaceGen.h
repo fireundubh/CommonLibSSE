@@ -3,21 +3,17 @@
 #include "RE/BSFixedString.h"
 #include "RE/BSTSingleton.h"
 
-#include "RE/BSFaceGenNiNode.h"
-#include "RE/TESNPC.h"
-#include "RE/BGSHeadPart.h"
-
-class BGSHeadPart;
 
 namespace RE
 {
+	class BGSHeadPart;
+	class BSFaceGenNiNode;
+	class TESNPC;
+
+
 	class FaceGen : public BSTSingletonSDM<FaceGen>
 	{
 	public:
-		static FaceGen* GetSingleton();
-
-		void RegenerateHead(BSFaceGenNiNode* a_headNode, BGSHeadPart* a_head, TESNPC* a_npc);
-
 		struct Action
 		{
 			BSFixedString name;
@@ -25,7 +21,7 @@ namespace RE
 			float	delta;
 		};
 
-		// 40
+
 		class MorphDatabase
 		{
 		public:
@@ -48,7 +44,13 @@ namespace RE
 			UInt8	unk38;		// 38
 			UInt8	pad39[7];	// 39
 		};
+		
+		static FaceGen* GetSingleton();
 
+		void RegenerateHead(BSFaceGenNiNode* a_headNode, BGSHeadPart* a_head, TESNPC* a_npc);
+
+
+		//members
 		UInt32			unk04;						// 04
 		UInt8			unk08;						// 08
 		UInt8			pad09[7];					// 09

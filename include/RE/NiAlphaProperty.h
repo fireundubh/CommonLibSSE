@@ -8,21 +8,8 @@ namespace RE
 	class NiAlphaProperty : public NiProperty
 	{
 	public:
-		inline static const void* RTTI = RTTI_NiAlphaProperty;
-		inline static const void* Ni_RTTI = NiRTTI_NiAlphaProperty;
-
-		virtual ~NiAlphaProperty();													// 00
-
-		// override (NiObjectNET)
-		virtual const NiRTTI*	GetRTTI() const override;							// 02
-		virtual NiObject*		CreateClone(NiCloningProcess& a_cloning);			// 17 
-		virtual void			LoadBinary(NiStream& a_stream) override;			// 18 - { NiObjectNET::LoadBinary(a_stream); }
-		virtual void			LinkObject(NiStream& a_stream) override;			// 19 - { NiObjectNET::LinkObject(a_stream); }
-		virtual bool			RegisterStreamables(NiStream& a_stream) override;	// 1A - { return NiObjectNET::RegisterStreamables(a_stream); }
-		virtual void			SaveBinary(NiStream& a_stream) override;			// 1B 
-		virtual bool			IsEqual(NiObject* a_object) override;				// 1C - { return NiObjectNET::IsEqual(a_object); }
-		virtual void			ProcessClone(NiCloningProcess& a_cloning) override;	// 1D
-		virtual Type			GetType() const override;							// 25 - { return 0; }
+		inline static constexpr auto RTTI = RTTI_NiAlphaProperty;
+		inline static constexpr auto Ni_RTTI = NiRTTI_NiAlphaProperty;
 
 
 		enum AlphaFunction
@@ -41,6 +28,7 @@ namespace RE
 			kAlpha_Max_Modes,
 		};
 
+
 		enum TestFunction
 		{
 			kTest_Always = 0,
@@ -53,6 +41,20 @@ namespace RE
 			kTest_Never,
 			kTest_Max_Modes,
 		};
+
+
+		virtual ~NiAlphaProperty();													// 00
+
+		// override (NiObjectNET)
+		virtual const NiRTTI*	GetRTTI() const override;							// 02
+		virtual NiObject*		CreateClone(NiCloningProcess& a_cloning);			// 17 
+		virtual void			LoadBinary(NiStream& a_stream) override;			// 18 - { NiObjectNET::LoadBinary(a_stream); }
+		virtual void			LinkObject(NiStream& a_stream) override;			// 19 - { NiObjectNET::LinkObject(a_stream); }
+		virtual bool			RegisterStreamables(NiStream& a_stream) override;	// 1A - { return NiObjectNET::RegisterStreamables(a_stream); }
+		virtual void			SaveBinary(NiStream& a_stream) override;			// 1B 
+		virtual bool			IsEqual(NiObject* a_object) override;				// 1C - { return NiObjectNET::IsEqual(a_object); }
+		virtual void			ProcessClone(NiCloningProcess& a_cloning) override;	// 1D
+		virtual Type			GetType() const override;							// 25 - { return 0; }
 
 
 		//members

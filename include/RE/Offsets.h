@@ -36,14 +36,13 @@ namespace RE
 			static constexpr REL::ID UpdateArmorAbility(static_cast<std::uint64_t>(37802));
 			static constexpr REL::ID UpdateWeaponAbility(static_cast<std::uint64_t>(37803));
 			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(260538));
-
 			// po3
-			constexpr std::uintptr_t EnableAI = 0x005E44F0;						// 1_5_97
-			constexpr std::uintptr_t GetSoulSize = 0x006348A0;					// 1_5_97
-			constexpr std::uintptr_t Decapitate = 0x005F2530;					// 1_5_97
-			constexpr std::uintptr_t InstantKill = 0x005FB640;					// 1_5_97
-			constexpr std::uintptr_t RemoveSpell = 0x0062F720;					// 1_5_97
-
+			static constexpr REL::ID EnableAI(static_cast<std::uint64_t>(36504));
+			static constexpr REL::ID GetSoulLevel(static_cast<std::uint64_t>(37862));
+			static constexpr REL::ID Decapitate(static_cast<std::uint64_t>(36631));
+			static constexpr REL::ID InstantKill(static_cast<std::uint64_t>(36723));
+			static constexpr REL::ID RemoveSpell(static_cast<std::uint64_t>(37772));
+			static constexpr REL::ID HasSpell(static_cast<std::uint64_t>(37828));
 		}
 
 
@@ -65,9 +64,8 @@ namespace RE
 		{
 			static constexpr REL::ID SetBaseScale(static_cast<std::uint64_t>(38568));
 			static constexpr REL::ID Update3DModel(static_cast<std::uint64_t>(38404));
-
 			//po3
-			constexpr std::uintptr_t SetActorRefraction = 0x00680DB0;	// 1_5_97
+			static constexpr REL::ID SetActorRefraction(static_cast<std::uint64_t>(38916));
 		}
 
 
@@ -85,8 +83,7 @@ namespace RE
 
 		namespace BGSDecalManager
 		{
-			// IndirectSig: E8 ? ? ? ? 4C 63 C3
-			constexpr std::uintptr_t Singleton = 0x01EC4320;	// 1_5_97
+			static constexpr REL::ID Singleton(static_cast<std::uint64_t>(514414));
 		}
 
 
@@ -104,9 +101,8 @@ namespace RE
 
 		namespace BGSImpactManager
 		{
-			constexpr std::uintptr_t Singleton = 0x02F003F0;	// 1_5_97
-			//
-			constexpr std::uintptr_t PlayImpactEffect = 0x005A2C60;	// 1_5_97
+			static constexpr REL::ID Singleton(static_cast<std::uint64_t>(515123));
+			static constexpr REL::ID PlayImpactEffect(static_cast<std::uint64_t>(35320));
 		}
 
 
@@ -123,10 +119,12 @@ namespace RE
 			static constexpr REL::ID Load(static_cast<std::uint64_t>(34819));
 		}
 
+
 		namespace BGSListForm
 		{
-			constexpr std::uintptr_t AddFormToList = 0x002C53D0;		// 1_5_97
+			static constexpr REL::ID AddFormToList(static_cast<std::uint64_t>(20470));
 		}
+
 
 		namespace BGSStoryTeller
 		{
@@ -177,14 +175,13 @@ namespace RE
 		{
 			static constexpr REL::ID CreateMaterial(static_cast<std::uint64_t>(100016));
 			//po3
-			constexpr std::uintptr_t CopyBaseMaterial = 0x012CEF40; // 1_5_97
+			static constexpr REL::ID CopyBaseMaterial(static_cast<std::uint64_t>(100006));
 		}
 
 
 		namespace BSLightingShaderMaterialFacegenTint
 		{
-			// IndirectSig: E8 ? ? ? ? 45 33 C0 33 D2 48 8B CF 4C 8B F0
-			constexpr std::uintptr_t Ctor = 0x012D2690;	// 1_5_97
+			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100087));
 		}
 
 
@@ -215,16 +212,11 @@ namespace RE
 
 		namespace BSShaderProperty
 		{
-			//
-			constexpr std::uintptr_t SetMaterial = 0x01291D40;				// 1_5_97
-			//
-			constexpr std::uintptr_t SetFlags = 0x01291C30;					// 1_5_97
-			//
-			constexpr std::uintptr_t InvalidateMaterial = 0x0019C3B0;		// 1_5_97
-			//
-			constexpr std::uintptr_t InvalidateTextures = 0x012C5AB0;		// 1_5_97
-			//
-			constexpr std::uintptr_t SetBSEffectShaderData = 0x00218980;	// 1_5_97
+			static constexpr REL::ID SetMaterial(static_cast<std::uint64_t>(98897));
+			static constexpr REL::ID SetFlags(static_cast<std::uint64_t>(98893));
+			static constexpr REL::ID InvalidateMaterial(static_cast<std::uint64_t>(14678));
+			static constexpr REL::ID InvalidateTextures(static_cast<std::uint64_t>(99865));
+			static constexpr REL::ID SetBSEffectShaderData(static_cast<std::uint64_t>(16981));
 		}
 
 
@@ -272,15 +264,12 @@ namespace RE
 		}
 
 		
-
 		namespace BSShaderTextureSet
 		{
-			//po3
-			constexpr std::uintptr_t Ctor = 0x012C9320;	// 1_5_97
+			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(99886));
 		}
 
 
-		
 		namespace BSSoundHandle
 		{
 			static constexpr REL::ID IsValid(static_cast<std::uint64_t>(66360));
@@ -291,20 +280,17 @@ namespace RE
 		}
 
 
-
 		namespace BSString
 		{
 			static constexpr REL::ID Set_CStr(static_cast<std::uint64_t>(10979));
 		}
 
+
 		namespace BSTaskPool
 		{
-			constexpr std::uintptr_t Singleton = 0x02F38978;	// 1_5_97
-
-			constexpr std::uintptr_t func2E9950 = 0x002E9950;	// 1_5_97
-
-			constexpr std::uintptr_t func5C1AF0 = 0x005C1AF0;	// 1_5_97
+			static constexpr REL::ID Singleton(static_cast<std::uint64_t>(517228));
 		}
+
 
 		namespace BSUntypedPointerHandle
 		{
@@ -338,8 +324,7 @@ namespace RE
 
 		namespace CombatManager
 		{
-			//
-			constexpr std::uintptr_t Singleton = 0x02F4AD88;	// 1_5_97
+			static constexpr REL::ID Singleton(static_cast<std::uint64_t>(518706));
 		}
 
 
@@ -459,8 +444,7 @@ namespace RE
 
 		namespace ExtraLock
 		{
-			// VTable: ??_7ExtraLock@@6B@
-			constexpr std::uintptr_t Vtbl = 0x0152BEA0;	// 1_5_97
+			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(229527));
 		}
 
 
@@ -509,8 +493,8 @@ namespace RE
 
 		namespace FaceGen
 		{
-			constexpr std::uintptr_t Singleton = 0x01EBEB40;		// 1_5_97
-			constexpr std::uintptr_t RegenerateHead = 0x003D2A60;	// 1_5_97
+			static constexpr REL::ID Singleton(static_cast<std::uint64_t>(514182));
+			static constexpr REL::ID RegenerateHead(static_cast<std::uint64_t>(26259));
 		}
 
 
@@ -636,7 +620,7 @@ namespace RE
 			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(15812));
 			static constexpr REL::ID Dtor(static_cast<std::uint64_t>(15813));
 			static constexpr REL::ID GenerateLeveledListChanges(static_cast<std::uint64_t>(15829));
-			constexpr std::uintptr_t GetNextUniqueID = 0x001ECD33;
+			static constexpr REL::ID GetNextUniqueID(static_cast<std::uint64_t>(15908));
 			static constexpr REL::ID SendContainerChangedEvent(static_cast<std::uint64_t>(15909));
 			static constexpr REL::ID SetUniqueID(static_cast<std::uint64_t>(15907));
 			static constexpr REL::ID TransferItemUID(static_cast<std::uint64_t>(15909));
@@ -760,7 +744,7 @@ namespace RE
 
 		namespace NiBooleanExtraData
 		{
-			constexpr std::uintptr_t Vtbl = 0x0176B240; // 1_5_97
+			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286420));
 		}
 
 
@@ -779,14 +763,15 @@ namespace RE
 
 		namespace NiFloatExtraData
 		{
-			constexpr std::uintptr_t Vtbl = 0x0176B7D0; // 1_5_97
+			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286430));
 		}
 
 		
 		namespace NiIntegersExtraData
 		{
-			constexpr std::uintptr_t Vtbl = 0x0176BF00;	// 1_5_97
+			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286448));
 		}
+
 
 		namespace NiMemManager
 		{
@@ -820,7 +805,13 @@ namespace RE
 
 		namespace NiStringsExtraData
 		{
-			constexpr std::uintptr_t Vtbl = 0x01766B50;
+			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286151));
+		}
+
+
+		namespace Papyrus
+		{
+			static constexpr REL::ID ApplyHavokImpulse(static_cast<std::uint64_t>(55618));
 		}
 
 
@@ -863,9 +854,7 @@ namespace RE
 		namespace ProcessLists
 		{
 			static constexpr REL::ID Singleton(static_cast<std::uint64_t>(514167));
-			static constexpr REL::ID StopCombatAndAlarmOnActor(static_cast<std::uint64_t>(40330));
-			//
-			constexpr std::uintptr_t StopArtObject = 0x006DDA30;				// 1_5_97
+			static constexpr REL::ID StopCombatAndAlarmOnActor(static_cast<std::uint64_t>(40330));		
 		}
 
 
@@ -985,9 +974,10 @@ namespace RE
 			static constexpr REL::ID SeekNextSubrecord(static_cast<std::uint64_t>(13903));
 		}
 
+
 		namespace TESForm
 		{
-			constexpr std::uintptr_t GetWeight = 0x001A1730;				// 1_5_97
+			static constexpr REL::ID GetWeight(static_cast<std::uint64_t>(14809));
 		}
 
 
@@ -1033,14 +1023,14 @@ namespace RE
 			static constexpr REL::ID IsCrimeToActivate(static_cast<std::uint64_t>(19400));
 			static constexpr REL::ID MoveTo(static_cast<std::uint64_t>(56227));
 			static constexpr REL::ID PlayAnimation(static_cast<std::uint64_t>(14189));
-			//
-			constexpr std::uintptr_t CreateRefHandle_Native = 0x0029B980;	// 1_5_97
+			// po3
+			static constexpr REL::ID CreateRefHandle_Native(static_cast<std::uint64_t>(19418));
 		}
 
 
 		namespace TESPackage
 		{
-			constexpr std::uintptr_t CreatePackage = 0x004348C0;		// 1_5_97
+			static constexpr REL::ID CreatePackage(static_cast<std::uint64_t>(28732));
 		}
 		
 
@@ -1053,7 +1043,7 @@ namespace RE
 
 		namespace TESWorldSpace
 		{
-			constexpr std::uintptr_t GetOrCreateSkyCell = 0x002B63B0;	// 1_5_97
+			static constexpr REL::ID GetOrCreateSkyCell(static_cast<std::uint64_t>(20095));
 		}
 
 
@@ -1110,7 +1100,8 @@ namespace RE
 		static constexpr REL::ID PlaySound(static_cast<std::uint64_t>(52054));
 		static constexpr REL::ID RTDynamicCast(static_cast<std::uint64_t>(102238));
 		static constexpr REL::ID TlsIndex(static_cast<std::uint64_t>(528600));
-		//
-		constexpr std::uintptr_t ShakeCamera = 0x004F5420;              // 1_5_97
+		// po3
+		static constexpr REL::ID func2E9950(static_cast<std::uint64_t>(21434));
+		static constexpr REL::ID ShakeCamera(static_cast<std::uint64_t>(32275));
 	}
 }

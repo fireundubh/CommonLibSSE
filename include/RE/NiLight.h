@@ -2,13 +2,14 @@
 
 #include "RE/NiAVObject.h"
 
+
 namespace RE
 {
 	class NiLight : public NiAVObject
 	{
 	public:
-		inline static const void* RTTI = RTTI_NiLight;
-		inline static const void* Ni_RTTI = NiRTTI_NiLight;
+		inline static constexpr auto RTTI = RTTI_NiLight;
+		inline static constexpr auto Ni_RTTI = NiRTTI_NiLight;
 
 
 		virtual ~NiLight();																											// 00
@@ -18,6 +19,7 @@ namespace RE
 		virtual void			LoadBinary(NiStream& a_stream) override;															// 18
 		virtual void			SaveBinary(NiStream& a_stream) override;															// 1B
 		virtual bool			IsEqual(NiObject* a_object) override;																// 1C
+
 
 		// members
 		float	unk110;	// 110;

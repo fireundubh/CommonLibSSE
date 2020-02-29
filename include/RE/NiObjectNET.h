@@ -1,13 +1,13 @@
 #pragma once
 
 #include "RE/BSFixedString.h"
+#include "RE/NiExtraData.h"
 #include "RE/NiObject.h"
 #include "RE/NiSmartPointer.h"
 
 
 namespace RE
 {
-	class NiExtraData;
 	class NiTimeController;
 
 
@@ -21,7 +21,7 @@ namespace RE
 		virtual ~NiObjectNET();														// 00
 
 		// override (NiObject)
-		virtual const NiRTTI* GetRTTI() const override;							// 02
+		virtual const NiRTTI*	GetRTTI() const override;							// 02
 		virtual void			LoadBinary(NiStream& a_stream) override;			// 18
 		virtual void			LinkObject(NiStream& a_stream) override;			// 19
 		virtual bool			RegisterStreamables(NiStream& a_stream) override;	// 1A
@@ -33,9 +33,9 @@ namespace RE
 		bool				AddExtraData(const BSFixedString& a_key, NiExtraData* a_extra);
 		bool				AddExtraData(NiExtraData* a_extra);
 		void				DeleteExtraData(UInt16 a_extraDataIndex);
-		NiTimeController* GetControllers() const;
-		NiExtraData* GetExtraData(const BSFixedString& a_key) const;
-		NiExtraData* GetExtraDataAt(UInt16 a_extraDataIndex) const;
+		NiTimeController*	GetControllers() const;
+		NiExtraData*		GetExtraData(const BSFixedString& a_key) const;
+		NiExtraData*		GetExtraDataAt(UInt16 a_extraDataIndex) const;
 		UInt16				GetExtraDataSize() const;
 		bool				InsertExtraData(NiExtraData* a_extra);
 		void				RemoveAllExtraData();
@@ -46,7 +46,7 @@ namespace RE
 
 
 		template <class S, class B, class F, class I>
-		std::tuple<S, S, B, B, F, I, std::vector<S>, std::vector<S>>GetPO3ExtraData()
+		std::tuple<S, S, B, B, F, I, std::vector<S>, std::vector<S>> GetResetExtraData()
 		{
 			std::tuple<S, S, B, B, F, I, std::vector<S>, std::vector<S>> t;
 
@@ -92,7 +92,7 @@ namespace RE
 		// members
 		BSFixedString				name;			// 10
 		NiPointer<NiTimeController>	controllers;	// 18
-		NiExtraData** extra;			// 20
+		NiExtraData**				extra;			// 20
 		UInt16						extraDataSize;	// 28
 		UInt16						maxSize;		// 2A
 		UInt32						pad2C;			// 2C

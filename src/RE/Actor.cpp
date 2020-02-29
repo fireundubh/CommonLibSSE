@@ -7,10 +7,13 @@
 #include "RE/BGSColorForm.h"
 #include "RE/BGSDefaultObjectManager.h"
 #include "RE/BSFaceGenAnimationData.h"
+#include "RE/BSFaceGenNiNode.h"
+#include "RE/BSGeometry.h"
 #include "RE/ExtraCanTalkToPlayer.h"
 #include "RE/ExtraFactionChanges.h"
 #include "RE/FormTraits.h"
 #include "RE/HighProcessData.h"
+#include "RE/InventoryChanges.h"
 #include "RE/InventoryEntryData.h"
 #include "RE/MiddleHighProcessData.h"
 #include "RE/Misc.h"
@@ -55,7 +58,8 @@ namespace RE
 	{
 		if (a_canTalk) {
 			boolFlags |= BOOL_FLAGS::kCanSpeakToEssentialDown;
-		} else {
+		}
+		else {
 			boolFlags &= ~BOOL_FLAGS::kCanSpeakToEssentialDown;
 		}
 	}
@@ -95,7 +99,8 @@ namespace RE
 		auto xTalk = extraList.GetByType<ExtraCanTalkToPlayer>();
 		if (xTalk) {
 			return xTalk->talk;
-		} else {
+		}
+		else {
 			return race ? race->AllowsPCDialogue() : false;
 		}
 	}
@@ -133,6 +138,14 @@ namespace RE
 	}
 
 
+	void Actor::Decapitate()
+	{
+		using func_t = decltype(&Actor::Decapitate);
+		REL::Offset<func_t> func(Offset::Actor::Decapitate);
+		return func(this);
+	}
+
+
 	void Actor::DispelWornItemEnchantments()
 	{
 		using func_t = decltype(&Actor::DispelWornItemEnchantments);
@@ -146,6 +159,14 @@ namespace RE
 		using func_t = decltype(&Actor::DoReset3D);
 		REL::Offset<func_t> func(Offset::Actor::DoReset3D);
 		return func(this, a_updateWeight);
+	}
+
+
+	void Actor::EnableAI(bool a_enabled)
+	{
+		using func_t = decltype(&Actor::EnableAI);
+		REL::Offset<func_t> func(Offset::Actor::EnableAI);
+		return func(this, a_enabled);
 	}
 
 
@@ -254,10 +275,12 @@ namespace RE
 		if (currentProcess) {
 			if (a_leftHand) {
 				return currentProcess->GetEquippedLeftHand();
-			} else {
+			}
+			else {
 				return currentProcess->GetEquippedRightHand();
 			}
-		} else {
+		}
+		else {
 			return 0;
 		}
 	}
@@ -277,6 +300,28 @@ namespace RE
 	}
 
 
+	BSGeometry* Actor::GetHeadPartGeometry(BGSHeadPart::HeadPartType a_type)
+	{
+		auto faceNode = GetFaceNodeSkinned();
+		auto actorBase = GetActorBase();
+
+		if (faceNode && actorBase) {
+			auto facePart = actorBase->GetCurrentHeadPartByType(a_type);
+			if (facePart) {
+				auto headNode = faceNode->GetObjectByName(facePart->formEditorID);
+				if (headNode) {
+					auto geometry = headNode->AsGeometry();
+					if (geometry) {
+						return geometry;
+					}
+				}
+			}
+		}
+
+		return nullptr;
+	}
+
+
 	float Actor::GetHeight()
 	{
 		auto min = GetBoundMin();
@@ -292,7 +337,8 @@ namespace RE
 		if (cachedHeight == 0.0) {
 			currentProcess->SetCachedHeight(height);
 			return height;
-		} else {
+		}
+		else {
 			return cachedHeight;
 		}
 	}
@@ -313,11 +359,112 @@ namespace RE
 	}
 
 
+	TESObjectARMO* Actor::GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot)
+	{
+		TESObjectARMO* equipped = nullptr;
+
+		equipped = GetWornArmor(a_slot);
+		if (!equipped) {
+			auto actorBase = GetActorBase();
+			if (actorBase) {
+				equipped = actorBase->skin;
+				auto baseRace = actorBase->race;
+				if (!equipped && baseRace) {
+					equipped = baseRace->skin;
+				}
+			}
+		}
+
+		return equipped;
+	}
+
+
+	SOUL_LEVEL Actor::GetSoulLevel() const
+	{
+		using func_t = decltype(&Actor::GetSoulLevel);
+		REL::Offset<func_t> func(Offset::Actor::GetSoulLevel);
+		return func(this);
+	}
+
+
+	TESObjectARMO* Actor::GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot)
+	{
+		auto changes = GetInventoryChanges();
+
+		if (changes && changes->entryList) {
+			for (auto& entry : *changes->entryList) {
+				if (!entry || !entry->extraLists) {
+					continue;
+				}
+				for (auto& xList : *entry->extraLists) {
+					if (!xList || !xList->GetWorn()) {
+						continue;
+					}
+					auto object = entry->object;
+					if (!object || !object->IsArmor()) {
+						continue;
+					}
+					auto armor = static_cast<TESObjectARMO*>(object);
+					for (auto& armorAddon : armor->armorAddons) {
+						if (armorAddon->HasPartOf(a_slot)) {
+							return armor;
+						}
+					}
+				}
+			}
+		}
+
+		return nullptr;
+	}
+
+
+	TESObjectARMO* Actor::GetWornArmor(FormID id)
+	{
+		auto changes = GetInventoryChanges();
+
+		if (changes && changes->entryList) {
+			for (auto& entry : *changes->entryList) {
+				if (!entry || !entry->extraLists) {
+					continue;
+				}
+				for (auto& xList : *entry->extraLists) {
+					if (!xList || !xList->GetWorn()) {
+						continue;
+					}
+					auto object = entry->object;
+					if (!object || !object->IsArmor() || object->formID != id) {
+						continue;
+					}
+					return static_cast<TESObjectARMO*>(object);		
+				}
+			}
+		}
+
+		return nullptr;
+	}
+
+
 	bool Actor::HasPerk(BGSPerk* a_perk) const
 	{
 		using func_t = decltype(&Actor::HasPerk);
 		REL::Offset<func_t> func(Offset::Actor::HasPerk);
 		return func(this, a_perk);
+	}
+
+
+	bool Actor::HasSpell(SpellItem* a_spell) const
+	{
+		using func_t = decltype(&Actor::HasSpell);
+		REL::Offset<func_t> func(Offset::Actor::HasSpell);
+		return func(this, a_spell);
+	}
+
+
+	bool Actor::InstantKill()
+	{
+		using func_t = decltype(&Actor::InstantKill);
+		REL::Offset<func_t> func(Offset::Actor::InstantKill);;
+		return func(this);
 	}
 
 
@@ -366,7 +513,8 @@ namespace RE
 
 		if (crimFac == a_faction) {
 			return true;
-		} else {
+		}
+		else {
 			return crimFac->IsFactionInCrimeGroup(a_faction);
 		}
 	}
@@ -456,6 +604,14 @@ namespace RE
 	bool Actor::IsTrespassing() const
 	{
 		return (boolFlags & BOOL_FLAGS::kIsTrespassing) != BOOL_FLAGS::kNone;
+	}
+
+
+	bool Actor::RemoveSpell(SpellItem* a_spell)
+	{
+		using func_t = decltype(&Actor::RemoveSpell);
+		REL::Offset<func_t> func(Offset::Actor::RemoveSpell);;
+		return func(this, a_spell);
 	}
 
 
@@ -549,7 +705,35 @@ namespace RE
 	}
 
 
-	bool Actor::VisitFactions(llvm::function_ref<bool(TESFaction* a_faction, SInt8 a_rank)> a_visitor)
+	NiAVObject* Actor::VisitArmorAddon(TESObjectARMO* a_armor, TESObjectARMA* a_arma)
+	{
+		char addonString[MAX_PATH];
+		memset(addonString, 0, MAX_PATH);
+		a_arma->GetNodeName(addonString, this, a_armor, -1);
+
+		NiNode* skeletonRoot[2];
+		skeletonRoot[0] = Get3D(0)->AsNode();
+		skeletonRoot[1] = Get3D(1)->AsNode();
+
+		if (skeletonRoot[1] == skeletonRoot[0]) {
+			skeletonRoot[1] = nullptr;
+		}
+
+		for (UInt32 i = 0; i <= 1; i++) {
+			if (skeletonRoot[i]) {
+				BSFixedString addonName(addonString);
+				auto armorObject = skeletonRoot[i]->GetObjectByName(addonName);
+				if (armorObject) {
+					return armorObject;
+				}
+			}
+		}
+
+		return nullptr;
+	}
+
+
+	bool Actor::VisitFactions(llvm::function_ref<bool(TESFaction * a_faction, SInt8 a_rank)> a_visitor)
 	{
 		auto base = GetActorBase();
 		if (base) {
@@ -570,45 +754,5 @@ namespace RE
 		}
 
 		return false;
-	}
-
-
-	void Actor::EnableAI(bool a_enabled)
-	{
-		using func_t = decltype(&Actor::EnableAI);
-		REL::Offset<func_t> func(Offset::Actor::EnableAI);
-		return func(this, a_enabled);
-	}
-
-
-	UInt8 Actor::GetSoulSize() const
-	{
-		using func_t = decltype(&Actor::GetSoulSize);
-		REL::Offset<func_t> func(Offset::Actor::GetSoulSize);
-		return func(this);
-	}
-
-
-	void Actor::Decapitate()
-	{
-		using func_t = decltype(&Actor::Decapitate);
-		REL::Offset<func_t> func(Offset::Actor::Decapitate);
-		return func(this);
-	}
-
-
-	bool Actor::InstantKill() 
-	{
-		using func_t = decltype(&Actor::InstantKill);
-		REL::Offset<func_t> func(Offset::Actor::InstantKill);;
-		return func(this);
-	}
-
-
-	bool Actor::RemoveSpell(SpellItem * a_spell)
-	{
-		using func_t = decltype(&Actor::RemoveSpell);
-		REL::Offset<func_t> func(Offset::Actor::RemoveSpell);;
-		return func(this, a_spell);
 	}
 }

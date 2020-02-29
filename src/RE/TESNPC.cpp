@@ -2,6 +2,7 @@
 
 #include "RE/Offsets.h"
 #include "RE/TESRace.h"
+#include "RE/TESSpellList.h"
 #include "REL/Relocation.h"
 
 
@@ -91,6 +92,15 @@ namespace RE
 		using func_t = decltype(&TESNPC::GetNumBaseOverlays);
 		REL::Offset<func_t> func(Offset::TESNPC::GetNumBaseOverlays);
 		return func(this);
+	}
+
+
+	TESSpellList::SpellData* TESNPC::GetOrCreateSpellList()
+	{
+		if (!actorEffects) {
+			actorEffects = new TESSpellList::SpellData();
+		}
+		return actorEffects;
 	}
 
 

@@ -8,8 +8,8 @@ namespace RE
 	class BSDynamicTriShape : public BSTriShape
 	{
 	public:
-		inline static const void* RTTI = RTTI_BSDynamicTriShape;
-		inline static const void* Ni_RTTI = NiRTTI_BSDynamicTriShape;
+		inline static constexpr auto RTTI = RTTI_BSDynamicTriShape;
+		inline static constexpr auto Ni_RTTI = NiRTTI_BSDynamicTriShape;
 
 
 		virtual ~BSDynamicTriShape();													// 00

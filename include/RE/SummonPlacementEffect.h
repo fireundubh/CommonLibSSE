@@ -2,11 +2,11 @@
 
 #include "RE/BSFixedString.h"
 #include "RE/BSTEvent.h"
+#include "RE/NiPoint3.h"
 #include "RE/NiSmartPointer.h"
 #include "RE/RefAttachTechniqueInput.h"
 #include "RE/ReferenceEffect.h"
 #include "RE/SimpleAnimationGraphManagerHolder.h"
-#include <CommonLibSSE\include\RE\NiPoint3.h>
 
 
 namespace RE
@@ -22,8 +22,8 @@ namespace RE
 		public BSTEventSink<BSAnimationGraphEvent>	// 60
 	{
 	public:
-		inline static const void* RTTI = RTTI_SummonPlacementEffect;
-		inline static const void* Ni_RTTI = NiRTTI_SummonPlacementEffect;
+		inline static constexpr auto RTTI = RTTI_SummonPlacementEffect;
+		inline static constexpr auto Ni_RTTI = NiRTTI_SummonPlacementEffect;
 
 
 		virtual ~SummonPlacementEffect();											// 00

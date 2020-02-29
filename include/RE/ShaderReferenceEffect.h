@@ -14,6 +14,7 @@ namespace RE
 	class TESEffectShader;
 	class BSEffectShaderData;
 
+
 	class ShaderReferenceEffect : public ReferenceEffect
 	{
 	public:

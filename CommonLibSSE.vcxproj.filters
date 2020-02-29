@@ -1168,12 +1168,6 @@
     <Filter Include="include\RE\Offsets">
       <UniqueIdentifier>{13252c7b-58e1-4b27-8e90-b4b1fff0a2d7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea\CombatAreaRadius">
-      <UniqueIdentifier>{2ef63c4e-1f8f-41dd-a181-63f19ad18913}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector">
-      <UniqueIdentifier>{35f4636c-edf4-4c47-8011-cefb73c83f38}</UniqueIdentifier>
-    </Filter>
     <Filter Include="include\RE\Combat">
       <UniqueIdentifier>{077391e2-908a-47d7-bab7-40433085dec2}</UniqueIdentifier>
     </Filter>
@@ -1185,6 +1179,33 @@
     </Filter>
     <Filter Include="src\RE\Combat">
       <UniqueIdentifier>{3a53f4bd-df25-437e-ae27-146d827aaa99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry">
+      <UniqueIdentifier>{10d9d8c4-a7b7-42cb-a6bd-189b5f93abc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet">
+      <UniqueIdentifier>{c3cd44ad-798f-44b5-9d97-9389ac8992c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet">
+      <UniqueIdentifier>{42bff99f-2dab-431c-b9ec-1de14c847315}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\CombatObject">
+      <UniqueIdentifier>{09dc84cb-dfb4-4ff7-9631-2139708c3a66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatArea">
+      <UniqueIdentifier>{c0c80613-d0f8-4609-8c10-2ad6997b458d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatTargetSelector">
+      <UniqueIdentifier>{7f5f804a-ccdc-42d5-8689-40946e093711}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight">
+      <UniqueIdentifier>{fadbdfad-c21e-4470-9775-63a918196a64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\FormComponents\Components\ReferenceEffectController\OwnedController">
+      <UniqueIdentifier>{cad921cf-d1e2-4fa3-b888-248e76fe96a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\FormComponents\Components\MagicCaster">
+      <UniqueIdentifier>{a045b518-0f20-4b09-89c3-4d25183b5740}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1202,9 +1223,6 @@
     </ClCompile>
     <ClCompile Include="src\RE\BSTArray.cpp">
       <Filter>src\RE\BSCore</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\Misc.cpp">
-      <Filter>src\RE</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\BSFixedString.cpp">
       <Filter>src\RE\BSCore</Filter>
@@ -1968,11 +1986,26 @@
     <ClCompile Include="src\RE\MagicTarget.cpp">
       <Filter>src\RE\FormComponents</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\CombatManager.cpp">
+      <Filter>src\RE\Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\FaceGen.cpp">
+      <Filter>src\RE\Misc</Filter>
+    </ClCompile>
     <ClCompile Include="src\RE\BSGeometry.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\CombatManager.cpp">
-      <Filter>src\RE\Combat</Filter>
+    <ClCompile Include="src\RE\BSShaderTextureSet.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Misc.cpp">
+      <Filter>src\RE\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SKSE\Utilities.cpp">
+      <Filter>src\SKSE</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\TESSpellList.cpp">
+      <Filter>src\RE\FormComponents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -4211,9 +4244,6 @@
     <ClInclude Include="include\RE\ExtraMagicCaster.h">
       <Filter>include\RE\BSExtraData</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\MagicCaster.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\BSUIScaleformData.h">
       <Filter>include\RE\Menus\IUIMessageData</Filter>
     </ClInclude>
@@ -4390,9 +4420,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\NiExtraData.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\BSTextureSet.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSBound.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
@@ -5396,12 +5423,6 @@
     <ClInclude Include="include\RE\FaceGen.h">
       <Filter>include\RE\Misc</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\OwnedController.h">
-      <Filter>include\RE\FormComponents\Components\ReferenceEffectController</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\OwnedCameraEffectController.h">
-      <Filter>include\RE\FormComponents\Components\ReferenceEffectController</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\NiFloatExtraData.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
     </ClInclude>
@@ -5410,9 +5431,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\NiBooleanExtraData.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\BSShaderTextureSet.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSDecalManager.h">
       <Filter>include\RE\Misc</Filter>
@@ -5461,9 +5479,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\Events\TESCombatEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\BSDynamicTriShape.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSParticleShaderGeometry.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
@@ -5585,17 +5600,8 @@
     <ClInclude Include="include\RE\BSMultiIndexTriShape.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry\BSTriShape</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\SummonPlacementEffect.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\BSGeometry.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\NiLight.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\NiPointLight.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSValueNode.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BSNiNode</Filter>
@@ -5605,24 +5611,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\Events\TESSwitchRaceCompleteEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\CombatObject.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\CombatArea.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\CombatAreaRadius.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea\CombatAreaRadius</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\CombatAreaStandard.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea\CombatAreaRadius</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\CombatTargetSelector.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\CombatTargetSelectorStandard.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\CombatGroup.h">
       <Filter>include\RE\Combat\CombatGroup</Filter>
@@ -5677,6 +5665,66 @@
     </ClInclude>
     <ClInclude Include="include\RE\TaskQueueInterface.h">
       <Filter>include\RE\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSShaderTextureSet.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSTextureSet.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatObject.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatArea.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatArea</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatAreaRadius.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatArea</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatAreaStandard.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatArea</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatTargetSelector.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatTargetSelector</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatTargetSelectorStandard.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatTargetSelector</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatLocation.h">
+      <Filter>include\RE\NetImmerse\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiLight.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiPointLight.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSDynamicTriShape.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry\BSTriShape</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\OwnedCameraEffectController.h">
+      <Filter>include\RE\FormComponents\Components\ReferenceEffectController\OwnedController</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\OwnedController.h">
+      <Filter>include\RE\FormComponents\Components\ReferenceEffectController\OwnedController</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SummonPlacementEffect.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SKSE\Utilities.h">
+      <Filter>include\SKSE</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatControllerData10.h">
+      <Filter>include\RE\Combat\CombatController</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\MagicCaster.h">
+      <Filter>include\RE\FormComponents\Components\MagicCaster</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\ActorMagicCaster.h">
+      <Filter>include\RE\FormComponents\Components\MagicCaster</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NonActorMagicCaster.h">
+      <Filter>include\RE\BSExtraData</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

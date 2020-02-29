@@ -79,7 +79,6 @@ namespace RE
 		virtual void							Push();												// 34 - { return; }
 		virtual void							Pop();												// 35 - { return; }
 
-		void exist();
 
 		// members
 		float			lifetime;		// 10

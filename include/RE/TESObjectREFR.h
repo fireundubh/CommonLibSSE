@@ -362,7 +362,6 @@ namespace RE
 		virtual void								Unk_A0(void);																																															// A0
 		virtual void								UnequipItem(UInt64 a_arg1, TESBoundObject* a_object);																																					// A1 - { return; }
 
-
 		static NiPointer<TESObjectREFR>		LookupByHandle(RefHandle a_refHandle);
 		static bool							LookupByHandle(RefHandle a_refHandle, NiPointer<TESObjectREFR>& a_refrOut);
 		static TESObjectREFR*				FindReferenceFor3D(NiAVObject* a_object3D);
@@ -390,6 +389,7 @@ namespace RE
 		BGSLocation*						GetEditorLocation() const;
 		bool								GetEditorLocation(NiPoint3& a_outPos, NiPoint3& a_outRot, TESForm*& a_outWorldOrCell, TESObjectCELL* a_fallback);
 		TESFaction*							GetFactionOwner();
+		float								GetHeadingAngle(TESObjectREFR* a_ref);
 		InventoryItemMap					GetInventory();
 		InventoryItemMap					GetInventory(llvm::function_ref<bool(TESBoundObject*)> a_filter);
 		SInt32								GetInventoryCount();
@@ -438,7 +438,8 @@ namespace RE
 		bool								SetMotionType(MotionType a_motionType, bool a_allowActivate = true);
 		void								SetPosition(float a_x, float a_y, float a_z);
 		void								SetPosition(NiPoint3 a_pos);
-		float								GetHeadingAngle(TESObjectREFR* a_ref);
+		void								StopAllShaders();
+
 
 		// members
 		OBJ_REFR			data;			// 40

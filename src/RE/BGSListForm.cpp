@@ -1,7 +1,6 @@
 #include "RE/BGSListForm.h"
 
 #include <algorithm>
-#include "skse64/GameForms.h"  // Form
 
 #include "RE/Offsets.h"
 #include "REL/Relocation.h"

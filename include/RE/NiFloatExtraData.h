@@ -8,8 +8,8 @@ namespace RE
 	class NiFloatExtraData : public NiExtraData
 	{
 	public:
-		inline static const void* RTTI = RTTI_NiFloatExtraData;
-		inline static const void* Ni_RTTI = NiRTTI_NiFloatExtraData;
+		inline static constexpr auto RTTI = RTTI_NiFloatExtraData;
+		inline static constexpr auto Ni_RTTI = NiRTTI_NiFloatExtraData;
 
 
 		virtual ~NiFloatExtraData();												// 00
@@ -25,8 +25,9 @@ namespace RE
 
 		static NiFloatExtraData * Create(const BSFixedString& name, float value);
 
+
 		// members
-		float data;	// 18
+		float	data;	// 18
 	};
 	STATIC_ASSERT(sizeof(NiFloatExtraData) == 0x20);
 }

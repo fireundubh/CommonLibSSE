@@ -8,8 +8,8 @@ namespace RE
 	class NiIntegersExtraData : public NiExtraData
 	{
 	public:
-		inline static const void* RTTI = RTTI_NiIntegersExtraData;
-		inline static const void* Ni_RTTI = NiRTTI_NiIntegersExtraData;
+		inline static constexpr auto RTTI = RTTI_NiIntegersExtraData;
+		inline static constexpr auto Ni_RTTI = NiRTTI_NiIntegersExtraData;
 
 
 		virtual ~NiIntegersExtraData();												// 00
@@ -29,10 +29,11 @@ namespace RE
 		bool InsertElement(SInt32 element);
 		bool RemoveElement(SInt32 element);
 
+
 		// members
 		UInt32	size;		// 18
 		UInt32	pad;		// 1C
-		SInt32* value;		// 20
+		SInt32*	value;		// 20
 	};
 	STATIC_ASSERT(sizeof(NiIntegersExtraData) == 0x28);
 }

@@ -2,15 +2,18 @@
 
 #include "RE/CombatTargetSelector.h"
 
+
 namespace RE
 {
 	class BGSLoadGameBuffer;
 	class BGSSaveGameBuffer;
 
+
 	class CombatTargetSelectorStandard : public CombatTargetSelector
 	{
 	public:
-		inline static const void* RTTI = RTTI_CombatTargetSelectorStandard;
+		inline static constexpr auto RTTI = RTTI_CombatTargetSelectorStandard;
+
 
 		virtual ~CombatTargetSelectorStandard();						// 00
 
@@ -23,7 +26,6 @@ namespace RE
 
 		//members
 		UInt64	unk28;	// 028
-
 	};
 	STATIC_ASSERT(sizeof(CombatTargetSelectorStandard) == 0x30);
 }

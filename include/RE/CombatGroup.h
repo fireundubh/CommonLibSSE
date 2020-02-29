@@ -1,20 +1,20 @@
 #pragma once
 
-
 #include "RE/AITimer.h"
 #include "RE/AITimeStamp.h"
 #include "RE/CombatLocation.h"
 #include "RE/BSPointerHandle.h"
 #include "RE/CombatGroupDetectionListener.h"
 
+
 namespace RE
 {
     class BSPathingLOSGridMap;
     
+
     class CombatGroup
 	{
-	public:
-      
+	public: 
         struct TargetData
         {
             ActorHandle     target;         // 00
@@ -50,9 +50,9 @@ namespace RE
              
         struct Data120
         {
-            CombatLocation    unk00;  // 10
-            AITimeStamp unk18;  // 18
-            float       unk20;  // 20
+            CombatLocation  unk00;  // 10
+            AITimeStamp     unk18;  // 18
+            float           unk20;  // 20
         };	
         STATIC_ASSERT(sizeof(Data120) == 0x20);
 
@@ -105,7 +105,6 @@ namespace RE
         UInt8                           unk15E;                         // 15E
         UInt8                           unk15F;                         // 15F
         BSReadWriteLock                 unk160;                         // 160
-
 	};
     STATIC_ASSERT(sizeof(CombatGroup) == 0x168);
 }

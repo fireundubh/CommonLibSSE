@@ -31,8 +31,8 @@ namespace RE
 				kMultilayer,
 				kBacklightMask,
 				kSpecular = kBacklightMask,
-
-				kTotal
+				kUnused08,
+				kTotal = 9
 			};
 		};
 		using Texture = Textures::Texture;
