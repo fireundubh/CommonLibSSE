@@ -2007,6 +2007,9 @@
     <ClCompile Include="src\RE\TESSpellList.cpp">
       <Filter>src\RE\FormComponents</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\NiFloatExtraData.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\PlayerControls.h">
@@ -5725,6 +5728,9 @@
     </ClInclude>
     <ClInclude Include="include\RE\NonActorMagicCaster.h">
       <Filter>include\RE\BSExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSShaderTextureSet.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
