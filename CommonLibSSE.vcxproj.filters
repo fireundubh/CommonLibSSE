@@ -2010,6 +2010,9 @@
     <ClCompile Include="src\RE\NiFloatExtraData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\BSTrishape.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\PlayerControls.h">

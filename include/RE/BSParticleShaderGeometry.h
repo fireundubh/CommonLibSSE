@@ -1,7 +1,5 @@
 #pragma once
 
-#pragma once
-
 #include "RE/BSDynamicTriShape.h"
 
 
@@ -11,7 +9,6 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_BSParticleShaderGeometry;
-		inline static constexpr auto Ni_RTTI = NiRTTI_BSDynamicTriShape;
 
 
 		virtual ~BSParticleShaderGeometry();														// 00

@@ -292,6 +292,12 @@ namespace RE
 		}
 
 
+		namespace BSTriShape
+		{
+			static constexpr REL::ID Create(static_cast<std::uint64_t>(69284));
+		}
+
+
 		namespace BSUntypedPointerHandle
 		{
 			static constexpr REL::ID NullHandle(static_cast<std::uint64_t>(514164));

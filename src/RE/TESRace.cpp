@@ -13,4 +13,13 @@ namespace RE
 	{
 		return (data.flags & RACE_DATA::Flag::kAllowPickpocket) != RACE_DATA::Flag::kNone;
 	}
+
+
+	TESSpellList::SpellData* TESRace::GetOrCreateSpellList()
+	{
+		if (!actorEffects) {
+			actorEffects = new TESSpellList::SpellData();
+		}
+		return actorEffects;
+	}
 }

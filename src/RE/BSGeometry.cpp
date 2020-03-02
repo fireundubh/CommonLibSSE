@@ -13,6 +13,7 @@
 #include "RE/Offsets.h"
 #include "REL/Relocation.h"
 
+
 namespace RE
 {
 	void BSGeometry::SetMaterialAlpha(float a_alpha, bool a_skin)

@@ -28,21 +28,40 @@ namespace SKSE
 	}
 
 
-	const char* GetConfigPath(const char* modName)
+	const std::string& GetPluginPath()
 	{
-		static std::string s_configPath;
+		static std::string s_pluginPath;
 
-		if (s_configPath.empty()) {
+		if (s_pluginPath.empty()) {
 			const auto& runtimePath = GetRuntimeDirectory();
 			if (!runtimePath.empty()) {
-				s_configPath = runtimePath + R"(Data\SKSE\Plugins\)" + modName + R"(.ini)";
-				_MESSAGE("config path = %s", s_configPath.c_str());
+				s_pluginPath = runtimePath + R"(Data\SKSE\Plugins\)";
 			}
 			else {
 				_MESSAGE("couldn't get runtime directory path!");
 			}
 		}
 
+		return s_pluginPath;
+	}
+
+
+	const char* GetConfigPath(const char* modName)
+	{
+		static std::string s_configPath;
+
+		if (s_configPath.empty()) {
+			const auto& pluginPath = GetPluginPath();
+			if (!pluginPath.empty()) {
+				s_configPath = pluginPath + modName + R"(.ini)";
+				_MESSAGE("config path = %s", s_configPath.c_str());
+			}
+			else {
+				_MESSAGE("couldn't get plugin path!");
+			}
+		}
+
 		return s_configPath.c_str();
 	}
+
 }
