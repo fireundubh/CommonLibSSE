@@ -181,6 +181,7 @@
     <ClCompile Include="src\RE\BGSStoryTeller.cpp" />
     <ClCompile Include="src\RE\BSGeometry.cpp" />
     <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderProperty.cpp" />
     <ClCompile Include="src\RE\BSResource\BSSystemFile.cpp" />
     <ClCompile Include="src\RE\BSResource\Location.cpp" />
     <ClCompile Include="src\RE\BSResource\LooseFileStream.cpp" />
@@ -212,6 +213,7 @@
     <ClCompile Include="src\RE\NiCamera.cpp" />
     <ClCompile Include="src\RE\NiInterpolator.cpp" />
     <ClCompile Include="src\RE\NiBooleanExtraData.cpp" />
+    <ClCompile Include="src\RE\NiSourceTexture.cpp" />
     <ClCompile Include="src\RE\ProcessLists.cpp" />
     <ClCompile Include="src\RE\ExtraContainerChanges.cpp" />
     <ClCompile Include="src\RE\ExtraDataList.cpp" />
@@ -492,6 +494,7 @@
     <ClInclude Include="include\RE\BSBatchRenderer.h" />
     <ClInclude Include="include\RE\BSBitField.h" />
     <ClInclude Include="include\RE\BSDynamicTriShape.h" />
+    <ClInclude Include="include\RE\BSEffectShaderMaterial.h" />
     <ClInclude Include="include\RE\BSFile.h" />
     <ClInclude Include="include\RE\BSEffectShaderProperty.h" />
     <ClInclude Include="include\RE\BSMultiBoundNode.h" />

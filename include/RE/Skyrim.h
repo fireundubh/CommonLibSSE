@@ -213,6 +213,7 @@
 #include "RE/BSCoreTypes.h"
 #include "RE/BSCullingProcess.h"
 #include "RE/BSDynamicTriShape.h"
+#include "RE/BSEffectShaderMaterial.h"
 #include "RE/BSEffectShaderProperty.h"
 #include "RE/BSExtraData.h"
 #include "RE/BSFaceGenAnimationData.h"

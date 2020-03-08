@@ -45,50 +45,6 @@ namespace RE
 		bool				SetExtraDataSize(UInt16 a_size);
 
 
-		template <class S, class B, class F, class I>
-		std::tuple<S, S, B, B, F, I, std::vector<S>, std::vector<S>> GetResetExtraData()
-		{
-			std::tuple<S, S, B, B, F, I, std::vector<S>, std::vector<S>> t;
-
-			if (!extra || extraDataSize == 0) {
-				return t;
-			}
-			for (UInt16 i = 0; i < extraDataSize; i++) {
-				auto extraData = extra[i];
-				if (extraData) {
-					std::string name = extraData->GetName().c_str();
-					if (!name.empty()) {
-						if (name == "PO3_TOGGLE") {
-							std::get<0>(t) = static_cast<S>(extraData);
-						}
-						else if (name == "PO3_FACETXST") {
-							std::get<1>(t) = static_cast<S>(extraData);
-						}
-						else if (name == "PO3_SKINTINT") {
-							std::get<2>(t) = static_cast<B>(extraData);
-						}
-						else if (name == "PO3_HAIRTINT") {
-							std::get<3>(t) = static_cast<B>(extraData);
-						}
-						else if (name == "PO3_ALPHA") {
-							std::get<4>(t) = static_cast<F>(extraData);
-						}
-						else if (name == "PO3_HEADPARTALPHA") {
-							std::get<5>(t) = static_cast<I>(extraData);
-						}
-						else if (name.find("PO3_TXST") != std::string::npos) {
-							std::get<6>(t).push_back(static_cast<S>(extraData));
-						}
-						else if (name.find("PO3_SKINTXST") != std::string::npos) {
-							std::get<7>(t).push_back(static_cast<S>(extraData));
-						}
-					}
-				}
-			}
-			return t;
-		}
-
-
 		// members
 		BSFixedString				name;			// 10
 		NiPointer<NiTimeController>	controllers;	// 18

@@ -55,6 +55,8 @@ namespace RE
 		virtual void				Unk_3D(void) override;									// 3D
 		virtual void				Unk_3E(void) override;									// 3E - { return 2; }
 
+		void	InvalidateTextures(UInt32 a_unk1);
+
 
 		// members
 		Data			unk088[3];		// 088

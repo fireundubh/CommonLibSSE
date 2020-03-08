@@ -174,7 +174,6 @@ namespace RE
 		namespace BSLightingShaderMaterialBase
 		{
 			static constexpr REL::ID CreateMaterial(static_cast<std::uint64_t>(100016));
-			//po3
 			static constexpr REL::ID CopyBaseMaterial(static_cast<std::uint64_t>(100006));
 		}
 
@@ -182,6 +181,12 @@ namespace RE
 		namespace BSLightingShaderMaterialFacegenTint
 		{
 			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100087));
+		}
+
+
+		namespace BSLightingShaderProperty
+		{
+			static constexpr REL::ID InvalidateTextures(static_cast<std::uint64_t>(99865));
 		}
 
 
@@ -215,7 +220,6 @@ namespace RE
 			static constexpr REL::ID SetMaterial(static_cast<std::uint64_t>(98897));
 			static constexpr REL::ID SetFlags(static_cast<std::uint64_t>(98893));
 			static constexpr REL::ID InvalidateMaterial(static_cast<std::uint64_t>(14678));
-			static constexpr REL::ID InvalidateTextures(static_cast<std::uint64_t>(99865));
 			static constexpr REL::ID SetBSEffectShaderData(static_cast<std::uint64_t>(16981));
 		}
 
@@ -806,6 +810,12 @@ namespace RE
 		namespace NiSkinInstance
 		{
 			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(69804));
+		}
+
+
+		namespace NiSourceTexture
+		{
+			static constexpr REL::ID Create(static_cast<std::uint64_t>(69335));
 		}
 
 

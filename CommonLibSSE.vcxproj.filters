@@ -2013,6 +2013,12 @@
     <ClCompile Include="src\RE\BSTrishape.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\NiSourceTexture.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderProperty.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiProperty</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\PlayerControls.h">
@@ -5734,6 +5740,9 @@
     </ClInclude>
     <ClInclude Include="include\RE\BSShaderTextureSet.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSEffectShaderMaterial.h">
+      <Filter>include\RE\BSShader\BSShaderMaterial</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

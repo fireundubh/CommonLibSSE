@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/BSFixedString.h"
 #include "RE/NiSmartPointer.h"
 #include "RE/NiTexture.h"
 
@@ -38,6 +39,8 @@ namespace RE
 		virtual void			Unk_28(void) override;		// 28
 		virtual void			Unk_29(void) override;		// 29 - { return; }
 		virtual void			Unk_2A(void) override;		// 2A - { return; }
+
+		static NiSourceTexture* Create(const BSFixedString& a_name);
 
 
 		// members

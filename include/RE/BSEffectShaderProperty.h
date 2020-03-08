@@ -24,11 +24,11 @@ namespace RE
 		virtual UInt8				InitializeGeometry(BSGeometry* a_geometry) override;	// 27 - { return 1; }
 		virtual void				Unk_2A(void) override;									// 2A
 		virtual void				Unk_2B(void) override;									// 2B - { return 0; }
-		virtual void				SetMaterialAlpha(float a_alpha) override;				// 31 - { return; }
-		virtual float				GetMaterialAlpha() override;							// 32 
+		virtual void				SetMaterialAlpha(float a_alpha) override;				// 31 - { baseColor->alpha = a_alpha }
+		virtual float				GetMaterialAlpha() override;							// 32 - { baseColor->alpha }
 		virtual void				Unk_33(void) override;									// 33 
-		virtual void				Unk_35(void) override;									// 35 - { return 0; }
-		virtual NiSourceTexture*	GetPrimaryTexture() override;							// 37 - { return normalTexture }
+		virtual void				Unk_35(void) override;									// 35 - { return 1; }
+		virtual NiSourceTexture*	GetPrimaryTexture() override;							// 37 - { return unk58 }
 		virtual void				Unk_3B(void) override;									// 3B - { return; }
 		virtual void				Unk_3C(void) override;									// 3C - { return 1; }
 		virtual void				Unk_3E(void) override;									// 3E - { return 1; }

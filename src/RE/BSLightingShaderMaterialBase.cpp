@@ -23,7 +23,6 @@ namespace RE
 
 	void BSLightingShaderMaterialBase::SetTextureSet(BSTextureSet * a_textureSet)
 	{
-		textureSet.reset();
 		textureSet.reset(a_textureSet);
 	}
 

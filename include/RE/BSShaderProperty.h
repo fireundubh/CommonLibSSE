@@ -1,9 +1,11 @@
 #pragma once
 
+#include "RE/BSTSmartPointer.h"
 #include "RE/NiShadeProperty.h"
 #include "RE/NiSmartPointer.h"
 #include "RE/BSIntrusiveRefCounted.h"
 #include "RE/NiColor.h"
+
 
 namespace RE
 {
@@ -176,25 +178,24 @@ namespace RE
 		virtual void				Unk_3E(void);											// 3E - { return 0; }
 
 
-		UInt32	SetMaterial(BSShaderMaterial* a_material, bool a_unk1);
-		UInt64	SetFlags(UInt8 a_flag, UInt8 a_toggle);
+		void	SetMaterial(BSShaderMaterial* a_material, bool a_unk1);
+		void	SetFlags(UInt8 a_flag, UInt8 a_toggle);
 		bool	InvalidateMaterial();
-		void	InvalidateTextures(UInt32 a_unk1);
 
 
 		// members
-		float						alpha;					// 30
-		SInt32						lastRenderPassState;	// 34
-		EShaderPropertyFlag			flags;					// 38
-		void*						unk40;					// 40
-		UInt64						unk48;					// 48
-		void*						unk50;					// 50
-		UInt64						unk58;					// 58
-		UInt64						unk60;					// 60
-		BSEffectShaderData*			effectShaderData;		// 68 - smart ptr
-		BSShaderPropertyLightData*	lightData;				// 70
-		BSShaderMaterial*			material;				// 78
-		UInt64						unk80;					// 80
+		float								alpha;					// 30
+		SInt32								lastRenderPassState;	// 34
+		EShaderPropertyFlag					flags;					// 38
+		void*								unk40;					// 40
+		UInt64								unk48;					// 48
+		void*								unk50;					// 50
+		UInt64								unk58;					// 58
+		UInt64								unk60;					// 60
+		BSTSmartPointer<BSEffectShaderData>	effectShaderData;		// 68 - smart ptr
+		BSShaderPropertyLightData*			lightData;				// 70
+		BSShaderMaterial*					material;				// 78
+		UInt64								unk80;					// 80
 	};
 	STATIC_ASSERT(sizeof(BSShaderProperty) == 0x88);
 }

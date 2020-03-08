@@ -49,6 +49,9 @@ namespace RE
 
 	void NiAVObject::UpdateBodyTint(const NiColor& a_color)
 	{		
+		using State = BSGeometry::States;
+		using Feature = BSShaderMaterial::Feature;
+		
 		auto node = AsNode();
 		if (node) {
 			for (auto& child : node->children) {
@@ -60,9 +63,6 @@ namespace RE
 		else {
 			auto geometry = AsGeometry();
 			if (geometry) {
-				using State = BSGeometry::States;
-				using Feature = BSShaderMaterial::Feature;
-
 				auto effect = geometry->properties[State::kEffect].get();
 				if (effect) {
 					auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
@@ -78,8 +78,12 @@ namespace RE
 		}
 	}
 
+
 	void NiAVObject::UpdateHairColor(const NiColor& a_color)
 	{
+		using State = BSGeometry::States;
+		using Feature = BSShaderMaterial::Feature;
+		
 		auto node = AsNode();
 		if (node) {
 			for (auto& child : node->children) {
@@ -91,9 +95,6 @@ namespace RE
 		else {
 			auto geometry = AsGeometry();
 			if (geometry) {
-				using State = BSGeometry::States;
-				using Feature = BSShaderMaterial::Feature;
-
 				auto effect = geometry->properties[State::kEffect].get();
 				if (effect) {
 					auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
