@@ -1653,9 +1653,6 @@
     <ClCompile Include="src\RE\NiAVObject.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\NiColor.cpp">
-      <Filter>src\RE\NetImmerse</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\NiExtraData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
     </ClCompile>
