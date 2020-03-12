@@ -255,8 +255,7 @@
     <ClCompile Include="src\RE\BSScript\PackUnpack.cpp" />
     <ClCompile Include="src\RE\BSScript\ZeroFunctionArguments.cpp" />
     <ClCompile Include="src\RE\BSLock.cpp" />
-    <ClCompile Include="src\RE\BSShaderTextureSet.cpp" /><ClInclude Include="include\RE\BSEffectShaderMaterial.h" />
-
+    <ClCompile Include="src\RE\BSShaderTextureSet.cpp" />
     <ClCompile Include="src\RE\BSSystemFileStorage.cpp" />
     <ClCompile Include="src\RE\BSTCreateFactoryManager.cpp" />
     <ClCompile Include="src\RE\Calendar.cpp" />
@@ -503,6 +502,7 @@
     <ClInclude Include="include\RE\BSGraphics\DepthStencilDepthModes.h" />
     <ClInclude Include="include\RE\BSGraphics\State.h" />
     <ClInclude Include="include\RE\BSGraphics\TextureAddressModes.h" />
+    <ClInclude Include="include\RE\BSShaderPropertyLightData.h" />
     <ClInclude Include="include\RE\BSMultiBoundNode.h" />
     <ClInclude Include="include\RE\BSMultiIndexTriShape.h" />
     <ClInclude Include="include\RE\BSNiNode.h" />

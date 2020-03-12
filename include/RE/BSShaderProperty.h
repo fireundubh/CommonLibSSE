@@ -1,26 +1,15 @@
 #pragma once
 
 #include "RE/BSEffectShaderData.h"
+#include "RE/BSShaderPropertyLightData.h"
 #include "RE/BSTSmartPointer.h"
 #include "RE/NiShadeProperty.h"
 
 
 namespace RE
 {
-	class BSLight;
 	class BSShaderMaterial;
-	class BSLightingShaderMaterialBase;
 	class NiSourceTexture;
-
-	
-	class BSShaderPropertyLightData
-	{
-		BSTArray<BSLight*>	lights;	// 00
-		UInt32				unk18;	// 18
-		UInt32				unk1C;	// 1C
-		UInt32				unk20;	// 20
-	};
-	STATIC_ASSERT(sizeof(BSShaderPropertyLightData) == 0x28);
 
 
 	class BSShaderProperty : public NiShadeProperty
@@ -130,18 +119,16 @@ namespace RE
 		virtual void				Unk_34(void);											// 34
 		virtual void				Unk_35(void);											// 35 - { return 0; }
 		virtual void				Unk_36(void);											// 36 - { return 0; }
-		virtual NiSourceTexture*		GetPrimaryTexture();									// 37 - { return 0; }
+		virtual NiSourceTexture*	GetPrimaryTexture();									// 37 - { return 0; }
 		virtual void				Unk_38(void);											// 38 - { return 0; }
-		virtual bool			AcceptsEffectData() const;							// 39 - { return false; }
+		virtual bool				AcceptsEffectData() const;								// 39 - { return false; }
 		virtual void				Unk_3A(void);											// 3A - { return; }
 		virtual void				Unk_3B(void);											// 3B - { return; }
 		virtual void				Unk_3C(void);											// 3C - { return 0; }
 		virtual void				Unk_3D(void);											// 3D - { return 0; }
 		virtual void				Unk_3E(void);											// 3E - { return 0; }
 
-		void SetEffectShaderData(const BSTSmartPointer<BSEffectShaderData>& a_data);
-
-
+		void	SetEffectShaderData(const BSTSmartPointer<BSEffectShaderData>& a_data);
 		void	SetMaterial(BSShaderMaterial* a_material, bool a_unk1);
 		void	SetFlags(UInt8 a_flag, UInt8 a_toggle);
 		bool	InvalidateMaterial();

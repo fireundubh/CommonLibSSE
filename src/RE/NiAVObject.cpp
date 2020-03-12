@@ -1,5 +1,4 @@
 #include "RE/NiAVObject.h"
-#include "RE/NiNode.h"
 
 #include <functional>
 
@@ -26,6 +25,86 @@ namespace RE
 	bool NiAVObject::GetAppCulled() const
 	{
 		return (flags & Flag::kHidden) != Flag::kNone;
+	}
+
+
+	BSGeometry* NiAVObject::GetFirstGeometryOfShaderType(BSShaderMaterial::Feature a_type)
+	{
+		auto node = AsNode();
+		if (node) {
+			for (auto& child : node->children) {
+				if (child.get()) {
+					auto geometry = child->GetFirstGeometryOfShaderType(a_type);
+					if (geometry) {
+						return geometry;
+					}
+				}
+			}
+		}
+		else {
+			auto geometry = AsGeometry();
+			if (geometry) {
+				auto effect = geometry->properties[BSGeometry::States::kEffect].get();
+				if (effect) {
+					auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
+					if (lightingShader) {
+						if (a_type == BSShaderMaterial::Feature::kNone) {
+							return geometry;
+						}
+						auto material = lightingShader->material;
+						if (material && material->GetFeature() == a_type) {
+							return geometry;
+						}
+					}
+				}
+			}
+		}
+
+		return nullptr;
+	}
+
+
+	TESObjectREFR* NiAVObject::GetUserData() const
+	{
+		if (userData) {
+			return userData;
+		}
+		if (parent) {
+			parent->GetUserData();
+		}
+		return nullptr;
+	}
+
+
+	bool NiAVObject::HasShaderType(BSShaderMaterial::Feature a_type)
+	{
+		auto node = AsNode();
+		if (node) {
+			for (auto& child : node->children) {
+				if (child.get()) {
+					if (child->HasShaderType(a_type)) {
+						return true;
+					}
+				}
+			}
+		}
+		else {
+			auto geometry = AsGeometry();
+			if (geometry) {
+				auto effect = geometry->properties[BSGeometry::States::kEffect].get();
+				if (effect) {
+					auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
+					if (lightingShader) {
+						auto material = lightingShader->material;
+						if (material && material->GetFeature() == a_type) {
+							return true;
+						}
+					}
+				}
+			}
+		}
+
+		return false;
 	}
 
 
@@ -122,15 +201,13 @@ namespace RE
 	}
 
 
-	TESObjectREFR* NiAVObject::GetOwner()
+	void NiAVObject::UpdateMaterialAlpha(float a_alpha, bool a_skin)
 	{
-		if (userData) {
-			return userData;
-		}
-		if (parent) {
-			parent->GetOwner();
-		}
-		return nullptr;
+		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl
+		{
+			a_geometry->SetMaterialAlpha(a_alpha, a_skin);
+			return BSVisit::BSVisitControl::kContinue;
+		});
 	}
 
 
@@ -147,92 +224,4 @@ namespace RE
 		}
 		SetAppCulled(a_visible);
 	}
-
-
-	void NiAVObject::UpdateMaterialAlpha(float a_alpha, bool a_skin)
-	{
-		auto node = AsNode();
-		if (node) {
-			for (auto& child : node->children) {
-				if (child.get()) {
-					child->UpdateMaterialAlpha(a_alpha, a_skin);
-				}
-			}
-		}
-		else {
-			auto geometry = AsGeometry();
-			if (geometry) {
-				geometry->SetMaterialAlpha(a_alpha, a_skin);
-			}
-		}
-	}
-
-
-	bool NiAVObject::HasShaderType(BSShaderMaterial::Feature a_type)
-	{
-		auto node = AsNode();
-		if (node) {
-			for (auto& child : node->children) {
-				if (child.get()) {
-					if (child->HasShaderType(a_type)) {
-						return true;
-					}
-				}
-			}
-		}
-		else {
-			auto geometry = AsGeometry();
-			if (geometry) {
-				auto effect = geometry->properties[BSGeometry::States::kEffect].get();
-				if (effect) {
-					auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
-					if (lightingShader) {
-						auto material = lightingShader->material;
-						if (material && material->GetFeature() == a_type) {
-							return true;
-						}
-					}
-				}
-			}
-		}
-
-		return false;
-	}
-
-
-	BSGeometry* NiAVObject::GetFirstGeometryOfShaderType(BSShaderMaterial::Feature a_type)
-	{
-		auto node = AsNode();
-		if (node) {
-			for (auto& child : node->children) {
-				if (child.get()) {
-					auto geometry = child->GetFirstGeometryOfShaderType(a_type);
-					if (geometry) {
-						return geometry;
-					}
-				}
-			}
-		}
-		else {
-			auto geometry = AsGeometry();
-			if (geometry) {
-				auto effect = geometry->properties[BSGeometry::States::kEffect].get();
-				if (effect) {
-					auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
-					if (lightingShader) {
-						if (a_type == BSShaderMaterial::Feature::kNone) {
-							return geometry;
-						}
-						auto material = lightingShader->material;
-						if (material && material->GetFeature() == a_type) {
-							return geometry;
-						}
-					}
-				}
-			}
-		}
-
-		return nullptr;
-	}
-
 }

@@ -287,6 +287,7 @@
 #include "RE/BSShader.h"
 #include "RE/BSShaderMaterial.h"
 #include "RE/BSShaderProperty.h"
+#include "RE/BSShaderPropertyLightData.h"
 #include "RE/BSShaderTextureSet.h"
 #include "RE/BSSmallBlockAllocator.h"
 #include "RE/BSSoundHandle.h"
