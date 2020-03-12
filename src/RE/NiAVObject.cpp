@@ -49,65 +49,49 @@ namespace RE
 
 	void NiAVObject::UpdateBodyTint(const NiColor& a_color)
 	{		
-		using State = BSGeometry::States;
-		using Feature = BSShaderMaterial::Feature;
-		
-		auto node = AsNode();
-		if (node) {
-			for (auto& child : node->children) {
-				if (child.get()) {
-					child->UpdateBodyTint(a_color);
-				}
-			}
-		}
-		else {
-			auto geometry = AsGeometry();
-			if (geometry) {
-				auto effect = geometry->properties[State::kEffect].get();
-				if (effect) {
-					auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
-					if (lightingShader) {
-						auto material = lightingShader->material;
-						if (material && material->GetFeature() == Feature::kFaceGenRGBTint) {
-							auto facegenTint = static_cast<BSLightingShaderMaterialFacegenTint*>(material);
-							facegenTint->tintColor = a_color;
-						}
+		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl
+		{
+			using State = BSGeometry::States;
+			using Feature = BSShaderMaterial::Feature;
+
+			auto effect = a_geometry->properties[State::kEffect].get();
+			if (effect) {
+				auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
+				if (lightingShader) {
+					auto material = lightingShader->material;
+					if (material && material->GetFeature() == Feature::kFaceGenRGBTint) {
+						auto facegenTint = static_cast<BSLightingShaderMaterialFacegenTint*>(material);
+						facegenTint->tintColor = a_color;
 					}
 				}
 			}
-		}
+
+			return BSVisit::BSVisitControl::kContinue;
+		});
 	}
 
 
 	void NiAVObject::UpdateHairColor(const NiColor& a_color)
 	{
-		using State = BSGeometry::States;
-		using Feature = BSShaderMaterial::Feature;
-		
-		auto node = AsNode();
-		if (node) {
-			for (auto& child : node->children) {
-				if (child.get()) {
-					child->UpdateHairColor(a_color);
-				}
-			}
-		}
-		else {
-			auto geometry = AsGeometry();
-			if (geometry) {
-				auto effect = geometry->properties[State::kEffect].get();
-				if (effect) {
-					auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
-					if (lightingShader) {
-						auto material = lightingShader->material;
-						if (material && material->GetFeature() == Feature::kHairTint) {
-							auto hairTint = static_cast<BSLightingShaderMaterialHairTint*>(material);
-							hairTint->tintColor = a_color;
-						}
+		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl
+		{
+			using State = BSGeometry::States;
+			using Feature = BSShaderMaterial::Feature;
+
+			auto effect = a_geometry->properties[State::kEffect].get();
+			if (effect) {
+				auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
+				if (lightingShader) {
+					auto material = lightingShader->material;
+					if (material && material->GetFeature() == Feature::kHairTint) {
+						auto hairTint = static_cast<BSLightingShaderMaterialHairTint*>(material);
+						hairTint->tintColor = a_color;
 					}
 				}
 			}
-		}		
+
+			return BSVisit::BSVisitControl::kContinue;
+		});
 	}
 
 

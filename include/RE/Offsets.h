@@ -715,6 +715,8 @@ namespace RE
 		namespace Main
 		{
 			static constexpr REL::ID Singleton(static_cast<std::uint64_t>(516943));
+			static constexpr REL::ID DoFrame(static_cast<std::uint64_t>(35565));
+			static constexpr REL::ID ProcessTasks(static_cast<std::uint64_t>(35582));
 		}
 
 

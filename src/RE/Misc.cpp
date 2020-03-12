@@ -79,6 +79,14 @@ namespace RE
 	}
 
 
+	void func2E9950()
+	{
+		using func_t = decltype(&func2E9950);
+		REL::Offset<func_t> func(Offset::func2E9950);
+		return func();
+	}
+
+
 	namespace Util
 	{
 		void SanitizeTexturePath(std::string& a_path)

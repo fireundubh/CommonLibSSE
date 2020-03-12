@@ -69,7 +69,7 @@ namespace RE
 	struct LOADED_CELL_DATA
 	{
 		void*													unk000;					// 000 - smart ptr
-		NiPointer<NiNode>										cell3D;					// 008
+		NiPointer<BSMultiBoundNode>								cell3D;					// 008
 		void*													unk010;					// 010 - smart ptr
 		void*													unk018;					// 018 - smart ptr
 		void*													unk020;					// 020 - smart ptr

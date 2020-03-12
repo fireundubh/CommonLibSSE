@@ -41,6 +41,42 @@ namespace RE
 	}
 
 
+	void BSGeometry::UpdateFaceGenTint(const NiColor& a_color)
+	{
+		using Feature = BSShaderMaterial::Feature;
+		using Flag = BSShaderProperty::EShaderPropertyFlag;
+
+		auto effect = properties[States::kEffect].get();
+		if (effect) {
+			auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
+			if (lightingShader) {
+				auto material = lightingShader->material;
+				if (material) {
+					if (material->GetFeature() == Feature::kFaceGen) {
+						auto facegenTint = BSLightingShaderMaterialFacegenTint::CreateMaterial();
+						facegenTint->CopyBaseMaterial(static_cast<BSLightingShaderMaterialBase*>(material));
+						facegenTint->tintColor = a_color;
+
+						lightingShader->SetFlags(0x0A, false);
+						lightingShader->SetFlags(0x15, true);
+
+						lightingShader->SetMaterial(facegenTint, true);
+						lightingShader->InitializeGeometry(this);
+						lightingShader->InitializeShader(this);
+
+						facegenTint->~BSLightingShaderMaterialFacegenTint();
+						free(facegenTint);
+					}
+					else if (material->GetFeature() == Feature::kFaceGenRGBTint) {
+						auto facegenTint = static_cast<BSLightingShaderMaterialFacegenTint*>(material);
+						facegenTint->tintColor = a_color;
+					}
+				}
+			}
+		}
+	}
+
+
 	void BSGeometry::SetShaderType(BSGeometry* a_geometry)
 	{
 		if (!a_geometry) {

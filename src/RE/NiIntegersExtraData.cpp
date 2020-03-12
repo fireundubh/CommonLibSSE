@@ -17,7 +17,7 @@ namespace RE
 			data->size = size;
 
 			data->value = NiAlloc<SInt32>(size);
-			memcpy(data->value, integer, size);
+			memcpy(data->value, integer, size * sizeof(SInt32));
 		}
 
 		return data;
