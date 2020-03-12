@@ -50,7 +50,7 @@ namespace RE
 		virtual void				Unk_34(void) override;									// 34
 		virtual void				Unk_35(void) override;									// 35 - { return 11; }
 		virtual NiSourceTexture*	GetPrimaryTexture() override;							// 37 - { return diffuseTexture }
-		virtual bool				HasNoRefraction() override;								// 39
+		virtual bool			AcceptsEffectData() const override;					// 39 - { return !(flags & kRefraction) && !(flags & kTempRefraction); }
 		virtual void				Unk_3B(void) override;									// 3B
 		virtual void				Unk_3D(void) override;									// 3D
 		virtual void				Unk_3E(void) override;									// 3E - { return 2; }

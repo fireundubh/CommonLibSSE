@@ -1,5 +1,7 @@
 #include "RE/BSShaderProperty.h"
 
+#include <numeric>
+
 #include "RE/Offsets.h"
 #include "REL/Relocation.h"  
 
@@ -12,8 +14,15 @@ namespace RE
 		REL::Offset<func_t> func(Offset::BSShaderProperty::InvalidateMaterial);
 		return func(this);
 	}
+	
 
+	void BSShaderProperty::SetEffectShaderData(const BSTSmartPointer<BSEffectShaderData>& a_data)
+	{
+		lastRenderPassState = std::numeric_limits<SInt32>::max();
+		effectData = a_data;
+	}
 
+	
 	void BSShaderProperty::SetMaterial(BSShaderMaterial* a_material, bool a_unk1)
 	{
 		using func_t = decltype(&BSShaderProperty::SetMaterial);

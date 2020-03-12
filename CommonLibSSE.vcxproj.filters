@@ -1168,23 +1168,23 @@
     <Filter Include="include\RE\Offsets">
       <UniqueIdentifier>{13252c7b-58e1-4b27-8e90-b4b1fff0a2d7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\RE\Combat">
-      <UniqueIdentifier>{077391e2-908a-47d7-bab7-40433085dec2}</UniqueIdentifier>
+    <Filter Include="include\RE\BSGraphics">
+      <UniqueIdentifier>{e54f1481-418a-40e1-92bf-9b34bc6610ac}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\RE\Combat\CombatGroup">
-      <UniqueIdentifier>{b050b399-9fff-443b-a811-68cbd5f4f353}</UniqueIdentifier>
+    <Filter Include="include\RE\BSGraphics\Enums">
+      <UniqueIdentifier>{51dccef2-df96-4cc1-a0d3-a9a0925c5a34}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\RE\Combat\CombatController">
-      <UniqueIdentifier>{bff9cdd0-36f6-433d-85b2-4719d193b232}</UniqueIdentifier>
+    <Filter Include="src\RE\BSGraphics">
+      <UniqueIdentifier>{77736ce7-e433-4989-9b92-5ca8f70c0eb2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\RE\Combat">
-      <UniqueIdentifier>{3a53f4bd-df25-437e-ae27-146d827aaa99}</UniqueIdentifier>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty">
+      <UniqueIdentifier>{0e4190a5-15a5-4c5e-95cd-f55f7bac2862}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry">
-      <UniqueIdentifier>{10d9d8c4-a7b7-42cb-a6bd-189b5f93abc3}</UniqueIdentifier>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty">
+      <UniqueIdentifier>{96abc484-35ae-4707-b232-467a9ea57c11}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet">
-      <UniqueIdentifier>{c3cd44ad-798f-44b5-9d97-9389ac8992c6}</UniqueIdentifier>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty">
+      <UniqueIdentifier>{9cef4f89-c4e3-489b-9525-8d327fbfb443}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet">
       <UniqueIdentifier>{42bff99f-2dab-431c-b9ec-1de14c847315}</UniqueIdentifier>
@@ -1920,14 +1920,14 @@
     <ClCompile Include="src\SKSE\VArgFormatter.cpp">
       <Filter>src\SKSE</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BGSImpactManager.cpp">
-      <Filter>src\RE\Misc</Filter>
+    <ClCompile Include="src\RE\BSGraphics\State.cpp">
+      <Filter>src\RE\BSGraphics</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp">
-      <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    <ClCompile Include="src\RE\BSEffectShaderData.cpp">
+      <Filter>src\RE\BSShader</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\Events\TESHitEvent.cpp">
-      <Filter>src\RE\Events\ScriptEvent</Filter>
+    <ClCompile Include="src\RE\BSShaderProperty.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\NiBooleanExtraData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
@@ -5678,20 +5678,20 @@
     <ClInclude Include="include\SKSE\VArgFormatter.h">
       <Filter>include\SKSE</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\BSTextureSet.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>
+    <ClInclude Include="include\RE\BSEffectShaderData.h">
+      <Filter>include\RE\BSShader</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\CombatObject.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject</Filter>
+    <ClInclude Include="include\RE\NiAlphaProperty.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\CombatArea.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatArea</Filter>
+    <ClInclude Include="include\RE\BSGraphics\DepthStencilDepthModes.h">
+      <Filter>include\RE\BSGraphics\Enums</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\CombatAreaRadius.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatArea</Filter>
+    <ClInclude Include="include\RE\BSGraphics\TextureAddressModes.h">
+      <Filter>include\RE\BSGraphics\Enums</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\CombatAreaStandard.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatArea</Filter>
+    <ClInclude Include="include\RE\BSGraphics\State.h">
+      <Filter>include\RE\BSGraphics</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\CombatTargetSelector.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatTargetSelector</Filter>
