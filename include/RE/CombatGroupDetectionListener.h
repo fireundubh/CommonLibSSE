@@ -5,7 +5,7 @@
 namespace RE
 {
 	class CombatGroup;
-	
+
 	class CombatGroupDetectionListener : public DetectionListener
 	{
 	public:
@@ -16,11 +16,11 @@ namespace RE
 
 		// override (DetectionListener)
 		virtual void Unk_02(void) override;	 // 01
-		virtual void Unk_05(void);	// 01 - { unk10 = 0; }
+		virtual void Unk_05(void);			 // 02 - { unk10 = 0; }
 
 
 		// members
-		CombatGroup* combatGroup;	// 10
+		CombatGroup* combatGroup;  // 10
 	};
 	STATIC_ASSERT(sizeof(CombatGroupDetectionListener) == 0x18);
 }

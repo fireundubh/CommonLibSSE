@@ -64,29 +64,29 @@ namespace RE
 
 
 		// members
-		BSTArray<Data048>	  unk048;			 // 048
-		BSTArray<void*>		  unk060;			 // 060 - smart ptrs
-		BSTArray<void*>		  unk078;			 // 078
-		BSTArray<Data090>	  unk090;			 // 090
-		BSTArray<void*>		  unk0A8;			 // 0A8 - smart ptrs
-		BSSoundHandle		  soundHandle;		 // 0C0
-		UInt32				  pad0CC;			 // 0CC
-		NiPointer<NiSourceTexture>	particleShaderTexture;	// 0D0 - smart ptr
-		NiPointer<NiSourceTexture>	particlePaletteTexture;	// 0D8 - smart ptr
-		NiPointer<NiSourceTexture>	fillTexture;			// 0E0
-		NiPointer<NiSourceTexture>	holesTexture;			// 0E8
-		NiPointer<NiSourceTexture>	paletteTexture;			// 0F0
-		NiPointer<NiAVObject> lastRootNode;		 // 0F8
-		TESBoundObject*		  wornObject;		 // 100
-		TESEffectShader*	  effectData;		 // 108
-		BSEffectShaderData*	  effectShaderData;	 // 110
-		void*				  unk118;			 // 118 - smart ptr
-		float						unk120;					// 120
-		float						unk124;					// 124 - 1.0f
-		float						unk128;					// 128 - 1.0f
-		UInt32				  unk12C;			 // 12C
-		UInt32				  flags;			 // 130
-		UInt32				  pushCount;		 // 134
+		BSTArray<Data048>		   unk048;					// 048
+		BSTArray<void*>			   unk060;					// 060 - smart ptrs
+		BSTArray<void*>			   unk078;					// 078
+		BSTArray<Data090>		   unk090;					// 090
+		BSTArray<void*>			   unk0A8;					// 0A8 - smart ptrs
+		BSSoundHandle			   soundHandle;				// 0C0
+		UInt32					   pad0CC;					// 0CC
+		NiPointer<NiSourceTexture> particleShaderTexture;	// 0D0 - smart ptr
+		NiPointer<NiSourceTexture> particlePaletteTexture;	// 0D8 - smart ptr
+		NiPointer<NiSourceTexture> fillTexture;				// 0E0
+		NiPointer<NiSourceTexture> holesTexture;			// 0E8
+		NiPointer<NiSourceTexture> paletteTexture;			// 0F0
+		NiPointer<NiAVObject>	   lastRootNode;			// 0F8
+		TESBoundObject*			   wornObject;				// 100
+		TESEffectShader*		   effectData;				// 108
+		BSEffectShaderData*		   effectShaderData;		// 110
+		void*					   unk118;					// 118 - smart ptr
+		float					   unk120;					// 120
+		float					   unk124;					// 124 - 1.0f
+		float					   unk128;					// 128 - 1.0f
+		UInt32					   unk12C;					// 12C
+		UInt32					   flags;					// 130
+		UInt32					   pushCount;				// 134
 	};
 	STATIC_ASSERT(sizeof(ShaderReferenceEffect) == 0x138);
 }

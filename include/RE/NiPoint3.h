@@ -29,7 +29,7 @@ namespace RE
 		float	 Unitize();
 		NiPoint3 Cross(const NiPoint3& pt) const;
 		NiPoint3 UnitCross(const NiPoint3& a_pt) const;
-		float			GetArcTangent() const;
+		float	 GetArcTangent() const;
 
 
 		// members

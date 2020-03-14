@@ -119,14 +119,14 @@ namespace RE
 
 		struct Data3C8
 		{
-			UInt64				   unk00;  // 00
-			UInt64				   unk08;  // 08
-			NiPointer<NiAVObject>	unk10;	// 10
-			NiPointer<NiAVObject>	unk18;	// 18
-			NiPointer<NiAVObject>	unk20;	// 20
-			UInt64				   unk28;  // 28
-			UInt64				   unk30;  // 30
-			UInt64				   unk38;  // 38
+			UInt64				  unk00;  // 00
+			UInt64				  unk08;  // 08
+			NiPointer<NiAVObject> unk10;  // 10
+			NiPointer<NiAVObject> unk18;  // 18
+			NiPointer<NiAVObject> unk20;  // 20
+			UInt64				  unk28;  // 28
+			UInt64				  unk30;  // 30
+			UInt64				  unk38;  // 38
 		};
 		STATIC_ASSERT(sizeof(Data3C8) == 0x40);
 
@@ -205,7 +205,7 @@ namespace RE
 		UInt32												  unk1F0;						  // 1F0
 		float												  unk1F4;						  // 1F4
 		UInt32												  unk1F8;						  // 1F8
-		SInt32													unk1FC;							// 1FC
+		SInt32												  unk1FC;						  // 1FC
 		float												  unk200;						  // 200
 		UInt32												  pad204;						  // 204
 		Data208*											  unk208;						  // 208
@@ -278,8 +278,8 @@ namespace RE
 		UInt32												  pad3D4;						  // 3D4
 		DetectionEvent*										  actorsGeneratedDetectionEvent;  // 3D8
 		NiPointer<StandardDetectionListener>				  detectionListener;			  // 3E0
-		UInt32													unk3E8;							// 3E8
-		float													unk3EC;							// 3EC
+		UInt32												  unk3E8;						  // 3E8
+		float												  unk3EC;						  // 3EC
 		void*												  unk3F0;						  // 3F0 - smart ptr
 		UInt64												  unk3F8;						  // 3F8
 		BSTSmallArray<UInt64>								  unk400;						  // 400

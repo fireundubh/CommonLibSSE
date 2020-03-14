@@ -42,9 +42,8 @@ namespace RE
 
 
 		// members
-		UInt16	alphaFlags;		// 30
-		UInt8	alphaThreshold;		// 32
-
+		UInt16 alphaFlags;		// 30
+		UInt8  alphaThreshold;	// 32
 	};
 	STATIC_ASSERT(sizeof(NiAlphaProperty) == 0x38);
 }

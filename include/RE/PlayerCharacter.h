@@ -419,8 +419,8 @@ namespace RE
 		AITimeStamp												cachedVelocityTimeStamp;					  // AD0
 		float													telekinesisDistance;						  // AD4
 		float													commandTimer;								  // AD8
-		float													sunGazeTimer;									// ADC
-		TESImageSpaceModifier*									sunGazeImageSpaceModifier;						// AE0
+		float													sunGazeTimer;								  // ADC
+		TESImageSpaceModifier*									sunGazeImageSpaceModifier;					  // AE0
 		SInt32													unkAE8;										  // AE8
 		UInt32													unkAEC;										  // AEC
 		UInt32													unkAF0;										  // AF0
@@ -456,7 +456,7 @@ namespace RE
 		UInt8													unkBDA;										  // BDA
 		FlagBDB													unkBDB;										  // BDB
 		FlagBDC													unkBDC;										  // BDC
-		FlagBDD													unkBDD;											// BDD
+		FlagBDD													unkBDD;										  // BDD
 		UInt16													padBDE;										  // BDE
 	};
 	STATIC_ASSERT(sizeof(PlayerCharacter) == 0xBE0);

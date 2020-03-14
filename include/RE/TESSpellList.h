@@ -23,7 +23,7 @@ namespace RE
 			~SpellData() = default;
 
 			TES_HEAP_REDEFINE_NEW();
-	
+
 			SInt32 GetSpellIndex(SpellItem* a_spell);
 
 			//members

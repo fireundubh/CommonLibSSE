@@ -1225,6 +1225,9 @@
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet">
       <UniqueIdentifier>{da29911b-1978-4b8f-bb5a-d1110e96629c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet">
+      <UniqueIdentifier>{8f37ba21-90c0-429e-a747-484e8331e037}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\MenuControls.cpp">
@@ -2004,9 +2007,6 @@
     <ClCompile Include="src\RE\FaceGen.cpp">
       <Filter>src\RE\Misc</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BSShaderTextureSet.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\Misc.cpp">
       <Filter>src\RE\Misc</Filter>
     </ClCompile>
@@ -2042,6 +2042,9 @@
     </ClCompile>
     <ClCompile Include="src\RE\BSTrishape.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSShaderTextureSet.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -5782,6 +5785,12 @@
     </ClInclude>
     <ClInclude Include="include\RE\BSShaderPropertyLightData.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatTargetSelectorStandard.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatTargetSelector</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatTargetSelector.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatTargetSelector</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

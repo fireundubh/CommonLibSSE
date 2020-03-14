@@ -2,8 +2,8 @@
 
 #include <type_traits>
 
-#include "RE/ActorPackage.h"
 #include "RE/AITimer.h"
+#include "RE/ActorPackage.h"
 #include "RE/BSTArray.h"
 #include "RE/BSTList.h"
 
@@ -155,7 +155,7 @@ namespace RE
 		void					SetCachedHeight(float a_height);
 		void					Set3DUpdateFlag(RESET_3D_FLAGS a_flags);
 		void					Update3DModel(Actor* a_actor);
-		void						SetActorRefraction(float a_refraction);
+		void					SetActorRefraction(float a_refraction);
 
 
 		// members

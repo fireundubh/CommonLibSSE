@@ -36,12 +36,11 @@ namespace RE
 		virtual void SaveBinary(void);					   // 0C
 		virtual void LoadBinary(void);					   // 0D
 
+		void								 CopyBaseMaterial(BSLightingShaderMaterialBase* other);
 		static BSLightingShaderMaterialBase* CreateMaterial(Feature a_feature);
+		NiPointer<BSTextureSet>				 GetTextureSet() const;
+		void								 SetTextureSet(BSTextureSet* a_textureSet);
 
-		NiPointer<BSTextureSet> GetTextureSet() const;
-		void					SetTextureSet(BSTextureSet * a_textureSet);
-
-		void	CopyBaseMaterial(BSLightingShaderMaterialBase* other);
 
 		// members
 		NiColor					   specularColor;					// 38

@@ -361,10 +361,10 @@ namespace RE
 		virtual void							  UnequipItem(UInt64 a_arg1, TESBoundObject* a_object);																																					 // A1 - { return; }
 
 		static NiPointer<TESObjectREFR> LookupByHandle(RefHandle a_refHandle);
-		static bool							LookupByHandle(RefHandle a_refHandle, NiPointer<TESObjectREFR>& a_refrOut);
-		static TESObjectREFR*				FindReferenceFor3D(NiAVObject* a_object3D);
+		static bool						LookupByHandle(RefHandle a_refHandle, NiPointer<TESObjectREFR>& a_refrOut);
+		static TESObjectREFR*			FindReferenceFor3D(NiAVObject* a_object3D);
 
-		RefHandle*							CreateRefHandle_Native(RefHandle* handle);
+		RefHandle*						  CreateRefHandle_Native(RefHandle* handle);
 		ObjectRefHandle					  CreateRefHandle();
 		void							  DoTrap(TrapData& a_data);
 		void							  DoTrap(TrapEntry* a_trap, TargetEntry* a_target);
@@ -387,7 +387,7 @@ namespace RE
 		BGSLocation*					  GetEditorLocation() const;
 		bool							  GetEditorLocation(NiPoint3& a_outPos, NiPoint3& a_outRot, TESForm*& a_outWorldOrCell, TESObjectCELL* a_fallback);
 		TESFaction*						  GetFactionOwner();
-		float								GetHeadingAngle(TESObjectREFR* a_ref);
+		float							  GetHeadingAngle(TESObjectREFR* a_ref);
 		InventoryItemMap				  GetInventory();
 		InventoryItemMap				  GetInventory(llvm::function_ref<bool(TESBoundObject*)> a_filter);
 		SInt32							  GetInventoryCount();
@@ -406,10 +406,10 @@ namespace RE
 		float							  GetPositionY() const;
 		float							  GetPositionZ() const;
 		UInt32							  GetStealValue(const InventoryEntryData* a_entryData, UInt32 a_numItems, bool a_useMult) const;
-		NiPoint3							GetRotation() const;
-		float								GetRotationX() const;
-		float								GetRotationY() const;
-		float								GetRotationZ() const;
+		NiPoint3						  GetRotation() const;
+		float							  GetRotationX() const;
+		float							  GetRotationY() const;
+		float							  GetRotationZ() const;
 		float							  GetWeight() const;
 		TESWorldSpace*					  GetWorldspace() const;
 		bool							  HasCollision() const;
@@ -436,7 +436,7 @@ namespace RE
 		bool							  SetMotionType(MotionType a_motionType, bool a_allowActivate = true);
 		void							  SetPosition(float a_x, float a_y, float a_z);
 		void							  SetPosition(NiPoint3 a_pos);
-		void								StopAllShaders();
+		void							  StopAllShaders();
 
 
 		// members

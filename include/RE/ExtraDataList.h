@@ -167,7 +167,7 @@ namespace RE
 		TESObjectREFR*		  GetLinkedRef(BGSKeyword* a_keyword);
 		TESForm*			  GetOwner();
 		SOUL_LEVEL			  GetSoulLevel() const;
-		bool					GetWorn();
+		bool				  GetWorn();
 		void				  SetExtraFlags(ExtraFlags::Flag a_flags, bool a_enable);
 		void				  SetInventoryChanges(InventoryChanges* a_changes);
 		void				  SetOwner(TESForm* a_owner);

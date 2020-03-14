@@ -58,8 +58,7 @@ namespace RE
 	{
 		if (a_canTalk) {
 			boolFlags |= BOOL_FLAGS::kCanSpeakToEssentialDown;
-		}
-		else {
+		} else {
 			boolFlags &= ~BOOL_FLAGS::kCanSpeakToEssentialDown;
 		}
 	}
@@ -99,8 +98,7 @@ namespace RE
 		auto xTalk = extraList.GetByType<ExtraCanTalkToPlayer>();
 		if (xTalk) {
 			return xTalk->talk;
-		}
-		else {
+		} else {
 			return race ? race->AllowsPCDialogue() : false;
 		}
 	}
@@ -268,13 +266,11 @@ namespace RE
 		if (currentProcess) {
 			if (a_leftHand) {
 				return currentProcess->GetEquippedLeftHand();
-			}
-			else {
+			} else {
 				return currentProcess->GetEquippedRightHand();
 			}
 		}
-			return nullptr;
-		}
+		return nullptr;
 	}
 
 
@@ -328,8 +324,7 @@ namespace RE
 		if (cachedHeight == 0.0) {
 			currentProcess->SetCachedHeight(height);
 			return height;
-		}
-		else {
+		} else {
 			return cachedHeight;
 		}
 	}
@@ -426,7 +421,7 @@ namespace RE
 					if (!object || !object->IsArmor() || object->formID != id) {
 						continue;
 					}
-					return static_cast<TESObjectARMO*>(object);		
+					return static_cast<TESObjectARMO*>(object);
 				}
 			}
 		}
@@ -454,7 +449,8 @@ namespace RE
 	bool Actor::InstantKill()
 	{
 		using func_t = decltype(&Actor::InstantKill);
-		REL::Offset<func_t> func(Offset::Actor::InstantKill);;
+		REL::Offset<func_t> func(Offset::Actor::InstantKill);
+		;
 		return func(this);
 	}
 
@@ -504,8 +500,7 @@ namespace RE
 
 		if (crimFac == a_faction) {
 			return true;
-		}
-		else {
+		} else {
 			return crimFac->IsFactionInCrimeGroup(a_faction);
 		}
 	}
@@ -601,7 +596,8 @@ namespace RE
 	bool Actor::RemoveSpell(SpellItem* a_spell)
 	{
 		using func_t = decltype(&Actor::RemoveSpell);
-		REL::Offset<func_t> func(Offset::Actor::RemoveSpell);;
+		REL::Offset<func_t> func(Offset::Actor::RemoveSpell);
+		;
 		return func(this, a_spell);
 	}
 
@@ -724,7 +720,7 @@ namespace RE
 	}
 
 
-	bool Actor::VisitFactions(llvm::function_ref<bool(TESFaction * a_faction, SInt8 a_rank)> a_visitor)
+	bool Actor::VisitFactions(llvm::function_ref<bool(TESFaction* a_faction, SInt8 a_rank)> a_visitor)
 	{
 		auto base = GetActorBase();
 		if (base) {

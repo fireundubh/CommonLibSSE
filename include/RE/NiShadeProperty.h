@@ -25,9 +25,9 @@ namespace RE
 		virtual Type		  GetType() const override;							  // 25 - { return Type::kShade; }
 
 		// add
-		virtual UInt8			InitializeGeometry(BSGeometry* a_geometry);			// 27 - { return 1; }
-		virtual UInt8			InitializeShader(BSGeometry* a_geometry);			// 28 - { return 1; }
-		virtual void Unk_29(void);	// 29 - { return; }
+		virtual UInt8 InitializeGeometry(BSGeometry* a_geometry);  // 27 - { return 1; }
+		virtual UInt8 InitializeShader(BSGeometry* a_geometry);	   // 28 - { return 1; }
+		virtual void  Unk_29(void);								   // 29 - { return; }
 	};
 	STATIC_ASSERT(sizeof(NiShadeProperty) == 0x30);
 }

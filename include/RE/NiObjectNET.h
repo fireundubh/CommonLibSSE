@@ -40,7 +40,7 @@ namespace RE
 		bool			  InsertExtraData(NiExtraData* a_extra);
 		void			  RemoveAllExtraData();
 		bool			  RemoveExtraData(const BSFixedString& a_key);
-		bool				RemoveExtraData(NiExtraData* a_extra);
+		bool			  RemoveExtraData(NiExtraData* a_extra);
 		bool			  RemoveExtraDataAt(UInt16 a_extraDataIndex);
 		bool			  SetExtraDataSize(UInt16 a_size);
 

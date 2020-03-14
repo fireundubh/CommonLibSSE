@@ -44,9 +44,9 @@ namespace RE
 		virtual void InitItemImpl() override;					   // 13
 
 		void AddForm(TESForm* a_form);
-		
 		bool HasForm(const TESForm* a_form) const;
 		bool HasForm(FormID a_formID) const;
+
 
 		// members
 		BSTArray<TESForm*> forms;				  // 20 - LNAM

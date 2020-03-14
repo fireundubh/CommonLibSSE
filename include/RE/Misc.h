@@ -18,15 +18,15 @@ namespace RE
 	bool	 LookupReferenceByHandle(const RefHandle& a_handle, NiPointer<Actor>& a_refrOut);
 	bool	 LookupReferenceByHandle(const RefHandle& a_handle, NiPointer<TESObjectREFR>& a_refrOut);
 	void	 PlaySound(const char* a_editorID);
-	void		func2E9950();
+	void	 func2E9950();
 
 	namespace Util
 	{
-		void	SanitizeTexturePath(std::string& a_path);
+		void SanitizeTexturePath(std::string& a_path);
 	}
 
 	namespace Papyrus
 	{
-		void	ApplyHavokImpulse(BSScript::Internal::VirtualMachine* vm, UInt32 stackID, TESObjectREFR* target, float afX, float afY, float afZ, float magnitude);
+		void ApplyHavokImpulse(BSScript::Internal::VirtualMachine* vm, UInt32 stackID, TESObjectREFR* target, float afX, float afY, float afZ, float magnitude);
 	}
 }

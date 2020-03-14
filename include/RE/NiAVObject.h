@@ -1,11 +1,11 @@
 #pragma once
 
+#include "RE/BSShaderMaterial.h"
 #include "RE/NiBound.h"
+#include "RE/NiColor.h"
 #include "RE/NiObjectNET.h"
 #include "RE/NiSmartPointer.h"
 #include "RE/NiTransform.h"
-#include "RE/NiColor.h"
-#include "RE/BSShaderMaterial.h"
 
 
 namespace RE
@@ -116,18 +116,18 @@ namespace RE
 		virtual void		PostAttachUpdate();																					// 33
 		virtual void		OnVisible(NiCullingProcess& a_process);																// 34 - { return; }
 
-		bool GetAppCulled() const;
-		BSGeometry*		GetFirstGeometryOfShaderType(BSShaderMaterial::Feature a_type);
-		TESObjectREFR*	GetUserData() const;
-		bool			HasShaderType(BSShaderMaterial::Feature a_type);
-		void			SetAppCulled(bool a_cull);
-		bool SetMotionType(UInt32 a_motionType, bool a_arg2 = true, bool a_arg3 = false, bool a_allowActivate = true);
-		void TintScenegraph(const NiColorA& a_color);
-		void Update(NiUpdateData& a_data);
-		void UpdateBodyTint(const NiColor& a_color);
-		void UpdateHairColor(const NiColor& a_color);
-		void			UpdateMaterialAlpha(float a_alpha, bool a_skin);
-		void			UpdateVisibility(bool a_visible);
+		bool		   GetAppCulled() const;
+		BSGeometry*	   GetFirstGeometryOfShaderType(BSShaderMaterial::Feature a_type);
+		TESObjectREFR* GetUserData() const;
+		bool		   HasShaderType(BSShaderMaterial::Feature a_type);
+		void		   SetAppCulled(bool a_cull);
+		bool		   SetMotionType(UInt32 a_motionType, bool a_arg2 = true, bool a_arg3 = false, bool a_allowActivate = true);
+		void		   TintScenegraph(const NiColorA& a_color);
+		void		   Update(NiUpdateData& a_data);
+		void		   UpdateBodyTint(const NiColor& a_color);
+		void		   UpdateHairColor(const NiColor& a_color);
+		void		   UpdateMaterialAlpha(float a_alpha, bool a_skin);
+		void		   UpdateVisibility(bool a_visible);
 
 
 		// members

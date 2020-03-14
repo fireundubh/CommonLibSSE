@@ -481,7 +481,7 @@ namespace RE
 		virtual float				 CheckClampDamageModifier(ActorValue a_av, float a_delta);																														  // 127
 
 		static NiPointer<Actor> LookupByHandle(RefHandle a_refHandle);
-		static bool					LookupByHandle(RefHandle a_refHandle, NiPointer<Actor>& a_refrOut);
+		static bool				LookupByHandle(RefHandle a_refHandle, NiPointer<Actor>& a_refrOut);
 
 		bool					  AddSpell(SpellItem* a_spell);
 		void					  AllowBleedoutDialogue(bool a_canTalk);
@@ -493,10 +493,10 @@ namespace RE
 		void					  ClearExpressionOverride();
 		void					  ClearExtraArrows();
 		ActorHandle				  CreateRefHandle();
-		void						Decapitate();
+		void					  Decapitate();
 		void					  DispelWornItemEnchantments();
 		void					  DoReset3D(bool a_updateWeight);
-		void						EnableAI(bool a_enable);
+		void					  EnableAI(bool a_enable);
 		void					  EvaluatePackage(bool a_arg1 = false, bool a_arg2 = false);
 		TESNPC*					  GetActorBase();
 		const TESNPC*			  GetActorBase() const;
@@ -508,23 +508,23 @@ namespace RE
 		InventoryEntryData*		  GetEquippedEntryData(bool a_leftHand) const;
 		TESForm*				  GetEquippedObject(bool a_leftHand) const;
 		SInt32					  GetGoldAmount();
-		BSGeometry*					GetHeadPartGeometry(BGSHeadPart::HeadPartType a_type);
+		BSGeometry*				  GetHeadPartGeometry(BGSHeadPart::HeadPartType a_type);
 		float					  GetHeight();
 		UInt16					  GetLevel() const;
 		TESRace*				  GetRace() const;
-		TESObjectARMO*				GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot);
-		SOUL_LEVEL					GetSoulLevel() const;
-		TESObjectARMO*				GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot);
-		TESObjectARMO*				GetWornArmor(FormID a_ID);
+		TESObjectARMO*			  GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot);
+		SOUL_LEVEL				  GetSoulLevel() const;
+		TESObjectARMO*			  GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot);
+		TESObjectARMO*			  GetWornArmor(FormID a_ID);
 		bool					  HasPerk(BGSPerk* a_perk) const;
-		bool						HasSpell(SpellItem* a_spell) const;
-		bool						InstantKill();
+		bool					  HasSpell(SpellItem* a_spell) const;
+		bool					  InstantKill();
 		bool					  IsAIEnabled() const;
 		bool					  IsAMount() const;
 		bool					  IsBeingRidden() const;
 		bool					  IsCommandedActor() const;
 		bool					  IsEssential() const;
-		bool						IsProtected() const;
+		bool					  IsProtected() const;
 		bool					  IsFactionInCrimeGroup(const TESFaction* a_faction) const;
 		bool					  IsGhost() const;
 		bool					  IsGuard() const;
@@ -537,7 +537,7 @@ namespace RE
 		bool					  IsSneaking() const;
 		bool					  IsSummoned() const;
 		bool					  IsTrespassing() const;
-		bool						RemoveSpell(SpellItem* a_spell);
+		bool					  RemoveSpell(SpellItem* a_spell);
 		SInt32					  RequestDetectionLevel(Actor* a_target, DETECTION_PRIORITY a_priority = DETECTION_PRIORITY::kNormal);
 		void					  StealAlarm(TESObjectREFR* a_refItemOrContainer, TESForm* a_stolenItem, SInt32 a_numItems, SInt32 a_value, TESForm* a_owner, bool a_allowGetBackStolenItemPackage);
 		void					  SwitchRace(TESRace* a_race, bool a_player);
@@ -546,10 +546,10 @@ namespace RE
 		void					  UpdateHairColor();
 		void					  UpdateSkinColor();
 		void					  UpdateWeaponAbility(TESForm* a_weapon, ExtraDataList* a_extraData, bool a_leftHand);
-		NiAVObject*					VisitArmorAddon(TESObjectARMO* a_armor, TESObjectARMA* a_arma);
+		NiAVObject*				  VisitArmorAddon(TESObjectARMO* a_armor, TESObjectARMA* a_arma);
 		bool					  VisitFactions(llvm::function_ref<bool(TESFaction* a_faction, SInt8 a_rank)> a_visitor);
 
-	
+
 		// members
 		BOOL_BITS							   boolBits;						   // 0E0
 		float								   updateTargetTimer;				   // 0E4

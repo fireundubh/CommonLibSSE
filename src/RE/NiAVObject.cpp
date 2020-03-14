@@ -40,8 +40,7 @@ namespace RE
 					}
 				}
 			}
-		}
-		else {
+		} else {
 			auto geometry = AsGeometry();
 			if (geometry) {
 				auto effect = geometry->properties[BSGeometry::States::kEffect].get();
@@ -87,8 +86,7 @@ namespace RE
 					}
 				}
 			}
-		}
-		else {
+		} else {
 			auto geometry = AsGeometry();
 			if (geometry) {
 				auto effect = geometry->properties[BSGeometry::States::kEffect].get();
@@ -153,7 +151,7 @@ namespace RE
 
 
 	void NiAVObject::UpdateBodyTint(const NiColor& a_color)
-	{		
+	{
 		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl {
 			using State = BSGeometry::States;
 			using Feature = BSShaderMaterial::Feature;
@@ -200,8 +198,7 @@ namespace RE
 
 	void NiAVObject::UpdateMaterialAlpha(float a_alpha, bool a_skin)
 	{
-		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl
-		{
+		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl {
 			a_geometry->SetMaterialAlpha(a_alpha, a_skin);
 			return BSVisit::BSVisitControl::kContinue;
 		});

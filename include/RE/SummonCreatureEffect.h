@@ -28,15 +28,15 @@ namespace RE
 
 
 		// members
-		NiPoint3				location;				// 90
-		NiPoint3				angle;					// 9C
-		ActorHandle				summonedActor;			// A8
-		UInt32					unkAC;					// AC
-		SummonPlacementEffect*	summonPlacementEffect;	// B0
-		UInt8					unkB8;					// B8
-		UInt8					unkB9;					// B9
-		UInt8					unkBA;					// BA
-		UInt8					padBB;					// BB
+		NiPoint3			   location;			   // 90
+		NiPoint3			   angle;				   // 9C
+		ActorHandle			   summonedActor;		   // A8
+		UInt32				   unkAC;				   // AC
+		SummonPlacementEffect* summonPlacementEffect;  // B0
+		UInt8				   unkB8;				   // B8
+		UInt8				   unkB9;				   // B9
+		UInt8				   unkBA;				   // BA
+		UInt8				   padBB;				   // BB
 	};
 	STATIC_ASSERT(sizeof(SummonCreatureEffect) == 0xC0);
 }
