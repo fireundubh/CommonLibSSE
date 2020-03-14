@@ -8,8 +8,8 @@
 #include "SKSE/Interfaces.h"
 #include "SKSE/Stubs.h"
 #include "SKSE/Trampoline.h"
-#include "SKSE/Version.h"
 #include "SKSE/Utilities.h"
+#include "SKSE/Version.h"
 
 
 namespace SKSE

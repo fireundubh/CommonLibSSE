@@ -1,7 +1,7 @@
 #pragma once
 
 namespace RE
-{	
+{
 	class BSTaskPool
 	{
 	public:

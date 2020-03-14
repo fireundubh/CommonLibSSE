@@ -238,6 +238,41 @@ namespace RE
 	}
 
 
+	bool NiObjectNET::RemoveExtraData(NiExtraData* a_extra)
+	{
+		if (extraDataSize == 0) {
+			return false;
+		}
+
+		if (a_extra == nullptr) {
+			return false;
+		}
+
+		assert(extraDataSize < std::numeric_limits<SInt16>::max());
+
+		SInt16 bottom = 0;
+		SInt16 top = static_cast<SInt16>(extraDataSize - 1);
+		SInt16 middle = 0;
+
+		while (bottom <= top) {
+			middle = (top + bottom) >> 1;
+
+			std::ptrdiff_t compare = a_extra->GetName().c_str() - extra[middle]->GetName().c_str();
+
+			if (compare == 0) {
+				DeleteExtraData(middle);
+				return true;
+			} else if (compare > 0) {
+				bottom = middle + 1;
+			} else {
+				top = middle - 1;
+			}
+		}
+
+		return false;
+	}
+
+
 	bool NiObjectNET::RemoveExtraDataAt(UInt16 a_extraDataIndex)
 	{
 		if (a_extraDataIndex < extraDataSize) {

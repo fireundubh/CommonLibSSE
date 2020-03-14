@@ -6,10 +6,10 @@
 
 namespace RE
 {
-    struct CombatLocation
-    {
-        NiPoint3    pos;                // 00
-        TESForm*    cellOrWorldSpace;   // 0C
-    };
-    STATIC_ASSERT(sizeof(CombatLocation) == 0x18);
+	struct CombatLocation
+	{
+		NiPoint3 pos;				// 00
+		TESForm* cellOrWorldSpace;	// 0C
+	};
+	STATIC_ASSERT(sizeof(CombatLocation) == 0x18);
 }

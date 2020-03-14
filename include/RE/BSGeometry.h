@@ -1,8 +1,8 @@
 #pragma once
 
-#include <optional>
 #include "RE/NiAVObject.h"
 #include "RE/NiSmartPointer.h"
+#include <optional>
 
 
 namespace RE
@@ -12,6 +12,7 @@ namespace RE
 	class NiProperty;
 	class NiSkinInstance;
 	class BSShaderTextureSet;
+
 
 	class BSGeometry : public NiAVObject
 	{
@@ -76,9 +77,10 @@ namespace RE
 		virtual BSSkinnedDecalTriShape* AsSkinnedDecalTriShape();  // 36 - { return 0; }
 		virtual void					Unk_37(void);			   // 37 - { return 0; }
 
-		void	SetMaterialAlpha(float a_alpha, bool a_skin);
-		void	UpdateFaceGenTint(const NiColor& a_color);
-		void	SetShaderType(BSGeometry* a_geometry);
+		void SetMaterialAlpha(float a_alpha, bool a_skin);
+		void UpdateFaceGenTint(const NiColor& a_color);
+		void SetShaderType(BSGeometry* a_geometry);
+
 
 		// members
 		NiBound					  modelBound;				   // 110

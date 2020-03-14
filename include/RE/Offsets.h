@@ -267,7 +267,7 @@ namespace RE
 			}
 		}
 
-		
+
 		namespace BSShaderTextureSet
 		{
 			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(99886));
@@ -766,7 +766,7 @@ namespace RE
 			static constexpr REL::ID Update(static_cast<std::uint64_t>(68900));
 		}
 
-		
+
 		namespace NiCamera
 		{
 			static constexpr REL::ID WorldPtToScreenPt3(static_cast<std::uint64_t>(69270));
@@ -778,7 +778,7 @@ namespace RE
 			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286430));
 		}
 
-		
+
 		namespace NiIntegersExtraData
 		{
 			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286448));
@@ -872,7 +872,7 @@ namespace RE
 		namespace ProcessLists
 		{
 			static constexpr REL::ID Singleton(static_cast<std::uint64_t>(514167));
-			static constexpr REL::ID StopCombatAndAlarmOnActor(static_cast<std::uint64_t>(40330));		
+			static constexpr REL::ID StopCombatAndAlarmOnActor(static_cast<std::uint64_t>(40330));
 		}
 
 
@@ -1038,7 +1038,7 @@ namespace RE
 		{
 			static constexpr REL::ID CreatePackage(static_cast<std::uint64_t>(28732));
 		}
-		
+
 
 		namespace TESQuest
 		{

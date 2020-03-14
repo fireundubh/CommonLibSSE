@@ -24,7 +24,7 @@ namespace RE
 		virtual void		  SaveBinary(NiStream& a_stream) override;			  // 1B
 		virtual bool		  IsEqual(NiObject* a_object) override;				  // 1C - { return false; }
 
-		static BSTriShape*		Create();
+		static BSTriShape* Create();
 
 		// members
 		UInt16 triangleCount;  // 158
