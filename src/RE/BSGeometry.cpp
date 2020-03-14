@@ -19,7 +19,7 @@ namespace RE
 	void BSGeometry::SetMaterialAlpha(float a_alpha, bool a_skin)
 	{
 		using Feature = BSShaderMaterial::Feature;
-		
+
 		auto effect = properties[States::kEffect].get();
 		if (effect) {
 			auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
@@ -31,8 +31,7 @@ namespace RE
 						if (feature == Feature::kFaceGen || feature == Feature::kFaceGenRGBTint) {
 							material->materialAlpha = a_alpha;
 						}
-					}
-					else {
+					} else {
 						material->materialAlpha = a_alpha;
 					}
 				}
@@ -55,19 +54,15 @@ namespace RE
 					if (material->GetFeature() == Feature::kFaceGen) {
 						auto facegenTint = BSLightingShaderMaterialFacegenTint::CreateMaterial();
 						facegenTint->CopyBaseMaterial(static_cast<BSLightingShaderMaterialBase*>(material));
-						facegenTint->tintColor = a_color;
-
 						lightingShader->SetFlags(0x0A, false);
 						lightingShader->SetFlags(0x15, true);
-
+						facegenTint->tintColor = a_color;
 						lightingShader->SetMaterial(facegenTint, true);
 						lightingShader->InitializeGeometry(this);
 						lightingShader->InitializeShader(this);
-
 						facegenTint->~BSLightingShaderMaterialFacegenTint();
 						free(facegenTint);
-					}
-					else if (material->GetFeature() == Feature::kFaceGenRGBTint) {
+					} else if (material->GetFeature() == Feature::kFaceGenRGBTint) {
 						auto facegenTint = static_cast<BSLightingShaderMaterialFacegenTint*>(material);
 						facegenTint->tintColor = a_color;
 					}

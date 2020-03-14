@@ -11,8 +11,7 @@ namespace RE
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiIntegersExtraData::Vtbl);
 		NiIntegersExtraData* data = static_cast<NiIntegersExtraData*>(NiExtraData::Create(sizeof(NiIntegersExtraData), vtbl.GetAddress()));
 
-		if (data)
-		{
+		if (data) {
 			data->name = name;
 			data->size = size;
 
@@ -25,10 +24,8 @@ namespace RE
 
 	SInt32 NiIntegersExtraData::GetIndexOf(SInt32 element)
 	{
-		for (UInt32 i = 0; i < size; i++)
-		{
-			if (value[i] == element)
-			{
+		for (UInt32 i = 0; i < size; i++) {
+			if (value[i] == element) {
 				return i;
 			}
 		}
@@ -40,12 +37,10 @@ namespace RE
 	{
 		SInt32 index = GetIndexOf(element);
 
-		if (index == -1)
-		{
+		if (index == -1) {
 			auto temp = NiAlloc<SInt32>(size + 1);
 
-			for (SInt32 i = 0; i < size; i++)
-			{
+			for (SInt32 i = 0; i < size; i++) {
 				temp[i] = value[i];
 			}
 
@@ -65,14 +60,11 @@ namespace RE
 	{
 		SInt32 index = GetIndexOf(element);
 
-		if (index != -1)
-		{
+		if (index != -1) {
 			auto temp = NiAlloc<SInt32>(size - 1);
 
-			for (SInt32 i = 0; i < size; i++)
-			{
-				if (i != index)
-				{
+			for (SInt32 i = 0; i < size; i++) {
+				if (i != index) {
 					temp[i] = value[i];
 				}
 			}

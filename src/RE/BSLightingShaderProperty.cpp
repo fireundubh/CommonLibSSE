@@ -1,7 +1,7 @@
 #include "RE/BSLightingShaderProperty.h"
 
 #include "RE/Offsets.h"
-#include "REL/Relocation.h"  
+#include "REL/Relocation.h"
 
 
 namespace RE

@@ -11,7 +11,7 @@ namespace RE
 		REL::Offset<func_t> func(Offset::BSShaderTextureSet::Ctor);
 		return func(this);
 	}
-	
+
 	BSShaderTextureSet* BSShaderTextureSet::Create()
 	{
 		auto textureset = malloc<BSShaderTextureSet>();

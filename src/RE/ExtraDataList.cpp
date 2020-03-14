@@ -299,7 +299,7 @@ namespace RE
 
 	bool ExtraDataList::GetWorn()
 	{
-		if (HasType<ExtraWorn>() || HasType<ExtraWornLeft>()){
+		if (HasType<ExtraWorn>() || HasType<ExtraWornLeft>()) {
 			return true;
 		}
 

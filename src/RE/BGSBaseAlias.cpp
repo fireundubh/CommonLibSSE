@@ -44,7 +44,7 @@ namespace RE
 		flags |= FLAGS::kProtected;
 	}
 
-	
+
 	void BGSBaseAlias::SetUnprotected()
 	{
 		flags &= ~FLAGS::kProtected;

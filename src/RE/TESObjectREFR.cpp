@@ -61,7 +61,7 @@ namespace RE
 	}
 
 
-	RefHandle * TESObjectREFR::CreateRefHandle_Native(RefHandle * handle)
+	RefHandle* TESObjectREFR::CreateRefHandle_Native(RefHandle* handle)
 	{
 		using func_t = decltype(&TESObjectREFR::CreateRefHandle_Native);
 		REL::Offset<func_t> func(Offset::TESObjectREFR::CreateRefHandle_Native);
@@ -259,8 +259,7 @@ namespace RE
 			if (result < -180.0) {
 				result = fmodf(result - -180.0, 360.0) + 180.0;
 			}
-		}
-		else {
+		} else {
 			result = fmodf(result - -180.0, 360.0) - 180.0;
 		}
 		return result;
@@ -481,8 +480,8 @@ namespace RE
 	{
 		return data.angle.z;
 	}
-	
-	
+
+
 	float TESObjectREFR::GetWeight() const
 	{
 		auto obj = GetBaseObject();

@@ -151,16 +151,15 @@ namespace RE
 				goto LABEL_9;
 			}
 			angle = 4.712389;
-		}
-		else {
-			angle = atanf(x/y);
+		} else {
+			angle = atanf(x / y);
 			if (y < 0.0) {
 				angle = angle + 3.1415927;
 			}
 		}
 		for (; angle < 0.0; angle = angle + 6.2831855)
 			;
-	LABEL_9:
+LABEL_9:
 		while (angle > 6.2831855) {
 			angle = angle + -6.2831855;
 		}

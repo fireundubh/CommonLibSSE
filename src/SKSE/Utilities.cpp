@@ -10,14 +10,13 @@ namespace SKSE
 		static std::string s_runtimeDirectory;
 
 		if (s_runtimeDirectory.empty()) {
-
-			char	runtimePathBuf[MAX_PATH];
-			UInt32	runtimePathLength = GetModuleFileName(GetModuleHandle(NULL), runtimePathBuf, sizeof(runtimePathBuf));
+			char runtimePathBuf[MAX_PATH];
+			UInt32 runtimePathLength = GetModuleFileName(GetModuleHandle(NULL), runtimePathBuf, sizeof(runtimePathBuf));
 
 			if (runtimePathLength && (runtimePathLength < sizeof(runtimePathBuf))) {
-				std::string	runtimePath(runtimePathBuf, runtimePathLength);
+				std::string runtimePath(runtimePathBuf, runtimePathLength);
 
-				std::string::size_type	lastSlash = runtimePath.rfind('\\');
+				std::string::size_type lastSlash = runtimePath.rfind('\\');
 				if (lastSlash != std::string::npos) {
 					s_runtimeDirectory = runtimePath.substr(0, lastSlash + 1);
 				}
@@ -36,8 +35,7 @@ namespace SKSE
 			const auto& runtimePath = GetRuntimeDirectory();
 			if (!runtimePath.empty()) {
 				s_pluginPath = runtimePath + R"(Data\SKSE\Plugins\)";
-			}
-			else {
+			} else {
 				_MESSAGE("couldn't get runtime directory path!");
 			}
 		}
@@ -55,8 +53,7 @@ namespace SKSE
 			if (!pluginPath.empty()) {
 				s_configPath = pluginPath + modName + R"(.ini)";
 				_MESSAGE("config path = %s", s_configPath.c_str());
-			}
-			else {
+			} else {
 				_MESSAGE("couldn't get plugin path!");
 			}
 		}
