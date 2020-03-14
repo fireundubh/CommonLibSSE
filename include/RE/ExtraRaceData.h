@@ -14,19 +14,17 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraRaceData;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kRaceData;
 
 
-		enum { kExtraTypeID = ExtraDataType::kRaceData };
-
-
-		virtual ~ExtraRaceData();						// 00
+		virtual ~ExtraRaceData();  // 00
 
 		// override (BSExtraData)
-		virtual ExtraDataType GetType() const override;	// 01 - { return kRaceData; }
+		virtual ExtraDataType GetType() const override;	 // 01 - { return kRaceData; }
 
 
 		// members
-		NiPointer<QueuedFile> preloadedRaceData;	// 10
+		NiPointer<QueuedFile> preloadedRaceData;  // 10
 	};
 	STATIC_ASSERT(sizeof(ExtraRaceData) == 0x18);
 }

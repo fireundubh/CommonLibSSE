@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <None Include="exports.def" />
+    <None Include=".clang-format" />
+    <None Include="src\.clang-format">
+      <Filter>src</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -1180,8 +1183,8 @@
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty">
       <UniqueIdentifier>{9cef4f89-c4e3-489b-9525-8d327fbfb443}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet">
-      <UniqueIdentifier>{42bff99f-2dab-431c-b9ec-1de14c847315}</UniqueIdentifier>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance">
+      <UniqueIdentifier>{f3bc2909-8642-4a3f-9c32-a341b585fec0}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\CombatObject">
       <UniqueIdentifier>{09dc84cb-dfb4-4ff7-9631-2139708c3a66}</UniqueIdentifier>
@@ -4532,9 +4535,6 @@
     <ClInclude Include="include\RE\BSFaceGenNiNode.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\NiSkinInstance.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\NiSkinData.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClInclude>
@@ -5705,11 +5705,11 @@
     <ClInclude Include="include\RE\BSGraphics\State.h">
       <Filter>include\RE\BSGraphics</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\CombatTargetSelector.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatTargetSelector</Filter>
+    <ClInclude Include="include\RE\NiSkinInstance.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\CombatTargetSelectorStandard.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatTargetSelector</Filter>
+    <ClInclude Include="include\RE\BSDismemberSkinInstance.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\CombatLocation.h">
       <Filter>include\RE\NetImmerse\Components</Filter>

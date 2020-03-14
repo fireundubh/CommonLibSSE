@@ -13,20 +13,18 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraSceneData;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kSceneData;
 
 
-		enum { kExtraTypeID = ExtraDataType::kSceneData };
-
-
-		virtual ~ExtraSceneData();														// 00
+		virtual ~ExtraSceneData();	// 00
 
 		// override (BSExtraData)
-		virtual ExtraDataType	GetType() const override;								// 01 - { return kSceneData; }
-		virtual bool			IsNotEqual(const BSExtraData* a_rhs) const override;	// 02 - { return unk10 != a_rhs->unk10; }
+		virtual ExtraDataType GetType() const override;								// 01 - { return kSceneData; }
+		virtual bool		  IsNotEqual(const BSExtraData* a_rhs) const override;	// 02 - { return unk10 != a_rhs->unk10; }
 
 
 		// members
-		BGSScene* scene;	// 10
+		BGSScene* scene;  // 10
 	};
 	STATIC_ASSERT(sizeof(ExtraSceneData) == 0x18);
 }

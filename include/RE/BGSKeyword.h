@@ -11,9 +11,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_BGSKeyword;
-
-
-		enum { kTypeID = FormType::Keyword };
+		inline static constexpr auto FORMTYPE = FormType::Keyword;
 
 
 		struct RecordFlags
@@ -26,16 +24,16 @@ namespace RE
 		};
 
 
-		virtual ~BGSKeyword();												// 00
+		virtual ~BGSKeyword();	// 00
 
 		// override (TESForm)
-		virtual bool		Load(TESFile* a_mod) override;					// 06
-		virtual const char*	GetFormEditorID() const override;				// 32 - { return formEditorID.c_str(); }
-		virtual bool		SetFormEditorID(const char* a_str) override;	// 33 - { formEditorID = a_str; }
+		virtual bool		Load(TESFile* a_mod) override;				  // 06
+		virtual const char* GetFormEditorID() const override;			  // 32 - { return formEditorID.c_str(); }
+		virtual bool		SetFormEditorID(const char* a_str) override;  // 33 - { formEditorID = a_str; }
 
 
 		// members
-		BSFixedString formEditorID;	// 20
+		BSFixedString formEditorID;	 // 20
 	};
 	STATIC_ASSERT(sizeof(BGSKeyword) == 0x28);
 }

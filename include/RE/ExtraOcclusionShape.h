@@ -14,15 +14,13 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraOcclusionShape;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kOcclusionShape;
 
 
-		enum { kExtraTypeID = ExtraDataType::kOcclusionShape };
-
-
-		virtual ~ExtraOcclusionShape();					// 00
+		virtual ~ExtraOcclusionShape();	 // 00
 
 		// override (BSExtraData)
-		virtual ExtraDataType GetType() const override;	// 01 - { return kOcclusionShape; }
+		virtual ExtraDataType GetType() const override;	 // 01 - { return kOcclusionShape; }
 
 
 		// members

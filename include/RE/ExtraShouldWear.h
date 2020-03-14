@@ -10,19 +10,17 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraShouldWear;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kShouldWear;
 
 
-		enum { kExtraTypeID = ExtraDataType::kShouldWear };
-
-
-		virtual ~ExtraShouldWear();						// 00
+		virtual ~ExtraShouldWear();	 // 00
 
 		// override (BSExtraData)
-		virtual ExtraDataType GetType() const override;	// 01 - { return kShouldWear; }
+		virtual ExtraDataType GetType() const override;	 // 01 - { return kShouldWear; }
 
 
 		// members
-		UInt64 unk10;	// 10
+		UInt64 unk10;  // 10
 	};
 	STATIC_ASSERT(sizeof(ExtraShouldWear) == 0x18);
 }

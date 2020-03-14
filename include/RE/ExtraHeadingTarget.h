@@ -11,20 +11,18 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraHeadingTarget;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kHeadingTarget;
 
 
-		enum { kExtraTypeID = ExtraDataType::kHeadingTarget };
-
-
-		virtual ~ExtraHeadingTarget();					// 00
+		virtual ~ExtraHeadingTarget();	// 00
 
 		// override (BSExtraData)
-		virtual ExtraDataType GetType() const override;	// 01 - { return kHeadingTarget; }
+		virtual ExtraDataType GetType() const override;	 // 01 - { return kHeadingTarget; }
 
 
 		// members
-		ObjectRefHandle	target;	// 10
-		UInt32			pad14;	// 14
+		ObjectRefHandle target;	 // 10
+		UInt32			pad14;	 // 14
 	};
 	STATIC_ASSERT(sizeof(ExtraHeadingTarget) == 0x18);
 }

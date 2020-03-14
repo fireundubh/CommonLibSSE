@@ -12,19 +12,17 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraUsedMarkers;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kUsedMarkers;
 
 
-		enum { kExtraTypeID = ExtraDataType::kUsedMarkers };
-
-
-		virtual ~ExtraUsedMarkers();					// 00
+		virtual ~ExtraUsedMarkers();  // 00
 
 		// override (BSExtraData)
-		virtual ExtraDataType GetType() const override;	// 01 - { return kUsedMarkers; }
+		virtual ExtraDataType GetType() const override;	 // 01 - { return kUsedMarkers; }
 
 
 		// members
-		BSTArray<MarkerUsedData> usedMarkers;	// 10
+		BSTArray<MarkerUsedData> usedMarkers;  // 10
 	};
 	STATIC_ASSERT(sizeof(ExtraUsedMarkers) == 0x28);
 }

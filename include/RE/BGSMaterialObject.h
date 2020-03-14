@@ -11,15 +11,13 @@
 namespace RE
 {
 	class BGSMaterialObject :
-		public TESForm,			// 00
-		public TESModel,		// 20
-		public BSMaterialObject	// 48
+		public TESForm,			 // 00
+		public TESModel,		 // 20
+		public BSMaterialObject	 // 48
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_BGSMaterialObject;
-
-
-		enum { kTypeID = FormType::MaterialObject };
+		inline static constexpr auto FORMTYPE = FormType::MaterialObject;
 
 
 		struct RecordFlags
@@ -34,25 +32,25 @@ namespace RE
 
 		struct FILE_DATA
 		{
-			char*	buffer;		// 00
-			UInt32	bufferSize;	// 08
-			UInt32	pad0C;		// 0C
+			char*  buffer;		// 00
+			UInt32 bufferSize;	// 08
+			UInt32 pad0C;		// 0C
 		};
 		STATIC_ASSERT(sizeof(FILE_DATA) == 0x10);
 
 
-		virtual ~BGSMaterialObject();					// 00
+		virtual ~BGSMaterialObject();  // 00
 
 		// override (TESForm)
-		virtual void	ClearData() override;			// 05
-		virtual bool	Load(TESFile* a_mod) override;	// 06
+		virtual void ClearData() override;			 // 05
+		virtual bool Load(TESFile* a_mod) override;	 // 06
 
 		// override (BSMaterialObject)
-		virtual void	EnsureLoaded() override;		// 01
+		virtual void EnsureLoaded() override;  // 01
 
 
 		// members
-		BSTArray<FILE_DATA> fileData;	// A0 - DNAM
+		BSTArray<FILE_DATA> fileData;  // A0 - DNAM
 	};
 	STATIC_ASSERT(sizeof(BGSMaterialObject) == 0xB8);
 }

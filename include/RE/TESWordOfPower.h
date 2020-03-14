@@ -14,9 +14,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_TESWordOfPower;
-
-
-		enum { kTypeID = FormType::WordOfPower };
+		inline static constexpr auto FORMTYPE = FormType::WordOfPower;
 
 
 		struct RecordFlags
@@ -29,10 +27,10 @@ namespace RE
 		};
 
 
-		virtual ~TESWordOfPower();					// 00
+		virtual ~TESWordOfPower();	// 00
 
 		// override (TESForm)
-		virtual bool Load(TESFile* a_mod) override;	// 06
+		virtual bool Load(TESFile* a_mod) override;	 // 06
 
 
 		// members

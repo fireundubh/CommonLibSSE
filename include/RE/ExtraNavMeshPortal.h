@@ -13,16 +13,16 @@ namespace RE
 	{
 		union Nav
 		{
-			FormID		navMeshID;
-			NavMesh*	navMesh;
+			FormID	 navMeshID;
+			NavMesh* navMesh;
 		};
 		STATIC_ASSERT(sizeof(Nav) == 0x8);
 
 
-		Nav		nav;		// 00
-		UInt16	triIndex;	// 08
-		UInt16	pad0A;		// 0A
-		UInt32	pad0C;		// 0C
+		Nav	   nav;		  // 00
+		UInt16 triIndex;  // 08
+		UInt16 pad0A;	  // 0A
+		UInt32 pad0C;	  // 0C
 	};
 	STATIC_ASSERT(sizeof(NAVMESH_PORTAL) == 0x10);
 
@@ -31,15 +31,13 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraNavMeshPortal;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kNavMeshPortal;
 
 
-		enum { kExtraTypeID = ExtraDataType::kNavMeshPortal };
-
-
-		virtual ~ExtraNavMeshPortal();					// 00
+		virtual ~ExtraNavMeshPortal();	// 00
 
 		// override (BSExtraData)
-		virtual ExtraDataType GetType() const override;	// 01 - { return kNavMeshPortal; }
+		virtual ExtraDataType GetType() const override;	 // 01 - { return kNavMeshPortal; }
 
 
 		// members

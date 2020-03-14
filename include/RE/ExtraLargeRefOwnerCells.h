@@ -14,20 +14,18 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraLargeRefOwnerCells;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kLargeRefOwnerCells;
 
 
-		enum { kExtraTypeID = ExtraDataType::kLargeRefOwnerCells };
-
-
-		virtual ~ExtraLargeRefOwnerCells();				// 00
+		virtual ~ExtraLargeRefOwnerCells();	 // 00
 
 		// override (BSExtraData)
-		virtual ExtraDataType GetType() const override;	// 01 - { return kLargeRefOwnerCells; }
+		virtual ExtraDataType GetType() const override;	 // 01 - { return kLargeRefOwnerCells; }
 
 
 		// members
-		BSTArray<TESForm*>	ownerCells;	// 10
-		UInt64				unk28;		// 28
+		BSTArray<TESForm*> ownerCells;	// 10
+		UInt64			   unk28;		// 28
 	};
 	STATIC_ASSERT(sizeof(ExtraLargeRefOwnerCells) == 0x30);
 }

@@ -11,13 +11,13 @@ namespace RE
 {
 	float AIProcess::GetCachedHeight() const
 	{
-		return high ? high->cachedActorHeight : -1.0;
+		return high ? high->cachedActorHeight : static_cast<float>(-1.0);
 	}
 
 
 	bhkCharacterController* AIProcess::GetCharController()
 	{
-		return middleHigh ? middleHigh->charController.get() : 0;
+		return middleHigh ? middleHigh->charController.get() : nullptr;
 	}
 
 
@@ -124,7 +124,7 @@ namespace RE
 		Update3DModel_Impl(a_actor);
 		SKSE::NiNodeUpdateEvent event(a_actor);
 		auto source = SKSE::GetNiNodeUpdateEventSource();
-		assert(source);	// api failed to init
+		assert(source);	 // api failed to init
 		source->SendEvent(&event);
 	}
 

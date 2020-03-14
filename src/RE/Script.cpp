@@ -2,8 +2,8 @@
 
 #include <cstring>
 
-#include "RE/Offsets.h"
 #include "RE/MemoryManager.h"
+#include "RE/Offsets.h"
 #include "REL/Relocation.h"
 
 
@@ -13,7 +13,7 @@ namespace RE
 	{
 		if (text) {
 			free(text);
-			text = 0;
+			text = nullptr;
 		}
 	}
 

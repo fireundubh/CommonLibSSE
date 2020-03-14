@@ -14,19 +14,17 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraPortal;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kPortal;
 
 
-		enum { kExtraTypeID = ExtraDataType::kPortal };
-
-
-		virtual ~ExtraPortal();							// 00
+		virtual ~ExtraPortal();	 // 00
 
 		// override (BSExtraData)
-		virtual ExtraDataType GetType() const override;	// 01 - { return kPortal; }
+		virtual ExtraDataType GetType() const override;	 // 01 - { return kPortal; }
 
 
 		// members
-		NiPointer<BSPortal> portal;	// 10
+		NiPointer<BSPortal> portal;	 // 10
 	};
 	STATIC_ASSERT(sizeof(ExtraPortal) == 0x18);
 }

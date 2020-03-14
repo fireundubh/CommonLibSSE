@@ -13,8 +13,8 @@
 namespace RE
 {
 	InventoryEntryData::InventoryEntryData() :
-		object(0),
-		extraLists(0),
+		object(nullptr),
+		extraLists(nullptr),
 		countDelta(0),
 		pad14(0)
 	{}
@@ -22,7 +22,7 @@ namespace RE
 
 	InventoryEntryData::InventoryEntryData(const InventoryEntryData& a_rhs) :
 		object(a_rhs.object),
-		extraLists(0),
+		extraLists(nullptr),
 		countDelta(a_rhs.countDelta),
 		pad14(0)
 	{
@@ -38,16 +38,17 @@ namespace RE
 		countDelta(std::move(a_rhs.countDelta)),
 		pad14(0)
 	{
-		a_rhs.object = 0;
-		a_rhs.extraLists = 0;
+		a_rhs.object = nullptr;
+		a_rhs.extraLists = nullptr;
 		a_rhs.countDelta = 0;
 	}
 
 
 	InventoryEntryData::InventoryEntryData(TESBoundObject* a_object, SInt32 a_countDelta) :
 		object(a_object),
-		extraLists(0),
-		countDelta(a_countDelta)
+		extraLists(nullptr),
+		countDelta(a_countDelta),
+		pad14(0)
 	{
 		extraLists = new BSSimpleList<ExtraDataList*>;
 	}
@@ -71,7 +72,7 @@ namespace RE
 		if (a_rhs.extraLists) {
 			extraLists = new BSSimpleList<ExtraDataList*>(*a_rhs.extraLists);
 		} else {
-			extraLists = 0;
+			extraLists = nullptr;
 		}
 
 		countDelta = a_rhs.countDelta;
@@ -87,11 +88,11 @@ namespace RE
 		}
 
 		object = std::move(a_rhs.object);
-		a_rhs.object = 0;
+		a_rhs.object = nullptr;
 
 		delete extraLists;
 		extraLists = std::move(a_rhs.extraLists);
-		a_rhs.extraLists = 0;
+		a_rhs.extraLists = nullptr;
 
 		countDelta = std::move(a_rhs.countDelta);
 		a_rhs.countDelta = 0;
@@ -126,7 +127,7 @@ namespace RE
 	}
 
 
-	TESBoundObject*	InventoryEntryData::GetObject()
+	TESBoundObject* InventoryEntryData::GetObject()
 	{
 		return object;
 	}
@@ -137,7 +138,7 @@ namespace RE
 		if (extraLists && !extraLists->empty()) {
 			return extraLists->front()->GetOwner();
 		} else {
-			return 0;
+			return nullptr;
 		}
 	}
 
@@ -176,7 +177,7 @@ namespace RE
 
 	float InventoryEntryData::GetWeight() const
 	{
-		return object ? object->GetWeight() : -1.0;
+		return object ? object->GetWeight() : static_cast<float>(-1.0);
 	}
 
 

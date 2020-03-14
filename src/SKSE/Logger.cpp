@@ -21,7 +21,7 @@ namespace SKSE
 	bool Logger::OpenRelative(REFKNOWNFOLDERID a_referenceID, const std::filesystem::path& a_fileName, std::ios_base::openmode a_mode)
 	{
 		wchar_t* pathBuffer;
-		auto result = SHGetKnownFolderPath(a_referenceID, KNOWN_FOLDER_FLAG::KF_FLAG_DEFAULT, NULL, &pathBuffer);
+		auto result = SHGetKnownFolderPath(a_referenceID, KNOWN_FOLDER_FLAG::KF_FLAG_DEFAULT, nullptr, &pathBuffer);
 		std::unique_ptr<wchar_t[], decltype(&CoTaskMemFree)> path(pathBuffer, CoTaskMemFree);
 		if (result != S_OK) {
 			return false;
@@ -110,11 +110,9 @@ namespace SKSE
 
 		if (_hookPapyrusLog) {
 			if (!prev) {
-				SKSE::RegisterForAPIInitEvent([]()
-				{
+				SKSE::RegisterForAPIInitEvent([]() {
 					auto papyrus = SKSE::GetPapyrusInterface();
-					papyrus->Register([](RE::BSScript::Internal::VirtualMachine* a_vm)
-					{
+					papyrus->Register([](RE::BSScript::Internal::VirtualMachine* a_vm) {
 						a_vm->RegisterForLogEvent(LogEventHandler::GetSingleton());
 						return true;
 					});
@@ -122,11 +120,9 @@ namespace SKSE
 			}
 		} else {
 			if (prev) {
-				SKSE::RegisterForAPIInitEvent([]()
-				{
+				SKSE::RegisterForAPIInitEvent([]() {
 					auto papyrus = SKSE::GetPapyrusInterface();
-					papyrus->Register([](RE::BSScript::Internal::VirtualMachine* a_vm)
-					{
+					papyrus->Register([](RE::BSScript::Internal::VirtualMachine* a_vm) {
 						a_vm->UnregisterForLogEvent(LogEventHandler::GetSingleton());
 						return true;
 					});
@@ -257,7 +253,7 @@ namespace SKSE
 			return "";
 		}
 
-		auto time = std::time(0);
+		auto time = std::time(nullptr);
 		std::tm localTime;
 		auto err = localtime_s(&localTime, &time);
 		if (err) {

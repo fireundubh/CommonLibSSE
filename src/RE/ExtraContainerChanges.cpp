@@ -8,10 +8,10 @@
 namespace RE
 {
 	ExtraContainerChanges::ExtraContainerChanges() :
-		ExtraContainerChanges(0)
+		ExtraContainerChanges(nullptr)
 	{}
-	
-	
+
+
 	ExtraContainerChanges::ExtraContainerChanges(InventoryChanges* a_changes) :
 		BSExtraData(),
 		changes(a_changes)

@@ -10,9 +10,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_BGSAction;
-
-
-		enum { kTypeID = FormType::Action };
+		inline static constexpr auto FORMTYPE = FormType::Action;
 
 
 		struct RecordFlags
@@ -25,12 +23,12 @@ namespace RE
 		};
 
 
-		virtual ~BGSAction();	// 00
+		virtual ~BGSAction();  // 00
 
 
 		// members
-		UInt32	index;	// 28
-		UInt32	pad2C;	// 2C
+		UInt32 index;  // 28
+		UInt32 pad2C;  // 2C
 	};
 	STATIC_ASSERT(sizeof(BGSAction) == 0x30);
 }

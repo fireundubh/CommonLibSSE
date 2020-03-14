@@ -17,8 +17,8 @@ namespace RE
 		class Allocator = GAllocatorGH<C>,
 		class HashNode = GHashNode<C, U, HashF>,
 		class Entry = GHashsetCachedNodeEntry<HashNode, typename HashNode::NodeHashF>,
-		class Container = GHashSet<HashNode, typename HashNode::NodeHashF, typename HashNode::NodeAltHashF, Allocator, Entry>
-	> class GHash
+		class Container = GHashSet<HashNode, typename HashNode::NodeHashF, typename HashNode::NodeAltHashF, Allocator, Entry>>
+	class GHash
 	{
 	public:
 		using SelfType = GHash<C, U, HashF, Allocator, HashNode, Entry, Container>;
@@ -130,14 +130,14 @@ namespace RE
 		inline U* Get(const C& a_key)
 		{
 			HashNode* ptr = hash.GetAlt(a_key);
-			return ptr ? &ptr->second : 0;
+			return ptr ? &ptr->second : nullptr;
 		}
 
 
 		inline const U* Get(const C& a_key) const
 		{
 			const HashNode* ptr = hash.GetAlt(a_key);
-			return ptr ? &ptr->second : 0;
+			return ptr ? &ptr->second : nullptr;
 		}
 
 
@@ -145,7 +145,7 @@ namespace RE
 		inline U* GetAlt(const K& a_key)
 		{
 			HashNode* ptr = hash.GetAlt(a_key);
-			return ptr ? &ptr->second : 0;
+			return ptr ? &ptr->second : nullptr;
 		}
 
 
@@ -153,7 +153,7 @@ namespace RE
 		inline const U* GetAlt(const K& a_key) const
 		{
 			const HashNode* ptr = hash.GetAlt(a_key);
-			return ptr ? &ptr->second : 0;
+			return ptr ? &ptr->second : nullptr;
 		}
 
 
@@ -226,6 +226,6 @@ namespace RE
 
 
 		// members
-		Container hash;	// 00
+		Container hash;	 // 00
 	};
 }

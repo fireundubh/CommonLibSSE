@@ -55,13 +55,13 @@ namespace SKSE
 		std::va_list argsCopy;
 		va_copy(argsCopy, a_args);
 
-		auto size = std::vsnprintf(0, 0, a_format, a_args);
+		auto size = std::vsnprintf(nullptr, 0, a_format, a_args);
 		if (size <= 0) {
 			return;
 		}
 
 		_buf.resize(static_cast<std::size_t>(size) + 1);
-		
+
 		std::vsnprintf(_buf.data(), _buf.size(), a_format, argsCopy);
 
 		va_end(argsCopy);

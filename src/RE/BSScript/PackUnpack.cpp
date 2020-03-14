@@ -1,7 +1,7 @@
 #include "RE/BSScript/PackUnpack.h"
 
-#include "RE/BSScript/Internal/VirtualMachine.h"
 #include "RE/BSScript/IObjectHandlePolicy.h"
+#include "RE/BSScript/Internal/VirtualMachine.h"
 #include "RE/BSScript/Object.h"
 #include "RE/BSScript/ObjectBindPolicy.h"
 #include "RE/BSScript/ObjectTypeInfo.h"
@@ -78,7 +78,7 @@ namespace RE
 		void* UnpackHandle(const Variable* a_src, VMTypeID a_typeID)
 		{
 			auto object = a_src->GetObject();
-			return object ? object->Resolve(a_typeID) : 0;
+			return object ? object->Resolve(a_typeID) : nullptr;
 		}
 	}
 }

@@ -27,20 +27,20 @@ namespace RE
 		{
 		public:
 			// members
-			ScrapHeap			heap;			// 00
-			ThreadScrapHeap*	next;			// 90
-			UInt32				owningThread;	// 98
-			UInt32				pad;			// 9C
+			ScrapHeap		 heap;			// 00
+			ThreadScrapHeap* next;			// 90
+			UInt32			 owningThread;	// 98
+			UInt32			 pad;			// 9C
 		};
 		STATIC_ASSERT(sizeof(ThreadScrapHeap) == 0xA0);
 
 
 		static MemoryManager* GetSingleton();
 
-		void*		Allocate(std::size_t a_size, SInt32 a_alignment, bool a_aligned);
-		void		Deallocate(void* a_ptr, bool a_aligned);
-		ScrapHeap*	GetThreadScrapHeap();
-		void*		Reallocate(void* a_ptr, std::size_t a_newSize, SInt32 a_alignment, bool a_aligned);
+		void*	   Allocate(std::size_t a_size, SInt32 a_alignment, bool a_aligned);
+		void	   Deallocate(void* a_ptr, bool a_aligned);
+		ScrapHeap* GetThreadScrapHeap();
+		void*	   Reallocate(void* a_ptr, std::size_t a_newSize, SInt32 a_alignment, bool a_aligned);
 
 
 		// members
@@ -80,7 +80,7 @@ namespace RE
 	{
 		auto heap = MemoryManager::GetSingleton();
 		auto mem = heap->Allocate(a_size, 0, false);
-		assert(mem != 0);
+		assert(mem != nullptr);
 		return mem;
 	}
 
@@ -103,7 +103,7 @@ namespace RE
 	{
 		auto heap = MemoryManager::GetSingleton();
 		auto mem = heap->Allocate(a_size, static_cast<SInt32>(a_alignment), true);
-		assert(mem != 0);
+		assert(mem != nullptr);
 		return mem;
 	}
 
@@ -146,7 +146,7 @@ namespace RE
 	{
 		auto heap = MemoryManager::GetSingleton();
 		auto mem = heap->Reallocate(a_ptr, a_newSize, 0, false);
-		assert(mem != 0);
+		assert(mem != nullptr);
 		return mem;
 	}
 
@@ -161,8 +161,8 @@ namespace RE
 	inline void* aligned_realloc(void* a_ptr, std::size_t a_newSize, std::size_t a_alignment)
 	{
 		auto heap = MemoryManager::GetSingleton();
-		auto mem = heap->Reallocate(a_ptr, a_newSize, a_alignment, true);
-		assert(mem != 0);
+		auto mem = heap->Reallocate(a_ptr, a_newSize, static_cast<SInt32>(a_alignment), true);
+		assert(mem != nullptr);
 		return mem;
 	}
 
@@ -176,7 +176,7 @@ namespace RE
 
 	inline void free(void* a_ptr)
 	{
-		assert(a_ptr != 0);
+		assert(a_ptr != nullptr);
 		auto heap = MemoryManager::GetSingleton();
 		heap->Deallocate(a_ptr, false);
 	}
@@ -184,22 +184,32 @@ namespace RE
 
 	inline void aligned_free(void* a_ptr)
 	{
-		assert(a_ptr != 0);
+		assert(a_ptr != nullptr);
 		auto heap = MemoryManager::GetSingleton();
 		heap->Deallocate(a_ptr, true);
 	}
 }
 
 
-#define TES_HEAP_REDEFINE_NEW()																												\
-	inline void*	operator new(std::size_t a_count)													{ return RE::malloc(a_count); }		\
-	inline void*	operator new[](std::size_t a_count)													{ return RE::malloc(a_count); }		\
-	inline void*	operator new([[maybe_unused]] std::size_t a_count, void* a_plcmnt)					{ return a_plcmnt; }				\
-	inline void*	operator new[]([[maybe_unused]] std::size_t a_count, void* a_plcmnt)				{ return a_plcmnt; }				\
-	inline void		operator delete(void* a_ptr)														{ if (a_ptr) { RE::free(a_ptr); } }	\
-	inline void		operator delete[](void* a_ptr)														{ if (a_ptr) { RE::free(a_ptr); } }	\
-	inline void		operator delete([[maybe_unused]] void* a_ptr, [[maybe_unused]] void* a_plcmnt)		{ return; }							\
-	inline void		operator delete[]([[maybe_unused]] void* a_ptr, [[maybe_unused]] void* a_plcmnt)	{ return; }
+#define TES_HEAP_REDEFINE_NEW()                                                                            \
+	inline void* operator new(std::size_t a_count) { return RE::malloc(a_count); }                         \
+	inline void* operator new[](std::size_t a_count) { return RE::malloc(a_count); }                       \
+	inline void* operator new([[maybe_unused]] std::size_t a_count, void* a_plcmnt) { return a_plcmnt; }   \
+	inline void* operator new[]([[maybe_unused]] std::size_t a_count, void* a_plcmnt) { return a_plcmnt; } \
+	inline void	 operator delete(void* a_ptr)                                                              \
+	{                                                                                                      \
+		if (a_ptr) {                                                                                       \
+			RE::free(a_ptr);                                                                               \
+		}                                                                                                  \
+	}                                                                                                      \
+	inline void operator delete[](void* a_ptr)                                                             \
+	{                                                                                                      \
+		if (a_ptr) {                                                                                       \
+			RE::free(a_ptr);                                                                               \
+		}                                                                                                  \
+	}                                                                                                      \
+	inline void operator delete([[maybe_unused]] void* a_ptr, [[maybe_unused]] void* a_plcmnt) { return; } \
+	inline void operator delete[]([[maybe_unused]] void* a_ptr, [[maybe_unused]] void* a_plcmnt) { return; }
 
 
 namespace RE
@@ -236,7 +246,7 @@ namespace RE
 
 
 		explicit SimpleArray(size_type a_count) :
-			_data(0)
+			_data(nullptr)
 		{
 			resize(a_count);
 		}
@@ -291,25 +301,25 @@ namespace RE
 
 		T* data()
 		{
-			return _data ? _data->entries : 0;
+			return _data ? _data->entries : nullptr;
 		}
 
 
 		const T* data() const
 		{
-			return _data ? _data->entries : 0;
+			return _data ? _data->entries : nullptr;
 		}
 
 
 		iterator begin()
 		{
-			return _data ? std::addressof(_data->entries[0]) : 0;
+			return _data ? std::addressof(_data->entries[0]) : nullptr;
 		}
 
 
 		const_iterator begin() const
 		{
-			return _data ? std::addressof(_data->entries[0]) : 0;
+			return _data ? std::addressof(_data->entries[0]) : nullptr;
 		}
 
 
@@ -321,13 +331,13 @@ namespace RE
 
 		iterator end()
 		{
-			return _data ? std::addressof(_data->entries[size()]) : 0;
+			return _data ? std::addressof(_data->entries[size()]) : nullptr;
 		}
 
 
 		const_iterator end() const
 		{
-			return _data ? std::addressof(_data->entries[size()]) : 0;
+			return _data ? std::addressof(_data->entries[size()]) : nullptr;
 		}
 
 
@@ -358,7 +368,7 @@ namespace RE
 					elem.~value_type();
 				}
 				free(get_head());
-				_data = 0;
+				_data = nullptr;
 			}
 		}
 
@@ -371,7 +381,7 @@ namespace RE
 			{
 				for (size_type i = oldSize; i < a_count; ++i)
 				{
-					new(std::addressof(_data->entries[i])) value_type{};
+					new (std::addressof(_data->entries[i])) value_type{};
 				}
 			}
 		}
@@ -385,7 +395,7 @@ namespace RE
 			{
 				for (size_type i = oldSize; i < a_count; ++i)
 				{
-					new(std::addressof(_data->entries[i])) value_type{ a_value };
+					new (std::addressof(_data->entries[i])) value_type{ a_value };
 				}
 			}
 		}
@@ -393,7 +403,7 @@ namespace RE
 	protected:
 		Head* get_head() const
 		{
-			assert(_data != 0);
+			assert(_data != nullptr);
 			return reinterpret_cast<Head*>(_data) - 1;
 		}
 
@@ -439,7 +449,7 @@ namespace RE
 
 
 		// members
-		Data* _data;	// 0
+		Data* _data;  // 0
 	};
 	STATIC_ASSERT(sizeof(SimpleArray<void*>) == 0x8);
 }

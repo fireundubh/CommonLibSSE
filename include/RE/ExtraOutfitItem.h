@@ -10,20 +10,18 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraOutfitItem;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kOutfitItem;
 
 
-		enum { kExtraTypeID = ExtraDataType::kOutfitItem };
-
-
-		virtual ~ExtraOutfitItem();						// 00
+		virtual ~ExtraOutfitItem();	 // 00
 
 		// override (BSExtraData)
-		virtual ExtraDataType GetType() const override;	// 01 - { return kOutfitItem; }
+		virtual ExtraDataType GetType() const override;	 // 01 - { return kOutfitItem; }
 
 
 		// members
-		FormID	id;		// 10 - BGSOutfit
-		UInt32	pad14;	// 14
+		FormID id;	   // 10 - BGSOutfit
+		UInt32 pad14;  // 14
 	};
 	STATIC_ASSERT(sizeof(ExtraOutfitItem) == 0x18);
 }

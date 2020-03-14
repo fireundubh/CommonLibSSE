@@ -10,20 +10,18 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraRefractionProperty;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kRefractionProperty;
 
 
-		enum { kExtraTypeID = ExtraDataType::kRefractionProperty };
-
-
-		virtual ~ExtraRefractionProperty();				// 00
+		virtual ~ExtraRefractionProperty();	 // 00
 
 		// override (BSExtraData)
-		virtual ExtraDataType GetType() const override;	// 01 - { return kRefractionProperty; }
+		virtual ExtraDataType GetType() const override;	 // 01 - { return kRefractionProperty; }
 
 
 		// members
-		float	refractionPower;	// 10
-		UInt32	unk14;				// 14
+		float  refractionPower;	 // 10
+		UInt32 unk14;			 // 14
 	};
 	STATIC_ASSERT(sizeof(ExtraRefractionProperty) == 0x18);
 }

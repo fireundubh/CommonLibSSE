@@ -12,11 +12,11 @@ namespace RE
 		inline static constexpr auto RTTI = RTTI_CombatGroupDetectionListener;
 
 
-		virtual ~CombatGroupDetectionListener();	// 00
+		virtual ~CombatGroupDetectionListener();  // 00
 
 		// override (DetectionListener)
-		virtual void	Unk_02(void) override;		// 01
-		virtual void	Unk_05(void);				// 02
+		virtual void Unk_02(void) override;	 // 01
+		virtual void Unk_05(void);	// 01 - { unk10 = 0; }
 
 
 		// members

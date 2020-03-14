@@ -1,7 +1,7 @@
 #include "RE/BSScript/Object.h"
 
-#include "RE/BSScript/Internal/VirtualMachine.h"
 #include "RE/BSScript/IObjectHandlePolicy.h"
+#include "RE/BSScript/Internal/VirtualMachine.h"
 #include "RE/BSScript/ObjectTypeInfo.h"
 #include "RE/Offsets.h"
 #include "REL/Relocation.h"
@@ -61,7 +61,7 @@ namespace RE
 			if (policy->HandleIsType(a_typeID, handle) && policy->IsHandleObjectAvailable(handle)) {
 				return policy->GetObjectForHandle(a_typeID, handle);
 			} else {
-				return 0;
+				return nullptr;
 			}
 		}
 
@@ -91,11 +91,11 @@ namespace RE
 				idx = cls->GetPropertyIndex(a_name);
 			}
 
-			return idx != INVALID ? &variables[idx] : 0;
+			return idx != INVALID ? &variables[idx] : nullptr;
 		}
 
 
-		const Variable*	Object::GetProperty(const BSFixedString& a_name) const
+		const Variable* Object::GetProperty(const BSFixedString& a_name) const
 		{
 			constexpr auto INVALID = static_cast<UInt32>(-1);
 
@@ -104,7 +104,7 @@ namespace RE
 				idx = cls->GetPropertyIndex(a_name);
 			}
 
-			return idx != INVALID ? &variables[idx] : 0;
+			return idx != INVALID ? &variables[idx] : nullptr;
 		}
 
 

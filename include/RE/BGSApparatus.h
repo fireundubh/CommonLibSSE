@@ -15,9 +15,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_BGSApparatus;
-
-
-		enum { kTypeID = FormType::Apparatus };
+		inline static constexpr auto FORMTYPE = FormType::Apparatus;
 
 
 		struct RecordFlags
@@ -30,10 +28,10 @@ namespace RE
 		};
 
 
-		virtual ~BGSApparatus();					// 00
+		virtual ~BGSApparatus();  // 00
 
 		// override (TESObjectMISC)
-		virtual bool Load(TESFile* a_mod) override;	// 06
+		virtual bool Load(TESFile* a_mod) override;	 // 06
 	};
 	STATIC_ASSERT(sizeof(BGSApparatus) == 0x120);
 }

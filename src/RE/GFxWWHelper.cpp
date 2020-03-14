@@ -18,8 +18,7 @@ namespace RE
 
 		constexpr auto SIZE = std::extent<decltype(charBreakInfoArray)>::value;
 		auto endIt = charBreakInfoArray + SIZE;
-		auto it = std::lower_bound(charBreakInfoArray, endIt, key, [](const CharBreakInfo& a_lhs, const CharBreakInfo& a_rhs) -> bool
-		{
+		auto it = std::lower_bound(charBreakInfoArray, endIt, key, [](const CharBreakInfo& a_lhs, const CharBreakInfo& a_rhs) -> bool {
 			return a_lhs.ch < a_rhs.ch;
 		});
 
@@ -137,7 +136,7 @@ namespace RE
 	}
 
 
-	UPInt GFxWWHelper::FindWordWrapPos(WordWrappingType a_wwMode, UPInt a_wordWrapPos, const wchar_t* a_paraText, UPInt a_paraLen, UPInt a_lineStartPos, UPInt a_lineLen)
+	UPInt GFxWWHelper::FindWordWrapPos(WordWrappingType a_wwMode, [[maybe_unused]] UPInt a_wordWrapPos, const wchar_t* a_paraText, UPInt a_paraLen, UPInt a_lineStartPos, UPInt a_lineLen)
 	{
 		if ((a_wwMode & WordWrappingType::kAll) == WordWrappingType::kNone || a_lineLen == 0) {
 			return UPINT_MAX;

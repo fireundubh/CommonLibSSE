@@ -11,20 +11,18 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraCreatureMovementSound;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kCreatureMovementSound;
 
 
-		enum { kExtraTypeID = ExtraDataType::kCreatureMovementSound };
-
-
-		virtual ~ExtraCreatureMovementSound();			// 00
+		virtual ~ExtraCreatureMovementSound();	// 00
 
 		// override (BSExtraData)
-		virtual ExtraDataType GetType() const override;	// 01 - { return kCreatureMovementSound; }
+		virtual ExtraDataType GetType() const override;	 // 01 - { return kCreatureMovementSound; }
 
 
 		// members
-		BSSoundHandle	handle;	// 10
-		UInt32			pad1C;	// 1C
+		BSSoundHandle handle;  // 10
+		UInt32		  pad1C;   // 1C
 	};
 	STATIC_ASSERT(sizeof(ExtraCreatureMovementSound) == 0x20);
 }

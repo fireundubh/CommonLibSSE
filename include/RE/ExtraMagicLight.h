@@ -14,15 +14,13 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraMagicLight;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kMagicLight;
 
 
-		enum { kExtraTypeID = ExtraDataType::kMagicLight };
-
-
-		virtual ~ExtraMagicLight();						// 00
+		virtual ~ExtraMagicLight();	 // 00
 
 		// override (BSExtraData)
-		virtual ExtraDataType GetType() const override;	// 01 - { return kMagicLight; }
+		virtual ExtraDataType GetType() const override;	 // 01 - { return kMagicLight; }
 	};
 	STATIC_ASSERT(sizeof(ExtraMagicLight) == 0x18);
 }

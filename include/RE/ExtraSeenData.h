@@ -13,19 +13,17 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraSeenData;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kSeenData;
 
 
-		enum { kExtraTypeID = ExtraDataType::kSeenData };
-
-
-		virtual ~ExtraSeenData();						// 00
+		virtual ~ExtraSeenData();  // 00
 
 		// override (BSExtraData)
-		virtual ExtraDataType GetType() const override;	// 01 - { return kSeenData; }
+		virtual ExtraDataType GetType() const override;	 // 01 - { return kSeenData; }
 
 
 		// members
-		SeenData* seenData;	// 10
+		SeenData* seenData;	 // 10
 	};
 	STATIC_ASSERT(sizeof(ExtraSeenData) == 0x18);
 }

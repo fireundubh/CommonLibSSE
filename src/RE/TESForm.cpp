@@ -1,7 +1,7 @@
 #include "RE/TESForm.h"
 
-#include "RE/BSScript/Internal/VirtualMachine.h"
 #include "RE/BSScript/IObjectHandlePolicy.h"
+#include "RE/BSScript/Internal/VirtualMachine.h"
 #include "RE/ExtraEnchantment.h"
 #include "RE/FormTraits.h"
 #include "RE/GlobalLookupInfo.h"
@@ -22,12 +22,12 @@ namespace RE
 		auto lookup = GlobalLookupInfo::GetSingleton();
 		RE::BSReadLockGuard locker(lookup->allFormsMapLock);
 		if (!lookup->allForms) {
-			return 0;
+			return nullptr;
 		}
 
 		auto& formIDs = *lookup->allForms;
 		auto it = formIDs.find(a_formID);
-		return it != formIDs.end() ? it->second : 0;
+		return it != formIDs.end() ? it->second : nullptr;
 	}
 
 
@@ -36,12 +36,12 @@ namespace RE
 		auto lookup = GlobalLookupInfo::GetSingleton();
 		RE::BSReadLockGuard locker(lookup->allFormsEditorIDMapLock);
 		if (!lookup->allFormsByEditorID) {
-			return 0;
+			return nullptr;
 		}
 
 		auto& editorIDs = *lookup->allFormsByEditorID;
 		auto it = editorIDs.find(a_editorID);
-		return it != editorIDs.end() ? it->second : 0;
+		return it != editorIDs.end() ? it->second : nullptr;
 	}
 
 
@@ -90,7 +90,7 @@ namespace RE
 			form = objRef->GetBaseObject();
 			auto xEnch = objRef->extraList.GetByType<ExtraEnchantment>();
 			if (xEnch && xEnch->enchantment) {
-				value += xEnch->enchantment->CalculateTotalGoldValue();
+				value += static_cast<SInt32>(xEnch->enchantment->CalculateTotalGoldValue());
 			}
 		}
 
@@ -100,7 +100,7 @@ namespace RE
 		} else {
 			auto magicItem = form->As<MagicItem>();
 			if (magicItem) {
-				value += magicItem->CalculateTotalGoldValue();
+				value += static_cast<SInt32>(magicItem->CalculateTotalGoldValue());
 			} else {
 				value = -1;
 			}
@@ -125,7 +125,7 @@ namespace RE
 	float TESForm::GetWeight() const
 	{
 		auto ref = As<TESObjectREFR>();
-		auto baseObj = ref ? ref->GetBaseObject() : 0;
+		auto baseObj = ref ? ref->GetBaseObject() : nullptr;
 		auto form = baseObj ? baseObj : this;
 		auto weightForm = form->As<TESWeightForm>();
 		if (weightForm) {
@@ -158,7 +158,7 @@ namespace RE
 
 	bool TESForm::HasWorldModel() const
 	{
-		return As<TESModel>() != 0;
+		return As<TESModel>() != nullptr;
 	}
 
 

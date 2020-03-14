@@ -13,20 +13,18 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraTresPassPackage;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kTresPassPackage;
 
 
-		enum { kExtraTypeID = ExtraDataType::kTresPassPackage };
-
-
-		virtual ~ExtraTresPassPackage();				// 00
+		virtual ~ExtraTresPassPackage();  // 00
 
 		// override (BSExtraData)
-		virtual ExtraDataType GetType() const override;	// 01 - { return kTresPassPackage; }
+		virtual ExtraDataType GetType() const override;	 // 01 - { return kTresPassPackage; }
 
 
 		// members
-		TrespassPackage*	pack;	// 10
-		UInt64				unk18;	// 18
+		TrespassPackage* pack;	 // 10
+		UInt64			 unk18;	 // 18
 	};
 	STATIC_ASSERT(sizeof(ExtraTresPassPackage) == 0x20);
 }

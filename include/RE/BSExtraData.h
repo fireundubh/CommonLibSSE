@@ -10,20 +10,19 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_BSExtraData;
-
-
-		enum { kExtraTypeID = ExtraDataType::kNone };
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kNone;
 
 
 		BSExtraData();
-		virtual ~BSExtraData() = default;									// 00
+		virtual ~BSExtraData() = default;  // 00
 
 		// add
-		virtual ExtraDataType	GetType() const = 0;						// 01
-		virtual bool			IsNotEqual(const BSExtraData* a_rhs) const;	// 02 - { return false; }
+		virtual ExtraDataType GetType() const = 0;						   // 01
+		virtual bool		  IsNotEqual(const BSExtraData* a_rhs) const;  // 02 - { return false; }
 
-		static BSExtraData*				Create(std::size_t a_size, std::uintptr_t a_vtbl);
-		template <class T> static T*	Create(std::uintptr_t a_vtbl);
+		static BSExtraData* Create(std::size_t a_size, std::uintptr_t a_vtbl);
+		template <class T>
+		static T* Create(std::uintptr_t a_vtbl);
 
 		bool operator==(const BSExtraData& a_rhs) const;
 		bool operator!=(const BSExtraData& a_rhs) const;

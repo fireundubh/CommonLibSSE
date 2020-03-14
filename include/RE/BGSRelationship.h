@@ -10,9 +10,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_BGSRelationship;
-
-
-		enum { kTypeID = FormType::Relationship };
+		inline static constexpr auto FORMTYPE = FormType::Relationship;
 
 
 		enum class RELATIONSHIP_LEVEL : UInt8
@@ -56,21 +54,21 @@ namespace RE
 		};
 
 
-		virtual ~BGSRelationship();											// 00
+		virtual ~BGSRelationship();	 // 00
 
 		// override (TESForm)
-		virtual void	InitializeData() override;							// 04
-		virtual bool	Load(TESFile* a_mod) override;						// 06
-		virtual void	SaveGame(BGSSaveFormBuffer* a_buf) override;		// 0E
-		virtual void	LoadGame(BGSLoadFormBuffer* a_buf) override;		// 0F
-		virtual void	InitLoadGame(BGSLoadFormBuffer* a_buf) override;	// 10
-		virtual void	InitItemImpl() override;							// 13
+		virtual void InitializeData() override;						   // 04
+		virtual bool Load(TESFile* a_mod) override;					   // 06
+		virtual void SaveGame(BGSSaveFormBuffer* a_buf) override;	   // 0E
+		virtual void LoadGame(BGSLoadFormBuffer* a_buf) override;	   // 0F
+		virtual void InitLoadGame(BGSLoadFormBuffer* a_buf) override;  // 10
+		virtual void InitItemImpl() override;						   // 13
 
 
 		// members
 		TESNPC*				npc1;		// 20 - DATA~
 		TESNPC*				npc2;		// 28
-		BGSAssociationType*	assocType;	// 30
+		BGSAssociationType* assocType;	// 30
 		RELATIONSHIP_LEVEL	level;		// 38
 		UInt8				unk39;		// 39
 		UInt8				unk3A;		// 3A

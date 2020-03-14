@@ -13,15 +13,13 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraPersistentCell;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kPersistentCell;
 
 
-		enum { kExtraTypeID = ExtraDataType::kPersistentCell };
-
-
-		virtual ~ExtraPersistentCell();					// 00
+		virtual ~ExtraPersistentCell();	 // 00
 
 		// override (BSExtraData)
-		virtual ExtraDataType GetType() const override;	// 01 - { return kPersistentCell; }
+		virtual ExtraDataType GetType() const override;	 // 01 - { return kPersistentCell; }
 
 
 		// members

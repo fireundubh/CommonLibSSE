@@ -12,9 +12,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_BGSLightingTemplate;
-
-
-		enum { kTypeID = FormType::LightingMaster };
+		inline static constexpr auto FORMTYPE = FormType::LightingMaster;
 
 
 		struct RecordFlags
@@ -27,17 +25,17 @@ namespace RE
 		};
 
 
-		virtual ~BGSLightingTemplate();					// 00
+		virtual ~BGSLightingTemplate();	 // 00
 
 		// override (TESForm)
-		virtual void	InitializeData() override;		// 04
-		virtual bool	Load(TESFile* a_mod) override;	// 06
-		virtual void	InitItemImpl() override;		// 13
+		virtual void InitializeData() override;		 // 04
+		virtual bool Load(TESFile* a_mod) override;	 // 06
+		virtual void InitItemImpl() override;		 // 13
 
 
 		// members
-		INTERIOR_DATA						data;								// 20 - DATA
-		BGSDirectionalAmbientLightingColors	directionalAmbientLightingColors;	// 80 - DALC
+		INTERIOR_DATA						data;							   // 20 - DATA
+		BGSDirectionalAmbientLightingColors directionalAmbientLightingColors;  // 80 - DALC
 	};
 	STATIC_ASSERT(sizeof(BGSLightingTemplate) == 0xA0);
 }

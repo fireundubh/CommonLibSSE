@@ -13,9 +13,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_TESLevSpell;
-
-
-		enum { kTypeID = FormType::LeveledSpell };
+		inline static constexpr auto FORMTYPE = FormType::LeveledSpell;
 
 
 		struct ChangeFlags
@@ -37,17 +35,17 @@ namespace RE
 		};
 
 
-		virtual ~TESLevSpell();														// 00
+		virtual ~TESLevSpell();	 // 00
 
 		// override (TESBoundObject)
-		virtual bool	Load(TESFile* a_mod) override;								// 06
-		virtual void	SaveGame(BGSSaveFormBuffer* a_buf) override;				// 0E
-		virtual void	LoadGame(BGSLoadFormBuffer* a_buf) override;				// 0F
-		virtual void	Revert(BGSLoadFormBuffer* a_buf) override;					// 12
-		virtual void	InitItemImpl() override;									// 13
+		virtual bool Load(TESFile* a_mod) override;				   // 06
+		virtual void SaveGame(BGSSaveFormBuffer* a_buf) override;  // 0E
+		virtual void LoadGame(BGSLoadFormBuffer* a_buf) override;  // 0F
+		virtual void Revert(BGSLoadFormBuffer* a_buf) override;	   // 12
+		virtual void InitItemImpl() override;					   // 13
 
 		// override (TESLeveledList)
-		virtual bool	GetCanContainFormsOfType(FormType a_type) const override;	// 07
+		virtual bool GetCanContainFormsOfType(FormType a_type) const override;	// 07
 	};
 	STATIC_ASSERT(sizeof(TESLevSpell) == 0x58);
 }

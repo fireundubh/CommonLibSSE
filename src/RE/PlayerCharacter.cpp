@@ -85,15 +85,16 @@ namespace RE
 	TintMask* PlayerCharacter::GetOverlayTintMask(TintMask* a_original)
 	{
 		if (!overlayTintMasks) {
-			return 0;
+			return nullptr;
 		}
 
 		for (UInt32 i = 0; i < tintMasks.size(); ++i) {
 			if (tintMasks[i] == a_original) {
-				return i < overlayTintMasks->size() ? (*overlayTintMasks)[i] : 0;
+				return i < overlayTintMasks->size() ? (*overlayTintMasks)[i] : nullptr;
 			}
 		}
-		return 0;
+
+		return nullptr;
 	}
 
 
@@ -110,7 +111,7 @@ namespace RE
 		return func(this, a_tintType, a_index);
 	}
 
-	
+
 	void PlayerCharacter::PlayPickupEvent(TESForm* a_item, TESForm* a_containerOwner, TESObjectREFR* a_containerRef, EventType a_eventType)
 	{
 		using func_t = decltype(&PlayerCharacter::PlayPickupEvent);
@@ -118,7 +119,7 @@ namespace RE
 		return func(this, a_item, a_containerOwner, a_containerRef, a_eventType);
 	}
 
-	
+
 	void PlayerCharacter::StartGrabObject()
 	{
 		using func_t = decltype(&PlayerCharacter::StartGrabObject);

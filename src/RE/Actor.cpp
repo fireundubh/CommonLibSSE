@@ -181,21 +181,21 @@ namespace RE
 	TESNPC* Actor::GetActorBase()
 	{
 		auto obj = GetBaseObject();
-		return obj ? obj->As<TESNPC>() : 0;
+		return obj ? obj->As<TESNPC>() : nullptr;
 	}
 
 
 	const TESNPC* Actor::GetActorBase() const
 	{
 		auto obj = GetBaseObject();
-		return obj ? obj->As<TESNPC>() : 0;
+		return obj ? obj->As<TESNPC>() : nullptr;
 	}
 
 
 	InventoryEntryData* Actor::GetAttackingWeapon()
 	{
 		if (!currentProcess || !currentProcess->high || !currentProcess->high->attackData || !currentProcess->middleHigh) {
-			return 0;
+			return nullptr;
 		}
 
 		auto attackData = currentProcess->high->attackData;
@@ -208,7 +208,7 @@ namespace RE
 	const InventoryEntryData* Actor::GetAttackingWeapon() const
 	{
 		if (!currentProcess || !currentProcess->high || !currentProcess->high->attackData || !currentProcess->middleHigh) {
-			return 0;
+			return nullptr;
 		}
 
 		auto attackData = currentProcess->high->attackData;
@@ -220,7 +220,7 @@ namespace RE
 
 	bhkCharacterController* Actor::GetCharController() const
 	{
-		return currentProcess ? currentProcess->GetCharController() : 0;
+		return currentProcess ? currentProcess->GetCharController() : nullptr;
 	}
 
 
@@ -235,7 +235,7 @@ namespace RE
 	const TESFaction* Actor::GetCrimeFaction() const
 	{
 		if (IsCommandedActor()) {
-			return 0;
+			return nullptr;
 		}
 
 		auto xFac = extraList.GetByType<ExtraFactionChanges>();
@@ -244,29 +244,22 @@ namespace RE
 		}
 
 		auto base = GetActorBase();
-		return base ? base->crimeFaction : 0;
+		return base ? base->crimeFaction : nullptr;
 	}
 
 
-	InventoryEntryData* Actor::GetEquippedEntryData(bool a_leftHand)
+	InventoryEntryData* Actor::GetEquippedEntryData(bool a_leftHand) const
 	{
 		if (!currentProcess || !currentProcess->middleHigh) {
-			return 0;
+			return nullptr;
 		}
 
 		auto proc = currentProcess->middleHigh;
-		return a_leftHand ? proc->leftHand : proc->rightHand;
-	}
-
-
-	const InventoryEntryData* Actor::GetEquippedEntryData(bool a_leftHand) const
-	{
-		if (!currentProcess || !currentProcess->middleHigh) {
-			return 0;
+		if (proc->bothHands) {
+			return proc->bothHands;
+		} else {
+			return a_leftHand ? proc->leftHand : proc->rightHand;
 		}
-
-		auto proc = currentProcess->middleHigh;
-		return a_leftHand ? proc->leftHand : proc->rightHand;
 	}
 
 
@@ -280,16 +273,14 @@ namespace RE
 				return currentProcess->GetEquippedRightHand();
 			}
 		}
-		else {
-			return 0;
+			return nullptr;
 		}
 	}
 
 
 	SInt32 Actor::GetGoldAmount()
 	{
-		auto inv = GetInventory([](TESBoundObject* a_object) -> bool
-		{
+		auto inv = GetInventory([](TESBoundObject* a_object) -> bool {
 			return a_object->IsGold();
 		});
 
@@ -355,7 +346,7 @@ namespace RE
 	TESRace* Actor::GetRace() const
 	{
 		auto base = GetActorBase();
-		return base ? base->race : 0;
+		return base ? base->race : nullptr;
 	}
 
 
@@ -662,9 +653,9 @@ namespace RE
 			auto hairColor = npc->headRelatedData->hairColor;
 			if (hairColor) {
 				NiColor color;
-				color.red = hairColor->color.red / 128.0;
-				color.green = hairColor->color.green / 128.0;
-				color.blue = hairColor->color.blue / 128.0;
+				color.red = hairColor->color.red / static_cast<float>(128.0);
+				color.green = hairColor->color.green / static_cast<float>(128.0);
+				color.blue = hairColor->color.blue / static_cast<float>(128.0);
 
 				auto model = Get3D(false);
 				if (model) {
@@ -680,9 +671,9 @@ namespace RE
 		auto npc = GetActorBase();
 		if (npc) {
 			NiColor color;
-			color.red = npc->bodyTintColor.red / 255.0;
-			color.green = npc->bodyTintColor.green / 255.0;
-			color.blue = npc->bodyTintColor.blue / 255.0;
+			color.red = npc->bodyTintColor.red / static_cast<float>(255.0);
+			color.green = npc->bodyTintColor.green / static_cast<float>(255.0);
+			color.blue = npc->bodyTintColor.blue / static_cast<float>(255.0);
 
 			auto thirdPerson = Get3D(false);
 			if (thirdPerson) {

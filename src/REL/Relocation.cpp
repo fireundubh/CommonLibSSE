@@ -2,9 +2,9 @@
 
 #include <cassert>
 #include <cstring>
+#include <exception>
 #include <filesystem>
 #include <fstream>
-#include <exception>
 #include <ios>
 #include <memory>
 #include <sstream>
@@ -234,7 +234,7 @@ namespace REL
 			return;
 		}
 
-		if (!GetFileVersionInfoA(fileName, 0, buf.size(), buf.data())) {
+		if (!GetFileVersionInfoA(fileName, 0, static_cast<DWORD>(buf.size()), buf.data())) {
 			assert(false);
 			return;
 		}
@@ -298,7 +298,8 @@ namespace REL
 		_header(),
 		_offsets()
 #ifdef _DEBUG
-		, _ids()
+		,
+		_ids()
 #endif
 	{
 		if (!Load()) {
@@ -616,7 +617,7 @@ namespace REL
 			}
 		}
 
-		return 0;
+		return nullptr;
 	}
 
 
@@ -635,6 +636,6 @@ namespace REL
 			}
 		}
 
-		return 0;
+		return nullptr;
 	}
 }

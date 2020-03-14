@@ -10,9 +10,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_BGSLocationRefType;
-
-
-		enum { kTypeID = FormType::LocationRefType };
+		inline static constexpr auto FORMTYPE = FormType::LocationRefType;
 
 
 		struct RecordFlags
@@ -25,10 +23,10 @@ namespace RE
 		};
 
 
-		virtual ~BGSLocationRefType();			// 00
+		virtual ~BGSLocationRefType();	// 00
 
 		// override (BGSKeyword)
-		virtual void InitItemImpl() override;	// 13
+		virtual void InitItemImpl() override;  // 13
 	};
 	STATIC_ASSERT(sizeof(BGSLocationRefType) == 0x28);
 }
