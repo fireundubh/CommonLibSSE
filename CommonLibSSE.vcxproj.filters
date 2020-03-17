@@ -5792,5 +5792,8 @@
     <ClInclude Include="include\RE\CombatTargetSelector.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatTargetSelector</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\FORM.h">
+      <Filter>include\RE\FormComponents\Components</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

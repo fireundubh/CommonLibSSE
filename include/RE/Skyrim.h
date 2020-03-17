@@ -614,6 +614,7 @@
 #include "RE/FightReactions.h"
 #include "RE/FirstPersonState.h"
 #include "RE/FlameProjectile.h"
+#include "RE/FORM.h"
 #include "RE/FormTraits.h"
 #include "RE/FormTypes.h"
 #include "RE/FxDelegate.h"

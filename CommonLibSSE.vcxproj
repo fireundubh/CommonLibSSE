@@ -571,6 +571,7 @@
     <ClInclude Include="include\RE\NonActorMagicCaster.h" />
     <ClInclude Include="include\RE\FactionRank.h" />
     <ClInclude Include="include\RE\FightReactions.h" />
+    <ClInclude Include="include\RE\FORM.h" />
     <ClInclude Include="include\RE\HandleManager.h" />
     <ClInclude Include="include\RE\Events\TESContainerChangedEvent.h" />
     <ClInclude Include="include\RE\Events\TESDeathEvent.h" />
