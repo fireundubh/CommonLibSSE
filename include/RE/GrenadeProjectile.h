@@ -37,7 +37,7 @@ namespace RE
 		virtual void		   Unk_A8(void) override;							   // A8
 		virtual void		   Unk_A9(void) override;							   // A9
 		virtual void		   UpdateImpl(float a_delta) override;				   // AB
-		virtual void		   Unk_AE(void) override;							   // AE
+		virtual bool		   CanExplode() override;							   // AE
 		virtual void		   Unk_B2(void) override;							   // B2
 		virtual void		   Unk_B3(void) override;							   // B3
 		virtual bool		   IsNotGeneratedForm() const override;				   // B4

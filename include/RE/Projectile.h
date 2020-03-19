@@ -4,14 +4,21 @@
 #include "RE/BSPointerHandle.h"
 #include "RE/BSSoundHandle.h"
 #include "RE/BSTList.h"
+#include "RE/ImpactResults.h"
+#include "RE/MagicSystem.h"
 #include "RE/NiSmartPointer.h"
+#include "RE/NiTransform.h"
 #include "RE/TESObjectREFR.h"
 
 
 namespace RE
 {
+	class BGSExplosion;
+	class BGSMaterialType;
 	class bhkCollisionObject;
 	class bhkSimpleShapePhantom;
+	class EffectSetting;
+	class MagicItem;
 	class QueuedFile;
 
 
@@ -25,16 +32,20 @@ namespace RE
 		{
 		public:
 			// members
-			UInt64						  unk00;	 // 00
-			UInt64						  unk08;	 // 08
-			UInt64						  unk10;	 // 10
-			ObjectRefHandle				  collidee;	 // 18
-			NiPointer<bhkCollisionObject> colObj;	 // 20
-			UInt64						  unk28;	 // 28
-			UInt64						  unk30;	 // 30
-			UInt64						  unk38;	 // 38
-			UInt64						  unk40;	 // 40
-			UInt64						  unk48;	 // 48
+			UInt64						  unk00;		 // 00
+			UInt64						  unk08;		 // 08
+			UInt64						  unk10;		 // 10
+			ObjectRefHandle				  collidee;		 // 18
+			NiPointer<bhkCollisionObject> colObj;		 // 20
+			BGSMaterialType*			  material;		 // 28
+			UInt32						  unk30;		 // 30
+			UInt32						  unk34;		 // 34
+			UInt64						  unk38;		 // 38
+			ImpactResult				  impactResult;	 // 40
+			UInt16						  unk44;		 // 44
+			UInt16						  unk46;		 // 46
+			UInt8						  unk48;		 // 48
+			UInt8						  unk49;		 // 49
 		};
 		STATIC_ASSERT(sizeof(ImpactData) == 0x50);
 
@@ -64,90 +75,82 @@ namespace RE
 		virtual bool		 OnAddCellPerformQueueReference(TESObjectCELL& a_cell) const override;	// 90 - { return false; }
 
 		// add
-		virtual void Unk_A2(void);					 // A2 - { return 0; }
-		virtual void Unk_A3(void);					 // A3 - { return 0; }
-		virtual void Unk_A4(void);					 // A4 - { return 0; }
-		virtual void Unk_A5(void);					 // A5 - { return 0; }
-		virtual void Unk_A6(void);					 // A6 - { return 0; }
-		virtual void Unk_A7(void);					 // A7 - { return 0; }
-		virtual void Unk_A8(void);					 // A8 - { return; }
-		virtual void Unk_A9(void);					 // A9 - { return; }
-		virtual void Unk_AA(void);					 // AA
-		virtual void UpdateImpl(float a_delta) = 0;	 // AB
-		virtual void Unk_AC(void);					 // AC
-		virtual void Unk_AD(void);					 // AD
-		virtual void Unk_AE(void);					 // AE - { return 0; }
-		virtual void Unk_AF(void);					 // AF - { if (unk158) return 1.0; else return unk188; } - "float GetSpeed()"?
-		virtual void Unk_B0(void);					 // B0 - { return 1.0; }
-		virtual void Unk_B1(void);					 // B1 - { return 0; }
-		virtual void Unk_B2(void);					 // B2 - { return; }
-		virtual void Unk_B3(void);					 // B3
-		virtual bool IsNotGeneratedForm() const;	 // B4 - { return TESDataHandler::GetSingleton()->IsGeneratedFormID(formID) == 0; }
-		virtual void Unk_B5(void);					 // B5 - { void* var = unk40; if ((var->unk80 >> 17) & 1) return 1.0; else return var->unk84; }
-		virtual void Unk_B6(void);					 // B6
-		virtual void Unk_B7(void);					 // B7
-		virtual void Unk_B8(void);					 // B8 - { return 1; }
-		virtual void Unk_B9(void);					 // B9 - { return 0; }
-		virtual void Unk_BA(void);					 // BA - { return 0; }
-		virtual void Unk_BB(void);					 // BB
-		virtual void Unk_BC(void);					 // BC
-		virtual void Unk_BD(void);					 // BD
-		virtual void Unk_BE(void);					 // BE
-		virtual void Unk_BF(void);					 // BF - { return; }
-		virtual void Handle3DLoaded();				 // C0 - { return; }
-		virtual void Unk_C1(void);					 // C1 - { return 0; }
+		virtual void  Unk_A2(void);					  // A2 - { return 0; }
+		virtual void  Unk_A3(void);					  // A3 - { return 0; }
+		virtual void  Unk_A4(void);					  // A4 - { return 0; }
+		virtual void  Unk_A5(void);					  // A5 - { return 0; }
+		virtual void  Unk_A6(void);					  // A6 - { return 0; }
+		virtual void  Unk_A7(void);					  // A7 - { return 0; }
+		virtual void  Unk_A8(void);					  // A8 - { return; }
+		virtual void  Unk_A9(void);					  // A9 - { return; }
+		virtual void  Unk_AA(void);					  // AA
+		virtual void  UpdateImpl(float a_delta) = 0;  // AB
+		virtual void  Unk_AC(void);					  // AC
+		virtual void  Unk_AD(void);					  // AD
+		virtual bool  CanExplode();					  // AE - { return 0; }
+		virtual float GetPower();					  // AF - { if (unk158) return 1.0; else return unk188; } - "float GetSpeed()"?
+		virtual void  Unk_B0(void);					  // B0 - { return 1.0; }
+		virtual void  Unk_B1(void);					  // B1 - { return 0; }
+		virtual void  Unk_B2(void);					  // B2 - { return; }
+		virtual void  Unk_B3(void);					  // B3
+		virtual bool  IsNotGeneratedForm() const;	  // B4 - { return TESDataHandler::GetSingleton()->IsGeneratedFormID(formID) == 0; }
+		virtual float GetGravity();					  // B5 - { BGSProjectile* var = objectReference; if ((var->flags >> 17) & 1) return 1.0; else return var->gravity; }
+		virtual void  Unk_B6(void);					  // B6
+		virtual void  Unk_B7(void);					  // B7
+		virtual void  Unk_B8(void);					  // B8 - { return 1; }
+		virtual void  Unk_B9(void);					  // B9 - { return 0; }
+		virtual void  Unk_BA(void);					  // BA - { return 0; }
+		virtual void  Unk_BB(void);					  // BB
+		virtual void  Unk_BC(void);					  // BC
+		virtual void  Unk_BD(void);					  // BD
+		virtual void  Unk_BE(void);					  // BE
+		virtual void  Unk_BF(void);					  // BF - { return; }
+		virtual void  Handle3DLoaded();				  // C0 - { return; }
+		virtual void  Unk_C1(void);					  // C1 - { return 0; }
 
 
 		// members
-		BSSimpleList<ImpactData*> impacts;			  // 098
-		float					  unk0A8;			  // 0A8
-		float					  unk0AC;			  // 0AC
-		UInt64					  unk0B0;			  // 0B0
-		float					  unk0B8;			  // 0B8
-		float					  unk0BC;			  // 0BC
-		UInt64					  unk0C0;			  // 0C0
-		float					  unk0C8;			  // 0C8
-		float					  unk0CC;			  // 0CC
-		UInt64					  unk0D0;			  // 0D0
-		float					  unk0D8;			  // 0D8
-		float					  unk0DC;			  // 0DC
-		bhkSimpleShapePhantom*	  unk0E0;			  // 0E0 - smart ptr
-		mutable BSSpinLock		  unk0E8;			  // 0E8
-		NiPoint3				  unk0F0;			  // 0F0
-		float					  unk0FC;			  // 0FC
-		float					  unk100;			  // 100
-		float					  unk104;			  // 104
-		void*					  unk108;			  // 108 - smart ptr
-		void*					  unk110;			  // 110 - smart ptr
-		NiPointer<ActorCause>	  actorCause;		  // 118
-		ObjectRefHandle			  shooter;			  // 120
-		ObjectRefHandle			  desiredTarget;	  // 124
-		BSSoundHandle			  sndHandle;		  // 128
-		BSSoundHandle			  sndCountdown;		  // 134
-		UInt32*					  unk140;			  // 140
-		InventoryEntryData*		  unk148;			  // 148
-		UInt64					  unk150;			  // 150
-		UInt64					  unk158;			  // 158
-		UInt64					  unk160;			  // 160
-		UInt64					  unk168;			  // 168
-		NiPointer<QueuedFile>	  projectileDBFiles;  // 170
-		UInt64					  unk178;			  // 178
-		UInt64					  unk180;			  // 180
-		float					  unk188;			  // 188
-		float					  unk18C;			  // 18C
-		float					  range;			  // 190
-		UInt32					  unk194;			  // 194
-		float					  unk198;			  // 198
-		float					  unk19C;			  // 19C
-		UInt64					  unk1A0;			  // 1A0
-		UInt64					  unk1A8;			  // 1A8
-		TESObjectWEAP*			  weaponSource;		  // 1B0
-		TESAmmo*				  ammoSource;		  // 1B8
-		float					  distanceMoved;	  // 1C0
-		UInt32					  unk1C4;			  // 1C4
-		UInt32					  unk1C8;			  // 1C8
-		UInt32					  flags;			  // 1CC
-		UInt64					  unk1D0;			  // 1D0
+		BSSimpleList<ImpactData*>  impacts;			   // 098
+		NiTransform				   unk0A8;			   // 0A8
+		float					   unk0DC;			   // 0DC
+		bhkSimpleShapePhantom*	   unk0E0;			   // 0E0 - smart ptr
+		mutable BSSpinLock		   unk0E8;			   // 0E8
+		NiPoint3				   velocity;		   // 0F0
+		NiPoint3				   linearVelocity;	   // 0FC
+		void*					   unk108;			   // 108 - smart ptr
+		void*					   unk110;			   // 110 - smart ptr
+		NiPointer<ActorCause>	   actorCause;		   // 118
+		ObjectRefHandle			   shooter;			   // 120
+		ObjectRefHandle			   desiredTarget;	   // 124
+		BSSoundHandle			   sndHandle;		   // 128
+		BSSoundHandle			   sndCountdown;	   // 134
+		UInt32*					   unk140;			   // 140
+		InventoryEntryData*		   unk148;			   // 148
+		BGSExplosion*			   explosion;		   // 150
+		MagicItem*				   spell;			   // 158
+		MagicSystem::CastingSource castingSource;	   // 160
+		UInt32					   unk164;			   // 164
+		EffectSetting*			   effect;			   // 168
+		NiPointer<QueuedFile>	   projectileDBFiles;  // 170
+		UInt64					   unk178;			   // 178
+		UInt64					   unk180;			   // 180
+		float					   power;			   // 188
+		float					   unk18C;			   // 18C
+		float					   range;			   // 190
+		UInt32					   unk194;			   // 194
+		float					   unk198;			   // 198
+		float					   unk19C;			   // 19C
+		float					   timer;			   // 1A0
+		float					   unk1A4;			   // 1A4
+		UInt32					   unk1A8;			   // 1A8
+		UInt32					   unk1AC;			   // 1AC
+		TESObjectWEAP*			   weaponSource;	   // 1B0
+		TESAmmo*				   ammoSource;		   // 1B8
+		float					   distanceMoved;	   // 1C0
+		UInt32					   unk1C4;			   // 1C4
+		float					   unk1C8;			   // 1C8
+		UInt32					   flags;			   // 1CC
+		UInt64					   unk1D0;			   // 1D0
 	};
 	STATIC_ASSERT(sizeof(Projectile) == 0x1D8);
 }

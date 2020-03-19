@@ -14,12 +14,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_NonActorMagicCaster;
-
-
-		enum
-		{
-			kExtraTypeID = ExtraDataType::kMagicCaster
-		};
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kMagicCaster;
 
 
 		virtual ~NonActorMagicCaster();	 // 00
