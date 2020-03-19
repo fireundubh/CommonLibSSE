@@ -18,6 +18,7 @@ namespace RE
 
 	struct TESCombatEvent
 	{
+	public:
 		// members
 		NiPointer<Actor>   actor;		 // 00
 		NiPointer<Actor>   targetActor;	 // 08

@@ -485,7 +485,7 @@ namespace RE
 	float TESObjectREFR::GetWeight() const
 	{
 		auto obj = GetBaseObject();
-		return obj->GetWeight();
+		return obj ? obj->GetWeight() : 0.0;
 	}
 
 
@@ -568,6 +568,10 @@ namespace RE
 	bool TESObjectREFR::IsHorse() const
 	{
 		auto dobj = BGSDefaultObjectManager::GetSingleton();
+		if (!dobj) {
+			return false;
+		}
+
 		auto keyword = dobj->GetObject<BGSKeyword>(DEFAULT_OBJECT::kKeywordHorse);
 		return keyword ? HasKeyword(keyword) : false;
 	}
@@ -599,6 +603,7 @@ namespace RE
 
 	bool TESObjectREFR::MoveToNode(TESObjectREFR* a_target, const BSFixedString& a_nodeName)
 	{
+		assert(a_target);
 		auto node = a_target->Get3D();
 		if (!node) {
 			_DMESSAGE("Cannot move the target because it does not have 3D");
@@ -617,6 +622,7 @@ namespace RE
 
 	bool TESObjectREFR::MoveToNode(TESObjectREFR* a_target, NiAVObject* a_node)
 	{
+		assert(a_target);
 		auto& position = a_node->world.translate;
 		NiPoint3 rotation;
 		a_node->world.rotate.ToEulerAnglesXYZ(rotation);

@@ -4,12 +4,12 @@
 #include "RE/BSScript/Internal/VirtualMachine.h"
 #include "RE/ExtraEnchantment.h"
 #include "RE/FormTraits.h"
-#include "RE/GlobalLookupInfo.h"
 #include "RE/MagicItem.h"
 #include "RE/TESFullName.h"
 #include "RE/TESModel.h"
 #include "RE/TESObjectREFR.h"
 #include "RE/TESValueForm.h"
+#include "REL/Relocation.h"
 
 #include "RE/Offsets.h"
 #include "REL/Relocation.h"
@@ -17,15 +17,39 @@
 
 namespace RE
 {
+	void TESForm::AddCompileIndex(FormID& a_id, TESFile* a_file)
+	{
+		using func_t = decltype(&TESForm::AddCompileIndex);
+		REL::Offset<func_t> func = REL::ID(14509);
+		return func(a_id, a_file);
+	}
+
+
+	std::pair<BSTHashMap<FormID, TESForm*>*, std::reference_wrapper<BSReadWriteLock>> TESForm::GetAllForms()
+	{
+		REL::Offset<BSTHashMap<FormID, TESForm*>**> allForms = REL::ID(514351);
+		REL::Offset<BSReadWriteLock*> allFormsMapLock = REL::ID(514360);
+		return std::make_pair(*allForms, std::ref(*allFormsMapLock));
+	}
+
+
+	std::pair<BSTHashMap<BSFixedString, TESForm*>*, std::reference_wrapper<BSReadWriteLock>> TESForm::GetAllFormsByEditorID()
+	{
+		REL::Offset<BSTHashMap<BSFixedString, TESForm*>**> allFormsByEditorID = REL::ID(514352);
+		REL::Offset<BSReadWriteLock*> allFormsEditorIDMapLock = REL::ID(514361);
+		return std::make_pair(*allFormsByEditorID, std::ref(*allFormsEditorIDMapLock));
+	}
+
+
 	TESForm* TESForm::LookupByID(FormID a_formID)
 	{
-		auto lookup = GlobalLookupInfo::GetSingleton();
-		RE::BSReadLockGuard locker(lookup->allFormsMapLock);
-		if (!lookup->allForms) {
+		auto allForms = GetAllForms();
+		BSReadLockGuard locker(allForms.second);
+		if (!allForms.first) {
 			return nullptr;
 		}
 
-		auto& formIDs = *lookup->allForms;
+		auto& formIDs = *allForms.first;
 		auto it = formIDs.find(a_formID);
 		return it != formIDs.end() ? it->second : nullptr;
 	}
@@ -33,25 +57,25 @@ namespace RE
 
 	TESForm* TESForm::LookupByEditorID(const std::string_view& a_editorID)
 	{
-		auto lookup = GlobalLookupInfo::GetSingleton();
-		RE::BSReadLockGuard locker(lookup->allFormsEditorIDMapLock);
-		if (!lookup->allFormsByEditorID) {
+		auto allFormsByEditorID = GetAllFormsByEditorID();
+		BSReadLockGuard locker(allFormsByEditorID.second);
+		if (!allFormsByEditorID.first) {
 			return nullptr;
 		}
 
-		auto& editorIDs = *lookup->allFormsByEditorID;
+		auto& editorIDs = *allFormsByEditorID.first;
 		auto it = editorIDs.find(a_editorID);
 		return it != editorIDs.end() ? it->second : nullptr;
 	}
 
 
-	bool TESForm::Is(FormType a_type) const
+	bool TESForm::Is(FormType a_type) const noexcept
 	{
 		return formType == a_type;
 	}
 
 
-	bool TESForm::IsNot(FormType a_type) const
+	bool TESForm::IsNot(FormType a_type) const noexcept
 	{
 		return formType != a_type;
 	}
@@ -69,13 +93,28 @@ namespace RE
 	}
 
 
-	FormID TESForm::GetFormID() const
+	TESFile* TESForm::GetFile(SInt32 a_idx) const
+	{
+		auto array = sourceFiles.array;
+		if (!array || array->empty()) {
+			return nullptr;
+		}
+
+		if (a_idx < 0 || a_idx >= array->size()) {
+			return array->back();
+		} else {
+			return (*array)[a_idx];
+		}
+	}
+
+
+	FormID TESForm::GetFormID() const noexcept
 	{
 		return formID;
 	}
 
 
-	FormType TESForm::GetFormType() const
+	FormType TESForm::GetFormType() const noexcept
 	{
 		return formType;
 	}
@@ -151,12 +190,12 @@ namespace RE
 			return false;
 		}
 
-		auto handle = policy->GetHandleForObject(GetFormType(), this);
+		const auto handle = policy->GetHandleForObject(GetFormType(), this);
 		return handle != policy->EmptyHandle();
 	}
 
 
-	bool TESForm::HasWorldModel() const
+	bool TESForm::HasWorldModel() const noexcept
 	{
 		return As<TESModel>() != nullptr;
 	}
@@ -168,73 +207,79 @@ namespace RE
 	}
 
 
-	bool TESForm::IsAmmo() const
+	bool TESForm::IsAmmo() const noexcept
 	{
 		return Is(FormType::Ammo);
 	}
 
 
-	bool TESForm::IsArmor() const
+	bool TESForm::IsArmor() const noexcept
 	{
 		return Is(FormType::Armor);
 	}
 
 
-	bool TESForm::IsDeleted() const
+	bool TESForm::IsDeleted() const noexcept
 	{
 		return (formFlags & RecordFlags::kDeleted) != 0;
 	}
 
 
-	bool TESForm::IsDynamicForm() const
+	bool TESForm::IsDynamicForm() const noexcept
 	{
 		return formID >= 0xFF000000;
 	}
 
 
-	bool TESForm::IsGold() const
+	bool TESForm::IsGold() const noexcept
 	{
 		return formID == 0x0000000F;
 	}
 
 
-	bool TESForm::IsIgnored() const
+	bool TESForm::IsIgnored() const noexcept
 	{
 		return (formFlags & RecordFlags::kIgnored) != 0;
 	}
 
 
-	bool TESForm::IsKey() const
+	bool TESForm::IsInitialized() const noexcept
+	{
+		return (formFlags & RecordFlags::kInitialized) != 0;
+	}
+
+
+	bool TESForm::IsKey() const noexcept
 	{
 		return Is(FormType::KeyMaster);
 	}
 
 
-	bool TESForm::IsLockpick() const
+	bool TESForm::IsLockpick() const noexcept
 	{
 		return formID == 0x0000000A;
 	}
 
 
-	bool TESForm::IsPlayer() const
+	bool TESForm::IsPlayer() const noexcept
 	{
 		return formID == 0x00000007;
 	}
 
 
-	bool TESForm::IsPlayerRef() const
+	bool TESForm::IsPlayerRef() const noexcept
 	{
 		return formID == 0x00000014;
 	}
 
 
-	bool TESForm::IsSoulGem() const
+	bool TESForm::IsSoulGem() const noexcept
 	{
 		return Is(FormType::SoulGem);
 	}
 
 
-	bool TESForm::IsWeapon() const
+	bool TESForm::IsWeapon() const noexcept
 	{
 		return Is(FormType::Weapon);
 	}

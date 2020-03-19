@@ -5,6 +5,7 @@
 #include "RE/BSSoundHandle.h"
 #include "RE/BSTList.h"
 #include "RE/ImpactResults.h"
+#include "RE/FormTypes.h"
 #include "RE/MagicSystem.h"
 #include "RE/NiSmartPointer.h"
 #include "RE/NiTransform.h"
@@ -129,8 +130,8 @@ namespace RE
 		BGSExplosion*			   explosion;		   // 150
 		MagicItem*				   spell;			   // 158
 		MagicSystem::CastingSource castingSource;	   // 160
-		UInt32					   unk164;			   // 164
-		EffectSetting*			   effect;			   // 168
+		UInt32					   pad164;			   // 164
+		EffectSetting*			   avEffect;		   // 168
 		NiPointer<QueuedFile>	   projectileDBFiles;  // 170
 		UInt64					   unk178;			   // 178
 		UInt64					   unk180;			   // 180

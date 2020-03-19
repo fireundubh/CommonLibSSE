@@ -207,6 +207,7 @@ namespace RE
 		};
 
 
+		// members
 		GeneralFlag		  packFlags;			  // 0
 		Type			  packType;				  // 4
 		InterruptOverride interruptOverrideType;  // 5
@@ -230,6 +231,7 @@ namespace RE
 			~Target() {}
 
 
+			// members
 			ObjectRefHandle		  handle;
 			TESForm*			  object;
 			TESForm*			  refOrObj;
@@ -240,6 +242,7 @@ namespace RE
 		STATIC_ASSERT(sizeof(Target) == 0x8);
 
 
+		// members
 		SInt8  targType;  // 00
 		UInt8  pad01;	  // 01
 		UInt16 pad02;	  // 02
@@ -269,6 +272,7 @@ namespace RE
 		};
 
 
+		// members
 		SInt8	  month;	  // 0
 		DayOfWeek dayOfWeek;  // 1
 		SInt8	  date;		  // 2
@@ -285,6 +289,7 @@ namespace RE
 	class PackageSchedule  // PSDT
 	{
 	public:
+		// members
 		PACK_SCHED_DATA psData;	 // 0
 	};
 	STATIC_ASSERT(sizeof(PackageSchedule) == 0xC);
@@ -302,6 +307,7 @@ namespace RE
 			};
 
 
+			// members
 			Type	  type;	  // 00
 			UInt32	  pad04;  // 04
 			TESTopic* topic;  // 08
@@ -309,6 +315,7 @@ namespace RE
 		STATIC_ASSERT(sizeof(TopicData) == 0x10);
 
 
+		// members
 		TESIdleForm*		   idle;   // 00 - INAM
 		PACK_EVENT_ACTION_TYPE type;   // 08
 		UInt32				   pad0C;  // 0C
