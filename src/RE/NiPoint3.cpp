@@ -146,7 +146,7 @@ namespace RE
 
 	float NiPoint3::GetArcTangent() const
 	{
-		float angle;
+		float angle = 0.0;
 		if (y == 0.0) {
 			if (x > 0.0) {
 				angle = 1.5707964;

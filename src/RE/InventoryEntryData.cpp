@@ -151,7 +151,7 @@ namespace RE
 					continue;
 				}
 
-				auto lvl = xList->GetSoulLevel();
+				auto const lvl = xList->GetSoulLevel();
 				if (lvl > SOUL_LEVEL::kNone) {
 					return lvl;
 				}
@@ -222,7 +222,7 @@ namespace RE
 					auto xAliases = static_cast<ExtraAliasInstanceArray*>(xList->GetByType(ExtraDataType::kAliasInstanceArray));
 					if (xAliases) {
 						for (auto& alias : xAliases->aliases) {
-							TESQuest* quest = alias->quest;
+							const auto quest = alias->quest;
 							auto refAlias = alias->alias;
 							if (quest && refAlias && refAlias->IsQuestObject()) {
 								return false;

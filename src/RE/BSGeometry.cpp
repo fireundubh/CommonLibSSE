@@ -27,7 +27,7 @@ namespace RE
 				auto material = static_cast<BSLightingShaderMaterialBase*>(lightingShader->material);
 				if (material) {
 					if (a_skin) {
-						auto feature = material->GetFeature();
+						auto const feature = material->GetFeature();
 						if (feature == Feature::kFaceGen || feature == Feature::kFaceGenRGBTint) {
 							material->materialAlpha = a_alpha;
 						}
@@ -77,28 +77,24 @@ namespace RE
 		if (!a_geometry) {
 			return;
 		}
-
 		auto effect = properties[States::kEffect].get();
-		auto templateEffect = a_geometry->properties[States::kEffect].get();
-
-		if (effect && templateEffect) {
+		auto tempEffect = a_geometry->properties[States::kEffect].get();
+		if (effect && tempEffect) {
 			auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
-			auto templateLightingShader = netimmerse_cast<BSLightingShaderProperty*>(templateEffect);
-
-			if (lightingShader && templateLightingShader) {
-				auto material = static_cast<BSLightingShaderMaterialBase*>(lightingShader->material);
-				auto templateMaterial = static_cast<BSLightingShaderMaterialBase*>(templateLightingShader->material);
-
-				if (material && templateMaterial) {
-					auto newMaterial = static_cast<BSLightingShaderMaterialBase*>(templateMaterial->Create());
-					newMaterial->CopyMembers(templateMaterial);
-					newMaterial->ClearTextures();
-					newMaterial->SetTextureSet(templateMaterial->textureSet.get());
-					lightingShader->SetMaterial(newMaterial, 1);
+			auto tempLightingShader = netimmerse_cast<BSLightingShaderProperty*>(tempEffect);
+			if (lightingShader && tempLightingShader) {
+				auto tempMaterial = static_cast<BSLightingShaderMaterialBase*>(tempLightingShader->material);
+				if (tempMaterial) {
+					auto material = static_cast<BSLightingShaderMaterialBase*>(tempMaterial->Create());
+					material->CopyMembers(tempMaterial);
+					material->ClearTextures();
+					material->SetTextureSet(tempMaterial->textureSet.get());
+					lightingShader->SetMaterial(material, 1);
 					lightingShader->InvalidateTextures(0);
+					lightingShader->InitializeGeometry(this);
 					lightingShader->InitializeShader(this);
-					newMaterial->~BSLightingShaderMaterialBase();
-					free(newMaterial);
+					material->~BSLightingShaderMaterialBase();
+					free(material);
 				}
 			}
 		}

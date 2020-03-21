@@ -50,7 +50,7 @@ namespace RE
 						if (a_type == BSShaderMaterial::Feature::kNone) {
 							return geometry;
 						}
-						auto material = lightingShader->material;
+						const auto material = lightingShader->material;
 						if (material && material->GetFeature() == a_type) {
 							return geometry;
 						}
@@ -87,13 +87,13 @@ namespace RE
 				}
 			}
 		} else {
-			auto geometry = AsGeometry();
+			const auto geometry = AsGeometry();
 			if (geometry) {
 				auto effect = geometry->properties[BSGeometry::States::kEffect].get();
 				if (effect) {
 					auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
 					if (lightingShader) {
-						auto material = lightingShader->material;
+						const auto material = lightingShader->material;
 						if (material && material->GetFeature() == a_type) {
 							return true;
 						}

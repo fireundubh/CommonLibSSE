@@ -287,7 +287,7 @@ namespace RE
 		auto actorBase = GetActorBase();
 
 		if (faceNode && actorBase) {
-			auto facePart = actorBase->GetCurrentHeadPartByType(a_type);
+			auto const facePart = actorBase->GetCurrentHeadPartByType(a_type);
 			if (facePart) {
 				auto headNode = faceNode->GetObjectByName(facePart->formEditorID);
 				if (headNode) {

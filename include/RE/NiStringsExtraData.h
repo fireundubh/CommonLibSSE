@@ -23,9 +23,9 @@ namespace RE
 		virtual void		  SaveBinary(NiStream& a_stream) override;			  // 1B
 		virtual bool		  IsEqual(NiObject* a_object) override;				  // 1C
 
-		static NiStringsExtraData* Create(const BSFixedString& name, BSFixedString* stringData, UInt32 size);
+		static NiStringsExtraData* Create(const BSFixedString& name, const BSFixedString* stringData, UInt32 size);
 
-		SInt32 GetIndexOf(const char* element);
+		SInt32 GetIndexOf(const char* element) const;
 		bool   InsertElement(const char* element);
 		bool   RemoveElement(const char* element);
 

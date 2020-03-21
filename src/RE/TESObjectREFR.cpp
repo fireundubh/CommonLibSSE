@@ -253,7 +253,7 @@ namespace RE
 
 	float TESObjectREFR::GetHeadingAngle(TESObjectREFR* a_ref)
 	{
-		auto dPos = a_ref->GetPosition() - GetPosition();
+		auto const dPos = a_ref->GetPosition() - GetPosition();
 		auto result = (dPos.GetArcTangent() - GetRotationZ()) * 57.295776;
 		if (result <= 180.0) {
 			if (result < -180.0) {

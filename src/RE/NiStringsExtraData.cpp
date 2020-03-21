@@ -6,7 +6,7 @@
 
 namespace RE
 {
-	NiStringsExtraData* NiStringsExtraData::Create(const BSFixedString& name, BSFixedString* stringData, UInt32 size)
+	NiStringsExtraData* NiStringsExtraData::Create(const BSFixedString& name, const BSFixedString* stringData, UInt32 size)
 	{
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiStringsExtraData::Vtbl);
 
@@ -30,7 +30,7 @@ namespace RE
 		return data;
 	}
 
-	SInt32 NiStringsExtraData::GetIndexOf(const char* element)
+	SInt32 NiStringsExtraData::GetIndexOf(const char* element) const
 	{
 		for (UInt32 i = 0; i < size; i++) {
 			if (strcmp(value[i], element) == 0) {

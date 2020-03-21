@@ -11,12 +11,12 @@ namespace SKSE
 
 		if (s_runtimeDirectory.empty()) {
 			char runtimePathBuf[MAX_PATH];
-			UInt32 runtimePathLength = GetModuleFileName(GetModuleHandle(NULL), runtimePathBuf, sizeof(runtimePathBuf));
+			const UInt32 runtimePathLength = GetModuleFileName(GetModuleHandle(nullptr), runtimePathBuf, sizeof(runtimePathBuf));
 
 			if (runtimePathLength && (runtimePathLength < sizeof(runtimePathBuf))) {
 				std::string runtimePath(runtimePathBuf, runtimePathLength);
 
-				std::string::size_type lastSlash = runtimePath.rfind('\\');
+				const std::string::size_type lastSlash = runtimePath.rfind('\\');
 				if (lastSlash != std::string::npos) {
 					s_runtimeDirectory = runtimePath.substr(0, lastSlash + 1);
 				}
