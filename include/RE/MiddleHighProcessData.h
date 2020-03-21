@@ -269,7 +269,7 @@ namespace RE
 		float									   scriptRefractPower;		// 2CC
 		float									   unk2D0;					// 2D0
 		float									   deferredKillTimer;		// 2D4
-		float									   killMoveDuration;		// 2D8
+		float									   killMoveTimer;			// 2D8
 		float									   unk2DC;					// 2DC
 		UInt32									   unk2E0;					// 2E0
 		UInt32									   unk2E4;					// 2E4
