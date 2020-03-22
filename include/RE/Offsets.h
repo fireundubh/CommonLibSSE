@@ -208,13 +208,6 @@ namespace RE
 		}
 
 
-		namespace BSScaleformManager
-		{
-			static constexpr REL::ID LoadMovie(static_cast<std::uint64_t>(80302));
-			static constexpr REL::ID Singleton(static_cast<std::uint64_t>(516573));
-		}
-
-
 		namespace BSShaderProperty
 		{
 			static constexpr REL::ID SetMaterial(static_cast<std::uint64_t>(98897));
