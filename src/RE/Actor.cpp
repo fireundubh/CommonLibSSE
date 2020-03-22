@@ -287,7 +287,7 @@ namespace RE
 		auto actorBase = GetActorBase();
 
 		if (faceNode && actorBase) {
-			auto const facePart = actorBase->GetCurrentHeadPartByType(a_type);
+			const auto facePart = actorBase->GetCurrentHeadPartByType(a_type);
 			if (facePart) {
 				auto headNode = faceNode->GetObjectByName(facePart->formEditorID);
 				if (headNode) {
@@ -630,7 +630,7 @@ namespace RE
 
 	void Actor::UpdateHairColor()
 	{
-		auto npc = GetActorBase();
+		const auto* npc = GetActorBase();
 		if (npc && npc->headRelatedData) {
 			const auto hairColor = npc->headRelatedData->hairColor;
 			if (hairColor) {
