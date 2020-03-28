@@ -3,6 +3,7 @@
 #include "RE/BGSBaseAlias.h"
 #include "RE/ExtraAliasInstanceArray.h"
 #include "RE/ExtraDataList.h"
+#include "RE/ExtraTextDisplayData.h"
 #include "RE/GameSettingCollection.h"
 #include "RE/Offsets.h"
 #include "RE/TESBoundObject.h"
@@ -115,15 +116,22 @@ namespace RE
 	}
 
 
-	const char* InventoryEntryData::GenerateName()
+	const char* InventoryEntryData::GetDisplayName()
 	{
+		const char* name = nullptr;
 		if (extraLists && !extraLists->empty()) {
-			return extraLists->front()->GenerateName(object);
-		} else {
+			name = extraLists->front()->GetDisplayName(object);
+		} else if (object) {
+			name = object->GetName();
+		}
+
+		if (!name || name[0] == '\0') {
 			auto gmst = GameSettingCollection::GetSingleton();
 			auto sMissingName = gmst ? gmst->GetSetting("sMissingName") : nullptr;
-			return sMissingName ? sMissingName->GetString() : "";
+			name = sMissingName ? sMissingName->GetString() : "";
 		}
+
+		return name;
 	}
 
 
