@@ -22,7 +22,7 @@ namespace RE
 
 
 		// members
-		UInt8 facingRotation;  // 30
+		bool attachToCamera;  // 30
 	};
 	STATIC_ASSERT(sizeof(OwnedCameraEffectController) == 0x38);
 }

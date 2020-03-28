@@ -506,6 +506,8 @@
     <ClInclude Include="include\RE\BSGraphics\DepthStencilDepthModes.h" />
     <ClInclude Include="include\RE\BSGraphics\State.h" />
     <ClInclude Include="include\RE\BSGraphics\TextureAddressModes.h" />
+    <ClInclude Include="include\RE\BSParticleShaderEmitter.h" />
+    <ClInclude Include="include\RE\BSParticleShaderObjectEmitter.h" />
     <ClInclude Include="include\RE\BSShaderPropertyLightData.h" />
     <ClInclude Include="include\RE\BSMultiBoundNode.h" />
     <ClInclude Include="include\RE\BSMultiIndexTriShape.h" />

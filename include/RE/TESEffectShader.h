@@ -2,15 +2,19 @@
 
 #include <d3d9types.h>
 
-#include "RE/BSParticleShaderGeometry.h"
 #include "RE/Color.h"
 #include "RE/FormTypes.h"
+#include "RE/NiSmartPointer.h"
 #include "RE/TESForm.h"
 #include "RE/TESTexture.h"
 
 
 namespace RE
 {
+	class BSParticleShaderGeometry;
+	class BSParticleShaderProperty;
+
+
 	struct EffectShaderData	 // DATA
 	{
 		enum class Flags : UInt32
@@ -193,14 +197,14 @@ namespace RE
 
 
 		// members
-		EffectShaderData		  data;					   // 020 - DATA
-		TESTexture				  fillTexture;			   // 1C0 - ICON
-		TESTexture				  particleShaderTexture;   // 1D0 - ICO2
-		TESTexture				  holesTexture;			   // 1E0 - NAM7
-		TESTexture				  membranePaletteTexture;  // 1F0 - NAM8
-		TESTexture				  particlePaletteTexture;  // 200 - NAM9
-		void*					  particleProperty;		   // 210 - smart ptr
-		BSParticleShaderGeometry* particleGeometry;		   // 218 - smart ptr
+		EffectShaderData					data;					 // 020 - DATA
+		TESTexture							fillTexture;			 // 1C0 - ICON
+		TESTexture							particleShaderTexture;	 // 1D0 - ICO2
+		TESTexture							holesTexture;			 // 1E0 - NAM7
+		TESTexture							membranePaletteTexture;	 // 1F0 - NAM8
+		TESTexture							particlePaletteTexture;	 // 200 - NAM9
+		NiPointer<BSParticleShaderProperty> particleProperty;		 // 210 - smart ptr
+		NiPointer<BSParticleShaderGeometry> particleGeometry;		 // 218 - smart ptr
 	};
 	STATIC_ASSERT(sizeof(TESEffectShader) == 0x220);
 }

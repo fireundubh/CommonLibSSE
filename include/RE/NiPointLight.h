@@ -23,9 +23,9 @@ namespace RE
 
 
 		// members
-		float constLightAttenuation;	  // 140
-		float linearLightAttenuation;	  // 144
-		float quadraticLightAttenuation;  // 148
+		float constAttenuation;		 // 140
+		float linearAttenuation;	 // 144
+		float quadraticAttenuation;	 // 148
 	};
 	STATIC_ASSERT(sizeof(NiPointLight) == 0x150);
 }

@@ -1,11 +1,13 @@
 #pragma once
 
 #include "RE/GridArray.h"
-#include "RE/TESObjectCELL.h"
+#include "RE/NiPoint3.h"
 
 
 namespace RE
 {
+	class TESObjectCELL;
+
 	class GridCellArray : public GridArray
 	{
 	public:
@@ -32,13 +34,9 @@ namespace RE
 
 
 		//members
-		UInt32			unk08;	 // 08 - 1000
-		UInt32			unk0C;	 // 0C - 1000
-		UInt32			length;	 // 10 - takes value from uGridsToLoad
-		UInt32			pad14;	 // 14
-		TESObjectCELL** cells;	 // 18 - (memory allocated using 0x8 * numGrids * numGrids)
-		NiPoint3		unk20;	 // 20
-		bool			unk2C;	 // 2C
+		TESObjectCELL** cells;	// 18 - (memory allocated using 0x8 * numGrids * numGrids)
+		NiPoint3		unk20;	// 20
+		bool			unk2C;	// 2C
 	};
 	static_assert(sizeof(GridCellArray) == 0x30);
 };

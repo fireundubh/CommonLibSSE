@@ -9,6 +9,8 @@
 namespace RE
 {
 	class BSEffectShaderData;
+	class BSParticleShaderObjectEmitter;
+	class BSParticleShaderProperty;
 	class NiAVObject;
 	class TESBoundObject;
 	class TESEffectShader;
@@ -22,6 +24,14 @@ namespace RE
 		inline static constexpr auto Ni_RTTI = NiRTTI_ShaderReferenceEffect;
 
 
+		enum class Flag : UInt32
+		{
+			kNone = 0,
+			kVisible = 1 << 0,
+			kAllowTargetRoot = 1 << 7
+		};
+
+
 		struct Data048
 		{
 			UInt64 unk00;  // 00
@@ -32,8 +42,8 @@ namespace RE
 
 		struct Data090
 		{
-			UInt64 unk00;  // 00 - smart ptr
-			UInt64 unk08;  // 08 - smart ptr
+			NiPointer<BSParticleShaderProperty>		 particleShader;   // 00 - smart ptr
+			NiPointer<BSParticleShaderObjectEmitter> particleEmitter;  // 08 - smart ptr
 		};
 		STATIC_ASSERT(sizeof(Data090) == 0x10);
 
@@ -83,9 +93,9 @@ namespace RE
 		void*					   unk118;					// 118 - smart ptr
 		float					   unk120;					// 120
 		float					   unk124;					// 124 - 1.0f
-		float					   unk128;					// 128 - 1.0f
+		float					   addonModelsScaleStart;	// 128 - 1.0f
 		UInt32					   unk12C;					// 12C
-		UInt32					   flags;					// 130
+		Flag					   flags;					// 130
 		UInt32					   pushCount;				// 134
 	};
 	STATIC_ASSERT(sizeof(ShaderReferenceEffect) == 0x138);

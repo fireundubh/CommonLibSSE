@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RE/NiAVObject.h"
+#include "RE/NiColor.h"
 
 
 namespace RE
@@ -22,15 +23,11 @@ namespace RE
 
 
 		// members
-		float	unk110;	 // 110;
-		float	unk114;	 // 114;
-		float	unk118;	 // 118;
-		NiColor unk11C;	 // 11C
-		float	unk128;	 // 128
-		float	unk12C;	 // 12C
-		float	radius;	 // 130
-		float	fade;	 // 134
-		UInt64	unk138;	 // 138
+		NiColor ambient;   // 110
+		NiColor diffuse;   // 11C
+		NiColor specular;  // 128
+		float	fade;	   // 134
+		UInt32	unk138;	   // 138
 	};
 	STATIC_ASSERT(sizeof(NiLight) == 0x140);
 }

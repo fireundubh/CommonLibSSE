@@ -1,15 +1,15 @@
 #pragma once
 
-#include "RE/BSParticleShaderGeometry.h"
 #include "RE/BSShaderProperty.h"
 #include "RE/BSTArray.h"
+#include "RE/NiColor.h"
 #include "RE/NiPoint3.h"
 
 
 namespace RE
 {
-	class NiColorA;
 	class NiSourceTexture;
+	class BSParticleShaderGeometry;
 
 
 	class BSParticleShaderProperty : public BSShaderProperty
@@ -30,57 +30,56 @@ namespace RE
 
 
 		// members
-		UInt8					   unk88;
-		bool					   flags;
-		bool					   kParticleGreyscaleAlpha;
-		char					   unk8B;
-		float					   particleLifetime;
-		float					   particleLifetimeVariance;
-		float					   initialSpeedAlongNormal;
-		float					   initialSpeedAlongNormalVariance;
-		float					   accelerationAlongNormal;
-		float					   initialVelocity1;
-		float					   initialVelocity2;
-		float					   intialVelocity3;
-		float					   acceleration1;
-		float					   acceleration2;
-		float					   acceleration3;
-		float					   birthPositionOffset;
-		float					   birthPositionVarianceOffset;
-		float					   particleShaderInitialRotation;
-		float					   intialRotationVariance;
-		float					   rotationSpeed;
-		float					   rotationSpeedVariance;
-		UInt32					   unkD0;
-		float					   animatedStartFrame;
-		float					   animatedStartFrameVariance;
-		float					   animatedEndFrame;
-		float					   animatedEndFrameVariance;
-		float					   animatedLoopStartVariance;
-		float					   animatedFrameCount;
-		float					   animatedFrameCountVariance;
-		UInt32					   unkF0;
-		float					   colorKey1Time;
-		float					   colorKey2Time;
-		float					   colorKey3Time;
-		NiColorA				   colorKey1;
-		NiColorA				   colorKey2;
-		NiColorA				   colorKey3;
-		float					   scaleKey1;
-		float					   scaleKey2;
-		float					   scaleKey1Time;
-		float					   scaleKey2Time;
-		NiPointer<NiSourceTexture> particleShaderTexture;
-		NiPointer<NiSourceTexture> particlePaletteTexture;
-		BSTArray<void*>			   unk150;
-		BSParticleShaderGeometry*  particleShaderGeometry;
-		float					   unk170;
-		float					   textureCountU;
-		float					   textureCountV;
-		NiPoint3				   windPoint;
-		float					   explosionWindSpeed;
-		UInt32					   unk18C;
-		UInt64					   unk190;
+		bool								useWorldSpace;					  // 88
+		bool								particleGreyscaleAlpha;			  // 8A
+		char								unk8B;							  // 8B
+		float								particleLifetime;				  // 8C
+		float								particleLifetimeVariance;		  // 90
+		float								initialSpeedAlongNormal;		  // 94
+		float								initialSpeedAlongNormalVariance;  // 98
+		float								accelerationAlongNormal;		  // 9C
+		float								initialVelocity1;				  // A0
+		float								initialVelocity2;				  // A4
+		float								intialVelocity3;				  // A8
+		float								acceleration1;					  // AC
+		float								acceleration2;					  // B0
+		float								acceleration3;					  // B4
+		float								birthPositionOffset;			  // B8
+		float								birthPositionVarianceOffset;	  // BC
+		float								particleShaderInitialRotation;	  // C0
+		float								intialRotationVariance;			  // C4
+		float								rotationSpeed;					  // C8
+		float								rotationSpeedVariance;			  // CC
+		UInt32								unkD0;							  //	D0
+		float								animatedStartFrame;				  // D4
+		float								animatedStartFrameVariance;		  // D8
+		float								animatedEndFrame;				  // DC
+		float								animatedEndFrameVariance;		  // E0
+		float								animatedLoopStartVariance;		  // E4
+		float								animatedFrameCount;				  // E8
+		float								animatedFrameCountVariance;		  // EC
+		UInt32								colorScale;						  // F0
+		float								colorKey1Time;					  // F4
+		float								colorKey2Time;					  // F8
+		float								colorKey3Time;					  // FC
+		NiColorA							colorKey1;						  // 100
+		NiColorA							colorKey2;						  // 110
+		NiColorA							colorKey3;						  // 120
+		float								scaleKey1;						  // 130
+		float								scaleKey2;						  // 134
+		float								scaleKey1Time;					  // 138
+		float								scaleKey2Time;					  // 13C
+		NiPointer<NiSourceTexture>			particleShaderTexture;			  // 140
+		NiPointer<NiSourceTexture>			particlePaletteTexture;			  // 148
+		BSTArray<void*>						unk150;							  // 150
+		NiPointer<BSParticleShaderGeometry> particleShaderGeometry;			  // 168
+		float								unk170;							  // 170
+		float								textureCountU;					  // 174
+		float								textureCountV;					  // 178
+		NiPoint3							windPoint;						  // 17C
+		float								explosionWindSpeed;				  // 188
+		UInt32								unk18C;							  // 18C
+		UInt64								unk190;							  // 190
 	};
 	STATIC_ASSERT(sizeof(BSParticleShaderProperty) == 0x198);
 }

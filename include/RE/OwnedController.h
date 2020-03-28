@@ -1,11 +1,16 @@
 #pragma once
 
+#include "RE/BSPointerHandle.h"
+#include "RE/NiSmartPointer.h"
 #include "RE/ReferenceEffectController.h"
-#include "RE/TESEffectShader.h"
 
 
 namespace RE
 {
+	class NiAVObject;
+	class TESEffectShader;
+
+
 	class OwnedController : public ReferenceEffectController
 	{
 	public:
@@ -27,13 +32,13 @@ namespace RE
 
 
 		// members
-		RefHandle		 refHandle;		   // 08
-		UInt32			 pad0C;			   // 0C
-		TESEffectShader* effectShader;	   // 10
-		BGSArtObject*	 artObject;		   // 18
-		RefHandle		 facingRefHandle;  // 20
-		UInt32			 pad024;		   // 24
-		UInt64			 unk28;			   // 28
+		ObjectRefHandle	  ref;			 // 08
+		UInt32			  pad0C;		 // 0C
+		TESEffectShader*  effectShader;	 // 10
+		BGSArtObject*	  artObject;	 // 18
+		RefHandle		  facingRef;	 // 20
+		UInt32			  pad24;		 // 24
+		NiPointer<NiNode> unk28;		 // 28 - weather node?
 	};
 	STATIC_ASSERT(sizeof(OwnedController) == 0x30);
 }
