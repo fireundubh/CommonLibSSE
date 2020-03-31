@@ -5789,5 +5789,7 @@
     <ClInclude Include="include\RE\BSAtomic.h">
       <Filter>include\RE\BSCore</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\BSParticleShaderEmitter.h" />
+    <ClInclude Include="include\RE\BSParticleShaderObjectEmitter.h" />
   </ItemGroup>
 </Project>
