@@ -19,6 +19,8 @@ namespace RE
 
 		virtual ~MessageBoxData();	// 00
 
+		void QueueMessage();
+
 
 		// members
 		BSString							 bodyText;	  // 10

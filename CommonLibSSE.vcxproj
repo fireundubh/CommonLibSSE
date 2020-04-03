@@ -216,6 +216,7 @@
     <ClCompile Include="src\RE\IMemoryStore.cpp" />
     <ClCompile Include="src\RE\MagicFavorites.cpp" />
     <ClCompile Include="src\RE\Main.cpp" />
+    <ClCompile Include="src\RE\MessageBoxData.cpp" />
     <ClCompile Include="src\RE\NiCamera.cpp" />
     <ClCompile Include="src\RE\NiInterpolator.cpp" />
     <ClCompile Include="src\RE\NiBooleanExtraData.cpp" />

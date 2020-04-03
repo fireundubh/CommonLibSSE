@@ -722,6 +722,12 @@ namespace RE
 		}
 
 
+		namespace MessageBoxData
+		{
+			static constexpr REL::ID QueueMessage(static_cast<std::uint64_t>(51422));
+		}
+
+
 		namespace MessageDataFactoryManager
 		{
 			static constexpr REL::ID GetSingleton(static_cast<std::uint64_t>(22843));

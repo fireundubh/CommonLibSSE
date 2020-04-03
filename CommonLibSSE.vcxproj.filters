@@ -1225,6 +1225,12 @@
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet">
       <UniqueIdentifier>{8f37ba21-90c0-429e-a747-484e8331e037}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\BSParticleShaderEmitter">
+      <UniqueIdentifier>{ff3a8a50-6527-42f9-80f6-bbb367824f81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\Menus\IUIMessageData">
+      <UniqueIdentifier>{2efe23be-f162-4748-a332-81cb83de2b39}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\MenuControls.cpp">
@@ -2039,6 +2045,9 @@
     </ClCompile>
     <ClCompile Include="src\RE\NiBooleanExtraData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\MessageBoxData.cpp">
+      <Filter>src\RE\Menus\IUIMessageData</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -5789,7 +5798,11 @@
     <ClInclude Include="include\RE\BSAtomic.h">
       <Filter>include\RE\BSCore</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\BSParticleShaderEmitter.h" />
-    <ClInclude Include="include\RE\BSParticleShaderObjectEmitter.h" />
+    <ClInclude Include="include\RE\BSParticleShaderEmitter.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\BSParticleShaderEmitter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSParticleShaderObjectEmitter.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\BSParticleShaderEmitter</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

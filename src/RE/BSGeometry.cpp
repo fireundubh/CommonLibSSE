@@ -28,12 +28,12 @@ namespace RE
 				if (material) {
 					if (a_skin) {
 						auto const feature = material->GetFeature();
-						if (feature == Feature::kFaceGen || feature == Feature::kFaceGenRGBTint) {
-							material->materialAlpha = a_alpha;
+						if (feature != Feature::kFaceGen && feature != Feature::kFaceGenRGBTint) {
+							return;
 						}
-					} else {
-						material->materialAlpha = a_alpha;
 					}
+					a_alpha == 0.0 ? SetAppCulled(true) : SetAppCulled(false);
+					material->materialAlpha = a_alpha;
 				}
 			}
 		}
