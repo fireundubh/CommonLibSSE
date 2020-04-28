@@ -230,7 +230,7 @@ namespace RE
 		UInt16									   unk1F8;					// 1F8
 		UInt16									   unk1FA;					// 1FA
 		UInt32									   unk1FC;					// 1FC
-		UInt32									   unk200;					// 200
+		UInt32									   idleChangeClearTimer;	// 200
 		float									   headHeightOffset;		// 204
 		ObjectRefHandle							   currentFurniture;		// 208
 		ObjectRefHandle							   occupiedFurniture;		// 20C
@@ -284,8 +284,10 @@ namespace RE
 		UInt64									   unk308;					// 308
 		UInt8									   unk310;					// 310
 		RESET_3D_FLAGS							   update3DModel;			// 311
-		UInt16									   unk312;					// 312
-		UInt16									   unk314;					// 314
+		UInt8									   unk312;					// 312
+		UInt8									   unk313;					// 313
+		UInt8									   unk314;					// 314
+		UInt8									   unk315;					// 315
 		bool									   unk316;					// 316
 		bool									   unk317;					// 317
 		bool									   unk318;					// 318

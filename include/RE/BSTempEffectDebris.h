@@ -25,10 +25,13 @@ namespace RE
 
 
 		// members;
-		NiPointer<NiAVObject> unk30;  // 030
-		const char*			  unk38;  // 038
-		UInt8				  unk40;  // 040
-		UInt8				  unk41;  // 041
+		NiPointer<NiAVObject> debris3D;		   // 030
+		const char*			  debrisFileName;  // 038
+		UInt8				  unk40;		   // 040
+		UInt8				  unk41;		   // 041
+		UInt8				  pad42;		   // 042
+		UInt8				  pad43;		   // 043
+		UInt32				  pad44;		   // 044
 	};
 	STATIC_ASSERT(sizeof(BSTempEffectDebris) == 0x48);
 }

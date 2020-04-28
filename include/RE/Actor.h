@@ -337,7 +337,7 @@ namespace RE
 		virtual void					Unk_9C(void) override;																																															// 09C
 		virtual void					Unk_9D(void) override;																																															// 09D
 		virtual TESAmmo*				GetCurrentAmmo() const override;																																												// 09E
-		virtual void					UnequipItem(UInt64 a_arg1, TESBoundObject* a_object) override;																																					// 0A1
+		virtual void					UnequipItem(UInt64 a_arg1, TESBoundObject* a_object, UInt32 a_count = 1, ExtraDataList* a_extraData = 0) override;																								// 0A1
 
 		// override (MagicTarget)
 		virtual Actor*						 GetTargetStatsObject() override;	   // 002 - { return this; }
@@ -508,7 +508,7 @@ namespace RE
 		InventoryEntryData*		  GetEquippedEntryData(bool a_leftHand) const;
 		TESForm*				  GetEquippedObject(bool a_leftHand) const;
 		SInt32					  GetGoldAmount();
-		BSGeometry*				  GetHeadPartGeometry(BGSHeadPart::HeadPartType a_type);
+		NiAVObject*				  GetHeadPartObject(BGSHeadPart::HeadPartType a_type);
 		float					  GetHeight();
 		UInt16					  GetLevel() const;
 		TESRace*				  GetRace() const;

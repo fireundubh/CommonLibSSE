@@ -86,6 +86,12 @@ namespace RE
 			kPreProcessedNode = 1 << 26
 		};
 
+		enum class ALPHA_MODE : UInt8
+		{
+			kAll = 0,
+			kSkin = 1
+		};
+
 
 		virtual ~NiAVObject();	// 00
 
@@ -124,10 +130,10 @@ namespace RE
 		bool		   SetMotionType(UInt32 a_motionType, bool a_arg2 = true, bool a_arg3 = false, bool a_allowActivate = true);
 		void		   TintScenegraph(const NiColorA& a_color);
 		void		   Update(NiUpdateData& a_data);
+		void		   UpdateAlpha(float a_alpha, ALPHA_MODE a_type);
 		void		   UpdateBodyTint(const NiColor& a_color);
 		void		   UpdateHairColor(const NiColor& a_color);
-		void		   UpdateMaterialAlpha(float a_alpha, bool a_skin);
-		void		   UpdateVisibility(bool a_visible);
+		void		   UpdateVisibility(bool a_cull);
 
 
 		// members

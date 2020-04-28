@@ -45,7 +45,7 @@ namespace RE
 		UInt64					unk10;				// 10
 		UInt64					unk18;				// 18
 		UInt64					unk20;				// 20
-		BSTArray<ActorHandle>	actorsKnowOfCrime;	// 28
+		BSTArray<ActorHandle>	witnessRefHandles;	// 28
 		UInt64					unk40;				// 40
 		UInt64					unk48;				// 48
 		UInt64					unk50;				// 50

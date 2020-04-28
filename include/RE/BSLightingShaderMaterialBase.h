@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/BSAtomic.h"
 #include "RE/BSShaderMaterial.h"
 #include "RE/NiColor.h"
 #include "RE/NiSmartPointer.h"
@@ -29,12 +30,12 @@ namespace RE
 		virtual Type			  GetType() const override;							// 07 - { return Type::kLighting; }
 
 		// add
-		virtual void OnLoadTextureSet(void);			   // 08
-		virtual void ClearTextures(void);				   // 09
-		virtual void ReceiveValuesFromRootMaterial(void);  // 0A
-		virtual void GetTextures(void);					   // 0B
-		virtual void SaveBinary(void);					   // 0C
-		virtual void LoadBinary(void);					   // 0D
+		virtual void OnLoadTextureSet(UInt64 a_arg1, BSTextureSet* a_textureSet);  // 08
+		virtual void ClearTextures(void);										   // 09
+		virtual void ReceiveValuesFromRootMaterial(void);						   // 0A
+		virtual void GetTextures(void);											   // 0B
+		virtual void SaveBinary(void);											   // 0C
+		virtual void LoadBinary(void);											   // 0D
 
 		void								 CopyBaseMaterial(BSLightingShaderMaterialBase* other);
 		static BSLightingShaderMaterialBase* CreateMaterial(Feature a_feature);
@@ -60,7 +61,7 @@ namespace RE
 		float					   specularColorScale;				// 8C
 		float					   subSurfaceLightRolloff;			// 90
 		float					   rimLightPower;					// 94
-		UInt64					   unk98;							// 98
+		BSSpinLock				   unk98;							// 98
 	};
 	STATIC_ASSERT(sizeof(BSLightingShaderMaterialBase) == 0xA0);
 }

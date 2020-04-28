@@ -1,13 +1,18 @@
 #pragma once
 
+#include "RE/BSTSmartPointer.h"
 #include "RE/BSTempEffect.h"
+#include "RE/NiMatrix3.h"
+#include "RE/NiPoint3.h"
 #include "RE/NiSmartPointer.h"
 
 
 namespace RE
 {
-	class BSGeometry;
+	class BSTriShape;
 	class NiAVObject;
+	class BGSTextureSet;
+	class QueuedTempEffect;
 
 
 	class BSTempEffectGeometryDecal : public BSTempEffect
@@ -28,32 +33,20 @@ namespace RE
 
 
 		// members
-		NiPointer<BSGeometry> decal;
-		NiPointer<BSGeometry> attachedGeometry;	 // 038
-		NiPointer<NiAVObject> unk40;
-		NiPointer<NiNode>	  decalNode;
-		UInt64				  queuedTempEffect;	 // 050
-		UInt64				  unk58;
-		UInt64				  unk60;
-		UInt32				  unk68;
-		UInt32				  unk6C;
-		UInt32				  unk70;
-		UInt32				  unk74;
-		UInt32				  unk78;
-		UInt32				  unk7C;
-		UInt32				  unk80;
-		UInt32				  unk84;
-		UInt32				  unk88;
-		UInt32				  unk8C;
-		UInt32				  unk90;
-		UInt32				  unk94;
-		UInt32				  unk98;
-		UInt32				  unk9C;
-		UInt32				  unkA0;
-		UInt32				  unkA4;
-		UInt32				  unkA8;
-		UInt32				  unkAC;
-		bool				  unkB0;
+		NiPointer<BSGeometry>			  decal;				// 30
+		NiPointer<BSTriShape>			  attachedShape;		// 38
+		NiPointer<NiNode>				  attachedShapeParent;	// 40
+		NiPointer<NiNode>				  skinnedDecalNode;		// 48
+		BSTSmartPointer<QueuedTempEffect> queuedEffect;			// 50
+		BGSTextureSet*					  texSet;				// 58
+		BGSTextureSet*					  texSet2;				// 60
+		NiMatrix3						  rotation;				// 68
+		NiPoint3						  origin;				// 8C
+		NiPoint3						  direction;			// 98
+		float							  width;				// A4
+		UInt32							  unkA8;				// A8
+		UInt32							  flags;				// AC
+		bool							  unkB0;				// B0
 	};
 	STATIC_ASSERT(sizeof(BSTempEffectGeometryDecal) == 0xB8);
 }

@@ -13,7 +13,7 @@ namespace RE
 		BSTArray<BSLight*> lights;	// 00
 		UInt32			   unk18;	// 18
 		UInt32			   unk1C;	// 1C
-		UInt32			   unk20;	// 20
+		UInt8			   unk20;	// 20
 	};
 	STATIC_ASSERT(sizeof(BSShaderPropertyLightData) == 0x28);
 }

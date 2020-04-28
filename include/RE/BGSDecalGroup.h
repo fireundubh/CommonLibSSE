@@ -2,6 +2,8 @@
 
 #include "RE/BSPointerHandle.h"
 #include "RE/BSTArray.h"
+#include "RE/NiColor.h"
+#include "RE/NiMatrix3.h"
 #include "RE/NiPoint3.h"
 #include "RE/NiSmartPointer.h"
 
@@ -18,44 +20,42 @@ namespace RE
 	{
 	public:
 		// members
-		NiPoint3			  origin;		  // 00
-		NiPoint3			  direction;	  // 0C
-		NiPoint3			  surfaceNormal;  // 18
-		ObjectRefHandle		  objRef;		  // 24
-		NiPointer<NiAVObject> avObj;		  // 28
-		NiNode*				  clone;		  // 30
-		BGSTextureSet*		  texSet;		  // 38
-		BGSTextureSet*		  texSet2;		  // 40
-		UInt64				  unk48;		  // 48
-		UInt64				  unk50;		  // 50
-		float				  unk58;		  // 58
-		UInt32				  unk5C;		  // 5C
-		UInt64				  unk60;		  // 60
-		float				  unk68;		  // 68
-		UInt32				  unk6C;		  // 6C
-		UInt64				  unk70;		  // 70
-		float				  unk78;		  // 78
-		UInt32				  unk7C;		  // 7C
-		TESObjectCELL*		  parentCell;	  // 80
-		UInt64				  unk88;		  // 88
-		UInt64				  unk90;		  // 90
-		float				  unk98;		  // 98
-		float				  unk9C;		  // 9C
-		float				  unkA0;		  // A0
-		float				  unkA4;		  // A4
-		UInt32				  unkA8;		  // A8
-		float				  unkAC;		  // AC
-		UInt32				  unkB0;		  // B0
-		UInt16				  unkB4;		  // B4
-		UInt8				  unkB6;		  // B6
-		UInt8				  unkB7;		  // B7
-		UInt16				  unkB8;		  // B8
-		UInt8				  unkBA;		  // BA
-		UInt8				  unkBB;		  // BB
-		UInt16				  unkBC;		  // BC
-		UInt8				  unkBE;		  // BE
-		UInt32				  unkC0;		  // C0
-		UInt32				  padC4;		  // C4
+		NiPoint3			  origin;			// 00
+		NiPoint3			  direction;		// 0C
+		NiPoint3			  surfaceNormal;	// 18
+		ObjectRefHandle		  objRef;			// 24
+		NiPointer<NiAVObject> avObj;			// 28
+		NiNode*				  clone;			// 30
+		BGSTextureSet*		  texSet;			// 38
+		BGSTextureSet*		  texSet2;			// 40
+		SInt32				  unk48;			// 48; -1 for actors
+		float				  width;			// 4C;
+		float				  height;			// 50;
+		float				  depth;			// 54;
+		NiMatrix3			  rotation;			// 58;
+		UInt32				  unk7C;			// 7C;
+		TESObjectCELL*		  parentCell;		// 80
+		float				  parallaxScale;	// 88;
+		NiNode*				  unk90;			// 90;
+		float				  shininess;		// 98;
+		float				  angleThreshold;	// 9C;
+		float				  placementRadius;	// A0;
+		NiColor				  color;			// A4;
+		UInt32				  flags;			// B0;
+		SInt8				  subtextureIndex;	// B4;
+		bool				  permanentDecal;	// B5;
+		UInt8				  unkB6;			// B6;
+		UInt8				  parallaxOcc;		// B7;
+		bool				  alphaBlending;	// B8;
+		bool				  enableBlending;	// B9;
+		UInt8				  parallaxPasses;	// BA;
+		UInt8				  unkBB;			// BB;
+		UInt8				  unkBC;			// BC;
+		bool				  twoSided;			// BD;
+		UInt8				  unkBE;			// BE;
+		UInt8				  unkBF;			// BF;
+		UInt32				  unkC0;			// C0;
+		UInt32				  padC4;			// C4;
 	};
 	STATIC_ASSERT(sizeof(DECAL_CREATION_DATA) == 0xC8);
 

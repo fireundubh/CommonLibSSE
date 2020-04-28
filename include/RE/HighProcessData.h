@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RE/AITimeStamp.h"
+#include "RE/AITimer.h"
 #include "RE/BGSAnimationSequencer.h"
 #include "RE/BSFixedString.h"
 #include "RE/BSIntrusiveRefCounted.h"
@@ -278,8 +279,7 @@ namespace RE
 		UInt32												  pad3D4;						  // 3D4
 		DetectionEvent*										  actorsGeneratedDetectionEvent;  // 3D8
 		NiPointer<StandardDetectionListener>				  detectionListener;			  // 3E0
-		UInt32												  unk3E8;						  // 3E8
-		float												  unk3EC;						  // 3EC
+		AITimer												  unk3E8;						  // 3E8
 		void*												  unk3F0;						  // 3F0 - smart ptr
 		UInt64												  unk3F8;						  // 3F8
 		BSTSmallArray<UInt64>								  unk400;						  // 400

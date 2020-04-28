@@ -90,6 +90,74 @@ namespace RE
 			kRefractionWritesDepth = BIT64 << 63
 		};
 
+		enum class EShaderPropertyFlag8 : UInt8
+		{
+			kSpecular = 0,
+			kSkinned = 1,
+			kTempRefraction = 2,
+			kVertexAlpha = 3,
+			kGrayscaleToPaletteColor = 4,
+			kGrayscaleToPaletteAlpha = 5,
+			kFalloff = 6,
+			kEnvMap = 7,
+			kRGBFalloff = 8,
+			kCastShadows = 9,
+			kFace = 10,
+			kUIMaskRects = 11,
+			kModelSpaceNormals = 12,
+			kRefractionClamp = 13,
+			kMultiTextureLandscape = 14,
+			kRefraction = 15,
+			kRefractionFalloff = 16,
+			kEyeReflect = 17,
+			kHairTint = 18,
+			kScreendoorAlphaFade = 19,
+			kLocalMapClear = 20,
+			kFaceGenRGBTint = 21,
+			kOwnEmit = 22,
+			kProjectedUV = 23,
+			kMultipleTextures = 24,
+			kTesselate = 25,
+			kDecal = 26,
+			kDynamicDecal = 27,
+			kCharacterLight = 28,
+			kExternalEmittance = 29,
+			kSoftEffect = 30,
+			kZBufferTest = 31,
+			kZBufferWrite = 32,
+			kLODLandscape = 33,
+			kLODObjects = 34,
+			kNoFade = 35,
+			kTwoSided = 36,
+			kVertexColors = 37,
+			kGlowMap = 38,
+			kTransformChanged = 39,
+			kDismembermentMeatCuff = 40,
+			kTint = 41,
+			kVertexLighting = 42,
+			kUniformScale = 43,
+			kFitSlope = 44,
+			kBillboard = 45,
+			kLODLandBlend = 46,
+			kDismemberment = 47,
+			kWireframe = 48,
+			kWeaponBlood = 49,
+			kHideOnLocalMap = 50,
+			kPremultAlpha = 51,
+			kVATSTarget = 52,
+			kAnisotropicLighting = 53,
+			kSkewSpecularAlpha = 54,
+			kMenuScreen = 55,
+			kMultiLayerParallax = 56,
+			kAlphaTest = 57,
+			kInvertedFadePattern = 58,
+			kVATSTargetDrawAll = 59,
+			kPipboyScreen = 60,
+			kTreeAnim = 61,
+			kEffectLighting = 62,
+			kRefractionWritesDepth = 63
+		};
+
 
 		virtual ~BSShaderProperty();  // 00
 
@@ -130,7 +198,7 @@ namespace RE
 
 		void SetEffectShaderData(const BSTSmartPointer<BSEffectShaderData>& a_data);
 		void SetMaterial(BSShaderMaterial* a_material, bool a_unk1);
-		void SetFlags(UInt8 a_flag, UInt8 a_toggle);
+		void SetFlags(EShaderPropertyFlag8 a_flag, bool a_toggle);
 		bool InvalidateMaterial();
 
 
@@ -142,7 +210,7 @@ namespace RE
 		UInt64								unk48;				  // 48
 		void*								unk50;				  // 50
 		UInt64								unk58;				  // 58
-		UInt64								unk60;				  // 60
+		BSFadeNode*							fadeNode;			  // 60
 		BSTSmartPointer<BSEffectShaderData> effectData;			  // 68
 		BSShaderPropertyLightData*			lightData;			  // 70
 		BSShaderMaterial*					material;			  // 78

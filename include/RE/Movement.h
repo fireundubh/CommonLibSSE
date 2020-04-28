@@ -7,6 +7,20 @@ namespace RE
 {
 	namespace Movement
 	{
+		enum class DIRECTION : UInt32
+		{
+			kInvalid = static_cast<UInt32>(-1),
+			kStanding = 0,
+			kDiagonallyForwardRight,
+			kRight,
+			kDiagonallyRight,
+			kBack,
+			kDiagonallyLeft,
+			kLeft,
+			kFront
+		};
+
+
 		struct SPEED_DIRECTIONS
 		{
 			enum SPEED_DIRECTION : UInt32

@@ -281,7 +281,7 @@ namespace RE
 	}
 
 
-	BSGeometry* Actor::GetHeadPartGeometry(BGSHeadPart::HeadPartType a_type)
+	NiAVObject* Actor::GetHeadPartObject(BGSHeadPart::HeadPartType a_type)
 	{
 		auto faceNode = GetFaceNodeSkinned();
 		auto actorBase = GetActorBase();
@@ -291,10 +291,7 @@ namespace RE
 			if (facePart) {
 				auto headNode = faceNode->GetObjectByName(facePart->formEditorID);
 				if (headNode) {
-					auto geometry = headNode->AsGeometry();
-					if (geometry) {
-						return geometry;
-					}
+					return headNode;
 				}
 			}
 		}

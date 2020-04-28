@@ -32,7 +32,7 @@ namespace RE
 		// members
 		bool								useWorldSpace;					  // 88
 		bool								particleGreyscaleAlpha;			  // 8A
-		char								unk8B;							  // 8B
+		UInt8								unk8B;							  // 8B
 		float								particleLifetime;				  // 8C
 		float								particleLifetimeVariance;		  // 90
 		float								initialSpeedAlongNormal;		  // 94

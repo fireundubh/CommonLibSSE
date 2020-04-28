@@ -16,7 +16,7 @@ namespace RE
 			data->size = size;
 			data->value = NiAlloc<char*>(size);
 
-			for (int i = 0; i < size; i++) {
+			for (UInt32 i = 0; i < size; i++) {
 				auto string = stringData[i].c_str();
 
 				if (string && *string != '\0') {
@@ -26,7 +26,6 @@ namespace RE
 				}
 			}
 		}
-
 		return data;
 	}
 

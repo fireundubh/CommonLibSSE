@@ -171,6 +171,33 @@ namespace RE
 	}
 
 
+	auto TESObjectREFR::GetDirection()
+		-> Direction
+	{
+		float directionOut = 0.0;
+		if (GetGraphVariableFloat(BSFixedString("Direction"), directionOut)) {
+			switch (static_cast<UInt32>(directionOut * 1000)) {
+			case 0:
+				return Direction::kStanding;
+			case 125:
+				return Direction::kDiagonallyForwardRight;
+			case 250:
+				return Direction::kRight;
+			case 375:
+				return Direction::kDiagonallyRight;
+			case 500:
+				return Direction::kBack;
+			case 625:
+				return Direction::kDiagonallyLeft;
+			case 750:
+				return Direction::kLeft;
+			case 875:
+				return Direction::kFront;
+			}
+		}
+		return Direction::kInvalid;
+	}
+
 	const char* TESObjectREFR::GetDisplayFullName()
 	{
 		using func_t = decltype(&TESObjectREFR::GetDisplayFullName);
@@ -733,21 +760,22 @@ namespace RE
 
 	void TESObjectREFR::StopAllShaders()
 	{
-		auto singleton = ProcessLists::GetSingleton();
-
-		singleton->magicEffectsLock.Lock();
-		for (auto& tempEffect : singleton->magicEffects) {
-			if (tempEffect.get()) {
-				auto referenceEffect = netimmerse_cast<ReferenceEffect*>(tempEffect.get());
-				if (referenceEffect) {
-					auto refHandle = CreateRefHandle();
-					if (referenceEffect->target == refHandle) {
-						referenceEffect->finished = 1;
+		auto processLists = ProcessLists::GetSingleton();
+		if (processLists) {
+			processLists->magicEffectsLock.Lock();
+			for (auto& tempEffect : processLists->magicEffects) {
+				if (tempEffect.get()) {
+					auto referenceEffect = netimmerse_cast<ReferenceEffect*>(tempEffect.get());
+					if (referenceEffect) {
+						auto refHandle = CreateRefHandle();
+						if (referenceEffect->target == refHandle) {
+							referenceEffect->finished = 1;
+						}
 					}
 				}
 			}
+			processLists->magicEffectsLock.Unlock();
 		}
-		singleton->magicEffectsLock.Unlock();
 	}
 
 

@@ -2,12 +2,12 @@
 
 #include "RE/BSShaderProperty.h"
 #include "RE/BSTArray.h"
+#include "RE/NiColor.h"
 
 
 namespace RE
 {
 	class NiColor;
-	class BSLightingShaderMaterialBase;
 
 
 	class BSLightingShaderProperty : public BSShaderProperty
@@ -55,30 +55,33 @@ namespace RE
 		virtual void			 Unk_3D(void) override;								   // 3D
 		virtual void			 Unk_3E(void) override;								   // 3E - { return 2; }
 
+		void CopyMembers(BSLightingShaderProperty* a_other);
 		void InvalidateTextures(UInt32 a_unk1);
 
 
 		// members
-		Data			unk088[3];		// 088
-		Data			unk0B8;			// 0B8
-		Data			unk0C8;			// 0C8
-		Data			unk0D8;			// 0D8
-		UInt64			unk0E8;			// 0E8
-		NiColor*		emissiveColor;	// 0F0
-		float			emissiveMult;	// 0F8
-		UInt32			unk0FC;			// 0FC
-		float			unk100;			// 100
-		float			unk104;			// 100
-		UInt32			unk108;			// 108
-		UInt32			unk10C;			// 10C
-		UInt64			unk110;			// 110
-		UInt64			unk118;			// 118
-		UInt64			unk120;			// 120
-		UInt64			unk128;			// 128
-		UInt64			unk130;			// 130
-		BSTArray<void*> unk138;			// 138
-		UInt64			unk150;			// 150
-		UInt8			unk158;			// 158
+		Data			unk088[3];			// 088
+		Data			unk0B8;				// 0B8
+		Data			unk0C8;				// 0C8
+		Data			unk0D8;				// 0D8
+		UInt64			unk0E8;				// 0E8
+		NiColor*		emissiveColor;		// 0F0
+		float			emissiveMult;		// 0F8
+		UInt32			unk0FC;				// 0FC
+		float			specularLODFade;	// 100
+		float			envmapLODFade;		// 104
+		UInt32			unk108;				// 108
+		NiColorA		projectedUVParams;	// 10C
+		NiColorA		projectedUVColor;	// 11C
+		SInt32			unk12C;				// 12C
+		UInt32			unk130;				// 130
+		UInt32			unk134;				// 134
+		BSTArray<void*> unk138;				// 138
+		UInt64			unk150;				// 150
+		UInt8			unk158;				// 158
+		UInt8			pad159;				// 159
+		UInt16			pad15A;				// 15A
+		UInt32			pad15C;				// 15C
 	};
 	STATIC_ASSERT(sizeof(BSLightingShaderProperty) == 0x160);
 }

@@ -1,13 +1,19 @@
 #pragma once
 
+#include "RE/BSSoundHandle.h"
+#include "RE/BSTSmartPointer.h"
 #include "RE/BSTempEffect.h"
+#include "RE/NiMatrix3.h"
+#include "RE/NiPoint3.h"
 #include "RE/NiSmartPointer.h"
 #include "RE/NiTransform.h"
 
 
 namespace RE
 {
+	class BGSParticleObjectCloneTask;
 	class NiAVObject;
+	class NiNode;
 
 
 	class BSTempEffectParticle : public BSTempEffect
@@ -26,32 +32,22 @@ namespace RE
 
 
 		// members
-		UInt64				  unk30;
-		NiPointer<NiAVObject> unk38;
-		const char*			  modelPath;
-		UInt64				  unk48;
-		UInt64				  unk50;
-		UInt64				  unk58;
-		UInt64				  unk60;
-		UInt64				  unk68;
-		float				  unk70;
-		float				  unk74;
-		UInt64				  unk78;
-		float				  unk80;
-		UInt8				  pad84[4];
-		UInt64				  unk88;
-		NiTransform			  nitransform90;
-		UInt32				  padC4;
-		UInt64				  unkC8;
-		UInt32				  unkD0;
-		UInt8				  unkD4;
-		UInt8				  padD5[3];
-		UInt32				  unkD8;
-		UInt32				  unkDC;
-		UInt8				  unkE0;
-		UInt8				  padE1[3];
-		UInt32				  unkE4;
-		UInt8				  unkE8;
+		NiPointer<NiAVObject>						particle3D;	 // 30
+		BSTSmartPointer<BGSParticleObjectCloneTask> cloneTask;	 // 38
+		const char*									modelName;	 // 40
+		NiPointer<NiNode>							unk48;		 // 48	- BSMultiBoundNiNode[4]
+		NiTransform									transform;	 // 50
+		UInt32										unk84;		 // 84
+		NiPointer<NiAVObject>						unk88;		 // 88
+		NiTransform									unk90;		 // 90
+		UInt32										padC4;		 // C4
+		UInt64										unkC8;		 // C8
+		BSSoundHandle								unkD0;		 // D0
+		BSSoundHandle								unkDC;		 // DC
+		UInt8										unkE8;		 // E8
+		UInt8										padE9;		 // E9
+		UInt16										unkEA;		 // EA
+		UInt32										unkEC;		 // EC
 	};
 	STATIC_ASSERT(sizeof(BSTempEffectParticle) == 0xF0);
 };

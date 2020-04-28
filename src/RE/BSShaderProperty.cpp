@@ -31,7 +31,7 @@ namespace RE
 	}
 
 
-	void BSShaderProperty::SetFlags(UInt8 a_flag, UInt8 a_toggle)
+	void BSShaderProperty::SetFlags(EShaderPropertyFlag8 a_flag, bool a_toggle)
 	{
 		using func_t = decltype(&BSShaderProperty::SetFlags);
 		REL::Offset<func_t> func(Offset::BSShaderProperty::SetFlags);

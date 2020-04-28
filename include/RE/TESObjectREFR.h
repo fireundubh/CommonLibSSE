@@ -19,6 +19,7 @@
 #include "RE/FormTypes.h"
 #include "RE/IAnimationGraphManagerHolder.h"
 #include "RE/MagicSystem.h"
+#include "RE/Movement.h"
 #include "RE/NiPoint3.h"
 #include "RE/NiSmartPointer.h"
 #include "RE/TESForm.h"
@@ -115,6 +116,7 @@ namespace RE
 
 
 		using Count = SInt32;
+		using Direction = Movement::DIRECTION;
 		using InventoryCountMap = std::unordered_map<TESBoundObject*, Count>;
 		using InventoryItemMap = std::unordered_map<TESBoundObject*, std::pair<Count, std::unique_ptr<InventoryEntryData>>>;
 		using InventoryDropMap = std::unordered_map<TESBoundObject*, std::pair<Count, std::vector<NiPointer<TESObjectREFR>>>>;
@@ -358,7 +360,7 @@ namespace RE
 		virtual TESAmmo*						  GetCurrentAmmo() const;																																												 // 9E - { return 0; }
 		virtual BGSDecalGroup*					  GetDecalGroup() const;																																												 // 9F
 		virtual void							  Unk_A0(void);																																															 // A0
-		virtual void							  UnequipItem(UInt64 a_arg1, TESBoundObject* a_object);																																					 // A1 - { return; }
+		virtual void							  UnequipItem(UInt64 a_arg1, TESBoundObject* a_object, UInt32 a_count = 1, ExtraDataList* a_extraData = 0);																								 // A1 - { return; }
 
 		static NiPointer<TESObjectREFR> LookupByHandle(RefHandle a_refHandle);
 		static bool						LookupByHandle(RefHandle a_refHandle, NiPointer<TESObjectREFR>& a_refrOut);
@@ -381,6 +383,7 @@ namespace RE
 		const BSTSmartPointer<BipedAnim>& GetBiped() const;
 		const BSTSmartPointer<BipedAnim>& GetBiped(bool a_firstPerson) const;
 		TESContainer*					  GetContainer();
+		Direction						  GetDirection();
 		const char*						  GetDisplayFullName();
 		InventoryDropMap				  GetDroppedInventory();
 		InventoryDropMap				  GetDroppedInventory(llvm::function_ref<bool(TESBoundObject*)> a_filter);

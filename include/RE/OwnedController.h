@@ -36,7 +36,7 @@ namespace RE
 		UInt32			  pad0C;		 // 0C
 		TESEffectShader*  effectShader;	 // 10
 		BGSArtObject*	  artObject;	 // 18
-		RefHandle		  facingRef;	 // 20
+		ObjectRefHandle	  facingRef;	 // 20
 		UInt32			  pad24;		 // 24
 		NiPointer<NiNode> unk28;		 // 28 - weather node?
 	};

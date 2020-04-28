@@ -104,7 +104,7 @@ namespace RE
 		UInt8						  unk15D;					 // 15D
 		UInt8						  unk15E;					 // 15E
 		UInt8						  unk15F;					 // 15F
-		BSReadWriteLock				  unk160;					 // 160
+		mutable BSReadWriteLock		  unk160;					 // 160
 	};
 	STATIC_ASSERT(sizeof(CombatGroup) == 0x168);
 }

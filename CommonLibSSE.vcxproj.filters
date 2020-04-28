@@ -442,48 +442,6 @@
     <Filter Include="include\RE\FormComponents">
       <UniqueIdentifier>{9410f289-c830-479f-b772-32ed0af95f26}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\RE\FormComponents\Components">
-      <UniqueIdentifier>{9dff09e6-63a9-40e1-96b9-74301c6ac60e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\BGSBaseAlias">
-      <UniqueIdentifier>{88fc3c09-eefe-42e2-952d-8a3a67c84404}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\BGSEntryPointFunctionData">
-      <UniqueIdentifier>{f442af1e-5f6e-4e76-b8a8-f40b7b80a835}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\BGSPerkEntry">
-      <UniqueIdentifier>{4cff4fef-ceea-478b-a5c6-6c4a2bf8ec24}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\BGSSceneAction">
-      <UniqueIdentifier>{18c535a4-8388-499f-b369-c711b3a50d3d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\IPackageData">
-      <UniqueIdentifier>{f3c4f0f2-f496-495e-9490-700718c9db85}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\IProcedureTreeItem">
-      <UniqueIdentifier>{609449cc-dbdc-49e4-b304-c7c30d629cc6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\IProcedureTreeItem\BGSProcedureTreeConditionalItem">
-      <UniqueIdentifier>{1a9365b7-b54e-4cbc-b349-15b94b0245ff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\IProcedureTreeItem\BGSProcedureTreeConditionalItem\BGSProcedureTreeBranch">
-      <UniqueIdentifier>{d34e0deb-49e6-40e1-b3ee-97e2ff529cf2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\TESPackageData">
-      <UniqueIdentifier>{b25d19d9-59a9-49ff-b333-caae355d7f1b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\TESRegionData">
-      <UniqueIdentifier>{d069ce3e-0d25-47b6-814e-081eb72f79bb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\ActiveEffect">
-      <UniqueIdentifier>{25b0e9c2-ad2f-41e9-b092-010559ba4885}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect">
-      <UniqueIdentifier>{4f98f23a-d19e-44cc-8b54-6b9d0605ba0d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\ReferenceEffectController">
-      <UniqueIdentifier>{fad1b7a6-eb05-4d2d-9f48-7efb3591c1a5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="include\RE\FormComponents\TESModel">
       <UniqueIdentifier>{8af8cbee-3f6a-461f-9c54-da31d41b7d18}</UniqueIdentifier>
     </Filter>
@@ -670,9 +628,6 @@
     <Filter Include="include\RE\bgs\saveload">
       <UniqueIdentifier>{629163d0-bd86-49cc-97c7-11539bf627ba}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\RE\FormComponents\Components\DetectionListener">
-      <UniqueIdentifier>{d8aaeb61-40b8-48a6-a2d0-53aa3b7ab6e5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="include\RE\BSExtraData">
       <UniqueIdentifier>{a9418d25-6fa2-43e9-9a9b-82ab52cea883}</UniqueIdentifier>
     </Filter>
@@ -732,15 +687,6 @@
     </Filter>
     <Filter Include="src\RE\Misc">
       <UniqueIdentifier>{5124e739-be3b-47ec-bb50-c7251e5eb942}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\IPackageData\BGSNamedPackageData">
-      <UniqueIdentifier>{7d08d064-4206-4ab1-b726-c0b059a3b7eb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\IPackageData\BGSNamedPackageData\BGSPackageDataPointerTemplate">
-      <UniqueIdentifier>{681e34a1-0c10-4edc-addc-4f8c4282d15d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\IAIWorldLocationHandle">
-      <UniqueIdentifier>{4d502242-c66c-4a55-8fa4-0f5ed5fec774}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject">
       <UniqueIdentifier>{aa0ce7b4-31e5-45d6-9541-4e08f97a4e2c}</UniqueIdentifier>
@@ -864,9 +810,6 @@
     </Filter>
     <Filter Include="include\RE\FileIO\ICellAttachDetachEventSource">
       <UniqueIdentifier>{91e8d6b1-97d3-48bb-8f61-d650120521d7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\SyncQueueObj">
-      <UniqueIdentifier>{23b3c302-f794-4c50-b894-3d19935c644d}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\Components">
       <UniqueIdentifier>{7ddf9985-854a-4cef-8ff0-446f50bff18d}</UniqueIdentifier>
@@ -1186,20 +1129,8 @@
     <Filter Include="include\RE\Events\InputEvent\IDEvent">
       <UniqueIdentifier>{57350110-7c18-4677-bd8f-76e1171fc1a6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatArea">
-      <UniqueIdentifier>{c0c80613-d0f8-4609-8c10-2ad6997b458d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatTargetSelector">
-      <UniqueIdentifier>{7f5f804a-ccdc-42d5-8689-40946e093711}</UniqueIdentifier>
-    </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight">
       <UniqueIdentifier>{fadbdfad-c21e-4470-9775-63a918196a64}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\ReferenceEffectController\OwnedController">
-      <UniqueIdentifier>{cad921cf-d1e2-4fa3-b888-248e76fe96a8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\RE\FormComponents\Components\MagicCaster">
-      <UniqueIdentifier>{a045b518-0f20-4b09-89c3-4d25183b5740}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry">
       <UniqueIdentifier>{b17926ab-79dd-46b0-af88-0594ed351733}</UniqueIdentifier>
@@ -1230,6 +1161,78 @@
     </Filter>
     <Filter Include="src\RE\Menus\IUIMessageData">
       <UniqueIdentifier>{2efe23be-f162-4748-a332-81cb83de2b39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\CombatObject">
+      <UniqueIdentifier>{8ad92cf0-1f79-4a60-93d5-36b3d91ee6d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea">
+      <UniqueIdentifier>{f27ccaec-3fd3-4706-a586-9ac766b6a4d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector">
+      <UniqueIdentifier>{6a73e415-9acb-4dff-bced-63afad333ba9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components">
+      <UniqueIdentifier>{9dff09e6-63a9-40e1-96b9-74301c6ac60e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\BGSBaseAlias">
+      <UniqueIdentifier>{88fc3c09-eefe-42e2-952d-8a3a67c84404}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\BGSEntryPointFunctionData">
+      <UniqueIdentifier>{f442af1e-5f6e-4e76-b8a8-f40b7b80a835}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\BGSPerkEntry">
+      <UniqueIdentifier>{4cff4fef-ceea-478b-a5c6-6c4a2bf8ec24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\BGSSceneAction">
+      <UniqueIdentifier>{18c535a4-8388-499f-b369-c711b3a50d3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\IPackageData">
+      <UniqueIdentifier>{f3c4f0f2-f496-495e-9490-700718c9db85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\IPackageData\BGSNamedPackageData">
+      <UniqueIdentifier>{7d08d064-4206-4ab1-b726-c0b059a3b7eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\IPackageData\BGSNamedPackageData\BGSPackageDataPointerTemplate">
+      <UniqueIdentifier>{681e34a1-0c10-4edc-addc-4f8c4282d15d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\IProcedureTreeItem">
+      <UniqueIdentifier>{609449cc-dbdc-49e4-b304-c7c30d629cc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\IProcedureTreeItem\BGSProcedureTreeConditionalItem">
+      <UniqueIdentifier>{1a9365b7-b54e-4cbc-b349-15b94b0245ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\IProcedureTreeItem\BGSProcedureTreeConditionalItem\BGSProcedureTreeBranch">
+      <UniqueIdentifier>{d34e0deb-49e6-40e1-b3ee-97e2ff529cf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\TESPackageData">
+      <UniqueIdentifier>{b25d19d9-59a9-49ff-b333-caae355d7f1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\TESRegionData">
+      <UniqueIdentifier>{d069ce3e-0d25-47b6-814e-081eb72f79bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\ActiveEffect">
+      <UniqueIdentifier>{25b0e9c2-ad2f-41e9-b092-010559ba4885}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\ActiveEffect\ValueModifierEffect">
+      <UniqueIdentifier>{4f98f23a-d19e-44cc-8b54-6b9d0605ba0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\ReferenceEffectController">
+      <UniqueIdentifier>{fad1b7a6-eb05-4d2d-9f48-7efb3591c1a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\ReferenceEffectController\OwnedController">
+      <UniqueIdentifier>{cad921cf-d1e2-4fa3-b888-248e76fe96a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\DetectionListener">
+      <UniqueIdentifier>{d8aaeb61-40b8-48a6-a2d0-53aa3b7ab6e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\IAIWorldLocationHandle">
+      <UniqueIdentifier>{4d502242-c66c-4a55-8fa4-0f5ed5fec774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\SyncQueueObj">
+      <UniqueIdentifier>{23b3c302-f794-4c50-b894-3d19935c644d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSSystem\IFormFactory\Components\MagicCaster">
+      <UniqueIdentifier>{a045b518-0f20-4b09-89c3-4d25183b5740}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -2634,22 +2637,22 @@
       <Filter>include\RE\Menus\IUIMessageData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ActiveEffect.h">
-      <Filter>include\RE\FormComponents\Components\ActiveEffect</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\ActiveEffect</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ActiveEffectReferenceEffectController.h">
-      <Filter>include\RE\FormComponents\Components\ReferenceEffectController</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\ReferenceEffectController</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ReferenceEffectController.h">
-      <Filter>include\RE\FormComponents\Components\ReferenceEffectController</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\ReferenceEffectController</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\AbsorbEffect.h">
-      <Filter>include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\ActiveEffect\ValueModifierEffect</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ValueModifierEffect.h">
-      <Filter>include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\ActiveEffect\ValueModifierEffect</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\SummonCreatureEffect.h">
-      <Filter>include\RE\FormComponents\Components\ActiveEffect</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\ActiveEffect</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ExtraAction.h">
       <Filter>include\RE\BSExtraData</Filter>
@@ -2691,16 +2694,16 @@
       <Filter>include\RE\BSAudio\BSISoundDescriptor</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSSceneAction.h">
-      <Filter>include\RE\FormComponents\Components\BGSSceneAction</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\BGSSceneAction</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSSceneActionDialogue.h">
-      <Filter>include\RE\FormComponents\Components\BGSSceneAction</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\BGSSceneAction</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSSceneActionPackage.h">
-      <Filter>include\RE\FormComponents\Components\BGSSceneAction</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\BGSSceneAction</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSSceneActionTimer.h">
-      <Filter>include\RE\FormComponents\Components\BGSSceneAction</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\BGSSceneAction</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSStandardSoundDef.h">
       <Filter>include\RE\BSAudio\BSISoundDescriptor</Filter>
@@ -3117,19 +3120,19 @@
       <Filter>include\RE\Camera\TESCameraState</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESRegionData.h">
-      <Filter>include\RE\FormComponents\Components\TESRegionData</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\TESRegionData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESRegionDataLandscape.h">
-      <Filter>include\RE\FormComponents\Components\TESRegionData</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\TESRegionData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESRegionDataMap.h">
-      <Filter>include\RE\FormComponents\Components\TESRegionData</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\TESRegionData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESRegionDataWeather.h">
-      <Filter>include\RE\FormComponents\Components\TESRegionData</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\TESRegionData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESRegionDataSound.h">
-      <Filter>include\RE\FormComponents\Components\TESRegionData</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\TESRegionData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESModel.h">
       <Filter>include\RE\FormComponents\TESModel</Filter>
@@ -3138,7 +3141,7 @@
       <Filter>include\RE\FormComponents\TESModel</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSOpenCloseForm.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSTextureModel.h">
       <Filter>include\RE\FormComponents\TESModel</Filter>
@@ -3168,28 +3171,28 @@
       <Filter>include\RE\FormComponents\TESTexture</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ActorValueOwner.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSMaterialObject.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\WeatherType.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Color.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\PerkEntryVisitor.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\PerkRankVisitor.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESChildCell.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESMagicTargetForm.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSAction.h">
       <Filter>include\RE\FormComponents\TESForm\BGSKeyword</Filter>
@@ -3204,10 +3207,10 @@
       <Filter>include\RE\FormComponents\TESForm\TESObject\TESBoundObject</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSRefAlias.h">
-      <Filter>include\RE\FormComponents\Components\BGSBaseAlias</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\BGSBaseAlias</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSBaseAlias.h">
-      <Filter>include\RE\FormComponents\Components\BGSBaseAlias</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\BGSBaseAlias</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESNPC.h">
       <Filter>include\RE\FormComponents\TESForm\TESObject\TESBoundObject\TESBoundAnimObject\TESActorBase</Filter>
@@ -3273,61 +3276,61 @@
       <Filter>include\RE\FormComponents\TESForm</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSPerkEntry.h">
-      <Filter>include\RE\FormComponents\Components\BGSPerkEntry</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\BGSPerkEntry</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSEntryPointPerkEntry.h">
-      <Filter>include\RE\FormComponents\Components\BGSPerkEntry</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\BGSPerkEntry</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSAbilityPerkEntry.h">
-      <Filter>include\RE\FormComponents\Components\BGSPerkEntry</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\BGSPerkEntry</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSEntryPointFunctionData.h">
-      <Filter>include\RE\FormComponents\Components\BGSEntryPointFunctionData</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\BGSEntryPointFunctionData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSEntryPointFunctionDataActivateChoice.h">
-      <Filter>include\RE\FormComponents\Components\BGSEntryPointFunctionData</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\BGSEntryPointFunctionData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSEntryPointFunctionDataOneValue.h">
-      <Filter>include\RE\FormComponents\Components\BGSEntryPointFunctionData</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\BGSEntryPointFunctionData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSEntryPointFunctionDataText.h">
-      <Filter>include\RE\FormComponents\Components\BGSEntryPointFunctionData</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\BGSEntryPointFunctionData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\IProcedureTreeItem.h">
-      <Filter>include\RE\FormComponents\Components\IProcedureTreeItem</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\IProcedureTreeItem</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSProcedureTreeConditionalItem.h">
-      <Filter>include\RE\FormComponents\Components\IProcedureTreeItem\BGSProcedureTreeConditionalItem</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\IProcedureTreeItem\BGSProcedureTreeConditionalItem</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSProcedureTreeProcedure.h">
-      <Filter>include\RE\FormComponents\Components\IProcedureTreeItem\BGSProcedureTreeConditionalItem</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\IProcedureTreeItem\BGSProcedureTreeConditionalItem</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSProcedureTreeBranch.h">
-      <Filter>include\RE\FormComponents\Components\IProcedureTreeItem\BGSProcedureTreeConditionalItem\BGSProcedureTreeBranch</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\IProcedureTreeItem\BGSProcedureTreeConditionalItem\BGSProcedureTreeBranch</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSProcedureTreeSequence.h">
-      <Filter>include\RE\FormComponents\Components\IProcedureTreeItem\BGSProcedureTreeConditionalItem\BGSProcedureTreeBranch</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\IProcedureTreeItem\BGSProcedureTreeConditionalItem\BGSProcedureTreeBranch</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\IPackageData.h">
-      <Filter>include\RE\FormComponents\Components\IPackageData</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\IPackageData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESPackageData.h">
-      <Filter>include\RE\FormComponents\Components\TESPackageData</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\TESPackageData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESCustomPackageData.h">
-      <Filter>include\RE\FormComponents\Components\TESPackageData</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\TESPackageData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\AttackAnimationArrayMap.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSSkillPerkTreeNode.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSTypedItem.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\SetEventData.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSCameraPath.h">
       <Filter>include\RE\FormComponents\TESForm</Filter>
@@ -3420,10 +3423,10 @@
       <Filter>include\RE\FormComponents\TESForm\TESObject\TESBoundObject\TESBoundAnimObject</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSLensFlareRenderData.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSVolumetricLightingRenderData.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSApparatus.h">
       <Filter>include\RE\FormComponents\TESForm\TESObject\TESBoundObject\TESObjectMISC</Filter>
@@ -3564,10 +3567,10 @@
       <Filter>include\RE\FormComponents\TESForm\BGSStoryManagerTreeForm\BGSStoryManagerNodeBase</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESRegionDataManager.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESRegionList.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESRegion.h">
       <Filter>include\RE\FormComponents\TESForm</Filter>
@@ -3654,10 +3657,10 @@
       <Filter>include\RE\FormComponents\TESForm</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ActorMover.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ActorKnowledge.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\IMovementDirectControl.h">
       <Filter>include\RE\Pathfinding\IMovementInterface</Filter>
@@ -3738,10 +3741,10 @@
       <Filter>include\RE\FormComponents\TESForm</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Effect.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\MagicTarget.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\IMovementState.h">
       <Filter>include\RE\Pathfinding\IMovementInterface\IMovementState</Filter>
@@ -3804,7 +3807,7 @@
       <Filter>include\RE\Memory\IMemoryStoreBase\IMemoryStore\IMemoryHeap</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\FormTraits.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ArmorRatingVisitorBase.h">
       <Filter>include\RE\Inventory\ArmorRatingVisitorBase</Filter>
@@ -3873,13 +3876,13 @@
       <Filter>include\RE\Menus\IUIMessageData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\DetectionState.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\DetectionListener.h">
-      <Filter>include\RE\FormComponents\Components\DetectionListener</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\DetectionListener</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\CombatGroupDetectionListener.h">
-      <Filter>include\RE\FormComponents\Components\DetectionListener</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\DetectionListener</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ExtraHealthPerc.h">
       <Filter>include\RE\BSExtraData</Filter>
@@ -4368,25 +4371,25 @@
       <Filter>include\RE\Menus\IMenu</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\IPackageDataAIWorldLocationHandle.h">
-      <Filter>include\RE\FormComponents\Components\IPackageData</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\IPackageData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSNamedPackageData.h">
-      <Filter>include\RE\FormComponents\Components\IPackageData\BGSNamedPackageData</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\IPackageData\BGSNamedPackageData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSPackageDataBool.h">
-      <Filter>include\RE\FormComponents\Components\IPackageData\BGSNamedPackageData</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\IPackageData\BGSNamedPackageData</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSPackageDataPointerTemplate.h">
-      <Filter>include\RE\FormComponents\Components\IPackageData\BGSNamedPackageData\BGSPackageDataPointerTemplate</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\IPackageData\BGSNamedPackageData\BGSPackageDataPointerTemplate</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSPackageDataLocation.h">
-      <Filter>include\RE\FormComponents\Components\IPackageData\BGSNamedPackageData\BGSPackageDataPointerTemplate</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\IPackageData\BGSNamedPackageData\BGSPackageDataPointerTemplate</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\IAIWorldLocationHandle.h">
-      <Filter>include\RE\FormComponents\Components\IAIWorldLocationHandle</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\IAIWorldLocationHandle</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\PackageLocation.h">
-      <Filter>include\RE\FormComponents\Components\IAIWorldLocationHandle</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\IAIWorldLocationHandle</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\NiRefObject.h">
       <Filter>include\RE\NetImmerse\NiRefObject</Filter>
@@ -4794,10 +4797,10 @@
       <Filter>include\RE\NetImmerse\NiRefObject</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\SyncQueueObj.h">
-      <Filter>include\RE\FormComponents\Components\SyncQueueObj</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\SyncQueueObj</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\RefrInteraction.h">
-      <Filter>include\RE\FormComponents\Components\SyncQueueObj</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\SyncQueueObj</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ModelReferenceEffect.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
@@ -5103,7 +5106,7 @@
       <Filter>include\RE\BSHavok</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ActorCause.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSFootstepManager.h">
       <Filter>include\RE\Events</Filter>
@@ -5160,16 +5163,16 @@
       <Filter>include\RE\BSDevices</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSInstancedQuestObjective.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\QuestObjectiveStates.h">
       <Filter>include\RE\FormComponents\Enums</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESQuestStageItem.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESCondition.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSLocalizedStringDL.h">
       <Filter>include\RE\BSCore</Filter>
@@ -5217,7 +5220,7 @@
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiTexture</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSDirectionalAmbientLightingColors.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\InputDevices.h">
       <Filter>include\RE\BSDevices\Enums</Filter>
@@ -5226,10 +5229,10 @@
       <Filter>include\RE\BSSystem</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BipedAnim.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ActorPackage.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\MiddleHighProcessData.h">
       <Filter>include\RE\AI</Filter>
@@ -5238,31 +5241,31 @@
       <Filter>include\RE\FormComponents\Enums</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSEntryPoint.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\AITimeStamp.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\DoNothingUnhandledPolicy.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSResponse.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\IHandlerFunctor.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\HighProcessData.h">
       <Filter>include\RE\AI</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSAnimationSequencer.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\DialogueItem.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ContainerItemExtra.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSResource\FileID.h">
       <Filter>include\RE\BSResource\FileID</Filter>
@@ -5277,7 +5280,7 @@
       <Filter>include\RE\FormComponents\Enums</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Movement.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSMusicTrack.h">
       <Filter>include\RE\BSAudio\BSIMusicTrack\BGSMusicTrack</Filter>
@@ -5292,7 +5295,7 @@
       <Filter>include\RE\BSAudio\BSIMusicTrack\BGSMusicTrack</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\EffectArchetypes.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ImageSpaceModifierInstance.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance</Filter>
@@ -5307,7 +5310,7 @@
       <Filter>include\RE\BSCore</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\InteriorData.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSNiNode.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BSNiNode</Filter>
@@ -5334,10 +5337,10 @@
       <Filter>include\RE\Events</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\DecalData.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSDecalGroup.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\FightReactions.h">
       <Filter>include\RE\FormComponents\Enums</Filter>
@@ -5370,7 +5373,7 @@
       <Filter>include\RE\BSExtraData\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\FactionRank.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\MarkerUsedData.h">
       <Filter>include\RE\BSExtraData\Components</Filter>
@@ -5379,7 +5382,7 @@
       <Filter>include\RE\BSExtraData\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Crime.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSStoryTeller.h">
       <Filter>include\RE\RadiantStory</Filter>
@@ -5460,10 +5463,10 @@
       <Filter>include\RE\Events</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\GridCellArray.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\GridArray.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BGSDecalNode.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode</Filter>
@@ -5634,7 +5637,7 @@
       <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\AITimer.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSTPoint.h">
       <Filter>include\RE\BSCore</Filter>
@@ -5712,10 +5715,10 @@
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry\BSTriShape</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\OwnedCameraEffectController.h">
-      <Filter>include\RE\FormComponents\Components\ReferenceEffectController\OwnedController</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\ReferenceEffectController\OwnedController</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\OwnedController.h">
-      <Filter>include\RE\FormComponents\Components\ReferenceEffectController\OwnedController</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\ReferenceEffectController\OwnedController</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\SummonPlacementEffect.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
@@ -5724,10 +5727,10 @@
       <Filter>include\SKSE</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\MagicCaster.h">
-      <Filter>include\RE\FormComponents\Components\MagicCaster</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\MagicCaster</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ActorMagicCaster.h">
-      <Filter>include\RE\FormComponents\Components\MagicCaster</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components\MagicCaster</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\NonActorMagicCaster.h">
       <Filter>include\RE\BSExtraData</Filter>
@@ -5741,23 +5744,11 @@
     <ClInclude Include="include\RE\BSShaderTextureSet.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\CombatArea.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatArea</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\CombatAreaRadius.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatArea</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\CombatAreaStandard.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatArea</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\CombatManager.h">
       <Filter>include\RE\Combat</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\CombatGroup.h">
       <Filter>include\RE\Combat</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\CombatObject.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\CombatController.h">
       <Filter>include\RE\Combat\CombatController</Filter>
@@ -5771,20 +5762,14 @@
     <ClInclude Include="include\RE\BSShaderPropertyLightData.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\CombatTargetSelectorStandard.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatTargetSelector</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\CombatTargetSelector.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\CombatObject\CombatTargetSelector</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\FORM.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\TESMagicCasterForm.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\ActorTargetCheck.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSAtomic.h">
       <Filter>include\RE\BSCore</Filter>
@@ -5806,6 +5791,30 @@
     </ClInclude>
     <ClInclude Include="include\RE\MouseMoveEvent.h">
       <Filter>include\RE\Events\InputEvent\IDEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSParticleShaderEmitter.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\BSParticleShaderEmitter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSParticleShaderObjectEmitter.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\BSParticleShaderEmitter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatObject.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatArea.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatAreaRadius.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatAreaStandard.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatTargetSelector.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\CombatTargetSelectorStandard.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

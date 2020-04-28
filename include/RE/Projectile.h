@@ -29,24 +29,32 @@ namespace RE
 		inline static constexpr auto RTTI = RTTI_Projectile;
 
 
+		enum class Flags : UInt32
+		{
+			kNone = 0,
+			kHasTrails = 1 << 18,
+			kDisabled = 1 << 25,
+			kUsesDualCastImpactDataSet = 1 << 28
+		};
+
+
 		struct ImpactData
 		{
 		public:
 			// members
-			UInt64						  unk00;		 // 00
-			UInt64						  unk08;		 // 08
-			UInt64						  unk10;		 // 10
-			ObjectRefHandle				  collidee;		 // 18
-			NiPointer<bhkCollisionObject> colObj;		 // 20
-			BGSMaterialType*			  material;		 // 28
-			UInt32						  unk30;		 // 30
-			UInt32						  unk34;		 // 34
-			UInt64						  unk38;		 // 38
-			ImpactResult				  impactResult;	 // 40
-			UInt16						  unk44;		 // 44
-			UInt16						  unk46;		 // 46
-			UInt8						  unk48;		 // 48
-			UInt8						  unk49;		 // 49
+			NiPoint3					  desiredTargetLoc;	   // 00
+			NiPoint3					  negativeVelocity;	   // 0C
+			ObjectRefHandle				  collidee;			   // 18
+			NiPointer<bhkCollisionObject> colObj;			   // 20
+			BGSMaterialType*			  material;			   // 28
+			SInt32						  damageRootNodeType;  // 30
+			UInt32						  unk34;			   // 34
+			UInt64						  unk38;			   // 38
+			ImpactResult				  impactResult;		   // 40
+			UInt16						  unk44;			   // 44
+			UInt16						  unk46;			   // 46
+			UInt8						  unk48;			   // 48
+			UInt8						  unk49;			   // 49
 		};
 		STATIC_ASSERT(sizeof(ImpactData) == 0x50);
 
@@ -115,7 +123,7 @@ namespace RE
 		NiTransform				   unk0A8;			   // 0A8
 		float					   unk0DC;			   // 0DC
 		bhkSimpleShapePhantom*	   unk0E0;			   // 0E0 - smart ptr
-		mutable BSSpinLock		   unk0E8;			   // 0E8
+		mutable BSSpinLock		   lock;			   // 0E8
 		NiPoint3				   velocity;		   // 0F0
 		NiPoint3				   linearVelocity;	   // 0FC
 		void*					   unk108;			   // 108 - smart ptr
@@ -138,7 +146,7 @@ namespace RE
 		float					   power;			   // 188
 		float					   unk18C;			   // 18C
 		float					   range;			   // 190
-		UInt32					   unk194;			   // 194
+		float					   lifeRemaining;	   // 194
 		float					   unk198;			   // 198
 		float					   unk19C;			   // 19C
 		float					   timer;			   // 1A0
@@ -150,7 +158,7 @@ namespace RE
 		float					   distanceMoved;	   // 1C0
 		UInt32					   unk1C4;			   // 1C4
 		float					   unk1C8;			   // 1C8
-		UInt32					   flags;			   // 1CC
+		Flags					   flags;			   // 1CC
 		UInt64					   unk1D0;			   // 1D0
 	};
 	STATIC_ASSERT(sizeof(Projectile) == 0x1D8);

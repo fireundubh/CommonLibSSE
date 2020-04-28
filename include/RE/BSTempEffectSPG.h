@@ -6,6 +6,7 @@
 
 namespace RE
 {
+	class BGSShaderParticleGeometryData;
 	class NiAVObject;
 
 
@@ -28,10 +29,14 @@ namespace RE
 
 
 		// members;
-		UInt64				  unk30;  // 030
-		NiPointer<NiAVObject> unk38;  // 038
-		UInt64				  unk40;  // 040
-		UInt8				  unk48;  // 048
+		BGSShaderParticleGeometryData* data;   // 30
+		NiPointer<NiAVObject>		   unk38;  // 38
+		float						   unk40;  // 40
+		UInt32						   unk44;  // 40
+		UInt8						   unk48;  // 45
+		UInt8						   pad49;  // 49
+		UInt16						   pad4A;  // 4A
+		UInt32						   pad4C;  // 4C
 	};
 	STATIC_ASSERT(sizeof(BSTempEffectSPG) == 0x50);
 }

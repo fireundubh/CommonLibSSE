@@ -16,6 +16,7 @@ namespace RE
 	struct BGSCombatImpactEvent;
 	struct BGSCollisionSoundEvent;
 
+
 	class BGSImpactManager :
 		public BSTEventSink<BGSFootstepEvent>,		  // 00
 		public BSTEventSink<BGSCombatImpactEvent>,	  // 08
@@ -25,7 +26,8 @@ namespace RE
 	public:
 		static BGSImpactManager* GetSingleton();
 
-		bool PlayImpactEffect(TESObjectREFR* ref, BGSImpactDataSet* impactData, const char* nodeName, NiPoint3* dirVec, float pickLength, bool applyNodeRot, bool useNodeLocalRot);
+		bool PlayImpactEffect(TESObjectREFR* ref, BGSImpactDataSet* impactData, const BSFixedString& nodeName, NiPoint3& dirVec, float pickLength, bool applyNodeRot, bool useNodeLocalRot);
+
 
 		BSTArray<void*> unk20;	// 28
 	};

@@ -87,7 +87,7 @@ namespace RE
 		UInt64							unk178;							 // 178
 		UInt64							unk180;							 // 180
 		UInt32							unk188;							 // 188
-		UInt32							unk18C;							 // 18C
+		float							unk18C;							 // 18C
 		UInt64							unk190;							 // 190
 		UInt64							unk198;							 // 198
 		UInt32							unk1A0;							 // 1A0
