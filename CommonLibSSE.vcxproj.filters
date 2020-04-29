@@ -2052,6 +2052,9 @@
     <ClCompile Include="src\RE\MessageBoxData.cpp">
       <Filter>src\RE\Menus\IUIMessageData</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\NiIntegersExtraData.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\PlayerControls.h">
@@ -5815,6 +5818,9 @@
     </ClInclude>
     <ClInclude Include="include\RE\CombatTargetSelectorStandard.h">
       <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSParticleShaderEmitter.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\BSParticleShaderEmitter</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
