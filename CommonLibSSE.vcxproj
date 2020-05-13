@@ -550,6 +550,7 @@
     <ClInclude Include="include\RE\BSScript\MemoryPage.h" />
     <ClInclude Include="include\RE\BSScript\PropertyTypeInfo.h" />
     <ClInclude Include="include\RE\BSScript\PackUnpackImpl.h" />
+    <ClInclude Include="include\RE\BSScript\ReferenceArray.h" />
     <ClInclude Include="include\RE\BSTempEffectDebris.h" />
     <ClInclude Include="include\RE\BSTempEffectGeometryDecal.h" />
     <ClInclude Include="include\RE\BSTempEffectParticle.h" />
