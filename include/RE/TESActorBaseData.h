@@ -102,6 +102,7 @@ namespace RE
 		bool IsEssential() const;
 		bool IsFemale() const;
 		bool IsGhost() const;
+		bool IsInFaction(TESFaction* a_faction) const;
 		bool IsPreset() const;
 		bool IsProtected() const;
 		bool IsSimpleActor() const;

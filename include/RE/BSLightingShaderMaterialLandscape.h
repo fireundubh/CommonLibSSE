@@ -19,12 +19,14 @@ namespace RE
 		virtual ~BSLightingShaderMaterialLandscape();  // 00
 
 		// override (BSLightingShaderMaterialBase)
-		virtual BSShaderMaterial* Create() override;							  // 01
-		virtual void			  CopyMembers(BSShaderMaterial* a_src) override;  // 02
-		virtual Feature			  GetFeature() const override;					  // 06 - { return Feature::kMultiTexLandLODBlend; }
-		virtual void			  ClearTextures(void) override;					  // 09
-		virtual void			  ReceiveValuesFromRootMaterial(void) override;	  // 0A
-		virtual void			  GetTextures(void) override;					  // 0B
+		virtual BSShaderMaterial* Create() override;																												 // 01
+		virtual void			  CopyMembers(BSShaderMaterial* a_src) override;																					 // 02
+		virtual Feature			  GetFeature() const override;																										 // 06 - { return Feature::kMultiTexLandLODBlend; }
+		virtual void			  ClearTextures() override;																											 // 09
+		virtual void			  ReceiveValuesFromRootMaterial(bool a_skinned, bool a_rimLighting, bool a_softLighting, bool a_backLighting, bool a_MSN) override;	 // 0A
+		virtual void			  GetTextures(void) override;																										 // 0B
+
+		static BSLightingShaderMaterialLandscape* CreateMaterial();
 
 
 		// members
@@ -41,6 +43,10 @@ namespace RE
 		float					   terrainTexOffsetY;			// 14C
 		float					   terrainTexFade;				// 150
 		UInt32					   pad154;						// 154
+
+
+	private:
+		BSLightingShaderMaterialLandscape* ctor();
 	};
 	STATIC_ASSERT(sizeof(BSLightingShaderMaterialLandscape) == 0x158);
 }

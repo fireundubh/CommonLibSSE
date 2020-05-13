@@ -33,7 +33,7 @@ namespace RE
 
 
 		// members
-		NiPointer<BSGeometry>			  decal;				// 30
+		NiPointer<BSGeometry>			  skinnedDecal;			// 30
 		NiPointer<BSTriShape>			  attachedShape;		// 38
 		NiPointer<NiNode>				  attachedShapeParent;	// 40
 		NiPointer<NiNode>				  skinnedDecalNode;		// 48

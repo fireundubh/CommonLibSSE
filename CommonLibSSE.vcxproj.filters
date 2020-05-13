@@ -1234,6 +1234,12 @@
     <Filter Include="include\RE\BSSystem\IFormFactory\Components\MagicCaster">
       <UniqueIdentifier>{a045b518-0f20-4b09-89c3-4d25183b5740}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\RE\Color">
+      <UniqueIdentifier>{056a0654-ded4-479f-b6e7-31df69e41386}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\BSSystem\IFormFactory\Components">
+      <UniqueIdentifier>{7ff32a41-0821-4cdc-b86e-850de1c0f722}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\MenuControls.cpp">
@@ -2054,6 +2060,51 @@
     </ClCompile>
     <ClCompile Include="src\RE\NiIntegersExtraData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderMaterialEnvmap.cpp">
+      <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderMaterialEye.cpp">
+      <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderMaterialGlowmap.cpp">
+      <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderMaterialParallax.cpp">
+      <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderMaterialParallaxOcc.cpp">
+      <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderMaterialFacegen.cpp">
+      <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderMaterialHairTint.cpp">
+      <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderMaterialLandscape.cpp">
+      <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderMaterialLODLandscape.cpp">
+      <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderMaterialSnow.cpp">
+      <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderMaterialMultiLayerParallax.cpp">
+      <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSLightingShaderMaterial.cpp">
+      <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\ColorBlending.cpp">
+      <Filter>src\RE\Color</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\NiColor.cpp">
+      <Filter>src\RE\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Color.cpp">
+      <Filter>src\RE\BSSystem\IFormFactory\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -3177,9 +3228,6 @@
       <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\WeatherType.h">
-      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\Color.h">
       <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\PerkEntryVisitor.h">
@@ -4465,9 +4513,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\NiTStringMap.h">
       <Filter>include\RE\NetImmerse\NiTMapBase\NiTMap</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\NiColor.h">
-      <Filter>include\RE\NetImmerse</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\NiFrustum.h">
       <Filter>include\RE\NetImmerse</Filter>
@@ -5812,6 +5857,21 @@
     </ClInclude>
     <ClInclude Include="include\RE\BSParticleShaderEmitter.h">
       <Filter>include\RE\NetImmerse\NiRefObject\BSParticleShaderEmitter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSParticleShaderObjectEmitter.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\BSParticleShaderEmitter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSLightingShaderMaterialLODLandscape.h">
+      <Filter>include\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiColor.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Color.h">
+      <Filter>include\RE\BSSystem\IFormFactory\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSBloodSplatterShaderProperty.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

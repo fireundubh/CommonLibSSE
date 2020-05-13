@@ -36,8 +36,8 @@ namespace RE
 		virtual void			 SaveBinary(NiStream& a_stream) override;			   // 1B
 		virtual bool			 IsEqual(NiObject* a_object) override;				   // 1C - { return false; }
 		virtual void			 PostLinkObject(NiStream& a_stream) override;		   // 1E
-		virtual UInt8			 InitializeGeometry(BSGeometry* a_geometry) override;  // 27
-		virtual UInt8			 InitializeShader(BSGeometry* a_geometry) override;	   // 28
+		virtual bool			 InitializeGeometry(BSGeometry* a_geometry) override;  // 27
+		virtual bool			 InitializeShader(BSGeometry* a_geometry) override;	   // 28
 		virtual void			 Unk_2A(void) override;								   // 2A
 		virtual void			 Unk_2B(void) override;								   // 2B
 		virtual void			 Unk_2C(void) override;								   // 2C

@@ -19,8 +19,8 @@ namespace RE
 		virtual void			  CopyMembers(BSShaderMaterial* a_other) override;	// 02
 		virtual UInt32			  ComputeCRC32(void) override;						// 04
 		virtual Feature			  GetFeature() const override;						// 06 - { return Feature::kFaceGenRGBTint; }
-		virtual void			  SaveBinary(void) override;						// 0C
-		virtual void			  LoadBinary(void) override;						// 0D
+		virtual void			  SaveBinary(NiStream& a_stream) override;			// 0C
+		virtual void			  LoadBinary(NiStream& a_stream) override;			// 0D
 
 		static BSLightingShaderMaterialFacegenTint* CreateMaterial();
 
@@ -28,6 +28,7 @@ namespace RE
 		// members
 		NiColor tintColor;	// A0
 		UInt32	padAC;		// AC
+
 
 	private:
 		BSLightingShaderMaterialFacegenTint* ctor();

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/BSAtomic.h"
 #include "RE/BSTEvent.h"
 #include "RE/BSTHashMap.h"
 
@@ -43,8 +44,8 @@ namespace RE
 
 
 			// members
-			UInt64									 unk60;			// 60
-			BSTHashMap<UInt32, PerThreadErrorCounts> threadErrors;	// 68
+			BSSpinLock								 threadErrorsLock;	// 60
+			BSTHashMap<UInt32, PerThreadErrorCounts> threadErrors;		// 68
 		};
 		STATIC_ASSERT(sizeof(ErrorLogger) == 0x98);
 	}

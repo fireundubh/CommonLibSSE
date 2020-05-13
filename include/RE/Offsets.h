@@ -37,7 +37,6 @@ namespace RE
 			static constexpr REL::ID UpdateWeaponAbility(static_cast<std::uint64_t>(37803));
 			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(260538));
 			// po3
-			static constexpr REL::ID EnableAI(static_cast<std::uint64_t>(36504));
 			static constexpr REL::ID GetSoulLevel(static_cast<std::uint64_t>(37862));
 			static constexpr REL::ID Decapitate(static_cast<std::uint64_t>(36631));
 			static constexpr REL::ID InstantKill(static_cast<std::uint64_t>(36723));
@@ -173,14 +172,85 @@ namespace RE
 
 		namespace BSLightingShaderMaterialBase
 		{
-			static constexpr REL::ID CreateMaterial(static_cast<std::uint64_t>(100016));
-			static constexpr REL::ID CopyBaseMaterial(static_cast<std::uint64_t>(100006));
+			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100004));
+		}
+
+
+		namespace BSLightingShaderMaterial
+		{
+			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(254404));
+		}
+
+
+		namespace BSLightingShaderMaterialEnvmap
+		{
+			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100021));
+		}
+
+
+		namespace BSLightingShaderMaterialEye
+		{
+			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100033));
+		}
+
+
+		namespace BSLightingShaderMaterialFacegen
+		{
+			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100077));
 		}
 
 
 		namespace BSLightingShaderMaterialFacegenTint
 		{
 			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100087));
+		}
+
+
+		namespace BSLightingShaderMaterialGlowmap
+		{
+			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100045));
+		}
+
+
+		namespace BSLightingShaderMaterialHairTint
+		{
+			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100095));
+		}
+
+
+		namespace BSLightingShaderMaterialMultiLayerParallax
+		{
+			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100125));
+		}
+
+
+		namespace BSLightingShaderMaterialLandscape
+		{
+			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100102));
+		}
+
+
+		namespace BSLightingShaderMaterialLODLandscape
+		{
+			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100110));
+		}
+
+
+		namespace BSLightingShaderMaterialParallax
+		{
+			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100055));
+		}
+
+
+		namespace BSLightingShaderMaterialParallaxOcc
+		{
+			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100065));
+		}
+
+
+		namespace BSLightingShaderMaterialSnow
+		{
+			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100118));
 		}
 
 
@@ -909,6 +979,15 @@ namespace RE
 		namespace Sky
 		{
 			static constexpr REL::ID GetSingleton(static_cast<std::uint64_t>(13789));
+		}
+
+
+		namespace SkyrimScript
+		{
+			namespace Logger
+			{
+				static constexpr REL::ID Trace(static_cast<std::uint64_t>(54752));
+			}
 		}
 
 

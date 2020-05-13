@@ -37,6 +37,7 @@ namespace RE
 		NiExtraData*	  GetExtraData(const BSFixedString& a_key) const;
 		NiExtraData*	  GetExtraDataAt(UInt16 a_extraDataIndex) const;
 		UInt16			  GetExtraDataSize() const;
+		bool			  HasExtraData(const BSFixedString& a_key);
 		bool			  InsertExtraData(NiExtraData* a_extra);
 		void			  RemoveAllExtraData();
 		bool			  RemoveExtraData(const BSFixedString& a_key);

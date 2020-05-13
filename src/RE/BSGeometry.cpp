@@ -3,6 +3,7 @@
 #include "RE/BSLightingShaderMaterialFacegenTint.h"
 #include "RE/BSLightingShaderProperty.h"
 #include "RE/BSShaderMaterial.h"
+#include "RE/NiColor.h"
 #include "RE/NiRTTI.h"
 
 
@@ -17,12 +18,12 @@ namespace RE
 		if (effect) {
 			auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
 			if (lightingShader) {
-				auto material = lightingShader->material;
+				auto material = static_cast<BSLightingShaderMaterialBase*>(lightingShader->material);
 				if (material) {
 					if (material->GetFeature() == Feature::kFaceGen) {
 						auto facegenTint = BSLightingShaderMaterialFacegenTint::CreateMaterial();
 						if (facegenTint) {
-							facegenTint->CopyBaseMaterial(static_cast<BSLightingShaderMaterialBase*>(material));
+							facegenTint->CopyBaseMembers(material);
 							lightingShader->SetFlags(Flag::kFace, false);
 							lightingShader->SetFlags(Flag::kFaceGenRGBTint, true);
 							lightingShader->SetMaterial(facegenTint, true);

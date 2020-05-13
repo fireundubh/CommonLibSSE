@@ -138,6 +138,26 @@ namespace RE
 	}
 
 
+	bool NiObjectNET::HasExtraData(const BSFixedString& a_match)
+	{
+		if (a_match.empty() || !extra || extraDataSize == 0) {
+			return false;
+		}
+
+		for (UInt16 i = 0; i < extraDataSize; i++) {
+			auto extraData = extra[i];
+			if (extraData) {
+				std::string name = extraData->GetName().c_str();
+				if (!name.empty() && name.find(a_match.c_str()) != std::string::npos) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
+
 	bool NiObjectNET::InsertExtraData(NiExtraData* a_extra)
 	{
 		if (!a_extra) {

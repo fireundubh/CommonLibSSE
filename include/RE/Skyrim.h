@@ -889,7 +889,6 @@
 #include "RE/Offsets_RTTI.h"
 #include "RE/OldMessageBoxCallback.h"
 #include "RE/PCGamepadType.h"
-
 #include "RE/Events/TESActiveEffectApplyRemoveEvent.h"
 #include "RE/Events/TESCellFullyLoadedEvent.h"
 #include "RE/Events/TESCombatEvent.h"

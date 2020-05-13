@@ -1,13 +1,11 @@
 #pragma once
 
 #include "RE/NiObject.h"
+#include "RE/NiSourceTexture.h"
 
 
 namespace RE
 {
-	class NiSourceTexture;
-
-
 	class BSTextureSet : public NiObject
 	{
 	public:

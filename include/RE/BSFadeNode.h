@@ -46,7 +46,7 @@ namespace RE
 		UInt32 unk144;		 // 144
 		UInt32 unk148;		 // 148
 		float  unk14C;		 // 14C
-		UInt16 unk150;		 // 150
+		UInt16 unk150;		 // 150 - waterHeight?
 		UInt8  unk152;		 // 152
 		UInt8  unk153;		 // 153
 		UInt8  unk154;		 // 154

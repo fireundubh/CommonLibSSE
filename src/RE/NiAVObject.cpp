@@ -155,19 +155,21 @@ namespace RE
 		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl {
 			using State = BSGeometry::States;
 			using Feature = BSShaderMaterial::Feature;
+			using Flag = BSShaderProperty::EShaderPropertyFlag8;
 
 			auto effect = a_geometry->properties[State::kEffect].get();
 			if (effect) {
 				auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
 				if (lightingShader) {
-					auto material = lightingShader->material;
-					if (material && material->GetFeature() == Feature::kFaceGenRGBTint) {
-						auto facegenTint = static_cast<BSLightingShaderMaterialFacegenTint*>(material);
-						facegenTint->tintColor = a_color;
+					auto material = static_cast<BSLightingShaderMaterialBase*>(lightingShader->material);
+					if (material) {
+						if (material->GetFeature() == Feature::kFaceGenRGBTint) {
+							auto facegenTint = static_cast<BSLightingShaderMaterialFacegenTint*>(material);
+							facegenTint->tintColor = a_color;
+						}
 					}
 				}
 			}
-			
 			return BSVisit::BSVisitControl::kContinue;
 		});
 	}
@@ -219,7 +221,7 @@ namespace RE
 					}
 				}
 			}
-			
+
 			return BSVisit::BSVisitControl::kContinue;
 		});
 	}
@@ -229,14 +231,13 @@ namespace RE
 	{
 		auto node = AsNode();
 		if (node) {
-			node->SetAppCulled(a_cull);
 			for (auto& child : node->children) {
 				if (child.get()) {
 					child->SetAppCulled(a_cull);
 				}
 			}
-		} else {
-			SetAppCulled(a_cull);
+			node->SetAppCulled(a_cull);
 		}
+		SetAppCulled(a_cull);
 	}
 }

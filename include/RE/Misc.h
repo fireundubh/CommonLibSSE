@@ -23,6 +23,7 @@ namespace RE
 	namespace Util
 	{
 		void SanitizeTexturePath(std::string& a_path);
+		std::string GetTextureName(std::string& a_path);
 	}
 
 	namespace Papyrus

@@ -1,5 +1,7 @@
 #include "RE/TESActorBaseData.h"
 
+#include "RE/TESFaction.h"
+
 
 namespace RE
 {
@@ -30,6 +32,17 @@ namespace RE
 	bool TESActorBaseData::IsGhost() const
 	{
 		return GetIsGhost();
+	}
+
+
+	bool TESActorBaseData::IsInFaction(TESFaction* a_faction) const
+	{
+		for (auto& faction : factions) {
+			if (faction.faction == a_faction) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 

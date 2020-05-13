@@ -99,6 +99,15 @@ namespace RE
 			a_path = std::regex_replace(a_path, std::regex("^\\\\+"), "");
 			a_path = std::regex_replace(a_path, std::regex(R"(.*?[^\s]textures\\|^textures\\)", std::regex_constants::icase), "");
 		}
+
+		std::string GetTextureName(std::string& a_path)
+		{
+			const int idx = a_path.find_last_of("\\/");
+			if (std::string::npos != idx) {
+				return a_path.substr(idx + 1);
+			}
+			return std::string();
+		}
 	}
 
 

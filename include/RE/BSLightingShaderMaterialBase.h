@@ -10,6 +10,7 @@ namespace RE
 {
 	class BSTextureSet;
 	class NiSourceTexture;
+	class NiStream;
 
 
 	class BSLightingShaderMaterialBase : public BSShaderMaterial
@@ -30,17 +31,18 @@ namespace RE
 		virtual Type			  GetType() const override;							// 07 - { return Type::kLighting; }
 
 		// add
-		virtual void OnLoadTextureSet(UInt64 a_arg1, BSTextureSet* a_textureSet);  // 08
-		virtual void ClearTextures(void);										   // 09
-		virtual void ReceiveValuesFromRootMaterial(void);						   // 0A
-		virtual void GetTextures(void);											   // 0B
-		virtual void SaveBinary(void);											   // 0C
-		virtual void LoadBinary(void);											   // 0D
+		virtual void OnLoadTextureSet(UInt64 a_arg1, BSTextureSet* a_textureSet);															   // 08
+		virtual void ClearTextures();																										   // 09
+		virtual void ReceiveValuesFromRootMaterial(bool a_skinned, bool a_rimLighting, bool a_softLighting, bool a_backLighting, bool a_MSN);  // 0A
+		virtual void GetTextures(void);																										   // 0B
+		virtual void SaveBinary(NiStream& a_stream);																						   // 0C
+		virtual void LoadBinary(NiStream& a_stream);																						   // 0D
 
-		void								 CopyBaseMaterial(BSLightingShaderMaterialBase* other);
 		static BSLightingShaderMaterialBase* CreateMaterial(Feature a_feature);
-		NiPointer<BSTextureSet>				 GetTextureSet() const;
-		void								 SetTextureSet(BSTextureSet* a_textureSet);
+
+		void					CopyBaseMembers(BSLightingShaderMaterialBase* other);
+		NiPointer<BSTextureSet> GetTextureSet() const;
+		void					SetTextureSet(BSTextureSet* a_textureSet);
 
 
 		// members
@@ -61,7 +63,7 @@ namespace RE
 		float					   specularColorScale;				// 8C
 		float					   subSurfaceLightRolloff;			// 90
 		float					   rimLightPower;					// 94
-		BSSpinLock				   unk98;							// 98
+		BSSpinLock				   unk98;							// 98 - lock?
 	};
 	STATIC_ASSERT(sizeof(BSLightingShaderMaterialBase) == 0xA0);
 }

@@ -11,7 +11,7 @@ namespace RE
 	class BSShaderPropertyLightData
 	{
 		BSTArray<BSLight*> lights;	// 00
-		UInt32			   unk18;	// 18
+		SInt32			   unk18;	// 18
 		UInt32			   unk1C;	// 1C
 		UInt8			   unk20;	// 20
 	};

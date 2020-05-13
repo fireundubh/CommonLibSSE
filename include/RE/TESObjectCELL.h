@@ -116,7 +116,8 @@ namespace RE
 			kPublicArea = 1 << 5,
 			kHandChanged = 1 << 6,
 			kShowSky = 1 << 7,
-			kUseSkyLighting = 1 << 8
+			kUseSkyLighting = 1 << 8,
+			kUnk9 = 1 << 9
 		};
 
 

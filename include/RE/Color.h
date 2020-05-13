@@ -7,6 +7,9 @@
 
 namespace RE
 {
+	class NiColor;
+
+
 	struct Color
 	{
 	public:
@@ -53,6 +56,15 @@ namespace RE
 		{}
 
 
+		constexpr Color(UInt32 a_hexValue) noexcept :
+			red((a_hexValue >> 16) & 0xFF),
+			green((a_hexValue >> 8) & 0xFF),
+			blue((a_hexValue) & 0xFF),
+			alpha(0)
+		{}
+
+
+		Color(const NiColor& a_rhs);
 		~Color() noexcept = default;
 
 

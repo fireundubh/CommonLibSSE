@@ -27,6 +27,7 @@
 #include "RE/TESObjectMISC.h"
 #include "RE/TESRace.h"
 #include "RE/TESWorldSpace.h"
+#include "RE/bhkCharacterController.h"
 #include "REL/Relocation.h"
 
 
@@ -162,11 +163,22 @@ namespace RE
 	}
 
 
-	void Actor::EnableAI(bool a_enabled)
+	void Actor::EnableAI(bool a_enable)
 	{
-		using func_t = decltype(&Actor::EnableAI);
-		REL::Offset<func_t> func(Offset::Actor::EnableAI);
-		return func(this, a_enabled);
+		if (a_enable) {
+			boolBits |= Actor::BOOL_BITS::kProcessMe;
+		} else {
+			boolBits &= ~Actor::BOOL_BITS::kProcessMe;
+			if (currentProcess) {
+				auto middleHigh = currentProcess->middleHigh;
+				if (middleHigh) {
+					auto controller = middleHigh->charController.get();
+					if (controller) {
+						controller->SetLinearVelocityImpl(hkVector4());
+					}
+				}
+			}
+		}
 	}
 
 

@@ -16,6 +16,12 @@ namespace RE
 		// override (BSLightingShaderMaterialBase)
 		virtual BSShaderMaterial* Create() override;			// 01
 		virtual Feature			  GetFeature() const override;	// 06 - { return Feature::kDefault; }
+
+		static BSLightingShaderMaterial* CreateMaterial();
+
+
+	private:
+		BSLightingShaderMaterialBase* ctor();
 	};
 	STATIC_ASSERT(sizeof(BSLightingShaderMaterial) == 0xA0);
 }

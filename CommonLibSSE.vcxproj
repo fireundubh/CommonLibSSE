@@ -186,7 +186,19 @@
     <ClCompile Include="src\RE\BSEffectShaderData.cpp" />
     <ClCompile Include="src\RE\BSGraphics\State.cpp" />
     <ClCompile Include="src\RE\BSGeometry.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderMaterial.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderMaterialEnvmap.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderMaterialEye.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderMaterialFacegen.cpp" />
     <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderMaterialGlowmap.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderMaterialHairTint.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderMaterialLandscape.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderMaterialLODLandscape.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderMaterialMultiLayerParallax.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderMaterialParallax.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderMaterialParallaxOcc.cpp" />
+    <ClCompile Include="src\RE\BSLightingShaderMaterialSnow.cpp" />
     <ClCompile Include="src\RE\BSLightingShaderProperty.cpp" />
     <ClCompile Include="src\RE\BSResource\BSSystemFile.cpp" />
     <ClCompile Include="src\RE\BSResource\Location.cpp" />
@@ -202,6 +214,7 @@
     <ClCompile Include="src\RE\BSVisit.cpp" />
     <ClCompile Include="src\RE\BSTaskPool.cpp" />
     <ClCompile Include="src\RE\BSXFlags.cpp" />
+    <ClCompile Include="src\RE\Color.cpp" />
     <ClCompile Include="src\RE\CombatManager.cpp" />
     <ClCompile Include="src\RE\Events\TESHitEvent.cpp" />
     <ClCompile Include="src\RE\ExtraPoison.cpp" />
@@ -218,6 +231,8 @@
     <ClCompile Include="src\RE\Main.cpp" />
     <ClCompile Include="src\RE\MessageBoxData.cpp" />
     <ClCompile Include="src\RE\NiCamera.cpp" />
+    <ClCompile Include="src\RE\ColorBlending.cpp" />
+    <ClCompile Include="src\RE\NiColor.cpp" />
     <ClCompile Include="src\RE\NiInterpolator.cpp" />
     <ClCompile Include="src\RE\NiBooleanExtraData.cpp" />
     <ClCompile Include="src\RE\NiSourceTexture.cpp" />
@@ -499,6 +514,7 @@
     <ClInclude Include="include\RE\BSArchiveHeader.h" />
     <ClInclude Include="include\RE\BSBatchRenderer.h" />
     <ClInclude Include="include\RE\BSBitField.h" />
+    <ClInclude Include="include\RE\BSBloodSplatterShaderProperty.h" />
     <ClInclude Include="include\RE\BSDismemberSkinInstance.h" />
     <ClInclude Include="include\RE\BSDynamicTriShape.h" />
     <ClInclude Include="include\RE\BSEffectShaderData.h" />
@@ -508,6 +524,7 @@
     <ClInclude Include="include\RE\BSGraphics\DepthStencilDepthModes.h" />
     <ClInclude Include="include\RE\BSGraphics\State.h" />
     <ClInclude Include="include\RE\BSGraphics\TextureAddressModes.h" />
+    <ClInclude Include="include\RE\BSLightingShaderMaterialLODLandscape.h" />
     <ClInclude Include="include\RE\BSParticleShaderEmitter.h" />
     <ClInclude Include="include\RE\BSParticleShaderObjectEmitter.h" />
     <ClInclude Include="include\RE\BSShaderPropertyLightData.h" />
@@ -1691,7 +1708,7 @@
     <ClInclude Include="include\SKSE\Stubs.h" />
     <ClInclude Include="include\SKSE\Trampoline.h" />
     <ClInclude Include="include\SKSE\Utilities.h" />
-     <ClInclude Include="include\SKSE\IAT.h" />
+    <ClInclude Include="include\SKSE\IAT.h" />
     <ClInclude Include="include\SKSE\VArgFormatter.h" />
     <ClInclude Include="include\SKSE\Version.h" />
     <ClInclude Include="include\Util.h" />

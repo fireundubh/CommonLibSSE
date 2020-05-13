@@ -152,7 +152,8 @@ namespace RE
 		NiPoint3											  pathingDesiredOrientation;	  // 0AC
 		NiPoint3											  pathingDesiredMovementSpeed;	  // 0B8
 		NiPoint3											  pathingDesiredRotationSpeed;	  // 0C4
-		UInt64												  unk0D0;						  // 0D0
+		UInt32												  unk0D0;						  // 0D0
+		float												  lastBumpDirection;			  // 0D4 - radians
 		ObjectRefHandle										  lastExtDoorActivated;			  // 0D8
 		float												  activationHeight;				  // 0DC
 		RefHandle											  unk0E0;						  // 0E0
