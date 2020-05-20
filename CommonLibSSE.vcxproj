@@ -234,6 +234,7 @@
     <ClCompile Include="src\RE\NiCamera.cpp" />
     <ClCompile Include="src\RE\ColorBlending.cpp" />
     <ClCompile Include="src\RE\NiColor.cpp" />
+    <ClCompile Include="src\RE\NiIntegerExtraData.cpp" />
     <ClCompile Include="src\RE\NiInterpolator.cpp" />
     <ClCompile Include="src\RE\NiBooleanExtraData.cpp" />
     <ClCompile Include="src\RE\NiSourceTexture.cpp" />

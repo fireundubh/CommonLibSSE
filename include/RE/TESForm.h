@@ -230,6 +230,10 @@ namespace RE
 		SInt32				 GetGoldValue() const;
 		const char*			 GetName() const;
 		float				 GetWeight() const;
+		bool				 HasAllKeywords(BGSListForm* a_keywords) const;
+		bool				 HasAllKeywords(const std::vector<BGSKeyword*>& a_keywords) const;
+		bool				 HasKeywords(BGSListForm* a_keywords) const;
+		bool				 HasKeywords(const std::vector<BGSKeyword*>& a_keywords) const;
 		bool				 HasVMAD() const;
 		bool				 HasWorldModel() const noexcept;
 		void				 InitItem();

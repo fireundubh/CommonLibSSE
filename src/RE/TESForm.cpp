@@ -178,6 +178,105 @@ namespace RE
 	}
 
 
+	bool TESForm::HasAllKeywords(BGSListForm* a_keywords) const
+	{
+		auto keywordForm = As<BGSKeywordForm>();
+		if (keywordForm) {
+			bool failed = false;
+			if (!a_keywords->forms.empty()) {
+				for (auto& form : a_keywords->forms) {
+					if (form) {
+						auto keyword = form->As<BGSKeyword>();
+						if (!keyword || !keywordForm->HasKeyword(keyword)) {
+							failed = true;
+							break;
+						}
+					}
+				}
+			}
+			if (a_keywords->scriptAddedTempForms) {
+				for (const auto& formID : *a_keywords->scriptAddedTempForms) {
+					auto keyword = TESForm::LookupByID<BGSKeyword>(formID);
+					if (!keyword || !keywordForm->HasKeyword(keyword)) {
+						failed = true;
+						break;
+					}
+				}
+			}
+			if (failed) {
+				return false;
+			}
+			return true;
+		}
+		return false;
+	}
+
+
+	bool TESForm::HasAllKeywords(const std::vector<BGSKeyword*>& a_keywords) const
+	{
+		auto keywordForm = As<BGSKeywordForm>();
+		if (keywordForm) {
+			if (!a_keywords.empty()) {
+				bool failed = false;
+				for (auto& keyword : a_keywords) {
+					if (keyword && !keywordForm->HasKeyword(keyword)) {
+						failed = true;
+						break;
+					}
+				}
+				if (failed) {
+					return false;
+				}
+			}
+			return true;
+		}
+		return false;
+	}
+
+
+	bool TESForm::HasKeywords(BGSListForm* a_keywords) const
+	{
+		auto keywordForm = As<BGSKeywordForm>();
+		if (keywordForm) {
+			if (!a_keywords->forms.empty()) {
+				for (auto& form : a_keywords->forms) {
+					if (form) {
+						auto keyword = form->As<BGSKeyword>();
+						if (keyword && keywordForm->HasKeyword(keyword)) {
+							return true;
+						}
+					}
+				}
+			}
+			if (a_keywords->scriptAddedTempForms) {
+				for (const auto& formID : *a_keywords->scriptAddedTempForms) {
+					auto keyword = TESForm::LookupByID<BGSKeyword>(formID);
+					if (keyword && keywordForm->HasKeyword(keyword)) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+
+
+	bool TESForm::HasKeywords(const std::vector<BGSKeyword*>& a_keywords) const
+	{
+		if (!a_keywords.empty()) {
+			auto keywordForm = As<BGSKeywordForm>();
+			if (keywordForm) {
+				for (auto& keyword : a_keywords) {
+					if (keyword && keywordForm->HasKeyword(keyword)) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+
+
 	bool TESForm::HasVMAD() const
 	{
 		auto vm = RE::BSScript::Internal::VirtualMachine::GetSingleton();

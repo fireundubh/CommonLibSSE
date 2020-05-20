@@ -2106,6 +2106,15 @@
     <ClCompile Include="src\RE\Color.cpp">
       <Filter>src\RE\BSSystem\IFormFactory\Components</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\BGSDecalManager.cpp">
+      <Filter>src\RE\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\NiStringsExtraData.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\NiIntegerExtraData.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData\NiIntegerExtraData</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\PlayerControls.h">

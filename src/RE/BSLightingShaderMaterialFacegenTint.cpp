@@ -11,6 +11,7 @@ namespace RE
 	{
 		auto material = malloc<BSLightingShaderMaterialFacegenTint>();
 		material->ctor();
+		material->tintColor = NiColor(1.0f, 1.0f, 1.0f);
 		return material;
 	}
 

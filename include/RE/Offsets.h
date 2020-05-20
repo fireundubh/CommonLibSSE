@@ -835,6 +835,12 @@ namespace RE
 		}
 
 
+		namespace NiIntegerExtraData
+		{
+			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286443));
+		}
+
+
 		namespace NiIntegersExtraData
 		{
 			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286448));

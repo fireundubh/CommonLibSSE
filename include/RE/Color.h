@@ -59,7 +59,7 @@ namespace RE
 		constexpr Color(UInt32 a_hexValue) noexcept :
 			red((a_hexValue >> 16) & 0xFF),
 			green((a_hexValue >> 8) & 0xFF),
-			blue((a_hexValue) & 0xFF),
+			blue((a_hexValue)&0xFF),
 			alpha(0)
 		{}
 
@@ -121,6 +121,9 @@ namespace RE
 			assert(a_idx < kTotal);
 			return std::addressof(red)[a_idx];
 		}
+
+		static std::string ColorToString(const Color& a_rhs);
+		static UInt32	   ColorToInt(const Color& a_rhs);
 
 
 		// members

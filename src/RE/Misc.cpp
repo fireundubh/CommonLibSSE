@@ -1,7 +1,12 @@
 #include "RE/Misc.h"
 
+#include "RE/BSTCreateFactoryManager.h"
+#include "RE/BSTDerivedCreator.h"
+#include "RE/GameSettingCollection.h"
 #include "RE/INIPrefSettingCollection.h"
 #include "RE/INISettingCollection.h"
+#include "RE/InterfaceStrings.h"
+#include "RE/MessageBoxData.h"
 #include "RE/NiSmartPointer.h"
 #include "RE/Offsets.h"
 #include "RE/Setting.h"
@@ -76,6 +81,33 @@ namespace RE
 		using func_t = decltype(&PlaySound);
 		REL::Offset<func_t> func(Offset::PlaySound);
 		return func(a_editorID);
+	}
+
+
+	void ShowMessageBox(const std::string& a_message)
+	{
+		auto factoryManager = MessageDataFactoryManager::GetSingleton();
+		auto uiStrHolder = InterfaceStrings::GetSingleton();
+
+		if (factoryManager && uiStrHolder) {
+			auto factory = factoryManager->GetCreator<MessageBoxData>(uiStrHolder->messageBoxData);
+			if (factory) {
+				auto messageBox = factory->Create();
+				if (messageBox) {
+					messageBox->unk4C = 4;
+					messageBox->unk38 = 10;
+					messageBox->bodyText = a_message;
+					auto gameSettings = GameSettingCollection::GetSingleton();
+					if (gameSettings) {
+						auto sOk = gameSettings->GetSetting("sOk");
+						if (sOk) {
+							messageBox->buttonText.push_back(sOk->GetString());
+							messageBox->QueueMessage();
+						}
+					}
+				}
+			}
+		}
 	}
 
 

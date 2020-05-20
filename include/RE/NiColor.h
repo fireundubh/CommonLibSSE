@@ -85,7 +85,7 @@ namespace RE
 		constexpr NiColor(UInt32 a_hexValue) noexcept :
 			red(((a_hexValue >> 16) & 0xFF) / 255.0f),
 			green(((a_hexValue >> 8) & 0xFF) / 255.0f),
-			blue(((a_hexValue) & 0xFF) / 255.0f)
+			blue(((a_hexValue)&0xFF) / 255.0f)
 		{}
 
 
@@ -327,9 +327,11 @@ namespace RE
 			return *this;
 		}
 
-		static std::string ColorToHex(const NiColor& a_rhs);
-		static float	   CalcLuminance(const NiColor& a_src);
 		static NiColor	   Blend(const NiColor& a_src, const NiColor& a_dest, BLEND_MODE a_mode, float a_alpha);
+		static std::string ColorToString(const NiColor& a_rhs);
+		static UInt32	   ColorToInt(const NiColor& a_rhs);
+		static float	   CalcLuminance(const NiColor& a_src);
+		static NiColor	   Mix(const NiColor& a_src, const NiColor& a_dest, float a_percentage);
 
 
 		// members

@@ -213,12 +213,6 @@ namespace RE
 	}
 
 
-	float NiColor::CalcLuminance(const NiColor& a_src)
-	{
-		return 0.2126f * a_src.red + 0.7152f * a_src.green + 0.0722f * a_src.blue;
-	}
-
-
 	NiColor NiColor::Blend(const NiColor& a_src, const NiColor& a_dest, BLEND_MODE a_mode, float a_alpha)
 	{
 		NiColor color;
@@ -293,5 +287,17 @@ namespace RE
 		color = clamp(color, 0.0, 1.0);
 
 		return mix(a_src, color, std::max(0.0f, a_alpha));
+	}
+
+
+	float NiColor::CalcLuminance(const NiColor& a_src)
+	{
+		return 0.2126f * a_src.red + 0.7152f * a_src.green + 0.0722f * a_src.blue;
+	}
+
+
+	NiColor NiColor::Mix(const NiColor& a_src, const NiColor& a_dest, float a_percentage)
+	{
+		return mix(a_src, a_dest, a_percentage);
 	}
 }
