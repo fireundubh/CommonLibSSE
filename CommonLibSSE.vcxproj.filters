@@ -1962,11 +1962,11 @@
     <ClCompile Include="src\SKSE\IAT.cpp">
       <Filter>src\SKSE</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\NiStringsExtraData.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    <ClCompile Include="src\RE\ScrapHeap.cpp">
+      <Filter>src\RE\Memory\IMemoryStoreBase\IMemoryStore</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BGSDecalManager.cpp">
-      <Filter>src\RE\Misc</Filter>
+    <ClCompile Include="src\RE\Inventory3DManager.cpp">
+      <Filter>src\RE\Inventory</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\BSTaskPool.cpp">
       <Filter>src\RE\Misc</Filter>
@@ -5875,6 +5875,9 @@
     </ClInclude>
     <ClInclude Include="include\RE\BSScript\ReferenceArray.h">
       <Filter>include\RE\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Inventory3DManager.h">
+      <Filter>include\RE\Inventory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
