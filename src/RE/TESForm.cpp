@@ -9,7 +9,6 @@
 #include "RE/TESModel.h"
 #include "RE/TESObjectREFR.h"
 #include "RE/TESValueForm.h"
-#include "REL/Relocation.h"
 
 #include "RE/Offsets.h"
 #include "REL/Relocation.h"

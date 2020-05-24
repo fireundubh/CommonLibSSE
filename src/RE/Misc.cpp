@@ -8,10 +8,8 @@
 #include "RE/InterfaceStrings.h"
 #include "RE/MessageBoxData.h"
 #include "RE/NiSmartPointer.h"
-#include "RE/Offsets.h"
 #include "RE/Setting.h"
 #include "RE/TESObjectREFR.h"
-#include "REL/Relocation.h"
 
 #include <string>
 

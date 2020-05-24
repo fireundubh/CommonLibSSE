@@ -14,8 +14,6 @@
 #include "RE/BSLightingShaderMaterialParallaxOcc.h"
 #include "RE/BSLightingShaderMaterialSnow.h"
 #include "RE/BSTextureSet.h"
-#include "RE/Offsets.h"
-#include "REL/Relocation.h"
 
 
 namespace RE

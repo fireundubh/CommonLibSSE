@@ -26,7 +26,7 @@ namespace RE
 		}
 
 
-		//members
+		// members
 		float x;  // 0
 		float y;  // 4
 	};

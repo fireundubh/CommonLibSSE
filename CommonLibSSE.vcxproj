@@ -62,10 +62,10 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;PLUGIN_EXAMPLE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <WarningLevel>EnableAllWarnings</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <ForcedIncludeFiles>ForceInclude.h;SKSE/Logger.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles>SKSE/Impl/PCH.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ExceptionHandling>Sync</ExceptionHandling>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -83,6 +83,7 @@
       <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalOptions>/experimental:external /external:anglebrackets /external:I "$(SolutionDir)/skse64" /external:W0 %(AdditionalOptions)</AdditionalOptions>
+      <PrecompiledHeaderFile>SKSE/Impl/PCH.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
@@ -118,10 +119,10 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;PLUGIN_EXAMPLE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <WarningLevel>EnableAllWarnings</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <ForcedIncludeFiles>ForceInclude.h;SKSE/Logger.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles>SKSE/Impl/PCH.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <OmitFramePointers>
       </OmitFramePointers>
@@ -139,6 +140,7 @@
       <DisableSpecificWarnings>%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalOptions>/experimental:external /external:anglebrackets /external:I "$(SolutionDir)/skse64" /external:W0 %(AdditionalOptions)</AdditionalOptions>
+      <PrecompiledHeaderFile>SKSE/Impl/PCH.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
@@ -171,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\REL\Relocation.cpp" />
+    <ClCompile Include="src\REL\SafeWrite.cpp" />
     <ClCompile Include="src\RE\ActiveEffect.cpp" />
     <ClCompile Include="src\RE\Actor.cpp" />
     <ClCompile Include="src\RE\ActorCause.cpp" />
@@ -209,6 +212,7 @@
     <ClCompile Include="src\RE\BSScript\Internal\VDescTable.cpp" />
     <ClCompile Include="src\RE\BSScript\IVirtualMachine.cpp" />
     <ClCompile Include="src\RE\BSScript\MemoryPage.cpp" />
+    <ClCompile Include="src\RE\BSScript\StackFrame.cpp" />
     <ClCompile Include="src\RE\BSShaderProperty.cpp" />
     <ClCompile Include="src\RE\BSTrishape.cpp" />
     <ClCompile Include="src\RE\BSVisit.cpp" />
@@ -451,11 +455,11 @@
     <ClCompile Include="src\RE\InterfaceStrings.cpp" />
     <ClCompile Include="src\SKSE\API.cpp" />
     <ClCompile Include="src\SKSE\CodeGenerator.cpp" />
+    <ClCompile Include="src\SKSE\Impl\PCH.cpp" />
     <ClCompile Include="src\SKSE\Interfaces.cpp" />
     <ClCompile Include="src\SKSE\Logger.cpp" />
     <ClCompile Include="src\SKSE\RegistrationMap.cpp" />
     <ClCompile Include="src\SKSE\RegistrationSet.cpp" />
-    <ClCompile Include="src\SKSE\SafeWrite.cpp" />
     <ClCompile Include="src\SKSE\IAT.cpp" />
     <ClCompile Include="src\SKSE\Trampoline.cpp" />
     <ClCompile Include="src\SKSE\Utilities.cpp" />
@@ -464,8 +468,9 @@
   <ItemGroup>
     <ClInclude Include="include\ForceInclude.h" />
     <ClInclude Include="include\function_ref.h" />
-    <ClInclude Include="include\Atomic.h" />
     <ClInclude Include="include\REL\Relocation.h" />
+    <ClInclude Include="include\REL\SafeWrite.h" />
+    <ClInclude Include="include\REL\Version.h" />
     <ClInclude Include="include\RE\AbsorbEffect.h" />
     <ClInclude Include="include\RE\AbstractHeap.h" />
     <ClInclude Include="include\RE\ActiveEffectReferenceEffectController.h" />
@@ -1703,6 +1708,9 @@
     <ClInclude Include="include\RE\ZeroOverheadHeap.h" />
     <ClInclude Include="include\SKSE\CodeGenerator.h" />
     <ClInclude Include="include\SKSE\Events.h" />
+    <ClInclude Include="include\SKSE\Impl\Atomic.h" />
+    <ClInclude Include="include\SKSE\Impl\PCH.h" />
+    <ClInclude Include="include\SKSE\Impl\Util.h" />
     <ClInclude Include="include\SKSE\Interfaces.h" />
     <ClInclude Include="include\SKSE\Logger.h" />
     <ClInclude Include="include\SKSE\RegistrationMap.h" />
@@ -1716,7 +1724,6 @@
     <ClInclude Include="include\SKSE\IAT.h" />
     <ClInclude Include="include\SKSE\VArgFormatter.h" />
     <ClInclude Include="include\SKSE\Version.h" />
-    <ClInclude Include="include\Util.h" />
     <ClInclude Include="src\RE\GFxResourceKey.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

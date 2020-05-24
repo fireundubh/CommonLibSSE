@@ -5,10 +5,8 @@
 #include "RE/ExtraDataList.h"
 #include "RE/ExtraTextDisplayData.h"
 #include "RE/GameSettingCollection.h"
-#include "RE/Offsets.h"
 #include "RE/TESBoundObject.h"
 #include "RE/TESSoulGem.h"
-#include "REL/Relocation.h"
 
 
 namespace RE

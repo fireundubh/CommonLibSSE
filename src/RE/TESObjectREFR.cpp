@@ -1,8 +1,5 @@
 #include "RE/TESObjectREFR.h"
 
-#include <cassert>
-#include <limits>
-
 #include "RE/BGSDefaultObjectManager.h"
 #include "RE/BGSKeyword.h"
 #include "RE/BSFixedString.h"
@@ -22,13 +19,12 @@
 #include "RE/NiControllerSequence.h"
 #include "RE/NiRTTI.h"
 #include "RE/NiTimeController.h"
-#include "RE/Offsets.h"
 #include "RE/ProcessLists.h"
 #include "RE/ReferenceEffect.h"
 #include "RE/TESContainer.h"
 #include "RE/TESFaction.h"
 #include "RE/TESNPC.h"
-#include "REL/Relocation.h"
+#include "SKSE/Logger.h"
 
 
 namespace RE
