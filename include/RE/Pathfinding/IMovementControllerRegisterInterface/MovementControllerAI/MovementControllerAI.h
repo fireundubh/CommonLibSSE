@@ -1,8 +1,8 @@
 #pragma once
 
 #include "RE/BSAtomic.h"
-#include "RE/BSIntrusiveRefCounted.h"
-#include "RE/IMovementControllerRegisterInterface.h"
+#include "RE/BSSystem/BSIntrusiveRefCounted.h"
+#include "RE/Pathfinding/IMovementControllerRegisterInterface/IMovementControllerRegisterInterface.h"
 
 
 namespace RE
@@ -58,7 +58,7 @@ namespace RE
 		UInt64			unk0F0;	 // 0F0
 		UInt64			unk0F8;	 // 0F8
 		UInt64			unk100;	 // 100
-		BSReadWriteLock unk108;	 // 108
+		mutable BSReadWriteLock unk108;	 // 108
 		FormID			unk110;	 // 110
 		UInt32			unk114;	 // 114
 		UInt64			unk118;	 // 118

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RE/ActiveEffect.h"
+#include "RE/FormComponents/Components/ActiveEffect/ActiveEffect.h"
 #include "RE/SummonPlacementEffect.h"
 
 

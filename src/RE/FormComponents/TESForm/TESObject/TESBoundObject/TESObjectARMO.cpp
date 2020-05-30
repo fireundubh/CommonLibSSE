@@ -1,4 +1,4 @@
-#include "RE/TESObjectARMO.h"
+#include "RE/FormComponents/TESForm/TESObject/TESBoundObject/TESObjectARMO.h"
 
 #include "RE/TESObjectARMA.h"
 

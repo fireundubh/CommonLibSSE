@@ -1,4 +1,4 @@
-#include "RE/TESActorBaseData.h"
+#include "RE/FormComponents/TESActorBaseData.h"
 
 #include "RE/TESFaction.h"
 

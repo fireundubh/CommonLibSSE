@@ -1,9 +1,9 @@
 #pragma once
 
-#include "RE/AITimer.h"
-#include "RE/ActorPackage.h"
-#include "RE/BSTArray.h"
-#include "RE/BSTList.h"
+#include "RE/FormComponents/Components/AITimer.h"
+#include "RE/FormComponents/Components/ActorPackage.h"
+#include "RE/BSCore/BSTArray.h"
+#include "RE/BSCore/BSTList.h"
 
 
 namespace RE

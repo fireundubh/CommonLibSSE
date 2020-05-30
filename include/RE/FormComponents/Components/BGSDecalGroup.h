@@ -1,11 +1,11 @@
 #pragma once
 
-#include "RE/BSPointerHandle.h"
-#include "RE/BSTArray.h"
-#include "RE/NiColor.h"
-#include "RE/NiMatrix3.h"
-#include "RE/NiPoint3.h"
-#include "RE/NiSmartPointer.h"
+#include "RE/BSCore/BSPointerHandle.h"
+#include "RE/BSCore/BSTArray.h"
+#include "RE/NetImmerse/NiColor.h"
+#include "RE/NetImmerse/NiMatrix3.h"
+#include "RE/NetImmerse/NiPoint3.h"
+#include "RE/NetImmerse/NiSmartPointer.h"
 
 
 namespace RE

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "RE/BSTEvent.h"
-#include "RE/GridCellArray.h"
-#include "RE/ICellAttachDetachEventSource.h"
+#include "RE/BSCore/BSTEvent.h"
+#include "RE/FormComponents/Components/GridCellArray.h"
+#include "RE/FileIO/ICellAttachDetachEventSource/ICellAttachDetachEventSource.h"
 #include "RE/TESObjectCell.h"
 
 
