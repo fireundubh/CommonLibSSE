@@ -22,6 +22,7 @@ namespace RE
 	class BGSAttackData;
 	class DialogueItem;
 	class IAnimationSetCallbackFunctor;
+	class MagicItem;
 	class NiBillboardNode;
 	class NiRefObject;
 	class StandardDetectionListener;
@@ -158,7 +159,7 @@ namespace RE
 		float												  activationHeight;				  // 0DC
 		RefHandle											  unk0E0;						  // 0E0
 		UInt32												  unk0E4;						  // 0E4
-		UInt64												  unk0E8;						  // 0E8
+		MagicItem*											  unk0E8;						  // 0E8
 		BSFixedString										  voiceSubtitle;				  // 0F0
 		float												  unk0F8;						  // 0F8
 		float												  unk0FC;						  // 0FC
@@ -219,7 +220,7 @@ namespace RE
 		NiPointer<BGSAttackData>							  attackData;					  // 258
 		NiPoint3											  locationOffsetByWaterPoint;	  // 260
 		UInt32												  unk26C;						  // 26C
-		UInt64												  unk270;						  // 270
+		TESTopicInfo*										  unk270;						  // 270
 		float												  unk278;						  // 278
 		NiPoint3											  deathForceDirection;			  // 27C
 		float												  deathForce;					  // 288

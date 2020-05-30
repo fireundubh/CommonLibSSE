@@ -1,8 +1,5 @@
 #include "RE/NiIntegerExtraData.h"
 
-#include "RE/Offsets.h"
-#include "REL/Relocation.h"
-
 
 namespace RE
 {

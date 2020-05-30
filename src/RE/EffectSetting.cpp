@@ -1,5 +1,7 @@
 #include "RE/EffectSetting.h"
 
+#include "SKSE/Logger.h"
+
 
 namespace RE
 {
@@ -30,7 +32,7 @@ namespace RE
 
 	BSFixedString EffectSetting::GetArchetypeAsString() const
 	{
-		BSFixedString archetype("");
+		auto archetype = BSFixedString();
 
 		switch (data.archetype) {
 		case Archetype::kValueModifier:

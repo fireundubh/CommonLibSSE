@@ -19,6 +19,22 @@ namespace RE
 	}
 
 
+	bool BGSKeywordForm::HasKeyword(const char* a_formEditorID) const
+	{
+		if (keywords) {
+			for (UInt32 idx = 0; idx < numKeywords; ++idx) {
+				if (keywords[idx]) {
+					if (keywords[idx]->formEditorID == a_formEditorID) {
+						return true;
+					}
+				}
+			}
+		}
+
+		return false;
+	}
+
+
 	std::optional<BGSKeyword*> BGSKeywordForm::GetKeywordAt(UInt32 a_idx) const
 	{
 		if (a_idx < numKeywords) {

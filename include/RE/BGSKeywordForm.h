@@ -26,6 +26,7 @@ namespace RE
 		virtual BGSKeyword* GetDefaultKeyword() const;						// 05 - { return 0; }
 
 		bool					   HasKeyword(FormID a_formID) const;
+		bool					   HasKeyword(const char* a_formEditorID) const;
 		std::optional<BGSKeyword*> GetKeywordAt(UInt32 a_idx) const;
 		UInt32					   GetNumKeywords() const;
 

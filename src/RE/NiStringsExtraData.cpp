@@ -1,38 +1,37 @@
 #include "RE/NiStringsExtraData.h"
+
 #include "RE/NiTCollection.h"
-#include "RE/Offsets.h"
-#include "REL/Relocation.h"
 
 
 namespace RE
 {
-	NiStringsExtraData* NiStringsExtraData::Create(const BSFixedString& name, const BSFixedString* stringData, UInt32 size)
+	NiStringsExtraData* NiStringsExtraData::Create(const std::string& a_name, const std::vector<std::string>& a_strings)
 	{
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiStringsExtraData::Vtbl);
 
 		NiStringsExtraData* data = static_cast<NiStringsExtraData*>(NiExtraData::Create(sizeof(NiStringsExtraData), vtbl.GetAddress()));
-		if (data) {
-			data->name = name;
-			data->size = size;
-			data->value = NiAlloc<char*>(size);
-
-			for (UInt32 i = 0; i < size; i++) {
-				auto string = stringData[i].c_str();
-
-				if (string && *string != '\0') {
-					UInt32 strLength = strlen(string) + 1;
+		if (data) {		
+			data->name = a_name.c_str();
+			data->size = static_cast<UInt32>(a_strings.size());
+			data->value = NiAlloc<char*>(a_strings.size());
+		
+			for (size_t i = 0; i < a_strings.size(); i++) {
+				auto string = a_strings[i];
+				if (!string.empty()) {
+					UInt32 strLength = string.length() + 1;
 					data->value[i] = NiAlloc<char>(strLength);
-					memcpy(data->value[i], string, sizeof(char) * strLength);
+					memcpy(data->value[i], string.c_str(), sizeof(char) * strLength);
 				}
 			}
 		}
 		return data;
 	}
 
-	SInt32 NiStringsExtraData::GetIndexOf(const char* element) const
+
+	SInt32 NiStringsExtraData::GetIndexOf(const std::string& a_element) const
 	{
 		for (UInt32 i = 0; i < size; i++) {
-			if (strcmp(value[i], element) == 0) {
+			if (a_element == value[i]) {
 				return i;
 			}
 		}
@@ -40,10 +39,11 @@ namespace RE
 		return -1;
 	}
 
-	bool NiStringsExtraData::InsertElement(const char* element)
+
+	bool NiStringsExtraData::InsertElement(const std::string& a_element)
 	{
-		if (element && *element != '\0') {
-			SInt32 index = GetIndexOf(element);
+		if (!a_element.empty()) {
+			auto index = GetIndexOf(a_element);
 
 			if (index == -1) {
 				auto oldData = value;
@@ -59,9 +59,9 @@ namespace RE
 				}
 				NiFree(oldData);
 
-				UInt32 strLength = strlen(element) + 1;
+				UInt32 strLength = a_element.length() + 1;
 				value[size - 1] = NiAlloc<char>(strLength);
-				memcpy(value[size - 1], element, sizeof(char) * strLength);
+				memcpy(value[size - 1], a_element.c_str(), sizeof(char) * strLength);
 
 				return true;
 			}
@@ -70,10 +70,11 @@ namespace RE
 		return false;
 	}
 
-	bool NiStringsExtraData::RemoveElement(const char* element)
+
+	bool NiStringsExtraData::RemoveElement(const std::string& a_element)
 	{
-		if (element && *element != '\0') {
-			SInt32 index = GetIndexOf(element);
+		if (!a_element.empty()) {
+			auto index = GetIndexOf(a_element);
 
 			if (index != -1) {
 				auto oldData = value;

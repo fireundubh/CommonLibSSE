@@ -1,8 +1,5 @@
 #include "RE/BGSImpactManager.h"
 
-#include "RE/Offsets.h"
-#include "REL/Relocation.h"
-
 
 namespace RE
 {
@@ -11,6 +8,7 @@ namespace RE
 		REL::Offset<BGSImpactManager**> singleton(Offset::BGSImpactManager::Singleton);
 		return *singleton;
 	}
+
 
 	bool BGSImpactManager::PlayImpactEffect(TESObjectREFR* ref, BGSImpactDataSet* impactData, const BSFixedString& nodeName, NiPoint3& dirVec, float pickLength, bool applyNodeRot, bool useNodeLocalRot)
 	{

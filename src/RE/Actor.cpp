@@ -348,18 +348,20 @@ namespace RE
 	{
 		TESObjectARMO* equipped = nullptr;
 
-		equipped = GetWornArmor(a_slot);
-		if (!equipped) {
-			auto actorBase = GetActorBase();
-			if (actorBase) {
-				equipped = actorBase->skin;
-				auto baseRace = actorBase->race;
-				if (!equipped && baseRace) {
-					equipped = baseRace->skin;
+		if (a_slot != BGSBipedObjectForm::BipedObjectSlot::kNone) {
+			equipped = GetWornArmor(a_slot);
+			if (!equipped) {
+				auto actorBase = GetActorBase();
+				if (actorBase) {
+					equipped = actorBase->skin;
+					auto baseRace = actorBase->race;
+					if (!equipped && baseRace) {
+						equipped = baseRace->skin;
+					}
 				}
 			}
 		}
-
+		
 		return equipped;
 	}
 
@@ -405,26 +407,27 @@ namespace RE
 
 	TESObjectARMO* Actor::GetWornArmor(FormID id)
 	{
-		auto changes = GetInventoryChanges();
+		if (id != 0) {
+			auto changes = GetInventoryChanges();
 
-		if (changes && changes->entryList) {
-			for (auto& entry : *changes->entryList) {
-				if (!entry || !entry->extraLists) {
-					continue;
-				}
-				for (auto& xList : *entry->extraLists) {
-					if (!xList || !xList->GetWorn()) {
+			if (changes && changes->entryList) {
+				for (auto& entry : *changes->entryList) {
+					if (!entry || !entry->extraLists) {
 						continue;
 					}
-					auto object = entry->object;
-					if (!object || !object->IsArmor() || object->formID != id) {
-						continue;
+					for (auto& xList : *entry->extraLists) {
+						if (!xList || !xList->GetWorn()) {
+							continue;
+						}
+						auto object = entry->object;
+						if (!object || !object->IsArmor() || object->formID != id) {
+							continue;
+						}
+						return static_cast<TESObjectARMO*>(object);
 					}
-					return static_cast<TESObjectARMO*>(object);
 				}
 			}
 		}
-
 		return nullptr;
 	}
 

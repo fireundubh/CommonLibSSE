@@ -1240,6 +1240,12 @@
     <Filter Include="src\RE\BSSystem\IFormFactory\Components">
       <UniqueIdentifier>{7ff32a41-0821-4cdc-b86e-850de1c0f722}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight">
+      <UniqueIdentifier>{854fed82-d729-4257-868b-a4bec54baf67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry">
+      <UniqueIdentifier>{375af67d-92f1-4012-92fe-890b9b6d5dc0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\MenuControls.cpp">
@@ -2031,9 +2037,6 @@
     <ClCompile Include="src\RE\BGSImpactManager.cpp">
       <Filter>src\RE\Misc</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BSGeometry.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\BSLightingShaderMaterialFacegenTint.cpp">
       <Filter>src\RE\BSShader\BSShaderMaterial</Filter>
     </ClCompile>
@@ -2042,9 +2045,6 @@
     </ClCompile>
     <ClCompile Include="src\RE\CombatManager.cpp">
       <Filter>src\RE\Combat</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\BSTrishape.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\BSShaderTextureSet.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>
@@ -2111,6 +2111,21 @@
     </ClCompile>
     <ClCompile Include="src\RE\NiIntegerExtraData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData\NiIntegerExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSGeometry.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSTrishape.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSTaskPool.cpp">
+      <Filter>src\RE\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\ActorCause.cpp">
+      <Filter>src\RE\BSSystem\IFormFactory\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\ActiveEffect.cpp">
+      <Filter>src\RE\BSSystem\IFormFactory\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -5744,12 +5759,6 @@
     <ClInclude Include="include\RE\CombatLocation.h">
       <Filter>include\RE\NetImmerse\Components</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\NiLight.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\NiPointLight.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\BSDynamicTriShape.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry\BSTriShape</Filter>
     </ClInclude>
@@ -5893,6 +5902,12 @@
     </ClInclude>
     <ClInclude Include="include\REL\Version.h">
       <Filter>include\REL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiLight.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NiPointLight.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

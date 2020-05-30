@@ -1,6 +1,6 @@
 #include "SKSE/Utilities.h"
 
-#include <string>
+#include "SKSE/Logger.h"
 
 
 namespace SKSE
@@ -60,5 +60,4 @@ namespace SKSE
 
 		return s_configPath.c_str();
 	}
-
 }

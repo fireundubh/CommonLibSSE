@@ -1,31 +1,31 @@
 #include "RE/NiIntegersExtraData.h"
+
 #include "RE/NiTCollection.h"
-#include "RE/Offsets.h"
-#include "REL/Relocation.h"
 
 
 namespace RE
 {
-	NiIntegersExtraData* NiIntegersExtraData::Create(const BSFixedString& name, const SInt32* integer, UInt32 size)
+	NiIntegersExtraData* NiIntegersExtraData::Create(const std::string& a_name, const std::vector<SInt32>& a_integers)
 	{
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiIntegersExtraData::Vtbl);
 		NiIntegersExtraData* data = static_cast<NiIntegersExtraData*>(NiExtraData::Create(sizeof(NiIntegersExtraData), vtbl.GetAddress()));
 
 		if (data) {
-			data->name = name;
-			data->size = size;
+			data->name = a_name.c_str();
+			data->size = static_cast<UInt32>(a_integers.size());
 
-			data->value = NiAlloc<SInt32>(size);
-			memcpy(data->value, integer, size * sizeof(SInt32));
+			data->value = NiAlloc<SInt32>(a_integers.size());
+			memcpy(data->value, a_integers.data(), a_integers.size() * sizeof(SInt32));
 		}
 
 		return data;
 	}
 
-	SInt32 NiIntegersExtraData::GetIndexOf(SInt32 element) const
+
+	SInt32 NiIntegersExtraData::GetIndexOf(SInt32 a_element) const
 	{
 		for (UInt32 i = 0; i < size; i++) {
-			if (value[i] == element) {
+			if (value[i] == a_element) {
 				return i;
 			}
 		}
@@ -33,22 +33,20 @@ namespace RE
 		return -1;
 	}
 
-	bool NiIntegersExtraData::InsertElement(SInt32 element)
+
+	bool NiIntegersExtraData::InsertElement(SInt32 a_element)
 	{
-		auto index = GetIndexOf(element);
+		auto index = GetIndexOf(a_element);
 
 		if (index == -1) {
-			auto temp = NiAlloc<SInt32>(size + 1);
+			auto temp = NiAlloc<SInt32>(++size);
 
-			for (SInt32 i = 0; i < size; i++) {
+			for (SInt32 i = 0; i < size - 1; i++) {
 				temp[i] = value[i];
 			}
-
-			temp[size] = element;
-
+			temp[size - 1] = a_element;
 			NiFree(value);
 			value = temp;
-			size++;
 
 			return true;
 		}
@@ -56,23 +54,21 @@ namespace RE
 		return false;
 	}
 
-	bool NiIntegersExtraData::RemoveElement(SInt32 element)
+
+	bool NiIntegersExtraData::RemoveElement(SInt32 a_element)
 	{
-		auto index = GetIndexOf(element);
+		auto index = GetIndexOf(a_element);
 
 		if (index != -1) {
-			auto temp = NiAlloc<SInt32>(size - 1);
+			auto temp = NiAlloc<SInt32>(--size);
 
-			for (SInt32 i = 0; i < size; i++) {
+			for (SInt32 i = 0; i < size + 1; i++) {
 				if (i != index) {
 					temp[i] = value[i];
 				}
 			}
-
 			NiFree(value);
 			value = temp;
-
-			size--;
 
 			return true;
 		}
