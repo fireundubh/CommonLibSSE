@@ -4991,6 +4991,9 @@
     <ClInclude Include="include\RE\FormComponents\TESWeightForm.h">
       <Filter>include\RE\FormComponents</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\FormComponents\Components\BGSBaseAlias\BGSLocAlias.h">
+      <Filter>include\RE\FormComponents\Components\BGSBaseAlias</Filter>
+    </ClInclude>
     <ClInclude Include="include\RE\FormComponents\Enums\BGSBodyPartDefs.h">
       <Filter>include\RE\FormComponents\Enums</Filter>
     </ClInclude>

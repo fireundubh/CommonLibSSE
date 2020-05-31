@@ -601,6 +601,7 @@
 #include "RE/FormComponents/Components/AttackAnimationArrayMap.h"
 #include "RE/FormComponents/Components/BGSAnimationSequencer.h"
 #include "RE/FormComponents/Components/BGSBaseAlias/BGSBaseAlias.h"
+#include "RE/FormComponents/Components/BGSBaseAlias/BGSLocAlias.h"
 #include "RE/FormComponents/Components/BGSBaseAlias/BGSRefAlias.h"
 #include "RE/FormComponents/Components/BGSDecalGroup.h"
 #include "RE/FormComponents/Components/BGSDirectionalAmbientLightingColors.h"
