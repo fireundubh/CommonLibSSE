@@ -1,7 +1,7 @@
 #pragma once
 
-#include "RE/AITimer.h"
 #include "RE/AITimeStamp.h"
+#include "RE/AITimer.h"
 #include "RE/BSTArray.h"
 #include "RE/CombatLocation.h"
 #include "RE/NiPoint3.h"
@@ -40,10 +40,10 @@ namespace RE
 		AITimeStamp		  unk20;						 // 20
 		AITimeStamp		  unk24;						 // 24
 		AITimeStamp		  unk28;						 // 28
-		AITimer			  unk2C;						 // 2C
-		AITimer			  tauntTimer;					 // 34
-		AITimer			  unk3C;						 // 3C
-		AITimer			  unk44;						 // 44
+		AITimer			  attackDialogueTimer;			 // 2C
+		AITimer			  tauntDialogueTimer;			 // 34
+		AITimer			  bleedOutDialogueTimer;		 // 3C
+		AITimer			  fleeDialogueTimer;			 // 44
 		UInt32			  unk4C;						 // 4C
 		BSTArray<void*>	  unk50;						 // 50
 		AITimeStamp		  unk68;						 // 68
