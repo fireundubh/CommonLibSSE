@@ -2152,7 +2152,6 @@
   <ItemGroup>
     <ClInclude Include="include\SKSE\RegistrationSet.h">
       <Filter>include\SKSE</Filter>
-    </ClInclude>
     <ClInclude Include="include\SKSE\Events.h">
       <Filter>include\SKSE</Filter>
     </ClInclude>
@@ -2347,7 +2346,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\AI\ProcessLists.h">
       <Filter>include\RE\AI</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\AI\AIProcess.h">
       <Filter>include\RE\AI</Filter>
     </ClInclude>

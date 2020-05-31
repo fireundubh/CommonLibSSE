@@ -1,7 +1,5 @@
 #pragma once
 
-#include "function_ref.h"
-
 #include "RE/Animation/IAnimationGraphManagerHolder/IAnimationGraphManagerHolder.h"
 #include "RE/BSCore/BSFixedString.h"
 #include "RE/BSCore/BSPointerHandle.h"
@@ -380,16 +378,16 @@ namespace RE
 		Direction						  GetDirection();
 		const char*						  GetDisplayFullName();
 		InventoryDropMap				  GetDroppedInventory();
-		InventoryDropMap				  GetDroppedInventory(llvm::function_ref<bool(TESBoundObject*)> a_filter);
+		InventoryDropMap				  GetDroppedInventory(std::function<bool(TESBoundObject*)> a_filter);
 		BGSLocation*					  GetEditorLocation() const;
 		bool							  GetEditorLocation(NiPoint3& a_outPos, NiPoint3& a_outRot, TESForm*& a_outWorldOrCell, TESObjectCELL* a_fallback);
 		TESFaction*						  GetFactionOwner();
 		float							  GetHeadingAngle(TESObjectREFR* a_ref);
 		InventoryItemMap				  GetInventory();
-		InventoryItemMap				  GetInventory(llvm::function_ref<bool(TESBoundObject*)> a_filter);
+		InventoryItemMap				  GetInventory(std::function<bool(TESBoundObject*)> a_filter);
 		SInt32							  GetInventoryCount();
 		InventoryCountMap				  GetInventoryCounts();
-		InventoryCountMap				  GetInventoryCounts(llvm::function_ref<bool(TESBoundObject*)> a_filter);
+		InventoryCountMap				  GetInventoryCounts(std::function<bool(TESBoundObject*)> a_filter);
 		InventoryChanges*				  GetInventoryChanges();
 		TESObjectREFR*					  GetLinkedRef(BGSKeyword* a_keyword);
 		REFR_LOCK*						  GetLock() const;
