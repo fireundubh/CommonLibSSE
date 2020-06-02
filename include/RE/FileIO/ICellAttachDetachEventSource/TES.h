@@ -1,9 +1,9 @@
 #pragma once
 
 #include "RE/BSCore/BSTEvent.h"
-#include "RE/FormComponents/Components/GridCellArray.h"
 #include "RE/FileIO/ICellAttachDetachEventSource/ICellAttachDetachEventSource.h"
-#include "RE/TESObjectCell.h"
+#include "RE/FormComponents/Components/GridArray/GridCellArray.h"
+#include "RE/FormComponents/TESForm/TESObjectCELL.h"
 
 
 namespace RE
@@ -137,5 +137,4 @@ namespace RE
 		UInt64						unk2B0;				  // 2B0
 	};
 	STATIC_ASSERT(sizeof(TES) == 0x2B8);
-	static_assert(offsetof(TES, npcDeadCount) == 0x148);
 }

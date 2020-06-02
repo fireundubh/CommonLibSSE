@@ -1,12 +1,12 @@
 #include "RE/Inventory/InventoryEntryData.h"
 
-#include "RE/BGSBaseAlias.h"
-#include "RE/ExtraAliasInstanceArray.h"
-#include "RE/Inventory/ExtraDataList.h"
+#include "RE/BSExtraData/ExtraAliasInstanceArray.h"
 #include "RE/BSExtraData/ExtraTextDisplayData.h"
 #include "RE/BSMain/SettingCollection/GameSettingCollection.h"
+#include "RE/FormComponents/Components/BGSBaseAlias/BGSBaseAlias.h"
 #include "RE/FormComponents/TESForm/TESObject/TESBoundObject/TESBoundObject.h"
 #include "RE/FormComponents/TESForm/TESObject/TESBoundObject/TESObjectMISC/TESSoulGem.h"
+#include "RE/Inventory/ExtraDataList.h"
 
 
 namespace RE

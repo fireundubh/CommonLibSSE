@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RE/BSShaderMaterial.h"
+#include "RE/BSShader/BSShaderMaterial/BSShaderMaterial.h"
 #include "RE/NetImmerse/NiBound.h"
 #include "RE/NetImmerse/NiColor.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiObjectNET.h"

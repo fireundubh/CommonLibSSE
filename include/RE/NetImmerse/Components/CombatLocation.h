@@ -1,7 +1,7 @@
 #pragma once
 
-#include "RE/NiPoint3.h"
-#include "RE/TESForm.h"
+#include "RE/NetImmerse/NiPoint3.h"
+#include "RE/FormComponents/TESForm/TESForm.h"
 
 
 namespace RE

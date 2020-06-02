@@ -18,13 +18,13 @@
 #include "RE/NetImmerse/NiRefObject/NiObject/NiTimeController/NiControllerManager.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiControllerSequence.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiTimeController/NiTimeController.h"
-#include "RE/ProcessLists.h"
-#include "RE/ReferenceEffect.h"
+#include "RE/AI/ProcessLists.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/BSTempEffect/ReferenceEffect/ReferenceEffect.h"
 #include "RE/FormComponents/TESContainer.h"
 #include "RE/FormComponents/TESForm/TESFaction.h"
 #include "RE/FormComponents/TESForm/TESObject/TESBoundObject/TESBoundAnimObject/TESActorBase/TESNPC.h"
 #include "SKSE/Logger.h"
-#include "RE/NiRTTI.h"
+#include "RE/NetImmerse/NiRTTI.h"
 
 
 namespace RE

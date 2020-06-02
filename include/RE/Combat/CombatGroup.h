@@ -1,10 +1,10 @@
 #pragma once
 
-#include "RE/AITimeStamp.h"
-#include "RE/AITimer.h"
-#include "RE/BSPointerHandle.h"
-#include "RE/CombatGroupDetectionListener.h"
-#include "RE/CombatLocation.h"
+#include "RE/BSCore/BSPointerHandle.h"
+#include "RE/FormComponents/Components/AITimeStamp.h"
+#include "RE/FormComponents/Components/AITimer.h"
+#include "RE/FormComponents/Components/DetectionListener/CombatGroupDetectionListener.h"
+#include "RE/NetImmerse/Components/CombatLocation.h"
 
 
 namespace RE

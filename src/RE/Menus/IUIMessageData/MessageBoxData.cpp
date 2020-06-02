@@ -1,4 +1,4 @@
-#include "RE/MessageBoxData.h"
+#include "RE/Menus/IUIMessageData/MessageBoxData.h"
 
 
 namespace RE

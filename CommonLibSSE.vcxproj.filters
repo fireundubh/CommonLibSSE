@@ -1249,6 +1249,9 @@
     <Filter Include="src\RE\FormComponents\BGSBaseAlias">
       <UniqueIdentifier>{9adca6ac-b148-4c3f-963e-bd2e658afb80}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\RE\FormComponents\Components\GridArray">
+      <UniqueIdentifier>{7f3f3644-e1a0-48eb-9e1d-bb0ec3ce2e16}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\SKSE\RegistrationSet.cpp">
@@ -2127,7 +2130,7 @@
     <ClCompile Include="src\RE\FormComponents\TESForm\BGSStoryManagerTreeForm\TESQuest.cpp">
       <Filter>src\RE\FormComponents\TESForm\BGSStoryManagerTreeForm</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\FormComponents\BGSBaseAlias.cpp">
+    <ClCompile Include="src\RE\FormComponents\BGSBaseAlias\BGSBaseAlias.cpp">
       <Filter>src\RE\FormComponents\BGSBaseAlias</Filter>
     </ClCompile>
   </ItemGroup>
@@ -5714,12 +5717,6 @@
     <ClInclude Include="include\RE\FormComponents\Components\FormTraits.h">
       <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\FormComponents\Components\GridArray.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\FormComponents\Components\GridCellArray.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\FormComponents\Components\IHandlerFunctor.h">
       <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
@@ -5905,6 +5902,12 @@
     </ClInclude>
     <ClInclude Include="include\RE\FormComponents\Components\BGSEntryPointFunctionData\BGSEntryPointFunctionDataText.h">
       <Filter>include\RE\FormComponents\Components\BGSEntryPointFunctionData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\FormComponents\Components\GridArray\GridArray.h">
+      <Filter>include\RE\FormComponents\Components\GridArray</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\FormComponents\Components\GridArray\GridCellArray.h">
+      <Filter>include\RE\FormComponents\Components\GridArray</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

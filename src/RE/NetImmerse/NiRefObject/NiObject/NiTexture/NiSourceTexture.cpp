@@ -1,4 +1,4 @@
-#include "RE/NiSourceTexture.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiTexture/NiSourceTexture.h"
 
 
 namespace RE

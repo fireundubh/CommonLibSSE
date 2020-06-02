@@ -1,4 +1,4 @@
-#include "RE/BSLightingShaderMaterialSnow.h"
+#include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialSnow.h"
 
 
 namespace RE

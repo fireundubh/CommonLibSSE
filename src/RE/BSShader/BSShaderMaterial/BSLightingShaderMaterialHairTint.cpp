@@ -1,4 +1,4 @@
-#include "RE/BSLightingShaderMaterialHairTint.h"
+#include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialHairTint.h"
 
 
 namespace RE

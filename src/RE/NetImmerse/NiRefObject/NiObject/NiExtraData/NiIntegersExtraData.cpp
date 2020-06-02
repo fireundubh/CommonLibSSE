@@ -1,6 +1,6 @@
-#include "RE/NiIntegersExtraData.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiExtraData/NiIntegersExtraData.h"
 
-#include "RE/NiTCollection.h"
+#include "RE/NetImmerse/NiTCollection.h"
 
 
 namespace RE

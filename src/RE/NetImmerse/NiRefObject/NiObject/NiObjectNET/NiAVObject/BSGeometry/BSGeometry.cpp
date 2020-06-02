@@ -1,10 +1,10 @@
-#include "RE/BSGeometry.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/BSGeometry/BSGeometry.h"
 
-#include "RE/BSLightingShaderMaterialFacegenTint.h"
-#include "RE/BSLightingShaderProperty.h"
-#include "RE/BSShaderMaterial.h"
-#include "RE/NiColor.h"
-#include "RE/NiRTTI.h"
+#include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialFacegenTint.h"
+#include "RE/BSShader/BSShaderMaterial/BSShaderMaterial.h"
+#include "RE/NetImmerse/NiColor.h"
+#include "RE/NetImmerse/NiRTTI.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/BSShaderProperty/BSLightingShaderProperty.h"
 
 
 namespace RE

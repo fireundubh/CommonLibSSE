@@ -1,4 +1,4 @@
-#include "RE/BSLightingShaderMaterialLODLandscape.h"
+#include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialLODLandscape.h"
 
 
 namespace RE

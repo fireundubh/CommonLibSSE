@@ -1,4 +1,4 @@
-#include "RE/BSLightingShaderMaterialParallax.h"
+#include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialParallax.h"
 
 
 namespace RE

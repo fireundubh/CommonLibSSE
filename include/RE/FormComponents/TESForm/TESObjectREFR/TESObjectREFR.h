@@ -13,7 +13,7 @@
 #include "RE/FormComponents/Enums/FormTypes.h"
 #include "RE/Animation/IAnimationGraphManagerHolder/IAnimationGraphManagerHolder.h"
 #include "RE/FormComponents/Enums/MagicSystem.h"
-#include "RE/Movement.h"
+#include "RE/FormComponents/Components/Movement.h"
 #include "RE/NetImmerse/NiPoint3.h"
 #include "RE/NetImmerse/NiSmartPointer.h"
 #include "RE/FormComponents/TESForm/TESForm.h"

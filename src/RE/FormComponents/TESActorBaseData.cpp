@@ -1,6 +1,6 @@
 #include "RE/FormComponents/TESActorBaseData.h"
 
-#include "RE/TESFaction.h"
+#include "RE/FormComponents/TESForm/TESFaction.h"
 
 
 namespace RE
@@ -37,7 +37,7 @@ namespace RE
 
 	bool TESActorBaseData::IsInFaction(TESFaction* a_faction) const
 	{
-		for (auto& faction : factions) {
+		for (const auto& faction : factions) {
 			if (faction.faction == a_faction) {
 				return true;
 			}

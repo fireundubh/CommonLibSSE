@@ -1,4 +1,4 @@
- #include "RE/BSLightingShaderMaterialEnvmap.h"
+ #include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialEnvmap.h"
 
 
 namespace RE

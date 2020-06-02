@@ -1,10 +1,10 @@
 #pragma once
 
-#include "RE/BSAtomic.h"
-#include "RE/BSTArray.h"
-#include "RE/CombatGroup.h"
-#include "RE/NiSmartPointer.h"
-#include "RE/NiTArray.h"
+#include "RE/BSCore/BSAtomic.h"
+#include "RE/BSCore/BSTArray.h"
+#include "RE/Combat/CombatGroup.h"
+#include "RE/NetImmerse/NiSmartPointer.h"
+#include "RE/NetImmerse/NiTArray.h"
 
 
 namespace RE

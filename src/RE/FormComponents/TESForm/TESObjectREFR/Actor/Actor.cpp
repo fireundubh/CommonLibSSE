@@ -5,14 +5,14 @@
 #include "RE/FormComponents/TESForm/BGSColorForm.h"
 #include "RE/FormComponents/TESForm/BGSDefaultObjectManager.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiExtraData/BSFaceGenAnimationData.h"
-#include "RE/BSFaceGenNiNode.h"
-#include "RE/BSGeometry.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiNode/BSFaceGenNiNode.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/BSGeometry/BSGeometry.h"
 #include "RE/BSExtraData/ExtraCanTalkToPlayer.h"
 #include "RE/BSExtraData/ExtraFactionChanges.h"
 #include "RE/FormComponents/Components/FormTraits.h"
 #include "RE/AI/HighProcessData.h"
 #include "RE/Inventory/InventoryEntryData.h"
-#include "RE/InventoryChanges.h"
+#include "RE/Inventory/InventoryChanges.h"
 #include "RE/AI/MiddleHighProcessData.h"
 #include "RE/Misc/Misc.h"
 #include "RE/NetImmerse/NiColor.h"
@@ -24,7 +24,7 @@
 #include "RE/FormComponents/TESForm/TESObject/TESBoundObject/TESObjectMISC/TESObjectMISC.h"
 #include "RE/FormComponents/TESForm/TESRace.h"
 #include "RE/FormComponents/TESForm/TESWorldSpace.h"
-#include "RE/bhkCharacterController.h"
+#include "RE/NetImmerse/NiRefObject/bhkCharacterController.h"
 
 
 namespace RE

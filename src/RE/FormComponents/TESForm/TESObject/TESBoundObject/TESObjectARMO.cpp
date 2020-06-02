@@ -1,6 +1,6 @@
 #include "RE/FormComponents/TESForm/TESObject/TESBoundObject/TESObjectARMO.h"
 
-#include "RE/TESObjectARMA.h"
+#include "RE/FormComponents/TESForm/TESObject/TESObjectARMA.h"
 
 
 namespace RE

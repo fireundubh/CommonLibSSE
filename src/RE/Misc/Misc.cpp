@@ -1,17 +1,15 @@
-#include "RE/Misc.h"
+#include "RE/Misc/Misc.h"
 
-#include "RE/BSTCreateFactoryManager.h"
-#include "RE/BSTDerivedCreator.h"
-#include "RE/GameSettingCollection.h"
-#include "RE/INIPrefSettingCollection.h"
-#include "RE/INISettingCollection.h"
-#include "RE/InterfaceStrings.h"
-#include "RE/MessageBoxData.h"
-#include "RE/NiSmartPointer.h"
-#include "RE/Setting.h"
-#include "RE/TESObjectREFR.h"
-
-#include <string>
+#include "RE/BSCore/BSTCreateFactoryManager.h"
+#include "RE/BSCore/IBSTCreator/BSTDerivedCreator.h"
+#include "RE/BSMain/Setting/Setting.h"
+#include "RE/BSMain/SettingCollection/GameSettingCollection.h"
+#include "RE/BSMain/SettingCollection/INIPrefSettingCollection.h"
+#include "RE/BSMain/SettingCollection/INISettingCollection.h"
+#include "RE/FormComponents/TESForm/TESObjectREFR/TESObjectREFR.h"
+#include "RE/Menus/IUIMessageData/MessageBoxData.h"
+#include "RE/Menus/InterfaceStrings.h"
+#include "RE/NetImmerse/NiSmartPointer.h"
 
 
 namespace RE

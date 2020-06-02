@@ -3,13 +3,13 @@
 #include "RE/BSCore/BSAtomic.h"
 #include "RE/BSShader/BSShaderMaterial/BSShaderMaterial.h"
 #include "RE/NetImmerse/NiColor.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiTexture/NiSourceTexture.h"
 #include "RE/NetImmerse/NiSmartPointer.h"
 
 
 namespace RE
 {
 	class BSTextureSet;
-	class NiSourceTexture;
 	class NiStream;
 
 
@@ -63,7 +63,7 @@ namespace RE
 		float					   specularColorScale;				// 8C
 		float					   subSurfaceLightRolloff;			// 90
 		float					   rimLightPower;					// 94
-		mutable BSSpinLock				   unk98;							// 98 - lock?
+		mutable BSSpinLock		   unk98;							// 98 - lock?
 	};
 	STATIC_ASSERT(sizeof(BSLightingShaderMaterialBase) == 0xA0);
 }

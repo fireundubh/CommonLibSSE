@@ -1,4 +1,4 @@
-#include "RE/FaceGen.h"
+#include "RE/Misc/FaceGen.h"
 
 
 namespace RE

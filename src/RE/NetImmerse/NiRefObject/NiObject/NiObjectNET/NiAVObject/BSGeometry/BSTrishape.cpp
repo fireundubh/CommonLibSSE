@@ -1,4 +1,4 @@
-#include "RE/BSTrishape.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/BSGeometry/BSTriShape/BSTriShape.h"
 
 
 namespace RE

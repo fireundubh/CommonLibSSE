@@ -1,4 +1,4 @@
-#include "RE/CombatManager.h"
+#include "RE/Combat/CombatManager.h"
 
 
 namespace RE

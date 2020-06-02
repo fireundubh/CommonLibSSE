@@ -1,4 +1,4 @@
-#include "RE/BSLightingShaderMaterialEye.h"
+#include "RE/BSSHader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialEye.h"
 
 
 namespace RE

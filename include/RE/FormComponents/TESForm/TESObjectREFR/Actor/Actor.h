@@ -6,7 +6,7 @@
 #include "RE/FormComponents/Components/ActorValueOwner.h"
 #include "RE/FormComponents/Enums/ActorValues.h"
 #include "RE/FormComponents/Components/BGSPerkEntry/BGSEntryPointPerkEntry.h"
-#include "RE/BGSBipedObjectForm.h"
+#include "RE/FormComponents/BGSBipedObjectForm.h"
 #include "RE/BSCore/BSPointerHandle.h"
 #include "RE/BSCore/BSPointerHandleSmartPointer.h"
 #include "RE/BSCore/BSTArray.h"

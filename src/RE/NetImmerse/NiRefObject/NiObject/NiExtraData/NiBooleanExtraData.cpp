@@ -1,4 +1,4 @@
-#include "RE/NiBooleanExtraData.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiExtraData/NiBooleanExtraData.h"
 
 
 namespace RE

@@ -291,7 +291,7 @@
     <ClCompile Include="src\RE\FileIO\TESDataHandler.cpp" />
     <ClCompile Include="src\RE\FileIO\TESFile.cpp" />
     <ClCompile Include="src\RE\FormComponents\ActorValueOwner.cpp" />
-    <ClCompile Include="src\RE\FormComponents\BGSBaseAlias.cpp" />
+    <ClCompile Include="src\RE\FormComponents\BGSBaseAlias\BGSBaseAlias.cpp" />
     <ClCompile Include="src\RE\FormComponents\BGSBipedObjectForm.cpp" />
     <ClCompile Include="src\RE\FormComponents\BGSEntryPointFunctionDataActivateChoice.cpp" />
     <ClCompile Include="src\RE\FormComponents\BGSEntryPointPerkEntry.cpp" />
@@ -1086,8 +1086,8 @@
     <ClInclude Include="include\RE\FormComponents\Components\FactionRank.h" />
     <ClInclude Include="include\RE\FormComponents\Components\FORM.h" />
     <ClInclude Include="include\RE\FormComponents\Components\FormTraits.h" />
-    <ClInclude Include="include\RE\FormComponents\Components\GridArray.h" />
-    <ClInclude Include="include\RE\FormComponents\Components\GridCellArray.h" />
+    <ClInclude Include="include\RE\FormComponents\Components\GridArray\GridArray.h" />
+    <ClInclude Include="include\RE\FormComponents\Components\GridArray\GridCellArray.h" />
     <ClInclude Include="include\RE\FormComponents\Components\IAIWorldLocationHandle\IAIWorldLocationHandle.h" />
     <ClInclude Include="include\RE\FormComponents\Components\IAIWorldLocationHandle\PackageLocation.h" />
     <ClInclude Include="include\RE\FormComponents\Components\IHandlerFunctor.h" />

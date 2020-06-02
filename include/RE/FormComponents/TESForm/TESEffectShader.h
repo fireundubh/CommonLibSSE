@@ -4,7 +4,7 @@
 #include "RE/FormComponents/Enums/FormTypes.h"
 #include "RE/FormComponents/TESForm/TESForm.h"
 #include "RE/FormComponents/TESTexture/TESTexture.h"
-#include "RE/NiSmartPointer.h"
+#include "RE/NetImmerse/NiSmartPointer.h"
 
 
 namespace RE

@@ -1,4 +1,4 @@
-#include "RE/BGSImpactManager.h"
+#include "RE/Events/BGSImpactManager.h"
 
 
 namespace RE

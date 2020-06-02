@@ -1,6 +1,6 @@
-#include "RE/BSLightingShaderMaterialFacegenTint.h"
+#include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialFacegenTint.h"
 
-#include "RE/NiColor.h"
+#include "RE/NetImmerse/NiColor.h"
 
 
 namespace RE

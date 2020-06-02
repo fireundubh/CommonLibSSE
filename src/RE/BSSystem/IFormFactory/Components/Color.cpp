@@ -1,6 +1,6 @@
-#include "RE/Color.h"
+#include "RE/FormComponents/Components/Color.h"
 
-#include "RE/NiColor.h"
+#include "RE/NetImmerse/NiColor.h"
 
 
 namespace RE

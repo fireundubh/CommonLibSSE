@@ -1,7 +1,7 @@
 #pragma once
 
 #include "RE/BSShader/BSEffectShaderData.h"
-#include "RE/BSShaderPropertyLightData.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/BSShaderProperty/BSShaderPropertyLightData.h"
 #include "RE/BSCore/BSTSmartPointer.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/NiShadeProperty.h"
 

@@ -1,4 +1,4 @@
-#include "RE/BSLightingShaderProperty.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/BSShaderProperty/BSLightingShaderProperty.h"
 
 
 namespace RE

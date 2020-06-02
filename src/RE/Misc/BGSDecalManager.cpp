@@ -1,4 +1,4 @@
-#include "RE/BGSDecalManager.h"
+#include "RE/Misc/BGSDecalManager.h"
 
 
 namespace RE

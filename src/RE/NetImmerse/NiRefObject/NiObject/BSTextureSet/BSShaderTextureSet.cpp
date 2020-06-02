@@ -1,4 +1,4 @@
-#include "RE/BSShaderTextureSet.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/BSTextureSet/BSShaderTextureSet.h"
 
 
 namespace RE

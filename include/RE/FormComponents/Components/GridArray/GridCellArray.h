@@ -1,12 +1,14 @@
 #pragma once
 
-#include "RE/GridArray.h"
-#include "RE/NiPoint3.h"
+#include "RE/FormComponents/Components/GridArray/GridArray.h"
+
+#include "RE/NetImmerse/NiPoint3.h"
 
 
 namespace RE
 {
 	class TESObjectCELL;
+
 
 	class GridCellArray : public GridArray
 	{

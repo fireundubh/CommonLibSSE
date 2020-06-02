@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RE/BSTextureSet.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/BSTextureSet/BSTextureSet.h"
 
 
 namespace RE

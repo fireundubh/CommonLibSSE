@@ -1,4 +1,4 @@
-#include "RE/TESSpellList.h"
+#include "RE/FormComponents/TESSpellList.h"
 
 
 namespace RE

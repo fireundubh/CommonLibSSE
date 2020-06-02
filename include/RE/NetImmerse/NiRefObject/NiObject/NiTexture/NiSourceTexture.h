@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RE/BSFixedString.h"
+#include "RE/BSCore/BSFixedString.h"
 #include "RE/NetImmerse/NiSmartPointer.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiTexture/NiTexture.h"
 
