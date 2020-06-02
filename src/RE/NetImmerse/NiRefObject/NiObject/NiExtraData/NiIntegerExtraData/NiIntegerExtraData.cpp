@@ -7,7 +7,7 @@ namespace RE
 	{
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiIntegerExtraData::Vtbl);
 
-		NiIntegerExtraData* data = static_cast<NiIntegerExtraData*>(NiExtraData::Create(sizeof(NiIntegerExtraData), vtbl.GetAddress()));
+		auto data = static_cast<NiIntegerExtraData*>(NiExtraData::Create(sizeof(NiIntegerExtraData), vtbl.address()));
 		if (data) {
 			data->name = name;
 			data->value = value;

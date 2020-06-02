@@ -12,7 +12,7 @@ namespace RE
 		std::memset(memory, 0, size);
 		BSLightingShaderMaterial* material = (BSLightingShaderMaterial*)memory;
 		material->ctor();
-		((std::uintptr_t*)memory)[0] = vtbl.GetAddress();
+		((std::uintptr_t*)memory)[0] = vtbl.address();
 
 		return material;
 	}

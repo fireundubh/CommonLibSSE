@@ -724,9 +724,6 @@
     <ClCompile Include="src\RE\Sky\Sky.cpp">
       <Filter>src\RE\Sky</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\Skyrim.cpp">
-      <Filter>src\RE</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\SkyrimScript\SkyrimVM.cpp">
       <Filter>src\RE\SkyrimScript</Filter>
     </ClCompile>
@@ -3527,9 +3524,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\BSResource\StreamBase\Stream\Components\LooseFileStreamBase.h">
       <Filter>include\RE\BSResource\StreamBase\Stream\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\FormComponents\Components\MagicCaster.h">
-      <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\FormComponents\Components\MagicCaster\MagicCaster.h">
       <Filter>include\RE\FormComponents\Components\MagicCaster</Filter>

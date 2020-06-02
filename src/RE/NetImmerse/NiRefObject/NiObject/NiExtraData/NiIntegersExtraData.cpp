@@ -8,7 +8,7 @@ namespace RE
 	NiIntegersExtraData* NiIntegersExtraData::Create(const std::string& a_name, const std::vector<SInt32>& a_integers)
 	{
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiIntegersExtraData::Vtbl);
-		NiIntegersExtraData* data = static_cast<NiIntegersExtraData*>(NiExtraData::Create(sizeof(NiIntegersExtraData), vtbl.GetAddress()));
+		auto data = static_cast<NiIntegersExtraData*>(NiExtraData::Create(sizeof(NiIntegersExtraData), vtbl.address()));
 
 		if (data) {
 			data->name = a_name.c_str();

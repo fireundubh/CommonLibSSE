@@ -852,7 +852,6 @@
     <ClInclude Include="include\RE\FormComponents\Components\IProcedureTreeItem\BGSProcedureTreeConditionalItem\BGSProcedureTreeConditionalItem.h" />
     <ClInclude Include="include\RE\FormComponents\Components\IProcedureTreeItem\BGSProcedureTreeConditionalItem\BGSProcedureTreeProcedure.h" />
     <ClInclude Include="include\RE\FormComponents\Components\IProcedureTreeItem\IProcedureTreeItem.h" />
-    <ClInclude Include="include\RE\FormComponents\Components\MagicCaster.h" />
     <ClInclude Include="include\RE\FormComponents\Components\MagicCaster\ActorMagicCaster.h" />
     <ClInclude Include="include\RE\FormComponents\Components\MagicCaster\MagicCaster.h" />
     <ClInclude Include="include\RE\FormComponents\Components\MagicTarget.h" />
@@ -1732,7 +1731,6 @@
     <ClCompile Include="src\RE\Scaleform\GRenderer\GViewport.cpp" />
     <ClCompile Include="src\RE\Scaleform\GStd\GStd.cpp" />
     <ClCompile Include="src\RE\Scaleform\GString\GString.cpp" />
-    <ClCompile Include="src\RE\Skyrim.cpp" />
     <ClCompile Include="src\RE\SkyrimScript\SkyrimVM.cpp" />
     <ClCompile Include="src\RE\Sky\Sky.cpp" />
     <ClCompile Include="src\SKSE\API.cpp" />
