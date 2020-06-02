@@ -1,6 +1,5 @@
 #include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialBase.h"
 
-#include "RE/NetImmerse/NiRefObject/NiObject/BSTextureSet/BSTextureSet.h"
 #include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterial.h"
 #include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialEnvmap.h"
 #include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialEye.h"
@@ -14,6 +13,7 @@
 #include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialParallax.h"
 #include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialParallaxOcc.h"
 #include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialSnow.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/BSTextureSet/BSTextureSet.h"
 
 
 namespace RE
@@ -37,7 +37,7 @@ namespace RE
 		if (a_other->specularBackLightingTexture.get()) {
 			specularBackLightingTexture = a_other->specularBackLightingTexture;
 		}
-		
+
 		textureClampMode = a_other->textureClampMode;
 
 		if (a_other->textureSet.get()) {

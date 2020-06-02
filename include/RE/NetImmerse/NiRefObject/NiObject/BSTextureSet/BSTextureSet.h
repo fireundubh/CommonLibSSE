@@ -6,8 +6,8 @@
 namespace RE
 {
 	class NiSourceTexture;
-	
-	
+
+
 	class BSTextureSet : public NiObject
 	{
 	public:

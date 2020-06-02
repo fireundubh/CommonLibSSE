@@ -24,7 +24,7 @@ namespace RE
 		UInt32							unk04;				 // 04
 		UInt32							unk08;				 // 08
 		UInt32							unk0C;				 // 0C - simpleDecal count?
-		UInt32							geometryDecalCount;	 // 10 
+		UInt32							geometryDecalCount;	 // 10
 		UInt32							unk14;				 // 14
 		BSTArray<BSTempEffect*>			decals;				 // 18
 		BSTArray<void*>					unk30;				 // 30

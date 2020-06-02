@@ -1,6 +1,5 @@
 #include "RE/Inventory/ExtraDataList.h"
 
-#include "RE/FormComponents/TESForm/BGSKeyword/BGSKeyword.h"
 #include "RE/BSExtraData/BSExtraData.h"
 #include "RE/BSExtraData/ExtraAshPileRef.h"
 #include "RE/BSExtraData/ExtraCount.h"
@@ -15,8 +14,9 @@
 #include "RE/BSExtraData/ExtraWorn.h"
 #include "RE/BSExtraData/ExtraWornLeft.h"
 #include "RE/BSMain/SettingCollection/GameSettingCollection.h"
-#include "RE/FormComponents/TESForm/TESObject/TESBoundObject/TESBoundObject.h"
+#include "RE/FormComponents/TESForm/BGSKeyword/BGSKeyword.h"
 #include "RE/FormComponents/TESForm/TESForm.h"
+#include "RE/FormComponents/TESForm/TESObject/TESBoundObject/TESBoundObject.h"
 #include "RE/FormComponents/TESForm/TESObjectREFR/TESObjectREFR.h"
 
 

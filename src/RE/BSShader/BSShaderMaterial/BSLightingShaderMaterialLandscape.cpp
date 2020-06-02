@@ -9,7 +9,7 @@ namespace RE
 		material->ctor();
 		return material;
 	}
-	
+
 
 	BSLightingShaderMaterialLandscape* BSLightingShaderMaterialLandscape::ctor()
 	{

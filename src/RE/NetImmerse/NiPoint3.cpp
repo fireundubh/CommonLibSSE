@@ -103,7 +103,7 @@ namespace RE
 		float dx = a_rhs.x - a_lhs.x;
 		float dy = a_rhs.y - a_lhs.y;
 		float dz = a_rhs.z - a_lhs.z;
-	
+
 		return std::sqrtf(dx * dx + dy * dy + dz * dz);
 	}
 

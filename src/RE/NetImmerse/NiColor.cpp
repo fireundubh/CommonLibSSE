@@ -16,7 +16,7 @@ namespace RE
 		auto red = static_cast<UInt32>(a_rhs.red * 255);
 		auto green = static_cast<UInt32>(a_rhs.green * 255);
 		auto blue = static_cast<UInt32>(a_rhs.blue * 255);
-		
+
 		return ((red & 0xFF) << 16) + ((green & 0xFF) << 8) + (blue & 0xFF);
 	}
 
@@ -26,9 +26,9 @@ namespace RE
 		auto red = static_cast<UInt32>(a_rhs.red * 255);
 		auto green = static_cast<UInt32>(a_rhs.green * 255);
 		auto blue = static_cast<UInt32>(a_rhs.blue * 255);
-		
+
 		char hexcol[16];
-		snprintf(hexcol, sizeof(hexcol), "%02x%02x%02x", red, green,blue);
+		snprintf(hexcol, sizeof(hexcol), "%02x%02x%02x", red, green, blue);
 		return std::string(hexcol);
 	}
 }

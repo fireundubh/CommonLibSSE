@@ -1,8 +1,6 @@
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/BSShaderProperty/BSShaderProperty.h"
 
 
-
-
 namespace RE
 {
 	bool BSShaderProperty::InvalidateMaterial()

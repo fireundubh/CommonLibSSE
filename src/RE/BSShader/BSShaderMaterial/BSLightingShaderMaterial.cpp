@@ -17,7 +17,7 @@ namespace RE
 		return material;
 	}
 
-	
+
 	BSLightingShaderMaterialBase* BSLightingShaderMaterial::ctor()
 	{
 		using func_t = decltype(&BSLightingShaderMaterial::ctor);

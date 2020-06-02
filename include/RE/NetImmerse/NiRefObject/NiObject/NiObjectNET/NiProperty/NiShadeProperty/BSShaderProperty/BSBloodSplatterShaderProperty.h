@@ -34,7 +34,7 @@ namespace RE
 		virtual const NiRTTI*	 GetRTTI() const override;							 // 02
 		virtual NiObject*		 CreateClone(NiCloningProcess& a_cloning) override;	 // 17
 		virtual void			 Unk_2A(void) override;								 // 2A
-		virtual void			 Unk_33(void) override;								 // 33 
+		virtual void			 Unk_33(void) override;								 // 33
 		virtual void			 Unk_35(void) override;								 // 35 - { return 12 }
 		virtual NiSourceTexture* GetPrimaryTexture() override;						 // 37 - { return bloodColorTexture; }
 

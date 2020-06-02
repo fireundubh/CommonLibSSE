@@ -19,12 +19,12 @@ namespace RE
 	bool	 LookupReferenceByHandle(const RefHandle& a_handle, NiPointer<TESObjectREFR>& a_refrOut);
 	void	 PlaySound(const char* a_editorID);
 	void	 ShowMessage(const std::string& a_message);
-		
-	void	 func2E9950();
+
+	void func2E9950();
 
 	namespace Util
 	{
-		void SanitizeTexturePath(std::string& a_path);
+		void		SanitizeTexturePath(std::string& a_path);
 		std::string GetTextureName(std::string& a_path);
 	}
 

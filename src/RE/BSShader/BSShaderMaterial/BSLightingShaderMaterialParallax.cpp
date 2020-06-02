@@ -9,7 +9,7 @@ namespace RE
 		material->ctor();
 		return material;
 	}
-	
+
 
 	BSLightingShaderMaterialParallax* BSLightingShaderMaterialParallax::ctor()
 	{

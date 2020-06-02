@@ -1,29 +1,29 @@
 #include "RE/FormComponents/TESForm/TESObjectREFR/Actor/Actor.h"
 
 #include "RE/AI/AIProcess.h"
-#include "RE/NetImmerse/NiRefObject/BGSAttackData.h"
-#include "RE/FormComponents/TESForm/BGSColorForm.h"
-#include "RE/FormComponents/TESForm/BGSDefaultObjectManager.h"
-#include "RE/NetImmerse/NiRefObject/NiObject/NiExtraData/BSFaceGenAnimationData.h"
-#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiNode/BSFaceGenNiNode.h"
-#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/BSGeometry/BSGeometry.h"
+#include "RE/AI/HighProcessData.h"
+#include "RE/AI/MiddleHighProcessData.h"
+#include "RE/AI/ProcessLists.h"
 #include "RE/BSExtraData/ExtraCanTalkToPlayer.h"
 #include "RE/BSExtraData/ExtraFactionChanges.h"
 #include "RE/FormComponents/Components/FormTraits.h"
-#include "RE/AI/HighProcessData.h"
-#include "RE/Inventory/InventoryEntryData.h"
-#include "RE/Inventory/InventoryChanges.h"
-#include "RE/AI/MiddleHighProcessData.h"
-#include "RE/Misc/Misc.h"
-#include "RE/NetImmerse/NiColor.h"
-#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiNode/NiNode.h"
-#include "RE/NetImmerse/NiPoint3.h"
-#include "RE/AI/ProcessLists.h"
+#include "RE/FormComponents/TESForm/BGSColorForm.h"
+#include "RE/FormComponents/TESForm/BGSDefaultObjectManager.h"
 #include "RE/FormComponents/TESForm/TESFaction.h"
 #include "RE/FormComponents/TESForm/TESObject/TESBoundObject/TESBoundAnimObject/TESActorBase/TESNPC.h"
 #include "RE/FormComponents/TESForm/TESObject/TESBoundObject/TESObjectMISC/TESObjectMISC.h"
 #include "RE/FormComponents/TESForm/TESRace.h"
 #include "RE/FormComponents/TESForm/TESWorldSpace.h"
+#include "RE/Inventory/InventoryChanges.h"
+#include "RE/Inventory/InventoryEntryData.h"
+#include "RE/Misc/Misc.h"
+#include "RE/NetImmerse/NiColor.h"
+#include "RE/NetImmerse/NiPoint3.h"
+#include "RE/NetImmerse/NiRefObject/BGSAttackData.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiExtraData/BSFaceGenAnimationData.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/BSGeometry/BSGeometry.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiNode/BSFaceGenNiNode.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiNode/NiNode.h"
 #include "RE/NetImmerse/NiRefObject/bhkCharacterController.h"
 
 
@@ -361,7 +361,7 @@ namespace RE
 				}
 			}
 		}
-		
+
 		return equipped;
 	}
 
