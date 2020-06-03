@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RE/BSDynamicTriShape.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/BSGeometry/BSTriShape/BSDynamicTriShape.h"
 
 
 namespace RE

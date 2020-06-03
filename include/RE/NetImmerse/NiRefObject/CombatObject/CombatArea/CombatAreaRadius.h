@@ -1,8 +1,8 @@
 #pragma once
 
-#include "RE/CombatArea.h"
+#include "RE/NetImmerse/NiRefObject/CombatObject/CombatArea/CombatArea.h"
 
-#include "RE/CombatLocation.h"
+#include "RE/Combat/Components/CombatLocation.h"
 
 
 namespace RE

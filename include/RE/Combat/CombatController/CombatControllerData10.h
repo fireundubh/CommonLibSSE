@@ -1,9 +1,9 @@
 #pragma once
 
-#include "RE/AITimeStamp.h"
-#include "RE/AITimer.h"
-#include "RE/BSTArray.h"
-#include "RE/NiSmartPointer.h"
+#include "RE/BSCore/BSTArray.h"
+#include "RE/FormComponents/Components/AITimeStamp.h"
+#include "RE/FormComponents/Components/AITimer.h"
+#include "RE/NetImmerse/NiSmartPointer.h"
 
 
 namespace RE

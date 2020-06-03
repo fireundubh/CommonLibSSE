@@ -1,8 +1,8 @@
 #pragma once
 
-#include "RE/BSExtraData.h"
-#include "RE/ExtraDataTypes.h"
-#include "RE/ExtraMagicCaster.h"
+#include "RE/BSExtraData/BSExtraData.h"
+#include "RE/BSExtraData/Enums/ExtraDataTypes.h"
+#include "RE/BSExtraData/ExtraMagicCaster.h"
 
 
 namespace RE

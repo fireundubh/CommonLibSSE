@@ -1,7 +1,7 @@
 #pragma once
 
 #include "RE/Animation/IAnimationSetCallbackFunctor.h"
-#include "RE/BSTArray.h"
+#include "RE/BSCore/BSTArray.h"
 #include "RE/Pathfinding/IMovementControllerRegisterInterface/MovementControllerAI/MovementControllerAI.h"
 #include "RE/Pathfinding/IMovementInterface/IMovementDirectControl.h"
 #include "RE/Pathfinding/IMovementInterface/IMovementMessageInterface.h"

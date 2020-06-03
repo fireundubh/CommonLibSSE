@@ -1,10 +1,10 @@
 #pragma once
 
-#include "RE/AITimeStamp.h"
-#include "RE/AITimer.h"
-#include "RE/BSTArray.h"
-#include "RE/CombatLocation.h"
-#include "RE/NiPoint3.h"
+#include "RE/BSCore/BSTArray.h"
+#include "RE/Combat/Components/CombatLocation.h"
+#include "RE/FormComponents/Components/AITimeStamp.h"
+#include "RE/FormComponents/Components/AITimer.h"
+#include "RE/NetImmerse/NiPoint3.h"
 
 
 namespace RE

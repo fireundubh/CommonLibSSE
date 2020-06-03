@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RE/BSAtomic.h"
+#include "RE/BSCore/BSAtomic.h"
 #include "RE/BSSystem/BSIntrusiveRefCounted.h"
 #include "RE/Pathfinding/IMovementControllerRegisterInterface/IMovementControllerRegisterInterface.h"
 

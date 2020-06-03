@@ -2,7 +2,7 @@
 
 #include "RE/BSExtraData/BSExtraData.h"
 #include "RE/BSExtraData/Enums/ExtraDataTypes.h"
-#include "RE/FormComponents/Components/MagicCaster.h"
+#include "RE/FormComponents/Components/MagicCaster/MagicCaster.h"
 
 
 namespace RE

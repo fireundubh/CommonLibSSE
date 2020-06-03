@@ -1,27 +1,29 @@
 #pragma once
 
-#include "RE/BSPointerHandle.h"
-#include "RE/CombatAreaStandard.h"
-#include "RE/CombatControllerData08.h"
-#include "RE/CombatControllerData10.h"
-#include "RE/CombatGroup.h"
-#include "RE/CombatTargetSelectorStandard.h"
-#include "RE/NiPoint3.h"
-#include "RE/TESCombatStyle.h"
+#include "RE/BSCore/BSPointerHandle.h"
+#include "RE/BSCore/BSTArray.h"
+#include "RE/FormComponents/Components/AITimer.h"
+#include "RE/NetImmerse/NiSmartPointer.h"
 
 
 namespace RE
 {
+	class CombatAreaStandard;
+	class CombatControllerData08;
+	class CombatControllerData10;
+	class CombatGroup;
+	class CombatTargetSelectorStandard;
+	class TESCombatStyle;
+
+
 	class CombatController
 	{
 	public:
-		typedef CombatControllerData08 Data08;
-		typedef CombatControllerData10 Data10;
-
+		using Data08 = CombatControllerData08;
+		using Data10 = CombatControllerData10;
 
 		struct Data18
 		{};
-
 
 		struct Data20
 		{};

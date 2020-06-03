@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RE/NiLight.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiLight/NiLight.h"
 
 
 namespace RE

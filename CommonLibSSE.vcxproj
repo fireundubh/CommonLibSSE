@@ -718,6 +718,7 @@
     <ClInclude Include="include\RE\Combat\CombatController\CombatControllerData10.h" />
     <ClInclude Include="include\RE\Combat\CombatGroup.h" />
     <ClInclude Include="include\RE\Combat\CombatManager.h" />
+    <ClInclude Include="include\RE\Combat\Components\CombatLocation.h" />
     <ClInclude Include="include\RE\DistantTerrain\BGSDistantTreeBlock.h" />
     <ClInclude Include="include\RE\Events\BGSActorEvent\BGSActorEvent.h" />
     <ClInclude Include="include\RE\Events\BGSActorEvent\BGSFootstepEvent.h" />
@@ -1168,7 +1169,6 @@
     <ClInclude Include="include\RE\NetImmerse\Components\AttachTechniqueInput\RefAttachTechniqueInput.h" />
     <ClInclude Include="include\RE\NetImmerse\Components\BSFaceGenKeyframe\BSFaceGenKeyframe.h" />
     <ClInclude Include="include\RE\NetImmerse\Components\BSFaceGenKeyframe\BSFaceGenKeyframeMultiple.h" />
-    <ClInclude Include="include\RE\NetImmerse\Components\CombatLocation.h" />
     <ClInclude Include="include\RE\NetImmerse\NiAllocator\BSNiAllocator.h" />
     <ClInclude Include="include\RE\NetImmerse\NiAllocator\NiAllocator.h" />
     <ClInclude Include="include\RE\NetImmerse\NiAnimationKey\NiAnimationKey.h" />
@@ -1227,7 +1227,6 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect\ReferenceEffect.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect\ShaderReferenceEffect.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect\SummonPlacementEffect.h" />
-    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet\BSShaderTextureSet.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet\BSTextureSet.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstance.h" />

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RE/CombatObject.h"
+#include "RE/NetImmerse/NiRefObject/CombatObject/CombatObject.h"
 
 
 namespace RE

@@ -1,7 +1,6 @@
 #pragma once
 
-#include "RE/BSParticleShaderEmitter.h"
-#include "RE/NiSmartPointer.h"
+#include "RE/NetImmerse/NiRefObject/BSParticleShaderEmitter/BSParticleShaderEmitter.h"
 
 
 namespace RE

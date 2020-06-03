@@ -1,9 +1,9 @@
 #pragma once
 
-#include "RE/BSShaderProperty.h"
-#include "RE/BSTArray.h"
-#include "RE/NiColor.h"
-#include "RE/NiPoint3.h"
+#include "RE/BSCore/BSTArray.h"
+#include "RE/NetImmerse/NiColor.h"
+#include "RE/NetImmerse/NiPoint3.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/BSShaderProperty/BSShaderProperty.h"
 
 
 namespace RE

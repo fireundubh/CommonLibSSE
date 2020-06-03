@@ -1,13 +1,15 @@
 #pragma once
 
-#include "NiColor.h"
-#include "RE/BSShaderMaterial.h"
-#include "RE/NiSmartPointer.h"
-#include "RE/NiSourceTexture.h"
+#include "RE/BSShader/BSShaderMaterial/BSShaderMaterial.h"
+#include "RE/NetImmerse/NiColor.h"
+#include "RE/NetImmerse/NiSmartPointer.h"
 
 
 namespace RE
 {
+	class NiSourceTexture;
+
+
 	class BSEffectShaderMaterial : public BSShaderMaterial
 	{
 	public:

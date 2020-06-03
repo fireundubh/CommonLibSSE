@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RE/BSShaderProperty.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/BSShaderProperty/BSShaderProperty.h"
 
 
 namespace RE

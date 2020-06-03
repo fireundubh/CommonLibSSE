@@ -1,11 +1,13 @@
 #pragma once
 
 #include "RE/FormComponents/Components/ActiveEffect/ActiveEffect.h"
-#include "RE/SummonPlacementEffect.h"
 
 
 namespace RE
 {
+	class SummonPlacementEffect;
+
+
 	class SummonCreatureEffect : public ActiveEffect
 	{
 	public:

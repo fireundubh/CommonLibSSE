@@ -1104,9 +1104,6 @@
     <ClInclude Include="include\RE\FormComponents\Components\BGSDecalGroup.h">
       <Filter>include\RE\FormComponents\Components</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Misc\BGSDecalManager.h">
-      <Filter>include\RE\Misc</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BGSDecalNode.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode</Filter>
     </ClInclude>
@@ -1839,13 +1836,7 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectDebris.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectGeometryDecal.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectParticle.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectSimpleDecal.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectSPG.h">
@@ -1856,12 +1847,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\BSCore\BSTEvent.h">
       <Filter>include\RE\BSCore</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet\BSTextureSet.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSCore\BSTFreeList.h">
       <Filter>include\RE\BSCore</Filter>
@@ -1997,9 +1982,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\FormComponents\Components\DetectionListener\CombatGroupDetectionListener.h">
       <Filter>include\RE\FormComponents\Components\DetectionListener</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\NetImmerse\Components\CombatLocation.h">
-      <Filter>include\RE\NetImmerse\Components</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Combat\CombatManager.h">
       <Filter>include\RE\Combat</Filter>
@@ -4656,6 +4638,21 @@
     <ClInclude Include="include\RE\BSScript\IFunctionArguments\ZeroFunctionArguments.h">
       <Filter>include\RE\BSScript\IFunctionArguments</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\Combat\Components\CombatLocation.h">
+      <Filter>include\RE\Combat\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet\BSTextureSet.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Misc\BGSDecalManager.h">
+      <Filter>include\RE\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectGeometryDecal.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectSimpleDecal.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />
@@ -5917,6 +5914,9 @@
     </Filter>
     <Filter Include="src\RE\BSScript\IFunctionArguments">
       <UniqueIdentifier>{937fed2b-46a6-426c-9aac-a8b6e9352d73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\Combat\Components">
+      <UniqueIdentifier>{3f326d77-4b82-4b1b-850e-7cfe01b7e22a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

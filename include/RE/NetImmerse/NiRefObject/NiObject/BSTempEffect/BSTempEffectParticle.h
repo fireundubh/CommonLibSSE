@@ -1,12 +1,12 @@
 #pragma once
 
-#include "RE/BSSoundHandle.h"
-#include "RE/BSTSmartPointer.h"
-#include "RE/BSTempEffect.h"
-#include "RE/NiMatrix3.h"
-#include "RE/NiPoint3.h"
-#include "RE/NiSmartPointer.h"
-#include "RE/NiTransform.h"
+#include "RE/BSAudio/BSSoundHandle.h"
+#include "RE/BSCore/BSTSmartPointer.h"
+#include "RE/NetImmerse/NiMatrix3.h"
+#include "RE/NetImmerse/NiPoint3.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/BSTempEffect/BSTempEffect.h"
+#include "RE/NetImmerse/NiSmartPointer.h"
+#include "RE/NetImmerse/NiTransform.h"
 
 
 namespace RE

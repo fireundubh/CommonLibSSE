@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RE/CombatAreaRadius.h"
+#include "RE/NetImmerse/NiRefObject/CombatObject/CombatArea/CombatAreaRadius.h"
 
 
 namespace RE

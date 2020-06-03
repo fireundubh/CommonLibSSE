@@ -1,10 +1,10 @@
 #pragma once
 
 #include "RE/BSCore/BSPointerHandle.h"
+#include "RE/Combat/Components/CombatLocation.h"
 #include "RE/FormComponents/Components/AITimeStamp.h"
 #include "RE/FormComponents/Components/AITimer.h"
 #include "RE/FormComponents/Components/DetectionListener/CombatGroupDetectionListener.h"
-#include "RE/NetImmerse/Components/CombatLocation.h"
 
 
 namespace RE

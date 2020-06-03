@@ -1,16 +1,16 @@
 #pragma once
 
-#include "RE/BGSTextureSet.h"
-#include "RE/BSTArray.h"
-#include "RE/BSTempEffect.h"
-#include "RE/NiColor.h"
-#include "RE/NiFrustumPlanes.h"
-#include "RE/NiMatrix3.h"
-#include "RE/NiSmartPointer.h"
+#include "RE/BSCore/BSTArray.h"
+#include "RE/NetImmerse/NiColor.h"
+#include "RE/NetImmerse/NiFrustumPlanes.h"
+#include "RE/NetImmerse/NiMatrix3.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/BSTempEffect/BSTempEffect.h"
+#include "RE/NetImmerse/NiSmartPointer.h"
 
 
 namespace RE
 {
+	class BGSTextureSet;
 	class NiAVObject;
 
 

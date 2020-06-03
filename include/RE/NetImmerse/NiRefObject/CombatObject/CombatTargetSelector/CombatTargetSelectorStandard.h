@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RE/CombatTargetSelector.h"
+#include "RE/NetImmerse/NiRefObject/CombatObject/CombatTargetSelector/CombatTargetSelector.h"
 
 
 namespace RE

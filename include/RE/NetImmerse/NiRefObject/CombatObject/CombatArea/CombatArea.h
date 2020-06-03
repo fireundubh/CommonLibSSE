@@ -1,8 +1,8 @@
 #pragma once
 
-#include "RE/CombatObject.h"
+#include "RE/NetImmerse/NiRefObject/CombatObject/CombatObject.h"
 
-#include "RE/AITimer.h"
+#include "RE/FormComponents/Components/AITimer.h"
 
 
 namespace RE
