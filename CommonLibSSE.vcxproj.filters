@@ -5925,4 +5925,7 @@
       <UniqueIdentifier>{3f326d77-4b82-4b1b-850e-7cfe01b7e22a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="CommonLibSSE.natvis" />
+  </ItemGroup>
 </Project>
