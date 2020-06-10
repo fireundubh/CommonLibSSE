@@ -2,6 +2,8 @@
 
 #include "SKSE/Logger.h"
 
+#include <filesystem>
+
 
 namespace SKSE
 {
@@ -27,7 +29,7 @@ namespace SKSE
 	}
 
 
-	const std::string& GetPluginPath()
+	const std::string& GetPluginFolderPath()
 	{
 		static std::string s_pluginPath;
 
@@ -44,20 +46,42 @@ namespace SKSE
 	}
 
 
-	const char* GetConfigPath(const char* modName)
+	std::string GetPluginConfigPath(const char* modName)
 	{
 		static std::string s_configPath;
 
 		if (s_configPath.empty()) {
-			const auto& pluginPath = GetPluginPath();
+			const auto& pluginPath = GetPluginFolderPath();
 			if (!pluginPath.empty()) {
 				s_configPath = pluginPath + modName + R"(.ini)";
 				_MESSAGE("config path = %s", s_configPath.c_str());
 			} else {
-				_MESSAGE("couldn't get plugin path!");
+				_MESSAGE("couldn't get plugin folder path!");
 			}
 		}
 
-		return s_configPath.c_str();
+		return s_configPath;
+	}
+
+
+	std::vector<std::string> GetAllConfigPaths(const std::string& a_folder, const std::string& a_suffix)
+	{
+		namespace fs = std::filesystem;
+		std::vector<std::string> vec;
+
+		const auto& runtimePath = GetRuntimeDirectory();
+		if (!runtimePath.empty()) {
+			std::string configPath = runtimePath + a_folder;
+			for (const auto& entry : fs::directory_iterator(configPath)) {
+				if (entry.exists() && entry.path().extension() == ".ini") {
+					std::string path = entry.path().string();
+					if (path.find(a_suffix) != std::string::npos) {
+						vec.push_back(path);
+					}
+				}
+			}
+		}
+
+		return vec;
 	}
 }

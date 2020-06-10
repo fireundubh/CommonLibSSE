@@ -5,17 +5,19 @@
 
 namespace RE
 {
-	NiStringsExtraData* NiStringsExtraData::Create(const std::string& a_name, const std::vector<std::string>& a_strings)
+	NiStringsExtraData* NiStringsExtraData::Create(const BSFixedString& a_name, const std::vector<BSFixedString>& a_strings)
 	{
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiStringsExtraData::Vtbl);
 
 		auto data = static_cast<NiStringsExtraData*>(NiExtraData::Create(sizeof(NiStringsExtraData), vtbl.address()));
 		if (data) {
-			data->name = a_name.c_str();
-			data->size = static_cast<UInt32>(a_strings.size());
-			data->value = NiAlloc<char*>(a_strings.size());
+			data->name = a_name;
+			
+			auto size = a_strings.size();
+			data->size = static_cast<UInt32>(size);
+			data->value = NiAlloc<char*>(size);
 
-			for (size_t i = 0; i < a_strings.size(); i++) {
+			for (size_t i = 0; i < size; i++) {
 				auto string = a_strings[i];
 				if (!string.empty()) {
 					UInt32 strLength = string.length() + 1;
@@ -28,10 +30,10 @@ namespace RE
 	}
 
 
-	SInt32 NiStringsExtraData::GetIndexOf(const std::string& a_element) const
+	SInt32 NiStringsExtraData::GetIndexOf(const BSFixedString& a_element) const
 	{
 		for (UInt32 i = 0; i < size; i++) {
-			if (a_element == value[i]) {
+			if (strcmp(a_element.c_str(), value[i]) == 0) {
 				return i;
 			}
 		}
@@ -40,7 +42,7 @@ namespace RE
 	}
 
 
-	bool NiStringsExtraData::InsertElement(const std::string& a_element)
+	bool NiStringsExtraData::InsertElement(const BSFixedString& a_element)
 	{
 		if (!a_element.empty()) {
 			auto index = GetIndexOf(a_element);
@@ -61,7 +63,7 @@ namespace RE
 
 				UInt32 strLength = a_element.length() + 1;
 				value[size - 1] = NiAlloc<char>(strLength);
-				memcpy(value[size - 1], a_element.c_str(), sizeof(char) * strLength);
+				memcpy(value[size - 1], a_element.data(), sizeof(char) * strLength);
 
 				return true;
 			}
@@ -71,7 +73,7 @@ namespace RE
 	}
 
 
-	bool NiStringsExtraData::RemoveElement(const std::string& a_element)
+	bool NiStringsExtraData::RemoveElement(const BSFixedString& a_element)
 	{
 		if (!a_element.empty()) {
 			auto index = GetIndexOf(a_element);

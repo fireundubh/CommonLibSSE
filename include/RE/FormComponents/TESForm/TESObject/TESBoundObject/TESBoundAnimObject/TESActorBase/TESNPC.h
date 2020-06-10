@@ -245,6 +245,7 @@ namespace RE
 		virtual BSEventNotifyControl ProcessEvent(const MenuOpenCloseEvent* a_event, BSTEventSource<MenuOpenCloseEvent>* a_eventSource) override;  // 01
 
 		void					 ChangeHeadPart(BGSHeadPart* a_target);
+		SInt32					 GetBasePerkIndex(BGSPerk* a_perk);
 		BGSHeadPart**			 GetBaseOverlays() const;
 		BGSHeadPart*			 GetCurrentHeadPartByType(HeadPartType a_type);
 		BGSHeadPart*			 GetHeadPartByType(HeadPartType a_type);
@@ -256,7 +257,9 @@ namespace RE
 		TESNPC*					 GetRootFaceNPC();
 		const TESNPC*			 GetRootFaceNPC() const;
 		SEX						 GetSex() const;
+		bool					 IsInClass(TESClass* a_class) const;
 		bool					 HasOverlays();
+		bool					 HasKeyword(const char* a_formEditorID);
 		void					 SetFaceTexture(BGSTextureSet* a_textureSet);
 		void					 SetHairColor(BGSColorForm* a_hairColor);
 		void					 SetSkinFromTint(NiColorA* a_result, TintMask* a_tintMask, bool a_fromTint);

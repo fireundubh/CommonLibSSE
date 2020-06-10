@@ -880,6 +880,12 @@
     <ClCompile Include="src\RE\BSScript\IFunctionArguments\ZeroFunctionArguments.cpp">
       <Filter>src\RE\BSScript\IFunctionArguments</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\FormComponents\BGSPerkRankArray.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\FormComponents\Components\ContainerItemExtra.cpp">
+      <Filter>src\RE\FormComponents\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\Memory\IMemoryStoreBase\IMemoryStore\IMemoryHeap\ZeroOverheadHeap.h">

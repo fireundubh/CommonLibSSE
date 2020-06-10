@@ -28,9 +28,18 @@ namespace RE
 	}
 
 
-	SEX TESNPC::GetSex() const
+	SInt32 TESNPC::GetBasePerkIndex(BGSPerk* a_perk)
 	{
-		return IsFemale() ? SEX::kFemale : SEX::kMale;
+		SInt32 index = -1;
+		if (perkCount > 0) {
+			for (UInt32 i = 0; i < perkCount; i++) {
+				if (perks[i].perk && perks[i].perk == a_perk) {
+					index = i;
+					break;
+				}
+			}
+		}
+		return index;
 	}
 
 
@@ -128,9 +137,21 @@ namespace RE
 	}
 
 
+	SEX TESNPC::GetSex() const
+	{
+		return IsFemale() ? SEX::kFemale : SEX::kMale;
+	}
+
+
 	float TESNPC::Layer::GetInterpolationValue() const
 	{
 		return static_cast<float>(interpolationValue) / static_cast<float>(100.0);
+	}
+
+
+	bool TESNPC::IsInClass(TESClass* a_class) const
+	{
+		return npcClass ? npcClass == a_class : false;
 	}
 
 
@@ -139,6 +160,20 @@ namespace RE
 		using func_t = decltype(&TESNPC::HasOverlays);
 		REL::Offset<func_t> func(Offset::TESNPC::HasOverlays);
 		return func(this);
+	}
+
+
+	bool TESNPC::HasKeyword(const char* a_formEditorID)
+	{
+		auto keywordForm = As<BGSKeywordForm>();
+		if (keywordForm) {
+			bool hasKeyword = keywordForm->HasKeyword(a_formEditorID);
+			if (!hasKeyword && race) {
+				hasKeyword = race->HasKeyword(a_formEditorID);
+			}
+			return hasKeyword;
+		}
+		return false;
 	}
 
 

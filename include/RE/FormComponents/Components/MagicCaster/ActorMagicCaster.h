@@ -37,7 +37,7 @@ namespace RE
 		virtual void		   Unk_08(void) override;						 // 08 - { return; }
 		virtual void		   Unk_09(void) override;						 // 09 - { return; }
 		virtual void		   Unk_0A(void) override;						 // 0A
-		virtual TESObjectREFR* Unk_0B() override;							 // 0B - { return actor; }
+		virtual TESObjectREFR* GetTarget() override;						 // 0B - { return actor; }
 		virtual Actor*		   GetCaster() override;						 // 0C - { return actor; }
 		virtual NiNode*		   GetMagicNode() override;						 // 0E - { return magicNode; }
 		virtual void		   ClearMagicNode() override;					 // 0F - { magicNode = 0; }

@@ -38,7 +38,7 @@ namespace RE
 		virtual void		   Unk_08(void);						// 08 - { return; }
 		virtual void		   Unk_09(void);						// 09 - { return; }
 		virtual void		   Unk_0A(void);						// 0A
-		virtual TESObjectREFR* Unk_0B();							// 0B - { return 0; }
+		virtual TESObjectREFR* GetTarget();							// 0B - { return 0; }
 		virtual Actor*		   GetCaster();							// 0C - { return 0; }
 		virtual void		   Unk_0D(void);						// 0D
 		virtual NiNode*		   GetMagicNode();						// 0E - { return 0; }

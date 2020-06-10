@@ -7,10 +7,18 @@
 namespace RE
 {
 	class TESBoundObject;
+	class TESForm;
 
 
 	struct ContainerObject
 	{
+		ContainerObject();
+		ContainerObject(TESBoundObject* a_obj, SInt32 a_count);
+
+		~ContainerObject() = default;
+
+		TES_HEAP_REDEFINE_NEW();
+		
 		SInt32				count;		// 00 - CNTO~
 		UInt32				pad04;		// 04
 		TESBoundObject*		obj;		// 08 - ~CNTO
@@ -45,6 +53,7 @@ namespace RE
 			}
 		}
 
+		bool							AddObjectToContainer(TESBoundObject* a_obj, SInt32 a_count, TESForm* a_owner);
 		std::optional<ContainerObject*> GetContainerObjectAt(UInt32 a_idx) const;
 		SInt32							CountObjectsInContainer(TESBoundObject* a_object) const;
 

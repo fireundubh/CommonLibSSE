@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RE/FormComponents/BaseFormComponent.h"
+#include "RE/Memory/MemoryManager.h"
 
 
 namespace RE
@@ -10,6 +11,13 @@ namespace RE
 
 	struct PerkRankData	 // PRKR
 	{
+		PerkRankData();
+		PerkRankData(BGSPerk* a_perk, SInt8 a_rank);
+
+		~PerkRankData() = default;
+
+		TES_HEAP_REDEFINE_NEW();
+		
 		BGSPerk* perk;		   // 00
 		SInt8	 currentRank;  // 08
 		UInt8	 pad09;		   // 09
