@@ -24,7 +24,9 @@ namespace RE
 
 			TES_HEAP_REDEFINE_NEW();
 
-			SInt32 GetSpellIndex(SpellItem* a_spell);
+			SInt32 GetIndex(SpellItem* a_spell);
+			SInt32 GetIndex(TESShout* a_spell);
+
 
 			//members
 			SpellItem**	  spells;		 // 00

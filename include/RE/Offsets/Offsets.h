@@ -24,24 +24,23 @@ namespace RE
 			inline constexpr REL::ID AddSpell(static_cast<std::uint64_t>(37771));
 			inline constexpr REL::ID DispelWornItemEnchantments(static_cast<std::uint64_t>(33828));
 			inline constexpr REL::ID DoReset3D(static_cast<std::uint64_t>(39181));
+			inline constexpr REL::ID Decapitate(static_cast<std::uint64_t>(36631));
 			inline constexpr REL::ID EvaluatePackage(static_cast<std::uint64_t>(36407));
 			inline constexpr REL::ID GetGhost(static_cast<std::uint64_t>(36286));
 			inline constexpr REL::ID GetHostileToActor(static_cast<std::uint64_t>(36537));
 			inline constexpr REL::ID GetLevel(static_cast<std::uint64_t>(36344));
+			inline constexpr REL::ID GetSoulLevel(static_cast<std::uint64_t>(37862));
 			inline constexpr REL::ID HasPerk(static_cast<std::uint64_t>(36690));
+			inline constexpr REL::ID HasSpell(static_cast<std::uint64_t>(37828));
+			inline constexpr REL::ID InstantKill(static_cast<std::uint64_t>(36723));
 			inline constexpr REL::ID IsRunning(static_cast<std::uint64_t>(36252));
+			inline constexpr REL::ID RemoveSpell(static_cast<std::uint64_t>(37772));
 			inline constexpr REL::ID RequestDetectionLevel(static_cast<std::uint64_t>(36748));
 			inline constexpr REL::ID StealAlarm(static_cast<std::uint64_t>(36427));
 			inline constexpr REL::ID SwitchRace(static_cast<std::uint64_t>(36901));
 			inline constexpr REL::ID UpdateArmorAbility(static_cast<std::uint64_t>(37802));
 			inline constexpr REL::ID UpdateWeaponAbility(static_cast<std::uint64_t>(37803));
 			inline constexpr REL::ID Vtbl(static_cast<std::uint64_t>(260538));
-			// po3
-			static constexpr REL::ID GetSoulLevel(static_cast<std::uint64_t>(37862));
-			static constexpr REL::ID Decapitate(static_cast<std::uint64_t>(36631));
-			static constexpr REL::ID InstantKill(static_cast<std::uint64_t>(36723));
-			static constexpr REL::ID RemoveSpell(static_cast<std::uint64_t>(37772));
-			static constexpr REL::ID HasSpell(static_cast<std::uint64_t>(37828));
 		}
 
 
@@ -61,10 +60,9 @@ namespace RE
 
 		namespace AIProcess
 		{
+			inline constexpr REL::ID SetActorRefraction(static_cast<std::uint64_t>(38916));
 			inline constexpr REL::ID SetBaseScale(static_cast<std::uint64_t>(38568));
 			inline constexpr REL::ID Update3DModel(static_cast<std::uint64_t>(38404));
-			//po3
-			static constexpr REL::ID SetActorRefraction(static_cast<std::uint64_t>(38916));
 		}
 
 
@@ -82,7 +80,7 @@ namespace RE
 
 		namespace BGSDecalManager
 		{
-			static constexpr REL::ID Singleton(static_cast<std::uint64_t>(514414));
+			inline constexpr REL::ID Singleton(static_cast<std::uint64_t>(514414));
 		}
 
 
@@ -100,8 +98,8 @@ namespace RE
 
 		namespace BGSImpactManager
 		{
-			static constexpr REL::ID Singleton(static_cast<std::uint64_t>(515123));
-			static constexpr REL::ID PlayImpactEffect(static_cast<std::uint64_t>(35320));
+			inline constexpr REL::ID PlayImpactEffect(static_cast<std::uint64_t>(35320));
+			inline constexpr REL::ID Singleton(static_cast<std::uint64_t>(515123));
 		}
 
 
@@ -121,7 +119,7 @@ namespace RE
 
 		namespace BGSListForm
 		{
-			static constexpr REL::ID AddFormToList(static_cast<std::uint64_t>(20470));
+			inline constexpr REL::ID AddFormToList(static_cast<std::uint64_t>(20470));
 		}
 
 
@@ -155,91 +153,91 @@ namespace RE
 
 		namespace BSLightingShaderMaterialBase
 		{
-			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100004));
+			inline constexpr REL::ID Ctor(static_cast<std::uint64_t>(100004));
 		}
 
 
 		namespace BSLightingShaderMaterial
 		{
-			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(254404));
+			inline constexpr REL::ID Vtbl(static_cast<std::uint64_t>(254404));
 		}
 
 
 		namespace BSLightingShaderMaterialEnvmap
 		{
-			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100021));
+			inline constexpr REL::ID Ctor(static_cast<std::uint64_t>(100021));
 		}
 
 
 		namespace BSLightingShaderMaterialEye
 		{
-			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100033));
+			inline constexpr REL::ID Ctor(static_cast<std::uint64_t>(100033));
 		}
 
 
 		namespace BSLightingShaderMaterialFacegen
 		{
-			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100077));
+			inline constexpr REL::ID Ctor(static_cast<std::uint64_t>(100077));
 		}
 
 
 		namespace BSLightingShaderMaterialFacegenTint
 		{
-			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100087));
+			inline constexpr REL::ID Ctor(static_cast<std::uint64_t>(100087));
 		}
 
 
 		namespace BSLightingShaderMaterialGlowmap
 		{
-			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100045));
+			inline constexpr REL::ID Ctor(static_cast<std::uint64_t>(100045));
 		}
 
 
 		namespace BSLightingShaderMaterialHairTint
 		{
-			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100095));
+			inline constexpr REL::ID Ctor(static_cast<std::uint64_t>(100095));
 		}
 
 
 		namespace BSLightingShaderMaterialMultiLayerParallax
 		{
-			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100125));
+			inline constexpr REL::ID Ctor(static_cast<std::uint64_t>(100125));
 		}
 
 
 		namespace BSLightingShaderMaterialLandscape
 		{
-			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100102));
+			inline constexpr REL::ID Ctor(static_cast<std::uint64_t>(100102));
 		}
 
 
 		namespace BSLightingShaderMaterialLODLandscape
 		{
-			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100110));
+			inline constexpr REL::ID Ctor(static_cast<std::uint64_t>(100110));
 		}
 
 
 		namespace BSLightingShaderMaterialParallax
 		{
-			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100055));
+			inline constexpr REL::ID Ctor(static_cast<std::uint64_t>(100055));
 		}
 
 
 		namespace BSLightingShaderMaterialParallaxOcc
 		{
-			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100065));
+			inline constexpr REL::ID Ctor(static_cast<std::uint64_t>(100065));
 		}
 
 
 		namespace BSLightingShaderMaterialSnow
 		{
-			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(100118));
+			inline constexpr REL::ID Ctor(static_cast<std::uint64_t>(100118));
 		}
 
 
 		namespace BSLightingShaderProperty
 		{
-			static constexpr REL::ID InvalidateTextures(static_cast<std::uint64_t>(99865));
+			inline constexpr REL::ID InvalidateTextures(static_cast<std::uint64_t>(99865));
 		}
 
 
@@ -263,10 +261,10 @@ namespace RE
 
 		namespace BSShaderProperty
 		{
-			static constexpr REL::ID SetMaterial(static_cast<std::uint64_t>(98897));
-			static constexpr REL::ID SetFlags(static_cast<std::uint64_t>(98893));
-			static constexpr REL::ID InvalidateMaterial(static_cast<std::uint64_t>(14678));
-			static constexpr REL::ID SetBSEffectShaderData(static_cast<std::uint64_t>(16981));
+			inline constexpr REL::ID InvalidateMaterial(static_cast<std::uint64_t>(14678));
+			inline constexpr REL::ID SetBSEffectShaderData(static_cast<std::uint64_t>(16981));
+			inline constexpr REL::ID SetFlags(static_cast<std::uint64_t>(98893));
+			inline constexpr REL::ID SetMaterial(static_cast<std::uint64_t>(98897));
 		}
 
 
@@ -308,7 +306,7 @@ namespace RE
 
 		namespace BSShaderTextureSet
 		{
-			static constexpr REL::ID Ctor(static_cast<std::uint64_t>(99886));
+			inline constexpr REL::ID Ctor(static_cast<std::uint64_t>(99886));
 		}
 
 
@@ -330,13 +328,13 @@ namespace RE
 
 		namespace BSTaskPool
 		{
-			static constexpr REL::ID Singleton(static_cast<std::uint64_t>(517228));
+			inline constexpr REL::ID Singleton(static_cast<std::uint64_t>(517228));
 		}
 
 
 		namespace BSTriShape
 		{
-			static constexpr REL::ID Create(static_cast<std::uint64_t>(69284));
+			inline constexpr REL::ID Create(static_cast<std::uint64_t>(69284));
 		}
 
 
@@ -372,7 +370,7 @@ namespace RE
 
 		namespace CombatManager
 		{
-			static constexpr REL::ID Singleton(static_cast<std::uint64_t>(518706));
+			inline constexpr REL::ID Singleton(static_cast<std::uint64_t>(518706));
 		}
 
 
@@ -492,7 +490,7 @@ namespace RE
 
 		namespace ExtraLock
 		{
-			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(229527));
+			inline constexpr REL::ID Vtbl(static_cast<std::uint64_t>(229527));
 		}
 
 
@@ -534,8 +532,8 @@ namespace RE
 
 		namespace FaceGen
 		{
-			static constexpr REL::ID Singleton(static_cast<std::uint64_t>(514182));
-			static constexpr REL::ID RegenerateHead(static_cast<std::uint64_t>(26259));
+			inline constexpr REL::ID RegenerateHead(static_cast<std::uint64_t>(26259));
+			inline constexpr REL::ID Singleton(static_cast<std::uint64_t>(514182));
 		}
 
 
@@ -739,9 +737,9 @@ namespace RE
 
 		namespace Main
 		{
+			inline constexpr REL::ID DoFrame(static_cast<std::uint64_t>(35565));
+			inline constexpr REL::ID ProcessTasks(static_cast<std::uint64_t>(35582));
 			inline constexpr REL::ID Singleton(static_cast<std::uint64_t>(516943));
-			static constexpr REL::ID DoFrame(static_cast<std::uint64_t>(35565));
-			static constexpr REL::ID ProcessTasks(static_cast<std::uint64_t>(35582));
 		}
 
 
@@ -769,7 +767,7 @@ namespace RE
 
 		namespace MessageBoxData
 		{
-			static constexpr REL::ID QueueMessage(static_cast<std::uint64_t>(51422));
+			inline constexpr REL::ID QueueMessage(static_cast<std::uint64_t>(51422));
 		}
 
 
@@ -787,7 +785,7 @@ namespace RE
 
 		namespace NiBooleanExtraData
 		{
-			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286420));
+			inline constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286420));
 		}
 
 
@@ -806,19 +804,19 @@ namespace RE
 
 		namespace NiFloatExtraData
 		{
-			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286430));
+			inline constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286430));
 		}
 
 
 		namespace NiIntegerExtraData
 		{
-			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286443));
+			inline constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286443));
 		}
 
 
 		namespace NiIntegersExtraData
 		{
-			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286448));
+			inline constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286448));
 		}
 
 
@@ -854,19 +852,19 @@ namespace RE
 
 		namespace NiSourceTexture
 		{
-			static constexpr REL::ID Create(static_cast<std::uint64_t>(69335));
+			inline constexpr REL::ID Create(static_cast<std::uint64_t>(69335));
 		}
 
 
 		namespace NiStringsExtraData
 		{
-			static constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286151));
+			inline constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286151));
 		}
 
 
 		namespace Papyrus
 		{
-			static constexpr REL::ID ApplyHavokImpulse(static_cast<std::uint64_t>(55618));
+			inline constexpr REL::ID ApplyHavokImpulse(static_cast<std::uint64_t>(55618));
 		}
 
 
@@ -967,7 +965,7 @@ namespace RE
 		{
 			namespace Logger
 			{
-				static constexpr REL::ID Trace(static_cast<std::uint64_t>(54752));
+				inline constexpr REL::ID Trace(static_cast<std::uint64_t>(54752));
 			}
 		}
 
@@ -1029,7 +1027,7 @@ namespace RE
 
 		namespace TESForm
 		{
-			static constexpr REL::ID GetWeight(static_cast<std::uint64_t>(14809));
+			inline constexpr REL::ID GetWeight(static_cast<std::uint64_t>(14809));
 		}
 
 
@@ -1065,6 +1063,7 @@ namespace RE
 
 		namespace TESObjectREFR
 		{
+			inline constexpr REL::ID CreateRefHandle_Native(static_cast<std::uint64_t>(19418));
 			inline constexpr REL::ID InitChildActivates(static_cast<std::uint64_t>(19857));
 			inline constexpr REL::ID GetDisplayFullName(static_cast<std::uint64_t>(19354));
 			inline constexpr REL::ID GetLock(static_cast<std::uint64_t>(19818));
@@ -1075,14 +1074,12 @@ namespace RE
 			inline constexpr REL::ID IsCrimeToActivate(static_cast<std::uint64_t>(19400));
 			inline constexpr REL::ID MoveTo(static_cast<std::uint64_t>(56227));
 			inline constexpr REL::ID PlayAnimation(static_cast<std::uint64_t>(14189));
-			// po3
-			static constexpr REL::ID CreateRefHandle_Native(static_cast<std::uint64_t>(19418));
 		}
 
 
 		namespace TESPackage
 		{
-			static constexpr REL::ID CreatePackage(static_cast<std::uint64_t>(28732));
+			inline constexpr REL::ID CreatePackage(static_cast<std::uint64_t>(28732));
 		}
 
 
@@ -1095,7 +1092,7 @@ namespace RE
 
 		namespace TESWorldSpace
 		{
-			static constexpr REL::ID GetOrCreateSkyCell(static_cast<std::uint64_t>(20095));
+			inline constexpr REL::ID GetOrCreateSkyCell(static_cast<std::uint64_t>(20095));
 		}
 
 
@@ -1151,9 +1148,9 @@ namespace RE
 		inline constexpr REL::ID LookupReferenceByHandle(static_cast<std::uint64_t>(12204));
 		inline constexpr REL::ID PlaySound(static_cast<std::uint64_t>(52054));
 		inline constexpr REL::ID RTDynamicCast(static_cast<std::uint64_t>(102238));
+		inline constexpr REL::ID ShakeCamera(static_cast<std::uint64_t>(32275));
 		inline constexpr REL::ID TlsIndex(static_cast<std::uint64_t>(528600));
-		// po3
-		static constexpr REL::ID func2E9950(static_cast<std::uint64_t>(21434));
-		static constexpr REL::ID ShakeCamera(static_cast<std::uint64_t>(32275));
+		// FEC
+		inline constexpr REL::ID func2E9950(static_cast<std::uint64_t>(21434));
 	}
 }
