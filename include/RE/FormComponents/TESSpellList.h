@@ -24,7 +24,11 @@ namespace RE
 
 			TES_HEAP_REDEFINE_NEW();
 
+			bool   AddLevSpell(TESLevSpell* a_spell);
+			bool   AddShout(TESShout* a_spell);
+			bool   AddSpell(SpellItem* a_spell);
 			SInt32 GetIndex(SpellItem* a_spell);
+			SInt32 GetIndex(TESLevSpell* a_spell);
 			SInt32 GetIndex(TESShout* a_spell);
 
 

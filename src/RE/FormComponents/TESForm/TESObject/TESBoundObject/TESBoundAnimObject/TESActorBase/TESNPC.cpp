@@ -12,6 +12,28 @@ namespace RE
 	{}
 
 
+	bool TESNPC::AddPerk(BGSPerk* a_perk, SInt32 a_rank)
+	{
+		if (GetPerkIndex(a_perk) == -1) {
+			auto newPerk = new PerkRankData(a_perk, a_rank);
+			if (newPerk) {
+				auto oldData = perks;
+				perks = calloc<PerkRankData>(++perkCount);
+				if (oldData) {
+					for (UInt32 i = 0; i < perkCount - 1; i++) {
+						perks[i] = oldData[i];
+					}
+					free(oldData);
+					oldData = nullptr;
+				}
+				perks[perkCount - 1] = *newPerk;
+				return true;
+			}
+		}
+		return false;
+	}
+
+
 	void TESNPC::ChangeHeadPart(BGSHeadPart* a_target)
 	{
 		using func_t = decltype(&TESNPC::ChangeHeadPart);
@@ -28,7 +50,7 @@ namespace RE
 	}
 
 
-	SInt32 TESNPC::GetBasePerkIndex(BGSPerk* a_perk)
+	SInt32 TESNPC::GetPerkIndex(BGSPerk* a_perk) const
 	{
 		SInt32 index = -1;
 		if (perkCount > 0) {

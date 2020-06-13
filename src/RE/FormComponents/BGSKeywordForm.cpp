@@ -23,10 +23,8 @@ namespace RE
 	{
 		if (keywords) {
 			for (UInt32 idx = 0; idx < numKeywords; ++idx) {
-				if (keywords[idx]) {
-					if (keywords[idx]->formEditorID == a_formEditorID) {
-						return true;
-					}
+				if (keywords[idx] && keywords[idx]->formEditorID == a_formEditorID) {
+					return true;
 				}
 			}
 		}

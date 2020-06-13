@@ -862,9 +862,6 @@
     <ClCompile Include="src\RE\BSDevices\UserEvents.cpp">
       <Filter>src\RE\BSDevices</Filter>
     </ClCompile>
-    <ClCompile Include="src\SKSE\Utilities.cpp">
-      <Filter>src\SKSE</Filter>
-    </ClCompile>
     <ClCompile Include="src\SKSE\VArgFormatter.cpp">
       <Filter>src\SKSE</Filter>
     </ClCompile>
@@ -885,6 +882,9 @@
     </ClCompile>
     <ClCompile Include="src\RE\FormComponents\Components\ContainerItemExtra.cpp">
       <Filter>src\RE\FormComponents\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SKSE\Utilities.cpp">
+      <Filter>src\SKSE</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -4662,6 +4662,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />
+    <None Include="src\.clang-format" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="include">
