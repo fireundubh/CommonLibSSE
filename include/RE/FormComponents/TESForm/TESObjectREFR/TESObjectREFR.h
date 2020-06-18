@@ -382,7 +382,6 @@ namespace RE
 		BGSLocation*					  GetEditorLocation() const;
 		bool							  GetEditorLocation(NiPoint3& a_outPos, NiPoint3& a_outRot, TESForm*& a_outWorldOrCell, TESObjectCELL* a_fallback);
 		TESFaction*						  GetFactionOwner();
-		float							  GetHeadingAngle(TESObjectREFR* a_ref);
 		InventoryItemMap				  GetInventory();
 		InventoryItemMap				  GetInventory(std::function<bool(TESBoundObject*)> a_filter);
 		SInt32							  GetInventoryCount();
@@ -431,7 +430,6 @@ namespace RE
 		bool							  SetMotionType(MotionType a_motionType, bool a_allowActivate = true);
 		void							  SetPosition(float a_x, float a_y, float a_z);
 		void							  SetPosition(NiPoint3 a_pos);
-		void							  StopAllShaders();
 
 
 		// members

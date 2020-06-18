@@ -86,10 +86,11 @@ namespace RE
 			kPreProcessedNode = 1 << 26
 		};
 
+
 		enum class ALPHA_MODE : UInt8
 		{
 			kAll = 0,
-			kSkin = 1
+			kSkin
 		};
 
 

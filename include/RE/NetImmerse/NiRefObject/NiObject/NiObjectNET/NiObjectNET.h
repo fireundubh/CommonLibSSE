@@ -34,16 +34,20 @@ namespace RE
 		bool			  AddExtraData(NiExtraData* a_extra);
 		void			  DeleteExtraData(UInt16 a_extraDataIndex);
 		NiTimeController* GetControllers() const;
-		NiExtraData*	  GetExtraData(const BSFixedString& a_key) const;
-		NiExtraData*	  GetExtraDataAt(UInt16 a_extraDataIndex) const;
-		UInt16			  GetExtraDataSize() const;
-		bool			  HasExtraData(const BSFixedString& a_key);
-		bool			  InsertExtraData(NiExtraData* a_extra);
-		void			  RemoveAllExtraData();
-		bool			  RemoveExtraData(const BSFixedString& a_key);
-		bool			  RemoveExtraData(NiExtraData* a_extra);
-		bool			  RemoveExtraDataAt(UInt16 a_extraDataIndex);
-		bool			  SetExtraDataSize(UInt16 a_size);
+
+		NiExtraData* GetExtraData(const BSFixedString& a_key) const;
+		template <class T>
+		T* GetExtraData(const BSFixedString& a_key) const;
+
+		NiExtraData* GetExtraDataAt(UInt16 a_extraDataIndex) const;
+		UInt16		 GetExtraDataSize() const;
+		bool		 HasExtraData(const BSFixedString& a_key);
+		bool		 InsertExtraData(NiExtraData* a_extra);
+		void		 RemoveAllExtraData();
+		bool		 RemoveExtraData(const BSFixedString& a_key);
+		bool		 RemoveExtraData(NiExtraData* a_extra);
+		bool		 RemoveExtraDataAt(UInt16 a_extraDataIndex);
+		bool		 SetExtraDataSize(UInt16 a_size);
 
 
 		// members
@@ -55,4 +59,15 @@ namespace RE
 		UInt32						pad2C;			// 2C
 	};
 	STATIC_ASSERT(sizeof(NiObjectNET) == 0x30);
+
+
+	template <class T>
+	T* NiObjectNET::GetExtraData(const BSFixedString& a_key) const
+	{
+		auto data = GetExtraData(a_key);
+		if (!data) {
+			return nullptr;
+		}
+		return static_cast<T*>(data);
+	}
 }

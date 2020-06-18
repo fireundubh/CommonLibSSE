@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObject.h"
+#include "RE/FormComponents/TESForm/TESForm.h"
 
 
 namespace RE
@@ -78,6 +79,12 @@ namespace RE
 		virtual bool			 GetStackableMatch(BSTempEffect* a_effect) const;  // 33 - { return false; }
 		virtual void			 Push();										   // 34 - { return; }
 		virtual void			 Pop();											   // 35 - { return; }
+
+		template <class T, typename std::enable_if_t<Impl::is_valid_as_expr<T>::value, int> = 0>
+		constexpr T* As();
+
+		template <class T, typename std::enable_if_t<Impl::is_valid_as_expr<T>::value, int> = 0>
+		constexpr const T* As() const;
 
 
 		// members

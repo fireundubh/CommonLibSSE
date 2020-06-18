@@ -10,6 +10,7 @@
 
 namespace RE
 {
+	class BGSDecalNode;
 	class BGSTextureSet;
 	class NiAVObject;
 

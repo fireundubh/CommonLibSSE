@@ -4659,6 +4659,9 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectSimpleDecal.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\TempEffectTraits.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />
@@ -5924,6 +5927,9 @@
     </Filter>
     <Filter Include="include\RE\Combat\Components">
       <UniqueIdentifier>{3f326d77-4b82-4b1b-850e-7cfe01b7e22a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect">
+      <UniqueIdentifier>{28a84715-f4da-45f9-8973-8ccdbebe4aed}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

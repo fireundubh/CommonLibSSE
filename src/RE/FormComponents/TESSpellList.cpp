@@ -115,4 +115,25 @@ namespace RE
 		}
 		return index;
 	}
+
+
+	bool TESSpellList::SpellData::RemoveSpell(SpellItem* a_spell)
+	{
+		auto index = GetIndex(a_spell);
+		if (index == -1) {
+			auto oldData = spells;
+			if (oldData) {
+				spells = calloc<SpellItem*>(--numSpells);
+				for (SInt32 i = 0; i < numSpells + 1; i++) {
+					if (index != i) {
+						spells[i] = oldData[i];
+					}
+				}
+				free(oldData);
+				oldData = nullptr;
+				return true;
+			}
+		}
+		return false;
+	}
 }

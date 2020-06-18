@@ -432,6 +432,22 @@ namespace RE
 	}
 
 
+	bool Actor::HasKeyword(const BGSKeyword* a_keyword) const
+	{
+		return HasKeywordHelper(a_keyword);
+	}
+
+
+	bool Actor::HasKeyword(const char* a_formEditorID) const
+	{
+		auto actorbase = GetActorBase();
+		if (actorbase) {
+			return actorbase->HasKeyword(a_formEditorID);
+		}
+		return false;
+	}
+
+
 	bool Actor::HasPerk(BGSPerk* a_perk) const
 	{
 		using func_t = decltype(&Actor::HasPerk);

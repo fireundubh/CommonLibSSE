@@ -232,8 +232,8 @@ namespace RE
 					child->SetAppCulled(a_cull);
 				}
 			}
-			node->SetAppCulled(a_cull);
+		} else {
+			SetAppCulled(a_cull);		
 		}
-		SetAppCulled(a_cull);
 	}
 }

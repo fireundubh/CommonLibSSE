@@ -13,9 +13,11 @@ namespace RE
 
 	TESObjectARMA* TESObjectARMO::GetArmorAddonByMask(TESRace* a_race, BGSBipedObjectForm::BipedObjectSlot a_slot)
 	{
-		for (auto& currentAddon : armorAddons) {
-			if (currentAddon && currentAddon->IsValidRace(a_race) && (currentAddon->GetSlotMask() & a_slot) == a_slot) {
-				return currentAddon;
+		if (a_race) {
+			for (auto& currentAddon : armorAddons) {
+				if (currentAddon && currentAddon->IsValidRace(a_race) && (currentAddon->GetSlotMask() & a_slot) == a_slot) {
+					return currentAddon;
+				}
 			}
 		}
 

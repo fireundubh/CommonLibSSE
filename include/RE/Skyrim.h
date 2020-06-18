@@ -1018,6 +1018,7 @@
 #include "RE/NetImmerse/NiRefObject/NiObject/BSTempEffect/BSTempEffectSPG.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/BSTempEffect/BSTempEffectSimpleDecal.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/BSTempEffect/BSTempEffectWeaponBlood.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/BSTempEffect/TempEffectTraits.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/BSTempEffect/ReferenceEffect/ModelReferenceEffect.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/BSTempEffect/ReferenceEffect/ReferenceEffect.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/BSTempEffect/ReferenceEffect/ShaderReferenceEffect.h"

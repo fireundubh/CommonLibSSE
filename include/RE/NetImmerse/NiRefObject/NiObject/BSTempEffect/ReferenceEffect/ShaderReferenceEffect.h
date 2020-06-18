@@ -12,6 +12,7 @@ namespace RE
 	class BSParticleShaderObjectEmitter;
 	class BSParticleShaderProperty;
 	class NiAVObject;
+	class NiSourceTexture;
 	class TESBoundObject;
 	class TESEffectShader;
 	class BSEffectShaderData;

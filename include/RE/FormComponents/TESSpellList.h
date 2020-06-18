@@ -30,6 +30,7 @@ namespace RE
 			SInt32 GetIndex(SpellItem* a_spell);
 			SInt32 GetIndex(TESLevSpell* a_spell);
 			SInt32 GetIndex(TESShout* a_spell);
+			bool   RemoveSpell(SpellItem* a_spell);
 
 
 			//members

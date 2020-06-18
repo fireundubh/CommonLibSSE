@@ -25,10 +25,13 @@ namespace RE
 		virtual bool		HasKeyword(const BGSKeyword* a_keyword) const;	// 04
 		virtual BGSKeyword* GetDefaultKeyword() const;						// 05 - { return 0; }
 
+		bool					   AddKeyword(BGSKeyword* a_keyword);
 		bool					   HasKeyword(FormID a_formID) const;
 		bool					   HasKeyword(const char* a_formEditorID) const;
 		std::optional<BGSKeyword*> GetKeywordAt(UInt32 a_idx) const;
+		SInt32					   GetKeywordIndex(BGSKeyword* a_keyword) const;
 		UInt32					   GetNumKeywords() const;
+		bool					   RemoveKeyword(BGSKeyword* a_keyword);
 
 
 		// members

@@ -156,19 +156,16 @@ namespace RE
 				if (!xList) {
 					continue;
 				}
-
 				auto const lvl = xList->GetSoulLevel();
 				if (lvl > SOUL_LEVEL::kNone) {
 					return lvl;
 				}
 			}
 		}
-
 		if (object && object->Is(FormType::SoulGem)) {
 			auto soulGem = static_cast<const TESSoulGem*>(object);
 			return soulGem->GetContainedSoul();
 		}
-
 		return SOUL_LEVEL::kNone;
 	}
 
@@ -225,11 +222,11 @@ namespace RE
 					}
 				}
 				if (a_noQuestItem) {
-					auto xAliases = static_cast<ExtraAliasInstanceArray*>(xList->GetByType(ExtraDataType::kAliasInstanceArray));
+					auto xAliases = xList->GetByType<ExtraAliasInstanceArray>();
 					if (xAliases) {
-						for (auto& alias : xAliases->aliases) {
+						for (const auto& alias : xAliases->aliases) {
 							const auto quest = alias->quest;
-							auto refAlias = alias->alias;
+							const auto refAlias = alias->alias;
 							if (quest && refAlias && refAlias->IsQuestObject()) {
 								return false;
 							}
@@ -238,7 +235,6 @@ namespace RE
 				}
 			}
 		}
-
 		return true;
 	}
 }

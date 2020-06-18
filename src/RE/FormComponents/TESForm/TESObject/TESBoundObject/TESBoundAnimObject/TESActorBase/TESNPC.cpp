@@ -185,7 +185,7 @@ namespace RE
 	}
 
 
-	bool TESNPC::HasKeyword(const char* a_formEditorID)
+	bool TESNPC::HasKeyword(const char* a_formEditorID) const
 	{
 		auto keywordForm = As<BGSKeywordForm>();
 		if (keywordForm) {
@@ -194,6 +194,27 @@ namespace RE
 				hasKeyword = race->HasKeyword(a_formEditorID);
 			}
 			return hasKeyword;
+		}
+		return false;
+	}
+
+
+	bool TESNPC::RemovePerk(BGSPerk* a_perk)
+	{
+		auto index = GetPerkIndex(a_perk);
+		if (index != -1) {
+			auto oldData = perks;
+			if (oldData) {
+				perks = calloc<PerkRankData>(--perkCount);
+				for (UInt32 i = 0; i < perkCount + 1; i++) {
+					if (index != i) {
+						perks[i] = oldData[i];
+					}
+				}
+				free(oldData);
+				oldData = nullptr;
+				return true;
+			}
 		}
 		return false;
 	}

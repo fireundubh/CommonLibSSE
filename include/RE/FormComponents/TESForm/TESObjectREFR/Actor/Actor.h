@@ -516,6 +516,8 @@ namespace RE
 		SOUL_LEVEL				  GetSoulLevel() const;
 		TESObjectARMO*			  GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot);
 		TESObjectARMO*			  GetWornArmor(FormID a_ID);
+		bool					  HasKeyword(const BGSKeyword* a_keyword) const;
+		bool					  HasKeyword(const char* a_formEditorID) const;
 		bool					  HasPerk(BGSPerk* a_perk) const;
 		bool					  HasSpell(SpellItem* a_spell) const;
 		bool					  InstantKill();

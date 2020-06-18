@@ -274,21 +274,6 @@ namespace RE
 	}
 
 
-	float TESObjectREFR::GetHeadingAngle(TESObjectREFR* a_ref)
-	{
-		auto const dPos = a_ref->GetPosition() - GetPosition();
-		auto result = (dPos.GetArcTangent() - GetRotationZ()) * 57.295776;
-		if (result <= 180.0) {
-			if (result < -180.0) {
-				result = fmodf(result - -180.0, 360.0) + 180.0;
-			}
-		} else {
-			result = fmodf(result - -180.0, 360.0) - 180.0;
-		}
-		return result;
-	}
-
-
 	auto TESObjectREFR::GetInventory()
 		-> InventoryItemMap
 	{
@@ -751,27 +736,6 @@ namespace RE
 	{
 		static ObjectRefHandle invalid;
 		MoveTo_Impl(invalid, GetParentCell(), GetWorldspace(), a_pos, data.angle);
-	}
-
-
-	void TESObjectREFR::StopAllShaders()
-	{
-		auto processLists = ProcessLists::GetSingleton();
-		if (processLists) {
-			processLists->magicEffectsLock.Lock();
-			for (auto& tempEffect : processLists->magicEffects) {
-				if (tempEffect.get()) {
-					auto referenceEffect = netimmerse_cast<ReferenceEffect*>(tempEffect.get());
-					if (referenceEffect) {
-						auto refHandle = CreateRefHandle();
-						if (referenceEffect->target == refHandle) {
-							referenceEffect->finished = 1;
-						}
-					}
-				}
-			}
-			processLists->magicEffectsLock.Unlock();
-		}
 	}
 
 

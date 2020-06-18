@@ -260,7 +260,8 @@ namespace RE
 		SEX						 GetSex() const;
 		bool					 IsInClass(TESClass* a_class) const;
 		bool					 HasOverlays();
-		bool					 HasKeyword(const char* a_formEditorID);
+		bool					 HasKeyword(const char* a_formEditorID) const;
+		bool					 RemovePerk(BGSPerk* a_perk);
 		void					 SetFaceTexture(BGSTextureSet* a_textureSet);
 		void					 SetHairColor(BGSColorForm* a_hairColor);
 		void					 SetSkinFromTint(NiColorA* a_result, TintMask* a_tintMask, bool a_fromTint);

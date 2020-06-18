@@ -33,6 +33,8 @@ namespace RE
 		ExtraLightData();
 		virtual ~ExtraLightData() = default;  // 00
 
+		TES_HEAP_REDEFINE_NEW();
+
 		// override (BSExtraData)
 		virtual ExtraDataType GetType() const override;								// 01 - { return kLightData; }
 		virtual bool		  IsNotEqual(const BSExtraData* a_rhs) const override;	// 02
