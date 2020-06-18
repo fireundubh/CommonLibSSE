@@ -4629,8 +4629,12 @@
     <ClInclude Include="include\RE\BSScript\Internal\VDescTable.h">
       <Filter>include\RE\BSScript\Internal</Filter>
     </ClInclude>
-    <ClInclude Include="include\REL\Version.h">
-      <Filter>include\REL</Filter>
+    <ClInclude Include="include\SKSE\Impl\RegistrationTraits.h">
+      <Filter>include\SKSE\Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SKSE\Impl\Stubs.h">
+      <Filter>include\SKSE\Impl</Filter>
+    </ClInclude>
     </ClInclude>
     <ClInclude Include="include\SKSE\Version.h">
       <Filter>include\SKSE</Filter>
@@ -4646,11 +4650,10 @@
     </ClInclude>
     <ClInclude Include="include\RE\Combat\Components\CombatLocation.h">
       <Filter>include\RE\Combat\Components</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet\BSTextureSet.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\Misc\BGSDecalManager.h">
+    <ClInclude Include="include\SKSE\SKSE.h">
       <Filter>include\RE\Misc</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectGeometryDecal.h">
