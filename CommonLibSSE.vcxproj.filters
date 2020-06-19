@@ -1887,6 +1887,9 @@
     <ClInclude Include="include\RE\BSCore\BSTMessageQueue.h">
       <Filter>include\RE\BSCore</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\BSCore\BSTObjectDictionary.h">
+      <Filter>include\RE\BSCore</Filter>
+    </ClInclude>
     <ClInclude Include="include\RE\BSCore\BSTPoint.h">
       <Filter>include\RE\BSCore</Filter>
     </ClInclude>
@@ -4677,6 +4680,12 @@
     <None Include="src\.clang-format">
       <Filter>src</Filter>
     </None>
+    <ClCompile Include="src\RE\FormComponents\Components\BSResponse.cpp">
+      <Filter>src\RE\FormComponents\Components</Filter>
+    </ClCompile>
+      <Filter>src\RE\FormComponents\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\FormComponents\Components\IHandlerFunctor.cpp">
   </ItemGroup>
   <ItemGroup>
     <Filter Include="include">
