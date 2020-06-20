@@ -218,67 +218,67 @@ namespace RE
 		NiColor color;
 
 		switch (a_mode) {
-		case kDarken:
+		case BLEND_MODE::kDarken:
 			color = darken(a_src, a_dest);
 			break;
-		case kMultiply:
+		case BLEND_MODE::kMultiply:
 			color = multiply(a_src, a_dest);
 			break;
-		case kColorBurn:
+		case BLEND_MODE::kColorBurn:
 			color = colorBurn(a_src, a_dest);
 			break;
-		case kLinearBurn:
+		case BLEND_MODE::kLinearBurn:
 			color = linearBurn(a_src, a_dest);
 			break;
-		case kDarkerColor:
+		case BLEND_MODE::kDarkerColor:
 			color = darkerColor(a_src, a_dest);
 			break;
-		case kLighten:
+		case BLEND_MODE::kLighten:
 			color = lighten(a_src, a_dest);
 			break;
-		case kScreen:
+		case BLEND_MODE::kScreen:
 			color = screen(a_src, a_dest);
 			break;
-		case kColorDodge:
+		case BLEND_MODE::kColorDodge:
 			color = colorDodge(a_src, a_dest);
 			break;
-		case kLinearDodge:
+		case BLEND_MODE::kLinearDodge:
 			color = linearDodge(a_src, a_dest);
 			break;
-		case kLighterColor:
+		case BLEND_MODE::kLighterColor:
 			color = lighterColor(a_src, a_dest);
 			break;
-		case kOverlay:
+		case BLEND_MODE::kOverlay:
 			color = overlay(a_src, a_dest);
 			break;
-		case kSoftLight:
+		case BLEND_MODE::kSoftLight:
 			color = softLight(a_src, a_dest);
 			break;
-		case kHardLight:
+		case BLEND_MODE::kHardLight:
 			color = hardLight(a_src, a_dest);
 			break;
-		case kVividLight:
+		case BLEND_MODE::kVividLight:
 			color = vividLight(a_src, a_dest);
 			break;
-		case kLinearLight:
+		case BLEND_MODE::kLinearLight:
 			color = linearLight(a_src, a_dest);
 			break;
-		case kPinLight:
+		case BLEND_MODE::kPinLight:
 			color = pinLight(a_src, a_dest);
 			break;
-		case kHardMix:
+		case BLEND_MODE::kHardMix:
 			color = hardMix(a_src, a_dest);
 			break;
-		case kDifference:
+		case BLEND_MODE::kDifference:
 			color = difference(a_src, a_dest);
 			break;
-		case kExclusion:
+		case BLEND_MODE::kExclusion:
 			color = exclusion(a_src, a_dest);
 			break;
-		case kSubtract:
+		case BLEND_MODE::kSubtract:
 			color = subtract(a_src, a_dest);
 			break;
-		case kDivide:
+		case BLEND_MODE::kDivide:
 			color = divide(a_src, a_dest);
 			break;
 		default:

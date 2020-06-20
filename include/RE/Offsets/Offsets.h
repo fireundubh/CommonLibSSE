@@ -52,6 +52,12 @@ namespace RE
 		}
 
 
+		namespace ActorValueList
+		{
+			inline constexpr REL::ID Singleton(static_cast<std::uint64_t>(514139));
+		}
+
+
 		namespace ActorValueOwner
 		{
 			inline constexpr REL::ID GetClampedActorValue(static_cast<std::uint64_t>(26616));

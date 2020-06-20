@@ -21,7 +21,7 @@ namespace RE
 		};
 
 
-		enum BLEND_MODE : UInt32
+		enum class BLEND_MODE : UInt32
 		{
 			kDarken = 0,
 			kMultiply,

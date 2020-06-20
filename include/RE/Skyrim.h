@@ -964,6 +964,7 @@
 #include "RE/Menus/UIMessage.h"
 #include "RE/Menus/UIMessageQueue.h"
 #include "RE/Menus/UISaveLoadManager.h"
+#include "RE/Misc/ActorValueList.h"
 #include "RE/Misc/BGSDecalManager.h"
 #include "RE/Misc/BSTaskPool.h"
 #include "RE/Misc/Calendar.h"

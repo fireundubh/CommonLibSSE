@@ -17,4 +17,19 @@ namespace RE
 		return func(this, a_actor, a_dontEndAlarm);
 	}
 
+
+	void ProcessLists::GetMagicEffects(std::function<bool(RE::BSTempEffect* a_tempEffect)> a_fn)
+	{
+		magicEffectsLock.Lock();
+		for (auto& tempEffectPtr : magicEffects) {
+			auto tempEffect = tempEffectPtr.get();
+			if (tempEffect) {
+				if (!a_fn(tempEffect)) {
+					break;
+				}
+			}
+		}
+		magicEffectsLock.Unlock();
+	}
+
 }

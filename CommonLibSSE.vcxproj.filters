@@ -731,7 +731,7 @@
       <Filter>src\RE\Sky</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\SkyrimScript\SkyrimVM.cpp">
-      <Filter>src\RE\SkyrimScript</Filter>
+      <Filter>src\RE\Misc\SkyrimScript</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\BSScript\Stack.cpp">
       <Filter>src\RE\BSScript</Filter>
@@ -885,6 +885,9 @@
     </ClCompile>
     <ClCompile Include="src\RE\BSScript\IFunctionArguments\ZeroFunctionArguments.cpp">
       <Filter>src\RE\BSScript\IFunctionArguments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Misc\ActorValueList.cpp">
+      <Filter>src\RE\Misc</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -4665,10 +4668,15 @@
     <ClInclude Include="include\RE\Memory\IMemoryStoreBase\IMemoryStore\IMemoryHeap\ZeroOverheadHeap.h">
       <Filter>include\RE\Memory\IMemoryStoreBase\IMemoryStore\IMemoryHeap</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\Misc\ActorValueList.h">
+      <Filter>include\RE\Misc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />
-    <None Include="src\.clang-format" />
+    <None Include="src\.clang-format">
+      <Filter>src</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="include">
@@ -5886,9 +5894,6 @@
     <Filter Include="src\RE\Sky">
       <UniqueIdentifier>{449232a4-1c47-421c-8977-b26efb1efa8c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\RE\SkyrimScript">
-      <UniqueIdentifier>{7b4875bf-7957-4a6c-af53-134b3cff7231}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\RE\BSGraphics">
       <UniqueIdentifier>{e0e81e10-b69d-41eb-9f4d-07ba9016b173}</UniqueIdentifier>
     </Filter>
@@ -5930,6 +5935,9 @@
     </Filter>
     <Filter Include="src\RE\BSScript\IFunctionArguments">
       <UniqueIdentifier>{ea4cdadc-4c63-4ec2-9cd0-99930d4f79ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\Misc\SkyrimScript">
+      <UniqueIdentifier>{7b4875bf-7957-4a6c-af53-134b3cff7231}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

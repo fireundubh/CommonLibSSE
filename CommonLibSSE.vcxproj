@@ -1183,6 +1183,7 @@
     <ClInclude Include="include\RE\Menus\UIMessage.h" />
     <ClInclude Include="include\RE\Menus\UIMessageQueue.h" />
     <ClInclude Include="include\RE\Menus\UISaveLoadManager.h" />
+    <ClInclude Include="include\RE\Misc\ActorValueList.h" />
     <ClInclude Include="include\RE\Misc\BGSDecalManager.h" />
     <ClInclude Include="include\RE\Misc\BSTaskPool.h" />
     <ClInclude Include="include\RE\Misc\Calendar.h" />
@@ -1677,6 +1678,7 @@
     <ClCompile Include="src\RE\Menus\UI.cpp" />
     <ClCompile Include="src\RE\Menus\UIBlurManager.cpp" />
     <ClCompile Include="src\RE\Menus\UIMessageQueue.cpp" />
+    <ClCompile Include="src\RE\Misc\ActorValueList.cpp" />
     <ClCompile Include="src\RE\Misc\BGSDecalManager.cpp" />
     <ClCompile Include="src\RE\Misc\BGSImpactManager.cpp" />
     <ClCompile Include="src\RE\Misc\BSTaskPool.cpp" />

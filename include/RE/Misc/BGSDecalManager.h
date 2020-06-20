@@ -19,6 +19,7 @@ namespace RE
 	public:
 		static BGSDecalManager* GetSingleton();
 
+
 		//members
 		UInt32							unk00;				 // 00
 		UInt32							unk04;				 // 04

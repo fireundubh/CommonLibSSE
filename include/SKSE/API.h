@@ -6,7 +6,6 @@
 #include "SKSE/Impl/Stubs.h"
 #include "SKSE/Interfaces.h"
 #include "SKSE/Trampoline.h"
-#include "SKSE/Utilities.h"
 #include "SKSE/Version.h"
 
 
