@@ -1067,6 +1067,7 @@
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiNode/BSNiNode/BSNiNode.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiNode/BSNiNode/BSValueNode.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiNode/NiNode.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiNode/ShadowSceneNode.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiObjectNET.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiAlphaProperty.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiProperty.h"

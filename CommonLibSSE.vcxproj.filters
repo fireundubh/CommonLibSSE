@@ -4644,6 +4644,9 @@
     <ClInclude Include="include\RE\BSDevices\UserEvents.h">
       <Filter>include\RE\BSDevices</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\ShadowSceneNode.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode</Filter>
+    </ClInclude>
     <ClInclude Include="include\SKSE\Impl\Util.h">
       <Filter>include\SKSE\Impl</Filter>
     </ClInclude>
