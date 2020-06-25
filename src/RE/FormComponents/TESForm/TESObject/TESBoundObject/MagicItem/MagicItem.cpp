@@ -1,5 +1,7 @@
 #include "RE/FormComponents/TESForm/TESObject/TESBoundObject/MagicItem/MagicItem.h"
 
+#include "RE/FormComponents/Components/Effect.h"
+
 
 namespace RE
 {
@@ -42,5 +44,16 @@ namespace RE
 		-> const Data*
 	{
 		return GetData1();
+	}
+
+
+	Effect* MagicItem::GetMatchingEffect(EffectSetting* a_base, float a_mag, UInt32 a_area, UInt32 a_dur, float a_cost)
+	{
+		for (auto& effect : effects) {
+			if (effect->IsMatch(a_base, a_mag, a_area, a_dur, a_cost)) {
+				return effect;
+			}
+		}
+		return nullptr;
 	}
 }
