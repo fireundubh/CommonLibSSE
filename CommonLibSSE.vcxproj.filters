@@ -3891,11 +3891,11 @@
     <ClInclude Include="include\RE\BSScript\Object.h">
       <Filter>include\RE\BSScript</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\BSScript\ObjectBindPolicy.h">
-      <Filter>include\RE\BSScript</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\SkyrimScript\ObjectBindPolicy.h">
       <Filter>include\RE\SkyrimScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSScript\ObjectBindPolicy.h">
+      <Filter>include\RE\BSScript</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSScript\ObjectTypeInfo.h">
       <Filter>include\RE\BSScript</Filter>
@@ -4056,11 +4056,11 @@
     <ClInclude Include="include\RE\BSDevices\PlayerInputHandler\HeldStateHandler\RunHandler.h">
       <Filter>include\RE\BSDevices\PlayerInputHandler\HeldStateHandler</Filter>
     </ClInclude>
-    <ClInclude Include="include\REL\SafeWrite.h">
-      <Filter>include\REL</Filter>
-    </ClInclude>
     <ClInclude Include="include\SKSE\SafeWrite.h">
       <Filter>include\SKSE</Filter>
+    </ClInclude>
+    <ClInclude Include="include\REL\SafeWrite.h">
+      <Filter>include\REL</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Menus\IMenu\SafeZoneMenu.h">
       <Filter>include\RE\Menus\IMenu</Filter>
@@ -4118,6 +4118,9 @@
     </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect\ShaderReferenceEffect.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\ShadowSceneNode.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSDevices\PlayerInputHandler\ShoutHandler.h">
       <Filter>include\RE\BSDevices\PlayerInputHandler</Filter>
@@ -4644,9 +4647,6 @@
     <ClInclude Include="include\RE\BSDevices\UserEvents.h">
       <Filter>include\RE\BSDevices</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\ShadowSceneNode.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode</Filter>
-    </ClInclude>
     <ClInclude Include="include\SKSE\Impl\Util.h">
       <Filter>include\SKSE\Impl</Filter>
     </ClInclude>
@@ -4665,11 +4665,11 @@
     <ClInclude Include="include\RE\BSScript\Internal\VDescTable.h">
       <Filter>include\RE\BSScript\Internal</Filter>
     </ClInclude>
-    <ClInclude Include="include\SKSE\Version.h">
-      <Filter>include\SKSE</Filter>
-    </ClInclude>
     <ClInclude Include="include\REL\Version.h">
       <Filter>include\REL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SKSE\Version.h">
+      <Filter>include\SKSE</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSScript\Internal\VirtualMachine.h">
       <Filter>include\RE\BSScript\Internal</Filter>
@@ -4692,1264 +4692,1264 @@
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
-      <UniqueIdentifier>{29ad619f-b9c3-4384-a729-059780aeb19a}</UniqueIdentifier>
+      <UniqueIdentifier>{4b694499-681c-4c88-9d04-f0b4270a12ed}</UniqueIdentifier>
     </Filter>
     <Filter Include="include">
-      <UniqueIdentifier>{f268ed07-be90-461a-86c7-46c65b20e0cd}</UniqueIdentifier>
+      <UniqueIdentifier>{6e694bbd-d9b2-4cbe-95c9-d37f70dc5663}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE">
-      <UniqueIdentifier>{9f936128-1caf-4116-8096-020a9edf9a22}</UniqueIdentifier>
+      <UniqueIdentifier>{ab82297a-6810-486c-839b-eae11d452f5c}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents">
-      <UniqueIdentifier>{6c364a6e-c7a6-41de-9eb0-3f9f289152fb}</UniqueIdentifier>
+      <UniqueIdentifier>{ada1385d-7000-405a-ba2e-45240e172008}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components">
-      <UniqueIdentifier>{a75dc2f9-4d04-4a95-809e-28d7c9450161}</UniqueIdentifier>
+      <UniqueIdentifier>{6b6bd74f-4728-4453-bb01-9b0ca97520a8}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\ActiveEffect">
-      <UniqueIdentifier>{7b139933-f181-4ef5-a2b5-854ac0ff44db}</UniqueIdentifier>
+      <UniqueIdentifier>{2a1559d6-4624-47e3-8b32-c62ba67d9030}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect">
-      <UniqueIdentifier>{b5c3ffb7-59b4-4928-a34b-ff9bb9c734ae}</UniqueIdentifier>
+      <UniqueIdentifier>{ce478a20-0385-4e47-8a1a-5f47a1c448c9}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Memory">
-      <UniqueIdentifier>{fd003f38-ffb9-4a93-b28f-12a6a4ce7c75}</UniqueIdentifier>
+      <UniqueIdentifier>{6a16b6e3-374b-4cb9-8771-186de7ef4ef8}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Memory\IMemoryStoreBase">
-      <UniqueIdentifier>{85f548fa-3efe-4d1b-b5d4-367cdafa52e5}</UniqueIdentifier>
+      <UniqueIdentifier>{5e616870-fd4d-45b8-9121-00a6189f5467}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Memory\IMemoryStoreBase\IMemoryStore">
-      <UniqueIdentifier>{b12316af-c3a0-4a02-9e0d-6fd9498cfbb8}</UniqueIdentifier>
+      <UniqueIdentifier>{a9596bc7-eeed-448d-9131-2429589b1507}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Memory\IMemoryStoreBase\IMemoryStore\IMemoryHeap">
-      <UniqueIdentifier>{aa49ba68-b0d4-44e6-b7d9-9acc5a6a09d9}</UniqueIdentifier>
+      <UniqueIdentifier>{c14aad77-20e1-4111-9de5-5560b89387f8}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Memory\IMemoryStoreBase\IMemoryStore\IMemoryHeap\AbstractHeap">
-      <UniqueIdentifier>{307875c4-4b97-4208-b29c-a9c8ac18b114}</UniqueIdentifier>
+      <UniqueIdentifier>{dfbc7d73-59ca-46e2-8940-97ae5a2de1ca}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSDevices">
-      <UniqueIdentifier>{c0c3ba93-caae-4d94-95a3-aa4271ef97f4}</UniqueIdentifier>
+      <UniqueIdentifier>{452bead1-15c5-45a5-ba79-504110b2336c}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSDevices\PlayerInputHandler">
-      <UniqueIdentifier>{951a1002-2a66-465c-a30e-429f7b167d6d}</UniqueIdentifier>
+      <UniqueIdentifier>{4677f0c8-6b1a-4930-bb53-df2145541dd9}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSDevices\PlayerInputHandler\HeldStateHandler">
-      <UniqueIdentifier>{a48fe1b7-23a5-458f-8ccf-d1bdd6ea9d54}</UniqueIdentifier>
+      <UniqueIdentifier>{03b1ff27-68bf-44ac-b547-8bd6af02588e}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE">
-      <UniqueIdentifier>{b09d1888-eb59-4e6b-b5a8-a4593006082b}</UniqueIdentifier>
+      <UniqueIdentifier>{02003a00-2cfc-4d77-87c0-21d80eb5b8e3}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents">
-      <UniqueIdentifier>{a7f92fb8-4db1-455b-bfc5-2f3dba5f55c9}</UniqueIdentifier>
+      <UniqueIdentifier>{899c1d82-7bfc-47b8-b181-124601de56e5}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\Components">
-      <UniqueIdentifier>{8e8e1431-9f54-41df-b158-b928ec6fd6d4}</UniqueIdentifier>
+      <UniqueIdentifier>{412faa45-dd9f-48a1-83d3-aafcf412034c}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\Components\ActiveEffect">
-      <UniqueIdentifier>{0e4724c9-508a-4f84-aa9b-22ff421a483a}</UniqueIdentifier>
+      <UniqueIdentifier>{30f54ae5-d4b4-4ef1-b830-e1f00f8e12f2}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\ReferenceEffectController">
-      <UniqueIdentifier>{0c0bca44-a94e-4939-be99-835784f39dd0}</UniqueIdentifier>
+      <UniqueIdentifier>{c83517ce-cd5a-4307-bb6c-3a4a32b4b14b}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\TESForm">
-      <UniqueIdentifier>{2a1037c7-f945-4377-ae4f-20a65cd7c4d0}</UniqueIdentifier>
+      <UniqueIdentifier>{e0e58621-00b4-451c-9dd2-4a9786547edc}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\TESForm\TESObjectREFR">
-      <UniqueIdentifier>{98f26e82-3fd6-4d64-87bf-a7a3be3c1e1b}</UniqueIdentifier>
+      <UniqueIdentifier>{b9c5388e-50f9-47e6-a396-2047c5fb1f07}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\TESForm\TESObjectREFR\Actor">
-      <UniqueIdentifier>{826faf10-767b-4b21-b12e-eab95046ac57}</UniqueIdentifier>
+      <UniqueIdentifier>{826ee7fe-2379-44d5-9f5a-ff945dc4ad7e}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm">
-      <UniqueIdentifier>{6682ccfc-8bf6-4ca9-9da5-d52373b91c0e}</UniqueIdentifier>
+      <UniqueIdentifier>{4d992dc0-f93d-4284-a3e0-52da7cbdb08e}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\TESObjectREFR">
-      <UniqueIdentifier>{cccfc746-5bbf-46de-afc7-95dc76773909}</UniqueIdentifier>
+      <UniqueIdentifier>{36603178-e0c4-4b10-a6f9-7a753e4e6fcf}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\TESObjectREFR\Actor">
-      <UniqueIdentifier>{8e2fe46f-1f7d-4e77-a24a-00060975706d}</UniqueIdentifier>
+      <UniqueIdentifier>{05dde91c-dbbb-4aed-b585-706e4f83797a}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Inventory">
-      <UniqueIdentifier>{1ab766e7-6f12-42ac-8a2b-d02b719210f6}</UniqueIdentifier>
+      <UniqueIdentifier>{e8766d73-c945-4931-aa20-dee47a3f5dc5}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Inventory">
-      <UniqueIdentifier>{3d970a7e-d2b6-40f2-a783-2cef92ccd4b6}</UniqueIdentifier>
+      <UniqueIdentifier>{9a13e498-4a75-4d6a-a2b9-82a1a672c582}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\MagicCaster">
-      <UniqueIdentifier>{53b2a4fe-3f51-474c-9893-c805c5cedf61}</UniqueIdentifier>
+      <UniqueIdentifier>{ef1c1514-5ed7-409b-8d83-e59f92f67194}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Animation">
-      <UniqueIdentifier>{22b7c658-a678-4fe1-b9bc-5f33f5bb4833}</UniqueIdentifier>
+      <UniqueIdentifier>{e26ff589-f337-45d9-99aa-cd30e063e150}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Pathfinding">
-      <UniqueIdentifier>{3ebbc3b0-55fc-4216-a91d-4110590cac51}</UniqueIdentifier>
+      <UniqueIdentifier>{b7f00963-1286-40d4-879c-ffe2f5994919}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Pathfinding\IMovementInterface">
-      <UniqueIdentifier>{2b98e24f-f157-4619-8776-1447a041bae7}</UniqueIdentifier>
+      <UniqueIdentifier>{5b6ed6a3-7627-4185-8755-6d49bac81dc3}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Pathfinding\IMovementInterface\IMovementState">
-      <UniqueIdentifier>{dee01867-b25b-43bb-ac20-a08cd68cf672}</UniqueIdentifier>
+      <UniqueIdentifier>{fa1ad1c8-d6ee-4c82-9176-48d2ce1bfe40}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Pathfinding">
-      <UniqueIdentifier>{85c2a369-3984-4c9e-95c8-e962eb06af60}</UniqueIdentifier>
+      <UniqueIdentifier>{5cbb59dc-3eb4-463b-8ac8-aad3f144dfe3}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Pathfinding\IMovementInterface">
-      <UniqueIdentifier>{45428b6f-746c-452d-a068-e5c9d4c5fe51}</UniqueIdentifier>
+      <UniqueIdentifier>{863f8cc8-e678-40c3-98c7-90b0e803b8a8}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Pathfinding\IMovementInterface\IMovementState">
-      <UniqueIdentifier>{93e9d803-2604-446a-8cbe-e032adc83d53}</UniqueIdentifier>
+      <UniqueIdentifier>{b398b508-2051-4172-bf83-c03fbbb4e6fc}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Misc">
-      <UniqueIdentifier>{12966920-910a-4eea-b27a-1dd321e37f52}</UniqueIdentifier>
+      <UniqueIdentifier>{2800f445-73ab-4739-b7d8-fad65551a524}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Misc">
-      <UniqueIdentifier>{2cfe9062-2596-4243-91c1-3c2a34d67ca6}</UniqueIdentifier>
+      <UniqueIdentifier>{388f3ef7-a1d3-455c-a86e-6a8f794c686c}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Menus">
-      <UniqueIdentifier>{4082824c-2ca3-429c-a757-4c1b271eeb28}</UniqueIdentifier>
+      <UniqueIdentifier>{5ac6cf53-492e-42f3-8836-074a88697df3}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Menus\HUDObject">
-      <UniqueIdentifier>{70c4e2ab-bb9f-4806-a843-60948c444e06}</UniqueIdentifier>
+      <UniqueIdentifier>{eedca43a-c389-4f6c-a0ca-8a2d175c54a9}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Menus\HUDObject\HUDMeter">
-      <UniqueIdentifier>{0a1135d9-ebb0-43fc-92cc-b1e0054ad26a}</UniqueIdentifier>
+      <UniqueIdentifier>{f6591cfe-6261-45da-a40d-3a5088dc4045}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Enums">
-      <UniqueIdentifier>{3b9604a9-07b3-4493-86fe-71a0002e4308}</UniqueIdentifier>
+      <UniqueIdentifier>{bee0cde8-8095-41fe-8b01-006365f969c9}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform">
-      <UniqueIdentifier>{58b39cee-d7b7-4c90-b6f1-2679ab6362fe}</UniqueIdentifier>
+      <UniqueIdentifier>{73f2426d-a7fa-4beb-ab80-2b8780270a9f}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform\FxGameDelegate">
-      <UniqueIdentifier>{9e49a2be-0544-4659-8f10-af29e3d7b287}</UniqueIdentifier>
+      <UniqueIdentifier>{4e52cdd8-43e1-44ac-a61b-5c6fc65ca022}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform">
-      <UniqueIdentifier>{c2428ac3-82af-4444-a7c7-3c486276c5df}</UniqueIdentifier>
+      <UniqueIdentifier>{58d1240f-afdf-461e-867b-4e46c16e4c59}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\FxGameDelegate">
-      <UniqueIdentifier>{e22036f5-bc5f-463b-813d-f6bbb9234a33}</UniqueIdentifier>
+      <UniqueIdentifier>{1baf5f2a-ffcf-40a4-93f1-39b17cc2bb32}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok">
-      <UniqueIdentifier>{7ea14b0b-366e-4f89-9d05-ae240f2d3670}</UniqueIdentifier>
+      <UniqueIdentifier>{1f059882-65a5-426f-8a08-94bcca0aec97}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject">
-      <UniqueIdentifier>{35aa1ab5-59e4-4878-b6a1-80ac4a76f705}</UniqueIdentifier>
+      <UniqueIdentifier>{9aafbe1e-4a6b-4d62-95ad-4280a023b850}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject">
-      <UniqueIdentifier>{b9c749b8-bc74-4200-b51f-9058b9739059}</UniqueIdentifier>
+      <UniqueIdentifier>{1faa1203-f1f2-4507-aec2-1bdbcd87da73}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpCharacterProxy">
-      <UniqueIdentifier>{34407d78-6920-4a8b-adbe-0801fe8ba4e0}</UniqueIdentifier>
+      <UniqueIdentifier>{2e6cde69-c96b-41b3-8aa3-b363bdfe575e}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorld">
-      <UniqueIdentifier>{5034d3cc-7123-4b18-a23e-2b334e8a39a2}</UniqueIdentifier>
+      <UniqueIdentifier>{b0039c11-857d-45c4-a029-37f90ab1c852}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\AI">
-      <UniqueIdentifier>{8af65591-6e36-4d02-bff1-1aad25115af9}</UniqueIdentifier>
+      <UniqueIdentifier>{94d1f9a4-cd17-43f1-95bc-97940fee6a00}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\AI">
-      <UniqueIdentifier>{34afeea7-75fe-4a4c-9b5a-e83d310b5d45}</UniqueIdentifier>
+      <UniqueIdentifier>{40801e1e-8b79-41a9-9f75-3c5e52f303c4}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\TESObject">
-      <UniqueIdentifier>{62f841b7-7b62-43f4-9aa7-f3516d6ee31d}</UniqueIdentifier>
+      <UniqueIdentifier>{659f3410-1a53-455f-baa3-1c7d5d5f8d24}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\TESObject\TESBoundObject">
-      <UniqueIdentifier>{5f45fe3d-7115-49a6-9dc9-9d67ce9ef7b8}</UniqueIdentifier>
+      <UniqueIdentifier>{8556ef78-ee91-444e-89b6-b71a45a5da5e}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\TESObject\TESBoundObject\MagicItem">
-      <UniqueIdentifier>{7a65947b-54e4-4754-a878-a8f9c7d6ca3d}</UniqueIdentifier>
+      <UniqueIdentifier>{db3d9dc4-dd2f-4e23-b56a-166d28465971}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Menus\IMenu">
-      <UniqueIdentifier>{88c7707d-dd2b-4a9f-9802-277acafe5d00}</UniqueIdentifier>
+      <UniqueIdentifier>{edbd94dd-284a-416a-bab8-4085e57f81d9}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Menus\IMenu\Components">
-      <UniqueIdentifier>{e6469330-72d7-449a-b49d-523c39c7ef83}</UniqueIdentifier>
+      <UniqueIdentifier>{210289ea-5627-411a-a1d0-6ecceece828f}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Menus\IMenu\Components\CraftingSubMenus">
-      <UniqueIdentifier>{b967ed6f-0bb1-4369-8e92-126c09360533}</UniqueIdentifier>
+      <UniqueIdentifier>{5abad4cb-067b-4b16-90b6-a3aa9fc0c5a3}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\SKSE">
-      <UniqueIdentifier>{5159050d-52f0-4480-b2a9-320d3005d1df}</UniqueIdentifier>
+      <UniqueIdentifier>{2ad84fd7-89aa-4ae3-9cd2-03e5860ca356}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\SKSE">
-      <UniqueIdentifier>{fcac92eb-2ff9-42be-aa72-50ec15fffae9}</UniqueIdentifier>
+      <UniqueIdentifier>{42200f53-cbff-4ed7-9594-1cdb976ac1d4}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSSystem">
-      <UniqueIdentifier>{6e2f332d-824c-45e9-b85e-c94e905043e8}</UniqueIdentifier>
+      <UniqueIdentifier>{42d9f4f4-20e8-4a46-86a5-9d56dd8e6b2c}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSSystem\BSArchiveHeader">
-      <UniqueIdentifier>{ac7fc136-cc0d-41b7-95be-417a26568c7f}</UniqueIdentifier>
+      <UniqueIdentifier>{8da66444-3873-4c6d-9d28-eff77c5423be}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSSystem\BSArchiveHeader\BSArchive">
-      <UniqueIdentifier>{27e69596-19de-4973-b6e7-8f08eed715cf}</UniqueIdentifier>
+      <UniqueIdentifier>{6f169243-0e6f-42d0-869d-8b86324cd3e3}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Inventory\ArmorRatingVisitorBase">
-      <UniqueIdentifier>{f08aeb21-5a73-43b2-a220-6b0b67e158e6}</UniqueIdentifier>
+      <UniqueIdentifier>{70fd3e4c-13c4-4f5d-86a1-8209abdf3322}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSScript">
-      <UniqueIdentifier>{599c7ffa-9451-423d-9f37-3cbad9b4384f}</UniqueIdentifier>
+      <UniqueIdentifier>{5e019d86-bc1e-47b2-80b9-98c78d707f0c}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSScript">
-      <UniqueIdentifier>{cb65629c-2cc7-4cae-a8d0-a759541cbcf7}</UniqueIdentifier>
+      <UniqueIdentifier>{b7ad6973-323a-4f54-9dad-9cdc1e458765}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\TESObjectREFR\Projectile">
-      <UniqueIdentifier>{8b1cf859-b943-4706-be7c-625bc6cd5ca4}</UniqueIdentifier>
+      <UniqueIdentifier>{63e43f4f-4c8e-475a-b5d0-7c406fbc185c}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\TESObjectREFR\Projectile\MissileProjectile">
-      <UniqueIdentifier>{9e1c5865-baac-48da-9868-9356ba1f3a6a}</UniqueIdentifier>
+      <UniqueIdentifier>{2b293bc5-9eb8-4712-89c1-fd8e79ab2b6c}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSResource">
-      <UniqueIdentifier>{6e669a9c-b5b0-4345-9f0b-72707d638b10}</UniqueIdentifier>
+      <UniqueIdentifier>{2e5c3a2a-12fb-429b-9e85-f120089fbf8d}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSResource\StreamBase">
-      <UniqueIdentifier>{e76c0c94-6570-43d3-a01f-7d5a7aeaf70d}</UniqueIdentifier>
+      <UniqueIdentifier>{468159c6-c101-48a2-b75a-ab1750e12459}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Sky">
-      <UniqueIdentifier>{fc6446b9-fe18-4f83-a725-5116f6ba7a8c}</UniqueIdentifier>
+      <UniqueIdentifier>{da76228b-b8db-4a44-9e09-719473296a02}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Sky\SkyObject">
-      <UniqueIdentifier>{045df464-1790-486e-a46d-e7ecfd5e5b11}</UniqueIdentifier>
+      <UniqueIdentifier>{3940fb64-16d1-4e96-844d-141efbe4865e}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\SKSE\Impl">
-      <UniqueIdentifier>{1145af2e-0d0a-424a-b2b5-daf924ee0011}</UniqueIdentifier>
+      <UniqueIdentifier>{f44941da-9ede-46a8-9abb-8f8208ea3780}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\SkyrimScript">
-      <UniqueIdentifier>{584f4edf-1819-4eae-84be-3cc316a6cae2}</UniqueIdentifier>
+      <UniqueIdentifier>{40554231-691e-4b4f-8440-414d83d7e7e0}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\SkyrimScript\DelayFunctor">
-      <UniqueIdentifier>{18b9eb94-78e5-4e38-9a62-0ede202bff98}</UniqueIdentifier>
+      <UniqueIdentifier>{66b94aca-d7af-4512-bb1e-9447e82f030d}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSScript\Internal">
-      <UniqueIdentifier>{57a7e017-530f-40b4-9923-ffeaa9bf5e29}</UniqueIdentifier>
+      <UniqueIdentifier>{8d313b4e-7e00-4db0-8ae1-ea1aff0c0920}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse">
-      <UniqueIdentifier>{c0d3a3a2-f30f-4731-a724-2fe0c3ea1bc3}</UniqueIdentifier>
+      <UniqueIdentifier>{03fb9fa6-ff3d-4182-98ce-0e4cb47a6317}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\Components">
-      <UniqueIdentifier>{312421b8-dfd0-4706-bf3e-8d2f297129a9}</UniqueIdentifier>
+      <UniqueIdentifier>{f70eb9aa-797a-4b8d-bfac-c4429da871da}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\Components\AttachTechniqueInput">
-      <UniqueIdentifier>{1ce576f8-1647-4b2c-a3c1-190587b691a0}</UniqueIdentifier>
+      <UniqueIdentifier>{9ebb331a-90c4-4d25-91f5-e3a57c3bb00b}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSCore">
-      <UniqueIdentifier>{6f2e27ef-3345-46c5-b482-ba285fd6a575}</UniqueIdentifier>
+      <UniqueIdentifier>{baa51361-9894-4a75-9102-c6619c5f1bdc}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSCore\IBSTCreator">
-      <UniqueIdentifier>{af7bc4a0-f488-41fd-9849-8ccd15639c38}</UniqueIdentifier>
+      <UniqueIdentifier>{9635d64a-c63f-4c48-adf5-7a6745e826ce}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\BGSPerkEntry">
-      <UniqueIdentifier>{a8acf8ab-a817-4ac7-ac4a-cafb693e4286}</UniqueIdentifier>
+      <UniqueIdentifier>{88ba36da-41ec-4553-8cde-04428efafae8}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\BGSKeyword">
-      <UniqueIdentifier>{79d25821-31b9-4dd9-9c5c-2df08332188a}</UniqueIdentifier>
+      <UniqueIdentifier>{521d0da8-ddd7-4455-b204-a925aca41e4a}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Events">
-      <UniqueIdentifier>{16fa0747-b92b-467c-b34f-95210cc5b445}</UniqueIdentifier>
+      <UniqueIdentifier>{1aa2a67e-e306-4186-9e5b-8f526dc3af29}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Events\BGSActorEvent">
-      <UniqueIdentifier>{1a66027a-7062-45c4-8794-4a9f008bbc6e}</UniqueIdentifier>
+      <UniqueIdentifier>{04906ee1-cdbc-40ed-8c61-9e565b5880af}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\TESObject\TESBoundObject\TESObjectMISC">
-      <UniqueIdentifier>{1f3f2a84-c4bf-4deb-96c2-28447e6547c4}</UniqueIdentifier>
+      <UniqueIdentifier>{c9b43216-53aa-40bd-ae9f-beccbd83e4bf}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse">
-      <UniqueIdentifier>{7af9a277-f9aa-4b21-b59b-d49f6eaf38f8}</UniqueIdentifier>
+      <UniqueIdentifier>{f05c4e25-672a-4858-8bbe-e2e7e108acab}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject">
-      <UniqueIdentifier>{7c55d4da-7017-488f-b269-27be2c3923d0}</UniqueIdentifier>
+      <UniqueIdentifier>{b109e326-f4fc-4f65-87e6-29051025a917}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject">
-      <UniqueIdentifier>{1f180ed5-f004-46f3-85da-ed62ab05aaa7}</UniqueIdentifier>
+      <UniqueIdentifier>{440ce1bf-38b3-4ee2-90ac-0f9707c6a51b}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\Components\BGSBaseAlias">
-      <UniqueIdentifier>{f5a4d606-ea0f-46b9-81b0-6bfaaefc29b8}</UniqueIdentifier>
+      <UniqueIdentifier>{045e5a6d-6306-4120-a840-30af30659454}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\BGSBaseAlias">
-      <UniqueIdentifier>{4d3f546b-7f99-4453-98a4-5db3d347640f}</UniqueIdentifier>
+      <UniqueIdentifier>{bb279a15-b1c1-4e5d-97bb-d2f77373d4a1}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESModel">
-      <UniqueIdentifier>{215d516b-54dc-43be-95a7-6383ef2903f6}</UniqueIdentifier>
+      <UniqueIdentifier>{561414dd-534d-4052-be50-a920064f1ae8}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject">
-      <UniqueIdentifier>{d7b71b23-b396-43f1-b15c-2d736ca08b61}</UniqueIdentifier>
+      <UniqueIdentifier>{534a744b-2c0c-4994-98f8-34fe9cc86a46}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET">
-      <UniqueIdentifier>{4be7d40c-04bb-4c02-bc80-77d6ca568797}</UniqueIdentifier>
+      <UniqueIdentifier>{8e1698e2-5b17-49ed-bf62-17dc7646e140}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject">
-      <UniqueIdentifier>{877f2eaa-62f0-4c2e-8d8c-9ee01bb616cb}</UniqueIdentifier>
+      <UniqueIdentifier>{2982bb37-09cd-4451-9c40-9ab247082ccb}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode">
-      <UniqueIdentifier>{2e7ca3df-08c3-4d84-8405-9c8bf52ef193}</UniqueIdentifier>
+      <UniqueIdentifier>{68adcf17-44df-4419-b453-202ac45821d9}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\DistantTerrain">
-      <UniqueIdentifier>{9040c33f-12c4-4cf9-ba67-bc47f7aa2a9d}</UniqueIdentifier>
+      <UniqueIdentifier>{1b4cc96b-3f8a-40c5-a7bc-4edcffbbefaa}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\BGSEntryPointFunctionData">
-      <UniqueIdentifier>{66cd9acb-0540-4cdb-97c1-298a0f0f5b5d}</UniqueIdentifier>
+      <UniqueIdentifier>{9a786229-3a16-440e-9d6b-3c9d49de0875}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\Components\BGSEntryPointFunctionData">
-      <UniqueIdentifier>{e7df633c-0fef-4e0e-ad36-8a42fbc963ef}</UniqueIdentifier>
+      <UniqueIdentifier>{0f21f66d-db7d-47f8-81f9-cb5423195863}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\Components\BGSPerkEntry">
-      <UniqueIdentifier>{37c7767e-7840-4569-89d5-e234d42099db}</UniqueIdentifier>
+      <UniqueIdentifier>{789a4ab1-ccf6-4054-a8de-1c035b367e1f}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Events">
-      <UniqueIdentifier>{ab0c3d73-6ef3-411f-9a95-c82b8f7d0801}</UniqueIdentifier>
+      <UniqueIdentifier>{6dec06ee-e105-4880-bd53-008c99e3e08a}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSExtraData">
-      <UniqueIdentifier>{722d68ac-53e8-416d-98cc-a007189893b2}</UniqueIdentifier>
+      <UniqueIdentifier>{05f98f82-81f2-4d31-a3ce-9ebe33d581b1}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSExtraData\Components">
-      <UniqueIdentifier>{333159c1-a7d9-4f02-97bb-683448ca8f47}</UniqueIdentifier>
+      <UniqueIdentifier>{a7e685cc-42b2-413f-a841-54817c3fbe34}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\TESObject\TESBoundObject\TESObjectSTAT">
-      <UniqueIdentifier>{f07a2f68-51ad-497a-a7b0-00e65360aed1}</UniqueIdentifier>
+      <UniqueIdentifier>{50462768-bd6d-484b-bb4b-be497fb495d5}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSAudio">
-      <UniqueIdentifier>{805d70e5-16f7-4cd1-87f7-6a348784ac45}</UniqueIdentifier>
+      <UniqueIdentifier>{87e58160-75b6-497d-b792-48a29ad7cb8d}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSAudio\BSIMusicTrack">
-      <UniqueIdentifier>{cbb86cf4-890e-47c3-ad96-6c2309eb07b7}</UniqueIdentifier>
+      <UniqueIdentifier>{ff1a66af-c951-4471-85f5-e76488ccd61b}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSAudio\BSIMusicTrack\BGSMusicTrack">
-      <UniqueIdentifier>{0528197e-a918-48b8-af30-89e20e66de23}</UniqueIdentifier>
+      <UniqueIdentifier>{4302575e-3337-42ae-88fd-86651ff33b46}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\IPackageData">
-      <UniqueIdentifier>{6d551a56-03ec-4bc5-9ac8-6e825b49112c}</UniqueIdentifier>
+      <UniqueIdentifier>{d77cfbe5-203f-4133-a5b2-a94e7f2676a5}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\IPackageData\BGSNamedPackageData">
-      <UniqueIdentifier>{960269ed-ee51-4003-87ae-a1890cb44276}</UniqueIdentifier>
+      <UniqueIdentifier>{cb7ff0bc-1788-45b5-979f-d3db1cae4fdc}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\IPackageData\BGSNamedPackageData\BGSPackageDataPointerTemplate">
-      <UniqueIdentifier>{65ecb3f6-caae-4487-903d-6403b8bf78bb}</UniqueIdentifier>
+      <UniqueIdentifier>{0624b462-d0bd-4e55-80da-d815e3a328fb}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\IProcedureTreeItem">
-      <UniqueIdentifier>{ce703783-40b1-4c5b-ac4c-2386a0ec87d9}</UniqueIdentifier>
+      <UniqueIdentifier>{de3276c2-a690-4489-81b0-f18fc4edafb1}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\IProcedureTreeItem\BGSProcedureTreeConditionalItem">
-      <UniqueIdentifier>{2e162d6c-2028-427b-8029-24fad1491b15}</UniqueIdentifier>
+      <UniqueIdentifier>{5fb7306d-2cc8-41d5-a01f-7dd2f595a97d}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\IProcedureTreeItem\BGSProcedureTreeConditionalItem\BGSProcedureTreeBranch">
-      <UniqueIdentifier>{14e464c6-cec9-4f68-bc13-ccfe6eb81107}</UniqueIdentifier>
+      <UniqueIdentifier>{f6f78687-d9b1-46eb-91bf-dd8a4f34939b}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FileIO">
-      <UniqueIdentifier>{c1ea9e33-0017-4a93-9242-8888d01310a4}</UniqueIdentifier>
+      <UniqueIdentifier>{d87ad9a5-2354-4beb-ab23-0ef5613556dd}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FileIO">
-      <UniqueIdentifier>{a7800ecf-cdf9-4cb3-af39-da4d51ea3a45}</UniqueIdentifier>
+      <UniqueIdentifier>{7dce5e62-499b-4f5f-a526-a8a8e9434fdd}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\BGSSceneAction">
-      <UniqueIdentifier>{fee82e3e-2b54-4b5e-9a07-6d1988487ef7}</UniqueIdentifier>
+      <UniqueIdentifier>{8a590f4b-d996-4b40-8e4b-47732edf8848}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSAudio\BSISoundDescriptor">
-      <UniqueIdentifier>{8ed5440d-542a-4181-87c3-630cff0220ad}</UniqueIdentifier>
+      <UniqueIdentifier>{a95268c4-0a7c-437d-ba5d-a89e223d42e7}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\BGSStoryManagerTreeForm">
-      <UniqueIdentifier>{86621544-2ea0-49c0-a180-bf9d9350044c}</UniqueIdentifier>
+      <UniqueIdentifier>{713f86da-79c1-491a-a051-eb58f5c84689}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\BGSStoryManagerTreeForm\BGSStoryManagerNodeBase">
-      <UniqueIdentifier>{f17b700a-7f73-4059-9210-6a8f6ff48db9}</UniqueIdentifier>
+      <UniqueIdentifier>{13061c01-f03f-4e2c-8905-02f0f60c6569}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\BGSStoryManagerTreeForm\BGSStoryManagerNodeBase\BGSStoryManagerBranchNode">
-      <UniqueIdentifier>{7c72b5c9-30dc-4b22-9731-47266bc80eb7}</UniqueIdentifier>
+      <UniqueIdentifier>{ed44da49-caff-4bc8-8680-4a5c5c5f22b6}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\RadiantStory">
-      <UniqueIdentifier>{68191afa-eaf2-4634-a356-d1f9546a2b28}</UniqueIdentifier>
+      <UniqueIdentifier>{e6f2d742-a954-444e-8615-03a3338ac62a}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\RadiantStory">
-      <UniqueIdentifier>{6722a184-c34b-418f-aa8f-e4bcda16aac1}</UniqueIdentifier>
+      <UniqueIdentifier>{d92d9b26-395a-4556-a022-d937347f0608}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\TESObject\TESBoundObject\TESBoundAnimObject">
-      <UniqueIdentifier>{1b849848-edfd-4a95-9f57-fe2555db31c8}</UniqueIdentifier>
+      <UniqueIdentifier>{7b4ac8fe-929b-4273-9e2d-46813ab4707b}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\TESObject\TESBoundObject\TESBoundAnimObject\TESObjectACTI">
-      <UniqueIdentifier>{2c779114-7e8d-4d44-858e-fc247e03cf71}</UniqueIdentifier>
+      <UniqueIdentifier>{2e694eb9-9bbc-46a2-88f0-4b94818f598a}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject">
-      <UniqueIdentifier>{0bb41120-3464-42c9-a8c8-a0dae4211ca7}</UniqueIdentifier>
+      <UniqueIdentifier>{ea9e8f32-641e-497d-a662-bcd61c57c30c}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable">
-      <UniqueIdentifier>{07880f0e-4c1c-428b-b553-e33f52aa3d4f}</UniqueIdentifier>
+      <UniqueIdentifier>{8b745821-6df6-4a0c-8a4c-16695e182806}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject">
-      <UniqueIdentifier>{a8373dc8-69a3-42c4-8037-c512ce7d3aec}</UniqueIdentifier>
+      <UniqueIdentifier>{01ce26b5-7b36-4f56-a5a4-b228c9a57ff1}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkPhantom">
-      <UniqueIdentifier>{b70beec8-9e44-4c17-a49e-333431b9f95e}</UniqueIdentifier>
+      <UniqueIdentifier>{56656f6b-7016-4098-bfb0-bba136cbeac8}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkPhantom\bhkShapePhantom">
-      <UniqueIdentifier>{b86f3c0e-fea5-4390-a93e-81410c1628ae}</UniqueIdentifier>
+      <UniqueIdentifier>{ac07f105-2d3c-4d53-91e9-4a1c6c15f5bd}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkpCdPointCollector">
-      <UniqueIdentifier>{9c4874c5-701f-43d4-b36b-9f00040b038b}</UniqueIdentifier>
+      <UniqueIdentifier>{a868808f-3e01-447d-b46d-3155dfc17de1}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkpCdPointCollector\hkpAllCdPointCollector">
-      <UniqueIdentifier>{1ef8690f-d221-42ba-94c4-cbddf59b3330}</UniqueIdentifier>
+      <UniqueIdentifier>{89d97976-862f-4246-b13e-179783ad6606}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpCharacterState">
-      <UniqueIdentifier>{43dd7598-8627-49b9-b9aa-b2d479e92e7d}</UniqueIdentifier>
+      <UniqueIdentifier>{748efd26-a65f-4b92-a016-e31963411462}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpCharacterState\bhkCharacterState">
-      <UniqueIdentifier>{445427a7-14fd-4fc6-846f-2b79207cb5a5}</UniqueIdentifier>
+      <UniqueIdentifier>{222e7211-4b38-4309-8946-b517184f3abf}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSHavok">
-      <UniqueIdentifier>{e699469e-504b-4c63-ba55-d29b4877f1fa}</UniqueIdentifier>
+      <UniqueIdentifier>{9e434b01-fa1b-4e94-bf75-c35d98398bf8}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSHavok\hkpCharacterProxyListener">
-      <UniqueIdentifier>{74ee121c-0be2-4bb7-9c2d-65d514a951bf}</UniqueIdentifier>
+      <UniqueIdentifier>{3fc59444-ff91-4e4c-b3fa-693c20db6c21}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkpCharacterProxyListener">
-      <UniqueIdentifier>{6faff8de-e44c-4410-a428-63d23eb756c0}</UniqueIdentifier>
+      <UniqueIdentifier>{c552c987-5681-4993-8795-a3ad60e7e71a}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject">
-      <UniqueIdentifier>{76a8549a-88dd-4149-a06f-a47c5ea2b8ed}</UniqueIdentifier>
+      <UniqueIdentifier>{7071eb3c-96f8-427e-a9bb-044544cf5805}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject\bhkNiCollisionObject">
-      <UniqueIdentifier>{9b455f09-b4cc-4fc1-82c4-a453a209c2bb}</UniqueIdentifier>
+      <UniqueIdentifier>{efb5eac7-6f88-4367-bd4c-ff51a8dd895d}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkEntity">
-      <UniqueIdentifier>{9bbb96fa-07a4-40bc-8f24-8f91a899b5e2}</UniqueIdentifier>
+      <UniqueIdentifier>{57ac3c7c-1738-4e9e-9550-4fe05b675678}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape">
-      <UniqueIdentifier>{39640c0c-bb76-4618-a79c-bf43217ac772}</UniqueIdentifier>
+      <UniqueIdentifier>{4923a80b-12a9-4d4c-937b-64d8ce7163b4}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkShapeCollection">
-      <UniqueIdentifier>{cf10d8fe-5027-45d5-9bf8-40028ee1fe8f}</UniqueIdentifier>
+      <UniqueIdentifier>{153774f9-0ced-46c4-9c6b-c3c64cd61124}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Camera">
-      <UniqueIdentifier>{948afa1e-3328-4496-88f1-8864ac045178}</UniqueIdentifier>
+      <UniqueIdentifier>{6c3e79be-9345-487a-8770-b0441bab9f1c}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Camera\TESCameraState">
-      <UniqueIdentifier>{c3ff5263-4b3c-460f-9eba-a524aec3abc0}</UniqueIdentifier>
+      <UniqueIdentifier>{33c28791-7e70-4377-abe2-190e9c0e7d3f}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Camera\TESCameraState\ThirdPersonState">
-      <UniqueIdentifier>{66496104-e094-4522-afae-19e6822712cb}</UniqueIdentifier>
+      <UniqueIdentifier>{45e8e4ac-dbd8-43f1-a613-38074050743a}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Animation\BSAnimationGraphChannel">
-      <UniqueIdentifier>{3c65a039-c084-47f9-8313-1b0c2e38dbba}</UniqueIdentifier>
+      <UniqueIdentifier>{bc65bfdb-af6f-45cd-b60d-b592da483fb1}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSCore">
-      <UniqueIdentifier>{8ff33c02-916b-4c43-9c1f-bb512862a54a}</UniqueIdentifier>
+      <UniqueIdentifier>{c076218b-21e9-48a5-bca1-3da1f544b8b8}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSAudio">
-      <UniqueIdentifier>{8ec4cf35-79aa-433a-a4e5-a45ba56dc5ac}</UniqueIdentifier>
+      <UniqueIdentifier>{07d30552-7533-4707-8402-cfd0a1468055}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSMain">
-      <UniqueIdentifier>{7a1d1599-1ebe-46ea-92fd-dd496752fa82}</UniqueIdentifier>
+      <UniqueIdentifier>{3d79b2c1-8703-4aac-9d60-d23a24421d26}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSMain\BSThread">
-      <UniqueIdentifier>{b296f708-32b2-4fc4-a5ec-d5fb5c9ade8e}</UniqueIdentifier>
+      <UniqueIdentifier>{9a2601b6-66a6-478a-b61a-b4bfa1b83a3c}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSShader">
-      <UniqueIdentifier>{bd4b1d63-acf0-48e0-a66b-82680607ca92}</UniqueIdentifier>
+      <UniqueIdentifier>{970854c8-89a0-4070-8b24-04e9ca089925}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty">
-      <UniqueIdentifier>{3fa5dfa2-7b9f-497f-9389-7e05731087d3}</UniqueIdentifier>
+      <UniqueIdentifier>{bffdd04e-cfdc-4940-9b3d-a0854bcdb72d}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty">
-      <UniqueIdentifier>{2897f85b-2b9b-480d-8ff6-80770287d51d}</UniqueIdentifier>
+      <UniqueIdentifier>{b9d74fb2-6f11-42af-807e-50c14e46f02b}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty">
-      <UniqueIdentifier>{1ab94c83-6576-4c7e-bf4a-68587f7e8b77}</UniqueIdentifier>
+      <UniqueIdentifier>{13d18e05-2f83-482c-9a91-8ff8c51606db}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData">
-      <UniqueIdentifier>{df7a6c33-738a-44de-b819-496762da8333}</UniqueIdentifier>
+      <UniqueIdentifier>{1aca7fa7-7638-437b-88f9-f02765da4ae1}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiCullingProcess">
-      <UniqueIdentifier>{0fcc3ead-4e4c-4ece-ba11-c96e4611ca63}</UniqueIdentifier>
+      <UniqueIdentifier>{49f23701-9d93-4e9d-8232-f9ceb0e31cf0}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance">
-      <UniqueIdentifier>{1f81ef79-43de-4755-b528-b1f649e02788}</UniqueIdentifier>
+      <UniqueIdentifier>{3e2b3d12-3f9f-4987-8122-23eb35a89ccd}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry">
-      <UniqueIdentifier>{01d62c73-d7c6-4ff9-807a-66447423b8a5}</UniqueIdentifier>
+      <UniqueIdentifier>{a246655e-5b8e-42e0-ab38-0e2b221d292f}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry\BSTriShape">
-      <UniqueIdentifier>{1bbbe0b4-6009-4dd7-bd8a-8a45d87b3d12}</UniqueIdentifier>
+      <UniqueIdentifier>{67b07f3c-fcc4-4533-a94d-5bb968988fb6}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSShader">
-      <UniqueIdentifier>{0497561e-f7a5-49af-aed7-003a43b672b8}</UniqueIdentifier>
+      <UniqueIdentifier>{74510b50-db1c-4a59-891f-e1d34e9521c0}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSShader\BSShaderMaterial">
-      <UniqueIdentifier>{c5314d18-c87f-4498-ad69-1ac94b5e39c3}</UniqueIdentifier>
+      <UniqueIdentifier>{3da045e3-6ac1-47b4-82cf-f0825a5be3be}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSExtraData">
-      <UniqueIdentifier>{17a71c2d-948f-459c-b7cb-c48ba0aa802c}</UniqueIdentifier>
+      <UniqueIdentifier>{95b2e382-8f16-4041-9688-69fa2cfcd787}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject">
-      <UniqueIdentifier>{787eb145-e625-428b-90ca-39880ada792e}</UniqueIdentifier>
+      <UniqueIdentifier>{6f4d4ef2-e81f-4839-a8be-c5ee718ff302}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData">
-      <UniqueIdentifier>{367708fc-05c1-4559-8795-07874c0d7b63}</UniqueIdentifier>
+      <UniqueIdentifier>{cf3f092c-453b-47c6-ac1a-b3ecf61714a2}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\Components\BSFaceGenKeyframe">
-      <UniqueIdentifier>{89be0ecf-fc76-44d8-84e8-4f22e0ea670a}</UniqueIdentifier>
+      <UniqueIdentifier>{9f9d8477-d649-4f4c-b052-85630db24d62}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiBinaryStream">
-      <UniqueIdentifier>{2e40f37e-e8d0-4cb2-ae34-bc30d13b4e5c}</UniqueIdentifier>
+      <UniqueIdentifier>{f44f4222-b799-4b33-8c52-9ca402ffa708}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiBinaryStream\NiFile">
-      <UniqueIdentifier>{a2b79717-a07d-4300-b264-3721af801090}</UniqueIdentifier>
+      <UniqueIdentifier>{ff4e8e04-d088-48f5-a4f1-39ab8f31fb47}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSDevices\BSIInputDevice">
-      <UniqueIdentifier>{2ca85484-e4e0-4847-a18a-f139aff2bc7e}</UniqueIdentifier>
+      <UniqueIdentifier>{3af9ced5-5fc2-476c-9f89-6c1d52f8184b}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSDevices\BSIInputDevice\BSInputDevice">
-      <UniqueIdentifier>{6b3b7b66-86a5-45c6-ba8a-35d99938efc0}</UniqueIdentifier>
+      <UniqueIdentifier>{a50800a0-9121-4042-ad3f-46079f0f5faf}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSDevices\BSIInputDevice\BSInputDevice\BSGamepadDevice">
-      <UniqueIdentifier>{d4f53596-22a9-4cac-88d4-c8aeaa9f1bf6}</UniqueIdentifier>
+      <UniqueIdentifier>{f9223307-8e61-4a17-a2e4-987791002fc9}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET">
-      <UniqueIdentifier>{b124a0f4-fe33-405a-aaac-e8fe46fdacf7}</UniqueIdentifier>
+      <UniqueIdentifier>{51b6bb5f-f18e-43cf-8aea-572c91276f0f}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject">
-      <UniqueIdentifier>{7a5daf9d-bcf8-4563-8c9c-b4c89cb534fc}</UniqueIdentifier>
+      <UniqueIdentifier>{25d84cbe-3450-4125-b404-5a55498be0aa}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry">
-      <UniqueIdentifier>{e0679df6-bebc-4e91-8e13-502b0d8f0168}</UniqueIdentifier>
+      <UniqueIdentifier>{3a3356c0-9411-48f7-bd73-3dd5fd789100}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSMain">
-      <UniqueIdentifier>{f9a711cd-147b-42f6-a77e-d89cd9e25fa6}</UniqueIdentifier>
+      <UniqueIdentifier>{efb278f2-8e5a-4a99-9eca-10dd50a006ac}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Animation\BSIRagdollDriver">
-      <UniqueIdentifier>{eb3c1d93-095e-4f36-8e1c-c90cd987a356}</UniqueIdentifier>
+      <UniqueIdentifier>{5c3d5e1d-c7fb-40b9-b04d-fc67aded1176}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSShader\BSShader">
-      <UniqueIdentifier>{de609074-8664-4e05-a0b5-0359a2c0ab42}</UniqueIdentifier>
+      <UniqueIdentifier>{32cb1c4e-e71e-4275-b4ea-f1f70e560fd7}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSShader\BSShader\BSImagespaceShader">
-      <UniqueIdentifier>{9c66f255-576a-4b26-a55e-8cc1b0821765}</UniqueIdentifier>
+      <UniqueIdentifier>{1250ca62-6f7f-4f60-97a1-25280915ec9c}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSDevices">
-      <UniqueIdentifier>{b9db0aa1-6495-463f-ac0f-8e2b8f7ce82e}</UniqueIdentifier>
+      <UniqueIdentifier>{feaefb28-1f35-49b1-ae40-0fc2b1370609}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSDevices\BSIInputDevice">
-      <UniqueIdentifier>{76562664-8b91-4b2c-b2bf-bda9468ebd4a}</UniqueIdentifier>
+      <UniqueIdentifier>{3de6b356-957b-49ac-ad54-1c6550151a02}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSDevices\BSIInputDevice\BSInputDevice">
-      <UniqueIdentifier>{6112f8b6-9a06-4fe4-9fdb-62e41c515c63}</UniqueIdentifier>
+      <UniqueIdentifier>{2d7159bb-6b1f-4026-990b-6cdcd6b83b22}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSDevices\BSIInputDevice\BSInputDevice\BSKeyboardDevice">
-      <UniqueIdentifier>{3c8d65e0-61b1-48ab-977e-6a628a4a7ec6}</UniqueIdentifier>
+      <UniqueIdentifier>{fa45b9fb-1e40-428c-8818-45d06b44d5ad}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSShader\BSShaderMaterial">
-      <UniqueIdentifier>{0abc5df1-ba48-471e-b71d-d2e92fefd9b4}</UniqueIdentifier>
+      <UniqueIdentifier>{d7ee68cf-d748-4f86-801e-bf21a41d36be}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialBase">
-      <UniqueIdentifier>{8a1cf0e6-067b-4cc4-89cc-18bc571658e1}</UniqueIdentifier>
+      <UniqueIdentifier>{6092b574-fdee-4328-9a0c-fa08daee31ad}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiProperty">
-      <UniqueIdentifier>{ce7d744d-8549-43c0-95b4-66695fb06eef}</UniqueIdentifier>
+      <UniqueIdentifier>{2ed25626-7daa-4ab1-901f-46e9e1e450d6}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSDevices\BSIInputDevice\BSInputDevice\BSMouseDevice">
-      <UniqueIdentifier>{aef0b412-588c-4b10-8bb4-d9f2b583ca70}</UniqueIdentifier>
+      <UniqueIdentifier>{a38dd88e-9a6f-4fbf-a240-5e0cdac87c5d}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BSNiNode">
-      <UniqueIdentifier>{3e88c402-0e5d-4663-bee1-9e0a3ecc1117}</UniqueIdentifier>
+      <UniqueIdentifier>{1123d16c-ec5d-4003-8725-339f1b4fc638}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSPathFinding">
-      <UniqueIdentifier>{04ed22ac-fb97-4ea0-966c-dde2d7fe42ce}</UniqueIdentifier>
+      <UniqueIdentifier>{dc94606b-e46d-4415-ba16-d815f9759ec0}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiAllocator">
-      <UniqueIdentifier>{961b7afc-5cea-4854-9604-2547455a8d26}</UniqueIdentifier>
+      <UniqueIdentifier>{f1fd28c2-037e-4291-a3ed-7a7736e51560}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\BSParticleShaderEmitter">
-      <UniqueIdentifier>{998cb9ff-d953-431e-b32a-4642831243c0}</UniqueIdentifier>
+      <UniqueIdentifier>{9f3b2bdc-086a-4ed8-93d4-dd5899b4e792}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Pathfinding\BSPathingCell">
-      <UniqueIdentifier>{1a8d7bc6-f148-409b-8c54-2427b9893316}</UniqueIdentifier>
+      <UniqueIdentifier>{902c1223-c05d-4bdf-91be-968f4093571d}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSDevices\BSIInputDevice\BSInputDevice\BSGamepadDevice\BSPCGamepadDeviceDelegate">
-      <UniqueIdentifier>{fd742c0b-62a6-4c76-8ee1-3be6b0130092}</UniqueIdentifier>
+      <UniqueIdentifier>{13966670-aa59-42dc-883e-0f0f53bb13c6}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSCore\BSPointerHandleManager">
-      <UniqueIdentifier>{594f89dd-55f5-4a01-ad64-e3f31dca8733}</UniqueIdentifier>
+      <UniqueIdentifier>{ea76791b-5e0c-4758-adb2-41386a4d4089}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSPathFinding\BSPrecomputedNavmeshInfoPathMap">
-      <UniqueIdentifier>{ac46dfb7-fec5-40cd-8584-8a00a6fe6e8b}</UniqueIdentifier>
+      <UniqueIdentifier>{edc5faea-9d56-49c1-9b6f-a8e011f3583e}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiBinaryStream">
-      <UniqueIdentifier>{2f617863-3d39-4405-9c24-cc545748a652}</UniqueIdentifier>
+      <UniqueIdentifier>{c9d7d999-14c2-4c3b-876d-5b99d735a95c}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSSystem\BSSaveDataSystemUtility">
-      <UniqueIdentifier>{5ef50ba8-30d1-406c-ad78-439b072442c5}</UniqueIdentifier>
+      <UniqueIdentifier>{864d7627-4c61-48ca-a5ba-db0d9111d767}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform\BS">
-      <UniqueIdentifier>{1b144ec5-b164-4804-a7c7-fa4b5e301ef5}</UniqueIdentifier>
+      <UniqueIdentifier>{1cdf3e47-4483-4d87-aaa6-d813efdf3398}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\BS">
-      <UniqueIdentifier>{7af496f6-3c86-4919-b936-f0ceb53bcfc9}</UniqueIdentifier>
+      <UniqueIdentifier>{4602f5c4-91f5-4391-a80e-1066cd5ec200}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty">
-      <UniqueIdentifier>{c6964725-bded-4f4a-9277-aa6030f6832f}</UniqueIdentifier>
+      <UniqueIdentifier>{bda41dd8-78cb-42a2-94ba-200538516415}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty">
-      <UniqueIdentifier>{8728b72d-ef2d-48e5-a1f7-13be4235d738}</UniqueIdentifier>
+      <UniqueIdentifier>{9c04a1b6-4b56-4d0f-bd2c-12c739d20aed}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty">
-      <UniqueIdentifier>{d8165fd2-7114-4d8d-b1b2-35bca06fd94a}</UniqueIdentifier>
+      <UniqueIdentifier>{d6380614-3392-48ab-b239-28bd50774c3f}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet">
-      <UniqueIdentifier>{2e01d7c0-6b61-46a0-8e58-1b7bb993af5c}</UniqueIdentifier>
+      <UniqueIdentifier>{2626216e-5c25-49d1-8823-db43c0a9c2a9}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet">
-      <UniqueIdentifier>{44f19775-05b0-4a05-865b-094a994223d7}</UniqueIdentifier>
+      <UniqueIdentifier>{816a46dc-63d7-4695-b169-1ec00fb8f88b}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSSystem\BSStorage">
-      <UniqueIdentifier>{303cf7d8-2ef3-49d5-9d3c-c8a169a4c894}</UniqueIdentifier>
+      <UniqueIdentifier>{d605e63e-44fc-45a5-8012-2a27cbbcded9}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSResource">
-      <UniqueIdentifier>{616ab717-a94c-47e0-a7dd-89c75ef3b62e}</UniqueIdentifier>
+      <UniqueIdentifier>{04c5c083-f6b5-4152-9ca4-af2f4e3a37b8}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSSystem">
-      <UniqueIdentifier>{4f3d2ad4-6af3-4e0b-8bb5-e05c9f274496}</UniqueIdentifier>
+      <UniqueIdentifier>{582f0dea-3912-4cd3-8750-f55c819608e4}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSSystem\BSStorage">
-      <UniqueIdentifier>{98353aaf-0d5e-4841-bc98-622166e630fa}</UniqueIdentifier>
+      <UniqueIdentifier>{ec8916ba-959b-4b99-9cc6-58f3a4d24b19}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect">
-      <UniqueIdentifier>{0ccbe32f-572d-4852-a455-36df67da9332}</UniqueIdentifier>
+      <UniqueIdentifier>{fce12ea1-fabf-4192-8cca-517441eaf4e3}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Menus\IUIMessageData">
-      <UniqueIdentifier>{ac232eea-2d0e-441d-9e5b-e3249fea81eb}</UniqueIdentifier>
+      <UniqueIdentifier>{f6df302a-9764-4e89-82d8-59cfffc8c3e6}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSDevices\BSIInputDevice\BSInputDevice\BSKeyboardDevice\BSVirtualKeyboardDevice">
-      <UniqueIdentifier>{2418730b-4103-4a1b-a46f-5d857f6545a0}</UniqueIdentifier>
+      <UniqueIdentifier>{0163c42d-636b-473c-9a89-260357a9d1b8}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSDevices\BSIInputDevice\BSInputDevice\BSKeyboardDevice">
-      <UniqueIdentifier>{d00f75ea-8162-4a1a-91ac-fb8ca16349af}</UniqueIdentifier>
+      <UniqueIdentifier>{93d66ede-e69a-4c7c-9e9a-37f0e6d6636c}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSSystem\BSSaveDataSystemUtility">
-      <UniqueIdentifier>{0624ca0f-3730-49a4-a02b-570dd3f6e15f}</UniqueIdentifier>
+      <UniqueIdentifier>{d097ae0f-6649-46df-abe9-b3681cc23aaa}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSAudio\IXAudio2VoiceCallback">
-      <UniqueIdentifier>{47ef4e5a-8e38-43d0-b1f4-4b91e5f8e887}</UniqueIdentifier>
+      <UniqueIdentifier>{0a0ff3d2-62e4-4311-bcba-b01fd61d13a1}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData\NiIntegerExtraData">
-      <UniqueIdentifier>{2cecca40-00a9-4bbd-b640-c259171924ea}</UniqueIdentifier>
+      <UniqueIdentifier>{46a029fe-ca98-4618-9f1f-6a45792e5634}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData\NiIntegerExtraData">
-      <UniqueIdentifier>{fdac725c-f85a-4c68-873a-e3a739acbe0b}</UniqueIdentifier>
+      <UniqueIdentifier>{2f22e604-db6d-4888-a0c3-cb068792b511}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Events\InputEvent">
-      <UniqueIdentifier>{b516699d-cc27-4390-9c77-358769ea7da5}</UniqueIdentifier>
+      <UniqueIdentifier>{d3ba7ece-15ee-4797-9945-833d19fd1569}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Events\InputEvent">
-      <UniqueIdentifier>{96c3742a-eb92-40e8-83d1-c10b97d9e24c}</UniqueIdentifier>
+      <UniqueIdentifier>{8ee6a1db-0d9c-44d0-8d5b-9f0077d17cbb}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Events\InputEvent\IDEvent">
-      <UniqueIdentifier>{c3ef8ec7-d751-4a36-a390-84e68cd83b6a}</UniqueIdentifier>
+      <UniqueIdentifier>{4cf0512d-5e93-4151-997b-5bb873cabab5}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\TESObjectREFR\Actor\Character">
-      <UniqueIdentifier>{6209bfe7-39d8-4443-81b5-7d8e1bcb150e}</UniqueIdentifier>
+      <UniqueIdentifier>{159a2f89-e052-4079-8324-299fccf5a3c7}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Events\BGSStoryEvent">
-      <UniqueIdentifier>{aa7ddcbd-60f6-4265-ad7f-7a59efad1137}</UniqueIdentifier>
+      <UniqueIdentifier>{bfa1da66-50ca-4205-baf8-066070e5e59f}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Events\BGSStoryEvent">
-      <UniqueIdentifier>{e01061f9-d006-4a32-9754-e6afa3caf390}</UniqueIdentifier>
+      <UniqueIdentifier>{e531b05b-ecb8-4a8d-bb7c-be03a6e80469}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSScript\Internal\IFuncCallQuery">
-      <UniqueIdentifier>{e44ba125-c996-432a-80a2-2c86918294ef}</UniqueIdentifier>
+      <UniqueIdentifier>{40890a5b-cd2d-436e-af73-ec7378cd2201}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSSystem\IFormFactory">
-      <UniqueIdentifier>{1e8d5314-d849-4411-b4bf-7284e4a671c5}</UniqueIdentifier>
+      <UniqueIdentifier>{1b3682d9-853e-4988-8ec0-27bacb9d32e1}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSSystem\IFormFactory\Components">
-      <UniqueIdentifier>{2a1aa468-14cb-45ed-9a46-43c188541c4b}</UniqueIdentifier>
+      <UniqueIdentifier>{7598f74f-5774-47c9-bd8c-92144b933a4a}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Color">
-      <UniqueIdentifier>{7e260ac3-9970-4210-bff5-f848bd6f2a08}</UniqueIdentifier>
+      <UniqueIdentifier>{915531db-c494-4dd7-89af-389ef41ec87a}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\CombatObject">
-      <UniqueIdentifier>{252d6738-2cd7-4610-aae9-bc4b233da2c1}</UniqueIdentifier>
+      <UniqueIdentifier>{fbd69e66-7bc1-4fe0-9673-c37884bf634f}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea">
-      <UniqueIdentifier>{bb45cb33-4ef2-4a5b-ab75-219b4a58c0ac}</UniqueIdentifier>
+      <UniqueIdentifier>{ffe7c138-bda5-4162-857e-2c1fe54963f2}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Combat">
-      <UniqueIdentifier>{a57ad243-1552-4d4d-b4d2-e3569d6dcb44}</UniqueIdentifier>
+      <UniqueIdentifier>{cb15c93d-a44f-431d-8969-0f555d25a30a}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Combat\CombatController">
-      <UniqueIdentifier>{c1c400ce-a31f-48b7-84a7-0f240a1b688e}</UniqueIdentifier>
+      <UniqueIdentifier>{66e9eb79-c1a1-43c1-8982-96619224878d}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\DetectionListener">
-      <UniqueIdentifier>{25606b81-79dd-4748-b346-6d57875b17d2}</UniqueIdentifier>
+      <UniqueIdentifier>{c715a775-ce4e-4a0b-9411-81e481496954}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Combat\Components">
-      <UniqueIdentifier>{350eb67c-7ca9-47b1-9d9f-7571a467cc27}</UniqueIdentifier>
+      <UniqueIdentifier>{9ddfc78b-08a1-498e-a621-7711b0f7f967}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Combat">
-      <UniqueIdentifier>{bf4d68a5-0ad5-42f2-927f-334944e1b020}</UniqueIdentifier>
+      <UniqueIdentifier>{08792d1d-83a4-4300-bf42-fb755f8822e7}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector">
-      <UniqueIdentifier>{7e06ee80-e1a6-4bda-bd64-a3c2f1efe31a}</UniqueIdentifier>
+      <UniqueIdentifier>{205f54d6-1bd5-4272-bbbe-55cc5bb8bae3}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Obscript">
-      <UniqueIdentifier>{9a7e8e65-7406-42b3-91ef-fd238f8a1f3a}</UniqueIdentifier>
+      <UniqueIdentifier>{8de37dfa-906e-4d3c-9e5f-4f7e099966e8}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Obscript">
-      <UniqueIdentifier>{86c8d287-2468-4395-87a0-b1d039c949bf}</UniqueIdentifier>
+      <UniqueIdentifier>{36b91833-f4b9-46b7-aed4-da4e3f8e5b20}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSScript\Traits">
-      <UniqueIdentifier>{40259cf4-f4e7-4102-bc64-08583cea67c6}</UniqueIdentifier>
+      <UniqueIdentifier>{b6441bda-9429-4dd0-a039-508e3b5b5e18}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSScript\ILoader">
-      <UniqueIdentifier>{fae49bc8-b451-4538-8b07-78b40a29571b}</UniqueIdentifier>
+      <UniqueIdentifier>{10d5945a-a472-40a4-a325-ea1cc8a8c41f}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSSystem\IFormFactory">
-      <UniqueIdentifier>{9c0408cc-c166-4184-8d20-347b581b06a1}</UniqueIdentifier>
+      <UniqueIdentifier>{a254aef2-fbfa-4696-a74a-c93eda671033}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSSystem\IFormFactory\ConcreteFormFactory">
-      <UniqueIdentifier>{97b86303-caf2-40f1-8b3f-49e8a799abaf}</UniqueIdentifier>
+      <UniqueIdentifier>{c9e48a53-3e16-4a60-9daa-9579c6d8a80a}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Menus">
-      <UniqueIdentifier>{c3142a51-c227-495a-b7c5-5aab546ff20d}</UniqueIdentifier>
+      <UniqueIdentifier>{eb260ff4-aa99-4ffe-aac0-ea7d17003944}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Menus\IMenu">
-      <UniqueIdentifier>{445d5de7-0e3c-436b-9c35-8f5d7f493010}</UniqueIdentifier>
+      <UniqueIdentifier>{9f0fc7c8-7f67-4f37-91a6-e11e3c7363d0}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSGraphics">
-      <UniqueIdentifier>{7a66b204-bd62-4816-8bf4-ce60e87b8ba1}</UniqueIdentifier>
+      <UniqueIdentifier>{7df41d73-1c25-4504-a4a4-1d5ea7a6ce97}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSGraphics\Enums">
-      <UniqueIdentifier>{dce927ae-e6c7-48f8-8783-1d35bda1918d}</UniqueIdentifier>
+      <UniqueIdentifier>{ef4cb2d1-15d5-4da3-a42e-5e69feb6688a}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSResource\Location">
-      <UniqueIdentifier>{b1954756-4bdf-419f-b1d4-a37909804810}</UniqueIdentifier>
+      <UniqueIdentifier>{f6bd68d1-6fb6-455b-a64b-14c1ecd12087}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\TESPackage">
-      <UniqueIdentifier>{3a189c60-07a8-4a53-98b0-930196980380}</UniqueIdentifier>
+      <UniqueIdentifier>{57bcf2a5-5cf5-44b1-b06e-9c4982a87aee}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSExtraData\Enums">
-      <UniqueIdentifier>{332db856-7248-4549-b331-28c291342e51}</UniqueIdentifier>
+      <UniqueIdentifier>{087f3186-71a5-4b5e-bc7e-dacf72789402}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSDevices\MenuEventHandler">
-      <UniqueIdentifier>{4bc54977-5bc5-4a7e-a0d5-f00abca1c899}</UniqueIdentifier>
+      <UniqueIdentifier>{15d370d4-b0ff-47b0-8244-c75922ddfaa2}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSResource\FileID">
-      <UniqueIdentifier>{339e023d-9c47-43f1-a2f1-2aebf138bdba}</UniqueIdentifier>
+      <UniqueIdentifier>{867d33bb-bd47-4d66-9051-121973b4ebc1}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSScript\IFunctionArguments">
-      <UniqueIdentifier>{8095bfff-7f58-40af-b398-f2823cf2af29}</UniqueIdentifier>
+      <UniqueIdentifier>{d892400f-8fd0-4ed1-b6f0-3da465e69f6b}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GAllocator">
-      <UniqueIdentifier>{76204b93-762a-48ea-939c-b317662930ef}</UniqueIdentifier>
+      <UniqueIdentifier>{e2b272ce-eb94-4cef-bee4-d4f198caa7bf}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSMain\SettingCollection">
-      <UniqueIdentifier>{dc19178f-dc2c-427c-a26b-351305c1ac02}</UniqueIdentifier>
+      <UniqueIdentifier>{987a93ed-88b0-4ef6-adb8-6cdcea918ddf}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSMain\SettingCollection">
-      <UniqueIdentifier>{104c2bc1-d799-4d8b-9a5c-a0e1e9782795}</UniqueIdentifier>
+      <UniqueIdentifier>{ab349de9-e9f4-4f4f-a2db-03edc23179c8}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GArray">
-      <UniqueIdentifier>{1c990479-223f-4b5a-94e0-82159b413390}</UniqueIdentifier>
+      <UniqueIdentifier>{03e5f4da-4436-41dc-aa8e-777b337402b9}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform\GAtomic">
-      <UniqueIdentifier>{0a6e1e69-6d7b-4a2f-b177-7d64b38d0be2}</UniqueIdentifier>
+      <UniqueIdentifier>{bd11e3a7-4662-457e-9efa-f0d7eeb2b69c}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GAtomic">
-      <UniqueIdentifier>{f8f9edf5-a55d-480e-884d-62958a39cfd6}</UniqueIdentifier>
+      <UniqueIdentifier>{3f045f0b-42e1-483e-8b9a-b584f6d4da1c}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GColor">
-      <UniqueIdentifier>{9d5a3d67-4259-4fb3-ac5b-d8786f86729f}</UniqueIdentifier>
+      <UniqueIdentifier>{43db4e10-97ec-41b6-84b5-b53864fd5182}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GHash">
-      <UniqueIdentifier>{fee855cf-ba57-4bf3-ad03-204894edd1d0}</UniqueIdentifier>
+      <UniqueIdentifier>{f64305ac-57f8-4ea5-99d3-564e89a4360d}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GFxLoader">
-      <UniqueIdentifier>{de1858c9-ac89-4fdd-a0b4-a6bd2fba82c8}</UniqueIdentifier>
+      <UniqueIdentifier>{76b74998-f05e-423a-8ae4-f7555060405d}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GFxEvent">
-      <UniqueIdentifier>{9c95daf0-50a1-4ba1-a901-c7239a9a9190}</UniqueIdentifier>
+      <UniqueIdentifier>{52584441-d101-494a-9b0c-7baf911e3d7a}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GFxPlayer">
-      <UniqueIdentifier>{6542d4df-d345-44d2-84f0-2b6321412708}</UniqueIdentifier>
+      <UniqueIdentifier>{930b8f84-4c00-4d1b-92b2-9e77d402b246}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GFxResource">
-      <UniqueIdentifier>{bd1115ae-64c2-4eb5-a1a6-2f268cce6f61}</UniqueIdentifier>
+      <UniqueIdentifier>{fe11dbe6-080c-4a90-9ee7-1cecfeb79f86}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform\GFxLoader">
-      <UniqueIdentifier>{ea9d5e6c-45af-450e-beda-3a560f9cac29}</UniqueIdentifier>
+      <UniqueIdentifier>{79ffa95c-4910-4052-82f3-6de1c1006e94}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform\GFxLog">
-      <UniqueIdentifier>{7b9c2ebc-55a6-455a-aa42-7d23133b2e06}</UniqueIdentifier>
+      <UniqueIdentifier>{79a9ff69-d3b4-44f0-b419-92da27448f71}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GFxLog">
-      <UniqueIdentifier>{fe1368d7-1a95-4f90-924d-4568ccd8464e}</UniqueIdentifier>
+      <UniqueIdentifier>{34e303eb-0260-40c0-964a-a79cc4484339}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform\GFxPlayer">
-      <UniqueIdentifier>{45ed63cb-9a5c-410d-bb6e-ba126ee028cc}</UniqueIdentifier>
+      <UniqueIdentifier>{3e179a7f-78ed-4145-8551-1b57a00e80fe}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GFxPlayerStats">
-      <UniqueIdentifier>{4b15986f-822f-4beb-9604-7b5edfd5b178}</UniqueIdentifier>
+      <UniqueIdentifier>{3ab8d355-96ba-43e0-88e3-cf55558ee2cc}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform\GFxRenderConfig">
-      <UniqueIdentifier>{769db67d-4a1f-43ad-a1de-d9d9fe8e7699}</UniqueIdentifier>
+      <UniqueIdentifier>{18da523c-2d8a-46f4-8cd7-bbbb3ecde3aa}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GFxRenderConfig">
-      <UniqueIdentifier>{ed67ee70-fe17-4dee-8347-eef938eb4ae2}</UniqueIdentifier>
+      <UniqueIdentifier>{6fbeb101-c257-4d07-a7ef-cf5725f76423}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform\GFxResource">
-      <UniqueIdentifier>{fba195ae-0688-47ef-90ac-cb8d7346b8cf}</UniqueIdentifier>
+      <UniqueIdentifier>{49f64a93-4f80-4650-abd1-838bea737c02}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform\GFxString">
-      <UniqueIdentifier>{0c6b8063-66d0-4c06-a6aa-d07b90a7c673}</UniqueIdentifier>
+      <UniqueIdentifier>{94347bb1-3eae-446f-af63-c51dbd9c8e0b}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GFxString">
-      <UniqueIdentifier>{faf8f7e6-e34e-45bb-88e3-efad5f04a791}</UniqueIdentifier>
+      <UniqueIdentifier>{a1197f45-b3eb-4f6c-b7b2-0c2f2b2bb411}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform\GFxWWHelper">
-      <UniqueIdentifier>{2c12c8d0-ed0d-4df3-a756-c414002a7100}</UniqueIdentifier>
+      <UniqueIdentifier>{35d1409c-b6c4-43ee-b067-47d849bc11b3}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GFxWWHelper">
-      <UniqueIdentifier>{9410c7ef-0420-4555-baf0-d6bfd148756d}</UniqueIdentifier>
+      <UniqueIdentifier>{1e0e5b65-889f-431a-b0b6-5b3cecaf3bc0}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GImage">
-      <UniqueIdentifier>{8d6f06cc-b304-4e20-aa09-f4a6c4260855}</UniqueIdentifier>
+      <UniqueIdentifier>{1a9c1338-aad1-420c-87b0-a3c5aefb949a}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GList">
-      <UniqueIdentifier>{9708c2fd-a802-464f-b6e1-0f8491e364d4}</UniqueIdentifier>
+      <UniqueIdentifier>{22f6d9e8-6b5e-462a-8720-c610c76ac9ed}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GMath">
-      <UniqueIdentifier>{1787899c-467f-4468-87e5-00aa00be3fce}</UniqueIdentifier>
+      <UniqueIdentifier>{2c93adab-3431-434f-b5f6-644a86910cf9}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GMatrix2D">
-      <UniqueIdentifier>{bba04181-433a-4a1e-a610-655794e35579}</UniqueIdentifier>
+      <UniqueIdentifier>{bc9c90bc-99b3-4f4a-8d2a-309923679e58}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GMatrix3D">
-      <UniqueIdentifier>{8359dbbc-cd69-4025-aae5-216088ae4e73}</UniqueIdentifier>
+      <UniqueIdentifier>{6a37fcad-0568-4fb8-81f5-2d00062de87f}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform\GMemory">
-      <UniqueIdentifier>{1535c67c-fa55-4985-a459-499cacd29ce1}</UniqueIdentifier>
+      <UniqueIdentifier>{40b83b50-bb58-41f2-9848-c726b9b8d382}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GMemory">
-      <UniqueIdentifier>{6e24037e-b286-4813-96b1-2f6eeceecb8e}</UniqueIdentifier>
+      <UniqueIdentifier>{da2c4225-0521-411b-8adf-15050c27452d}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform\GMemoryHeap">
-      <UniqueIdentifier>{48c93a68-7bff-4dcd-9bd7-cbd347a3a4e5}</UniqueIdentifier>
+      <UniqueIdentifier>{4ab61270-e955-4600-9c48-e2ee5d353f77}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GMemoryHeap">
-      <UniqueIdentifier>{0f4cc54f-d07f-43e3-b274-c76855b81b12}</UniqueIdentifier>
+      <UniqueIdentifier>{89fcf111-19f0-4113-8845-8d9b8e46ea6d}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GTypes2DF">
-      <UniqueIdentifier>{ef89cbdb-a457-421e-9242-a36dde5b6898}</UniqueIdentifier>
+      <UniqueIdentifier>{dd5292d9-f4e9-4944-82fd-31786cd153e1}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GRefCount">
-      <UniqueIdentifier>{21d59913-23f8-4856-838f-6d4e5583fa76}</UniqueIdentifier>
+      <UniqueIdentifier>{4dc335c8-2812-44f0-bff4-3c06da7d2cb9}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform\GRefCount">
-      <UniqueIdentifier>{3137c79c-b191-4b6f-9871-6c428ff3ab15}</UniqueIdentifier>
+      <UniqueIdentifier>{acac6dd5-a8d9-4ea4-82bb-e7b0d5de969f}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform\GRenderer">
-      <UniqueIdentifier>{415fcfe1-1938-4b63-857a-0047e49fee83}</UniqueIdentifier>
+      <UniqueIdentifier>{35348fea-23d4-4d8b-9823-aa01640abef9}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GRenderer">
-      <UniqueIdentifier>{4aea4fb2-e6c2-4c6c-8a9f-922f3b4ac1fe}</UniqueIdentifier>
+      <UniqueIdentifier>{40f101f3-8d20-4c52-93c2-9eeffac29d26}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GRendererEventHandler">
-      <UniqueIdentifier>{a48fe937-c5e7-4a86-8202-c74307c363e3}</UniqueIdentifier>
+      <UniqueIdentifier>{9cbe8284-07d8-4f2e-a8b9-d911940783f8}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\GridArray">
-      <UniqueIdentifier>{12f4a477-725a-4e93-881f-6506a3e90d73}</UniqueIdentifier>
+      <UniqueIdentifier>{94f60208-9d49-418c-bd97-cd75f86348b5}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GStats">
-      <UniqueIdentifier>{c50b724f-45cc-4a0e-a394-4c944b03f331}</UniqueIdentifier>
+      <UniqueIdentifier>{e56336ee-d2d9-4d51-a897-00d81412b53f}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform\GStd">
-      <UniqueIdentifier>{de2a67e2-642b-4582-8dfd-cfbd0b04c679}</UniqueIdentifier>
+      <UniqueIdentifier>{26820b5e-5e01-49aa-9283-e8d654dafab5}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GStd">
-      <UniqueIdentifier>{c7efe310-8d19-4097-8bb3-268b98bd6305}</UniqueIdentifier>
+      <UniqueIdentifier>{2339675a-ac6a-4eed-8979-14807b993619}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Scaleform\GString">
-      <UniqueIdentifier>{4eda29b1-c6df-4ad2-8b99-f00d20a5d449}</UniqueIdentifier>
+      <UniqueIdentifier>{1342a8a9-ecc6-481e-a04e-6616274a698f}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GString">
-      <UniqueIdentifier>{52a3d4c8-028a-445d-ac94-85c8af6c68eb}</UniqueIdentifier>
+      <UniqueIdentifier>{d7c4becb-6acf-4a4d-994f-b8f3c66bb326}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Memory">
-      <UniqueIdentifier>{c07d9e10-462d-4852-82c5-2c30b0094bc2}</UniqueIdentifier>
+      <UniqueIdentifier>{dbd80267-8566-4938-a665-0d6053884bfc}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Memory\HeapBlock">
-      <UniqueIdentifier>{67270734-ccb4-421b-bc68-3b0fd82302db}</UniqueIdentifier>
+      <UniqueIdentifier>{985a9931-1fcb-460c-adef-136ad2628d1f}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkbBindable">
-      <UniqueIdentifier>{a0b8ec75-406d-44ad-9dc6-7d37991f4e2b}</UniqueIdentifier>
+      <UniqueIdentifier>{cbc5df31-5add-45a2-80ac-90fb044ce349}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkbBindable\hkbNode">
-      <UniqueIdentifier>{30faf872-f7c1-4b32-9933-d36c58d0fe74}</UniqueIdentifier>
+      <UniqueIdentifier>{2b30dda0-bfce-4377-8bc7-431f5bdd2dc7}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkbBindable\hkbNode\hkbGenerator">
-      <UniqueIdentifier>{2ffe4686-5047-4aef-8ded-ffb0fcc6a806}</UniqueIdentifier>
+      <UniqueIdentifier>{57ddaa60-12ea-4c0c-83fd-0bf875d8ddcd}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkbEventBase">
-      <UniqueIdentifier>{48b0c09b-38a7-43c4-b7bd-60acbd2ab788}</UniqueIdentifier>
+      <UniqueIdentifier>{fd372371-8b75-4737-8955-371674f48670}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSHavok\hkMemoryAllocator">
-      <UniqueIdentifier>{96ab7831-eef8-4178-8a2e-34895bce01ae}</UniqueIdentifier>
+      <UniqueIdentifier>{943f1e7f-a408-4a00-b80c-2b97c63ad949}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkMemoryAllocator">
-      <UniqueIdentifier>{a5ddda85-1702-4d22-a754-6be731300c99}</UniqueIdentifier>
+      <UniqueIdentifier>{76ee5226-bee0-4a02-824a-358105af7f02}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkMatrix3">
-      <UniqueIdentifier>{c138064f-7c84-40b2-a848-af9a9ed6cb01}</UniqueIdentifier>
+      <UniqueIdentifier>{bff63216-189d-4d29-9149-431cbb93b949}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape">
-      <UniqueIdentifier>{2e14466f-8431-4669-957d-683c78a5433f}</UniqueIdentifier>
+      <UniqueIdentifier>{d550e80a-b5d0-4dad-a30d-748013120671}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpBvTreeShape">
-      <UniqueIdentifier>{3ef355f4-54ae-4230-9a7c-84dafd3921a6}</UniqueIdentifier>
+      <UniqueIdentifier>{74c582f7-6923-46fc-870a-fe84de749b52}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpBvTreeShape\hkMoppBvTreeShapeBase">
-      <UniqueIdentifier>{5e85e3dd-2fd3-49b7-a4c4-a98c6f86e958}</UniqueIdentifier>
+      <UniqueIdentifier>{a33176ca-68b7-416b-a36e-5896ab563b37}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpBroadPhase">
-      <UniqueIdentifier>{62d287ba-30d4-49b1-9bf4-5b6302a5f70c}</UniqueIdentifier>
+      <UniqueIdentifier>{ef079336-e296-4b52-9f66-94600239ac44}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSHavok\hkBaseObject">
-      <UniqueIdentifier>{a6c05cf7-5aeb-4e1c-9528-d0cfd1ff4989}</UniqueIdentifier>
+      <UniqueIdentifier>{6ae6fef8-534b-48c9-951b-a2d07de09fe1}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject">
-      <UniqueIdentifier>{50134c66-8f31-4525-ab71-836ae97cef46}</UniqueIdentifier>
+      <UniqueIdentifier>{7da73d0b-f934-4321-8304-f7acee8def8b}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpBroadPhase">
-      <UniqueIdentifier>{5899d42c-7305-40a3-a4f5-bc3f16d40755}</UniqueIdentifier>
+      <UniqueIdentifier>{2269fc19-bd8a-4a6b-8182-eda541008466}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkpBroadPhaseCastCollector">
-      <UniqueIdentifier>{e7b7be91-1b77-4665-81d5-6ede85c15dfe}</UniqueIdentifier>
+      <UniqueIdentifier>{088470ce-559e-414a-88f7-0b98f7c6ee9f}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkpBroadPhaseHandle">
-      <UniqueIdentifier>{35b231e5-b2d7-4f04-8c09-97acdada26c5}</UniqueIdentifier>
+      <UniqueIdentifier>{bc6a3f30-069a-4c60-9749-7f9514237a7b}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject">
-      <UniqueIdentifier>{6f125513-9e45-4f96-84f4-6c8dc368453b}</UniqueIdentifier>
+      <UniqueIdentifier>{2ff7489d-f027-4fa3-9a8e-70ba00644ae5}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject\hkpPhantom">
-      <UniqueIdentifier>{051061a5-c5df-4eab-b981-2906234ff708}</UniqueIdentifier>
+      <UniqueIdentifier>{b2094ed5-ee8f-45dd-89b0-1481f37a9ee9}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject\hkpPhantom\hkpShapePhantom">
-      <UniqueIdentifier>{89e9793a-b326-4e18-81cd-78dc4f74b691}</UniqueIdentifier>
+      <UniqueIdentifier>{95a5e127-8e19-4c48-b593-e36321d3b234}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSHavok\hkpCdBody">
-      <UniqueIdentifier>{5f63d3d9-83b4-4933-bf68-6f645e395202}</UniqueIdentifier>
+      <UniqueIdentifier>{64757b59-8ee3-4d05-9c1b-2871c458dda7}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkpCdBody">
-      <UniqueIdentifier>{4052fe6a-ccc3-4768-b0ad-d07ba079fd4b}</UniqueIdentifier>
+      <UniqueIdentifier>{f19f197e-4321-4d0e-9870-6d56b9f08db7}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSHavok\hkpCdBody\hkpCollidable">
-      <UniqueIdentifier>{2d6ee975-61b4-4973-8722-c002dcd7077f}</UniqueIdentifier>
+      <UniqueIdentifier>{207da2d2-ce8f-4b9f-9a7d-ac1025687667}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkpCdBody\hkpCollidable">
-      <UniqueIdentifier>{fd4a6cc1-29e5-4cab-a675-d3916dcce81c}</UniqueIdentifier>
+      <UniqueIdentifier>{bdf2ebd3-1c3e-4e45-9309-dfe6b2c0058b}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkpCollisionInput">
-      <UniqueIdentifier>{fdf1d92e-9f83-4d96-bd07-d5789de2e507}</UniqueIdentifier>
+      <UniqueIdentifier>{00fbce1b-44f6-4d4f-8047-36686ab299ab}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpConstraintOwner">
-      <UniqueIdentifier>{57818f76-5efd-4872-a329-2ba60b6bd3d1}</UniqueIdentifier>
+      <UniqueIdentifier>{a17de6cd-7a1f-4e6c-808e-04c4e28ae0ed}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject\hkpEntity">
-      <UniqueIdentifier>{46bdecda-fd34-429d-b234-f4e238e79722}</UniqueIdentifier>
+      <UniqueIdentifier>{5eef89bc-d6a3-41b4-b41e-9d2056be9069}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpMotion">
-      <UniqueIdentifier>{31a23180-e51d-43e6-9a12-fd717b9dde1c}</UniqueIdentifier>
+      <UniqueIdentifier>{88188607-c4ed-4930-90c4-8ab9a2f51393}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpMotion\hkpKeyframedRigidMotion">
-      <UniqueIdentifier>{832c6bd8-b8fe-4c6f-999d-3b9455b1edee}</UniqueIdentifier>
+      <UniqueIdentifier>{d8f76de6-783d-437e-a75c-f47f14bec15f}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection">
-      <UniqueIdentifier>{bd5e3dce-6c44-4a2e-95e2-07060eb396ea}</UniqueIdentifier>
+      <UniqueIdentifier>{5a188cae-8a05-432c-ae77-c6494dae54c6}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\Enums">
-      <UniqueIdentifier>{7551b0cb-9734-40f3-9016-75143b00d50e}</UniqueIdentifier>
+      <UniqueIdentifier>{e37602d7-5f91-4b26-95ea-85dd4410e752}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkpShapeContainer">
-      <UniqueIdentifier>{84273a20-edf9-4aa6-9d58-58f904d0aef6}</UniqueIdentifier>
+      <UniqueIdentifier>{eb7c8f82-c042-4a13-b84c-0c54b6e42b9f}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject">
-      <UniqueIdentifier>{b325d013-5996-445b-8df1-69a442d45b32}</UniqueIdentifier>
+      <UniqueIdentifier>{e6b9daaa-91c0-4bd0-9df0-05e0817def37}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSHavok\hkRefPtr">
-      <UniqueIdentifier>{eaf76cc1-0106-4268-a6c6-6badb3ff2d27}</UniqueIdentifier>
+      <UniqueIdentifier>{9dd52383-b42d-4d4a-83f7-8b2c4cffce73}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Menus\HUDObject">
-      <UniqueIdentifier>{a1bd6267-d6e2-4e6f-b511-fa8ef2d0df48}</UniqueIdentifier>
+      <UniqueIdentifier>{b7ef2f32-327d-4255-991a-6a6658ecb569}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Menus\HUDObject\HUDMeter">
-      <UniqueIdentifier>{06c7f2cf-f4bc-401e-9196-6dc98ae03808}</UniqueIdentifier>
+      <UniqueIdentifier>{6f5a9d9f-4497-40cf-abf7-7cdd3ddf3d09}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\IAIWorldLocationHandle">
-      <UniqueIdentifier>{e1799f0a-2499-4904-b3c4-398090122220}</UniqueIdentifier>
+      <UniqueIdentifier>{2b91cbb7-cd14-4e1d-8e5f-3d1cf47fa80c}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Animation">
-      <UniqueIdentifier>{57a6f549-1bee-44ab-9447-492967d1e4f0}</UniqueIdentifier>
+      <UniqueIdentifier>{1be18f7b-1117-4e14-88ac-327fd4121a5c}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Animation\IAnimationGraphManagerHolder">
-      <UniqueIdentifier>{bc39f937-84d0-4881-9718-74af47d14af7}</UniqueIdentifier>
+      <UniqueIdentifier>{bff5869f-481f-4b2e-bcbb-94cd5df717d6}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FileIO\ICellAttachDetachEventSource">
-      <UniqueIdentifier>{9350f79a-1dcd-4e38-9647-adff68a857f2}</UniqueIdentifier>
+      <UniqueIdentifier>{1affa6f1-f375-4bf3-823c-8a18c2d3e77f}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSScript\IFunction">
-      <UniqueIdentifier>{415a6333-5c19-4bc8-a815-741cc9e075a9}</UniqueIdentifier>
+      <UniqueIdentifier>{7006d565-87c7-4ee3-afe6-5a9261e36ec4}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSScript\IFunction">
-      <UniqueIdentifier>{ff5fe8db-4214-4bf3-a187-414bfc590ff2}</UniqueIdentifier>
+      <UniqueIdentifier>{a90540fc-71f1-4590-8ae6-ac0761c79eca}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSShader\ImageSpaceEffectParam">
-      <UniqueIdentifier>{bf7c6a28-670c-4437-8f90-1e6a162d5168}</UniqueIdentifier>
+      <UniqueIdentifier>{1efe90cc-7ab4-4262-a2e9-b173a179242b}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance">
-      <UniqueIdentifier>{96b12a4b-9579-4ba7-88d1-afdba2cb7599}</UniqueIdentifier>
+      <UniqueIdentifier>{a7f72ba5-7383-43fe-ad16-472386f95f8b}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstanceTemp">
-      <UniqueIdentifier>{ac7ef896-00c2-4842-959f-f68e1010eee1}</UniqueIdentifier>
+      <UniqueIdentifier>{04429c41-ee36-443d-ba3d-ff26abd4b863}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSScript\IMemoryPagePolicy">
-      <UniqueIdentifier>{29de3c0a-8609-4302-95ed-f4ba3f187fa4}</UniqueIdentifier>
+      <UniqueIdentifier>{fd959da3-4d5e-47b5-a9b6-5a8f1cb00f50}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Memory\IMemoryStoreBase">
-      <UniqueIdentifier>{692d1fe3-bff4-4c99-bc6f-3ef6ce28432a}</UniqueIdentifier>
+      <UniqueIdentifier>{c755a31a-912d-4a2c-a1bb-fcaf0f4f4f8e}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Memory\IMemoryStoreBase\IMemoryStore">
-      <UniqueIdentifier>{da1fce21-e571-425b-b7a8-5eac4441535a}</UniqueIdentifier>
+      <UniqueIdentifier>{a91e6093-f5b9-4775-9820-70503ce3e4ce}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Menus\IMessageBoxCallback">
-      <UniqueIdentifier>{a9583737-68a6-46a1-abd4-464486a59cbc}</UniqueIdentifier>
+      <UniqueIdentifier>{8383d5ed-0408-4e09-89b1-c3389b32954d}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Pathfinding\IMovementControllerRegisterInterface">
-      <UniqueIdentifier>{d443beb7-fd62-4f22-9478-7605a97624f5}</UniqueIdentifier>
+      <UniqueIdentifier>{9aa9622a-6c0b-43ee-bd8e-31336c873fa8}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSDevices\Enums">
-      <UniqueIdentifier>{228fb39f-d07f-46b0-9832-eaa39f8c4787}</UniqueIdentifier>
+      <UniqueIdentifier>{06f08bde-b78d-4c81-a636-90e9bc582b2e}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSScript\IObjectProcessor">
-      <UniqueIdentifier>{237b8079-5349-47b6-8bff-dcd96136495c}</UniqueIdentifier>
+      <UniqueIdentifier>{f32f78f1-8172-4c32-a4d8-cb4c87f8fcf7}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSSystem\BSStorage\IStore">
-      <UniqueIdentifier>{611e5878-f6f9-488b-a557-6e6c3c9401db}</UniqueIdentifier>
+      <UniqueIdentifier>{35a2fd37-9235-40be-ba35-671d8a902123}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Menus\IMenu\Components">
-      <UniqueIdentifier>{8658bd67-ce76-4923-be0b-4953af92f4b1}</UniqueIdentifier>
+      <UniqueIdentifier>{67d50769-c9ac-4082-8789-5508734a3f1b}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Menus\IMenu\Components\JournalTab">
-      <UniqueIdentifier>{e0ebc1d9-ba0c-49e5-8819-08756058f482}</UniqueIdentifier>
+      <UniqueIdentifier>{b4c3c74c-694d-4689-91a8-2e27fa3d355e}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Camera">
-      <UniqueIdentifier>{b75ba2ae-3e17-464d-8eb9-6b5c0fa36916}</UniqueIdentifier>
+      <UniqueIdentifier>{31efa865-51ce-41b3-bfda-18181a6b403d}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Camera\TESCamera">
-      <UniqueIdentifier>{08c5351e-56df-46f2-83d1-da395eab1a93}</UniqueIdentifier>
+      <UniqueIdentifier>{2a0d731f-c022-4243-8575-3ffb50cf2f4e}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Camera\TESCamera">
-      <UniqueIdentifier>{3eb978d4-2c25-4eb6-a88b-3ae2ccfb0819}</UniqueIdentifier>
+      <UniqueIdentifier>{0c7c6ab9-d147-484b-8a9d-0d77b586517c}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSResource\Location">
-      <UniqueIdentifier>{0f402c18-35c0-4fd8-826b-98ed4ec749ae}</UniqueIdentifier>
+      <UniqueIdentifier>{7d9d59d9-2b32-4247-9a56-d80ca9124669}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSResource\LocationTraverser">
-      <UniqueIdentifier>{99cd5ce2-d204-4863-99c4-b7b2ea5cc2e3}</UniqueIdentifier>
+      <UniqueIdentifier>{fc3f21f0-cde1-4316-98a0-2069eb2b5ea7}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSResource\StreamBase">
-      <UniqueIdentifier>{38ea5c40-7f64-4aaf-b943-42c18c2fa387}</UniqueIdentifier>
+      <UniqueIdentifier>{25470deb-7e06-4452-9b0f-c1129427cc9e}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSResource\StreamBase\Stream">
-      <UniqueIdentifier>{8af51113-0036-4c24-ad34-59c8790f9d0a}</UniqueIdentifier>
+      <UniqueIdentifier>{63d63dae-a9a6-44b5-9e97-4731bc69c2d8}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSResource\StreamBase\Stream">
-      <UniqueIdentifier>{b6b39ed3-e86b-456a-9453-60f9e95af910}</UniqueIdentifier>
+      <UniqueIdentifier>{aca3eeab-4100-4137-bc80-87f70df87ac7}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSResource\StreamBase\Stream\Components">
-      <UniqueIdentifier>{1f7812b3-debc-4ae4-ac68-40841dc26d3e}</UniqueIdentifier>
+      <UniqueIdentifier>{9385f2ca-d1be-4462-abb5-9f0d94991793}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\TESForm\TESObject">
-      <UniqueIdentifier>{9bfa3f34-414e-4a7e-a971-c3cabf88d28e}</UniqueIdentifier>
+      <UniqueIdentifier>{b5a50b15-d3e5-49ef-81e0-df2c22a339da}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\TESForm\TESObject\TESBoundObject">
-      <UniqueIdentifier>{6c7a37e1-7399-44f1-94e4-cb774e009b80}</UniqueIdentifier>
+      <UniqueIdentifier>{92f89d9f-598b-47b3-ad6c-0bc45a425737}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\TESForm\TESObject\TESBoundObject\MagicItem">
-      <UniqueIdentifier>{fbf34d46-1f69-48e4-ab32-2e67f8f7d78f}</UniqueIdentifier>
+      <UniqueIdentifier>{225bcd9a-c249-46da-b20a-574db62ef528}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSDevices\MenuEventHandler\MapInputHandler">
-      <UniqueIdentifier>{235de09f-3cb5-409a-ac95-2dad8c2bdb4c}</UniqueIdentifier>
+      <UniqueIdentifier>{00c61cc1-b3fd-4f71-9b37-4f416ce16c34}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSDevices\MenuEventHandler">
-      <UniqueIdentifier>{3963f12e-a5dd-4e8c-9bf1-ad64069f5391}</UniqueIdentifier>
+      <UniqueIdentifier>{aab6fd3a-8871-4b63-93cb-25ffa11e7ead}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Events\MenuEvent">
-      <UniqueIdentifier>{e3532921-b77f-4cd7-856b-3891d4df010d}</UniqueIdentifier>
+      <UniqueIdentifier>{dfbd4fe2-00a4-4cf5-aedf-edf427d1b98e}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Menus\IUIMessageData">
-      <UniqueIdentifier>{aabce30b-9a14-441e-9953-0612002ae224}</UniqueIdentifier>
+      <UniqueIdentifier>{91c95996-955f-443a-a0df-5bcb0db25440}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect">
-      <UniqueIdentifier>{f6661812-47f4-4dbe-8a02-71183330ce4e}</UniqueIdentifier>
+      <UniqueIdentifier>{db0efb2d-0ed9-4907-b51b-da99f322d8da}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Pathfinding\IMovementControllerRegisterInterface\MovementControllerAI">
-      <UniqueIdentifier>{eb9616c9-d5e7-4b42-b6f2-f9c16c2f4181}</UniqueIdentifier>
+      <UniqueIdentifier>{78d492b1-11b5-417c-b58a-9cb800d5c3bf}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSScript\IFunction\NF_util">
-      <UniqueIdentifier>{120082a9-2e6c-4ca2-ba36-e880ab632704}</UniqueIdentifier>
+      <UniqueIdentifier>{049a1434-9305-4166-bf88-c51466d07365}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSScript\IFunction\NF_util">
-      <UniqueIdentifier>{8f81127f-aa0f-4cc6-bcff-3a5a8ebf5ac1}</UniqueIdentifier>
+      <UniqueIdentifier>{274c1476-5a60-4f07-a133-cd6e7080ad79}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiAnimationKey">
-      <UniqueIdentifier>{b0ac25b0-da30-4e75-8414-7461925b6c28}</UniqueIdentifier>
+      <UniqueIdentifier>{e78ab289-5409-4336-9272-4635ba5eeb38}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiAnimationKey">
-      <UniqueIdentifier>{cdb18683-6a24-4a23-82f0-3acaeea32afd}</UniqueIdentifier>
+      <UniqueIdentifier>{2f155c3a-9bbc-42fd-8287-e3b3e1d1f8b8}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiInterpolator">
-      <UniqueIdentifier>{de1f40a6-9ea6-412e-8df9-996b5e659739}</UniqueIdentifier>
+      <UniqueIdentifier>{6cf6b537-bb20-48e1-99f8-54ec58000ffc}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiInterpolator\NiKeyBasedInterpolator">
-      <UniqueIdentifier>{225869a0-08c5-4edc-be1f-cc737b54e2ec}</UniqueIdentifier>
+      <UniqueIdentifier>{a56c7ad7-c023-4483-af39-c711b2463195}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiTimeController">
-      <UniqueIdentifier>{17ece853-4fec-4093-ad2d-db9822b36ef7}</UniqueIdentifier>
+      <UniqueIdentifier>{ac3a2b81-8d8d-4d66-8d38-49205c579266}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiTimeController">
-      <UniqueIdentifier>{60e2299e-33a1-4b1b-8928-2db8210e7896}</UniqueIdentifier>
+      <UniqueIdentifier>{67125792-8d33-45ce-a3c7-a37b2d0bc3a5}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiTimeController\NiInterpController">
-      <UniqueIdentifier>{23e9ed46-8c01-412b-be56-66bb37c90b36}</UniqueIdentifier>
+      <UniqueIdentifier>{9bcb2228-430d-4546-b9c4-15588174dba0}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiInterpolator">
-      <UniqueIdentifier>{e5b70591-4715-425e-bced-00112ebb3925}</UniqueIdentifier>
+      <UniqueIdentifier>{80421043-1e25-42f6-ae98-76fc1a6a1f81}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight">
-      <UniqueIdentifier>{ece789f2-7904-402e-8c1f-cbfa2a695abe}</UniqueIdentifier>
+      <UniqueIdentifier>{512215e0-b901-4e2c-8f19-92f0046adc9f}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode">
-      <UniqueIdentifier>{7e7b9d04-e099-4c32-831f-c5cffd244ef4}</UniqueIdentifier>
+      <UniqueIdentifier>{47aac667-dba2-408f-990f-d3e3f28f4b86}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiTexture">
-      <UniqueIdentifier>{fbb5b6b3-34f2-4835-a4e9-c253320346ba}</UniqueIdentifier>
+      <UniqueIdentifier>{85dc5432-eb4c-4da0-a687-7031d5588c59}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\NiTexture">
-      <UniqueIdentifier>{10a3e439-e520-4155-a60b-e97e8049a454}</UniqueIdentifier>
+      <UniqueIdentifier>{6410fbf0-5fff-4da1-84c0-149efa2ab882}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiTListBase">
-      <UniqueIdentifier>{dd2fc2ef-1bea-4fea-b93c-dc708e659f92}</UniqueIdentifier>
+      <UniqueIdentifier>{54cfb9c0-8d83-4538-91e6-5224df214c97}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiTListBase\NiTPointerListBase">
-      <UniqueIdentifier>{ebeac2e2-94eb-4f4f-9e9d-e83429cf2b55}</UniqueIdentifier>
+      <UniqueIdentifier>{4f9eab9d-a7f9-4eaa-93cf-5d864f25908e}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiTMapBase">
-      <UniqueIdentifier>{df9c61ec-5041-4d70-8551-dbe8c726a42b}</UniqueIdentifier>
+      <UniqueIdentifier>{b92fac83-c65a-435d-b65a-0cf9c6e4cffd}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiTMapBase\NiTMap">
-      <UniqueIdentifier>{1689f00e-63b4-411e-93b0-9b608f0fab63}</UniqueIdentifier>
+      <UniqueIdentifier>{dabd005c-dab6-49d3-9b14-b04b0cfbedfc}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Offsets">
-      <UniqueIdentifier>{70885344-1cfb-466f-8505-b6d6364d0f50}</UniqueIdentifier>
+      <UniqueIdentifier>{61eb4649-8978-4c9b-8cca-fba4605f748e}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\ReferenceEffectController\OwnedController">
-      <UniqueIdentifier>{fa12688f-3fbc-4279-a5e9-25897c6a560f}</UniqueIdentifier>
+      <UniqueIdentifier>{40db750d-54d3-41fd-869c-7eeacb2c3f28}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSScript\ByteCode">
-      <UniqueIdentifier>{fcfb8c45-05ef-4559-a1e6-0e1ccbc6675b}</UniqueIdentifier>
+      <UniqueIdentifier>{2b23b80a-376c-4878-96b6-f6e5b64ba372}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSScript\ByteCode">
-      <UniqueIdentifier>{06d2d553-ddc7-4fda-8dad-3c28f5e32caf}</UniqueIdentifier>
+      <UniqueIdentifier>{7571eaf0-843d-4045-896c-3dbcb023b90a}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\SKSE\Impl">
-      <UniqueIdentifier>{e7accb23-e598-4bbe-97e8-ad2f5265ef44}</UniqueIdentifier>
+      <UniqueIdentifier>{dcf5f440-2b61-44e2-ad4d-22bd7f3644fb}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\TESForm\TESObjectREFR\Actor\Character">
-      <UniqueIdentifier>{18b9fe54-43f6-4cf6-afce-06ee863f9c89}</UniqueIdentifier>
+      <UniqueIdentifier>{bf9a1fa2-422a-4922-b9f5-6e41c4cb5adb}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSDevices\PlayerInputHandler">
-      <UniqueIdentifier>{a666ab70-d796-4a6c-94d2-0e3747fbb3be}</UniqueIdentifier>
+      <UniqueIdentifier>{f5f022c8-df60-455f-98f7-cc77544e1016}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\SyncQueueObj">
-      <UniqueIdentifier>{fe3310c8-58db-4bcd-8fcf-b562f1576e85}</UniqueIdentifier>
+      <UniqueIdentifier>{95846423-2c16-4cad-8cc9-24281100ec6f}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\REL">
-      <UniqueIdentifier>{d6056976-fd49-410f-97d7-46606847749c}</UniqueIdentifier>
+      <UniqueIdentifier>{7e1e53db-162f-4b1e-828f-ec12acaf5ad9}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\REL">
-      <UniqueIdentifier>{ba9009c4-e90d-46dc-ab51-b503a9c52929}</UniqueIdentifier>
+      <UniqueIdentifier>{4ae36058-e89e-4292-b059-1f98f33b6c0f}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\bgs">
-      <UniqueIdentifier>{954e1854-8f3c-4fa3-a80c-a9708e1c8be3}</UniqueIdentifier>
+      <UniqueIdentifier>{66594bf7-6fef-40d8-aab4-ed94d6991aa3}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\bgs\saveload">
-      <UniqueIdentifier>{95511d87-1ab8-405f-98f3-e3eac3e644e0}</UniqueIdentifier>
+      <UniqueIdentifier>{48acc9ed-adb6-450f-ac8c-c595686d2991}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Events\ScriptEvent">
-      <UniqueIdentifier>{de9ecc0f-90a4-450d-9c0d-c9873a8f8aa7}</UniqueIdentifier>
+      <UniqueIdentifier>{db9bbe66-bcea-4a77-ab21-d0ad3f143b4a}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Events\ScriptEvent">
-      <UniqueIdentifier>{3f4b7b64-786b-48b1-a14d-fd1a71bd8841}</UniqueIdentifier>
+      <UniqueIdentifier>{5fda1731-cf90-41a6-88c4-a254158b86b5}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\TESObject\TESBoundObject\MagicItem\SpellItem">
-      <UniqueIdentifier>{15b6cebe-aa36-45a4-be2e-bc056e9115b3}</UniqueIdentifier>
+      <UniqueIdentifier>{61f4b08d-7032-48de-b3cd-74cd25331f5d}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSMain\Setting">
-      <UniqueIdentifier>{20676495-4e85-4c4c-a38d-e6000a9d4187}</UniqueIdentifier>
+      <UniqueIdentifier>{5abcd797-9823-47bc-9a85-8ef4b8a53435}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\BSMain\Setting">
-      <UniqueIdentifier>{7398bbe0-21e1-4204-bb60-8dbf1f486e1d}</UniqueIdentifier>
+      <UniqueIdentifier>{3e6bf389-ef63-4b40-8e17-2faf7a507dcf}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Scaleform\GTypes">
-      <UniqueIdentifier>{83a90f21-ed31-4102-8885-071141bca368}</UniqueIdentifier>
+      <UniqueIdentifier>{f9bcdccb-cc66-4a46-aa0a-8ab0b23c7d6c}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Animation\IAnimationGraphManagerHolder\SimpleAnimationGraphManagerHolder">
-      <UniqueIdentifier>{2febe876-faeb-42ca-8bef-8cb68118b13e}</UniqueIdentifier>
+      <UniqueIdentifier>{79d0edbf-7f49-49b7-9efd-d666b0c09f74}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Sky">
-      <UniqueIdentifier>{ef89e309-81b9-4c12-bd5c-ac0b9890c7df}</UniqueIdentifier>
+      <UniqueIdentifier>{cc616ab1-ab55-44ad-9537-17ac3b181d08}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\SkyrimScript">
-      <UniqueIdentifier>{96806a12-8d73-4435-ada0-669691e6ca9a}</UniqueIdentifier>
+      <UniqueIdentifier>{04abd548-ed45-4ae2-8267-d52905e98309}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSGraphics">
-      <UniqueIdentifier>{db8ef096-799b-4207-96d9-b8d343803a54}</UniqueIdentifier>
+      <UniqueIdentifier>{db4cdf96-a897-404f-ad28-e9e80fff447c}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\Memory\IMemoryStoreBase\CompactingStore">
-      <UniqueIdentifier>{147e11e1-8a6d-46e5-82c1-e89796569d79}</UniqueIdentifier>
+      <UniqueIdentifier>{a15bca43-ccec-44ff-a895-d18296691e33}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FileIO\ICellAttachDetachEventSource">
-      <UniqueIdentifier>{d2810686-40ca-4a5d-9d91-e13517d5f299}</UniqueIdentifier>
+      <UniqueIdentifier>{94a53c31-f5ba-4ad8-9e76-209ffd27cccd}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESForm\TESObject\TESBoundObject\TESBoundAnimObject\TESActorBase">
-      <UniqueIdentifier>{677b681c-6689-41fb-b0af-f85a2f87c12d}</UniqueIdentifier>
+      <UniqueIdentifier>{c10133b8-7f74-49c8-a016-f5528aa7a114}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\TESPackageData">
-      <UniqueIdentifier>{f12e5492-3e41-46b7-9294-15280b35b77b}</UniqueIdentifier>
+      <UniqueIdentifier>{1adeb5b7-6e4c-4dac-b80f-a24a965818fa}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\TESTexture">
-      <UniqueIdentifier>{cf36ba68-935f-4187-a943-600ddc007009}</UniqueIdentifier>
+      <UniqueIdentifier>{9c10264d-242f-4a7e-8bf3-3491c7be84ca}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\TESForm\TESObject\TESBoundObject\TESBoundAnimObject">
-      <UniqueIdentifier>{775cdcbe-a3d8-4074-bb3d-27ec107583ab}</UniqueIdentifier>
+      <UniqueIdentifier>{a0417bd4-5d94-42ec-bbca-f26d7fb6c0d2}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\TESForm\TESObject\TESBoundObject\TESBoundAnimObject\TESActorBase">
-      <UniqueIdentifier>{8b48c86f-60c8-40ec-8a35-5ad1b0cc3624}</UniqueIdentifier>
+      <UniqueIdentifier>{abc98926-d585-4763-b8fc-89d0823be914}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\TESForm\TESObject\TESBoundObject\TESObjectSTAT">
-      <UniqueIdentifier>{99989119-fb53-4f35-8bd7-c57391da576a}</UniqueIdentifier>
+      <UniqueIdentifier>{afd353c1-f194-4f9e-9595-a95d6b91f83a}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\TESForm\BGSStoryManagerTreeForm">
-      <UniqueIdentifier>{39581cdf-2ba7-43ef-aff1-c4a885f9fbaa}</UniqueIdentifier>
+      <UniqueIdentifier>{f74036be-89d6-4dfd-8b60-793ba5975ad9}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\TESRegionData">
-      <UniqueIdentifier>{31471bbf-2b1d-4dae-82c4-2406fed26504}</UniqueIdentifier>
+      <UniqueIdentifier>{ae6719a2-9a6d-4174-97b1-84d93cf2bd11}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\TESForm\TESObject\TESBoundObject\TESObjectMISC">
-      <UniqueIdentifier>{74111a0d-3415-4516-b67a-057c0845cc4a}</UniqueIdentifier>
+      <UniqueIdentifier>{3fff6d90-4a1e-4717-a0ec-bd441f05009f}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSScript\Internal">
-      <UniqueIdentifier>{4462f12b-9ea8-4604-b972-d5d88533d671}</UniqueIdentifier>
+      <UniqueIdentifier>{fe21fdca-1f21-4757-a43e-131631088b9d}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\BSScript\IFunctionArguments">
-      <UniqueIdentifier>{cc67d342-60e7-454c-8723-24609053a944}</UniqueIdentifier>
+      <UniqueIdentifier>{e9273699-f5f3-4e61-bedb-5d25381d2a2a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
