@@ -23,7 +23,7 @@ namespace RE
 		virtual void		  SaveBinary(NiStream& a_stream) override;			  // 1B
 		virtual bool		  IsEqual(NiObject* a_object) override;				  // 1C
 
-		static NiFloatExtraData* Create(const BSFixedString& name, float value);
+		static NiFloatExtraData* Create(const BSFixedString& a_name, float a_value);
 
 
 		// members

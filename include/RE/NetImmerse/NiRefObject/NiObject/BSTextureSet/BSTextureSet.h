@@ -32,6 +32,7 @@ namespace RE
 				kBacklightMask,
 				kSpecular = kBacklightMask,
 				kUnused08,
+				kUsedTotal = kUnused08,
 				kTotal = 9
 			};
 		};

@@ -23,7 +23,7 @@ namespace RE
 		virtual void		  ProcessClone(NiCloningProcess& a_cloning) override;  // 1D
 		virtual void		  OnVisible(NiCullingProcess& a_process) override;	   // 34
 
-		//add
+		// add
 		virtual UInt8 Unk_3E();												  // 3E - { return 1; }
 		virtual void  AttachDecal(BSTempEffect* a_decal, bool a_firstAvail);  // 3F
 

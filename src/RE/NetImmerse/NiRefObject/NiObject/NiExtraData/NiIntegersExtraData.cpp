@@ -5,13 +5,13 @@
 
 namespace RE
 {
-	NiIntegersExtraData* NiIntegersExtraData::Create(const std::string& a_name, const std::vector<SInt32>& a_integers)
+	NiIntegersExtraData* NiIntegersExtraData::Create(const BSFixedString& a_name, const std::vector<SInt32>& a_integers)
 	{
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiIntegersExtraData::Vtbl);
-		auto data = static_cast<NiIntegersExtraData*>(NiExtraData::Create(sizeof(NiIntegersExtraData), vtbl.address()));
 
+		auto data = NiExtraData::Create<NiIntegersExtraData>(vtbl.address());
 		if (data) {
-			data->name = a_name.c_str();
+			data->name = a_name;
 			data->size = static_cast<UInt32>(a_integers.size());
 
 			data->value = NiAlloc<SInt32>(a_integers.size());

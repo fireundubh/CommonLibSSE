@@ -24,7 +24,7 @@ namespace RE
 		virtual void Unk_06() override;							   // 06
 
 
-		//members
+		// members
 		UInt64 unk28;  // 028
 	};
 	STATIC_ASSERT(sizeof(CombatTargetSelectorStandard) == 0x30);

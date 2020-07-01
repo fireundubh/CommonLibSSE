@@ -35,7 +35,7 @@ namespace RE
 		virtual bool		  IsEqual(NiObject* a_object) override;						// 1C
 		virtual void		  UpdateTransformAndBounds(NiUpdateData& a_data) override;	// 31
 
-		//add
+		// add
 		virtual bool Unk_3E(void);	//3E
 
 

@@ -55,7 +55,7 @@ namespace RE
 		virtual void		   Unk_1B(void) override;						 // 1B
 		virtual void		   Unk_1C(void) override;						 // 1C
 
-		//add
+		// add
 		virtual void Unk_1D(void);	// 1D
 
 

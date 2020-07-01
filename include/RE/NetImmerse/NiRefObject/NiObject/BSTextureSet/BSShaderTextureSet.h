@@ -28,7 +28,7 @@ namespace RE
 		static BSShaderTextureSet* Create();
 
 
-		//members
+		// members
 		const char* textures[Texture::kTotal];
 
 	private:

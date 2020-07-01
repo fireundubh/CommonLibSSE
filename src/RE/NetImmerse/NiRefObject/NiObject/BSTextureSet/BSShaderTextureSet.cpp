@@ -10,6 +10,7 @@ namespace RE
 		return func(this);
 	}
 
+
 	BSShaderTextureSet* BSShaderTextureSet::Create()
 	{
 		auto textureset = malloc<BSShaderTextureSet>();

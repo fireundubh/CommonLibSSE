@@ -3,14 +3,14 @@
 
 namespace RE
 {
-	NiBooleanExtraData* NiBooleanExtraData::Create(const BSFixedString& name, bool value)
+	NiBooleanExtraData* NiBooleanExtraData::Create(const BSFixedString& a_name, bool a_value)
 	{
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiBooleanExtraData::Vtbl);
 
-		auto data = static_cast<NiBooleanExtraData*>(NiExtraData::Create(sizeof(NiBooleanExtraData), vtbl.address()));
+		auto data = NiExtraData::Create<NiBooleanExtraData>(vtbl.address());
 		if (data) {
-			data->name = name;
-			data->data = value;
+			data->name = a_name;
+			data->data = a_value;
 		}
 
 		return data;

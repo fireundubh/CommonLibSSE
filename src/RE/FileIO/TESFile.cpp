@@ -25,11 +25,36 @@ namespace RE
 	}
 
 
+	// Converts the lower bits of a FormID to a full FormID depending on plugin type
+	FormID TESFile::GetFormID(UInt32 formLower) const
+	{
+		return !IsLight() ? UInt32(compileIndex) << 24 | (formLower & 0xFFFFFF) : 0xFE000000 | (UInt32(smallFileCompileIndex) << 12) | (formLower & 0xFFF);
+	}
+
+
 	FormType TESFile::GetFormType()
 	{
 		using func_t = decltype(&TESFile::GetFormType);
 		REL::Offset<func_t> func(Offset::TESFile::GetFormType);
 		return func(this);
+	}
+
+
+	// Returns either a compileIndex or a compileIndex|smallFileCompileIndex pair
+	UInt32 TESFile::GetPartialIndex() const
+	{
+		return !IsLight() ? compileIndex : (0xFE000 | smallFileCompileIndex);
+	}
+
+
+	// Checks if a particular formID is part of the mod
+	bool TESFile::IsFormInMod(FormID formID) const
+	{
+		if (!IsLight() && (formID >> 24) == compileIndex)
+			return true;
+		if (IsLight() && (formID >> 24) == 0xFE && ((formID & 0x00FFF000) >> 12) == smallFileCompileIndex)
+			return true;
+		return false;
 	}
 
 
@@ -66,27 +91,5 @@ namespace RE
 		using func_t = decltype(&TESFile::SeekNextSubrecord);
 		REL::Offset<func_t> func(Offset::TESFile::SeekNextSubrecord);
 		return func(this);
-	}
-
-	// Checks if a particular formID is part of the mod
-	bool TESFile::IsFormInMod(FormID formID) const
-	{
-		if (!IsLight() && (formID >> 24) == compileIndex)
-			return true;
-		if (IsLight() && (formID >> 24) == 0xFE && ((formID & 0x00FFF000) >> 12) == smallFileCompileIndex)
-			return true;
-		return false;
-	}
-
-	// Returns either a compileIndex or a compileIndex|smallFileCompileIndex pair
-	UInt32 TESFile::GetPartialIndex() const
-	{
-		return !IsLight() ? compileIndex : (0xFE000 | smallFileCompileIndex);
-	}
-
-	// Converts the lower bits of a FormID to a full FormID depending on plugin type
-	FormID TESFile::GetFormID(UInt32 formLower) const
-	{
-		return !IsLight() ? UInt32(compileIndex) << 24 | (formLower & 0xFFFFFF) : 0xFE000000 | (UInt32(smallFileCompileIndex) << 12) | (formLower & 0xFFF);
 	}
 }

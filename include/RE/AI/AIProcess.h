@@ -150,11 +150,11 @@ namespace RE
 		bool					InLowProcess() const;
 		bool					IsArrested() const;
 		bool					IsGhost() const;
+		void					SetActorRefraction(float a_refraction);
 		void					SetArrested(bool a_arrested);
 		void					SetCachedHeight(float a_height);
 		void					Set3DUpdateFlag(RESET_3D_FLAGS a_flags);
 		void					Update3DModel(Actor* a_actor);
-		void					SetActorRefraction(float a_refraction);
 
 
 		// members

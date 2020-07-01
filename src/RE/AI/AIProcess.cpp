@@ -99,6 +99,14 @@ namespace RE
 	}
 
 
+	void AIProcess::SetActorRefraction(float a_refraction)
+	{
+		using func_t = decltype(&AIProcess::SetActorRefraction);
+		REL::Offset<func_t> func(Offset::AIProcess::SetActorRefraction);
+		return func(this, a_refraction);
+	}
+
+
 	void AIProcess::SetArrested(bool a_arrested)
 	{
 		if (high) {
@@ -138,13 +146,5 @@ namespace RE
 		using func_t = decltype(&AIProcess::Update3DModel_Impl);
 		REL::Offset<func_t> func(Offset::AIProcess::Update3DModel);
 		return func(this, a_actor);
-	}
-
-
-	void AIProcess::SetActorRefraction(float a_refraction)
-	{
-		using func_t = decltype(&AIProcess::SetActorRefraction);
-		REL::Offset<func_t> func(Offset::AIProcess::SetActorRefraction);
-		return func(this, a_refraction);
 	}
 }

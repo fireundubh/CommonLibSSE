@@ -13,7 +13,7 @@ namespace RE
 
 		virtual ~GridArray();  // 00
 
-		//add
+		// add
 		virtual void Unk_01(void);		// 01
 		virtual void Unk_02(void);		// 02
 		virtual void Unk_03(void);		// 03
@@ -24,7 +24,7 @@ namespace RE
 		virtual void Unk_08(void) = 0;	// 08
 
 
-		//members
+		// members
 		UInt32 unk08;	// 08 - 1000
 		UInt32 unk0C;	// 0C - 1000
 		UInt32 length;	// 10 - takes value from uGridsToLoad

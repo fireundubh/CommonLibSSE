@@ -5,12 +5,6 @@
 
 namespace RE
 {
-	float TESObjectARMO::GetArmorRating()
-	{
-		return static_cast<float>(armorRating) / static_cast<float>(100.0);
-	}
-
-
 	TESObjectARMA* TESObjectARMO::GetArmorAddonByMask(TESRace* a_race, BGSBipedObjectForm::BipedObjectSlot a_slot)
 	{
 		if (a_race) {
@@ -22,5 +16,11 @@ namespace RE
 		}
 
 		return nullptr;
+	}
+
+
+	float TESObjectARMO::GetArmorRating()
+	{
+		return static_cast<float>(armorRating) / static_cast<float>(100.0);
 	}
 }

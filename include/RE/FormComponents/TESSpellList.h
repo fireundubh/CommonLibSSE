@@ -33,7 +33,7 @@ namespace RE
 			bool   RemoveSpell(SpellItem* a_spell);
 
 
-			//members
+			// members
 			SpellItem**	  spells;		 // 00
 			TESLevSpell** levSpells;	 // 08
 			TESShout**	  shouts;		 // 10

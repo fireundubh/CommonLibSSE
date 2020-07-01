@@ -35,7 +35,7 @@ namespace RE
 		virtual void Unk_0B();		// 0B
 
 
-		//members
+		// members
 		CombatController* unk10;  // 10
 		TESForm*		  unk18;  // 18
 		AITimer			  unk20;  // 20

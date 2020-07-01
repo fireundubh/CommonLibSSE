@@ -282,7 +282,7 @@ namespace RE
 	}
 
 
-	bool ExtraDataList::GetWorn()
+	bool ExtraDataList::GetWorn() const
 	{
 		if (HasType<ExtraWorn>() || HasType<ExtraWornLeft>()) {
 			return true;

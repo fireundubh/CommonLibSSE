@@ -1589,7 +1589,6 @@
     <ClCompile Include="src\RE\BSShader\BSShaderMaterial\BSLightingShaderMaterialSnow.cpp" />
     <ClCompile Include="src\RE\BSSystem\BSSaveDataSystemUtility\BSWin32SaveDataSystemUtility.cpp" />
     <ClCompile Include="src\RE\BSSystem\BSStorage\BSSystemFileStorage.cpp" />
-    <ClCompile Include="src\RE\BSSystem\IFormFactory\Components\Color.cpp" />
     <ClCompile Include="src\RE\BSSystem\IFormFactory\IFormFactory.cpp" />
     <ClCompile Include="src\RE\Camera\TESCamera\LocalMapCamera.cpp" />
     <ClCompile Include="src\RE\Camera\TESCamera\PlayerCamera.cpp" />
@@ -1621,6 +1620,7 @@
     <ClCompile Include="src\RE\FormComponents\Components\BGSPerkEntry\BGSPerkEntry.cpp" />
     <ClCompile Include="src\RE\FormComponents\Components\BipedAnim.cpp" />
     <ClCompile Include="src\RE\FormComponents\Components\BSResponse.cpp" />
+    <ClCompile Include="src\RE\FormComponents\Components\Color.cpp" />
     <ClCompile Include="src\RE\FormComponents\Components\ContainerItemExtra.cpp" />
     <ClCompile Include="src\RE\FormComponents\Components\DialogueItem.cpp" />
     <ClCompile Include="src\RE\FormComponents\Components\Effect.cpp" />

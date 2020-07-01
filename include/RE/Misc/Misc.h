@@ -27,9 +27,4 @@ namespace RE
 		void		SanitizeTexturePath(std::string& a_path);
 		std::string GetTextureName(std::string& a_path);
 	}
-
-	namespace Papyrus
-	{
-		void ApplyHavokImpulse(BSScript::Internal::VirtualMachine* vm, UInt32 stackID, TESObjectREFR* target, float afX, float afY, float afZ, float magnitude);
-	}
 }

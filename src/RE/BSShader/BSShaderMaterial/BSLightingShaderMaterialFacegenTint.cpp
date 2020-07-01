@@ -1,7 +1,5 @@
 #include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialFacegenTint.h"
 
-#include "RE/NetImmerse/NiColor.h"
-
 
 namespace RE
 {

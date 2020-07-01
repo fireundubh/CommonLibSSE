@@ -238,9 +238,6 @@
     <ClCompile Include="src\SKSE\CodeGenerator.cpp">
       <Filter>src\SKSE</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BSSystem\IFormFactory\Components\Color.cpp">
-      <Filter>src\RE\BSSystem\IFormFactory\Components</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\Color\ColorBlending.cpp">
       <Filter>src\RE\Color</Filter>
     </ClCompile>
@@ -894,6 +891,9 @@
     </ClCompile>
     <ClCompile Include="src\RE\BSScript\IFunctionArguments\ZeroFunctionArguments.cpp">
       <Filter>src\RE\BSScript\IFunctionArguments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\FormComponents\Components\Color.cpp">
+      <Filter>src\RE\FormComponents\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -5356,9 +5356,6 @@
     </Filter>
     <Filter Include="src\RE\BSSystem\IFormFactory">
       <UniqueIdentifier>{1b3682d9-853e-4988-8ec0-27bacb9d32e1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\RE\BSSystem\IFormFactory\Components">
-      <UniqueIdentifier>{7598f74f-5774-47c9-bd8c-92144b933a4a}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\Color">
       <UniqueIdentifier>{915531db-c494-4dd7-89af-389ef41ec87a}</UniqueIdentifier>

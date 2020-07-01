@@ -177,14 +177,6 @@ namespace RE
 	}
 
 
-	bool TESNPC::HasOverlays()
-	{
-		using func_t = decltype(&TESNPC::HasOverlays);
-		REL::Offset<func_t> func(Offset::TESNPC::HasOverlays);
-		return func(this);
-	}
-
-
 	bool TESNPC::HasKeyword(const char* a_formEditorID) const
 	{
 		auto keywordForm = As<BGSKeywordForm>();
@@ -196,6 +188,14 @@ namespace RE
 			return hasKeyword;
 		}
 		return false;
+	}
+
+
+	bool TESNPC::HasOverlays()
+	{
+		using func_t = decltype(&TESNPC::HasOverlays);
+		REL::Offset<func_t> func(Offset::TESNPC::HasOverlays);
+		return func(this);
 	}
 
 

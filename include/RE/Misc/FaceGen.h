@@ -43,7 +43,7 @@ namespace RE
 		void RegenerateHead(BSFaceGenNiNode* a_headNode, BGSHeadPart* a_head, TESNPC* a_npc);
 
 
-		//members
+		// members
 		UInt32		  numActorsAllowedToMorph;	// 04
 		bool		  facialEmotions;			// 08
 		UInt8		  pad09[7];					// 09

@@ -31,7 +31,7 @@ namespace RE
 		virtual void Unk_0A() override;							   // 0A
 
 
-		//members
+		// members
 		CombatLocation pos;		// 30
 		float		   radius;	// 48
 	};

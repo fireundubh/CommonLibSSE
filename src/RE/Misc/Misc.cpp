@@ -137,15 +137,4 @@ namespace RE
 			return std::string();
 		}
 	}
-
-
-	namespace Papyrus
-	{
-		void ApplyHavokImpulse(BSScript::Internal::VirtualMachine* vm, UInt32 stackID, TESObjectREFR* target, float afX, float afY, float afZ, float magnitude)
-		{
-			using func_t = decltype(&ApplyHavokImpulse);
-			REL::Offset<func_t> func(Offset::Papyrus::ApplyHavokImpulse);
-			return func(vm, stackID, target, afX, afY, afZ, magnitude);
-		}
-	}
 }

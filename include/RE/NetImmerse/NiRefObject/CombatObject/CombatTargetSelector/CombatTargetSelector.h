@@ -27,7 +27,7 @@ namespace RE
 		virtual void Unk_06() = 0;	// 06
 
 
-		//members
+		// members
 		UInt64 unk10;  // 10
 		UInt32 unk18;  // 18
 		UInt32 unk1C;  // 1C

@@ -1,9 +1,8 @@
 #pragma once
 
 #include "RE/BSCore/BSTEvent.h"
+#include "RE/BSCore/BSTList.h"
 #include "RE/FileIO/ICellAttachDetachEventSource/ICellAttachDetachEventSource.h"
-#include "RE/FormComponents/Components/GridArray/GridCellArray.h"
-#include "RE/FormComponents/TESForm/TESObjectCELL.h"
 
 
 namespace RE
@@ -13,11 +12,14 @@ namespace RE
 		struct ArchiveStreamOpenedEvent;
 	}
 
+
 	class BSSystemEvent;
-	struct PositionPlayerEvent;
-	class TESWorldSpace;
+	class TESNPC;
 	class GridCellArray;
+	struct PositionPlayerEvent;
 	class Sky;
+	class TESObjectCELL;
+	class TESWorldSpace;
 
 
 	class TES :
@@ -28,11 +30,13 @@ namespace RE
 	public:
 		inline static constexpr auto RTTI = RTTI_TES;
 
+
 		struct NPCDeadCount
 		{
 			TESNPC* npc;		// 00
 			UInt16	deadCount;	// 08
 		};
+
 
 		class SystemEventAdapter : public BSTEventSink<BSSystemEvent>
 		{

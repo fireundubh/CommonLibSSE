@@ -151,21 +151,19 @@ namespace RE
 		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl {
 			using State = BSGeometry::States;
 			using Feature = BSShaderMaterial::Feature;
-			using Flag = BSShaderProperty::EShaderPropertyFlag8;
 
 			auto effect = a_geometry->properties[State::kEffect].get();
 			if (effect) {
 				auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
 				if (lightingShader) {
-					auto material = static_cast<BSLightingShaderMaterialBase*>(lightingShader->material);
-					if (material) {
-						if (material->GetFeature() == Feature::kFaceGenRGBTint) {
-							auto facegenTint = static_cast<BSLightingShaderMaterialFacegenTint*>(material);
-							facegenTint->tintColor = a_color;
-						}
+					auto material = lightingShader->material;
+					if (material && material->GetFeature() == Feature::kFaceGenRGBTint) {
+						auto facegenTint = static_cast<BSLightingShaderMaterialFacegenTint*>(material);
+						facegenTint->tintColor = a_color;
 					}
 				}
 			}
+
 			return BSVisit::BSVisitControl::kContinue;
 		});
 	}

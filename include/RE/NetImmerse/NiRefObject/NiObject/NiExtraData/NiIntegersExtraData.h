@@ -23,7 +23,7 @@ namespace RE
 		virtual void		  SaveBinary(NiStream& a_stream) override;			  // 1B
 		virtual bool		  IsEqual(NiObject* a_object) override;				  // 1C
 
-		static NiIntegersExtraData* Create(const std::string& name, const std::vector<SInt32>& integers);
+		static NiIntegersExtraData* Create(const BSFixedString& a_name, const std::vector<SInt32>& a_integers);
 
 		SInt32 GetIndexOf(SInt32 a_element) const;
 		bool   InsertElement(SInt32 a_element);

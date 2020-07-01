@@ -382,26 +382,17 @@ namespace RE
 
 	TESObjectARMO* Actor::GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot)
 	{
-		auto changes = GetInventoryChanges();
+		auto inv = GetInventory([](RE::TESBoundObject* a_object) -> bool {
+			return a_object->IsArmor();
+		});
 
-		if (changes && changes->entryList) {
-			for (auto& entry : *changes->entryList) {
-				if (!entry || !entry->extraLists) {
-					continue;
-				}
-				for (auto& xList : *entry->extraLists) {
-					if (!xList || !xList->GetWorn()) {
-						continue;
-					}
-					auto object = entry->object;
-					if (!object || !object->IsArmor()) {
-						continue;
-					}
-					auto armor = static_cast<TESObjectARMO*>(object);
-					for (auto& armorAddon : armor->armorAddons) {
-						if (armorAddon->HasPartOf(a_slot)) {
-							return armor;
-						}
+		for (auto& item : inv) {
+			auto& [count, entry] = item.second;
+			if (entry->GetWorn()) {
+				auto armor = static_cast<RE::TESObjectARMO*>(item.first);
+				for (auto& armorAddon : armor->armorAddons) {
+					if (armorAddon && armorAddon->HasPartOf(a_slot)) {
+						return armor;
 					}
 				}
 			}
@@ -413,27 +404,17 @@ namespace RE
 
 	TESObjectARMO* Actor::GetWornArmor(FormID id)
 	{
-		if (id != 0) {
-			auto changes = GetInventoryChanges();
+		auto inv = GetInventory([id](RE::TESBoundObject* a_object) -> bool {
+			return a_object->IsArmor() && a_object->GetFormID() == id;
+		});
 
-			if (changes && changes->entryList) {
-				for (auto& entry : *changes->entryList) {
-					if (!entry || !entry->extraLists) {
-						continue;
-					}
-					for (auto& xList : *entry->extraLists) {
-						if (!xList || !xList->GetWorn()) {
-							continue;
-						}
-						auto object = entry->object;
-						if (!object || !object->IsArmor() || object->formID != id) {
-							continue;
-						}
-						return static_cast<TESObjectARMO*>(object);
-					}
-				}
+		for (auto& item : inv) {
+			auto& [count, entry] = item.second;
+			if (entry->GetWorn()) {
+				return static_cast<RE::TESObjectARMO*>(item.first);
 			}
 		}
+
 		return nullptr;
 	}
 
@@ -474,7 +455,6 @@ namespace RE
 	{
 		using func_t = decltype(&Actor::InstantKill);
 		REL::Offset<func_t> func(Offset::Actor::InstantKill);
-		;
 		return func(this);
 	}
 

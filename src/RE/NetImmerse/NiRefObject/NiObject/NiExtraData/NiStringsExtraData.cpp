@@ -9,7 +9,7 @@ namespace RE
 	{
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiStringsExtraData::Vtbl);
 
-		auto data = static_cast<NiStringsExtraData*>(NiExtraData::Create(sizeof(NiStringsExtraData), vtbl.address()));
+		auto data = NiExtraData::Create<NiStringsExtraData>(vtbl.address());
 		if (data) {
 			data->name = a_name;
 			

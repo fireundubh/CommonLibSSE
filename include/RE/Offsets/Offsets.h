@@ -265,15 +265,6 @@ namespace RE
 		}
 
 
-		namespace BSShaderProperty
-		{
-			inline constexpr REL::ID InvalidateMaterial(static_cast<std::uint64_t>(14678));
-			inline constexpr REL::ID SetBSEffectShaderData(static_cast<std::uint64_t>(16981));
-			inline constexpr REL::ID SetFlags(static_cast<std::uint64_t>(98893));
-			inline constexpr REL::ID SetMaterial(static_cast<std::uint64_t>(98897));
-		}
-
-
 		namespace BSScaleformTranslator
 		{
 			inline constexpr REL::ID Vtbl(static_cast<std::uint64_t>(291278));
@@ -307,6 +298,14 @@ namespace RE
 			{
 				inline constexpr REL::ID Dtor(static_cast<std::uint64_t>(97742));
 			}
+		}
+
+
+		namespace BSShaderProperty
+		{
+			inline constexpr REL::ID InvalidateMaterial(static_cast<std::uint64_t>(14678));
+			inline constexpr REL::ID SetFlags(static_cast<std::uint64_t>(98893));
+			inline constexpr REL::ID SetMaterial(static_cast<std::uint64_t>(98897));
 		}
 
 
@@ -789,16 +788,16 @@ namespace RE
 		}
 
 
-		namespace NiBooleanExtraData
-		{
-			inline constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286420));
-		}
-
-
 		namespace NiAVObject
 		{
 			inline constexpr REL::ID SetMotionType(static_cast<std::uint64_t>(76033));
 			inline constexpr REL::ID Update(static_cast<std::uint64_t>(68900));
+		}
+
+
+		namespace NiBooleanExtraData
+		{
+			inline constexpr REL::ID Vtbl(static_cast<std::uint64_t>(286420));
 		}
 
 

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialBase.h"
-#include "RE/NetImmerse/NiColor.h"
 
 
 namespace RE
