@@ -550,6 +550,7 @@ namespace RE
 		void					  UpdateWeaponAbility(TESForm* a_weapon, ExtraDataList* a_extraData, bool a_leftHand);
 		NiAVObject*				  VisitArmorAddon(TESObjectARMO* a_armor, TESObjectARMA* a_arma);
 		bool					  VisitFactions(std::function<bool(TESFaction* a_faction, SInt8 a_rank)> a_visitor);
+		bool					  WouldBeStealing(const TESObjectREFR* a_target) const;
 
 
 		// members
