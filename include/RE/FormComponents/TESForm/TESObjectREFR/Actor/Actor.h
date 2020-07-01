@@ -524,6 +524,7 @@ namespace RE
 		bool					  InstantKill();
 		bool					  IsAIEnabled() const;
 		bool					  IsAMount() const;
+		bool					  IsAnimationDriven() const;
 		bool					  IsBeingRidden() const;
 		bool					  IsCommandedActor() const;
 		bool					  IsEssential() const;
