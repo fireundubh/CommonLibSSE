@@ -97,6 +97,7 @@ namespace RE
 				}
 				free(oldData);
 				oldData = nullptr;
+				
 				return true;
 			}
 		}

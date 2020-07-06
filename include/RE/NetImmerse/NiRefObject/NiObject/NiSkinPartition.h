@@ -17,45 +17,33 @@ namespace RE
 		inline static constexpr auto Ni_RTTI = NiRTTI_NiSkinPartition;
 
 
-		enum VertexAttribute : UInt8
+		struct Vertex
 		{
-			VA_POSITION = 0x0,
-			VA_TEXCOORD0 = 0x1,
-			VA_TEXCOORD1 = 0x2,
-			VA_NORMAL = 0x3,
-			VA_BINORMAL = 0x4,
-			VA_COLOR = 0x5,
-			VA_SKINNING = 0x6,
-			VA_LANDDATA = 0x7,
-			VA_EYEDATA = 0x8,
-			VA_COUNT = 9
-		};
+			enum class Flags : UInt16
+			{
+				kVertex = 1 << 0,
+				kUV = 1 << 1,
+				kUV_2 = 1 << 2,
+				kNormal = 1 << 3,
+				kTangent = 1 << 4,
+				kColors = 1 << 5,
+				kSkinned = 1 << 6,
+				kLandData = 1 << 7,
+				kEyeData = 1 << 8,
+				kFullPrec = 1 << 10
+			};
 
 
-		enum VertexFlags : UInt16
-		{
-			VF_VERTEX = 1 << VA_POSITION,
-			VF_UV = 1 << VA_TEXCOORD0,
-			VF_UV_2 = 1 << VA_TEXCOORD1,
-			VF_NORMAL = 1 << VA_NORMAL,
-			VF_TANGENT = 1 << VA_BINORMAL,
-			VF_COLORS = 1 << VA_COLOR,
-			VF_SKINNED = 1 << VA_SKINNING,
-			VF_LANDDATA = 1 << VA_LANDDATA,
-			VF_EYEDATA = 1 << VA_EYEDATA,
-			VF_FULLPREC = 0x400
-		};
-
-
-		enum VertexMasks : UInt64
-		{
-			DESC_MASK_VERT = 0xFFFFFFFFFFFFFFF0LL,
-			DESC_MASK_UVS = 0xFFFFFFFFFFFFFF0FLL,
-			DESC_MASK_NBT = 0xFFFFFFFFFFFFF0FFLL,
-			DESC_MASK_SKCOL = 0xFFFFFFFFFFFF0FFFLL,
-			DESC_MASK_DATA = 0xFFFFFFFFFFF0FFFFLL,
-			DESC_MASK_OFFSET = 0xFFFFFF0000000000LL,
-			DESC_MASK_FLAGS = ~(DESC_MASK_OFFSET)
+			enum class Masks : UInt64
+			{
+				kVERT = 0xFFFFFFFFFFFFFFF0LL,
+				kUVS = 0xFFFFFFFFFFFFFF0FLL,
+				kNBT = 0xFFFFFFFFFFFFF0FFLL,
+				kSKCOL = 0xFFFFFFFFFFFF0FFFLL,
+				kDATA = 0xFFFFFFFFFFF0FFFFLL,
+				kOFFSET = 0xFFFFFF0000000000LL,
+				kFLAGS = ~(kOFFSET)
+			};
 		};
 
 
@@ -107,17 +95,16 @@ namespace RE
 		// add
 		virtual void Unk_25(void);	// 25
 
-		static VertexFlags GetVertexFlags(UInt64 vertexDesc)
-		{
-			return VertexFlags((vertexDesc & DESC_MASK_OFFSET) >> 44);
-		}
+		static Vertex::Flags GetVertexFlags(UInt64 vertexDesc);
+		static UInt32		 GetVertexSize(UInt64 vertexDesc);
 
 
 		// members
 		UInt32				   numPartitions;  // 10
 		UInt32				   pad14;		   // 14
 		SimpleArray<Partition> partitions;	   // 18
-		UInt64				   unk20;		   // 20
+		UInt32				   vertexCount;	   // 20
+		UInt32				   unk24;		   // 24
 	};
 	STATIC_ASSERT(sizeof(NiSkinPartition) == 0x28);
 }

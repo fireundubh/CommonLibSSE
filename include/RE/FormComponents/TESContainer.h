@@ -12,13 +12,15 @@ namespace RE
 
 	struct ContainerObject
 	{
+	public:
 		ContainerObject();
 		ContainerObject(TESBoundObject* a_obj, SInt32 a_count);
 
 		~ContainerObject() = default;
 
 		TES_HEAP_REDEFINE_NEW();
-		
+
+		// members
 		SInt32				count;		// 00 - CNTO~
 		UInt32				pad04;		// 04
 		TESBoundObject*		obj;		// 08 - ~CNTO

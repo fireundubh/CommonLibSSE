@@ -276,7 +276,7 @@ namespace RE
 	}
 
 
-bool InventoryEntryData::IsOwnedBy(Actor* a_testOwner, bool a_defaultTo)
+	bool InventoryEntryData::IsOwnedBy(Actor* a_testOwner, bool a_defaultTo)
 	{
 		return IsOwnedBy(a_testOwner, GetOwner(), a_defaultTo);
 	}
@@ -316,13 +316,14 @@ bool InventoryEntryData::IsOwnedBy(Actor* a_testOwner, bool a_defaultTo)
 				if (a_noQuestItem) {
 					auto xAliases = xList->GetByType<ExtraAliasInstanceArray>();
 					if (xAliases) {
+						xAliases->lock.LockForRead();
 						for (const auto& alias : xAliases->aliases) {
-							const auto quest = alias->quest;
 							const auto refAlias = alias->alias;
-							if (quest && refAlias && refAlias->IsQuestObject()) {
+							if (refAlias && refAlias->IsQuestObject()) {
 								return false;
 							}
 						}
+						xAliases->lock.UnlockForRead();
 					}
 				}
 			}

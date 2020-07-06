@@ -197,6 +197,7 @@ namespace RE
 		return Direction::kInvalid;
 	}
 
+
 	const char* TESObjectREFR::GetDisplayFullName()
 	{
 		using func_t = decltype(&TESObjectREFR::GetDisplayFullName);

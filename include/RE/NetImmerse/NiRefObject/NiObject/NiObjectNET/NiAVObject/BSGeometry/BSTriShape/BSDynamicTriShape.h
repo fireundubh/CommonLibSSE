@@ -26,12 +26,12 @@ namespace RE
 
 
 		// members
-		void*			   pDynamicData;  // 160
-		mutable BSSpinLock lock;		  // 168
-		UInt32			   dataSize;	  // 170
-		UInt32			   frameCount;	  // 174
-		UInt32			   unk178;		  // 178
-		UInt32			   unk17C;		  // 17C
+		void*			   dynamicData;	 // 160
+		mutable BSSpinLock lock;		 // 168
+		UInt32			   dataSize;	 // 170
+		UInt32			   frameCount;	 // 174
+		UInt32			   unk178;		 // 178
+		UInt32			   unk17C;		 // 17C
 	};
 	STATIC_ASSERT(sizeof(BSDynamicTriShape) == 0x180);
 }

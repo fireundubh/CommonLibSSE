@@ -895,6 +895,9 @@
     <ClCompile Include="src\RE\FormComponents\Components\Color.cpp">
       <Filter>src\RE\FormComponents\Components</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiSkinPartition.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect\AbsorbEffect.h">

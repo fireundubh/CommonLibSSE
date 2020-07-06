@@ -1726,6 +1726,7 @@
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty\BSShaderProperty.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiProperty\BSLightingShaderProperty.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance.cpp" />
+    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiSkinPartition.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiTexture\NiSourceTexture.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiTexture\NiTexture.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiTimeController\NiControllerManager.cpp" />
