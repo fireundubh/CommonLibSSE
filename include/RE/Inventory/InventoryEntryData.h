@@ -25,6 +25,7 @@ namespace RE
 		InventoryEntryData& operator=(InventoryEntryData&& a_rhs);
 
 		void				  AddExtraList(ExtraDataList* a_extra);
+		bool				  CanItemBeTaken(bool a_noEquipped, bool a_noFavourited, bool a_noQuestItem);
 		const char*			  GetDisplayName();
 		std::optional<double> GetEnchantmentCharge() const;
 		TESBoundObject*		  GetObject();
@@ -37,7 +38,7 @@ namespace RE
 		bool				  IsEnchanted() const;
 		bool				  IsOwnedBy(Actor* a_testOwner, bool a_defaultTo = true);
 		bool				  IsOwnedBy(Actor* a_testOwner, TESForm* a_itemOwner, bool a_defaultTo = true);
-		bool				  CanItemBeTaken(bool a_noEquipped, bool a_noFavourited, bool a_noQuestItem);
+		bool				  IsQuestObject() const;
 
 		TES_HEAP_REDEFINE_NEW();
 

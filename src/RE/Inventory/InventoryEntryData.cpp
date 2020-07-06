@@ -5,7 +5,8 @@
 #include "RE/BSExtraData/ExtraEnchantment.h"
 #include "RE/BSExtraData/ExtraTextDisplayData.h"
 #include "RE/BSMain/SettingCollection/GameSettingCollection.h"
-#include "RE/FormComponents/Components/BGSBaseAlias/BGSBaseAlias.h"
+#include "RE/FormComponents/Components/BGSBaseAlias/BGSBaseAlias.h
+#include "RE/FormComponents/Components/FormTraits.h"
 #include "RE/FormComponents/TESEnchantableForm.h"
 #include "RE/FormComponents/TESForm/TESObject/TESBoundObject/TESBoundObject.h"
 #include "RE/FormComponents/TESForm/TESObject/TESBoundObject/TESObjectMISC/TESSoulGem.h"
@@ -115,6 +116,43 @@ namespace RE
 
 		extraLists->push_front(a_extra);
 	}
+
+		
+		bool InventoryEntryData::CanItemBeTaken(bool a_noEquipped, bool a_noFavourited, bool a_noQuestItem)
+	{
+		if (extraLists) {
+			for (auto& xList : *extraLists) {
+				if (!xList) {
+					continue;
+				}
+				if (a_noEquipped) {
+					if (xList->HasType(ExtraDataType::kWorn) || xList->HasType(ExtraDataType::kWornLeft)) {
+						return false;
+					}
+				}
+				if (a_noFavourited) {
+					if (xList->HasType(ExtraDataType::kHotkey)) {
+						return false;
+					}
+				}
+				if (a_noQuestItem) {
+					auto xAliases = xList->GetByType<ExtraAliasInstanceArray>();
+					if (xAliases) {
+						xAliases->lock.LockForRead();
+						for (const auto& alias : xAliases->aliases) {
+							const auto refAlias = alias->alias;
+							if (refAlias && refAlias->IsQuestObject()) {
+								return false;
+							}
+						}
+						xAliases->lock.UnlockForRead();
+					}
+				}
+			}
+		}
+		return true;
+	}
+
 
 
 	std::optional<double> InventoryEntryData::GetEnchantmentCharge() const
@@ -296,38 +334,10 @@ namespace RE
 	}
 
 
-	bool InventoryEntryData::CanItemBeTaken(bool a_noEquipped, bool a_noFavourited, bool a_noQuestItem)
+	bool InventoryEntryData::IsQuestObject() const
 	{
-		if (extraLists) {
-			for (auto& xList : *extraLists) {
-				if (!xList) {
-					continue;
-				}
-				if (a_noEquipped) {
-					if (xList->HasType(ExtraDataType::kWorn) || xList->HasType(ExtraDataType::kWornLeft)) {
-						return false;
-					}
-				}
-				if (a_noFavourited) {
-					if (xList->HasType(ExtraDataType::kHotkey)) {
-						return false;
-					}
-				}
-				if (a_noQuestItem) {
-					auto xAliases = xList->GetByType<ExtraAliasInstanceArray>();
-					if (xAliases) {
-						xAliases->lock.LockForRead();
-						for (const auto& alias : xAliases->aliases) {
-							const auto refAlias = alias->alias;
-							if (refAlias && refAlias->IsQuestObject()) {
-								return false;
-							}
-						}
-						xAliases->lock.UnlockForRead();
-					}
-				}
-			}
-		}
-		return true;
+		using func_t = decltype(&InventoryEntryData::IsQuestObject);
+		REL::Offset<func_t> func = REL::ID(15767);
+		return func(this);
 	}
 }
