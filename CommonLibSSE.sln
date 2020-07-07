@@ -21,6 +21,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_PapyrusExtender", "..\P
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_FastTravelWhenIndoors", "..\Projects\fastTravelIndoors\FastTravelIndoors.vcxproj", "{547171CB-F934-40B9-B788-3C520FE66363}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyFirstPlugin", "..\Projects\ExamplePlugin\MyFirstPlugin.vcxproj", "{27055442-2141-4A9B-ADD4-6298178CD606}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug Unicode|x64 = Debug Unicode|x64
@@ -133,6 +135,22 @@ Global
 		{547171CB-F934-40B9-B788-3C520FE66363}.Release|x64.Build.0 = Release|x64
 		{547171CB-F934-40B9-B788-3C520FE66363}.Release|x86.ActiveCfg = Release|Win32
 		{547171CB-F934-40B9-B788-3C520FE66363}.Release|x86.Build.0 = Release|Win32
+		{27055442-2141-4A9B-ADD4-6298178CD606}.Debug Unicode|x64.ActiveCfg = Debug|x64
+		{27055442-2141-4A9B-ADD4-6298178CD606}.Debug Unicode|x64.Build.0 = Debug|x64
+		{27055442-2141-4A9B-ADD4-6298178CD606}.Debug Unicode|x86.ActiveCfg = Debug|Win32
+		{27055442-2141-4A9B-ADD4-6298178CD606}.Debug Unicode|x86.Build.0 = Debug|Win32
+		{27055442-2141-4A9B-ADD4-6298178CD606}.Debug|x64.ActiveCfg = Debug|x64
+		{27055442-2141-4A9B-ADD4-6298178CD606}.Debug|x64.Build.0 = Debug|x64
+		{27055442-2141-4A9B-ADD4-6298178CD606}.Debug|x86.ActiveCfg = Debug|Win32
+		{27055442-2141-4A9B-ADD4-6298178CD606}.Debug|x86.Build.0 = Debug|Win32
+		{27055442-2141-4A9B-ADD4-6298178CD606}.Release Unicode|x64.ActiveCfg = Release|x64
+		{27055442-2141-4A9B-ADD4-6298178CD606}.Release Unicode|x64.Build.0 = Release|x64
+		{27055442-2141-4A9B-ADD4-6298178CD606}.Release Unicode|x86.ActiveCfg = Release|Win32
+		{27055442-2141-4A9B-ADD4-6298178CD606}.Release Unicode|x86.Build.0 = Release|Win32
+		{27055442-2141-4A9B-ADD4-6298178CD606}.Release|x64.ActiveCfg = Release|x64
+		{27055442-2141-4A9B-ADD4-6298178CD606}.Release|x64.Build.0 = Release|x64
+		{27055442-2141-4A9B-ADD4-6298178CD606}.Release|x86.ActiveCfg = Release|Win32
+		{27055442-2141-4A9B-ADD4-6298178CD606}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -145,6 +163,7 @@ Global
 		{4D608E7E-FD4F-4725-BEC0-3B25D5B79A9F} = {F6F21BCD-77A1-4DFC-8BED-CD689BB66866}
 		{330347F6-F933-4C02-AE08-91B9F7203234} = {F6F21BCD-77A1-4DFC-8BED-CD689BB66866}
 		{547171CB-F934-40B9-B788-3C520FE66363} = {F6F21BCD-77A1-4DFC-8BED-CD689BB66866}
+		{27055442-2141-4A9B-ADD4-6298178CD606} = {F6F21BCD-77A1-4DFC-8BED-CD689BB66866}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {37148EF4-32F4-49AB-B9CA-77AAB26BF4A6}
