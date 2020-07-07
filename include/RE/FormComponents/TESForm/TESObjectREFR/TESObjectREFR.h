@@ -408,6 +408,7 @@ namespace RE
 		float							  GetRotationY() const;
 		float							  GetRotationZ() const;
 		float							  GetWeight() const;
+		float							  GetWeightInContainer();
 		TESWorldSpace*					  GetWorldspace() const;
 		bool							  HasCollision() const;
 		bool							  HasKeyword(const BGSKeyword* a_keyword) const;
