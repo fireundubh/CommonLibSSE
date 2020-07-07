@@ -4689,6 +4689,9 @@
     <None Include="src\.clang-format">
       <Filter>src</Filter>
     </None>
+    <ClCompile Include="src\RE\Events\InputEvent\InputEvent.cpp">
+      <Filter>src\RE\Events\InputEvent</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
