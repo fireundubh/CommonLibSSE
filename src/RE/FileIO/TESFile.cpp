@@ -19,12 +19,6 @@ namespace RE
 	}
 
 
-	UInt32 TESFile::GetCurrentSubRecordSize() const
-	{
-		return actualChunkSize;
-	}
-
-
 	// Converts the lower bits of a FormID to a full FormID depending on plugin type
 	FormID TESFile::GetFormID(UInt32 formLower) const
 	{
@@ -55,18 +49,6 @@ namespace RE
 		if (IsLight() && (formID >> 24) == 0xFE && ((formID & 0x00FFF000) >> 12) == smallFileCompileIndex)
 			return true;
 		return false;
-	}
-
-
-	bool TESFile::IsLoaded() const
-	{
-		return true;
-	}
-
-
-	bool TESFile::IsLocalized() const
-	{
-		return (recordFlags & RecordFlag::kDelocalized) != RecordFlag::kNone;
 	}
 
 
