@@ -170,7 +170,7 @@ namespace RE
 	}
 
 
-	ObjectRefHandle ExtraDataList::GetAshPileRefHandle()
+	ObjectRefHandle ExtraDataList::GetAshPileRef()
 	{
 		auto xAshRef = GetByType<ExtraAshPileRef>();
 		return xAshRef ? xAshRef->ashPileRef : ObjectRefHandle();
