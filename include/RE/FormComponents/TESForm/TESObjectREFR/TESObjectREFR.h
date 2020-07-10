@@ -344,7 +344,7 @@ namespace RE
 		virtual void							  Unk_96(void);																																															 // 96 - related to lockpicking
 		virtual TESObjectCELL*					  GetSaveParentCell() const;																																											 // 97
 		virtual void							  SetParentCell(TESObjectCELL* a_cell);																																									 // 98
-		virtual bool							  IsDead(bool a_notEssential) const;																																									 // 99
+		virtual bool							  IsDead(bool a_notEssential = true) const;																																								 // 99
 		virtual BSAnimNoteReceiver*				  CreateAnimNoteReceiver();																																												 // 9A
 		virtual BSAnimNoteReceiver*				  GetAnimNoteReceiver();																																												 // 9B
 		virtual void							  Unk_9C(void);																																															 // 9C
@@ -374,7 +374,7 @@ namespace RE
 		const TESBoundObject*			  GetBaseObject() const;
 		const BSTSmartPointer<BipedAnim>& GetBiped() const;
 		const BSTSmartPointer<BipedAnim>& GetBiped(bool a_firstPerson) const;
-		TESContainer*					  GetContainer();
+		TESContainer*					  GetContainer() const;
 		Direction						  GetDirection();
 		const char*						  GetDisplayFullName();
 		InventoryDropMap				  GetDroppedInventory();
@@ -395,8 +395,7 @@ namespace RE
 		LOCK_LEVEL						  GetLockLevel() const;
 		const char*						  GetName() const;
 		NiAVObject*						  GetNodeByName(const BSFixedString& a_nodeName);
-		TESBoundObject*					  GetObjectReference();
-		const TESBoundObject*			  GetObjectReference() const;
+		TESBoundObject*					  GetObjectReference() const;
 		TESForm*						  GetOwner() const;
 		TESObjectCELL*					  GetParentCell() const;
 		NiPoint3						  GetPosition() const;
@@ -412,6 +411,7 @@ namespace RE
 		float							  GetWeightInContainer();
 		TESWorldSpace*					  GetWorldspace() const;
 		bool							  HasCollision() const;
+		bool							  HasContainer() const;
 		bool							  HasKeyword(const BGSKeyword* a_keyword) const;
 		bool							  HasQuestObject() const;
 		void							  InitChildActivates(TESObjectREFR* a_activator);
@@ -420,7 +420,6 @@ namespace RE
 		bool							  IsActivationBlocked() const;
 		bool							  IsAnOwner(const Actor* a_testOwner, bool a_useFaction, bool a_requiresOwner) const;
 		bool							  IsCrimeToActivate();
-		bool							  IsDead() const;
 		bool							  IsDisabled() const;
 		bool							  IsEnchanted() const;
 		bool							  IsHorse() const;

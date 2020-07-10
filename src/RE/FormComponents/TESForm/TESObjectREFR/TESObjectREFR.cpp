@@ -163,7 +163,7 @@ namespace RE
 	}
 
 
-	TESContainer* TESObjectREFR::GetContainer()
+	TESContainer* TESObjectREFR::GetContainer() const
 	{
 		auto obj = GetObjectReference();
 		return obj ? obj->As<TESContainer>() : nullptr;
@@ -460,13 +460,7 @@ namespace RE
 	}
 
 
-	TESBoundObject* TESObjectREFR::GetObjectReference()
-	{
-		return data.objectReference;
-	}
-
-
-	const TESBoundObject* TESObjectREFR::GetObjectReference() const
+	TESBoundObject* TESObjectREFR::GetObjectReference() const
 	{
 		return data.objectReference;
 	}
@@ -577,6 +571,12 @@ namespace RE
 	}
 
 
+	bool TESObjectREFR::HasContainer() const
+	{
+		return GetContainer() != nullptr;
+	}
+
+
 	bool TESObjectREFR::HasKeyword(const BGSKeyword* a_keyword) const
 	{
 		return HasKeywordHelper(a_keyword);
@@ -633,12 +633,6 @@ namespace RE
 		using func_t = decltype(&TESObjectREFR::IsCrimeToActivate);
 		REL::Offset<func_t> func(Offset::TESObjectREFR::IsCrimeToActivate);
 		return func(this);
-	}
-
-
-	bool TESObjectREFR::IsDead() const
-	{
-		return IsDead(true);
 	}
 
 
