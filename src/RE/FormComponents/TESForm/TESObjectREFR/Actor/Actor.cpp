@@ -131,7 +131,7 @@ namespace RE
 
 	ActorHandle Actor::CreateRefHandle()
 	{
-		return ActorHandle(this);
+		return GetHandle();
 	}
 
 
@@ -292,6 +292,12 @@ namespace RE
 		auto gold = dobj->GetObject<TESObjectMISC>(DEFAULT_OBJECT::kGold);
 		auto it = inv.find(gold);
 		return it != inv.end() ? it->second.first : 0;
+	}
+
+
+	ActorHandle Actor::GetHandle()
+	{
+		return ActorHandle(this);
 	}
 
 

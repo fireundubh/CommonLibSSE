@@ -509,7 +509,8 @@ namespace RE
 		InventoryEntryData*		  GetEquippedEntryData(bool a_leftHand) const;
 		TESForm*				  GetEquippedObject(bool a_leftHand) const;
 		SInt32					  GetGoldAmount();
-		NiAVObject*				  GetHeadPartObject(BGSHeadPart::HeadPartType a_type);
+		ActorHandle				  GetHandle();
+		GetHeadPartObject(BGSHeadPart::HeadPartType a_type);
 		float					  GetHeight();
 		Actor*					  GetKiller();
 		UInt16					  GetLevel() const;
