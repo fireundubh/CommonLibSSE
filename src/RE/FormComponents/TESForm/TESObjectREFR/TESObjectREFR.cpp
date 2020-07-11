@@ -547,14 +547,13 @@ namespace RE
 		return obj ? obj->GetWeight() : 0.0;
 	}
 
-		
-		float TESObjectREFR::GetWeightInContainer()
+
+	float TESObjectREFR::GetWeightInContainer()
 	{
 		using func_t = decltype(&Actor::GetWeightInContainer);
 		REL::Offset<func_t> func = REL::ID(19277);
 		return func(this);
 	}
-
 
 
 	TESWorldSpace* TESObjectREFR::GetWorldspace() const

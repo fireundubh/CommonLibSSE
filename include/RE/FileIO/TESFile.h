@@ -52,10 +52,11 @@ namespace RE
 		TESFile*		 Duplicate(UInt32 a_cacheSize = 0x4000);
 		UInt32			 GetCurrentSubRecordType();
 		constexpr UInt32 GetCurrentSubRecordSize() const noexcept { return actualChunkSize; }
-		FormID	 GetFormID(UInt32 formLower) const;
+		FormID			 GetFormID(UInt32 formLower) const;
 		FormType		 GetFormType();
+		UInt32			 GetPartialIndex() const;
 		constexpr bool	 IsLocalized() const noexcept { return (recordFlags & RecordFlag::kDelocalized) != RecordFlag::kNone; }
-		bool	 IsFormInMod(FormID formID) const;
+		bool			 IsFormInMod(FormID formID) const;
 		void			 ReadData(void* a_buf, UInt32 a_size);
 		bool			 Seek(UInt32 a_offset);
 		bool			 SeekNextSubrecord();

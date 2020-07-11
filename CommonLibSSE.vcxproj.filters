@@ -898,6 +898,9 @@
     <ClCompile Include="src\RE\BSScript\IFunctionArguments\ZeroFunctionArguments.cpp">
       <Filter>src\RE\BSScript\IFunctionArguments</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\AI\AIFormulas.cpp">
+      <Filter>src\RE\AI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect\AbsorbEffect.h">
@@ -4688,6 +4691,9 @@
     </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject\bhkNiCollisionObject\bhkBlendCollisionObject.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject\bhkNiCollisionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\AI\AIFormulas.h">
+      <Filter>include\RE\AI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
