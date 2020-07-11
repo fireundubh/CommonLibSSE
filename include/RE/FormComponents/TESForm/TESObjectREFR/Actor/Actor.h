@@ -511,6 +511,7 @@ namespace RE
 		SInt32					  GetGoldAmount();
 		NiAVObject*				  GetHeadPartObject(BGSHeadPart::HeadPartType a_type);
 		float					  GetHeight();
+		Actor*					  GetKiller();
 		UInt16					  GetLevel() const;
 		TESRace*				  GetRace() const;
 		TESObjectARMO*			  GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot);

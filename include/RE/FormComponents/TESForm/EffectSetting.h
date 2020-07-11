@@ -142,10 +142,10 @@ namespace RE
 		virtual bool HasKeyword(const BGSKeyword* a_keyword) const override;  // 04
 
 		Archetype	  GetArchetype() const;
+		BSFixedString GetArchetypeAsString() const;
 		ActorValue	  GetMagickSkill() const;
 		UInt32		  GetMinimumSkillLevel() const;
 		bool		  HasArchetype(Archetype a_type) const;
-		BSFixedString GetArchetypeAsString() const;
 
 
 		// members

@@ -26,6 +26,8 @@ namespace RE
 			kUseVelocity = 1 << 5,
 			kReset = 1 << 6,
 			kSyncOnUpdate = 1 << 7,
+			kBlendPos = 1 << 8,
+			kBlendAways = 1 << 9,
 			kAnimTargeted = 1 << 10,
 			kDismemberLimb = 1 << 11
 		};

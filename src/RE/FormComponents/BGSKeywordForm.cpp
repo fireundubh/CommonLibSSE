@@ -38,7 +38,7 @@ namespace RE
 	}
 
 
-	bool BGSKeywordForm::HasKeyword(const char* a_formEditorID) const
+	bool BGSKeywordForm::HasKeywordString(const char* a_formEditorID) const
 	{
 		if (keywords) {
 			for (UInt32 idx = 0; idx < numKeywords; ++idx) {

@@ -146,6 +146,35 @@ namespace RE
 	}
 
 
+	void NiAVObject::UpdateAlpha(float a_alpha, ALPHA_MODE a_type)
+	{
+		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl {
+			using State = BSGeometry::States;
+			using Feature = BSShaderMaterial::Feature;
+
+			auto effect = a_geometry->properties[State::kEffect].get();
+			if (effect) {
+				auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
+				if (lightingShader) {
+					auto material = static_cast<BSLightingShaderMaterialBase*>(lightingShader->material);
+					if (material) {
+						if (a_type == ALPHA_MODE::kSkin) {
+							auto const feature = material->GetFeature();
+							if (feature != Feature::kFaceGen && feature != Feature::kFaceGenRGBTint) {
+								return BSVisit::BSVisitControl::kContinue;
+							}
+						}
+						a_alpha == 0.0 ? a_geometry->SetAppCulled(true) : a_geometry->SetAppCulled(false);
+						material->materialAlpha = a_alpha;
+					}
+				}
+			}
+
+			return BSVisit::BSVisitControl::kContinue;
+		});
+	}
+
+
 	void NiAVObject::UpdateBodyTint(const NiColor& a_color)
 	{
 		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl {
@@ -192,35 +221,6 @@ namespace RE
 	}
 
 
-	void NiAVObject::UpdateAlpha(float a_alpha, ALPHA_MODE a_type)
-	{
-		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl {
-			using State = BSGeometry::States;
-			using Feature = BSShaderMaterial::Feature;
-
-			auto effect = a_geometry->properties[State::kEffect].get();
-			if (effect) {
-				auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
-				if (lightingShader) {
-					auto material = static_cast<BSLightingShaderMaterialBase*>(lightingShader->material);
-					if (material) {
-						if (a_type == ALPHA_MODE::kSkin) {
-							auto const feature = material->GetFeature();
-							if (feature != Feature::kFaceGen && feature != Feature::kFaceGenRGBTint) {
-								return BSVisit::BSVisitControl::kContinue;
-							}
-						}
-						a_alpha == 0.0 ? a_geometry->SetAppCulled(true) : a_geometry->SetAppCulled(false);
-						material->materialAlpha = a_alpha;
-					}
-				}
-			}
-
-			return BSVisit::BSVisitControl::kContinue;
-		});
-	}
-
-
 	void NiAVObject::UpdateVisibility(bool a_cull)
 	{
 		auto node = AsNode();
@@ -231,7 +231,7 @@ namespace RE
 				}
 			}
 		} else {
-			SetAppCulled(a_cull);		
+			SetAppCulled(a_cull);
 		}
 	}
 }

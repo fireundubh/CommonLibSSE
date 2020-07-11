@@ -7,8 +7,8 @@ namespace RE
 	{
 		auto material = malloc<BSLightingShaderMaterialEye>();
 		material->ctor();
-		material->eyeCenter[0] = NiPoint3(-2.397175, 7.572490, 3.750610);
-		material->eyeCenter[1] = NiPoint3(2.397175, 7.572490, 3.750610);
+		material->eyeCenter[0] = NiPoint3(-2.397175f, 7.572490f, 3.750610f);
+		material->eyeCenter[1] = NiPoint3(2.397175f, 7.572490f, 3.750610f);
 		return material;
 	}
 

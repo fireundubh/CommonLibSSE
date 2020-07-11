@@ -335,6 +335,13 @@ namespace RE
 	}
 
 
+	Actor* Actor::GetKiller()
+	{
+		auto killerPtr = myKiller.get();
+		return killerPtr.get() ? killerPtr.get() : nullptr;
+	}
+
+
 	UInt16 Actor::GetLevel() const
 	{
 		using func_t = decltype(&Actor::GetLevel);
@@ -390,7 +397,7 @@ namespace RE
 			auto& [count, entry] = item.second;
 			if (entry->GetWorn()) {
 				auto armor = static_cast<RE::TESObjectARMO*>(item.first);
-				for (auto& armorAddon : armor->armorAddons) {
+				for (const auto& armorAddon : armor->armorAddons) {
 					if (armorAddon && armorAddon->HasPartOf(a_slot)) {
 						return armor;
 					}
@@ -427,11 +434,8 @@ namespace RE
 
 	bool Actor::HasKeyword(const char* a_formEditorID) const
 	{
-		auto actorbase = GetActorBase();
-		if (actorbase) {
-			return actorbase->HasKeyword(a_formEditorID);
-		}
-		return false;
+		auto base = GetActorBase();
+		return base ? base->HasKeyword(a_formEditorID) : false;
 	}
 
 

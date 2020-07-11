@@ -27,7 +27,7 @@ namespace RE
 
 		bool					   AddKeyword(BGSKeyword* a_keyword);
 		bool					   HasKeyword(FormID a_formID) const;
-		bool					   HasKeyword(const char* a_formEditorID) const;
+		bool					   HasKeywordString(const char* a_formEditorID) const;
 		std::optional<BGSKeyword*> GetKeywordAt(UInt32 a_idx) const;
 		SInt32					   GetKeywordIndex(BGSKeyword* a_keyword) const;
 		UInt32					   GetNumKeywords() const;

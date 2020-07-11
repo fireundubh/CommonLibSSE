@@ -14,8 +14,10 @@ namespace RE
 
 
 	class BSSystemEvent;
+	class BSTempNodeManager;
 	class TESNPC;
 	class GridCellArray;
+	class NiNode;
 	struct PositionPlayerEvent;
 	class Sky;
 	class TESObjectCELL;
@@ -70,10 +72,10 @@ namespace RE
 		// members
 		UInt64						unk070;				  // 070
 		GridCellArray*				gridCellArray;		  // 078
-		UInt64						unk080;				  // 080
-		UInt64						unk088;				  // 088
-		UInt64						unk090;				  // 090
-		UInt64						unk098;				  // 098
+		NiNode*						objectLOD;			  // 080
+		NiNode*						landLOD;			  // 088
+		NiNode*						waterLOD;			  // 090
+		BSTempNodeManager*			tempNodeManager;	  // 098
 		UInt64						unk0A0;				  // 0A0
 		UInt64						unk0A8;				  // 0A8
 		UInt64						unk0B0;				  // 0B0

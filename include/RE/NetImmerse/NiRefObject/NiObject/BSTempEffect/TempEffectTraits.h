@@ -15,78 +15,87 @@
 
 namespace RE
 {
-	template <class T, typename std::enable_if_t<Impl::is_valid_as_expr<T>::value, int>>
-	constexpr T* BSTempEffect::As()
+	template <
+		class T,
+		std::enable_if_t<
+			BSTempEffect_Impl::is_valid_as_expr_v<T>,
+			int>>
+	constexpr T* BSTempEffect::As() noexcept
+	{
+		return const_cast<T*>(
+			static_cast<const BSTempEffect*>(this)->As<T>());
+	}
+
+
+	template <
+		class T,
+		std::enable_if_t<
+			BSTempEffect_Impl::is_valid_as_expr_v<T>,
+			int>>
+	constexpr const T* BSTempEffect::As() const noexcept
 	{
 		switch (GetType()) {
 		case TEMP_EFFECT_TYPE::kTerrain:
-			if constexpr (std::is_convertible<BSTempEffect*, T*>::value) {
-				return static_cast<BSTempEffect*>(this);
+			if constexpr (std::is_convertible_v<const BSTempEffect*, const T*>) {
+				return static_cast<const BSTempEffect*>(this);
 			}
 			break;
 		case TEMP_EFFECT_TYPE::kWeaponBlood:
-			if constexpr (std::is_convertible<BSTempEffectWeaponBlood*, T*>::value) {
-				return static_cast<BSTempEffectWeaponBlood*>(this);
+			if constexpr (std::is_convertible_v<const BSTempEffectWeaponBlood*, const T*>) {
+				return static_cast<const BSTempEffectWeaponBlood*>(this);
 			}
 			break;
 		case TEMP_EFFECT_TYPE::kDecal:
-			if constexpr (std::is_convertible<BSTempEffectSimpleDecal*, T*>::value) {
-				return static_cast<BSTempEffectSimpleDecal*>(this);
+			if constexpr (std::is_convertible_v<const BSTempEffectSimpleDecal*, const T*>) {
+				return static_cast<const BSTempEffectSimpleDecal*>(this);
 			}
 			break;
 		case TEMP_EFFECT_TYPE::kGeometryDecal:
-			if constexpr (std::is_convertible<BSTempEffectGeometryDecal*, T*>::value) {
-				return static_cast<BSTempEffectGeometryDecal*>(this);
+			if constexpr (std::is_convertible_v<const BSTempEffectGeometryDecal*, const T*>) {
+				return static_cast<const BSTempEffectGeometryDecal*>(this);
 			}
 			break;
 		case TEMP_EFFECT_TYPE::kParticle:
-			if constexpr (std::is_convertible<BSTempEffectParticle*, T*>::value) {
-				return static_cast<BSTempEffectParticle*>(this);
+			if constexpr (std::is_convertible_v<const BSTempEffectParticle*, const T*>) {
+				return static_cast<const BSTempEffectParticle*>(this);
 			}
 			break;
 		case TEMP_EFFECT_TYPE::kDebris:
-			if constexpr (std::is_convertible<BSTempEffectDebris*, T*>::value) {
-				return static_cast<BSTempEffectDebris*>(this);
+			if constexpr (std::is_convertible_v<const BSTempEffectDebris*, const T*>) {
+				return static_cast<const BSTempEffectDebris*>(this);
 			}
 			break;
 		case TEMP_EFFECT_TYPE::kSPG:
-			if constexpr (std::is_convertible<BSTempEffectSPG*, T*>::value) {
-				return static_cast<BSTempEffectSPG*>(this);
+			if constexpr (std::is_convertible_v<const BSTempEffectSPG*, const T*>) {
+				return static_cast<const BSTempEffectSPG*>(this);
 			}
 			break;
 		case TEMP_EFFECT_TYPE::kDefault:
-			if constexpr (std::is_convertible<BSTempEffect*, T*>::value) {
-				return static_cast<BSTempEffect*>(this);
+			if constexpr (std::is_convertible_v<const BSTempEffect*, const T*>) {
+				return static_cast<const BSTempEffect*>(this);
 			}
 			break;
 		case TEMP_EFFECT_TYPE::kRefDefault:
-			if constexpr (std::is_convertible<ReferenceEffect*, T*>::value) {
-				return static_cast<ReferenceEffect*>(this);
+			if constexpr (std::is_convertible_v<const ReferenceEffect*, const T*>) {
+				return static_cast<const ReferenceEffect*>(this);
 			}
 			break;
 		case TEMP_EFFECT_TYPE::kRefModel:
-			if constexpr (std::is_convertible<ModelReferenceEffect*, T*>::value) {
-				return static_cast<ModelReferenceEffect*>(this);
+			if constexpr (std::is_convertible_v<const ModelReferenceEffect*, const T*>) {
+				return static_cast<const ModelReferenceEffect*>(this);
 			}
 			break;
 		case TEMP_EFFECT_TYPE::kRefShader:
-			if constexpr (std::is_convertible<ShaderReferenceEffect*, T*>::value) {
-				return static_cast<ShaderReferenceEffect*>(this);
+			if constexpr (std::is_convertible_v<const ShaderReferenceEffect*, const T*>) {
+				return static_cast<const ShaderReferenceEffect*>(this);
 			}
 			break;
 		case TEMP_EFFECT_TYPE::kMagicSummon:
-			if constexpr (std::is_convertible<SummonPlacementEffect*, T*>::value) {
-				return static_cast<SummonPlacementEffect*>(this);
+			if constexpr (std::is_convertible_v<const SummonPlacementEffect*, const T*>) {
+				return static_cast<const SummonPlacementEffect*>(this);
 			}
 			break;
 		}
 		return nullptr;
-	}
-
-
-	template <class T, typename std::enable_if_t<Impl::is_valid_as_expr<T>::value, int>>
-	constexpr const T* BSTempEffect::As() const
-	{
-		return const_cast<BSTempEffect*>(this)->As<T>();
 	}
 }

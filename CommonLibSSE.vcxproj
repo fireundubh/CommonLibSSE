@@ -1263,6 +1263,7 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstance.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstanceTemp\ImageSpaceModifierInstanceDOF.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstanceTemp\ImageSpaceModifierInstanceTemp.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject\bhkNiCollisionObject\bhkBlendCollisionObject.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject\bhkNiCollisionObject\bhkCollisionObject.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject\bhkNiCollisionObject\bhkNiCollisionObject.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject\NiCollisionObject.h" />

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "RE/NetImmerse/NiRefObject/NiObject/NiObject.h"
 #include "RE/FormComponents/TESForm/TESForm.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObject.h"
 
 
 namespace RE
@@ -10,6 +10,24 @@ namespace RE
 	class BGSSaveGameBuffer;
 	class NiAVObject;
 	class TESObjectCELL;
+
+
+	namespace BSTempEffect_Impl
+	{
+		template <class T>
+		struct is_valid_as_expr :
+			std::conjunction<
+				std::negation<
+					std::is_pointer<T>>,
+				std::negation<
+					std::is_reference<T>>,
+				std::negation<
+					std::is_const<T>>>
+		{};
+
+		template <class T>
+		constexpr inline bool is_valid_as_expr_v = is_valid_as_expr<T>::value;
+	}
 
 
 	enum class TEMP_EFFECT_TYPE : UInt32
@@ -80,11 +98,19 @@ namespace RE
 		virtual void			 Push();										   // 34 - { return; }
 		virtual void			 Pop();											   // 35 - { return; }
 
-		template <class T, typename std::enable_if_t<Impl::is_valid_as_expr<T>::value, int> = 0>
-		constexpr T* As();
+		template <
+			class T,
+			std::enable_if_t<
+				BSTempEffect_Impl::is_valid_as_expr_v<T>,
+				int> = 0>
+		constexpr T* As() noexcept;
 
-		template <class T, typename std::enable_if_t<Impl::is_valid_as_expr<T>::value, int> = 0>
-		constexpr const T* As() const;
+		template <
+			class T,
+			std::enable_if_t<
+				BSTempEffect_Impl::is_valid_as_expr_v<T>,
+				int> = 0>
+		constexpr const T* As() const noexcept;
 
 
 		// members

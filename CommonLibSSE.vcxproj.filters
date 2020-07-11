@@ -4686,6 +4686,9 @@
     <ClInclude Include="include\RE\Memory\IMemoryStoreBase\IMemoryStore\IMemoryHeap\ZeroOverheadHeap.h">
       <Filter>include\RE\Memory\IMemoryStoreBase\IMemoryStore\IMemoryHeap</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject\bhkNiCollisionObject\bhkBlendCollisionObject.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject\bhkNiCollisionObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />

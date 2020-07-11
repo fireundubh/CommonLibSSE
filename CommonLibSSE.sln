@@ -21,7 +21,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_PapyrusExtender", "..\P
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_FastTravelWhenIndoors", "..\Projects\fastTravelIndoors\FastTravelIndoors.vcxproj", "{547171CB-F934-40B9-B788-3C520FE66363}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyFirstPlugin", "..\Projects\ExamplePlugin\MyFirstPlugin.vcxproj", "{27055442-2141-4A9B-ADD4-6298178CD606}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_DescriptiveSpellTomes", "..\Projects\DescriptiveSpellTomes\DescriptiveSpellTomes.vcxproj", "{27055442-2141-4A9B-ADD4-6298178CD606}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

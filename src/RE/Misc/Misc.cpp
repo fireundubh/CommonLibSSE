@@ -107,7 +107,7 @@ namespace RE
 	}
 
 
-	void func2E9950()
+	void func2E9950() //FEC frame hook
 	{
 		using func_t = decltype(&func2E9950);
 		REL::Offset<func_t> func(Offset::func2E9950);
@@ -127,6 +127,7 @@ namespace RE
 			a_path = std::regex_replace(a_path, std::regex("^\\\\+"), "");
 			a_path = std::regex_replace(a_path, std::regex(R"(.*?[^\s]textures\\|^textures\\)", std::regex_constants::icase), "");
 		}
+
 
 		std::string GetTextureName(std::string& a_path)
 		{

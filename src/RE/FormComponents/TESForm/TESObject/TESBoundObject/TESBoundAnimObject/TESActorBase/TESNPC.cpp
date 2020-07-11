@@ -181,9 +181,9 @@ namespace RE
 	{
 		auto keywordForm = As<BGSKeywordForm>();
 		if (keywordForm) {
-			bool hasKeyword = keywordForm->HasKeyword(a_formEditorID);
+			bool hasKeyword = keywordForm->HasKeywordString(a_formEditorID);
 			if (!hasKeyword && race) {
-				hasKeyword = race->HasKeyword(a_formEditorID);
+				hasKeyword = race->HasKeywordString(a_formEditorID);
 			}
 			return hasKeyword;
 		}

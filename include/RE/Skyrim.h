@@ -1031,6 +1031,7 @@
 #include "RE/NetImmerse/NiRefObject/NiObject/ImageSpaceModifierInstance/ImageSpaceModifierInstanceTemp/ImageSpaceModifierInstanceDOF.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/ImageSpaceModifierInstance/ImageSpaceModifierInstanceTemp/ImageSpaceModifierInstanceTemp.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiCollisionObject/NiCollisionObject.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiCollisionObject/bhkNiCollisionObject/bhkBlendCollisionObject.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiCollisionObject/bhkNiCollisionObject/bhkCollisionObject.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiCollisionObject/bhkNiCollisionObject/bhkNiCollisionObject.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiColorData.h"

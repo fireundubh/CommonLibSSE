@@ -18,7 +18,7 @@ namespace RE
 	bool	 LookupReferenceByHandle(const RefHandle& a_handle, NiPointer<Actor>& a_refrOut);
 	bool	 LookupReferenceByHandle(const RefHandle& a_handle, NiPointer<TESObjectREFR>& a_refrOut);
 	void	 PlaySound(const char* a_editorID);
-	void	 ShowMessage(const std::string& a_message);
+	void	 ShowMessageBox(const std::string& a_message);
 
 	void func2E9950();
 

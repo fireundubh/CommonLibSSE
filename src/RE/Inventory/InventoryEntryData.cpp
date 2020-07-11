@@ -3,6 +3,7 @@
 #include "RE/BSExtraData/ExtraAliasInstanceArray.h"
 #include "RE/BSExtraData/ExtraCharge.h"
 #include "RE/BSExtraData/ExtraEnchantment.h"
+#include "RE/BSExtraData/ExtraHotKey.h"
 #include "RE/BSExtraData/ExtraTextDisplayData.h"
 #include "RE/BSMain/SettingCollection/GameSettingCollection.h"
 #include "RE/FormComponents/Components/BGSBaseAlias/BGSBaseAlias.h"
