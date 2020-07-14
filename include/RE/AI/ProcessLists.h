@@ -36,8 +36,9 @@ namespace RE
 
 		static ProcessLists* GetSingleton();
 
+		void ClearCachedFactionFightReactions() const;
 		void GetMagicEffects(std::function<bool(RE::BSTempEffect* a_tempEffect)> a_fn);
-		void StopCombatAndAlarmOnActor(Actor* a_actor, bool a_dontEndAlarm);
+		void StopCombatAndAlarmOnActor(Actor* a_actor, bool a_notAlarm);
 
 
 		// members
