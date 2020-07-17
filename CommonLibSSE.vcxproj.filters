@@ -3777,8 +3777,12 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight\NiLight.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiLight</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\Events\ScriptEvent\TESOpenCloseEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiMath.h">
       <Filter>include\RE\NetImmerse</Filter>
+
     </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiMatrix3.h">
       <Filter>include\RE\NetImmerse</Filter>
