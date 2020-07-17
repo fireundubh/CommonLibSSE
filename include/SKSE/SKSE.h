@@ -13,5 +13,4 @@
 #include "SKSE/SafeWrite.h"
 #include "SKSE/Trampoline.h"
 #include "SKSE/Utilities.h"
-#include "SKSE/VArgFormatter.h"
 #include "SKSE/Version.h"

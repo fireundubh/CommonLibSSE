@@ -4734,6 +4734,9 @@
     <None Include="src\.clang-format">
       <Filter>src</Filter>
     </None>
+    <ClCompile Include="src\RE\FormComponents\TESLeveledList.cpp">
+      <Filter>src\RE\FormComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
