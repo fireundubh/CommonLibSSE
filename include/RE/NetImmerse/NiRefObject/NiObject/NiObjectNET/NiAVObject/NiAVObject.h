@@ -27,7 +27,8 @@ namespace RE
 	public:
 		enum class Flag : UInt32
 		{
-			kDirty = 1 << 0,
+			kNone = 0,
+			kDirty = 1 << 0
 		};
 
 

@@ -901,6 +901,15 @@
     <ClCompile Include="src\RE\AI\AIFormulas.cpp">
       <Filter>src\RE\AI</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpBoxShape.cpp">
+      <Filter>src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpConvexShape.cpp">
+      <Filter>src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSHavok\hkVector4.cpp">
+      <Filter>src\RE\BSHavok</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect\AbsorbEffect.h">
@@ -4695,6 +4704,30 @@
     <ClInclude Include="include\RE\AI\AIFormulas.h">
       <Filter>include\RE\AI</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkConvexShape\bhkBoxShape.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkConvexShape</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkConvexShape\bhkConvexShape.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkConvexShape</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkSphereRepShape.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpSphereRepShape.h">
+      <Filter>include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpConvexShape.h">
+      <Filter>include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpBoxShape.h">
+      <Filter>include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkPhantom\bhkShapePhantom\bhkSimpleShapePhantom.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkPhantom\bhkShapePhantom</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />
@@ -5959,6 +5992,30 @@
     </Filter>
     <Filter Include="src\RE\BSScript\IFunctionArguments">
       <UniqueIdentifier>{be43b62f-2e46-45cc-8de4-09cc27d81be9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape">
+      <UniqueIdentifier>{62a60260-d6df-4a09-97ab-f79d8a5ec3db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkConvexShape">
+      <UniqueIdentifier>{aac492fa-5850-4b3f-8ec1-4ee6fcd3bc74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape">
+      <UniqueIdentifier>{502bf8ab-c420-419f-a578-ca4a077f4bbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape">
+      <UniqueIdentifier>{74e32fdf-5636-4bce-82b6-199096c57786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape">
+      <UniqueIdentifier>{8b14f82e-21e2-4e87-8d08-f4ee06241d75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape">
+      <UniqueIdentifier>{83abfdd1-ebc3-407a-bc7a-97e13b3dc952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape">
+      <UniqueIdentifier>{c79c9d79-af68-44dc-8afc-b92fab714e52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld">
+      <UniqueIdentifier>{55056682-ae69-4250-ab3b-c528ac023534}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

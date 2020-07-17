@@ -62,6 +62,7 @@ namespace RE
 
 		const hkpCollidable* GetCollidable() const;
 		hkpCollidable*		 GetCollidableRW();
+		const hkpShape*		 GetShape() const;
 
 
 		// members

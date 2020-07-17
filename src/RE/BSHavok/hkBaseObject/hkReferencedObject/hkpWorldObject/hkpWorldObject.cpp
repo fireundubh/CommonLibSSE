@@ -13,4 +13,10 @@ namespace RE
 	{
 		return &collidable;
 	}
+
+
+	const hkpShape* hkpWorldObject::GetShape() const
+	{
+		return GetCollidable() ? GetCollidable()->GetShape() : nullptr;
+	}
 }

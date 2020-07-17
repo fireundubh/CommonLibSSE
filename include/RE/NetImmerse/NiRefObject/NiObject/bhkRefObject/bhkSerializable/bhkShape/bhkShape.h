@@ -31,7 +31,7 @@ namespace RE
 
 
 		// members
-		UInt64 unk20;  // 20
+		UInt32 material;  // 20
 	};
 	STATIC_ASSERT(sizeof(bhkShape) == 0x28);
 }

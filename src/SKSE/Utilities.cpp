@@ -86,14 +86,14 @@ namespace SKSE
 	}
 
 
-	UInt32 RNG::GenerateRandomInt(UInt32 a_min, UInt32 a_max)
+	UInt32 RNG::GenerateRandomNumber(UInt32 a_min, UInt32 a_max)
 	{
 		std::uniform_int_distribution<UInt32> distr(a_min, a_max);
 		return distr(twister);
 	}
 
 
-	float RNG::GenerateRandomFloat(float a_min, float a_max)
+	float RNG::GenerateRandomNumber(float a_min, float a_max)
 	{
 		std::uniform_real_distribution<float> distr(a_min, a_max);
 		return distr(twister);

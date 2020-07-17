@@ -164,7 +164,6 @@ namespace RE
 								return BSVisit::BSVisitControl::kContinue;
 							}
 						}
-						a_alpha == 0.0 ? a_geometry->SetAppCulled(true) : a_geometry->SetAppCulled(false);
 						material->materialAlpha = a_alpha;
 					}
 				}
@@ -223,15 +222,15 @@ namespace RE
 
 	void NiAVObject::UpdateVisibility(bool a_cull)
 	{
+		SetAppCulled(a_cull);
+
 		auto node = AsNode();
 		if (node) {
 			for (auto& child : node->children) {
 				if (child.get()) {
-					child->SetAppCulled(a_cull);
+					child->UpdateVisibility(a_cull);
 				}
 			}
-		} else {
-			SetAppCulled(a_cull);
 		}
 	}
 }

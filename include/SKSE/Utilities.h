@@ -12,8 +12,8 @@ namespace SKSE
 			return &singleton;
 		}
 
-		UInt32 GenerateRandomInt(UInt32 a_min, UInt32 a_max);
-		float  GenerateRandomFloat(float a_min, float a_max);
+		UInt32 GenerateRandomNumber(UInt32 a_min, UInt32 a_max);
+		float  GenerateRandomNumber(float a_min, float a_max);
 
 	private:
 		RNG() :

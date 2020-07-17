@@ -328,6 +328,7 @@
 #include "RE/BSHavok/hkBaseObject/hkReferencedObject/hkpShape/hkpBvTreeShape/hkMoppBvTreeShapeBase/hkpMoppBvTreeShape.h"
 #include "RE/BSHavok/hkBaseObject/hkReferencedObject/hkpShape/hkpBvTreeShape/hkpBvTreeShape.h"
 #include "RE/BSHavok/hkBaseObject/hkReferencedObject/hkpShape/hkpShape.h"
+#include "RE/BSHavok/hkBaseObject/hkReferencedObject/hkpShape/hkpSphereRepShape/hkpConvexShape/hkpBoxShape.h"
 #include "RE/BSHavok/hkBaseObject/hkReferencedObject/hkpShape/hkpShapeCollection/hkpListShape.h"
 #include "RE/BSHavok/hkBaseObject/hkReferencedObject/hkpShape/hkpShapeCollection/hkpShapeCollection.h"
 #include "RE/BSHavok/hkBaseObject/hkReferencedObject/hkpWorld/ahkpWorld.h"

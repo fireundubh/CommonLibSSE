@@ -89,6 +89,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>D:\Mods\SKSE64\Dependancies;$(INCLUDE);$(IncludePath)</IncludePath>
+    <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <VcpkgTriplet>$(VcpkgUserTriplet)-custom</VcpkgTriplet>
@@ -549,6 +550,9 @@
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShape.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection\hkpListShape.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection\hkpShapeCollection.h" />
+    <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpBoxShape.h" />
+    <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpConvexShape.h" />
+    <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpSphereRepShape.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldCinfo.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject\hkpEntity\hkpEntity.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject\hkpEntity\hkpRigidBody.h" />
@@ -1241,11 +1245,16 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkShape.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkShapeCollection\bhkListShape.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkShapeCollection\bhkShapeCollection.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkConvexShape\bhkBoxShape.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkConvexShape\bhkConvexShape.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkSphereRepShape.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkEntity\bhkEntity.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkEntity\bhkRigidBody.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkPhantom\bhkPhantom.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkPhantom\bhkShapePhantom\bhkCachingShapePhantom.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkPhantom\bhkShapePhantom\bhkShapePhantom.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkPhantom\bhkShapePhantom\bhkSimpleShapePhantom.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkWorldObject.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffect.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectDebris.h" />
@@ -1534,6 +1543,8 @@
     <ClCompile Include="src\RE\BSExtraData\ExtraUniqueID.cpp" />
     <ClCompile Include="src\RE\BSGraphics\State.cpp" />
     <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpBroadPhase\hkpBroadPhase.cpp" />
+    <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpBoxShape.cpp" />
+    <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpConvexShape.cpp" />
     <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject\hkpWorldObject.cpp" />
     <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkReferencedObject.cpp" />
     <ClCompile Include="src\RE\BSHavok\hkBaseTypes.cpp" />
@@ -1544,6 +1555,7 @@
     <ClCompile Include="src\RE\BSHavok\hkpCharacterProxyListener\hkpCharacterProxyListener.cpp" />
     <ClCompile Include="src\RE\BSHavok\hkpMaterial.cpp" />
     <ClCompile Include="src\RE\BSHavok\hkStringPtr.cpp" />
+    <ClCompile Include="src\RE\BSHavok\hkVector4.cpp" />
     <ClCompile Include="src\RE\BSHavok\TESHavokUtilities.cpp" />
     <ClCompile Include="src\RE\BSMain\BSHandleRefObject.cpp" />
     <ClCompile Include="src\RE\BSMain\Main.cpp" />
