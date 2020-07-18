@@ -278,7 +278,7 @@ namespace RE
 	}
 
 
-	SInt32 Actor::GetGoldAmount()
+	std::int32_t Actor::GetGoldAmount()
 	{
 		auto inv = GetInventory([](TESBoundObject* a_object) -> bool {
 			return a_object->IsGold();
@@ -348,7 +348,8 @@ namespace RE
 	}
 
 
-	UInt16 Actor::GetLevel() const
+std::uint16_t Actor::GetLevel() const
+
 	{
 		using func_t = decltype(&Actor::GetLevel);
 		REL::Offset<func_t> func(Offset::Actor::GetLevel);
@@ -615,7 +616,8 @@ namespace RE
 	}
 
 
-	SInt32 Actor::RequestDetectionLevel(Actor* a_target, DETECTION_PRIORITY a_priority)
+std::int32_t Actor::RequestDetectionLevel(Actor* a_target, DETECTION_PRIORITY a_priority)
+
 	{
 		using func_t = decltype(&Actor::RequestDetectionLevel);
 		REL::Offset<func_t> func(Offset::Actor::RequestDetectionLevel);
@@ -623,7 +625,7 @@ namespace RE
 	}
 
 
-	void Actor::StealAlarm(TESObjectREFR* a_ref, TESForm* a_object, SInt32 a_num, SInt32 a_total, TESForm* a_owner, bool a_allowWarning)
+	void Actor::StealAlarm(TESObjectREFR* a_ref, TESForm* a_object, std::int32_t a_num, std::int32_t a_total, TESForm* a_owner, bool a_allowWarning)
 	{
 		using func_t = decltype(&Actor::StealAlarm);
 		REL::Offset<func_t> func = REL::ID(36427);
@@ -733,7 +735,7 @@ namespace RE
 	}
 
 
-	bool Actor::VisitFactions(std::function<bool(TESFaction* a_faction, SInt8 a_rank)> a_visitor)
+	bool Actor::VisitFactions(std::function<bool(TESFaction* a_faction, std::int8_t a_rank)> a_visitor)
 	{
 		auto base = GetActorBase();
 		if (base) {

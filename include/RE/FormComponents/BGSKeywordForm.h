@@ -29,15 +29,15 @@ namespace RE
 		bool					   HasKeyword(FormID a_formID) const;
 		bool					   HasKeywordString(const char* a_formEditorID) const;
 		std::optional<BGSKeyword*> GetKeywordAt(UInt32 a_idx) const;
+		std::uint32_t			   GetNumKeywords() const;
 		SInt32					   GetKeywordIndex(BGSKeyword* a_keyword) const;
-		UInt32					   GetNumKeywords() const;
 		bool					   RemoveKeyword(BGSKeyword* a_keyword);
 
 
 		// members
-		BGSKeyword** keywords;	   // 08 - KWDA
-		UInt32		 numKeywords;  // 10 - KSIZ
-		UInt32		 pad14;		   // 14
+		BGSKeyword**  keywords;		// 08 - KWDA
+		std::uint32_t numKeywords;	// 10 - KSIZ
+		std::uint32_t pad14;		// 14
 	};
-	STATIC_ASSERT(sizeof(BGSKeywordForm) == 0x18);
+	static_assert(sizeof(BGSKeywordForm) == 0x18);
 }

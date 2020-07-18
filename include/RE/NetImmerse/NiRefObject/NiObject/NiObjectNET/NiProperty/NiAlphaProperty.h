@@ -12,7 +12,7 @@ namespace RE
 		inline static constexpr auto Ni_RTTI = NiRTTI_NiAlphaProperty;
 
 
-		enum class AlphaFunction : UInt32
+		enum class AlphaFunction
 		{
 			kOne = 0,
 			kZero = 1,
@@ -45,5 +45,5 @@ namespace RE
 		UInt16 alphaFlags;		// 30
 		UInt8  alphaThreshold;	// 32
 	};
-	STATIC_ASSERT(sizeof(NiAlphaProperty) == 0x38);
+	static_assert(sizeof(NiAlphaProperty) == 0x38);
 }

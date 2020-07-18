@@ -23,7 +23,7 @@ namespace RE
 
 		struct SPEED_DIRECTIONS
 		{
-			enum SPEED_DIRECTION : UInt32
+			enum SPEED_DIRECTION : std::uint32_t
 			{
 				kLeft,
 				kRight,
@@ -53,7 +53,7 @@ namespace RE
 			float speeds[SPEED_DIRECTIONS::kTotal][kTotal];	 // 00
 			float rotateWhileMovingRun;						 // 28
 		};
-		STATIC_ASSERT(sizeof(MaxSpeeds) == 0x2C);
+		static_assert(sizeof(MaxSpeeds) == 0x2C);
 
 
 		struct TypeData
@@ -66,6 +66,6 @@ namespace RE
 			float		  movementSpeed;  // 38
 			float		  rotationSpeed;  // 3C - ~INAM
 		};
-		STATIC_ASSERT(sizeof(TypeData) == 0x40);
+		static_assert(sizeof(TypeData) == 0x40);
 	}
 }

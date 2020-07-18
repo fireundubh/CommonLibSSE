@@ -17,21 +17,22 @@ namespace RE
 			Conditional();
 			~Conditional() = default;
 			
-			TESGlobal* global;
-			SInt32	   rank;
+			TESGlobal*	 global;
+			std::int32_t rank;
 		};
-		STATIC_ASSERT(sizeof(Conditional) == 0x8);
+		static_assert(sizeof(Conditional) == 0x8);
 
 		ContainerItemExtra();
 		~ContainerItemExtra() = default;
 
 		TES_HEAP_REDEFINE_NEW();
 
+		
 		// members
-		TESForm*	owner;		  // 00
-		Conditional conditional;  // 08
-		float		healthMult;	  // 10
-		UInt32		pad14;		  // 14
+		TESForm*	  owner;		// 00
+		Conditional	  conditional;	// 08
+		float		  healthMult;	// 10
+		std::uint32_t pad14;		// 14
 	};
-	STATIC_ASSERT(sizeof(ContainerItemExtra) == 0x18);
+	static_assert(sizeof(ContainerItemExtra) == 0x18);
 }

@@ -19,7 +19,7 @@ namespace RE
 		// override (BSLightingShaderMaterialBase)
 		virtual BSShaderMaterial* Create() override;																												 // 01
 		virtual void			  CopyMembers(BSShaderMaterial* a_other) override;																					 // 02
-		virtual UInt32			  ComputeCRC32(void) override;																										 // 04
+		virtual std::uint32_t	  ComputeCRC32(void) override;						// 04
 		virtual Feature			  GetFeature() const override;																										 // 06 - { return Feature::kFaceGen; }
 		virtual void			  OnLoadTextureSet(UInt64 a_arg1, BSTextureSet* a_textureSet) override;																 // 08
 		virtual void			  ClearTextures() override;																											 // 09
@@ -37,5 +37,5 @@ namespace RE
 	private:
 		BSLightingShaderMaterialFacegen* ctor();
 	};
-	STATIC_ASSERT(sizeof(BSLightingShaderMaterialFacegen) == 0xB8);
+	static_assert(sizeof(BSLightingShaderMaterialFacegen) == 0xB8);
 }

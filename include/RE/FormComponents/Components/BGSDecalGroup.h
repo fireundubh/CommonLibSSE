@@ -57,7 +57,7 @@ namespace RE
 		UInt32				  unkC0;			// C0;
 		UInt32				  padC4;			// C4;
 	};
-	STATIC_ASSERT(sizeof(DECAL_CREATION_DATA) == 0xC8);
+	static_assert(sizeof(DECAL_CREATION_DATA) == 0xC8);
 
 
 	struct BGSDecalGroup
@@ -66,10 +66,10 @@ namespace RE
 		// members
 		bool						   permanentGroup;	// 00
 		bool						   manualSaveLoad;	// 01
-		UInt16						   pad02;			// 02
-		UInt32						   pad04;			// 04
-		BSTArray<UInt32>			   decalGroups;		// 08
+		std::uint16_t				   pad02;			// 02
+		std::uint32_t				   pad04;			// 04
+		BSTArray<std::uint32_t>		   decalGroups;		// 08
 		BSTArray<DECAL_CREATION_DATA*> pendingDecals;	// 20
 	};
-	STATIC_ASSERT(sizeof(BGSDecalGroup) == 0x38);
+	static_assert(sizeof(BGSDecalGroup) == 0x38);
 }

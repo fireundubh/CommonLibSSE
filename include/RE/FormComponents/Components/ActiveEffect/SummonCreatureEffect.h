@@ -40,5 +40,5 @@ namespace RE
 		UInt8				   unkBA;				   // BA
 		UInt8				   padBB;				   // BB
 	};
-	STATIC_ASSERT(sizeof(SummonCreatureEffect) == 0xC0);
+	static_assert(sizeof(SummonCreatureEffect) == 0xC0);
 }

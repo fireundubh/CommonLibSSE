@@ -16,7 +16,7 @@ namespace RE
 		// override (BSLightingShaderMaterialBase)
 		virtual BSShaderMaterial* Create() override;							  // 01
 		virtual void			  CopyMembers(BSShaderMaterial* a_src) override;  // 02
-		virtual UInt32			  ComputeCRC32(void) override;					  // 04
+		virtual std::uint32_t	  ComputeCRC32(void) override;					  // 04
 		virtual Feature			  GetFeature() const override;					  // 06 - { return Feature::kMultiIndexTriShapeSnow; }
 		virtual void			  SaveBinary(NiStream& a_stream) override;		  // 0C
 		virtual void			  LoadBinary(NiStream& a_stream) override;		  // 0D
@@ -31,5 +31,5 @@ namespace RE
 	private:
 		BSLightingShaderMaterialSnow* ctor();
 	};
-	STATIC_ASSERT(sizeof(BSLightingShaderMaterialSnow) == 0xB0);
+	static_assert(sizeof(BSLightingShaderMaterialSnow) == 0xB0);
 }

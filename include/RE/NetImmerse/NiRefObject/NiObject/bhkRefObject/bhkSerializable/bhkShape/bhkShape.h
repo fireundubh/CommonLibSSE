@@ -33,5 +33,5 @@ namespace RE
 		// members
 		UInt32 material;  // 20
 	};
-	STATIC_ASSERT(sizeof(bhkShape) == 0x28);
+	static_assert(sizeof(bhkShape) == 0x28);
 }

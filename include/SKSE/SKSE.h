@@ -10,7 +10,6 @@
 #include "SKSE/Logger.h"
 #include "SKSE/RegistrationMap.h"
 #include "SKSE/RegistrationSet.h"
-#include "SKSE/SafeWrite.h"
 #include "SKSE/Trampoline.h"
 #include "SKSE/Utilities.h"
 #include "SKSE/Version.h"

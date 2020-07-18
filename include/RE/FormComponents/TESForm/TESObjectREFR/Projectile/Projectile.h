@@ -56,7 +56,7 @@ namespace RE
 			UInt8						  unk48;			   // 48
 			UInt8						  unk49;			   // 49
 		};
-		STATIC_ASSERT(sizeof(ImpactData) == 0x50);
+		static_assert(sizeof(ImpactData) == 0x50);
 
 
 		virtual ~Projectile();	// 00
@@ -133,16 +133,16 @@ namespace RE
 		ObjectRefHandle			   desiredTarget;	   // 124
 		BSSoundHandle			   sndHandle;		   // 128
 		BSSoundHandle			   sndCountdown;	   // 134
-		UInt32*					   unk140;			   // 140
+		std::uint32_t*			   unk140;			   // 140
 		InventoryEntryData*		   unk148;			   // 148
 		BGSExplosion*			   explosion;		   // 150
 		MagicItem*				   spell;			   // 158
 		MagicSystem::CastingSource castingSource;	   // 160
-		UInt32					   pad164;			   // 164
+		std::uint32_t			   pad164;			   // 164
 		EffectSetting*			   avEffect;		   // 168
 		NiPointer<QueuedFile>	   projectileDBFiles;  // 170
-		UInt64					   unk178;			   // 178
-		UInt64					   unk180;			   // 180
+		std::uint64_t			   unk178;			   // 178
+		std::uint64_t			   unk180;			   // 180
 		float					   power;			   // 188
 		float					   unk18C;			   // 18C
 		float					   range;			   // 190
@@ -156,10 +156,10 @@ namespace RE
 		TESObjectWEAP*			   weaponSource;	   // 1B0
 		TESAmmo*				   ammoSource;		   // 1B8
 		float					   distanceMoved;	   // 1C0
-		UInt32					   unk1C4;			   // 1C4
+		std::uint32_t			   unk1C4;			   // 1C4
 		float					   unk1C8;			   // 1C8
 		Flags					   flags;			   // 1CC
-		UInt64					   unk1D0;			   // 1D0
+		std::uint64_t			   unk1D0;			   // 1D0
 	};
-	STATIC_ASSERT(sizeof(Projectile) == 0x1D8);
+	static_assert(sizeof(Projectile) == 0x1D8);
 }

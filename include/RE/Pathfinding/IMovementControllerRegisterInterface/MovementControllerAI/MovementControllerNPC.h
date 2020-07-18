@@ -46,12 +46,12 @@ namespace RE
 
 
 		// members
-		UInt64									 unk150;			// 150
+		std::uint64_t unk150;  // 150
 		BSTArray<void*>							 unk158;			// 158
 		BSTArray<void*>							 unk170;			// 170
 		BSTArray<void*>							 unk188;			// 188
 		BSSpinLock								 unk1A0;			// 1A0
-		UInt64									 unk1A8;			// 1A8
+		std::uint64_t unk1A8;  // 1A8
 		BSTSmartPointer<MovementMessagePlayIdle> unk1B0;			// 1B0
 		Actor*									 unk1B8;			// 1B8
 		UInt32									 unk1C0;			// 1C0
@@ -60,5 +60,5 @@ namespace RE
 		UInt16									 unk1C6;			// 1C6
 		UInt64									 unk1C8;			// 1C8
 	};
-	STATIC_ASSERT(sizeof(MovementControllerNPC) == 0x1D0);
+	static_assert(sizeof(MovementControllerNPC) == 0x1D0);
 }

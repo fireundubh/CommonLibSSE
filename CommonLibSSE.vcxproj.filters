@@ -4695,9 +4695,6 @@
     <ClInclude Include="include\RE\BSDevices\UserEvents.h">
       <Filter>include\RE\BSDevices</Filter>
     </ClInclude>
-    <ClInclude Include="include\SKSE\Impl\Util.h">
-      <Filter>include\SKSE\Impl</Filter>
-    </ClInclude>
     <ClInclude Include="include\SKSE\Utilities.h">
       <Filter>include\SKSE</Filter>
     </ClInclude>
@@ -4711,8 +4708,6 @@
       <Filter>include\RE\BSScript\Internal</Filter>
     </ClInclude>
     <ClInclude Include="include\SKSE\Version.h">
-      <Filter>include\SKSE</Filter>
-    </ClInclude>
     <ClInclude Include="include\REL\Version.h">
       <Filter>include\REL</Filter>
     </ClInclude>

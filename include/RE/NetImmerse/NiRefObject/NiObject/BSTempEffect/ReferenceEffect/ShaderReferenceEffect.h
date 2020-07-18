@@ -35,10 +35,10 @@ namespace RE
 
 		struct Data048
 		{
-			UInt64 unk00;  // 00
-			UInt64 unk08;  // 08
+			std::uint64_t unk00;  // 00
+			std::uint64_t unk08;  // 08
 		};
-		STATIC_ASSERT(sizeof(Data048) == 0x10);
+		static_assert(sizeof(Data048) == 0x10);
 
 
 		struct Data090
@@ -46,7 +46,7 @@ namespace RE
 			NiPointer<BSParticleShaderProperty>		 particleShader;   // 00 - smart ptr
 			NiPointer<BSParticleShaderObjectEmitter> particleEmitter;  // 08 - smart ptr
 		};
-		STATIC_ASSERT(sizeof(Data090) == 0x10);
+		static_assert(sizeof(Data090) == 0x10);
 
 
 		virtual ~ShaderReferenceEffect();  // 00
@@ -97,7 +97,7 @@ namespace RE
 		float					   addonModelsScaleStart;	// 128 - 1.0f
 		UInt32					   unk12C;					// 12C
 		Flag					   flags;					// 130
-		UInt32					   pushCount;				// 134
+		std::uint32_t		  pushCount;		 // 134
 	};
-	STATIC_ASSERT(sizeof(ShaderReferenceEffect) == 0x138);
+	static_assert(sizeof(ShaderReferenceEffect) == 0x138);
 }

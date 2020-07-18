@@ -23,5 +23,5 @@ namespace RE
 	private:
 		BSLightingShaderMaterialBase* ctor();
 	};
-	STATIC_ASSERT(sizeof(BSLightingShaderMaterial) == 0xA0);
+	static_assert(sizeof(BSLightingShaderMaterial) == 0xA0);
 }
