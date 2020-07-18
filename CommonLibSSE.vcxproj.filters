@@ -883,9 +883,6 @@
     <ClCompile Include="src\SKSE\Utilities.cpp">
       <Filter>src\SKSE</Filter>
     </ClCompile>
-    <ClCompile Include="src\SKSE\VArgFormatter.cpp">
-      <Filter>src\SKSE</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\BSScript\Variable.cpp">
       <Filter>src\RE\BSScript</Filter>
     </ClCompile>
@@ -4670,9 +4667,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect\ValueModifierEffect.h">
       <Filter>include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SKSE\VArgFormatter.h">
-      <Filter>include\SKSE</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSScript\Variable.h">
       <Filter>include\RE\BSScript</Filter>

@@ -9,16 +9,14 @@ namespace RE
 		return *singleton;
 	}
 
-	
-	
-		void ProcessLists::ClearCachedFactionFightReactions() const
+
+	void ProcessLists::ClearCachedFactionFightReactions() const
 	{
 		using func_t = decltype(&ProcessLists::ClearCachedFactionFightReactions);
 		REL::Offset<func_t> func = REL::ID(40396);
 		return func(this);
 	}
 
-	
 
 	void ProcessLists::GetMagicEffects(std::function<bool(RE::BSTempEffect* a_tempEffect)> a_fn)
 	{
@@ -35,7 +33,7 @@ namespace RE
 	}
 
 
-	void ProcessLists::StopCombatAndAlarmOnActor(Actor* a_actor, bool a_dontEndAlarm)
+	void ProcessLists::StopCombatAndAlarmOnActor(Actor* a_actor, bool a_notAlarm)
 	{
 		using func_t = decltype(&ProcessLists::StopCombatAndAlarmOnActor);
 		REL::Offset<func_t> func = REL::ID(40330);

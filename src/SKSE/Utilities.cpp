@@ -38,7 +38,7 @@ namespace SKSE
 			if (!runtimePath.empty()) {
 				s_pluginPath = runtimePath + R"(Data\SKSE\Plugins\)";
 			} else {
-				_MESSAGE("couldn't get runtime directory path!");
+				SKSE::log::error("couldn't get runtime directory path!");
 			}
 		}
 
@@ -54,9 +54,9 @@ namespace SKSE
 			const auto& pluginPath = GetPluginFolderPath();
 			if (!pluginPath.empty()) {
 				s_configPath = pluginPath + modName + R"(.ini)";
-				_MESSAGE("config path = %s", s_configPath.c_str());
+				SKSE::log::info("config path = %s", s_configPath.c_str());
 			} else {
-				_MESSAGE("couldn't get plugin folder path!");
+				SKSE::log::error("couldn't get plugin folder path!");
 			}
 		}
 

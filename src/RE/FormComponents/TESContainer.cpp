@@ -24,18 +24,18 @@ namespace RE
 	}
 
 
-	bool TESContainer::AddObjectToContainer(TESBoundObject* a_obj, SInt32 a_count, TESForm* a_owner)
+	bool TESContainer::AddObjectToContainer(TESBoundObject* a_object, SInt32 a_count, TESForm* a_owner)
 	{
 		bool added = false;
-		ForEachContainerObject([&](ContainerObject* a_contObj) {
-			if (a_contObj->obj == a_obj) {
-				a_contObj->count += a_count;
+		ForEachContainerObject([&](ContainerObject& a_contObj) {
+			if (a_contObj.obj == a_object) {
+				a_contObj.count += a_count;
 				added = true;
 			}
 			return true;
 		});
 		if (!added) {
-			auto newObj = new ContainerObject(a_obj, a_count);
+			auto newObj = new ContainerObject(a_object, a_count);
 			if (newObj) {
 				auto itemExtra = newObj->itemExtra;
 				if (itemExtra) {

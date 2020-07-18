@@ -337,6 +337,6 @@ namespace SKSE
 
 		UInt32		infoVersion;
 		const char* name;
-		float		version;
+		UInt32		version;
 	};
 }
