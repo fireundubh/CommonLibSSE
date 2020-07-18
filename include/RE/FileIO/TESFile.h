@@ -58,10 +58,7 @@ namespace RE
 		FormID		   GetFormID(std::uint32_t formLower) const;
 		FormType	   GetFormType();
 		std::uint32_t  GetPartialIndex() const;
-		constexpr bool IsLocalized() const noexcept
-		{
-			return (recordFlags & RecordFlag::kDelocalized) != RecordFlag::kNone;
-		}
+		constexpr bool			IsLocalized() const noexcept { return recordFlags.all(RecordFlag::kDelocalized); }
 		bool IsFormInMod(FormID formID) const;
 		void ReadData(void* a_buf, std::uint32_t a_size);
 		bool Seek(std::uint32_t a_offset);

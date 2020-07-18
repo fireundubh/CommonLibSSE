@@ -54,9 +54,9 @@ namespace RE
 	void Actor::AllowBleedoutDialogue(bool a_canTalk)
 	{
 		if (a_canTalk) {
-			boolFlags |= BOOL_FLAGS::kCanSpeakToEssentialDown;
+			boolFlags.set(BOOL_FLAGS::kCanSpeakToEssentialDown);
 		} else {
-			boolFlags &= ~BOOL_FLAGS::kCanSpeakToEssentialDown;
+			boolFlags.reset(BOOL_FLAGS::kCanSpeakToEssentialDown);
 		}
 	}
 
@@ -472,13 +472,13 @@ namespace RE
 
 	bool Actor::IsAIEnabled() const
 	{
-		return (boolBits & BOOL_BITS::kProcessMe) != BOOL_BITS::kNone;
+		return boolBits.all(BOOL_BITS::kProcessMe);
 	}
 
 
 	bool Actor::IsAMount() const
 	{
-		return (boolFlags & BOOL_FLAGS::kIsAMount) != BOOL_FLAGS::kNone;
+		return boolFlags.all(BOOL_FLAGS::kIsAMount);
 	}
 
 
@@ -497,13 +497,13 @@ namespace RE
 
 	bool Actor::IsCommandedActor() const
 	{
-		return (boolFlags & BOOL_FLAGS::kIsCommandedActor) != BOOL_FLAGS::kNone;
+		return boolFlags.all(BOOL_FLAGS::kIsCommandedActor);
 	}
 
 
 	bool Actor::IsEssential() const
 	{
-		return (boolFlags & BOOL_FLAGS::kEssential) != BOOL_FLAGS::kNone;
+		return boolFlags.all(BOOL_FLAGS::kEssential);
 	}
 
 
@@ -538,7 +538,7 @@ namespace RE
 
 	bool Actor::IsGuard() const
 	{
-		return (boolBits & BOOL_BITS::kGuard) != BOOL_BITS::kNone;
+		return boolBits.all(BOOL_BITS::kGuard);
 	}
 
 
@@ -552,7 +552,7 @@ namespace RE
 
 	bool Actor::IsInKillMove() const
 	{
-		return (boolFlags & BOOL_FLAGS::kIsInKillMove) != BOOL_FLAGS::kNone;
+		return boolFlags.all(BOOL_FLAGS::kIsInKillMove);
 	}
 
 
@@ -564,7 +564,7 @@ namespace RE
 
 	bool Actor::IsPlayerTeammate() const
 	{
-		return (boolBits & BOOL_BITS::kPlayerTeammate) != BOOL_BITS::kNone;
+		return boolBits.all(BOOL_BITS::kPlayerTeammate);
 	}
 
 
@@ -603,7 +603,7 @@ namespace RE
 
 	bool Actor::IsTrespassing() const
 	{
-		return (boolFlags & BOOL_FLAGS::kIsTrespassing) != BOOL_FLAGS::kNone;
+		return boolFlags.all(BOOL_FLAGS::kIsTrespassing);
 	}
 
 
