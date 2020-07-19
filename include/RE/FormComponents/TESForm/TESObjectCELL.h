@@ -22,6 +22,7 @@ namespace RE
 {
 	class NavMesh;
 	class NiNode;
+	class bhkWorld;
 
 
 	class BGSTerrainVisibilityData
@@ -193,8 +194,10 @@ namespace RE
 		TESNPC*		   GetActorOwner();
 		EXTERIOR_DATA* GetCoordinates();
 		TESFaction*	   GetFactionOwner();
+
 		INTERIOR_DATA* GetLighting();
 		float		   GetNorthRotation();
+		bhkWorld*	   GetHavokWorld();
 		TESForm*	   GetOwner();
 		bool		   IsAttached() const;
 		bool		   IsExteriorCell() const;

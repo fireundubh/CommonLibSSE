@@ -33,36 +33,36 @@ namespace RE
 
 	bool BGSBaseAlias::IsEssential() const
 	{
-		return (flags & FLAGS::kEssential) != FLAGS::kNone;
+		return flags.all(FLAGS::kEssential);
 	}
 
 
 	bool BGSBaseAlias::IsProtected() const
 	{
-		return (flags & FLAGS::kProtected) != FLAGS::kNone;
+		return flags.all(FLAGS::kProtected);
 	}
 
 
 	void BGSBaseAlias::SetEssential()
 	{
-		flags |= FLAGS::kEssential;
+		flags.set(FLAGS::kEssential);
 	}
 
 
 	void BGSBaseAlias::SetUnessential()
 	{
-		flags &= ~FLAGS::kEssential;
+		flags.reset(FLAGS::kEssential);
 	}
 
 
 	void BGSBaseAlias::SetProtected()
 	{
-		flags |= FLAGS::kProtected;
+		flags.set(FLAGS::kProtected);
 	}
 
 
 	void BGSBaseAlias::SetUnprotected()
 	{
-		flags &= ~FLAGS::kProtected;
+		flags.reset(FLAGS::kProtected);
 	}
 }

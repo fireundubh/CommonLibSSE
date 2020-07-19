@@ -13,6 +13,9 @@ namespace RE
 
 
 		virtual ~bhkSphereRepShape();  // 00
+
+		// override (bhkShape)
+		virtual const NiRTTI* GetRTTI() const override;	 // 02
 	};
 	static_assert(sizeof(bhkSphereRepShape) == 0x28);
 }

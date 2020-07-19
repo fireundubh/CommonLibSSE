@@ -104,7 +104,7 @@ namespace RE
 
 	void NiAVObject::SetAppCulled(bool cull)
 	{
-		cull ? flags |= Flag::kHidden : flags &= ~Flag::kHidden;
+		cull ? flags.set(Flag::kHidden) : flags.reset(Flag::kHidden);
 	}
 
 

@@ -5,6 +5,7 @@
 #include "RE/FormComponents/TESForm/TESFaction.h"
 #include "RE/FormComponents/TESForm/TESObject/TESBoundObject/TESBoundAnimObject/TESActorBase/TESNPC.h"
 #include "RE/FormComponents/TESForm/TESWorldSpace.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/bhkRefObject/bhkSerializable/bhkWorld/bhkWorld.h"
 
 
 namespace RE
@@ -43,6 +44,14 @@ namespace RE
 			auto xNorth = extraList.GetByType<ExtraNorthRotation>();
 			return xNorth ? xNorth->northRot : static_cast<float>(0.0);
 		}
+	}
+
+
+	bhkWorld* TESObjectCELL::GetHavokWorld()
+	{
+		using func_t = decltype(&TESObjectCELL::GetHavokWorld);
+		REL::Offset<func_t> func = REL::ID(18536);
+		return func(this);
 	}
 
 

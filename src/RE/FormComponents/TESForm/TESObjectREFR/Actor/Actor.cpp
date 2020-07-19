@@ -162,9 +162,9 @@ namespace RE
 	void Actor::EnableAI(bool a_enable)
 	{
 		if (a_enable) {
-			boolBits |= Actor::BOOL_BITS::kProcessMe;
+			boolBits.set(Actor::BOOL_BITS::kProcessMe);
 		} else {
-			boolBits &= ~Actor::BOOL_BITS::kProcessMe;
+			boolBits.reset(Actor::BOOL_BITS::kProcessMe);
 			if (currentProcess) {
 				auto middleHigh = currentProcess->middleHigh;
 				if (middleHigh) {
@@ -509,7 +509,7 @@ namespace RE
 
 	bool Actor::IsProtected() const
 	{
-		return (boolFlags & BOOL_FLAGS::kProtected) != BOOL_FLAGS::kNone;
+		return boolFlags.all(BOOL_FLAGS::kProtected);
 	}
 
 

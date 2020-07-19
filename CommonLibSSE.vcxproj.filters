@@ -301,9 +301,6 @@
     <ClCompile Include="src\RE\BSExtraData\ExtraEnchantment.cpp">
       <Filter>src\RE\BSExtraData</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BSExtraData\ExtraFlags.cpp">
-      <Filter>src\RE\BSExtraData</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\BSExtraData\ExtraForcedTarget.cpp">
       <Filter>src\RE\BSExtraData</Filter>
     </ClCompile>
@@ -317,9 +314,6 @@
       <Filter>src\RE\BSExtraData</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\BSExtraData\ExtraLock.cpp">
-      <Filter>src\RE\BSExtraData</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\BSExtraData\ExtraMapMarker.cpp">
       <Filter>src\RE\BSExtraData</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\BSExtraData\ExtraMissingLinkedRefIDs.cpp">
@@ -413,9 +407,6 @@
       <Filter>src\RE\Scaleform\GMemoryHeap</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\Scaleform\GRefCount\GRefCountImpl.cpp">
-      <Filter>src\RE\Scaleform\GRefCount</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\Scaleform\GRefCount\GRefCountImplCore.cpp">
       <Filter>src\RE\Scaleform\GRefCount</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\Scaleform\GRefCount\GRefCountNTSImpl.cpp">
@@ -774,9 +765,6 @@
     </ClCompile>
     <ClCompile Include="src\RE\FileIO\ICellAttachDetachEventSource\TES.cpp">
       <Filter>src\RE\FileIO\ICellAttachDetachEventSource</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\FormComponents\TESActorBaseData.cpp">
-      <Filter>src\RE\FormComponents</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\FormComponents\TESAIForm.cpp">
       <Filter>src\RE\FormComponents</Filter>
@@ -1532,9 +1520,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\Memory\IMemoryStoreBase\IMemoryStore\IMemoryHeap\bhkThreadMemorySource.h">
       <Filter>include\RE\Memory\IMemoryStoreBase\IMemoryStore\IMemoryHeap</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkWorldObject.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject</Filter>
@@ -4713,6 +4698,12 @@
     <ClInclude Include="include\RE\Memory\IMemoryStoreBase\IMemoryStore\IMemoryHeap\ZeroOverheadHeap.h">
       <Filter>include\RE\Memory\IMemoryStoreBase\IMemoryStore\IMemoryHeap</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld\bhkWorld.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld\bhkWorldM.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />
@@ -5995,6 +5986,9 @@
     </Filter>
     <Filter Include="src\RE\BSScript\IFunctionArguments">
       <UniqueIdentifier>{835ce10d-d630-42ef-876a-e27935cfafe6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld">
+      <UniqueIdentifier>{87c55dce-b7cd-4f49-ac80-50dc302de1d7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -13,6 +13,11 @@ namespace RE
 
 
 		virtual ~bhkConvexShape();	// 00
+
+		// override ( bhkSphereRepShape)
+		virtual const NiRTTI* GetRTTI() const override;					// 02
+		virtual void		  LoadBinary(NiStream& a_stream) override;	// 18
+		virtual void		  SaveBinary(NiStream& a_stream) override;	// 1B
 	};
 	static_assert(sizeof(bhkConvexShape) == 0x28);
 }
