@@ -8,7 +8,8 @@
 namespace RE
 {
 	struct StaticFunctionTag
-	{};
+	{
+	};
 
 
 	namespace BSScript
@@ -16,7 +17,8 @@ namespace RE
 		template <class>
 		struct _is_reference_wrapper :
 			std::false_type
-		{};
+		{
+		};
 
 		template <class T>
 		struct _is_reference_wrapper<
@@ -75,7 +77,8 @@ namespace RE
 		struct vm_type_constant :
 			std::integral_constant<
 				TypeInfo::RawType, V>
-		{};
+		{
+		};
 
 
 		template <class, class = void>
@@ -85,7 +88,8 @@ namespace RE
 		struct _vm_type<void> :
 			vm_type_constant<
 				TypeInfo::RawType::kNone>
-		{};
+		{
+		};
 
 		template <class T>
 		struct _vm_type<
@@ -138,7 +142,8 @@ namespace RE
 			std::is_same<
 				decay_pointer_t<T>,
 				StaticFunctionTag>
-		{};
+		{
+		};
 
 		template <class T>
 		inline constexpr bool is_static_base_v = is_static_base<T>::value;
@@ -231,7 +236,8 @@ namespace RE
 				is_return_convertible<R>,
 				is_valid_base<Cls>,
 				is_parameter_convertible<Args>...>
-		{};
+		{
+		};
 
 		template <class R, class Cls, class... Args>
 		inline constexpr bool is_valid_short_sig_v = is_valid_short_sig<R, Cls, Args...>::value;

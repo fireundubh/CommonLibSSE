@@ -23,7 +23,8 @@ namespace RE
 		template <class, class = void>
 		struct _has_menu_name :
 			std::false_type
-		{};
+		{
+		};
 
 		template <class T>
 		struct _has_menu_name<
@@ -47,7 +48,8 @@ namespace RE
 			std::is_convertible<
 				std::remove_cv_t<T>,
 				IMenu*>
-		{};
+		{
+		};
 
 		template <class T>
 		inline constexpr bool is_menu_ptr_v = is_menu_ptr<T>::value;

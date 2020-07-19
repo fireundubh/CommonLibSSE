@@ -50,7 +50,8 @@ namespace RE
 
 		FixedLengthMemoryManagementPol() :
 			_buffer{ 0 }
-		{}
+		{
+		}
 
 
 		FixedLengthMemoryManagementPol(const FixedLengthMemoryManagementPol& a_rhs) :
@@ -325,16 +326,46 @@ namespace RE
 		}
 
 
-		inline friend bool operator==(const BSStringT& a_lhs, const value_type* a_rhs) { return (a_lhs._data == a_rhs || stricmp(a_lhs._data, a_rhs) == 0); }
-		inline friend bool operator!=(const BSStringT& a_lhs, const value_type* a_rhs) { return !(a_lhs == a_rhs); }
-		inline friend bool operator==(const value_type* a_lhs, const BSStringT& a_rhs) { return a_rhs == a_lhs; }
-		inline friend bool operator!=(const value_type* a_lhs, const BSStringT& a_rhs) { return !(a_lhs == a_rhs); }
-		inline friend bool operator==(const BSStringT& a_lhs, const BSStringT& a_rhs) { return a_lhs == a_rhs.c_str(); }
-		inline friend bool operator!=(const BSStringT& a_lhs, const BSStringT& a_rhs) { return !(a_lhs == a_rhs); }
-		inline friend bool operator==(const BSStringT& a_lhs, const std::string_view& a_rhs) { return a_lhs == a_rhs.data(); }
-		inline friend bool operator!=(const BSStringT& a_lhs, const std::string_view& a_rhs) { return !(a_lhs == a_rhs); }
-		inline friend bool operator==(const std::string_view& a_lhs, const BSStringT& a_rhs) { return a_rhs == a_lhs; }
-		inline friend bool operator!=(const std::string_view& a_lhs, const BSStringT& a_rhs) { return !(a_lhs == a_rhs); }
+		inline friend bool operator==(const BSStringT& a_lhs, const value_type* a_rhs)
+		{
+			return (a_lhs._data == a_rhs || stricmp(a_lhs._data, a_rhs) == 0);
+		}
+		inline friend bool operator!=(const BSStringT& a_lhs, const value_type* a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
+		inline friend bool operator==(const value_type* a_lhs, const BSStringT& a_rhs)
+		{
+			return a_rhs == a_lhs;
+		}
+		inline friend bool operator!=(const value_type* a_lhs, const BSStringT& a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
+		inline friend bool operator==(const BSStringT& a_lhs, const BSStringT& a_rhs)
+		{
+			return a_lhs == a_rhs.c_str();
+		}
+		inline friend bool operator!=(const BSStringT& a_lhs, const BSStringT& a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
+		inline friend bool operator==(const BSStringT& a_lhs, const std::string_view& a_rhs)
+		{
+			return a_lhs == a_rhs.data();
+		}
+		inline friend bool operator!=(const BSStringT& a_lhs, const std::string_view& a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
+		inline friend bool operator==(const std::string_view& a_lhs, const BSStringT& a_rhs)
+		{
+			return a_rhs == a_lhs;
+		}
+		inline friend bool operator!=(const std::string_view& a_lhs, const BSStringT& a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
 
 		TES_HEAP_REDEFINE_NEW();
 

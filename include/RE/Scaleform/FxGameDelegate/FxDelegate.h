@@ -25,7 +25,8 @@ namespace RE
 			inline CallbackDefn() :
 				handler(nullptr),
 				callback(nullptr)
-			{}
+			{
+			}
 
 
 			// members

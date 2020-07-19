@@ -11,7 +11,7 @@ namespace RE
 			auto oldData = keywords;
 			keywords = calloc<BGSKeyword*>(++numKeywords);
 			if (oldData) {
-				for (UInt32 i = 0; i < numKeywords - 1; ++i) {
+				for (std::uint32_t i = 0; i < numKeywords - 1; ++i) {
 					keywords[i] = oldData[i];
 				}
 				free(oldData);
@@ -27,8 +27,9 @@ namespace RE
 	bool BGSKeywordForm::HasKeyword(FormID a_formID) const
 	{
 		if (keywords) {
-			for (UInt32 idx = 0; idx < numKeywords; ++idx) {
-				if (keywords[idx] && keywords[idx]->formID == a_formID) {
+			stl::span<RE::BGSKeyword*> span(keywords, numKeywords);
+			for (auto& keyword : span) {
+				if (keyword && keyword->formID == a_formID) {
 					return true;
 				}
 			}
@@ -41,8 +42,9 @@ namespace RE
 	bool BGSKeywordForm::HasKeywordString(const char* a_formEditorID) const
 	{
 		if (keywords) {
-			for (UInt32 idx = 0; idx < numKeywords; ++idx) {
-				if (keywords[idx] && keywords[idx]->formEditorID == a_formEditorID) {
+			stl::span<RE::BGSKeyword*> span(keywords, numKeywords);
+			for (auto& keyword : span) {
+				if (keyword && keyword->formEditorID == a_formEditorID) {
 					return true;
 				}
 			}
@@ -52,7 +54,7 @@ namespace RE
 	}
 
 
-	std::optional<BGSKeyword*> BGSKeywordForm::GetKeywordAt(UInt32 a_idx) const
+	std::optional<BGSKeyword*> BGSKeywordForm::GetKeywordAt(std::uint32_t a_idx) const
 	{
 		if (a_idx < numKeywords) {
 			return std::make_optional(keywords[a_idx]);
@@ -62,11 +64,11 @@ namespace RE
 	}
 
 
-	SInt32 BGSKeywordForm::GetKeywordIndex(BGSKeyword* a_keyword) const
+	std::int32_t BGSKeywordForm::GetKeywordIndex(BGSKeyword* a_keyword) const
 	{
-		SInt32 index = -1;
+		std::int32_t index = -1;
 		if (keywords) {
-			for (UInt32 i = 0; i < numKeywords; ++i) {
+			for (std::uint32_t i = 0; i < numKeywords; ++i) {
 				if (keywords[i] && keywords[i] == a_keyword) {
 					index = i;
 					break;
@@ -77,7 +79,7 @@ namespace RE
 	}
 
 
-	UInt32 BGSKeywordForm::GetNumKeywords() const
+	std::uint32_t BGSKeywordForm::GetNumKeywords() const
 	{
 		return numKeywords;
 	}
@@ -90,14 +92,14 @@ namespace RE
 			auto oldData = keywords;
 			if (oldData) {
 				keywords = calloc<BGSKeyword*>(--numKeywords);
-				for (UInt32 i = 0; i < numKeywords + 1; ++i) {
+				for (std::uint32_t i = 0; i < numKeywords + 1; ++i) {
 					if (index != i) {
 						keywords[i] = oldData[i];
 					}
 				}
 				free(oldData);
 				oldData = nullptr;
-				
+
 				return true;
 			}
 		}

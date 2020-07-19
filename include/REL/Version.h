@@ -9,11 +9,13 @@ namespace REL
 	public:
 		constexpr Version() noexcept :
 			Version(0, 0, 0, 0)
-		{}
+		{
+		}
 
 		constexpr Version(std::uint16_t a_major, std::uint16_t a_minor, std::uint16_t a_revision, std::uint16_t a_build) noexcept :
 			_buf{ a_major, a_minor, a_revision, a_build }
-		{}
+		{
+		}
 
 		template <class T, typename std::enable_if_t<std::is_arithmetic_v<T>, int> = 0>
 		constexpr Version(const T a_versions[4]) noexcept :
@@ -21,15 +23,34 @@ namespace REL
 				static_cast<std::uint16_t>(a_versions[1]),
 				static_cast<std::uint16_t>(a_versions[2]),
 				static_cast<std::uint16_t>(a_versions[3]))
-		{}
+		{
+		}
 
-		[[nodiscard]] friend constexpr bool operator==(const Version& a_lhs, const Version& a_rhs) noexcept { return a_lhs.Compare(a_rhs) == 0; }
-		[[nodiscard]] friend constexpr bool operator!=(const Version& a_lhs, const Version& a_rhs) noexcept { return !(a_lhs == a_rhs); }
+		[[nodiscard]] friend constexpr bool operator==(const Version& a_lhs, const Version& a_rhs) noexcept
+		{
+			return a_lhs.Compare(a_rhs) == 0;
+		}
+		[[nodiscard]] friend constexpr bool operator!=(const Version& a_lhs, const Version& a_rhs) noexcept
+		{
+			return !(a_lhs == a_rhs);
+		}
 
-		[[nodiscard]] friend constexpr bool operator<(const Version& a_lhs, const Version& a_rhs) noexcept { return a_lhs.Compare(a_rhs) < 0; }
-		[[nodiscard]] friend constexpr bool operator>(const Version& a_lhs, const Version& a_rhs) noexcept { return a_rhs < a_lhs; }
-		[[nodiscard]] friend constexpr bool operator<=(const Version& a_lhs, const Version& a_rhs) noexcept { return !(a_lhs > a_rhs); }
-		[[nodiscard]] friend constexpr bool operator>=(const Version& a_lhs, const Version& a_rhs) noexcept { return !(a_lhs < a_rhs); }
+		[[nodiscard]] friend constexpr bool operator<(const Version& a_lhs, const Version& a_rhs) noexcept
+		{
+			return a_lhs.Compare(a_rhs) < 0;
+		}
+		[[nodiscard]] friend constexpr bool operator>(const Version& a_lhs, const Version& a_rhs) noexcept
+		{
+			return a_rhs < a_lhs;
+		}
+		[[nodiscard]] friend constexpr bool operator<=(const Version& a_lhs, const Version& a_rhs) noexcept
+		{
+			return !(a_lhs > a_rhs);
+		}
+		[[nodiscard]] friend constexpr bool operator>=(const Version& a_lhs, const Version& a_rhs) noexcept
+		{
+			return !(a_lhs < a_rhs);
+		}
 
 		[[nodiscard]] constexpr std::uint16_t& operator[](std::size_t a_idx) noexcept
 		{
@@ -71,15 +92,39 @@ namespace REL
 			return result;
 		}
 
-		[[nodiscard]] constexpr std::uint16_t GetMajor() const noexcept { return _buf[kMajor]; }
-		[[nodiscard]] constexpr std::uint16_t GetMinor() const noexcept { return _buf[kMinor]; }
-		[[nodiscard]] constexpr std::uint16_t GetRevision() const noexcept { return _buf[kRevision]; }
-		[[nodiscard]] constexpr std::uint16_t GetBuild() const noexcept { return _buf[kBuild]; }
+		[[nodiscard]] constexpr std::uint16_t GetMajor() const noexcept
+		{
+			return _buf[kMajor];
+		}
+		[[nodiscard]] constexpr std::uint16_t GetMinor() const noexcept
+		{
+			return _buf[kMinor];
+		}
+		[[nodiscard]] constexpr std::uint16_t GetRevision() const noexcept
+		{
+			return _buf[kRevision];
+		}
+		[[nodiscard]] constexpr std::uint16_t GetBuild() const noexcept
+		{
+			return _buf[kBuild];
+		}
 
-		constexpr void SetMajor(std::uint16_t a_major) noexcept { _buf[kMajor] = a_major; }
-		constexpr void SetMinor(std::uint16_t a_minor) noexcept { _buf[kMinor] = a_minor; }
-		constexpr void SetRevision(std::uint16_t a_revision) noexcept { _buf[kRevision] = a_revision; }
-		constexpr void SetBuild(std::uint16_t a_build) noexcept { _buf[kBuild] = a_build; }
+		constexpr void SetMajor(std::uint16_t a_major) noexcept
+		{
+			_buf[kMajor] = a_major;
+		}
+		constexpr void SetMinor(std::uint16_t a_minor) noexcept
+		{
+			_buf[kMinor] = a_minor;
+		}
+		constexpr void SetRevision(std::uint16_t a_revision) noexcept
+		{
+			_buf[kRevision] = a_revision;
+		}
+		constexpr void SetBuild(std::uint16_t a_build) noexcept
+		{
+			_buf[kBuild] = a_build;
+		}
 
 	private:
 		enum : std::size_t

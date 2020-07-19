@@ -33,12 +33,12 @@ namespace RE
 		NiPoint3			   location;			   // 90
 		NiPoint3			   angle;				   // 9C
 		ActorHandle			   summonedActor;		   // A8
-		UInt32				   unkAC;				   // AC
+		std::uint32_t		   unkAC;				   // AC
 		SummonPlacementEffect* summonPlacementEffect;  // B0
-		UInt8				   unkB8;				   // B8
-		UInt8				   unkB9;				   // B9
-		UInt8				   unkBA;				   // BA
-		UInt8				   padBB;				   // BB
+		std::uint8_t		   unkB8;				   // B8
+		std::uint8_t		   unkB9;				   // B9
+		std::uint8_t		   unkBA;				   // BA
+		std::uint8_t		   padBB;				   // BB
 	};
 	static_assert(sizeof(SummonCreatureEffect) == 0xC0);
 }

@@ -23,10 +23,12 @@ namespace RE
 		using Data10 = CombatControllerData10;
 
 		struct Data18
-		{};
+		{
+		};
 
 		struct Data20
-		{};
+		{
+		};
 
 
 		// members
@@ -38,10 +40,10 @@ namespace RE
 		ActorHandle								actorHandle;			 // 28
 		ActorHandle								currentTargetHandle;	 // 2C
 		ActorHandle								target;					 // 30
-		UInt8									unk34;					 // 34
-		UInt8									unk35;					 // 34
-		UInt8									unk36;					 // 36
-		UInt8									unk37;					 // 37
+		std::uint8_t							unk34;					 // 34
+		std::uint8_t							unk35;					 // 34
+		std::uint8_t							unk36;					 // 36
+		std::uint8_t							unk37;					 // 37
 		TESCombatStyle*							combatStyle;			 // 38
 		bool									stoppedCombat;			 // 40
 		bool									unk41;					 // 41
@@ -50,17 +52,17 @@ namespace RE
 		AITimer									unk44;					 // 44
 		float									unk4C;					 // 4C
 		BSTArray<void*>							unk50;					 // 50
-		UInt64									unk68;					 // 68
-		UInt64									unk70;					 // 70
+		std::uint64_t							unk68;					 // 68
+		std::uint64_t							unk70;					 // 70
 		BSTArray<CombatAreaStandard*>			areas;					 // 78
 		CombatAreaStandard*						currentArea;			 // 90
 		BSTArray<CombatTargetSelectorStandard*> targetSelectors;		 // 98
 		CombatTargetSelectorStandard*			currentTargetSelector;	 // B0
 		CombatTargetSelectorStandard*			previousTargetSelector;	 // B8
-		UInt32									unkC0;					 // C0
-		SInt32									unkC4;					 // C4
+		std::uint32_t							unkC0;					 // C0
+		std::int32_t							unkC4;					 // C4
 		NiPointer<Actor>						actor;					 // C8
 		NiPointer<Actor>						currentTarget;			 // D0
 	};
-	STATIC_ASSERT(sizeof(CombatController) == 0xD8);
+	static_assert(sizeof(CombatController) == 0xD8);
 }

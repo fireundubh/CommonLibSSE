@@ -17,7 +17,7 @@ namespace RE
 		inline static constexpr auto Ni_RTTI = NiRTTI_BSValueNode;
 
 
-		enum class Flag : UInt8
+		enum class Flag
 		{
 			kBillboardWorldZ = 0,
 			kUsePlayerAdjust = 1
@@ -40,9 +40,9 @@ namespace RE
 
 
 		// members
-		Flag							  flags;		   // 128
-		SInt32							  value;		   // 12C
-		NiPointer<BSMasterParticleSystem> particleSystem;  // 130
+		stl::enumeration<Flag, std::uint8_t> flags;			  // 128
+		std::int32_t						 value;			  // 12C
+		NiPointer<BSMasterParticleSystem>	 particleSystem;  // 130
 	};
-	STATIC_ASSERT(sizeof(BSValueNode) == 0x138);
+	static_assert(sizeof(BSValueNode) == 0x138);
 }

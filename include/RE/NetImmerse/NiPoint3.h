@@ -46,7 +46,8 @@ namespace RE
 		x(0.0),
 		y(0.0),
 		z(0.0)
-	{}
+	{
+	}
 
 
 	constexpr NiPoint3::NiPoint3(float a_x, float a_y, float a_z) :

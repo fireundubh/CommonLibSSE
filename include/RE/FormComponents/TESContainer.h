@@ -14,7 +14,7 @@ namespace RE
 	{
 	public:
 		ContainerObject();
-		ContainerObject(TESBoundObject* a_obj, SInt32 a_count);
+		ContainerObject(TESBoundObject* a_obj, std::int32_t a_count);
 
 		~ContainerObject() = default;
 
@@ -55,7 +55,7 @@ namespace RE
 			}
 		}
 
-		bool							AddObjectToContainer(TESBoundObject* a_obj, SInt32 a_count, TESForm* a_owner);
+		bool							AddObjectToContainer(TESBoundObject* a_obj, std::int32_t a_count, TESForm* a_owner);
 		std::optional<ContainerObject*> GetContainerObjectAt(std::uint32_t a_idx) const;
 		std::int32_t					CountObjectsInContainer(TESBoundObject* a_object) const;
 

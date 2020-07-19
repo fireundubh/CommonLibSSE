@@ -32,8 +32,14 @@ namespace RE
 		virtual bool				 HasIDCode() const;	  // 01 - { return false; }
 		virtual const BSFixedString& QUserEvent() const;  // 02 - { return ""; }
 
-		[[nodiscard]] constexpr INPUT_EVENT_TYPE GetEventType() const noexcept { return *eventType; }
-		[[nodiscard]] constexpr INPUT_DEVICE	 GetDevice() const noexcept { return *device; }
+		[[nodiscard]] constexpr INPUT_EVENT_TYPE GetEventType() const noexcept
+		{
+			return *eventType;
+		}
+		[[nodiscard]] constexpr INPUT_DEVICE GetDevice() const noexcept
+		{
+			return *device;
+		}
 
 		[[nodiscard]] ButtonEvent*		 AsButtonEvent();
 		[[nodiscard]] const ButtonEvent* AsButtonEvent() const;

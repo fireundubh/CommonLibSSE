@@ -113,7 +113,7 @@ namespace RE
 
 	float overlay(float a_src, float a_dest)
 	{
-		return (a_dest < 0.5) ? 2.0 * a_src * a_dest : 1.0 - 2.0 * (1.0 - a_src) * (1.0 - a_dest);
+		return (a_dest < 0.5f) ? 2.0f * a_src * a_dest : 1.0f - 2.0f * (1.0f - a_src) * (1.0f - a_dest);
 	}
 
 
@@ -125,7 +125,7 @@ namespace RE
 
 	float softLight(float a_src, float a_dest)
 	{
-		return (a_src < 0.5) ? a_dest - (1.0 - 2.0 * a_src) * a_dest * (1.0 - a_dest) : (a_dest < 0.25) ? a_dest + (2.0 * a_src - 1.0) * a_dest * ((16.0 * a_dest - 12.0) * a_dest + 3.0) : a_dest + (2.0 * a_src - 1.0) * (sqrt(a_dest) - a_dest);
+		return (a_src < 0.5f) ? a_dest - (1.0f - 2.0f * a_src) * a_dest * (1.0f - a_dest) : (a_dest < 0.25f) ? a_dest + (2.0f * a_src - 1.0f) * a_dest * ((16.0f * a_dest - 12.0f) * a_dest + 3.0f) : a_dest + (2.0f * a_src - 1.0f) * (sqrt(a_dest) - a_dest);
 	}
 
 
@@ -137,7 +137,7 @@ namespace RE
 
 	float hardLight(float a_src, float a_dest)
 	{
-		return (a_src < 0.5) ? 2.0 * a_src * a_dest : 1.0 - 2.0 * (1.0 - a_src) * (1.0 - a_dest);
+		return (a_src < 0.5f) ? 2.0f * a_src * a_dest : 1.0f - 2.0f * (1.0f - a_src) * (1.0f - a_dest);
 	}
 
 
@@ -149,7 +149,7 @@ namespace RE
 
 	float vividLight(float a_src, float a_dest)
 	{
-		return (a_src < 0.5) ? 1.0 - (1.0 - a_dest) / (2.0 * a_src) : a_dest / (2.0 * (1.0 - a_src));
+		return (a_src < 0.5f) ? 1.0f - (1.0f - a_dest) / (2.0f * a_src) : a_dest / (2.0f * (1.0f - a_src));
 	}
 
 
@@ -167,7 +167,7 @@ namespace RE
 
 	float pinLight(float a_src, float a_dest)
 	{
-		return (2.0 * a_src - 1.0 > a_dest) ? 2.0 * a_src - 1.0 : (a_src < 0.5 * a_dest) ? 2.0 * a_src : a_dest;
+		return (2.0f * a_src - 1.0f > a_dest) ? 2.0f * a_src - 1.0f : (a_src < 0.5f * a_dest) ? 2.0f * a_src : a_dest;
 	}
 
 

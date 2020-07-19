@@ -27,11 +27,11 @@ namespace RE
 		// members;
 		NiPointer<NiAVObject> debris3D;		   // 030
 		const char*			  debrisFileName;  // 038
-		UInt8				  unk40;		   // 040
-		UInt8				  unk41;		   // 041
-		UInt8				  pad42;		   // 042
-		UInt8				  pad43;		   // 043
-		UInt32				  pad44;		   // 044
+		std::uint8_t		  unk40;		   // 040
+		std::uint8_t		  unk41;		   // 041
+		std::uint8_t		  pad42;		   // 042
+		std::uint8_t		  pad43;		   // 043
+		std::uint32_t		  pad44;		   // 044
 	};
-	STATIC_ASSERT(sizeof(BSTempEffectDebris) == 0x48);
+	static_assert(sizeof(BSTempEffectDebris) == 0x48);
 }

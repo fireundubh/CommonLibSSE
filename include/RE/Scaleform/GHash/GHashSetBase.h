@@ -27,7 +27,8 @@ namespace RE
 			const_iterator() :
 				hash(nullptr),
 				index(0)
-			{}
+			{
+			}
 
 
 			const C& operator*() const
@@ -83,7 +84,8 @@ namespace RE
 			const_iterator(const SelfType* a_hash, SPInt a_index) :
 				hash(a_hash),
 				index(a_index)
-			{}
+			{
+			}
 
 
 			const SelfType* hash;	// 00
@@ -100,7 +102,8 @@ namespace RE
 		public:
 			iterator() :
 				const_iterator(nullptr, 0)
-			{}
+			{
+			}
 
 
 			C& operator*() const
@@ -174,7 +177,8 @@ namespace RE
 
 			iterator(SelfType* a_hash, SPInt a_idx) :
 				const_iterator(a_hash, a_idx)
-			{}
+			{
+			}
 		};
 
 
@@ -183,7 +187,8 @@ namespace RE
 
 		GHashSetBase() :
 			table(nullptr)
-		{}
+		{
+		}
 
 
 		GHashSetBase(std::int32_t a_sizeHint) :
@@ -195,7 +200,8 @@ namespace RE
 
 		explicit GHashSetBase(void* a_memAddr) :
 			table(0)
-		{}
+		{
+		}
 
 
 		GHashSetBase(void* a_memAddr, std::int32_t a_sizeHint) :

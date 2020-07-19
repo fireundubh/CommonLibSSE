@@ -55,7 +55,7 @@ namespace RE
 		virtual void			 Unk_3E(void) override;								   // 3E - { return 2; }
 
 		void CopyMembers(BSLightingShaderProperty* a_other);
-		void InvalidateTextures(UInt32 a_unk1);
+		void InvalidateTextures(std::uint32_t a_unk1);
 
 
 		// members
@@ -63,24 +63,24 @@ namespace RE
 		Data			unk0B8;				// 0B8
 		Data			unk0C8;				// 0C8
 		Data			unk0D8;				// 0D8
-		std::uint64_t	unk0E8;			// 0E8
+		std::uint64_t	unk0E8;				// 0E8
 		NiColor*		emissiveColor;		// 0F0
 		float			emissiveMult;		// 0F8
-		std::uint32_t	unk0FC;			// 0FC
+		std::uint32_t	unk0FC;				// 0FC
 		float			specularLODFade;	// 100
 		float			envmapLODFade;		// 104
-		UInt32			unk108;				// 108
+		std::uint32_t	unk108;				// 108
 		NiColorA		projectedUVParams;	// 10C
 		NiColorA		projectedUVColor;	// 11C
-		SInt32			unk12C;				// 12C
-		UInt32			unk130;				// 130
-		UInt32			unk134;				// 134
+		std::int32_t	unk12C;				// 12C
+		std::uint32_t	unk130;				// 130
+		std::uint32_t	unk134;				// 134
 		BSTArray<void*> unk138;				// 138
-		std::uint64_t	unk150;			// 150
-		std::uint64_t	unk158;			// 158
-		UInt8			pad159;				// 159
-		UInt16			pad15A;				// 15A
-		UInt32			pad15C;				// 15C
+		std::uint64_t	unk150;				// 150
+		std::uint8_t	unk158;				// 158
+		std::uint8_t	pad159;				// 159
+		std::uint16_t	pad15A;				// 15A
+		std::uint32_t	pad15C;				// 15C
 	};
 	static_assert(sizeof(BSLightingShaderProperty) == 0x160);
 }

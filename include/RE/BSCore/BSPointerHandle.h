@@ -14,15 +14,18 @@ namespace RE
 
 		BSPointerHandle() :
 			Handle()
-		{}
+		{
+		}
 
 		BSPointerHandle(const BSPointerHandle& a_rhs) :
 			Handle(a_rhs)
-		{}
+		{
+		}
 
 		BSPointerHandle(BSPointerHandle&& a_rhs) :
 			Handle(std::move(a_rhs))
-		{}
+		{
+		}
 
 		template <
 			class Y,
@@ -48,7 +51,8 @@ namespace RE
 				int> = 0>
 		BSPointerHandle(const BSPointerHandle<Y, Handle>& a_rhs) :
 			Handle(a_rhs)
-		{}
+		{
+		}
 
 		template <
 			class Y,
@@ -59,7 +63,8 @@ namespace RE
 				int> = 0>
 		BSPointerHandle(BSPointerHandle<Y, Handle>&& a_rhs) :
 			Handle(std::move(a_rhs))
-		{}
+		{
+		}
 
 		BSPointerHandle& operator=(const BSPointerHandle& a_rhs)
 		{

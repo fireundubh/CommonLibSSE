@@ -37,17 +37,17 @@ namespace RE
 		const char*									modelName;	 // 40
 		NiPointer<NiNode>							unk48;		 // 48	- BSMultiBoundNiNode[4]
 		NiTransform									transform;	 // 50
-		UInt32										unk84;		 // 84
+		std::uint32_t								unk84;		 // 84
 		NiPointer<NiAVObject>						unk88;		 // 88
 		NiTransform									unk90;		 // 90
-		UInt32										padC4;		 // C4
-		UInt64										unkC8;		 // C8
+		std::uint32_t								padC4;		 // C4
+		std::uint64_t								unkC8;		 // C8
 		BSSoundHandle								unkD0;		 // D0
 		BSSoundHandle								unkDC;		 // DC
-		UInt8										unkE8;		 // E8
-		UInt8										padE9;		 // E9
-		UInt16										unkEA;		 // EA
-		UInt32										unkEC;		 // EC
+		std::uint8_t								unkE8;		 // E8
+		std::uint8_t								padE9;		 // E9
+		std::uint16_t								unkEA;		 // EA
+		std::uint32_t								unkEC;		 // EC
 	};
-	STATIC_ASSERT(sizeof(BSTempEffectParticle) == 0xF0);
+	static_assert(sizeof(BSTempEffectParticle) == 0xF0);
 };

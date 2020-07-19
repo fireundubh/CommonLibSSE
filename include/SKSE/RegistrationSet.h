@@ -73,7 +73,8 @@ namespace SKSE
 
 			inline RegistrationSet(const std::string_view& a_eventName) :
 				super(a_eventName)
-			{}
+			{
+			}
 
 			~RegistrationSet() = default;
 
@@ -125,7 +126,8 @@ namespace SKSE
 
 			inline RegistrationSet(const std::string_view& a_eventName) :
 				super(a_eventName)
-			{}
+			{
+			}
 
 			~RegistrationSet() = default;
 

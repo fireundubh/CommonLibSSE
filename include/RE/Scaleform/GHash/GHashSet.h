@@ -23,31 +23,37 @@ namespace RE
 
 
 		GHashSet()
-		{}
+		{
+		}
 
 
 		GHashSet(std::int32_t a_sizeHint) :
 			BaseType(a_sizeHint)
-		{}
+		{
+		}
 
 
 		explicit GHashSet(void* a_heap) :
 			BaseType(a_heap)
-		{}
+		{
+		}
 
 
 		GHashSet(void* a_heap, std::int32_t a_sizeHint) :
 			BaseType(a_heap, a_sizeHint)
-		{}
+		{
+		}
 
 
 		GHashSet(const SelfType& a_src) :
 			BaseType(a_src)
-		{}
+		{
+		}
 
 
 		~GHashSet()
-		{}
+		{
+		}
 
 
 		void operator=(const SelfType& a_src)

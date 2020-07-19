@@ -60,13 +60,15 @@ namespace RE
 	public:
 		constexpr CellID() noexcept :
 			CellID(0, 0)
-		{}
+		{
+		}
 
 
 		constexpr CellID(std::int16_t a_y, std::int16_t a_x) noexcept :
 			y(a_y),
 			x(a_x)
-		{}
+		{
+		}
 
 
 		[[nodiscard]] friend constexpr bool operator==(const CellID& a_lhs, const CellID& a_rhs) noexcept

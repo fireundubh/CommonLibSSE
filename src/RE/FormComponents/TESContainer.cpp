@@ -15,7 +15,7 @@ namespace RE
 	}
 
 
-	ContainerObject::ContainerObject(TESBoundObject* a_obj, SInt32 a_count) :
+	ContainerObject::ContainerObject(TESBoundObject* a_obj, std::int32_t a_count) :
 		count(a_count),
 		pad04(0),
 		obj(a_obj),
@@ -24,7 +24,7 @@ namespace RE
 	}
 
 
-	bool TESContainer::AddObjectToContainer(TESBoundObject* a_object, SInt32 a_count, TESForm* a_owner)
+	bool TESContainer::AddObjectToContainer(TESBoundObject* a_object, std::int32_t a_count, TESForm* a_owner)
 	{
 		bool added = false;
 		ForEachContainerObject([&](ContainerObject& a_contObj) {
@@ -44,7 +44,7 @@ namespace RE
 				auto oldData = containerObjects;
 				containerObjects = calloc<ContainerObject*>(++numContainerObjects);
 				if (oldData) {
-					for (UInt32 i = 0; i < numContainerObjects - 1; i++) {
+					for (std::uint32_t i = 0; i < numContainerObjects - 1; i++) {
 						containerObjects[i] = oldData[i];
 					}
 					free(oldData);
@@ -56,9 +56,9 @@ namespace RE
 		}
 		return added;
 	}
-	
 
-auto TESContainer::GetContainerObjectAt(std::uint32_t a_idx) const
+
+	auto TESContainer::GetContainerObjectAt(std::uint32_t a_idx) const
 		-> std::optional<ContainerObject*>
 	{
 		if (a_idx < numContainerObjects) {

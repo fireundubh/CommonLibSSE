@@ -33,12 +33,12 @@ namespace RE
 
 		// members
 		ObjectRefHandle	  ref;			 // 08
-		UInt32			  pad0C;		 // 0C
+		std::uint32_t	  pad0C;		 // 0C
 		TESEffectShader*  effectShader;	 // 10
 		BGSArtObject*	  artObject;	 // 18
 		ObjectRefHandle	  facingRef;	 // 20
-		UInt32			  pad24;		 // 24
+		std::uint32_t	  pad24;		 // 24
 		NiPointer<NiNode> unk28;		 // 28 - weather node?
 	};
-	STATIC_ASSERT(sizeof(OwnedController) == 0x30);
+	static_assert(sizeof(OwnedController) == 0x30);
 }

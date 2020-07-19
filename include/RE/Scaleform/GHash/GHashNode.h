@@ -20,13 +20,15 @@ namespace RE
 			NodeRef(const C& a_first, const U& a_second) :
 				first(&a_first),
 				second(&a_second)
-			{}
+			{
+			}
 
 
 			NodeRef(const NodeRef& a_src) :
 				first(a_src.first),
 				second(a_src.second)
-			{}
+			{
+			}
 
 
 			inline UPInt GetHash() const
@@ -68,13 +70,15 @@ namespace RE
 		GHashNode(const GHashNode& a_src) :
 			first(a_src.first),
 			second(a_src.second)
-		{}
+		{
+		}
 
 
 		GHashNode(const NodeRef& a_src) :
 			first(*a_src.first),
 			second(*a_src.second)
-		{}
+		{
+		}
 
 
 		void operator=(const NodeRef& a_src)

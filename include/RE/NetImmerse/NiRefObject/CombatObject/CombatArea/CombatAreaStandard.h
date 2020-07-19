@@ -17,5 +17,5 @@ namespace RE
 		virtual void Unk_02() override;	 // 02
 		virtual void Unk_0B() override;	 // 0B
 	};
-	STATIC_ASSERT(sizeof(CombatAreaStandard) == 0x50);
+	static_assert(sizeof(CombatAreaStandard) == 0x50);
 }

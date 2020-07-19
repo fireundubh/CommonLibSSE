@@ -7,4 +7,3 @@ namespace RE
 		halfExtents = a_halfExtents;
 	}
 }
-

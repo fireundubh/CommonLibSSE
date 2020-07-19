@@ -25,7 +25,8 @@ namespace RE
 			green(0),
 			blue(0),
 			alpha(0)
-		{}
+		{
+		}
 
 
 		constexpr Color(const Color& a_rhs) noexcept :
@@ -33,7 +34,8 @@ namespace RE
 			green(a_rhs.green),
 			blue(a_rhs.blue),
 			alpha(a_rhs.alpha)
-		{}
+		{
+		}
 
 
 		constexpr Color(Color&& a_rhs) noexcept :
@@ -41,7 +43,8 @@ namespace RE
 			green(std::move(a_rhs.green)),
 			blue(std::move(a_rhs.blue)),
 			alpha(std::move(a_rhs.alpha))
-		{}
+		{
+		}
 
 
 		constexpr Color(std::uint8_t a_red, std::uint8_t a_green, std::uint8_t a_blue, std::uint8_t a_alpha) noexcept :
@@ -49,15 +52,17 @@ namespace RE
 			green(a_green),
 			blue(a_blue),
 			alpha(a_alpha)
-		{}
+		{
+		}
 
 
-		constexpr Color(UInt32 a_hexValue) noexcept :
+		constexpr Color(std::uint32_t a_hexValue) noexcept :
 			red((a_hexValue >> 16) & 0xFF),
 			green((a_hexValue >> 8) & 0xFF),
 			blue((a_hexValue)&0xFF),
 			alpha(0)
-		{}
+		{
+		}
 
 
 		Color(const NiColor& a_rhs);
@@ -118,8 +123,8 @@ namespace RE
 			return std::addressof(red)[a_idx];
 		}
 
-		static std::string ColorToString(const Color& a_rhs);
-		static UInt32	   ColorToInt(const Color& a_rhs);
+		static std::string	 ColorToString(const Color& a_rhs);
+		static std::uint32_t ColorToInt(const Color& a_rhs);
 
 
 		// members

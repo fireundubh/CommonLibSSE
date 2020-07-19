@@ -198,7 +198,7 @@ namespace RE
 		};
 
 
-		enum class FlagBDD : UInt8
+		enum class FlagBDD
 		{
 			kNone = 0,
 			kIsSunGazing = 1 << 1
@@ -473,7 +473,7 @@ namespace RE
 		std::uint8_t											unkBDA;										  // BDA
 		stl::enumeration<FlagBDB, std::uint8_t>					unkBDB;										  // BDB
 		stl::enumeration<FlagBDC, std::uint8_t>					unkBDC;										  // BDC
-		FlagBDD													unkBDD;										  // BDD
+		stl::enumeration<FlagBDD, std::uint8_t>					unkBDD;										  // BDD
 		std::uint16_t											padBDE;										  // BDE
 	};
 	static_assert(sizeof(PlayerCharacter) == 0xBE0);

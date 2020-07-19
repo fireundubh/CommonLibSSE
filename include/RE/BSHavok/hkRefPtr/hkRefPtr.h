@@ -12,12 +12,14 @@ namespace RE
 		// 1
 		inline constexpr hkRefPtr() noexcept :
 			_ptr(nullptr)
-		{}
+		{
+		}
 
 		// 2
 		inline constexpr hkRefPtr(std::nullptr_t) noexcept :
 			_ptr(nullptr)
-		{}
+		{
+		}
 
 		// 3
 		template <

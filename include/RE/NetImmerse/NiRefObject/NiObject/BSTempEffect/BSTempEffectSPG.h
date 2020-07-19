@@ -32,11 +32,11 @@ namespace RE
 		BGSShaderParticleGeometryData* data;   // 30
 		NiPointer<NiAVObject>		   unk38;  // 38
 		float						   unk40;  // 40
-		UInt32						   unk44;  // 40
-		UInt8						   unk48;  // 45
-		UInt8						   pad49;  // 49
-		UInt16						   pad4A;  // 4A
-		UInt32						   pad4C;  // 4C
+		std::uint32_t				   unk44;  // 40
+		std::uint8_t				   unk48;  // 45
+		std::uint8_t				   pad49;  // 49
+		std::uint16_t				   pad4A;  // 4A
+		std::uint32_t				   pad4C;  // 4C
 	};
-	STATIC_ASSERT(sizeof(BSTempEffectSPG) == 0x50);
+	static_assert(sizeof(BSTempEffectSPG) == 0x50);
 }

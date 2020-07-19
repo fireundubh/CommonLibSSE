@@ -21,7 +21,7 @@ namespace RE
 		};
 
 
-		enum class BLEND_MODE : UInt32
+		enum class BLEND_MODE : std::uint32_t
 		{
 			kDarken = 0,
 			kMultiply,
@@ -54,35 +54,40 @@ namespace RE
 			red(0.0),
 			green(0.0),
 			blue(0.0)
-		{}
+		{
+		}
 
 
 		constexpr NiColor(const NiColor& a_rhs) noexcept :
 			red(a_rhs.red),
 			green(a_rhs.green),
 			blue(a_rhs.blue)
-		{}
+		{
+		}
 
 
 		constexpr NiColor(NiColor&& a_rhs) noexcept :
 			red(std::move(a_rhs.red)),
 			green(std::move(a_rhs.green)),
 			blue(std::move(a_rhs.blue))
-		{}
+		{
+		}
 
 
 		constexpr NiColor(float a_red, float a_green, float a_blue) noexcept :
 			red(a_red),
 			green(a_green),
 			blue(a_blue)
-		{}
+		{
+		}
 
 
-		constexpr NiColor(UInt32 a_hexValue) noexcept :
+		constexpr NiColor(std::uint32_t a_hexValue) noexcept :
 			red(((a_hexValue >> 16) & 0xFF) / 255.0f),
 			green(((a_hexValue >> 8) & 0xFF) / 255.0f),
 			blue(((a_hexValue)&0xFF) / 255.0f)
-		{}
+		{
+		}
 
 
 		NiColor(const Color& a_rhs);
@@ -323,11 +328,11 @@ namespace RE
 			return *this;
 		}
 
-		static NiColor	   Blend(const NiColor& a_src, const NiColor& a_dest, BLEND_MODE a_mode, float a_alpha);
-		static std::string ColorToString(const NiColor& a_rhs);
-		static UInt32	   ColorToInt(const NiColor& a_rhs);
-		static float	   CalcLuminance(const NiColor& a_src);
-		static NiColor	   Mix(const NiColor& a_src, const NiColor& a_dest, float a_percentage);
+		static NiColor		 Blend(const NiColor& a_src, const NiColor& a_dest, BLEND_MODE a_mode, float a_alpha);
+		static std::string	 ColorToString(const NiColor& a_rhs);
+		static std::uint32_t ColorToInt(const NiColor& a_rhs);
+		static float		 CalcLuminance(const NiColor& a_src);
+		static NiColor		 Mix(const NiColor& a_src, const NiColor& a_dest, float a_percentage);
 
 
 		// members
@@ -357,7 +362,8 @@ namespace RE
 			green(0.0),
 			blue(0.0),
 			alpha(0.0)
-		{}
+		{
+		}
 
 
 		constexpr NiColorA(const NiColorA& a_rhs) noexcept :
@@ -365,7 +371,8 @@ namespace RE
 			green(a_rhs.green),
 			blue(a_rhs.blue),
 			alpha(a_rhs.alpha)
-		{}
+		{
+		}
 
 
 		constexpr NiColorA(NiColorA&& a_rhs) noexcept :
@@ -373,7 +380,8 @@ namespace RE
 			green(std::move(a_rhs.green)),
 			blue(std::move(a_rhs.blue)),
 			alpha(std::move(a_rhs.alpha))
-		{}
+		{
+		}
 
 
 		constexpr NiColorA(float a_red, float a_green, float a_blue, float a_alpha) noexcept :
@@ -381,7 +389,8 @@ namespace RE
 			green(a_green),
 			blue(a_blue),
 			alpha(a_alpha)
-		{}
+		{
+		}
 
 
 		~NiColorA() noexcept = default;

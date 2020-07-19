@@ -18,21 +18,24 @@ namespace RE
 			nextInChain(a_entry.nextInChain),
 			hashValue(a_entry.hashValue),
 			value(a_entry.value)
-		{}
+		{
+		}
 
 
 		GHashsetCachedNodeEntry(const T& a_key, SPInt a_next) :
 			nextInChain(a_next),
 			hashValue(0),
 			value(a_key)
-		{}
+		{
+		}
 
 
 		GHashsetCachedNodeEntry(const typename T::NodeRef& a_keyRef, SPInt a_next) :
 			nextInChain(a_next),
 			hashValue(0),
 			value(a_keyRef)
-		{}
+		{
+		}
 
 
 		bool IsEmpty() const

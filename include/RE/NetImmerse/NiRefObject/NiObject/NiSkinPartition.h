@@ -19,7 +19,7 @@ namespace RE
 
 		struct Vertex
 		{
-			enum class Flags : UInt16
+			enum class Flags : std::uint16_t
 			{
 				kVertex = 1 << 0,
 				kUV = 1 << 1,
@@ -34,7 +34,7 @@ namespace RE
 			};
 
 
-			enum class Masks : UInt64
+			enum class Masks : std::uint64_t
 			{
 				kVERT = 0xFFFFFFFFFFFFFFF0LL,
 				kUVS = 0xFFFFFFFFFFFFFF0FLL,
@@ -95,16 +95,16 @@ namespace RE
 		// add
 		virtual void Unk_25(void);	// 25
 
-		static Vertex::Flags GetVertexFlags(UInt64 vertexDesc);
-		static UInt32		 GetVertexSize(UInt64 vertexDesc);
+		static Vertex::Flags GetVertexFlags(std::uint64_t vertexDesc);
+		static std::uint32_t GetVertexSize(std::uint64_t vertexDesc);
 
 
 		// members
 		std::uint32_t		   numPartitions;  // 10
 		std::uint32_t		   pad14;		   // 14
 		SimpleArray<Partition> partitions;	   // 18
-		UInt32				   vertexCount;	   // 20
-		UInt32				   unk24;		   // 24
+		std::uint32_t		   vertexCount;	   // 20
+		std::uint32_t		   unk24;		   // 24
 	};
 	static_assert(sizeof(NiSkinPartition) == 0x28);
 }

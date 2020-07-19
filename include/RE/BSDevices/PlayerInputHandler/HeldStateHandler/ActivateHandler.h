@@ -17,7 +17,10 @@ namespace RE
 		virtual bool CanProcess(InputEvent* a_event) override;									// 01
 		virtual void ProcessButton(ButtonEvent* a_event, PlayerControlsData* a_data) override;	// 04
 
-		constexpr inline void SetHeldButtonActionSuccess(bool a_success) noexcept { heldButtonActionSuccess = a_success; }
+		constexpr inline void SetHeldButtonActionSuccess(bool a_success) noexcept
+		{
+			heldButtonActionSuccess = a_success;
+		}
 
 
 		// members

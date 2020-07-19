@@ -84,8 +84,8 @@ namespace RE
 		std::uint32_t						  unk174;						   // 174
 		std::uint64_t						  unk178;						   // 178
 		std::uint64_t						  unk180;						   // 180
-		UInt32							unk188;							 // 188
-		float							unk18C;							 // 18C
+		std::uint64_t						  unk188;						   // 188
+		std::uint64_t						  unk190;						   // 190
 		std::uint64_t						  unk198;						   // 198
 		std::uint32_t						  unk1A0;						   // 1A0
 		std::uint32_t						  unk1A4;						   // 1A4

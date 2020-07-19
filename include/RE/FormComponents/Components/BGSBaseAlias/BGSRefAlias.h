@@ -140,7 +140,9 @@ namespace RE
 			static_assert(sizeof(Padding) == 0x18);
 
 
-			~GenericFillData() {}
+			~GenericFillData()
+			{
+			}
 
 
 			// members

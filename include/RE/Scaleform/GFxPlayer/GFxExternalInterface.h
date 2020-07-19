@@ -17,7 +17,8 @@ namespace RE
 
 		GFxExternalInterface() :
 			GFxState(StateType::kExternalInterface)
-		{}
+		{
+		}
 
 		virtual ~GFxExternalInterface() = default;	// 00
 

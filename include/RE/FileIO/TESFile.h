@@ -51,17 +51,26 @@ namespace RE
 
 		TESFile*				Duplicate(std::uint32_t a_cacheSize = 0x4000);
 		std::uint32_t			GetCurrentSubRecordType();
-		constexpr std::uint32_t GetCurrentSubRecordSize() const noexcept { return actualChunkSize; }
-		FormID			 GetFormID(UInt32 formLower) const;
-		FormType				GetFormType();
-		UInt32			 GetPartialIndex() const;
-		constexpr bool			IsLocalized() const noexcept { return (recordFlags & RecordFlag::kDelocalized) != RecordFlag::kNone; }
-		bool			 IsFormInMod(FormID formID) const;
-		void					ReadData(void* a_buf, std::uint32_t a_size);
-		bool					Seek(std::uint32_t a_offset);
-		bool					SeekNextSubrecord();
+		constexpr std::uint32_t GetCurrentSubRecordSize() const noexcept
+		{
+			return actualChunkSize;
+		}
+		FormID		   GetFormID(std::uint32_t formLower) const;
+		FormType	   GetFormType();
+		std::uint32_t  GetPartialIndex() const;
+		constexpr bool IsLocalized() const noexcept
+		{
+			return (recordFlags & RecordFlag::kDelocalized) != RecordFlag::kNone;
+		}
+		bool IsFormInMod(FormID formID) const;
+		void ReadData(void* a_buf, std::uint32_t a_size);
+		bool Seek(std::uint32_t a_offset);
+		bool SeekNextSubrecord();
 
-		bool IsLight() const { return (recordFlags & RecordFlag::kSmallFile) == RecordFlag::kSmallFile; }
+		bool IsLight() const
+		{
+			return (recordFlags & RecordFlag::kSmallFile) == RecordFlag::kSmallFile;
+		}
 
 
 		// members

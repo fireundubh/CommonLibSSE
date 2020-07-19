@@ -35,8 +35,14 @@ namespace RE
 		// override (BGSKeywordForm)
 		virtual BGSKeyword* GetDefaultKeyword() const override;	 // 05
 
-		[[nodiscard]] constexpr SOUL_LEVEL GetContainedSoul() const noexcept { return *currentSoul; }
-		[[nodiscard]] constexpr SOUL_LEVEL GetMaximumCapacity() const noexcept { return *soulCapacity; }
+		[[nodiscard]] constexpr SOUL_LEVEL GetContainedSoul() const noexcept
+		{
+			return *currentSoul;
+		}
+		[[nodiscard]] constexpr SOUL_LEVEL GetMaximumCapacity() const noexcept
+		{
+			return *soulCapacity;
+		}
 
 
 		// members

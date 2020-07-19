@@ -73,7 +73,8 @@ namespace RE
 		FxResponseArgsEx() :
 			super(),
 			_args()
-		{}
+		{
+		}
 
 		FxResponseArgsEx(const FxResponseArgsEx&) = default;
 		FxResponseArgsEx(FxResponseArgsEx&&) = default;
@@ -101,42 +102,117 @@ namespace RE
 		FxResponseArgsEx& operator=(const FxResponseArgsEx&) = default;
 		FxResponseArgsEx& operator=(FxResponseArgsEx&&) = default;
 
-		[[nodiscard]] constexpr reference		at(size_type a_pos) { return _args.at(a_pos); }
-		[[nodiscard]] constexpr const_reference at(size_type a_pos) const { return _args.at(a_pos); }
+		[[nodiscard]] constexpr reference at(size_type a_pos)
+		{
+			return _args.at(a_pos);
+		}
+		[[nodiscard]] constexpr const_reference at(size_type a_pos) const
+		{
+			return _args.at(a_pos);
+		}
 
-		[[nodiscard]] constexpr reference		operator[](size_type a_pos) { return _args[a_pos + O]; }
-		[[nodiscard]] constexpr const_reference operator[](size_type a_pos) const { return _args[a_pos + O]; }
+		[[nodiscard]] constexpr reference operator[](size_type a_pos)
+		{
+			return _args[a_pos + O];
+		}
+		[[nodiscard]] constexpr const_reference operator[](size_type a_pos) const
+		{
+			return _args[a_pos + O];
+		}
 
-		[[nodiscard]] constexpr reference		front() { return _args.front(); }
-		[[nodiscard]] constexpr const_reference front() const { return _args.front(); }
+		[[nodiscard]] constexpr reference front()
+		{
+			return _args.front();
+		}
+		[[nodiscard]] constexpr const_reference front() const
+		{
+			return _args.front();
+		}
 
-		[[nodiscard]] constexpr reference		back() { return _args.back(); }
-		[[nodiscard]] constexpr const_reference back() const { return _args.back(); }
+		[[nodiscard]] constexpr reference back()
+		{
+			return _args.back();
+		}
+		[[nodiscard]] constexpr const_reference back() const
+		{
+			return _args.back();
+		}
 
-		[[nodiscard]] constexpr pointer		  data() noexcept { return _args.data(); }
-		[[nodiscard]] constexpr const_pointer data() const noexcept { return _args.data(); }
+		[[nodiscard]] constexpr pointer data() noexcept
+		{
+			return _args.data();
+		}
+		[[nodiscard]] constexpr const_pointer data() const noexcept
+		{
+			return _args.data();
+		}
 
-		[[nodiscard]] constexpr iterator	   begin() noexcept { return ++_args.begin(); }
-		[[nodiscard]] constexpr const_iterator begin() const noexcept { return ++_args.begin(); }
-		[[nodiscard]] constexpr const_iterator cbegin() const noexcept { return ++_args.cbegin(); }
+		[[nodiscard]] constexpr iterator begin() noexcept
+		{
+			return ++_args.begin();
+		}
+		[[nodiscard]] constexpr const_iterator begin() const noexcept
+		{
+			return ++_args.begin();
+		}
+		[[nodiscard]] constexpr const_iterator cbegin() const noexcept
+		{
+			return ++_args.cbegin();
+		}
 
-		[[nodiscard]] constexpr iterator	   end() noexcept { return _args.end(); }
-		[[nodiscard]] constexpr const_iterator end() const noexcept { return _args.end(); }
-		[[nodiscard]] constexpr const_iterator cend() const noexcept { return _args.cend(); }
+		[[nodiscard]] constexpr iterator end() noexcept
+		{
+			return _args.end();
+		}
+		[[nodiscard]] constexpr const_iterator end() const noexcept
+		{
+			return _args.end();
+		}
+		[[nodiscard]] constexpr const_iterator cend() const noexcept
+		{
+			return _args.cend();
+		}
 
-		[[nodiscard]] constexpr reverse_iterator	   rbegin() noexcept { return _args.rbegin(); }
-		[[nodiscard]] constexpr const_reverse_iterator rbegin() const noexcept { return _args.rbegin(); }
-		[[nodiscard]] constexpr const_reverse_iterator crbegin() const noexcept { return _args.crbegin(); }
+		[[nodiscard]] constexpr reverse_iterator rbegin() noexcept
+		{
+			return _args.rbegin();
+		}
+		[[nodiscard]] constexpr const_reverse_iterator rbegin() const noexcept
+		{
+			return _args.rbegin();
+		}
+		[[nodiscard]] constexpr const_reverse_iterator crbegin() const noexcept
+		{
+			return _args.crbegin();
+		}
 
-		[[nodiscard]] constexpr reverse_iterator	   rend() noexcept { return --_args.rend(); }
-		[[nodiscard]] constexpr const_reverse_iterator rend() const noexcept { return --_args.rend(); }
-		[[nodiscard]] constexpr const_reverse_iterator crend() const noexcept { return --_args.crend(); }
+		[[nodiscard]] constexpr reverse_iterator rend() noexcept
+		{
+			return --_args.rend();
+		}
+		[[nodiscard]] constexpr const_reverse_iterator rend() const noexcept
+		{
+			return --_args.rend();
+		}
+		[[nodiscard]] constexpr const_reverse_iterator crend() const noexcept
+		{
+			return --_args.crend();
+		}
 
-		[[nodiscard]] constexpr bool empty() const noexcept { return begin() == end(); }
+		[[nodiscard]] constexpr bool empty() const noexcept
+		{
+			return begin() == end();
+		}
 
-		[[nodiscard]] constexpr size_type size() const noexcept { return _args.size() - O; }
+		[[nodiscard]] constexpr size_type size() const noexcept
+		{
+			return _args.size() - O;
+		}
 
-		[[nodiscard]] constexpr size_type max_size() const noexcept { return size(); }
+		[[nodiscard]] constexpr size_type max_size() const noexcept
+		{
+			return size();
+		}
 
 	protected:
 		virtual std::uint32_t GetValues(GFxValue** a_params) override  // 01

@@ -12,12 +12,12 @@ namespace RE
 	struct PerkRankData	 // PRKR
 	{
 		PerkRankData();
-		PerkRankData(BGSPerk* a_perk, SInt8 a_rank);
+		PerkRankData(BGSPerk* a_perk, std::int8_t a_rank);
 
 		~PerkRankData() = default;
 
 		TES_HEAP_REDEFINE_NEW();
-		
+
 		BGSPerk*	  perk;			// 00
 		std::int8_t	  currentRank;	// 08
 		std::uint8_t  pad09;		// 09

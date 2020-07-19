@@ -20,21 +20,21 @@ namespace RE
 		struct UnkStruct
 		{
 			BSTArray<void*> unk00;
-			UInt32			unk18;
+			std::uint32_t	unk18;
 			float			unk1C;
 			float			unk20;
 			float			unk24;
-			UInt32			unk28;
+			std::uint32_t	unk28;
 		};
-		STATIC_ASSERT(sizeof(UnkStruct) == 0x30);
+		static_assert(sizeof(UnkStruct) == 0x30);
 
 
 		struct Data178
 		{
-			UInt64		unk00;
-			AITimeStamp unk08;
+			std::uint64_t unk00;
+			AITimeStamp	  unk08;
 		};
-		STATIC_ASSERT(sizeof(Data178) == 0x10);
+		static_assert(sizeof(Data178) == 0x10);
 
 
 		// members
@@ -43,30 +43,30 @@ namespace RE
 		BSTArray<TESForm*>		 unk0B0;
 		BSTArray<TESForm*>		 unk0C8;
 		BSTArray<BGSEquipSlot*>* unk0E0;
-		UInt64					 unk0E8;
-		UInt32					 unk0F0;
-		UInt32					 unk0F4;
-		UInt32					 unk0F8;
-		UInt32					 unk0FC;
-		UInt64					 unk100;
-		UInt64					 unk108;
-		UInt64					 unk110;
+		std::uint64_t			 unk0E8;
+		std::uint32_t			 unk0F0;
+		std::uint32_t			 unk0F4;
+		std::uint32_t			 unk0F8;
+		std::uint32_t			 unk0FC;
+		std::uint64_t			 unk100;
+		std::uint64_t			 unk108;
+		std::uint64_t			 unk110;
 		UnkStruct				 unk118;
 		UnkStruct				 unk148;
 		BSTArray<Data178>		 unk178;
-		SInt32					 unk190;
+		std::int32_t			 unk190;
 		AITimer					 unk194;
-		UInt32					 unk19C;
-		UInt32					 unk1A0;
-		UInt32					 unk1A4;
+		std::uint32_t			 unk19C;
+		std::uint32_t			 unk1A0;
+		std::uint32_t			 unk1A4;
 		float					 unk1A8;
 		float					 unk1AC;
 		float					 unk1B0;
-		UInt32					 unk1B4;
+		std::uint32_t			 unk1B4;
 		float					 unk1B8;
 		float					 unk1BC;
 		float					 unk1C0;
-		UInt8					 unk1C4;
+		std::uint8_t			 unk1C4;
 	};
-	STATIC_ASSERT(sizeof(CombatControllerData10) == 0x1C8);
+	static_assert(sizeof(CombatControllerData10) == 0x1C8);
 }

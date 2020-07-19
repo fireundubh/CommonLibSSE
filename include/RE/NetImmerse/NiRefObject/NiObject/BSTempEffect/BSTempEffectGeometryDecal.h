@@ -44,9 +44,9 @@ namespace RE
 		NiPoint3						  origin;				// 8C
 		NiPoint3						  direction;			// 98
 		float							  width;				// A4
-		UInt32							  unkA8;				// A8
-		UInt32							  flags;				// AC
+		std::uint32_t					  unkA8;				// A8
+		std::uint32_t					  flags;				// AC
 		bool							  unkB0;				// B0
 	};
-	STATIC_ASSERT(sizeof(BSTempEffectGeometryDecal) == 0xB8);
+	static_assert(sizeof(BSTempEffectGeometryDecal) == 0xB8);
 }

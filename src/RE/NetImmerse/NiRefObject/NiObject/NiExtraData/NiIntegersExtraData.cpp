@@ -5,26 +5,26 @@
 
 namespace RE
 {
-	NiIntegersExtraData* NiIntegersExtraData::Create(const BSFixedString& a_name, const std::vector<SInt32>& a_integers)
+	NiIntegersExtraData* NiIntegersExtraData::Create(const BSFixedString& a_name, const std::vector<std::int32_t>& a_integers)
 	{
 		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiIntegersExtraData::Vtbl);
 
 		auto data = NiExtraData::Create<NiIntegersExtraData>(vtbl.address());
 		if (data) {
 			data->name = a_name;
-			data->size = static_cast<UInt32>(a_integers.size());
+			data->size = static_cast<std::uint32_t>(a_integers.size());
 
-			data->value = NiAlloc<SInt32>(a_integers.size());
-			memcpy(data->value, a_integers.data(), a_integers.size() * sizeof(SInt32));
+			data->value = NiAlloc<std::int32_t>(a_integers.size());
+			memcpy(data->value, a_integers.data(), a_integers.size() * sizeof(std::int32_t));
 		}
 
 		return data;
 	}
 
 
-	SInt32 NiIntegersExtraData::GetIndexOf(SInt32 a_element) const
+	std::int32_t NiIntegersExtraData::GetIndexOf(std::int32_t a_element) const
 	{
-		for (UInt32 i = 0; i < size; i++) {
+		for (std::uint32_t i = 0; i < size; i++) {
 			if (value[i] == a_element) {
 				return i;
 			}
@@ -34,14 +34,14 @@ namespace RE
 	}
 
 
-	bool NiIntegersExtraData::InsertElement(SInt32 a_element)
+	bool NiIntegersExtraData::InsertElement(std::int32_t a_element)
 	{
 		auto index = GetIndexOf(a_element);
 
 		if (index == -1) {
-			auto temp = NiAlloc<SInt32>(++size);
+			auto temp = NiAlloc<std::int32_t>(++size);
 
-			for (SInt32 i = 0; i < size - 1; i++) {
+			for (std::int32_t i = 0; i < size - 1; i++) {
 				temp[i] = value[i];
 			}
 			temp[size - 1] = a_element;
@@ -55,14 +55,14 @@ namespace RE
 	}
 
 
-	bool NiIntegersExtraData::RemoveElement(SInt32 a_element)
+	bool NiIntegersExtraData::RemoveElement(std::int32_t a_element)
 	{
 		auto index = GetIndexOf(a_element);
 
 		if (index != -1) {
-			auto temp = NiAlloc<SInt32>(--size);
+			auto temp = NiAlloc<std::int32_t>(--size);
 
-			for (SInt32 i = 0; i < size + 1; i++) {
+			for (std::int32_t i = 0; i < size + 1; i++) {
 				if (i != index) {
 					temp[i] = value[i];
 				}

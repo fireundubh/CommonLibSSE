@@ -42,8 +42,8 @@ namespace RE
 
 
 		// members
-		UInt16 alphaFlags;		// 30
-		UInt8  alphaThreshold;	// 32
+		std::uint16_t alphaFlags;	   // 30
+		std::uint8_t  alphaThreshold;  // 32
 	};
 	static_assert(sizeof(NiAlphaProperty) == 0x38);
 }

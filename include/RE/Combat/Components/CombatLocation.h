@@ -11,5 +11,5 @@ namespace RE
 		NiPoint3 pos;				// 00
 		TESForm* cellOrWorldSpace;	// 0C
 	};
-	STATIC_ASSERT(sizeof(CombatLocation) == 0x18);
+	static_assert(sizeof(CombatLocation) == 0x18);
 }

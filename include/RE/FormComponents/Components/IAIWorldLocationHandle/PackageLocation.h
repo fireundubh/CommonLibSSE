@@ -34,7 +34,9 @@ namespace RE
 
 		union Data
 		{
-			~Data() {}
+			~Data()
+			{
+			}
 
 
 			TESForm*		object;

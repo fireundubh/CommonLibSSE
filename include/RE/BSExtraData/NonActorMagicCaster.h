@@ -33,7 +33,7 @@ namespace RE
 		// members
 		TESObjectREFR* unk58;  // 58
 		ActorHandle	   unk60;  // 60
-		UInt32		   unk64;  // 64
+		std::uint32_t  unk64;  // 64
 	};
-	STATIC_ASSERT(sizeof(NonActorMagicCaster) == 0x68);
+	static_assert(sizeof(NonActorMagicCaster) == 0x68);
 }

@@ -18,62 +18,74 @@ namespace RE
 		template <class>
 		struct _is_integer :
 			std::false_type
-		{};
+		{
+		};
 
 		template <>
 		struct _is_integer<unsigned char> :
 			std::true_type
-		{};
+		{
+		};
 
 		template <>
 		struct _is_integer<char> :
 			std::true_type
-		{};
+		{
+		};
 
 		template <>
 		struct _is_integer<signed char> :
 			std::true_type
-		{};
+		{
+		};
 
 		template <>
 		struct _is_integer<unsigned short> :
 			std::true_type
-		{};
+		{
+		};
 
 		template <>
 		struct _is_integer<signed short> :
 			std::true_type
-		{};
+		{
+		};
 
 		template <>
 		struct _is_integer<unsigned int> :
 			std::true_type
-		{};
+		{
+		};
 
 		template <>
 		struct _is_integer<signed int> :
 			std::true_type
-		{};
+		{
+		};
 
 		template <>
 		struct _is_integer<unsigned long> :
 			std::true_type
-		{};
+		{
+		};
 
 		template <>
 		struct _is_integer<signed long> :
 			std::true_type
-		{};
+		{
+		};
 
 		template <>
 		struct _is_integer<unsigned long long> :
 			std::true_type
-		{};
+		{
+		};
 
 		template <>
 		struct _is_integer<signed long long> :
 			std::true_type
-		{};
+		{
+		};
 
 		template <class T>
 		struct is_integer :
@@ -296,7 +308,8 @@ namespace RE
 				int> = 0>
 		inline GFxValue(T a_val) :
 			GFxValue(static_cast<double>(a_val))
-		{}
+		{
+		}
 
 		~GFxValue();
 
@@ -411,7 +424,8 @@ namespace RE
 		{
 			constexpr ValueUnion() :
 				obj(nullptr)
-			{}
+			{
+			}
 
 			double			number;
 			bool			boolean;

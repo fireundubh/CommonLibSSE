@@ -38,9 +38,9 @@ namespace RE
 
 
 		// members
-		NiColor* unk88;	 // 88
-		UInt64	 unk90;	 // 90
-		UInt64	 unk98;	 // 98
+		NiColor*	  unk88;  // 88
+		std::uint64_t unk90;  // 90
+		std::uint64_t unk98;  // 98
 	};
-	STATIC_ASSERT(sizeof(BSEffectShaderProperty) == 0xA0);
+	static_assert(sizeof(BSEffectShaderProperty) == 0xA0);
 }

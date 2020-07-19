@@ -8,4 +8,3 @@ namespace RE
 		radius = a_radius;
 	}
 }
-

@@ -140,7 +140,8 @@ namespace RE
 	public:
 		NiTObjectSet(std::uint32_t a_initialSize = 0) :
 			NiTSet<T, NiTNewInterface<T>>(a_initialSize)
-		{}
+		{
+		}
 	};
 	static_assert(sizeof(NiTObjectSet<void*>) == 0x10);
 
@@ -151,7 +152,8 @@ namespace RE
 	public:
 		NiTPrimitiveSet(std::uint32_t a_initialSize = 0) :
 			NiTSet<T, NiTMallocInterface<T>>(a_initialSize)
-		{}
+		{
+		}
 	};
 	static_assert(sizeof(NiTPrimitiveSet<void*>) == 0x10);
 }

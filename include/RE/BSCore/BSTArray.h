@@ -121,7 +121,8 @@ namespace RE
 			_capacity(kLocalAlloc),
 			_pad04(0),
 			_data()
-		{}
+		{
+		}
 
 
 		BSTSmallArrayHeapAllocator(const BSTSmallArrayHeapAllocator&) = delete;
@@ -291,7 +292,8 @@ namespace RE
 		BSTArray() :
 			Allocator(),
 			BSTArrayBase()
-		{}
+		{
+		}
 
 
 		explicit BSTArray(size_type a_count) :
@@ -337,7 +339,8 @@ namespace RE
 		BSTArray(BSTArray&& a_rhs) :
 			Allocator(std::move(a_rhs)),
 			BSTArrayBase(std::move(a_rhs))
-		{}
+		{
+		}
 
 
 		~BSTArray()
@@ -964,8 +967,12 @@ namespace RE
 		union Data
 		{
 			Data() :
-				local{ 0 } {}
-			~Data() {}
+				local{ 0 }
+			{
+			}
+			~Data()
+			{
+			}
 
 
 			value_type* heap;

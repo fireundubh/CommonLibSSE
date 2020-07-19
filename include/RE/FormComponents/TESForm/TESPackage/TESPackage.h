@@ -166,9 +166,12 @@ namespace RE
 		{
 			inline Target() :
 				object(nullptr)
-			{}
+			{
+			}
 
-			~Target() {}
+			~Target()
+			{
+			}
 
 
 			// members

@@ -968,7 +968,8 @@ namespace RE
 			unk18(nullptr),
 			unk20(nullptr),
 			unk28(nullptr)
-		{}
+		{
+		}
 
 
 		// members

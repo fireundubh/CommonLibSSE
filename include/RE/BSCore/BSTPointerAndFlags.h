@@ -14,7 +14,8 @@ namespace RE
 
 		constexpr BSTPointerAndFlags() noexcept :
 			_storage()
-		{}
+		{
+		}
 
 
 		BSTPointerAndFlags(const BSTPointerAndFlags& a_rhs) noexcept :
@@ -34,7 +35,8 @@ namespace RE
 
 		constexpr BSTPointerAndFlags(std::nullptr_t) noexcept :
 			_storage()
-		{}
+		{
+		}
 
 
 		~BSTPointerAndFlags()
@@ -105,8 +107,12 @@ namespace RE
 		union Storage
 		{
 			Storage() :
-				address(0) {}
-			~Storage() {}
+				address(0)
+			{
+			}
+			~Storage()
+			{
+			}
 
 
 			value_type	   ptr;

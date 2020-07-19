@@ -13,7 +13,6 @@ namespace RE
 
 
 		virtual ~bhkSphereRepShape();  // 00
-
 	};
-	STATIC_ASSERT(sizeof(bhkSphereRepShape) == 0x28);
+	static_assert(sizeof(bhkSphereRepShape) == 0x28);
 }

@@ -13,7 +13,7 @@ namespace RE
 	}
 
 
-	PerkRankData::PerkRankData(BGSPerk* a_perk, SInt8 a_rank) :
+	PerkRankData::PerkRankData(BGSPerk* a_perk, std::int8_t a_rank) :
 		perk(a_perk),
 		currentRank(a_rank),
 		pad09(0),

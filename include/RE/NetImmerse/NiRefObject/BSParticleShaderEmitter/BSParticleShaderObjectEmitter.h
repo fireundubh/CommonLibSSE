@@ -25,7 +25,7 @@ namespace RE
 
 		// members
 		NiPointer<NiAVObject> targetRoot;  // ED0
-		UInt64				  unkED8;	   // ED8
+		std::uint64_t		  unkED8;	   // ED8
 	};
-	STATIC_ASSERT(sizeof(BSParticleShaderObjectEmitter) == 0xEE0);
+	static_assert(sizeof(BSParticleShaderObjectEmitter) == 0xEE0);
 };

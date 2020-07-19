@@ -167,8 +167,8 @@ namespace RE
 				}
 			}
 			if (a_keywords->scriptAddedTempForms) {
-				for (const auto& formID : *a_keywords->scriptAddedTempForms) {
-					auto keyword = TESForm::LookupByID<BGSKeyword>(formID);
+				for (const auto& id : *a_keywords->scriptAddedTempForms) {
+					auto keyword = TESForm::LookupByID<BGSKeyword>(id);
 					if (!keyword || !keywordForm->HasKeyword(keyword)) {
 						failed = true;
 						break;
@@ -221,8 +221,8 @@ namespace RE
 				}
 			}
 			if (a_keywords->scriptAddedTempForms) {
-				for (const auto& formID : *a_keywords->scriptAddedTempForms) {
-					auto keyword = TESForm::LookupByID<BGSKeyword>(formID);
+				for (const auto& id : *a_keywords->scriptAddedTempForms) {
+					auto keyword = TESForm::LookupByID<BGSKeyword>(id);
 					if (keyword && keywordForm->HasKeyword(keyword)) {
 						return true;
 					}

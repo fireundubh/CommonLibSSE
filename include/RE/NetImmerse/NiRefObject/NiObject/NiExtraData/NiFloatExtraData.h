@@ -29,5 +29,5 @@ namespace RE
 		// members
 		float data;	 // 18
 	};
-	STATIC_ASSERT(sizeof(NiFloatExtraData) == 0x20);
+	static_assert(sizeof(NiFloatExtraData) == 0x20);
 }

@@ -348,7 +348,7 @@ namespace RE
 	}
 
 
-std::uint16_t Actor::GetLevel() const
+	std::uint16_t Actor::GetLevel() const
 
 	{
 		using func_t = decltype(&Actor::GetLevel);
@@ -616,7 +616,7 @@ std::uint16_t Actor::GetLevel() const
 	}
 
 
-std::int32_t Actor::RequestDetectionLevel(Actor* a_target, DETECTION_PRIORITY a_priority)
+	std::int32_t Actor::RequestDetectionLevel(Actor* a_target, DETECTION_PRIORITY a_priority)
 
 	{
 		using func_t = decltype(&Actor::RequestDetectionLevel);
@@ -721,7 +721,7 @@ std::int32_t Actor::RequestDetectionLevel(Actor* a_target, DETECTION_PRIORITY a_
 			skeletonRoot[1] = nullptr;
 		}
 
-		for (UInt32 i = 0; i <= 1; i++) {
+		for (std::uint32_t i = 0; i <= 1; i++) {
 			if (skeletonRoot[i]) {
 				BSFixedString addonName(addonString);
 				auto armorObject = skeletonRoot[i]->GetObjectByName(addonName);

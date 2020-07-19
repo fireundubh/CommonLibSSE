@@ -52,7 +52,8 @@ namespace RE
 		template <class, class = void>
 		struct defines_value_type :
 			std::false_type
-		{};
+		{
+		};
 
 		template <class T>
 		struct defines_value_type<
@@ -69,7 +70,8 @@ namespace RE
 		template <class, class = void>
 		struct defines_size_type :
 			std::false_type
-		{};
+		{
+		};
 
 		template <class T>
 		struct defines_size_type<
@@ -86,7 +88,8 @@ namespace RE
 		template <class, class = void>
 		struct defines_iterator :
 			std::false_type
-		{};
+		{
+		};
 
 		template <class T>
 		struct defines_iterator<
@@ -103,7 +106,8 @@ namespace RE
 		template <class, class = void>
 		struct implements_begin :
 			std::false_type
-		{};
+		{
+		};
 
 		template <class T>
 		struct implements_begin<
@@ -122,7 +126,8 @@ namespace RE
 		template <class, class = void>
 		struct implements_end :
 			std::false_type
-		{};
+		{
+		};
 
 		template <class T>
 		struct implements_end<
@@ -141,7 +146,8 @@ namespace RE
 		template <class, class = void>
 		struct implements_size :
 			std::false_type
-		{};
+		{
+		};
 
 		template <class T>
 		struct implements_size<
@@ -161,7 +167,8 @@ namespace RE
 		template <class, class = void>
 		struct implements_push_back :
 			std::false_type
-		{};
+		{
+		};
 
 		template <class T>
 		struct implements_push_back<
@@ -178,12 +185,14 @@ namespace RE
 		template <class T>
 		struct _is_integer :
 			std::is_integral<T>
-		{};
+		{
+		};
 
 		template <>
 		struct _is_integer<bool> :
 			std::false_type
-		{};
+		{
+		};
 
 		template <class T>
 		struct is_integer :
@@ -218,7 +227,8 @@ namespace RE
 			std::is_same<
 				std::remove_cv_t<T>,
 				BSFixedString>
-		{};
+		{
+		};
 
 		template <class T>
 		inline constexpr bool is_string_v = is_string<T>::value;
@@ -264,7 +274,8 @@ namespace RE
 			std::is_same<
 				std::remove_cv_t<T>,
 				float>
-		{};
+		{
+		};
 
 		template <class T>
 		inline constexpr bool is_floating_point_v = is_floating_point<T>::value;
@@ -275,7 +286,8 @@ namespace RE
 			std::is_same<
 				std::remove_cv_t<T>,
 				bool>
-		{};
+		{
+		};
 
 		template <class T>
 		inline constexpr bool is_boolean_v = is_boolean<T>::value;
@@ -299,7 +311,8 @@ namespace RE
 		template <class T>
 		struct is_string_convertible :
 			std::is_convertible<T, std::string_view>
-		{};
+		{
+		};
 
 		template <class T>
 		inline constexpr bool is_string_convertible_v = is_string_convertible<T>::value;
@@ -359,7 +372,8 @@ namespace RE
 		template <class T>
 		struct is_floating_point_convertible :
 			std::is_floating_point<T>
-		{};
+		{
+		};
 
 		template <class T>
 		inline constexpr bool is_floating_point_convertible_v = is_floating_point_convertible<T>::value;

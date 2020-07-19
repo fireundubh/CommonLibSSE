@@ -19,11 +19,11 @@ namespace RE
 
 
 		// members
-		std::uint64_t unk20;  // 20
-		std::uint64_t unk28;  // 28
-		std::uint64_t unk30;  // 30
-		std::uint32_t unk38;  // 38
-		std::uint32_t unk3C;  // 3C
+		std::uint64_t unk20;	 // 20
+		std::uint64_t unk28;	 // 28
+		std::uint64_t unk30;	 // 30
+		std::uint32_t unk38;	 // 38
+		std::uint32_t unk3C;	 // 3C
 		BSFixedString nodeName;	 // 40
 	};
 	static_assert(sizeof(RefAttachTechniqueInput) == 0x48);

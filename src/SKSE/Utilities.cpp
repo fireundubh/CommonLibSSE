@@ -13,7 +13,7 @@ namespace SKSE
 
 		if (s_runtimeDirectory.empty()) {
 			char runtimePathBuf[MAX_PATH];
-			const UInt32 runtimePathLength = GetModuleFileName(GetModuleHandle(nullptr), runtimePathBuf, sizeof(runtimePathBuf));
+			const std::uint32_t runtimePathLength = GetModuleFileName(GetModuleHandle(nullptr), runtimePathBuf, sizeof(runtimePathBuf));
 
 			if (runtimePathLength && (runtimePathLength < sizeof(runtimePathBuf))) {
 				std::string runtimePath(runtimePathBuf, runtimePathLength);
@@ -86,9 +86,9 @@ namespace SKSE
 	}
 
 
-	UInt32 RNG::GenerateRandomNumber(UInt32 a_min, UInt32 a_max)
+	std::uint32_t RNG::GenerateRandomNumber(std::uint32_t a_min, std::uint32_t a_max)
 	{
-		std::uniform_int_distribution<UInt32> distr(a_min, a_max);
+		std::uniform_int_distribution<std::uint32_t> distr(a_min, a_max);
 		return distr(twister);
 	}
 

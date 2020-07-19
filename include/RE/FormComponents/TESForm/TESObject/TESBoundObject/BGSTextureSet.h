@@ -50,12 +50,12 @@ namespace RE
 
 
 		// members
-		TESTexture	   textures[Textures::kUsedTotal];		  // 040 - TX00 - TX07
-		DecalData*							  decalData;						 // 0C0 - DODT
-		stl::enumeration<Flag, std::uint16_t> flags;							 // 0C8 - DNAM
-		std::uint16_t						  pad0CA;							 // 0CA
-		BSResource::ID textureFileIDs[Textures::kUsedTotal];  // 0CC
-		std::uint32_t						  pad12C;							 // 12C
+		TESTexture							  textures[Textures::kUsedTotal];		 // 040 - TX00 - TX07
+		DecalData*							  decalData;							 // 0C0 - DODT
+		stl::enumeration<Flag, std::uint16_t> flags;								 // 0C8 - DNAM
+		std::uint16_t						  pad0CA;								 // 0CA
+		BSResource::ID						  textureFileIDs[Textures::kUsedTotal];	 // 0CC
+		std::uint32_t						  pad12C;								 // 12C
 	};
 	static_assert(sizeof(BGSTextureSet) == 0x130);
 }

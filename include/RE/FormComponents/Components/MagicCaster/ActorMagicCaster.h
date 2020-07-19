@@ -61,17 +61,17 @@ namespace RE
 
 		// members
 		RefAttachTechniqueInput	   unk64;		   // 64
-		UInt64					   unkB0;		   // B0
+		std::uint64_t			   unkB0;		   // B0
 		Actor*					   actor;		   // B8
 		NiNode*					   magicNode;	   // C0
-		UInt64					   unkC8;		   // C8
-		UInt64					   unkD0;		   // D0
-		UInt64					   unkD8;		   // D8
+		std::uint64_t			   unkC8;		   // C8
+		std::uint64_t			   unkD0;		   // D0
+		std::uint64_t			   unkD8;		   // D8
 		BGSArtObject*			   unkE0;		   // E0
 		ReferenceEffectController* unkE8;		   // E8
-		UInt32					   unkF0;		   // F0
+		std::uint32_t			   unkF0;		   // F0
 		MagicSystem::CastingSource castingSource;  // F4
-		UInt32					   unkF8;		   // F8
+		std::uint32_t			   unkF8;		   // F8
 	};
-	STATIC_ASSERT(sizeof(ActorMagicCaster) == 0x100);
+	static_assert(sizeof(ActorMagicCaster) == 0x100);
 }

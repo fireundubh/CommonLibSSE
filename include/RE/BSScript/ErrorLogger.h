@@ -46,8 +46,8 @@ namespace RE
 
 
 			// members
-			BSSpinLock								 threadErrorsLock;	// 60
-			BSTHashMap<std::uint32_t, PerThreadErrorCounts> threadErrors;  // 68
+			BSSpinLock										threadErrorsLock;  // 60
+			BSTHashMap<std::uint32_t, PerThreadErrorCounts> threadErrors;	   // 68
 		};
 		static_assert(sizeof(ErrorLogger) == 0x98);
 	}

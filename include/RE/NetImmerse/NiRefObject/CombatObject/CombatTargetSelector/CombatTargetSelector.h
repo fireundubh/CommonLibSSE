@@ -28,10 +28,10 @@ namespace RE
 
 
 		// members
-		UInt64 unk10;  // 10
-		UInt32 unk18;  // 18
-		UInt32 unk1C;  // 1C
-		UInt32 unk20;  // 20
+		std::uint64_t unk10;  // 10
+		std::uint32_t unk18;  // 18
+		std::uint32_t unk1C;  // 1C
+		std::uint32_t unk20;  // 20
 	};
-	STATIC_ASSERT(sizeof(CombatTargetSelector) == 0x28);
+	static_assert(sizeof(CombatTargetSelector) == 0x28);
 }

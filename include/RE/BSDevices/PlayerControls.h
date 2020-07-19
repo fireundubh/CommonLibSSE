@@ -45,7 +45,10 @@ namespace RE
 
 		static PlayerControls* GetSingleton();
 
-		constexpr ActivateHandler* GetActivateHandler() const noexcept { return activateHandler; }
+		constexpr ActivateHandler* GetActivateHandler() const noexcept
+		{
+			return activateHandler;
+		}
 
 
 		// members

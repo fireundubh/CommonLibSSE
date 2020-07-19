@@ -37,7 +37,7 @@ namespace RE
 
 
 		// members
-		UInt8 unk[0xC5E0];	// 20
+		std::uint8_t unk[0xC5E0];  // 20
 	};
-	STATIC_ASSERT(sizeof(bhkWorld) == 0xC600);
+	static_assert(sizeof(bhkWorld) == 0xC600);
 }

@@ -240,7 +240,10 @@ namespace RE
 				int> = 0>
 		constexpr const T* As() const noexcept;
 
-		constexpr bool Is(FormType a_type) const noexcept { return GetFormType() == a_type; }
+		constexpr bool Is(FormType a_type) const noexcept
+		{
+			return GetFormType() == a_type;
+		}
 
 		template <class First, class... Rest>
 		constexpr bool Is(First a_first, Rest... a_rest) const noexcept
@@ -248,7 +251,10 @@ namespace RE
 			return Is(a_first) || Is(a_rest...);
 		}
 
-		constexpr bool IsNot(FormType a_type) const noexcept { return !Is(a_type); }
+		constexpr bool IsNot(FormType a_type) const noexcept
+		{
+			return !Is(a_type);
+		}
 
 		template <class First, class... Rest>
 		constexpr bool IsNot(First a_first, Rest... a_rest) const noexcept
@@ -259,34 +265,88 @@ namespace RE
 		TESObjectREFR*			AsReference();
 		const TESObjectREFR*	AsReference() const;
 		TESFile*				GetFile(std::int32_t a_idx = -1) const;
-		constexpr std::uint32_t GetFormFlags() const noexcept { return formFlags; }
-		constexpr FormID		GetFormID() const noexcept { return formID; }
-		constexpr FormType		GetFormType() const noexcept { return *formType; }
-		std::int32_t			GetGoldValue() const;
-		const char*				GetName() const;
-		float					GetWeight() const;
-		bool				 HasAllKeywords(BGSListForm* a_keywords) const;
-		bool				 HasAllKeywords(const std::vector<BGSKeyword*>& a_keywords) const;
-		bool				 HasKeywords(BGSListForm* a_keywords) const;
-		bool				 HasKeywords(const std::vector<BGSKeyword*>& a_keywords) const;
-		bool					HasVMAD() const;
-		bool					HasWorldModel() const noexcept;
-		void					InitItem();
-		constexpr bool			IsAmmo() const noexcept { return Is(FormType::Ammo); }
-		constexpr bool			IsArmor() const noexcept { return Is(FormType::Armor); }
-		constexpr bool			IsBook() const noexcept { return Is(FormType::Book); }
-		constexpr bool			IsDeleted() const noexcept { return (GetFormFlags() & RecordFlags::kDeleted) != 0; }
-		constexpr bool			IsDynamicForm() const noexcept { return GetFormID() >= 0xFF000000; }
-		constexpr bool			IsGold() const noexcept { return GetFormID() == 0x0000000F; }
-		constexpr bool			IsIgnored() const noexcept { return (GetFormFlags() & RecordFlags::kIgnored) != 0; }
-		constexpr bool			IsInitialized() const noexcept { return (GetFormFlags() & RecordFlags::kInitialized) != 0; }
-		constexpr bool			IsKey() const noexcept { return Is(FormType::KeyMaster); }
-		constexpr bool			IsLockpick() const noexcept { return GetFormID() == 0x0000000A; }
-		constexpr bool			IsNote() const noexcept { return Is(FormType::Note); }
-		constexpr bool			IsPlayer() const noexcept { return GetFormID() == 0x00000007; }
-		constexpr bool			IsPlayerRef() const noexcept { return GetFormID() == 0x00000014; }
-		constexpr bool			IsSoulGem() const noexcept { return Is(FormType::SoulGem); }
-		constexpr bool			IsWeapon() const noexcept { return Is(FormType::Weapon); }
+		constexpr std::uint32_t GetFormFlags() const noexcept
+		{
+			return formFlags;
+		}
+		constexpr FormID GetFormID() const noexcept
+		{
+			return formID;
+		}
+		constexpr FormType GetFormType() const noexcept
+		{
+			return *formType;
+		}
+		std::int32_t   GetGoldValue() const;
+		const char*	   GetName() const;
+		float		   GetWeight() const;
+		bool		   HasAllKeywords(BGSListForm* a_keywords) const;
+		bool		   HasAllKeywords(const std::vector<BGSKeyword*>& a_keywords) const;
+		bool		   HasKeywords(BGSListForm* a_keywords) const;
+		bool		   HasKeywords(const std::vector<BGSKeyword*>& a_keywords) const;
+		bool		   HasVMAD() const;
+		bool		   HasWorldModel() const noexcept;
+		void		   InitItem();
+		constexpr bool IsAmmo() const noexcept
+		{
+			return Is(FormType::Ammo);
+		}
+		constexpr bool IsArmor() const noexcept
+		{
+			return Is(FormType::Armor);
+		}
+		constexpr bool IsBook() const noexcept
+		{
+			return Is(FormType::Book);
+		}
+		constexpr bool IsDeleted() const noexcept
+		{
+			return (GetFormFlags() & RecordFlags::kDeleted) != 0;
+		}
+		constexpr bool IsDynamicForm() const noexcept
+		{
+			return GetFormID() >= 0xFF000000;
+		}
+		constexpr bool IsGold() const noexcept
+		{
+			return GetFormID() == 0x0000000F;
+		}
+		constexpr bool IsIgnored() const noexcept
+		{
+			return (GetFormFlags() & RecordFlags::kIgnored) != 0;
+		}
+		constexpr bool IsInitialized() const noexcept
+		{
+			return (GetFormFlags() & RecordFlags::kInitialized) != 0;
+		}
+		constexpr bool IsKey() const noexcept
+		{
+			return Is(FormType::KeyMaster);
+		}
+		constexpr bool IsLockpick() const noexcept
+		{
+			return GetFormID() == 0x0000000A;
+		}
+		constexpr bool IsNote() const noexcept
+		{
+			return Is(FormType::Note);
+		}
+		constexpr bool IsPlayer() const noexcept
+		{
+			return GetFormID() == 0x00000007;
+		}
+		constexpr bool IsPlayerRef() const noexcept
+		{
+			return GetFormID() == 0x00000014;
+		}
+		constexpr bool IsSoulGem() const noexcept
+		{
+			return Is(FormType::SoulGem);
+		}
+		constexpr bool IsWeapon() const noexcept
+		{
+			return Is(FormType::Weapon);
+		}
 
 
 		// members

@@ -12,15 +12,15 @@ namespace RE
 		auto data = NiExtraData::Create<NiStringsExtraData>(vtbl.address());
 		if (data) {
 			data->name = a_name;
-			
+
 			auto size = a_strings.size();
-			data->size = static_cast<UInt32>(size);
+			data->size = static_cast<std::uint32_t>(size);
 			data->value = NiAlloc<char*>(size);
 
 			for (size_t i = 0; i < size; i++) {
 				auto string = a_strings[i];
 				if (!string.empty()) {
-					UInt32 strLength = string.length() + 1;
+					std::uint32_t strLength = string.length() + 1;
 					data->value[i] = NiAlloc<char>(strLength);
 					memcpy(data->value[i], string.c_str(), sizeof(char) * strLength);
 				}
@@ -30,9 +30,9 @@ namespace RE
 	}
 
 
-	SInt32 NiStringsExtraData::GetIndexOf(const BSFixedString& a_element) const
+	std::int32_t NiStringsExtraData::GetIndexOf(const BSFixedString& a_element) const
 	{
-		for (UInt32 i = 0; i < size; i++) {
+		for (std::uint32_t i = 0; i < size; i++) {
 			if (strcmp(a_element.c_str(), value[i]) == 0) {
 				return i;
 			}
@@ -51,8 +51,8 @@ namespace RE
 				auto oldData = value;
 				value = NiAlloc<char*>(++size);
 
-				for (SInt32 i = 0; i < size - 1; i++) {
-					UInt32 strLength = strlen(oldData[i]) + 1;
+				for (std::int32_t i = 0; i < size - 1; i++) {
+					std::uint32_t strLength = strlen(oldData[i]) + 1;
 					value[i] = NiAlloc<char>(strLength);
 					memcpy(value[i], oldData[i], sizeof(char) * strLength);
 
@@ -61,7 +61,7 @@ namespace RE
 				}
 				NiFree(oldData);
 
-				UInt32 strLength = a_element.length() + 1;
+				std::uint32_t strLength = a_element.length() + 1;
 				value[size - 1] = NiAlloc<char>(strLength);
 				memcpy(value[size - 1], a_element.data(), sizeof(char) * strLength);
 
@@ -82,9 +82,9 @@ namespace RE
 				auto oldData = value;
 				value = NiAlloc<char*>(--size);
 
-				for (SInt32 i = 0; i < size + 1; i++) {
+				for (std::int32_t i = 0; i < size + 1; i++) {
 					if (i != index) {
-						UInt32 strLength = strlen(oldData[i]) + 1;
+						std::uint32_t strLength = strlen(oldData[i]) + 1;
 						value[i] = NiAlloc<char>(strLength);
 						memcpy(value[i], oldData[i], sizeof(char) * strLength);
 					}

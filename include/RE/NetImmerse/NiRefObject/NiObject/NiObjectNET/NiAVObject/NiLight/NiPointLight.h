@@ -27,5 +27,5 @@ namespace RE
 		float linearAttenuation;	 // 144
 		float quadraticAttenuation;	 // 148
 	};
-	STATIC_ASSERT(sizeof(NiPointLight) == 0x150);
+	static_assert(sizeof(NiPointLight) == 0x150);
 }

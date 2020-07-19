@@ -31,12 +31,12 @@ namespace RE
 
 
 		// members
-		float  heirGain;  // 24
-		float  velGain;	  // 28
-		UInt32 unk30;	  // 30
-		UInt32 pad34;	  // 34
-		UInt64 unk38;	  // 38
-		UInt32 unk40;	  // 40
+		float		  heirGain;	 // 24
+		float		  velGain;	 // 28
+		std::uint32_t unk30;	 // 30
+		std::uint32_t pad34;	 // 34
+		std::uint64_t unk38;	 // 38
+		std::uint32_t unk40;	 // 40
 	};
-	STATIC_ASSERT(sizeof(bhkBlendCollisionObject) == 0x48);
+	static_assert(sizeof(bhkBlendCollisionObject) == 0x48);
 }

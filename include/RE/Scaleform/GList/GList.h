@@ -73,7 +73,8 @@ namespace RE
 
 			iterator_base() :
 				_cur{ 0 }
-			{}
+			{
+			}
 
 
 			iterator_base(Node* a_node)
@@ -84,7 +85,8 @@ namespace RE
 
 			iterator_base(const iterator_base& a_rhs) :
 				_cur(a_rhs._cur)
-			{}
+			{
+			}
 
 
 			iterator_base(iterator_base&& a_rhs) :

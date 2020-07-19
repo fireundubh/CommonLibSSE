@@ -88,7 +88,7 @@ namespace RE
 		};
 
 
-		enum class ALPHA_MODE : UInt8
+		enum class ALPHA_MODE : std::uint8_t
 		{
 			kAll = 0,
 			kSkin
@@ -129,7 +129,7 @@ namespace RE
 		TESObjectREFR* GetUserData() const;
 		bool		   HasShaderType(BSShaderMaterial::Feature a_type);
 		void		   SetAppCulled(bool a_cull);
-		bool		   SetMotionType(UInt32 a_motionType, bool a_arg2 = true, bool a_arg3 = false, bool a_allowActivate = true);
+		bool		   SetMotionType(std::uint32_t a_motionType, bool a_arg2 = true, bool a_arg3 = false, bool a_allowActivate = true);
 		void		   TintScenegraph(const NiColorA& a_color);
 		void		   Update(NiUpdateData& a_data);
 		void		   UpdateAlpha(float a_alpha, ALPHA_MODE a_type);

@@ -43,7 +43,8 @@ namespace RE
 			pad51(0),
 			pad52(0),
 			pad54(0)
-		{}
+		{
+		}
 
 
 		void AddEventSink(Sink* a_eventSink)

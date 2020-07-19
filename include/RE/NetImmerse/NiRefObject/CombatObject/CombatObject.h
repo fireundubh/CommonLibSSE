@@ -22,5 +22,5 @@ namespace RE
 		virtual void SaveGame(BGSSaveGameBuffer* a_buf);  // 03 - { return }
 		virtual void LoadGame(BGSLoadGameBuffer* a_buf);  // 04 - { return }
 	};
-	STATIC_ASSERT(sizeof(CombatObject) == 0x10);
+	static_assert(sizeof(CombatObject) == 0x10);
 }

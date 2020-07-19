@@ -146,7 +146,8 @@ namespace RE
 	public:
 		NiTObjectArray(std::uint32_t a_maxSize = 0, std::uint32_t a_growBy = 1) :
 			NiTArray<T, NiTNewInterface<T>>(a_maxSize, a_growBy)
-		{}
+		{
+		}
 	};
 	static_assert(sizeof(NiTObjectArray<void*>) == 0x18);
 
@@ -157,7 +158,8 @@ namespace RE
 	public:
 		NiTPrimitiveArray(std::uint32_t a_maxSize = 0, std::uint32_t a_growBy = 1) :
 			NiTArray<T, NiTMallocInterface<T>>(a_maxSize, a_growBy)
-		{}
+		{
+		}
 	};
 	static_assert(sizeof(NiTPrimitiveArray<void*>) == 0x18);
 
@@ -302,7 +304,8 @@ namespace RE
 	public:
 		NiTLargeObjectArray(std::uint32_t a_maxSize = 0, std::uint32_t a_growBy = 1) :
 			NiTLargeArray<T, NiTNewInterface<T>>(a_maxSize, a_growBy)
-		{}
+		{
+		}
 	};
 	static_assert(sizeof(NiTLargeObjectArray<void*>) == 0x20);
 
@@ -313,7 +316,8 @@ namespace RE
 	public:
 		NiTLargePrimitiveArray(std::uint32_t a_maxSize = 0, std::uint32_t a_growBy = 1) :
 			NiTLargeArray<T, NiTMallocInterface<T>>(a_maxSize, a_growBy)
-		{}
+		{
+		}
 	};
 	static_assert(sizeof(NiTLargePrimitiveArray<void*>) == 0x20);
 

@@ -9,7 +9,8 @@ namespace RE
 
 	template <class T>
 	struct BSTSingletonExplicit
-	{};
+	{
+	};
 
 
 	//=====================================================
@@ -18,7 +19,8 @@ namespace RE
 
 	template <class T>
 	struct BSTSingletonImplicit
-	{};
+	{
+	};
 
 
 	//=====================================================
@@ -31,7 +33,8 @@ namespace RE
 
 	template <class T>
 	struct BSTSingletonSDMOpStaticBuffer
-	{};
+	{
+	};
 
 
 	template <class T, class Alloc = BSTSingletonSDMOpStaticBuffer<T>>
@@ -54,5 +57,6 @@ namespace RE
 
 	template <class T, template <class> class Singleton = BSTSingletonSDMOpStaticBuffer>
 	struct BSTSingletonSDM : public BSTSingletonSDMBase<BSTSDMTraits<T, Singleton<T>>>
-	{};
+	{
+	};
 }

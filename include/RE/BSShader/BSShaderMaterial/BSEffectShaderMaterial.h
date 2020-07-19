@@ -22,7 +22,7 @@ namespace RE
 		virtual BSShaderMaterial* Create() override = 0;							// 01
 		virtual void			  CopyMembers(BSShaderMaterial* a_other) override;	// 02
 		virtual bool			  DoIsCopy(BSShaderMaterial* a_other) override;		// 03
-		virtual UInt32			  ComputeCRC32(void) override;						// 04
+		virtual std::uint32_t	  ComputeCRC32(void) override;						// 04
 		virtual BSShaderMaterial* GetDefault() override;							// 05
 		virtual Type			  GetType() const override;							// 07 - { return Type::kEffect; }
 
@@ -39,8 +39,8 @@ namespace RE
 		float					   baseColorScale;		  // 6C
 		BSFixedString			   sourceTexturePath;	  // 70
 		BSFixedString			   greyscaleTexturePath;  // 78
-		UInt8					   effectClampMode;		  // 80
-		UInt8					   unk81;				  // 81
+		std::uint8_t			   effectClampMode;		  // 80
+		std::uint8_t			   unk81;				  // 81
 	};
-	STATIC_ASSERT(sizeof(BSEffectShaderMaterial) == 0x88);
+	static_assert(sizeof(BSEffectShaderMaterial) == 0x88);
 }

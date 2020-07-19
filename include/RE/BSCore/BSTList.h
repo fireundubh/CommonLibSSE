@@ -26,12 +26,14 @@ namespace RE
 			inline Node(value_type a_value, Node* a_next) :
 				item(a_value),
 				next(a_next)
-			{}
+			{
+			}
 
 			inline Node(const Node& a_rhs) :
 				item(a_rhs.item),
 				next(a_rhs.next)
-			{}
+			{
+			}
 
 			inline Node(Node&& a_rhs) :
 				item(std::move(a_rhs.item)),
@@ -43,12 +45,14 @@ namespace RE
 			inline Node(const value_type& a_value) :
 				item(a_value),
 				next(nullptr)
-			{}
+			{
+			}
 
 			inline Node(value_type&& a_value) :
 				item(std::move(a_value)),
 				next(nullptr)
-			{}
+			{
+			}
 
 			~Node() = default;
 
@@ -91,11 +95,13 @@ namespace RE
 
 			constexpr iterator_base() noexcept :
 				_cur(nullptr)
-			{}
+			{
+			}
 
 			constexpr iterator_base(const iterator_base& a_rhs) noexcept :
 				_cur(a_rhs._cur)
-			{}
+			{
+			}
 
 			constexpr iterator_base(iterator_base&& a_rhs) noexcept :
 				_cur(std::move(a_rhs._cur))
@@ -105,9 +111,13 @@ namespace RE
 
 			constexpr iterator_base(Node* a_node) noexcept :
 				_cur(a_node)
-			{}
+			{
+			}
 
-			inline ~iterator_base() noexcept { _cur = nullptr; }
+			inline ~iterator_base() noexcept
+			{
+				_cur = nullptr;
+			}
 
 			constexpr iterator_base& operator=(const iterator_base& a_rhs) noexcept
 			{
@@ -126,11 +136,23 @@ namespace RE
 				return *this;
 			}
 
-			[[nodiscard]] constexpr reference operator*() const noexcept { return _cur->item; }
-			[[nodiscard]] constexpr pointer	  operator->() const noexcept { return std::addressof(_cur->item); }
+			[[nodiscard]] constexpr reference operator*() const noexcept
+			{
+				return _cur->item;
+			}
+			[[nodiscard]] constexpr pointer operator->() const noexcept
+			{
+				return std::addressof(_cur->item);
+			}
 
-			[[nodiscard]] constexpr bool operator==(const iterator_base& a_rhs) const noexcept { return _cur == a_rhs._cur; }
-			[[nodiscard]] constexpr bool operator!=(const iterator_base& a_rhs) const noexcept { return !(*this == a_rhs); }
+			[[nodiscard]] constexpr bool operator==(const iterator_base& a_rhs) const noexcept
+			{
+				return _cur == a_rhs._cur;
+			}
+			[[nodiscard]] constexpr bool operator!=(const iterator_base& a_rhs) const noexcept
+			{
+				return !(*this == a_rhs);
+			}
 
 			// prefix
 			constexpr iterator_base& operator++() noexcept
@@ -151,8 +173,14 @@ namespace RE
 		protected:
 			friend class BSSimpleList<T>;
 
-			[[nodiscard]] constexpr Node*		get_current() noexcept { return _cur; }
-			[[nodiscard]] constexpr const Node* get_current() const noexcept { return _cur; }
+			[[nodiscard]] constexpr Node* get_current() noexcept
+			{
+				return _cur;
+			}
+			[[nodiscard]] constexpr const Node* get_current() const noexcept
+			{
+				return _cur;
+			}
 
 			[[nodiscard]] constexpr bool comes_before(const iterator_base& a_rhs) const noexcept
 			{
@@ -173,7 +201,8 @@ namespace RE
 
 		inline BSSimpleList() :
 			_listHead()
-		{}
+		{
+		}
 
 		inline BSSimpleList(const BSSimpleList& a_rhs) :
 			_listHead()
@@ -183,7 +212,8 @@ namespace RE
 
 		inline BSSimpleList(BSSimpleList&& a_rhs) :
 			_listHead(std::move(a_rhs._listHead))
-		{}
+		{
+		}
 
 		inline ~BSSimpleList()
 		{
@@ -222,15 +252,36 @@ namespace RE
 			return *begin();
 		}
 
-		[[nodiscard]] inline iterator		begin() { return empty() ? end() : iterator(get_head()); }
-		[[nodiscard]] inline const_iterator begin() const { return empty() ? end() : const_iterator(get_head()); }
-		[[nodiscard]] inline const_iterator cbegin() const { return begin(); }
+		[[nodiscard]] inline iterator begin()
+		{
+			return empty() ? end() : iterator(get_head());
+		}
+		[[nodiscard]] inline const_iterator begin() const
+		{
+			return empty() ? end() : const_iterator(get_head());
+		}
+		[[nodiscard]] inline const_iterator cbegin() const
+		{
+			return begin();
+		}
 
-		[[nodiscard]] constexpr iterator	   end() noexcept { return iterator(nullptr); }
-		[[nodiscard]] constexpr const_iterator end() const noexcept { return const_iterator(nullptr); }
-		[[nodiscard]] constexpr const_iterator cend() const noexcept { return end(); }
+		[[nodiscard]] constexpr iterator end() noexcept
+		{
+			return iterator(nullptr);
+		}
+		[[nodiscard]] constexpr const_iterator end() const noexcept
+		{
+			return const_iterator(nullptr);
+		}
+		[[nodiscard]] constexpr const_iterator cend() const noexcept
+		{
+			return end();
+		}
 
-		[[nodiscard]] inline bool empty() const { return !_listHead.next && !_listHead.item; }
+		[[nodiscard]] inline bool empty() const
+		{
+			return !_listHead.next && !_listHead.item;
+		}
 
 		inline void clear()
 		{
@@ -289,8 +340,14 @@ namespace RE
 			return tail;
 		}
 
-		inline void push_front(const_reference a_value) { emplace_front_impl(a_value); }
-		inline void push_front(value_type&& a_value) { emplace_front_impl(std::move(a_value)); }
+		inline void push_front(const_reference a_value)
+		{
+			emplace_front_impl(a_value);
+		}
+		inline void push_front(value_type&& a_value)
+		{
+			emplace_front_impl(std::move(a_value));
+		}
 
 		template <class... Args>
 		inline reference emplace_front(Args&&... a_args)
@@ -312,12 +369,24 @@ namespace RE
 			}
 		}
 
-		inline void resize(size_type a_count) { resize(a_count, value_type{}); }
-		inline void resize(size_type a_count, const value_type& a_value) { resize_impl(a_count, a_value); }
+		inline void resize(size_type a_count)
+		{
+			resize(a_count, value_type{});
+		}
+		inline void resize(size_type a_count, const value_type& a_value)
+		{
+			resize_impl(a_count, a_value);
+		}
 
 	protected:
-		[[nodiscard]] constexpr Node*		get_head() noexcept { return std::addressof(_listHead); }
-		[[nodiscard]] constexpr const Node* get_head() const noexcept { return std::addressof(_listHead); }
+		[[nodiscard]] constexpr Node* get_head() noexcept
+		{
+			return std::addressof(_listHead);
+		}
+		[[nodiscard]] constexpr const Node* get_head() const noexcept
+		{
+			return std::addressof(_listHead);
+		}
 
 		[[nodiscard]] inline std::pair<Node*, Node*> alloc_copies(size_type a_count, const_reference a_value)
 		{

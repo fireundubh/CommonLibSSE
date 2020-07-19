@@ -8,7 +8,8 @@ namespace RE
 	public:
 		GMatrix3D() :
 			data{ 0.0 }
-		{}
+		{
+		}
 
 
 		GMatrix3D& operator=(const GMatrix3D& a_rhs)

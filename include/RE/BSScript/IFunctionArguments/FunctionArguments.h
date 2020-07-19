@@ -45,22 +45,26 @@ namespace RE
 			FunctionArguments(Args&&... a_args) :
 				super(),
 				_args(std::forward<Args>(a_args)...)
-			{}
+			{
+			}
 
 			FunctionArguments() :
 				super(),
 				_args()
-			{}
+			{
+			}
 
 			FunctionArguments(const FunctionArguments& a_rhs) :
 				super(),
 				_args(a_rhs._args)
-			{}
+			{
+			}
 
 			FunctionArguments(FunctionArguments&& a_rhs) :
 				super(),
 				_args(std::move(a_rhs._args))
-			{}
+			{
+			}
 
 			virtual ~FunctionArguments() = default;	 // 00
 

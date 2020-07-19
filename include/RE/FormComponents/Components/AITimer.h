@@ -8,5 +8,5 @@ namespace RE
 		float aiTimer;	// 00
 		float timer;	// 04
 	};
-	STATIC_ASSERT(sizeof(AITimer) == 0x08);
+	static_assert(sizeof(AITimer) == 0x08);
 }

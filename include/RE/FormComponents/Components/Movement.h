@@ -7,9 +7,9 @@ namespace RE
 {
 	namespace Movement
 	{
-		enum class DIRECTION : UInt32
+		enum class DIRECTION : std::uint32_t
 		{
-			kInvalid = static_cast<UInt32>(-1),
+			kInvalid = static_cast<std::uint32_t>(-1),
 			kStanding = 0,
 			kDiagonallyForwardRight,
 			kRight,

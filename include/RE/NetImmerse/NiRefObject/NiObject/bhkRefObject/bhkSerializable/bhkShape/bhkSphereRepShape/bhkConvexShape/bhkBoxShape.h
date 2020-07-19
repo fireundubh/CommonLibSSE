@@ -13,7 +13,6 @@ namespace RE
 
 
 		virtual ~bhkBoxShape();	 // 00
-
 	};
-	STATIC_ASSERT(sizeof(bhkBoxShape) == 0x28);
+	static_assert(sizeof(bhkBoxShape) == 0x28);
 }

@@ -27,31 +27,37 @@ namespace RE
 
 
 		GHash()
-		{}
+		{
+		}
 
 
 		GHash(std::int32_t a_sizeHint) :
 			hash(a_sizeHint)
-		{}
+		{
+		}
 
 
 		explicit GHash(void* a_heap) :
 			hash(a_heap)
-		{}
+		{
+		}
 
 
 		GHash(void* a_heap, std::int32_t a_sizeHint) :
 			hash(a_heap, a_sizeHint)
-		{}
+		{
+		}
 
 
 		GHash(const SelfType& a_src) :
 			hash(a_src.hash)
-		{}
+		{
+		}
 
 
 		~GHash()
-		{}
+		{
+		}
 
 
 		GFC_MEMORY_REDEFINE_NEW(GHash, Allocator::kStatID);

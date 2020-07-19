@@ -25,5 +25,5 @@ namespace RE
 		NiPointer<NiAVObject> weapon;		   // 030
 		float				  alphaThreshold;  // 038
 	};
-	STATIC_ASSERT(sizeof(BSTempEffectWeaponBlood) == 0x40);
+	static_assert(sizeof(BSTempEffectWeaponBlood) == 0x40);
 }

@@ -49,12 +49,14 @@ namespace RE
 		// 1
 		inline constexpr BSTSmartPointer() noexcept :
 			_ptr(nullptr)
-		{}
+		{
+		}
 
 		// 2
 		inline constexpr BSTSmartPointer(std::nullptr_t) noexcept :
 			_ptr(nullptr)
-		{}
+		{
+		}
 
 		// 3
 		template <

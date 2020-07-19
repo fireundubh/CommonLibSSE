@@ -175,7 +175,7 @@ namespace RE
 	{
 		float directionOut = 0.0;
 		if (GetGraphVariableFloat(BSFixedString("Direction"), directionOut)) {
-			switch (static_cast<UInt32>(directionOut * 1000)) {
+			switch (static_cast<std::uint32_t>(directionOut * 1000)) {
 			case 0:
 				return Direction::kStanding;
 			case 125:

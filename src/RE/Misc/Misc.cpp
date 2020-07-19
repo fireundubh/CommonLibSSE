@@ -92,7 +92,7 @@ namespace RE
 				if (messageBox) {
 					messageBox->unk4C = 4;
 					messageBox->unk38 = 10;
-					messageBox->bodyText = a_message;
+					messageBox->bodyText = a_message.c_str();
 					auto gameSettings = GameSettingCollection::GetSingleton();
 					if (gameSettings) {
 						auto sOk = gameSettings->GetSetting("sOk");
@@ -107,7 +107,7 @@ namespace RE
 	}
 
 
-	void func2E9950() //FEC frame hook
+	void func2E9950()  //FEC frame hook
 	{
 		using func_t = decltype(&func2E9950);
 		REL::Offset<func_t> func(Offset::func2E9950);
@@ -119,9 +119,7 @@ namespace RE
 	{
 		void SanitizeTexturePath(std::string& a_path)
 		{
-			std::for_each(a_path.begin(), a_path.end(), [](char& c) {
-				c = ::tolower(c);
-			});
+			std::transform(a_path.begin(), a_path.end(), a_path.begin(), ::tolower);
 
 			a_path = std::regex_replace(a_path, std::regex("/+|\\\\+"), "\\");
 			a_path = std::regex_replace(a_path, std::regex("^\\\\+"), "");
@@ -131,7 +129,7 @@ namespace RE
 
 		std::string GetTextureName(std::string& a_path)
 		{
-			const int idx = a_path.find_last_of("\\/");
+			const auto idx = a_path.find_last_of("\\/");
 			if (std::string::npos != idx) {
 				return a_path.substr(idx + 1);
 			}

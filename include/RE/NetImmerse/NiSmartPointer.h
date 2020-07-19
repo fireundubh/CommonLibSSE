@@ -14,12 +14,14 @@ namespace RE
 		// 1
 		inline constexpr NiPointer() noexcept :
 			_ptr(nullptr)
-		{}
+		{
+		}
 
 		// 2
 		inline constexpr NiPointer(std::nullptr_t) noexcept :
 			_ptr(nullptr)
-		{}
+		{
+		}
 
 		// 3
 		template <

@@ -16,7 +16,7 @@ namespace RE
 		{
 			Conditional();
 			~Conditional() = default;
-			
+
 			TESGlobal*	 global;
 			std::int32_t rank;
 		};
@@ -27,7 +27,7 @@ namespace RE
 
 		TES_HEAP_REDEFINE_NEW();
 
-		
+
 		// members
 		TESForm*	  owner;		// 00
 		Conditional	  conditional;	// 08

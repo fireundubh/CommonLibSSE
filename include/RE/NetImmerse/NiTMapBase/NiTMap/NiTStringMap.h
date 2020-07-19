@@ -24,7 +24,8 @@ namespace RE
 			_pad21(0),
 			_pad22(0),
 			_pad24(0)
-		{}
+		{
+		}
 
 		virtual ~NiTStringTemplateMap();  // 00
 

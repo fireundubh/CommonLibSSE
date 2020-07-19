@@ -23,29 +23,72 @@ namespace RE
 			GFxState(StateType::kActionControl),
 			actionFlags(a_actionFlags),
 			pad1C(0)
-		{}
+		{
+		}
 
 
-		constexpr ActionControlFlags GetFlags() const { return *actionFlags; }
-		constexpr void				 SetFlags(ActionControlFlags a_actionFlags) { actionFlags = a_actionFlags; }
+		constexpr ActionControlFlags GetFlags() const
+		{
+			return *actionFlags;
+		}
+		constexpr void SetFlags(ActionControlFlags a_actionFlags)
+		{
+			actionFlags = a_actionFlags;
+		}
 
-		constexpr void SetVerboseLogging() { actionFlags |= ActionControlFlags::kVerbose; }
-		constexpr void UnsetVerboseLogging() { actionFlags &= ~ActionControlFlags::kVerbose; }
+		constexpr void SetVerboseLogging()
+		{
+			actionFlags |= ActionControlFlags::kVerbose;
+		}
+		constexpr void UnsetVerboseLogging()
+		{
+			actionFlags &= ~ActionControlFlags::kVerbose;
+		}
 
-		constexpr void SetErrorSuppression() { actionFlags |= ActionControlFlags::kSuppressErrors; }
-		constexpr void UnsetErrorSuppression() { actionFlags &= ~ActionControlFlags::kSuppressErrors; }
+		constexpr void SetErrorSuppression()
+		{
+			actionFlags |= ActionControlFlags::kSuppressErrors;
+		}
+		constexpr void UnsetErrorSuppression()
+		{
+			actionFlags &= ~ActionControlFlags::kSuppressErrors;
+		}
 
-		constexpr void SetRootFilenameLogging() { actionFlags |= ActionControlFlags::kLogRootFilenames; }
-		constexpr void UnsetRootFilenameLogging() { actionFlags &= ~ActionControlFlags::kLogRootFilenames; }
+		constexpr void SetRootFilenameLogging()
+		{
+			actionFlags |= ActionControlFlags::kLogRootFilenames;
+		}
+		constexpr void UnsetRootFilenameLogging()
+		{
+			actionFlags &= ~ActionControlFlags::kLogRootFilenames;
+		}
 
-		constexpr void SetChildFilenameLogging() { actionFlags |= ActionControlFlags::kLogChildFilenames; }
-		constexpr void UnsetChildFilenameLogging() { actionFlags &= ~ActionControlFlags::kLogChildFilenames; }
+		constexpr void SetChildFilenameLogging()
+		{
+			actionFlags |= ActionControlFlags::kLogChildFilenames;
+		}
+		constexpr void UnsetChildFilenameLogging()
+		{
+			actionFlags &= ~ActionControlFlags::kLogChildFilenames;
+		}
 
-		constexpr void SetAllFilenameLogging() { actionFlags |= (ActionControlFlags::kLogRootFilenames | ActionControlFlags::kLogChildFilenames); }
-		constexpr void UnsetAllFilenameLogging() { actionFlags &= ~(ActionControlFlags::kLogRootFilenames | ActionControlFlags::kLogChildFilenames); }
+		constexpr void SetAllFilenameLogging()
+		{
+			actionFlags |= (ActionControlFlags::kLogRootFilenames | ActionControlFlags::kLogChildFilenames);
+		}
+		constexpr void UnsetAllFilenameLogging()
+		{
+			actionFlags &= ~(ActionControlFlags::kLogRootFilenames | ActionControlFlags::kLogChildFilenames);
+		}
 
-		constexpr void SetLongFilenameLogging() { actionFlags |= ActionControlFlags::kLongFilenames; }
-		constexpr void UnsetLongFilenameLogging() { actionFlags &= ~ActionControlFlags::kLongFilenames; }
+		constexpr void SetLongFilenameLogging()
+		{
+			actionFlags |= ActionControlFlags::kLongFilenames;
+		}
+		constexpr void UnsetLongFilenameLogging()
+		{
+			actionFlags &= ~ActionControlFlags::kLongFilenames;
+		}
 
 
 		// members

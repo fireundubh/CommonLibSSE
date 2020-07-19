@@ -25,10 +25,10 @@ namespace RE
 
 
 		// members
-		UInt32 unk08;	// 08 - 1000
-		UInt32 unk0C;	// 0C - 1000
-		UInt32 length;	// 10 - takes value from uGridsToLoad
-		UInt32 pad14;	// 14
+		std::uint32_t unk08;   // 08 - 1000
+		std::uint32_t unk0C;   // 0C - 1000
+		std::uint32_t length;  // 10 - takes value from uGridsToLoad
+		std::uint32_t pad14;   // 14
 	};
 	static_assert(sizeof(GridArray) == 0x18);
 };

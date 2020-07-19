@@ -51,14 +51,16 @@ namespace RE
 				_proxy(0),
 				_iter(0),
 				_idx(0)
-			{}
+			{
+			}
 
 
 			iterator_base(const iterator_base& a_rhs) :
 				_proxy(a_rhs._proxy),
 				_iter(a_rhs._iter),
 				_idx(a_rhs._idx)
-			{}
+			{
+			}
 
 
 			iterator_base(iterator_base&& a_rhs) :
@@ -97,7 +99,8 @@ namespace RE
 
 
 			~iterator_base()
-			{}
+			{
+			}
 
 
 			iterator_base& operator=(const iterator_base& a_rhs)
@@ -210,7 +213,8 @@ namespace RE
 			AntiBloatAllocator() :
 				Allocator(),
 				size(0)
-			{}
+			{
+			}
 
 
 			// members

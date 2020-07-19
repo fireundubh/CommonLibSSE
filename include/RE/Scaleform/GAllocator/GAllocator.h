@@ -9,5 +9,6 @@ namespace RE
 {
 	template <class T, std::uint32_t SID = GStatGroup::kGStat_Default_Mem>
 	struct GAllocatorGH : GAllocatorBaseGH<SID>, GConstructorMov<T>
-	{};
+	{
+	};
 }

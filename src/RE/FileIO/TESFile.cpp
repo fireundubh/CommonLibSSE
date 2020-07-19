@@ -20,9 +20,9 @@ namespace RE
 
 
 	// Converts the lower bits of a FormID to a full FormID depending on plugin type
-	FormID TESFile::GetFormID(UInt32 formLower) const
+	FormID TESFile::GetFormID(std::uint32_t formLower) const
 	{
-		return !IsLight() ? UInt32(compileIndex) << 24 | (formLower & 0xFFFFFF) : 0xFE000000 | (UInt32(smallFileCompileIndex) << 12) | (formLower & 0xFFF);
+		return !IsLight() ? std::uint32_t(compileIndex) << 24 | (formLower & 0xFFFFFF) : 0xFE000000 | (std::uint32_t(smallFileCompileIndex) << 12) | (formLower & 0xFFF);
 	}
 
 
@@ -35,7 +35,7 @@ namespace RE
 
 
 	// Returns either a compileIndex or a compileIndex|smallFileCompileIndex pair
-	UInt32 TESFile::GetPartialIndex() const
+	std::uint32_t TESFile::GetPartialIndex() const
 	{
 		return !IsLight() ? compileIndex : (0xFE000 | smallFileCompileIndex);
 	}

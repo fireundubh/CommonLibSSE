@@ -18,7 +18,7 @@ namespace RE
 		struct TargetData
 		{
 			ActorHandle	   target;						   // 00
-			SInt32		   detectLevel;					   // 04 //-1000
+			std::int32_t   detectLevel;					   // 04 //-1000
 			float		   stealthPoints;				   // 08 //fCombatStealthPointMax - 1.0
 			float		   unk0C;						   // 0C
 			CombatLocation unk10;						   // 10
@@ -33,10 +33,10 @@ namespace RE
 			AITimeStamp	   stealthPointRegenAttackedTime;  // 98
 			AITimeStamp	   stealthPointRegenDetectTime;	   // 9C
 			ActorHandle	   attackedMember;				   // A0
-			UInt16		   unkA4;						   // A4 //target count
-			UInt16		   unkA6;						   // A6 //flags
+			std::uint16_t  unkA4;						   // A4 //target count
+			std::uint16_t  unkA6;						   // A6 //flags
 		};
-		STATIC_ASSERT(sizeof(TargetData) == 0xA8);
+		static_assert(sizeof(TargetData) == 0xA8);
 
 
 		struct MemberData
@@ -45,7 +45,7 @@ namespace RE
 			float		unk04;	 // 04
 			float		unk08;	 // 08
 		};
-		STATIC_ASSERT(sizeof(MemberData) == 0x0C);
+		static_assert(sizeof(MemberData) == 0x0C);
 
 
 		struct Data120
@@ -54,23 +54,23 @@ namespace RE
 			AITimeStamp	   unk18;  // 18
 			float		   unk20;  // 20
 		};
-		STATIC_ASSERT(sizeof(Data120) == 0x20);
+		static_assert(sizeof(Data120) == 0x20);
 
 
 		struct Data138
 		{
 			ObjectRefHandle unk00;	// 00
 			ObjectRefHandle unk04;	// 04
-			UInt8			unk08;	// 08
-			UInt8			unk09;	// 09
-			UInt8			unk0A;	// 0A
+			std::uint8_t	unk08;	// 08
+			std::uint8_t	unk09;	// 09
+			std::uint8_t	unk0A;	// 0A
 		};
-		STATIC_ASSERT(sizeof(Data138) == 0xC);
+		static_assert(sizeof(Data138) == 0xC);
 
 
 		// members
-		UInt32						  unk00;					 // 000
-		UInt32						  groupIndex;				 // 004
+		std::uint32_t				  unk00;					 // 000
+		std::uint32_t				  groupIndex;				 // 004
 		BSTArray<TargetData>		  targets;					 // 008
 		BSTArray<MemberData>		  members;					 // 020
 		CombatGroupDetectionListener* detectionListener;		 // 038
@@ -85,8 +85,8 @@ namespace RE
 		float						  unkCC;					 // 0CC // -1.0
 		float						  unkD0;					 // 0D0 // -1.0
 		float						  unkD4;					 // 0D4 // -1.0
-		UInt32						  searchStatus;				 // 0D8
-		UInt32						  padDC;					 // 0DC
+		std::uint32_t				  searchStatus;				 // 0D8
+		std::uint32_t				  padDC;					 // 0DC
 		BSPathingLOSGridMap*		  gridMap;					 // 0E0
 		AITimer						  searchUpdateTimer;		 // 0E8
 		AITimer						  searchAreaUpdateTimer;	 // 0F0
@@ -94,17 +94,17 @@ namespace RE
 		ActorHandle					  targetToSearchFor;		 // 0FC
 		CombatLocation				  searchLocation;			 // 100
 		float						  searchRadius;				 // 118
-		UInt32						  unk11C;					 // 11C
+		std::uint32_t				  unk11C;					 // 11C
 		BSTArray<Data120>			  unk120;					 // 120
 		BSTArray<Data138>			  unk138;					 // 138
-		UInt32						  unk150;					 // 150 // count
-		UInt32						  unk154;					 // 154 // count
-		UInt32						  unk158;					 // 158 // count
-		SInt8						  unk15C;					 // 15C
-		UInt8						  unk15D;					 // 15D
-		UInt8						  unk15E;					 // 15E
-		UInt8						  unk15F;					 // 15F
+		std::uint32_t				  unk150;					 // 150 // count
+		std::uint32_t				  unk154;					 // 154 // count
+		std::uint32_t				  unk158;					 // 158 // count
+		std::int8_t					  unk15C;					 // 15C
+		std::uint8_t				  unk15D;					 // 15D
+		std::uint8_t				  unk15E;					 // 15E
+		std::uint8_t				  unk15F;					 // 15F
 		mutable BSReadWriteLock		  unk160;					 // 160
 	};
-	STATIC_ASSERT(sizeof(CombatGroup) == 0x168);
+	static_assert(sizeof(CombatGroup) == 0x168);
 }

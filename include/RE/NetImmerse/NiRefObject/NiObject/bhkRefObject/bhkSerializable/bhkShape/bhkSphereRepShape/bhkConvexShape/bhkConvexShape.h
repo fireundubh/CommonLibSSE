@@ -13,7 +13,6 @@ namespace RE
 
 
 		virtual ~bhkConvexShape();	// 00
-
 	};
-	STATIC_ASSERT(sizeof(bhkConvexShape) == 0x28);
+	static_assert(sizeof(bhkConvexShape) == 0x28);
 }

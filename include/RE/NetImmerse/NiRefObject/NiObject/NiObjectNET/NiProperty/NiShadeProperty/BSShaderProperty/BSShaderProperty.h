@@ -2,13 +2,14 @@
 
 #include "RE/BSCore/BSTSmartPointer.h"
 #include "RE/BSShader/BSEffectShaderData.h"
-#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/BSShaderProperty/BSShaderPropertyLightData.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/NiShadeProperty.h"
 
 
 namespace RE
 {
+	class BSFadeNode;
 	class BSShaderMaterial;
+	class BSShaderPropertyLightData;
 	class NiSourceTexture;
 
 
@@ -91,7 +92,7 @@ namespace RE
 		};
 
 
-		enum class EShaderPropertyFlag8 : UInt8
+		enum class EShaderPropertyFlag8 : std::uint8_t
 		{
 			kSpecular = 0,
 			kSkinned = 1,
@@ -211,9 +212,9 @@ namespace RE
 		std::uint64_t										 unk48;				   // 48
 		void*												 unk50;				   // 50
 		std::uint64_t										 unk58;				   // 58
-		BSFadeNode*							fadeNode;			  // 60
+		BSFadeNode*											 fadeNode;			   // 60
 		BSTSmartPointer<BSEffectShaderData>					 effectData;		   // 68
-		BSShaderPropertyLightData*			lightData;			  // 70
+		BSShaderPropertyLightData*							 lightData;			   // 70
 		BSShaderMaterial*									 material;			   // 78
 		std::uint64_t										 unk80;				   // 80
 	};

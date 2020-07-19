@@ -24,5 +24,5 @@ namespace RE
 		// members
 		bool attachToCamera;  // 30
 	};
-	STATIC_ASSERT(sizeof(OwnedCameraEffectController) == 0x38);
+	static_assert(sizeof(OwnedCameraEffectController) == 0x38);
 }

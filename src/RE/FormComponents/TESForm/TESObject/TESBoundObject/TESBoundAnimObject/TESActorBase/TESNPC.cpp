@@ -12,7 +12,7 @@ namespace RE
 	{}
 
 
-	bool TESNPC::AddPerk(BGSPerk* a_perk, SInt32 a_rank)
+	bool TESNPC::AddPerk(BGSPerk* a_perk, std::int8_t a_rank)
 	{
 		if (GetPerkIndex(a_perk) == -1) {
 			auto newPerk = new PerkRankData(a_perk, a_rank);
@@ -20,7 +20,7 @@ namespace RE
 				auto oldData = perks;
 				perks = calloc<PerkRankData>(++perkCount);
 				if (oldData) {
-					for (UInt32 i = 0; i < perkCount - 1; i++) {
+					for (std::uint32_t i = 0; i < perkCount - 1; i++) {
 						perks[i] = oldData[i];
 					}
 					free(oldData);
@@ -50,11 +50,11 @@ namespace RE
 	}
 
 
-	SInt32 TESNPC::GetPerkIndex(BGSPerk* a_perk) const
+	std::int32_t TESNPC::GetPerkIndex(BGSPerk* a_perk) const
 	{
-		SInt32 index = -1;
-		if (perkCount > 0) {
-			for (UInt32 i = 0; i < perkCount; i++) {
+		std::int32_t index = -1;
+		if (perks) {
+			for (std::uint32_t i = 0; i < perkCount; i++) {
 				if (perks[i].perk && perks[i].perk == a_perk) {
 					index = i;
 					break;
@@ -206,7 +206,7 @@ namespace RE
 			auto oldData = perks;
 			if (oldData) {
 				perks = calloc<PerkRankData>(--perkCount);
-				for (UInt32 i = 0; i < perkCount + 1; i++) {
+				for (std::uint32_t i = 0; i < perkCount + 1; i++) {
 					if (index != i) {
 						perks[i] = oldData[i];
 					}

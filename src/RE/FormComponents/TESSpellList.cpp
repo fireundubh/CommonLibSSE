@@ -21,7 +21,7 @@ namespace RE
 			auto oldData = levSpells;
 			levSpells = calloc<TESLevSpell*>(++numlevSpells);
 			if (oldData) {
-				for (UInt32 i = 0; i < numlevSpells - 1; i++) {
+				for (std::uint32_t i = 0; i < numlevSpells - 1; i++) {
 					levSpells[i] = oldData[i];
 				}
 				free(oldData);
@@ -40,7 +40,7 @@ namespace RE
 			auto oldData = shouts;
 			shouts = calloc<TESShout*>(++numShouts);
 			if (oldData) {
-				for (UInt32 i = 0; i < numShouts - 1; i++) {
+				for (std::uint32_t i = 0; i < numShouts - 1; i++) {
 					shouts[i] = oldData[i];
 				}
 				free(oldData);
@@ -59,7 +59,7 @@ namespace RE
 			auto oldData = spells;
 			spells = calloc<SpellItem*>(++numSpells);
 			if (oldData) {
-				for (UInt32 i = 0; i < numSpells - 1; i++) {
+				for (std::uint32_t i = 0; i < numSpells - 1; i++) {
 					spells[i] = oldData[i];
 				}
 				free(oldData);
@@ -72,11 +72,11 @@ namespace RE
 	}
 
 
-	SInt32 TESSpellList::SpellData::GetIndex(SpellItem* a_spell)
+	std::int32_t TESSpellList::SpellData::GetIndex(SpellItem* a_spell)
 	{
-		SInt32 index = -1;
+		std::int32_t index = -1;
 		if (spells) {
-			for (UInt32 i = 0; i < numSpells; i++) {
+			for (std::uint32_t i = 0; i < numSpells; i++) {
 				if (spells[i] && spells[i] == a_spell) {
 					index = i;
 					break;
@@ -87,11 +87,11 @@ namespace RE
 	}
 
 
-	SInt32 TESSpellList::SpellData::GetIndex(TESLevSpell* a_lvlSpell)
+	std::int32_t TESSpellList::SpellData::GetIndex(TESLevSpell* a_lvlSpell)
 	{
-		SInt32 index = -1;
+		std::int32_t index = -1;
 		if (levSpells) {
-			for (UInt32 i = 0; i < numlevSpells; i++) {
+			for (std::uint32_t i = 0; i < numlevSpells; i++) {
 				if (levSpells[i] && levSpells[i] == a_lvlSpell) {
 					index = i;
 					break;
@@ -102,11 +102,11 @@ namespace RE
 	}
 
 
-	SInt32 TESSpellList::SpellData::GetIndex(TESShout* a_shout)
+	std::int32_t TESSpellList::SpellData::GetIndex(TESShout* a_shout)
 	{
-		SInt32 index = -1;
+		std::int32_t index = -1;
 		if (shouts) {
-			for (UInt32 i = 0; i < numShouts; i++) {
+			for (std::uint32_t i = 0; i < numShouts; i++) {
 				if (shouts[i] && shouts[i] == a_shout) {
 					index = i;
 					break;
@@ -124,7 +124,7 @@ namespace RE
 			auto oldData = spells;
 			if (oldData) {
 				spells = calloc<SpellItem*>(--numSpells);
-				for (SInt32 i = 0; i < numSpells + 1; i++) {
+				for (std::int32_t i = 0; i < numSpells + 1; i++) {
 					if (index != i) {
 						spells[i] = oldData[i];
 					}

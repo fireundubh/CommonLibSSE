@@ -13,10 +13,17 @@ namespace RE
 
 		constexpr BSIntrusiveRefCounted() noexcept :
 			_refCount(0)
-		{}
+		{
+		}
 
-		inline std::uint32_t IncRef() { return InterlockedIncrement(&_refCount); }
-		inline std::uint32_t DecRef() { return InterlockedDecrement(&_refCount); }
+		inline std::uint32_t IncRef()
+		{
+			return InterlockedIncrement(&_refCount);
+		}
+		inline std::uint32_t DecRef()
+		{
+			return InterlockedDecrement(&_refCount);
+		}
 
 		TES_HEAP_REDEFINE_NEW();
 

@@ -31,7 +31,7 @@ namespace RE
 
 
 		// members
-		UInt32 material;  // 20
+		std::uint32_t material;	 // 20
 	};
 	static_assert(sizeof(bhkShape) == 0x28);
 }

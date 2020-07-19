@@ -110,7 +110,8 @@ namespace RE
 			class... Args2>
 		inline BSTTuple(std::piecewise_construct_t, std::tuple<Args1...> a_firstArgs, std::tuple<Args2...> a_secondArgs) :
 			BSTTuple(a_firstArgs, a_secondArgs, std::index_sequence_for<Args1...>(), std::index_sequence_for<Args2...>())
-		{}
+		{
+		}
 
 		// 6-impl
 		template <

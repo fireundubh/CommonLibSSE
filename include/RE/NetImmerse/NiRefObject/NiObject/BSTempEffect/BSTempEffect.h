@@ -30,7 +30,7 @@ namespace RE
 	}
 
 
-enum class TEMP_EFFECT_TYPE
+	enum class TEMP_EFFECT_TYPE
 	{
 		kTerrain = 0,
 		kWeaponBlood = 1,

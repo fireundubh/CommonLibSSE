@@ -514,8 +514,8 @@ namespace RE
 		ActorHandle				  GetHandle();
 		NiAVObject*				  GetHeadPartObject(BGSHeadPart::HeadPartType a_type);
 		float					  GetHeight();
-	Actor*					  GetKiller();
-			std::uint16_t			  GetLevel() const;
+		Actor*					  GetKiller();
+		std::uint16_t			  GetLevel() const;
 		TESRace*				  GetRace() const;
 		TESObjectARMO*			  GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot);
 		SOUL_LEVEL				  GetSoulLevel() const;
@@ -545,7 +545,6 @@ namespace RE
 		bool					  IsSummoned() const;
 		bool					  IsTrespassing() const;
 		bool					  RemoveSpell(SpellItem* a_spell);
-
 		std::int32_t			  RequestDetectionLevel(Actor* a_target, DETECTION_PRIORITY a_priority = DETECTION_PRIORITY::kNormal);
 		void					  StealAlarm(TESObjectREFR* a_ref, TESForm* a_object, std::int32_t a_num, std::int32_t a_total, TESForm* a_owner, bool a_allowWarning);
 		void					  SwitchRace(TESRace* a_race, bool a_player);
@@ -554,8 +553,8 @@ namespace RE
 		void					  UpdateHairColor();
 		void					  UpdateSkinColor();
 		void					  UpdateWeaponAbility(TESForm* a_weapon, ExtraDataList* a_extraData, bool a_leftHand);
-	NiAVObject*				  VisitArmorAddon(TESObjectARMO* a_armor, TESObjectARMA* a_arma);
-			bool					  VisitFactions(std::function<bool(TESFaction* a_faction, std::int8_t a_rank)> a_visitor);
+		NiAVObject*				  VisitArmorAddon(TESObjectARMO* a_armor, TESObjectARMA* a_arma);
+		bool					  VisitFactions(std::function<bool(TESFaction* a_faction, std::int8_t a_rank)> a_visitor);
 		bool					  WouldBeStealing(const TESObjectREFR* a_target) const;
 
 

@@ -25,7 +25,7 @@ namespace RE
 
 
 		// members
-		UInt64 unk28;  // 028
+		std::uint64_t unk28;  // 028
 	};
-	STATIC_ASSERT(sizeof(CombatTargetSelectorStandard) == 0x30);
+	static_assert(sizeof(CombatTargetSelectorStandard) == 0x30);
 }

@@ -26,7 +26,8 @@ namespace RE
 
 		BSUntypedPointerHandle(const BSUntypedPointerHandle& a_rhs) :
 			_handle(a_rhs._handle)
-		{}
+		{
+		}
 
 
 		BSUntypedPointerHandle(BSUntypedPointerHandle&& a_rhs) :
@@ -38,7 +39,8 @@ namespace RE
 
 		BSUntypedPointerHandle(value_type a_handle) :
 			_handle(a_handle)
-		{}
+		{
+		}
 
 
 		~BSUntypedPointerHandle()

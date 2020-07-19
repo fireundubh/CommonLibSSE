@@ -39,5 +39,5 @@ namespace RE
 	private:
 		BSLightingShaderMaterialLODLandscape* ctor();
 	};
-	STATIC_ASSERT(sizeof(BSLightingShaderMaterialLODLandscape) == 0xC8);
+	static_assert(sizeof(BSLightingShaderMaterialLODLandscape) == 0xC8);
 }

@@ -17,7 +17,6 @@ namespace RE
 		// override (bhkShapePhantom)
 		virtual const NiRTTI* GetRTTI() const override;							  // 02
 		virtual NiObject*	  CreateClone(NiCloningProcess& a_cloning) override;  // 17
-
 	};
-	STATIC_ASSERT(sizeof(bhkSimpleShapePhantom) == 0x30);
+	static_assert(sizeof(bhkSimpleShapePhantom) == 0x30);
 }

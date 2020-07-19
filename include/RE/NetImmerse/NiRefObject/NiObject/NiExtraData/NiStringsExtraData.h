@@ -25,9 +25,9 @@ namespace RE
 
 		static NiStringsExtraData* Create(const BSFixedString& a_name, const std::vector<BSFixedString>& a_strings);
 
-		SInt32 GetIndexOf(const BSFixedString& a_element) const;
-		bool   InsertElement(const BSFixedString& a_element);
-		bool   RemoveElement(const BSFixedString& a_element);
+		std::int32_t GetIndexOf(const BSFixedString& a_element) const;
+		bool		 InsertElement(const BSFixedString& a_element);
+		bool		 RemoveElement(const BSFixedString& a_element);
 
 
 		// members

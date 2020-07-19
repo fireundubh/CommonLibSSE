@@ -452,8 +452,8 @@ namespace RE
 			} else if constexpr (std::is_convertible_v<const Character*, const T*>) {
 				return static_cast<const Character*>(this);
 			} /* else if constexpr (std::is_convertible_v<const PlayerCharacter*, const T*>) {
-				return static_cast<const PlayerCharacter*>(this);
-			}*/
+					return static_cast<const PlayerCharacter*>(this);
+				}*/
 			break;
 		case FormType::ProjectileMissile:
 			if constexpr (std::is_convertible_v<const MissileProjectile*, const T*>) {

@@ -117,16 +117,46 @@ namespace RE
 		// Operations
 		void clear() noexcept;
 
-		inline friend bool operator==(const GString& a_lhs, const char* a_rhs) { return (a_lhs.data() == a_rhs || std::strcmp(a_lhs.data(), a_rhs) == 0); }
-		inline friend bool operator!=(const GString& a_lhs, const char* a_rhs) { return !(a_lhs == a_rhs); }
-		inline friend bool operator==(const char* a_lhs, const GString& a_rhs) { return a_rhs == a_lhs; }
-		inline friend bool operator!=(const char* a_lhs, const GString& a_rhs) { return !(a_lhs == a_rhs); }
-		inline friend bool operator==(const GString& a_lhs, const GString& a_rhs) { return a_lhs == a_rhs.c_str(); }
-		inline friend bool operator!=(const GString& a_lhs, const GString& a_rhs) { return !(a_lhs == a_rhs); }
-		inline friend bool operator==(const GString& a_lhs, const std::string_view& a_rhs) { return a_lhs == a_rhs.data(); }
-		inline friend bool operator!=(const GString& a_lhs, const std::string_view& a_rhs) { return !(a_lhs == a_rhs); }
-		inline friend bool operator==(const std::string_view& a_lhs, const GString& a_rhs) { return a_rhs == a_lhs; }
-		inline friend bool operator!=(const std::string_view& a_lhs, const GString& a_rhs) { return !(a_lhs == a_rhs); }
+		inline friend bool operator==(const GString& a_lhs, const char* a_rhs)
+		{
+			return (a_lhs.data() == a_rhs || std::strcmp(a_lhs.data(), a_rhs) == 0);
+		}
+		inline friend bool operator!=(const GString& a_lhs, const char* a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
+		inline friend bool operator==(const char* a_lhs, const GString& a_rhs)
+		{
+			return a_rhs == a_lhs;
+		}
+		inline friend bool operator!=(const char* a_lhs, const GString& a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
+		inline friend bool operator==(const GString& a_lhs, const GString& a_rhs)
+		{
+			return a_lhs == a_rhs.c_str();
+		}
+		inline friend bool operator!=(const GString& a_lhs, const GString& a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
+		inline friend bool operator==(const GString& a_lhs, const std::string_view& a_rhs)
+		{
+			return a_lhs == a_rhs.data();
+		}
+		inline friend bool operator!=(const GString& a_lhs, const std::string_view& a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
+		inline friend bool operator==(const std::string_view& a_lhs, const GString& a_rhs)
+		{
+			return a_rhs == a_lhs;
+		}
+		inline friend bool operator!=(const std::string_view& a_lhs, const GString& a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
 
 		static UPInt BernsteinHashFunction(const void* a_dataIn, UPInt a_size, UPInt a_seed = 5381);
 

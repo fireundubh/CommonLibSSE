@@ -14,7 +14,7 @@ namespace RE
 		virtual ~BSParticleShaderGeometry();  // 00
 
 		// override (BSDynamicTriShape)
-		virtual void UpdateDownwardPass(NiUpdateData& a_data, UInt32 a_arg2) override;	// 2C
+		virtual void UpdateDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2) override;  // 2C
 	};
-	STATIC_ASSERT(sizeof(BSParticleShaderGeometry) == 0x180);
+	static_assert(sizeof(BSParticleShaderGeometry) == 0x180);
 }

@@ -23,11 +23,11 @@ namespace RE
 
 
 		// members
-		NiColor ambient;   // 110
-		NiColor diffuse;   // 11C
-		NiColor specular;  // 128
-		float	fade;	   // 134
-		UInt32	unk138;	   // 138
+		NiColor		  ambient;	 // 110
+		NiColor		  diffuse;	 // 11C
+		NiColor		  specular;	 // 128
+		float		  fade;		 // 134
+		std::uint32_t unk138;	 // 138
 	};
-	STATIC_ASSERT(sizeof(NiLight) == 0x140);
+	static_assert(sizeof(NiLight) == 0x140);
 }

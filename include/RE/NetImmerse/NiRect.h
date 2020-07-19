@@ -12,7 +12,8 @@ namespace RE
 			right(a_right),
 			top(a_top),
 			bottom(a_bottom)
-		{}
+		{
+		}
 
 
 		T GetWidth() const

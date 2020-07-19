@@ -140,11 +140,11 @@ namespace RE
 			return false;
 		}
 
-		for (UInt16 i = 0; i < extraDataSize; i++) {
+		for (std::uint16_t i = 0; i < extraDataSize; i++) {
 			auto extraData = extra[i];
 			if (extraData) {
-				std::string name = extraData->GetName().c_str();
-				if (!name.empty() && name.find(a_match.c_str()) != std::string::npos) {
+				std::string extraName = extraData->GetName().c_str();
+				if (!extraName.empty() && extraName.find(a_match.c_str()) != std::string::npos) {
 					return true;
 				}
 			}
@@ -264,11 +264,11 @@ namespace RE
 			return false;
 		}
 
-		assert(extraDataSize < std::numeric_limits<SInt16>::max());
+		assert(extraDataSize < std::numeric_limits<std::int16_t>::max());
 
-		SInt16 bottom = 0;
-		SInt16 top = static_cast<SInt16>(extraDataSize - 1);
-		SInt16 middle = 0;
+		std::int16_t bottom = 0;
+		std::int16_t top = static_cast<std::int16_t>(extraDataSize - 1);
+		std::int16_t middle = 0;
 
 		while (bottom <= top) {
 			middle = (top + bottom) >> 1;

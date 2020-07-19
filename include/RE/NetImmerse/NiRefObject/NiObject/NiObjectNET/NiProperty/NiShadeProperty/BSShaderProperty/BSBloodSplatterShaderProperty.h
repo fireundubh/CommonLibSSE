@@ -18,7 +18,7 @@ namespace RE
 		inline static constexpr auto Ni_RTTI = NiRTTI_BSBloodSplatterShaderProperty;
 
 
-		enum : UInt32
+		enum : std::uint32_t
 		{
 			kBloodColor = 0,
 			kBloodAlpha,
@@ -41,8 +41,8 @@ namespace RE
 
 		// members
 		NiPointer<NiSourceTexture> bloodTextures[kTotal];  // 088
-		SInt32					   textureClampMode;	   // 0A0
+		std::int32_t			   textureClampMode;	   // 0A0
 		float*					   alphaSource;			   // 0A8
 	};
-	STATIC_ASSERT(sizeof(BSBloodSplatterShaderProperty) == 0xB0);
+	static_assert(sizeof(BSBloodSplatterShaderProperty) == 0xB0);
 }

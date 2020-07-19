@@ -21,11 +21,13 @@ namespace RE
 
 		NiTMap(std::uint32_t a_hashSize = 37) :
 			Base(a_hashSize)
-		{}
+		{
+		}
 
 
 		virtual ~NiTMap()  // 00
-		{}
+		{
+		}
 
 	protected:
 		using Base::_allocator;

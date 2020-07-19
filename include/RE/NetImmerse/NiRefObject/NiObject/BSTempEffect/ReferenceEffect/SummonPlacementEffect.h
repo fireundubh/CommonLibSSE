@@ -45,11 +45,11 @@ namespace RE
 		// members
 		BGSArtObject*		  effectArt;  // 68
 		NiPoint3			  position;	  // 70
-		UInt8				  unk7C[4];	  // 7C
+		std::uint8_t		  unk7C[4];	  // 7C
 		NiPointer<NiAVObject> unk80;	  // 80
-		UInt64				  unk88;	  // 88
-		UInt64				  unk90;	  // 90 - queuedItem?
-		UInt8				  unk98;	  // 98
+		std::uint64_t		  unk88;	  // 88
+		std::uint64_t		  unk90;	  // 90 - queuedItem?
+		std::uint8_t		  unk98;	  // 98
 	};
-	STATIC_ASSERT(sizeof(SummonPlacementEffect) == 0xA0);
+	static_assert(sizeof(SummonPlacementEffect) == 0xA0);
 }

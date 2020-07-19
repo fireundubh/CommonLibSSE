@@ -18,17 +18,17 @@ namespace RE
 		// members
 		NiTPrimitiveArray<CombatGroup*> combatGroups;	   // 00
 		BSReadWriteLock					lock;			   // 18
-		UInt64							unk20;			   // 20
-		UInt64							unk28;			   // 28
-		UInt64							unk30;			   // 30
-		UInt64							unk38;			   // 38
-		UInt64							unk40;			   // 40
+		std::uint64_t					unk20;			   // 20
+		std::uint64_t					unk28;			   // 28
+		std::uint64_t					unk30;			   // 30
+		std::uint64_t					unk38;			   // 38
+		std::uint64_t					unk40;			   // 40
 		float							unk48;			   // 48
 		AITimer							musicStopTimer;	   // 4C
 		AITimer							musicUpdateTimer;  // 54
-		UInt32							combatCount;	   // 5C
-		UInt32							groupCount;		   // 60
-		UInt32							unk64;			   // 64
+		std::uint32_t					combatCount;	   // 5C
+		std::uint32_t					groupCount;		   // 60
+		std::uint32_t					unk64;			   // 64
 	};
-	STATIC_ASSERT(sizeof(CombatManager) == 0x68);
+	static_assert(sizeof(CombatManager) == 0x68);
 }

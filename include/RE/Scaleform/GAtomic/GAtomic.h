@@ -40,17 +40,20 @@ namespace RE
 	public:
 		GAtomicValueBase() :
 			value{}
-		{}
+		{
+		}
 
 
 		GAtomicValueBase(const GAtomicValueBase& a_rhs) :
 			value(a_rhs.value)
-		{}
+		{
+		}
 
 
 		GAtomicValueBase(const T& a_rhs) :
 			value(a_rhs)
-		{}
+		{
+		}
 
 
 		// members
@@ -71,17 +74,20 @@ namespace RE
 
 		GAtomicInt() :
 			Base{}
-		{}
+		{
+		}
 
 
 		GAtomicInt(const GAtomicInt& a_rhs) :
 			Base(a_rhs)
-		{}
+		{
+		}
 
 
 		GAtomicInt(const T& a_rhs) :
 			Base(a_rhs)
-		{}
+		{
+		}
 
 
 		GAtomicInt operator=(const GAtomicInt& a_rhs)
@@ -169,17 +175,20 @@ namespace RE
 
 		GAtomicInt() :
 			GAtomicValueBase{}
-		{}
+		{
+		}
 
 
 		GAtomicInt(const GAtomicInt& a_rhs) :
 			GAtomicValueBase(a_rhs)
-		{}
+		{
+		}
 
 
 		GAtomicInt(const T& a_rhs) :
 			GAtomicValueBase(a_rhs)
-		{}
+		{
+		}
 
 
 		GAtomicInt operator=(const GAtomicInt& a_rhs)

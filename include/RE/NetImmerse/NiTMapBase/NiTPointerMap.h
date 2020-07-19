@@ -21,11 +21,13 @@ namespace RE
 
 		NiTPointerMap(std::uint32_t a_hashSize = 37) :
 			NiTMapBase(a_hashSize)
-		{}
+		{
+		}
 
 
 		virtual ~NiTPointerMap()  // 00
-		{}
+		{
+		}
 
 	protected:
 		using Base::_allocator;

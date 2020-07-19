@@ -109,7 +109,7 @@ namespace RE
 		hkVector4										 supportNorm;				 // 110
 		BSBound											 collisionBound;			 // 120
 		BSBound											 bumperCollisionBound;		 // 150
-		NiPoint3					   unk180;					   // 180
+		NiPoint3										 unk180;					 // 180
 		bhkICharOrientationController*					 orientationCtrl;			 // 190
 		std::uint64_t									 pad198;					 // 198
 		hkpSurfaceInfo									 surfaceInfo;				 // 1A0

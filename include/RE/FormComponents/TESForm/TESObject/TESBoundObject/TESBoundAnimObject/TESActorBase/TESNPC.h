@@ -252,16 +252,16 @@ namespace RE
 		// override (BSTEventSink<MenuOpenCloseEvent>)
 		virtual BSEventNotifyControl ProcessEvent(const MenuOpenCloseEvent* a_event, BSTEventSource<MenuOpenCloseEvent>* a_eventSource) override;  // 01
 
-		bool					 AddPerk(BGSPerk* a_perk, SInt32 a_rank);
+		bool					 AddPerk(BGSPerk* a_perk, std::int8_t a_rank);
 		void					 ChangeHeadPart(BGSHeadPart* a_target);
 		BGSHeadPart**			 GetBaseOverlays() const;
 		BGSHeadPart*			 GetCurrentHeadPartByType(HeadPartType a_type);
 		BGSHeadPart*			 GetHeadPartByType(HeadPartType a_type);
 		BGSHeadPart*			 GetHeadPartOverlayByType(HeadPartType a_type);
 		float					 GetHeight() const;
-		std::uint32_t GetNumBaseOverlays() const;
+		std::uint32_t			 GetNumBaseOverlays() const;
 		TESSpellList::SpellData* GetOrCreateSpellList();
-		SInt32					 GetPerkIndex(BGSPerk* a_perk) const;
+		std::int32_t			 GetPerkIndex(BGSPerk* a_perk) const;
 		TESRace*				 GetRace();
 		TESNPC*					 GetRootFaceNPC();
 		const TESNPC*			 GetRootFaceNPC() const;

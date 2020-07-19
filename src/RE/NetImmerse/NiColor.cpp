@@ -11,11 +11,11 @@ namespace RE
 	{}
 
 
-	UInt32 NiColor::ColorToInt(const NiColor& a_rhs)
+	std::uint32_t NiColor::ColorToInt(const NiColor& a_rhs)
 	{
-		auto red = static_cast<UInt32>(a_rhs.red * 255);
-		auto green = static_cast<UInt32>(a_rhs.green * 255);
-		auto blue = static_cast<UInt32>(a_rhs.blue * 255);
+		auto red = static_cast<std::uint32_t>(a_rhs.red * 255);
+		auto green = static_cast<std::uint32_t>(a_rhs.green * 255);
+		auto blue = static_cast<std::uint32_t>(a_rhs.blue * 255);
 
 		return ((red & 0xFF) << 16) + ((green & 0xFF) << 8) + (blue & 0xFF);
 	}
@@ -23,9 +23,9 @@ namespace RE
 
 	std::string NiColor::ColorToString(const NiColor& a_rhs)
 	{
-		auto red = static_cast<UInt32>(a_rhs.red * 255);
-		auto green = static_cast<UInt32>(a_rhs.green * 255);
-		auto blue = static_cast<UInt32>(a_rhs.blue * 255);
+		auto red = static_cast<std::uint32_t>(a_rhs.red * 255);
+		auto green = static_cast<std::uint32_t>(a_rhs.green * 255);
+		auto blue = static_cast<std::uint32_t>(a_rhs.blue * 255);
 
 		char hexcol[16];
 		snprintf(hexcol, sizeof(hexcol), "%02x%02x%02x", red, green, blue);

@@ -24,13 +24,13 @@ namespace RE
 
 			TES_HEAP_REDEFINE_NEW();
 
-			bool   AddLevSpell(TESLevSpell* a_spell);
-			bool   AddShout(TESShout* a_spell);
-			bool   AddSpell(SpellItem* a_spell);
-			SInt32 GetIndex(SpellItem* a_spell);
-			SInt32 GetIndex(TESLevSpell* a_spell);
-			SInt32 GetIndex(TESShout* a_spell);
-			bool   RemoveSpell(SpellItem* a_spell);
+			bool		 AddLevSpell(TESLevSpell* a_spell);
+			bool		 AddShout(TESShout* a_spell);
+			bool		 AddSpell(SpellItem* a_spell);
+			std::int32_t GetIndex(SpellItem* a_spell);
+			std::int32_t GetIndex(TESLevSpell* a_spell);
+			std::int32_t GetIndex(TESShout* a_spell);
+			bool		 RemoveSpell(SpellItem* a_spell);
 
 
 			// members

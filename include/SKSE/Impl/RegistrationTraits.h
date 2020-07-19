@@ -50,12 +50,14 @@ namespace SKSE
 
 			VMArg() :
 				_arg{}
-			{}
+			{
+			}
 
 			template <class U, std::enable_if_t<std::is_same_v<std::decay_t<U>, value_type>, int> = 0>
 			VMArg(U&& a_arg) :
 				_arg{ std::forward<U>(a_arg) }
-			{}
+			{
+			}
 
 			~VMArg() = default;
 
@@ -89,7 +91,8 @@ namespace SKSE
 
 			VMArg() :
 				_formID(static_cast<RE::FormID>(0))
-			{}
+			{
+			}
 
 			template <class U, std::enable_if_t<std::is_same_v<std::decay_t<U>, value_type>, int> = 0>
 			VMArg(U&& a_arg) :
@@ -130,7 +133,8 @@ namespace SKSE
 
 			VMArg() :
 				_object(nullptr)
-			{}
+			{
+			}
 
 			template <class U, std::enable_if_t<std::is_same_v<std::decay_t<U>, value_type>, int> = 0>
 			VMArg(U&& a_arg) :

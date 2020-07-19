@@ -27,13 +27,15 @@ namespace RE
 			BSTScatterTableEntry() :
 				value(),
 				next(0)
-			{}
+			{
+			}
 
 
 			BSTScatterTableEntry(const BSTScatterTableEntry& a_rhs) :
 				value(a_rhs.value),
 				next(a_rhs.next)
-			{}
+			{
+			}
 
 
 			BSTScatterTableEntry(BSTScatterTableEntry&& a_rhs) :
@@ -89,13 +91,15 @@ namespace RE
 			iterator_base() :
 				_entry(nullptr),
 				_end(nullptr)
-			{}
+			{
+			}
 
 
 			iterator_base(const iterator_base& a_rhs) :
 				_entry(a_rhs._entry),
 				_end(a_rhs._end)
-			{}
+			{
+			}
 
 
 			iterator_base(iterator_base&& a_rhs) :
@@ -117,7 +121,8 @@ namespace RE
 
 
 			~iterator_base()
-			{}
+			{
+			}
 
 
 			iterator_base& operator=(const iterator_base& a_rhs)
@@ -212,7 +217,8 @@ namespace RE
 			_freeIdx(0),
 			_sentinel((const entry_type*)SENTINEL),
 			_allocator()
-		{}
+		{
+		}
 
 
 		TES_HEAP_REDEFINE_NEW();
@@ -618,7 +624,8 @@ namespace RE
 		BSTScatterTableHeapAllocator() :
 			_pad00(0),
 			_entries(nullptr)
-		{}
+		{
+		}
 
 
 		entry_type* allocate(std::size_t a_num)
@@ -810,7 +817,7 @@ namespace RE
 			std::uint32_t				_capacity;	// ?? (0C) - this must be 2^n, or else terrible things will happen
 			std::uint32_t				_freeCount;	// ?? (10)
 			std::uint32_t				_freeIdx;	// ?? (14)
-			const entry_type*	_sentinel;	// ?? (18)
+			const entry_type* _sentinel;	// ?? (18)
 		};
 
 

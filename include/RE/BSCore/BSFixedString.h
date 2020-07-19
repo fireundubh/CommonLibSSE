@@ -58,30 +58,90 @@ namespace RE
 		// Operations
 		void clear();
 
-		inline friend bool operator==(const BSFixedString& a_lhs, const char* a_rhs) { return a_lhs.c_str() == a_rhs || _stricmp(a_lhs.c_str(), a_rhs) == 0; }
-		inline friend bool operator!=(const BSFixedString& a_lhs, const char* a_rhs) { return !(a_lhs == a_rhs); }
-		inline friend bool operator<(const BSFixedString& a_lhs, const char* a_rhs) { return _stricmp(a_lhs.c_str(), a_rhs) < 0; }
-		inline friend bool operator>(const BSFixedString& a_lhs, const char* a_rhs) { return _stricmp(a_lhs.c_str(), a_rhs) > 0; }
+		inline friend bool operator==(const BSFixedString& a_lhs, const char* a_rhs)
+		{
+			return a_lhs.c_str() == a_rhs || _stricmp(a_lhs.c_str(), a_rhs) == 0;
+		}
+		inline friend bool operator!=(const BSFixedString& a_lhs, const char* a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
+		inline friend bool operator<(const BSFixedString& a_lhs, const char* a_rhs)
+		{
+			return _stricmp(a_lhs.c_str(), a_rhs) < 0;
+		}
+		inline friend bool operator>(const BSFixedString& a_lhs, const char* a_rhs)
+		{
+			return _stricmp(a_lhs.c_str(), a_rhs) > 0;
+		}
 
-		inline friend bool operator==(const char* a_lhs, const BSFixedString& a_rhs) { return a_rhs == a_lhs; }
-		inline friend bool operator!=(const char* a_lhs, const BSFixedString& a_rhs) { return !(a_lhs == a_rhs); }
-		inline friend bool operator<(const char* a_lhs, const BSFixedString& a_rhs) { return _stricmp(a_lhs, a_rhs.c_str()) < 0; }
-		inline friend bool operator>(const char* a_lhs, const BSFixedString& a_rhs) { return _stricmp(a_lhs, a_rhs.c_str()) > 0; }
+		inline friend bool operator==(const char* a_lhs, const BSFixedString& a_rhs)
+		{
+			return a_rhs == a_lhs;
+		}
+		inline friend bool operator!=(const char* a_lhs, const BSFixedString& a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
+		inline friend bool operator<(const char* a_lhs, const BSFixedString& a_rhs)
+		{
+			return _stricmp(a_lhs, a_rhs.c_str()) < 0;
+		}
+		inline friend bool operator>(const char* a_lhs, const BSFixedString& a_rhs)
+		{
+			return _stricmp(a_lhs, a_rhs.c_str()) > 0;
+		}
 
-		inline friend bool operator==(const BSFixedString& a_lhs, const BSFixedString& a_rhs) { return (a_lhs.empty() && a_rhs.empty()) || a_lhs._data == a_rhs._data; }
-		inline friend bool operator!=(const BSFixedString& a_lhs, const BSFixedString& a_rhs) { return !(a_lhs == a_rhs); }
-		inline friend bool operator<(const BSFixedString& a_lhs, const BSFixedString& a_rhs) { return _stricmp(a_lhs.c_str(), a_rhs.c_str()) < 0; }
-		inline friend bool operator>(const BSFixedString& a_lhs, const BSFixedString& a_rhs) { return _stricmp(a_lhs.c_str(), a_rhs.c_str()) > 0; }
+		inline friend bool operator==(const BSFixedString& a_lhs, const BSFixedString& a_rhs)
+		{
+			return (a_lhs.empty() && a_rhs.empty()) || a_lhs._data == a_rhs._data;
+		}
+		inline friend bool operator!=(const BSFixedString& a_lhs, const BSFixedString& a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
+		inline friend bool operator<(const BSFixedString& a_lhs, const BSFixedString& a_rhs)
+		{
+			return _stricmp(a_lhs.c_str(), a_rhs.c_str()) < 0;
+		}
+		inline friend bool operator>(const BSFixedString& a_lhs, const BSFixedString& a_rhs)
+		{
+			return _stricmp(a_lhs.c_str(), a_rhs.c_str()) > 0;
+		}
 
-		inline friend bool operator==(const BSFixedString& a_lhs, const std::string_view& a_rhs) { return a_lhs == a_rhs.data(); }
-		inline friend bool operator!=(const BSFixedString& a_lhs, const std::string_view& a_rhs) { return !(a_lhs == a_rhs); }
-		inline friend bool operator<(const BSFixedString& a_lhs, const std::string_view& a_rhs) { return _stricmp(a_lhs.c_str(), a_rhs.data()) < 0; }
-		inline friend bool operator>(const BSFixedString& a_lhs, const std::string_view& a_rhs) { return _stricmp(a_lhs.c_str(), a_rhs.data()) > 0; }
+		inline friend bool operator==(const BSFixedString& a_lhs, const std::string_view& a_rhs)
+		{
+			return a_lhs == a_rhs.data();
+		}
+		inline friend bool operator!=(const BSFixedString& a_lhs, const std::string_view& a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
+		inline friend bool operator<(const BSFixedString& a_lhs, const std::string_view& a_rhs)
+		{
+			return _stricmp(a_lhs.c_str(), a_rhs.data()) < 0;
+		}
+		inline friend bool operator>(const BSFixedString& a_lhs, const std::string_view& a_rhs)
+		{
+			return _stricmp(a_lhs.c_str(), a_rhs.data()) > 0;
+		}
 
-		inline friend bool operator==(const std::string_view& a_lhs, const BSFixedString& a_rhs) { return a_rhs == a_lhs; }
-		inline friend bool operator!=(const std::string_view& a_lhs, const BSFixedString& a_rhs) { return !(a_rhs == a_lhs); }
-		inline friend bool operator<(const std::string_view& a_lhs, const BSFixedString& a_rhs) { return _stricmp(a_lhs.data(), a_rhs.c_str()) < 0; }
-		inline friend bool operator>(const std::string_view& a_lhs, const BSFixedString& a_rhs) { return _stricmp(a_lhs.data(), a_rhs.c_str()) > 0; }
+		inline friend bool operator==(const std::string_view& a_lhs, const BSFixedString& a_rhs)
+		{
+			return a_rhs == a_lhs;
+		}
+		inline friend bool operator!=(const std::string_view& a_lhs, const BSFixedString& a_rhs)
+		{
+			return !(a_rhs == a_lhs);
+		}
+		inline friend bool operator<(const std::string_view& a_lhs, const BSFixedString& a_rhs)
+		{
+			return _stricmp(a_lhs.data(), a_rhs.c_str()) < 0;
+		}
+		inline friend bool operator>(const std::string_view& a_lhs, const BSFixedString& a_rhs)
+		{
+			return _stricmp(a_lhs.data(), a_rhs.c_str()) > 0;
+		}
 
 		TES_HEAP_REDEFINE_NEW();
 
@@ -163,16 +223,46 @@ namespace RE
 		// Operations
 		void clear();
 
-		inline friend bool operator==(const BSFixedStringW& a_lhs, const wchar_t* a_rhs) { return std::wcscmp(a_lhs.c_str(), a_rhs) == 0; }
-		inline friend bool operator!=(const BSFixedStringW& a_lhs, const wchar_t* a_rhs) { return !(a_lhs == a_rhs); }
-		inline friend bool operator==(const wchar_t* a_lhs, const BSFixedStringW& a_rhs) { return a_rhs == a_lhs; }
-		inline friend bool operator!=(const wchar_t* a_lhs, const BSFixedStringW& a_rhs) { return !(a_lhs == a_rhs); }
-		inline friend bool operator==(const BSFixedStringW& a_lhs, const BSFixedStringW& a_rhs) { return (a_lhs.empty() && a_rhs.empty()) || a_lhs._data == a_rhs._data; }
-		inline friend bool operator!=(const BSFixedStringW& a_lhs, const BSFixedStringW& a_rhs) { return !(a_lhs == a_rhs); }
-		inline friend bool operator==(const BSFixedStringW& a_lhs, const std::wstring_view& a_rhs) { return a_lhs == a_rhs.data(); }
-		inline friend bool operator!=(const BSFixedStringW& a_lhs, const std::wstring_view& a_rhs) { return !(a_lhs == a_rhs); }
-		inline friend bool operator==(const std::wstring_view& a_lhs, const BSFixedStringW& a_rhs) { return a_rhs == a_lhs; }
-		inline friend bool operator!=(const std::wstring_view& a_lhs, const BSFixedStringW& a_rhs) { return !(a_rhs == a_lhs); }
+		inline friend bool operator==(const BSFixedStringW& a_lhs, const wchar_t* a_rhs)
+		{
+			return std::wcscmp(a_lhs.c_str(), a_rhs) == 0;
+		}
+		inline friend bool operator!=(const BSFixedStringW& a_lhs, const wchar_t* a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
+		inline friend bool operator==(const wchar_t* a_lhs, const BSFixedStringW& a_rhs)
+		{
+			return a_rhs == a_lhs;
+		}
+		inline friend bool operator!=(const wchar_t* a_lhs, const BSFixedStringW& a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
+		inline friend bool operator==(const BSFixedStringW& a_lhs, const BSFixedStringW& a_rhs)
+		{
+			return (a_lhs.empty() && a_rhs.empty()) || a_lhs._data == a_rhs._data;
+		}
+		inline friend bool operator!=(const BSFixedStringW& a_lhs, const BSFixedStringW& a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
+		inline friend bool operator==(const BSFixedStringW& a_lhs, const std::wstring_view& a_rhs)
+		{
+			return a_lhs == a_rhs.data();
+		}
+		inline friend bool operator!=(const BSFixedStringW& a_lhs, const std::wstring_view& a_rhs)
+		{
+			return !(a_lhs == a_rhs);
+		}
+		inline friend bool operator==(const std::wstring_view& a_lhs, const BSFixedStringW& a_rhs)
+		{
+			return a_rhs == a_lhs;
+		}
+		inline friend bool operator!=(const std::wstring_view& a_lhs, const BSFixedStringW& a_rhs)
+		{
+			return !(a_rhs == a_lhs);
+		}
 
 		TES_HEAP_REDEFINE_NEW();
 

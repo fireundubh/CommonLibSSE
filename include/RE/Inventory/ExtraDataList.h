@@ -31,15 +31,18 @@ namespace RE
 
 			constexpr iterator_base() noexcept :
 				_cur(nullptr)
-			{}
+			{
+			}
 
 			constexpr iterator_base(pointer a_node) noexcept :
 				_cur(a_node)
-			{}
+			{
+			}
 
 			constexpr iterator_base(const iterator_base& a_rhs) noexcept :
 				_cur(a_rhs._cur)
-			{}
+			{
+			}
 
 			constexpr iterator_base(iterator_base&& a_rhs) noexcept :
 				_cur(std::move(a_rhs._cur))
@@ -66,11 +69,23 @@ namespace RE
 				return *this;
 			}
 
-			[[nodiscard]] constexpr reference operator*() const noexcept { return *_cur; }
-			[[nodiscard]] constexpr pointer	  operator->() const noexcept { return _cur; }
+			[[nodiscard]] constexpr reference operator*() const noexcept
+			{
+				return *_cur;
+			}
+			[[nodiscard]] constexpr pointer operator->() const noexcept
+			{
+				return _cur;
+			}
 
-			[[nodiscard]] constexpr friend bool operator==(const iterator_base& a_lhs, const iterator_base& a_rhs) noexcept { return a_lhs._cur == a_rhs._cur; }
-			[[nodiscard]] constexpr friend bool operator!=(const iterator_base& a_lhs, const iterator_base& a_rhs) noexcept { return !(a_lhs == a_rhs); }
+			[[nodiscard]] constexpr friend bool operator==(const iterator_base& a_lhs, const iterator_base& a_rhs) noexcept
+			{
+				return a_lhs._cur == a_rhs._cur;
+			}
+			[[nodiscard]] constexpr friend bool operator!=(const iterator_base& a_lhs, const iterator_base& a_rhs) noexcept
+			{
+				return !(a_lhs == a_rhs);
+			}
 
 			// prefix
 			constexpr iterator_base& operator++() noexcept

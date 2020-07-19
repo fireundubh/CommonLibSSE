@@ -17,7 +17,7 @@ namespace RE
 		struct Action
 		{
 			BSFixedString name;
-			UInt32		  unk04;
+			std::uint32_t unk04;
 			float		  delta;
 		};
 
@@ -25,17 +25,17 @@ namespace RE
 		class MorphDatabase
 		{
 		public:
-			UInt64					unk00;	   // 00
-			UInt32					unk08;	   // 08
-			UInt32					unk0C;	   // 0C
-			UInt32					unk10;	   // 10
-			UInt32					unk14;	   // 14
+			std::uint64_t			unk00;	   // 00
+			std::uint32_t			unk08;	   // 08
+			std::uint32_t			unk0C;	   // 0C
+			std::uint32_t			unk10;	   // 10
+			std::uint32_t			unk14;	   // 14
 			void*					unk18;	   // 18
-			UInt64					unk20;	   // 20
-			UInt64					unk28;	   // 28
+			std::uint64_t			unk20;	   // 20
+			std::uint64_t			unk28;	   // 28
 			mutable BSReadWriteLock lock;	   // 30
-			UInt8					unk38;	   // 38
-			UInt8					pad39[7];  // 39
+			std::uint8_t			unk38;	   // 38
+			std::uint8_t			pad39[7];  // 39
 		};
 
 		static FaceGen* GetSingleton();
@@ -44,16 +44,16 @@ namespace RE
 
 
 		// members
-		UInt32		  numActorsAllowedToMorph;	// 04
+		std::uint32_t numActorsAllowedToMorph;	// 04
 		bool		  facialEmotions;			// 08
-		UInt8		  pad09[7];					// 09
-		UInt64		  unk10;					// 10
+		std::uint8_t  pad09[7];					// 09
+		std::uint64_t unk10;					// 10
 		MorphDatabase morphDatabase;			// 18
-		UInt8		  isReset;					// 58
-		UInt8		  pad59[3];					// 59
-		UInt32		  unk5C;					// 5C
-		UInt8		  unk60;					// 60
-		UInt8		  pad61[7];					// 61
+		std::uint8_t  isReset;					// 58
+		std::uint8_t  pad59[3];					// 59
+		std::uint32_t unk5C;					// 5C
+		std::uint8_t  unk60;					// 60
+		std::uint8_t  pad61[7];					// 61
 	};
 	static_assert(offsetof(FaceGen, isReset) == 0x58);
 };

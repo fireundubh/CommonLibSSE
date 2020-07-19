@@ -7,7 +7,7 @@ namespace RE
 	{
 		flags = a_other->flags;
 		alpha = a_other->alpha;
-		lastRenderPassState = std::numeric_limits<SInt32>::max();
+		lastRenderPassState = std::numeric_limits<std::int32_t>::max();
 		if ((a_other->flags & EShaderPropertyFlag::kOwnEmit) == EShaderPropertyFlag::kOwnEmit) {
 			emissiveColor->red = a_other->emissiveColor->red;
 			emissiveColor->green = a_other->emissiveColor->green;
@@ -25,7 +25,7 @@ namespace RE
 	}
 
 
-	void BSLightingShaderProperty::InvalidateTextures(UInt32 unk1)
+	void BSLightingShaderProperty::InvalidateTextures(std::uint32_t unk1)
 	{
 		using func_t = decltype(&BSLightingShaderProperty::InvalidateTextures);
 		REL::Offset<func_t> func(Offset::BSLightingShaderProperty::InvalidateTextures);

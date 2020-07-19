@@ -35,5 +35,5 @@ namespace RE
 		CombatLocation pos;		// 30
 		float		   radius;	// 48
 	};
-	STATIC_ASSERT(sizeof(CombatAreaRadius) == 0x50);
+	static_assert(sizeof(CombatAreaRadius) == 0x50);
 }

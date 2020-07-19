@@ -19,18 +19,18 @@ namespace RE
 		virtual void  CastRayWithCollectorImpl(const hkpShapeRayCastInput& a_input, const hkpCdBody& a_cdBody, hkpRayHitCollector& a_collector) const override;	 // 09
 
 		// add
-		virtual void   GetCentreImpl(hkVector4& a_centreOut) = 0;  // 0D
-		virtual void   Unk_0E(void) = 0;						   // 0E
-		virtual void   Unk_0F(void) = 0;						   // 0F
-		virtual UInt32 Unk_10(void);							   // 10 - { return 2; }
-		virtual void   Unk_11(void);							   // 11
+		virtual void		  GetCentreImpl(hkVector4& a_centreOut) = 0;  // 0D
+		virtual void		  Unk_0E(void) = 0;							  // 0E
+		virtual void		  Unk_0F(void) = 0;							  // 0F
+		virtual std::uint32_t Unk_10(void);								  // 10 - { return 2; }
+		virtual void		  Unk_11(void);								  // 11
 
 		void SetRadius(float a_radius);
 
 
 		// members
-		float  radius;	// 20
-		UInt32 pad1C;	// 24
+		float		  radius;  // 20
+		std::uint32_t pad1C;   // 24
 	};
-	STATIC_ASSERT(sizeof(hkpConvexShape) == 0x28);
+	static_assert(sizeof(hkpConvexShape) == 0x28);
 }

@@ -36,7 +36,8 @@ namespace RE
 		{
 			Reserve() :
 				ReserveHeader(buffer, SIZE)
-			{}
+			{
+			}
 
 
 			// members

@@ -165,7 +165,8 @@ namespace RE
 
 
 		struct WeatherSoundList : public BSSimpleList<WeatherSound*>
-		{};
+		{
+		};
 
 
 		virtual ~TESWeather();	// 00

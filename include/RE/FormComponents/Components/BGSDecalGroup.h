@@ -28,12 +28,12 @@ namespace RE
 		NiNode*				  clone;			// 30
 		BGSTextureSet*		  texSet;			// 38
 		BGSTextureSet*		  texSet2;			// 40
-		SInt32				  unk48;			// 48; -1 for actors
+		std::int32_t		  unk48;			// 48; -1 for actors
 		float				  width;			// 4C;
 		float				  height;			// 50;
 		float				  depth;			// 54;
 		NiMatrix3			  rotation;			// 58;
-		UInt32				  unk7C;			// 7C;
+		std::uint32_t		  unk7C;			// 7C;
 		TESObjectCELL*		  parentCell;		// 80
 		float				  parallaxScale;	// 88;
 		NiNode*				  unk90;			// 90;
@@ -41,21 +41,21 @@ namespace RE
 		float				  angleThreshold;	// 9C;
 		float				  placementRadius;	// A0;
 		NiColor				  color;			// A4;
-		UInt32				  flags;			// B0;
-		SInt8				  subtextureIndex;	// B4;
+		std::uint32_t		  flags;			// B0;
+		std::int8_t			  subtextureIndex;	// B4;
 		bool				  permanentDecal;	// B5;
-		UInt8				  unkB6;			// B6;
-		UInt8				  parallaxOcc;		// B7;
+		std::uint8_t		  unkB6;			// B6;
+		std::uint8_t		  parallaxOcc;		// B7;
 		bool				  alphaBlending;	// B8;
 		bool				  enableBlending;	// B9;
-		UInt8				  parallaxPasses;	// BA;
-		UInt8				  unkBB;			// BB;
-		UInt8				  unkBC;			// BC;
+		std::uint8_t		  parallaxPasses;	// BA;
+		std::uint8_t		  unkBB;			// BB;
+		std::uint8_t		  unkBC;			// BC;
 		bool				  twoSided;			// BD;
-		UInt8				  unkBE;			// BE;
-		UInt8				  unkBF;			// BF;
-		UInt32				  unkC0;			// C0;
-		UInt32				  padC4;			// C4;
+		std::uint8_t		  unkBE;			// BE;
+		std::uint8_t		  unkBF;			// BF;
+		std::uint32_t		  unkC0;			// C0;
+		std::uint32_t		  padC4;			// C4;
 	};
 	static_assert(sizeof(DECAL_CREATION_DATA) == 0xC8);
 

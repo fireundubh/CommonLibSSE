@@ -31,7 +31,7 @@ namespace RE
 		virtual Type			  GetType() const override;							// 07 - { return Type::kLighting; }
 
 		// add
-		virtual void OnLoadTextureSet(UInt64 a_arg1, BSTextureSet* a_textureSet);															   // 08
+		virtual void OnLoadTextureSet(std::uint64_t a_arg1, BSTextureSet* a_textureSet);													   // 08
 		virtual void ClearTextures();																										   // 09
 		virtual void ReceiveValuesFromRootMaterial(bool a_skinned, bool a_rimLighting, bool a_softLighting, bool a_backLighting, bool a_MSN);  // 0A
 		virtual void GetTextures(void);																										   // 0B

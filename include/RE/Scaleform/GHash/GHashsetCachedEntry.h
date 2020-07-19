@@ -18,14 +18,16 @@ namespace RE
 			nextInChain(a_entry.nextInChain),
 			hashValue(a_entry.hashValue),
 			value(a_entry.value)
-		{}
+		{
+		}
 
 
 		GHashsetCachedEntry(const T& a_key, SPInt a_next) :
 			nextInChain(a_next),
 			hashValue(0),
 			value(a_key)
-		{}
+		{
+		}
 
 
 		bool IsEmpty() const

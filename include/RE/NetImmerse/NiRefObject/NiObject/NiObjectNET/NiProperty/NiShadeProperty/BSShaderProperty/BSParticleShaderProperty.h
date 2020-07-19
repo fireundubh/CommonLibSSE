@@ -32,7 +32,7 @@ namespace RE
 		// members
 		bool								useWorldSpace;					  // 088
 		bool								particleGreyscaleAlpha;			  // 08A
-		UInt8								unk8B;							  // 08B
+		std::uint8_t						unk8B;							  // 08B
 		float								particleLifetime;				  // 08C
 		float								particleLifetimeVariance;		  // 090
 		float								initialSpeedAlongNormal;		  // 094
@@ -50,7 +50,7 @@ namespace RE
 		float								intialRotationVariance;			  // 0C4
 		float								rotationSpeed;					  // 0C8
 		float								rotationSpeedVariance;			  // 0CC
-		UInt32								unkD0;							  // 0D0
+		std::uint32_t						unkD0;							  // 0D0
 		float								animatedStartFrame;				  // 0D4
 		float								animatedStartFrameVariance;		  // 0D8
 		float								animatedEndFrame;				  // 0DC
@@ -58,7 +58,7 @@ namespace RE
 		float								animatedLoopStartVariance;		  // 0E4
 		float								animatedFrameCount;				  // 0E8
 		float								animatedFrameCountVariance;		  // 0EC
-		UInt32								colorScale;						  // 0F0
+		std::uint32_t						colorScale;						  // 0F0
 		float								colorKey1Time;					  // 0F4
 		float								colorKey2Time;					  // 0F8
 		float								colorKey3Time;					  // 0FC
@@ -78,8 +78,8 @@ namespace RE
 		float								textureCountV;					  // 178
 		NiPoint3							windPoint;						  // 17C
 		float								explosionWindSpeed;				  // 188
-		UInt32								unk18C;							  // 18C
-		UInt64								unk190;							  // 190
+		std::uint32_t						unk18C;							  // 18C
+		std::uint64_t						unk190;							  // 190
 	};
-	STATIC_ASSERT(sizeof(BSParticleShaderProperty) == 0x198);
+	static_assert(sizeof(BSParticleShaderProperty) == 0x198);
 }
