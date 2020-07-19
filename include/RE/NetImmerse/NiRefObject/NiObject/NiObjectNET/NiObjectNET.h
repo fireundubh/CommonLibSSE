@@ -34,7 +34,7 @@ namespace RE
 		bool			  AddExtraData(NiExtraData* a_extra);
 		void			  DeleteExtraData(std::uint16_t a_extraDataIndex);
 		NiTimeController* GetControllers() const;
-
+		NiTimeController* GetController(const NiRTTI* a_rtti) const;
 		NiExtraData* GetExtraData(const BSFixedString& a_key) const;
 		template <class T>
 		T* GetExtraData(const BSFixedString& a_key) const;

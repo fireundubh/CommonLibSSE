@@ -4680,6 +4680,12 @@
     <ClInclude Include="include\RE\BSScript\Internal\VDescTable.h">
       <Filter>include\RE\BSScript\Internal</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSAnimNote.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiStream.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
     <ClInclude Include="include\REL\Version.h">
       <Filter>include\REL</Filter>
     </ClInclude>
@@ -4706,10 +4712,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include=".clang-format" />
-    <None Include="src\.clang-format">
-      <Filter>src</Filter>
+    <ClCompile Include="include\RE\FormComponents\Components\BGSOpenCloseForm.cpp">
+      <Filter>src\RE\FormComponents\Components</Filter>
+    </ClCompile>
     </None>
+    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiTimeController\NiTimeController.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiTimeController</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">

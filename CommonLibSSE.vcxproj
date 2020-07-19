@@ -1260,6 +1260,7 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkPhantom\bhkShapePhantom\bhkSimpleShapePhantom.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkWorldObject.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld\bhkWorld.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSAnimNote.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld\bhkWorldM.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffect.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectDebris.h" />
@@ -1340,6 +1341,7 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiRefObject.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRTTI.h" />
     <ClInclude Include="include\RE\NetImmerse\NiSmartPointer.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiStream.h" />
     <ClInclude Include="include\RE\NetImmerse\NiSystem.h" />
     <ClInclude Include="include\RE\NetImmerse\NiTArray.h" />
     <ClInclude Include="include\RE\NetImmerse\NiTCollection.h" />
@@ -1496,6 +1498,7 @@
     <ClInclude Include="include\SKSE\Version.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="include\RE\FormComponents\Components\BGSOpenCloseForm.cpp" />
     <ClCompile Include="src\REL\Relocation.cpp" />
     <ClCompile Include="src\RE\AI\AIFormulas.cpp" />
     <ClCompile Include="src\RE\AI\AIProcess.cpp" />
@@ -1743,8 +1746,8 @@
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiTexture\NiSourceTexture.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiTexture\NiTexture.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiTimeController\NiControllerManager.cpp" />
+    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiTimeController\NiTimeController.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiRefObject.cpp" />
-    <ClCompile Include="src\RE\NetImmerse\NiRTTI.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiSystem.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiTCollection.cpp" />
     <ClCompile Include="src\RE\Obscript\CommandTable.cpp" />

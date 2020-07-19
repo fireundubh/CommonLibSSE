@@ -988,6 +988,8 @@
 #include "RE/NetImmerse/NiAnimationKey/NiAnimationKey.h"
 #include "RE/NetImmerse/NiAnimationKey/NiColorKey.h"
 #include "RE/NetImmerse/NiAnimationKey/NiFloatKey.h"
+
+#include "RE\NetImmerse\NiRefObject\NiObject\BSAnimNote.h"
 #include "RE/NetImmerse/NiBinaryStream/BSResourceNiBinaryStream.h"
 #include "RE/NetImmerse/NiBinaryStream/NiBinaryStream.h"
 #include "RE/NetImmerse/NiBinaryStream/NiFile/BSFile.h"
@@ -1057,6 +1059,8 @@
 #include "RE/NetImmerse/NiRefObject/NiObject/NiInterpolator/NiKeyBasedInterpolator/NiFloatInterpolator.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiInterpolator/NiKeyBasedInterpolator/NiKeyBasedInterpolator.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObject.h"
+
+#include "RE\NetImmerse\NiStream.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/BSGeometry/BSGeometry.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/BSGeometry/BSParticleShaderGeometry.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/BSGeometry/BSTriShape/BSDynamicTriShape.h"
