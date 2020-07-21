@@ -493,6 +493,7 @@ namespace RE
 		bool						 CanTalkToPlayer() const;
 		void						 ClearArrested();
 		void						 ClearExpressionOverride();
+		inline void					 ClearExtraArrows() { RemoveExtraArrows3D(); }
 		ActorHandle					 CreateRefHandle();
 		void					  Decapitate();
 		void						 DispelWornItemEnchantments();
