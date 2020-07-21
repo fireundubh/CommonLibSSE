@@ -206,18 +206,6 @@ namespace RE
 	}
 
 
-	TESBoundObject* InventoryEntryData::GetObject()
-	{
-		return object;
-	}
-
-
-	const TESBoundObject* InventoryEntryData::GetObject() const
-	{
-		return object;
-	}
-
-
 	TESForm* InventoryEntryData::GetOwner()
 	{
 		if (extraLists) {

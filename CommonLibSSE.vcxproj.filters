@@ -3771,8 +3771,12 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiFloatData.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\Events\ScriptEvent\TESFurnitureEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData\NiFloatExtraData.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClInclude>
     </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiInterpolator\NiKeyBasedInterpolator\NiFloatInterpolator.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiInterpolator\NiKeyBasedInterpolator</Filter>

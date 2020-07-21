@@ -47,7 +47,7 @@ namespace RE
 		kScale = 1 << 4,
 		kSkeleton = 1 << 5,
 		kInitDefault = 1 << 6,
-		kSkyCellSkin = (std::uint8_t)1 << 7
+		kSkyCellSkin = 1 << 7
 	};
 
 
@@ -246,7 +246,7 @@ namespace RE
 		ActorHandle									   commandingActor;						 // 218
 		std::uint32_t								   pad21C;								 // 21C
 		InventoryEntryData*							   leftHand;							 // 220
-		TESIdleForm*								   currentIdle;							 // 228
+	TESIdleForm*								   furnitureIdle;				// 228
 		void*										   unk230;								 // 230 - smart ptr
 		std::uint64_t								   unk238;								 // 238
 		std::uint64_t								   unk240;								 // 240
@@ -260,7 +260,7 @@ namespace RE
 		std::uint64_t								   unk280;								 // 280
 		AIPerkData*									   perkData;							 // 288
 		std::uint32_t								   unk290;								 // 290
-		float										   unk294;								 // 294
+		std::uint32_t								   currentFurnitureSubgraphID;	// 294
 		float										   unk298;								 // 298
 		float										   unk29C;								 // 29C
 		float										   unk2A0;								 // 2A0
@@ -281,7 +281,8 @@ namespace RE
 		float										   unk2DC;								 // 2DC
 		std::uint32_t								   unk2E0;								 // 2E0
 		std::uint32_t								   unk2E4;								 // 2E4
-		std::uint32_t								   unk2E8;								 // 2E8
+		std::uint32_t								   currentFurnitureMarkerID;	// 2E8
+
 		std::uint32_t								   unk2EC;								 // 2EC
 		std::uint64_t								   unk2F0;								 // 2F0
 		std::uint32_t								   unk2F8;								 // 2F8

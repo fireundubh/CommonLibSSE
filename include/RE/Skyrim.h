@@ -989,6 +989,7 @@
 #include "RE/NetImmerse/NiAnimationKey/NiColorKey.h"
 #include "RE/NetImmerse/NiAnimationKey/NiFloatKey.h"
 
+#include "RE\Events\ScriptEvent\TESFurnitureEvent.h"
 #include "RE\NetImmerse\NiRefObject\NiObject\BSAnimNote.h"
 #include "RE/NetImmerse/NiBinaryStream/BSResourceNiBinaryStream.h"
 #include "RE/NetImmerse/NiBinaryStream/NiBinaryStream.h"
