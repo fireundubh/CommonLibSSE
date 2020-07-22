@@ -639,7 +639,7 @@ namespace RE
 	bool TESObjectREFR::IsCrimeToActivate()
 	{
 		using func_t = decltype(&TESObjectREFR::IsCrimeToActivate);
-		REL::Offset<func_t> func(Offset::TESObjectREFR::IsCrimeToActivate);
+		REL::Offset<func_t> func = REL::ID(19400);
 		return func(this);
 	}
 

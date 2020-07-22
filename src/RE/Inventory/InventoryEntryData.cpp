@@ -210,8 +210,9 @@ namespace RE
 	{
 		if (extraLists) {
 			for (auto& xList : *extraLists) {
-				if (xList) {
-					return xList->GetOwner();
+				auto owner = xList ? xList->GetOwner() : nullptr;
+				if (owner) {
+					return owner;
 				}
 			}
 		}
