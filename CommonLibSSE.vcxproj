@@ -105,7 +105,8 @@
     <VcpkgTriplet>$(VcpkgUserTriplet)-custom</VcpkgTriplet>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <VcpkgTriplet>$(VcpkgUserTriplet)</VcpkgTriplet>
+    <VcpkgTriplet>$(VcpkgUserTriplet)-static-MD</VcpkgTriplet>
+    <VcpkgUseStatic>false</VcpkgUseStatic>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -212,6 +213,7 @@
       <TreatSpecificWarningsAsErrors>4099;4717;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
       <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -1504,6 +1506,7 @@
     <ClCompile Include="src\RE\AI\AIProcess.cpp" />
     <ClCompile Include="src\RE\AI\ProcessLists.cpp" />
     <ClCompile Include="src\RE\Animation\IAnimationGraphManagerHolder.cpp" />
+    <ClCompile Include="src\RE\bhkWorld.cpp" />
     <ClCompile Include="src\RE\BSAudio\BSAudioManager.cpp" />
     <ClCompile Include="src\RE\BSAudio\BSSoundHandle.cpp" />
     <ClCompile Include="src\RE\BSCore\BSAtomic.cpp" />
@@ -1644,6 +1647,7 @@
     <ClCompile Include="src\RE\FormComponents\Components\IHandlerFunctor.cpp" />
     <ClCompile Include="src\RE\FormComponents\Components\MagicTarget.cpp" />
     <ClCompile Include="src\RE\FormComponents\Components\TESCondition.cpp" />
+    <ClCompile Include="src\RE\FormComponents\TESActorBaseData.cpp" />
     <ClCompile Include="src\RE\FormComponents\TESAIForm.cpp" />
     <ClCompile Include="src\RE\FormComponents\TESContainer.cpp" />
     <ClCompile Include="src\RE\FormComponents\TESDescription.cpp" />

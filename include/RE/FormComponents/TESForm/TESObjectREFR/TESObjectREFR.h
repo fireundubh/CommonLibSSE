@@ -352,7 +352,7 @@ namespace RE
 		virtual TESAmmo*						  GetCurrentAmmo() const;																																													   // 9E - { return 0; }
 		virtual BGSDecalGroup*					  GetDecalGroup() const;																																													   // 9F
 		virtual void							  Unk_A0(void);																																																   // A0
-		virtual void							  UnequipItem(std::uint64_t a_arg1, TESBoundObject* a_object);																																				   // A1 - { return; }
+		virtual void							  UnequipItem(std::uint64_t a_arg1, TESBoundObject* a_object, std::int32_t a_count, ExtraDataList* a_extraList);																							   // A1 - { return; }
 
 		static NiPointer<TESObjectREFR> LookupByHandle(RefHandle a_refHandle);
 		static bool						LookupByHandle(RefHandle a_refHandle, NiPointer<TESObjectREFR>& a_refrOut);

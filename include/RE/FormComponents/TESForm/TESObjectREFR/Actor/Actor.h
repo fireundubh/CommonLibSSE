@@ -339,7 +339,7 @@ namespace RE
 		virtual void					Unk_9C(void) override;																																																  // 09C
 		virtual void					Unk_9D(void) override;																																																  // 09D
 		virtual TESAmmo*				GetCurrentAmmo() const override;																																													  // 09E
-		virtual void					UnequipItem(std::uint64_t a_arg1, TESBoundObject* a_object) override;																																				  // 0A1
+		virtual void					UnequipItem(std::uint64_t a_arg1, TESBoundObject* a_object, std::int32_t a_count, ExtraDataList* a_extraList) override;																																				  // 0A1
 
 		// override (MagicTarget)
 		virtual Actor*						 GetTargetStatsObject() override;	   // 002 - { return this; }

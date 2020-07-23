@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RE/BSCore/BSTArray.h"
+#include "RE/BSCore/BSAtomic.h"
 #include "RE/BSHavok/hkVector4.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/bhkRefObject/bhkSerializable/bhkSerializable.h"
 
@@ -39,6 +40,9 @@ namespace RE
 		virtual void Unk_34(void);	// 34
 		virtual void Unk_35(void);	// 35
 		virtual void Unk_36(void);	// 36
+
+		void LockWorld();
+		void UnlockWorld();
 
 
 		// members

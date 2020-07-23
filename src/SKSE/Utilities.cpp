@@ -54,7 +54,7 @@ namespace SKSE
 			const auto& pluginPath = GetPluginFolderPath();
 			if (!pluginPath.empty()) {
 				s_configPath = pluginPath + modName + R"(.ini)";
-				SKSE::log::info("config path = %s", s_configPath.c_str());
+				SKSE::log::info("config path = {}", s_configPath);
 			} else {
 				SKSE::log::error("couldn't get plugin folder path!");
 			}
