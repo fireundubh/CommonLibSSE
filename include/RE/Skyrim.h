@@ -542,6 +542,7 @@
 #include "RE/Events/BGSImpactManager.h"
 #include "RE/Events/BGSStoryEvent/ChestsLooted.h"
 #include "RE/Events/BGSStoryEvent/Inventory.h"
+#include "RE\Events\ScriptEvent\TESActivateEvent.h"
 #include "RE/Events/BGSStoryEvent/ItemCrafted.h"
 #include "RE/Events/BGSStoryEvent/ItemsPickpocketed.h"
 #include "RE/Events/BGSStoryEvent/PoisonedWeapon.h"

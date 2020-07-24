@@ -3753,8 +3753,9 @@
     <ClInclude Include="include\RE\NetImmerse\NiAnimationKey\NiColorKey.h">
       <Filter>include\RE\NetImmerse\NiAnimationKey</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiTimeController\NiControllerManager.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiTimeController</Filter>
+    <ClInclude Include="include\RE\Events\ScriptEvent\TESActivateEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
     </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiControllerSequence.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
