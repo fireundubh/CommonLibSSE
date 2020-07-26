@@ -458,6 +458,12 @@ namespace RE
 				implements_push_back<T>>
 		{};
 
+		template <>
+		struct _is_array<
+			std::vector<bool>> :
+			std::true_type
+		{};
+
 		template <class T>
 		struct is_array :
 			_is_array<
