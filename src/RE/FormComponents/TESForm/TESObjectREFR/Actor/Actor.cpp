@@ -592,10 +592,9 @@ namespace RE
 	}
 
 
-	bool Actor::IsSummoned() const
+	bool Actor::IsSummoned() const noexcept
 	{
-		auto base = GetActorBase();
-		return base ? base->IsSummonable() : false;
+		return currentProcess && currentProcess->GetIsSummonedCreature();
 	}
 
 
