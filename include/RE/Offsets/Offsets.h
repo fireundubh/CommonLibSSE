@@ -360,12 +360,6 @@ namespace RE
 		}
 
 
-		namespace ChestsLooted
-		{
-			inline constexpr REL::ID GetEventSource(static_cast<std::uint64_t>(50257));
-		}
-
-
 		namespace CombatManager
 		{
 			inline constexpr REL::ID Singleton(static_cast<std::uint64_t>(518706));

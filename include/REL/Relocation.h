@@ -90,8 +90,7 @@ namespace REL
 				_handle(nullptr),
 				_size(0),
 				_data(nullptr)
-			{
-			}
+			{}
 
 			MemoryMap(const MemoryMap&) = delete;
 
@@ -283,14 +282,12 @@ namespace REL
 		template <class T>
 		struct meets_member_req :
 			std::is_standard_layout<T>
-		{
-		};
+		{};
 
 		template <class T, class = void>
 		struct is_x64_pod :
 			std::true_type
-		{
-		};
+		{};
 
 		template <class T>
 		struct is_x64_pod<
@@ -405,8 +402,7 @@ namespace REL
 				addr(0xDEADBEEF),
 				size(0xDEADBEEF),
 				rva(0xDEADBEEF)
-			{
-			}
+			{}
 
 
 			std::uint32_t  RVA() const;
@@ -450,16 +446,14 @@ namespace REL
 			{
 				constexpr Elem(const char* a_name) :
 					Elem(a_name, 0)
-				{
-				}
+				{}
 
 
 				constexpr Elem(const char* a_name, DWORD a_flags) :
 					name(std::move(a_name)),
 					section(),
 					flags(a_flags)
-				{
-				}
+				{}
 
 
 				std::string_view name;
@@ -479,8 +473,7 @@ namespace REL
 					Elem(".text", static_cast<DWORD>(IMAGE_SCN_MEM_WRITE)),
 					".gfids"
 				}
-			{
-			}
+			{}
 
 
 			std::array<Elem, ID::kTotal> arr;
@@ -530,26 +523,13 @@ namespace REL
 
 			constexpr IStream(stream_type& a_stream) :
 				_stream(a_stream)
-			{
-			}
+			{}
 
-			[[nodiscard]] constexpr reference operator*() noexcept
-			{
-				return _stream;
-			}
-			[[nodiscard]] constexpr const_reference operator*() const noexcept
-			{
-				return _stream;
-			}
+			[[nodiscard]] constexpr reference		operator*() noexcept { return _stream; }
+			[[nodiscard]] constexpr const_reference operator*() const noexcept { return _stream; }
 
-			[[nodiscard]] constexpr pointer operator->() noexcept
-			{
-				return std::addressof(_stream);
-			}
-			[[nodiscard]] constexpr const_pointer operator->() const noexcept
-			{
-				return std::addressof(_stream);
-			}
+			[[nodiscard]] constexpr pointer		  operator->() noexcept { return std::addressof(_stream); }
+			[[nodiscard]] constexpr const_pointer operator->() const noexcept { return std::addressof(_stream); }
 
 			template <class T>
 			inline void readin(T& a_val)
@@ -581,27 +561,14 @@ namespace REL
 				_moduleName(),
 				_part1(),
 				_part2()
-			{
-			}
+			{}
 
 			void Read(IStream& a_input);
 
-			[[nodiscard]] constexpr decltype(auto) AddrCount() const noexcept
-			{
-				return static_cast<std::size_t>(_part2.addressCount);
-			}
-			[[nodiscard]] constexpr const std::string& ModuleName() const noexcept
-			{
-				return _moduleName;
-			}
-			[[nodiscard]] constexpr decltype(auto) PSize() const noexcept
-			{
-				return static_cast<std::uint64_t>(_part2.pointerSize);
-			}
-			[[nodiscard]] inline decltype(auto) GetVersion() const
-			{
-				return Version(_part1.version);
-			}
+			[[nodiscard]] constexpr decltype(auto)	   AddrCount() const noexcept { return static_cast<std::size_t>(_part2.addressCount); }
+			[[nodiscard]] constexpr const std::string& ModuleName() const noexcept { return _moduleName; }
+			[[nodiscard]] constexpr decltype(auto)	   PSize() const noexcept { return static_cast<std::uint64_t>(_part2.pointerSize); }
+			[[nodiscard]] inline decltype(auto)		   GetVersion() const { return Version(_part1.version); }
 
 		private:
 			struct Part1
@@ -625,8 +592,7 @@ namespace REL
 				constexpr Part2() :
 					pointerSize(0),
 					addressCount(0)
-				{
-				}
+				{}
 
 				void Read(IStream& a_input);
 
@@ -680,23 +646,19 @@ namespace REL
 	public:
 		constexpr ID() noexcept :
 			ID(static_cast<std::uint64_t>(0))
-		{
-		}
+		{}
 
 		constexpr ID(const ID& a_rhs) noexcept :
 			ID(a_rhs._id)
-		{
-		}
+		{}
 
 		constexpr ID(ID&& a_rhs) noexcept :
 			ID(std::move(a_rhs._id))
-		{
-		}
+		{}
 
 		explicit constexpr ID(std::uint64_t a_id) noexcept :
 			_id(a_id)
-		{
-		}
+		{}
 
 		constexpr ID& operator=(const ID& a_rhs) noexcept
 		{
@@ -739,59 +701,32 @@ namespace REL
 	public:
 		using value_type =
 			std::conditional_t<
-				std::is_function_v<T>,
+				std::disjunction_v<
+					std::is_member_pointer<T>,
+					std::is_function<
+						std::remove_pointer_t<T>>>,
 				std::decay_t<T>,
 				T>;
 
-		template <
-			class U = value_type,
-			std::enable_if_t<
-				std::is_default_constructible_v<U>,
-				int> = 0>
-		Offset() noexcept(std::is_nothrow_default_constructible_v<U>) :
-			_impl{}
-		{
-		}
+		constexpr Offset() noexcept = default;
 
-		template <
-			class U = value_type,
-			std::enable_if_t<
-				std::is_copy_constructible_v<U>,
-				int> = 0>
-		Offset(std::uintptr_t a_address) noexcept(std::is_nothrow_copy_constructible_v<U>) :
-			_impl(unrestricted_cast<value_type>(a_address))
-		{
-		}
+		explicit constexpr Offset(std::uintptr_t a_address) noexcept :
+			_impl{ a_address }
+		{}
 
-		template <
-			class U = value_type,
-			std::enable_if_t<
-				std::is_copy_constructible_v<U>,
-				int> = 0>
-		Offset(ID a_id, std::size_t a_offset = 0) noexcept(std::is_nothrow_copy_constructible_v<U>) :
-			_impl(unrestricted_cast<value_type>(a_id.address() + a_offset))
-		{
-		}
+		Offset(ID a_id, std::size_t a_offset = 0) :
+			_impl{ a_id.address() + a_offset }
+		{}
 
-		template <
-			class U = value_type,
-			std::enable_if_t<
-				std::is_copy_assignable_v<U>,
-				int> = 0>
-		Offset& operator=(std::uintptr_t a_address) noexcept(std::is_nothrow_copy_assignable_v<U>)
+		constexpr Offset& operator=(std::uintptr_t a_address) noexcept
 		{
-			_impl = unrestricted_cast<value_type>(a_address);
+			_impl = a_address;
 			return *this;
 		}
 
-		template <
-			class U = value_type,
-			std::enable_if_t<
-				std::is_copy_assignable_v<U>,
-				int> = 0>
-		Offset& operator=(ID a_id) noexcept(std::is_nothrow_copy_assignable_v<U>)
+		Offset& operator=(ID a_id)
 		{
-			_impl = unrestricted_cast<value_type>(a_id.address());
+			_impl = a_id.address();
 			return *this;
 		}
 
@@ -802,7 +737,7 @@ namespace REL
 				int> = 0>
 		[[nodiscard]] decltype(auto) operator*() const noexcept
 		{
-			return *_impl;
+			return *get();
 		}
 
 		template <
@@ -816,7 +751,7 @@ namespace REL
 				int> = 0>
 		[[nodiscard]] auto operator->() const noexcept
 		{
-			return _impl;
+			return get();
 		}
 
 		template <
@@ -827,7 +762,7 @@ namespace REL
 		std::invoke_result_t<const value_type&, Args&&...> operator()(Args&&... a_args) const noexcept(
 			std::is_nothrow_invocable_v<const value_type&, Args&&...>)
 		{
-			return REL::invoke(_impl, std::forward<Args>(a_args)...);
+			return REL::invoke(get(), std::forward<Args>(a_args)...);
 		}
 
 		template <
@@ -859,28 +794,16 @@ namespace REL
 			return write_vfunc(a_idx, unrestricted_cast<std::uintptr_t>(a_newFunc));
 		}
 
-		[[nodiscard]] value_type type() const noexcept(
-			std::is_nothrow_copy_assignable_v<value_type>)
-		{
-			return _impl;
-		}
+		[[nodiscard]] constexpr std::uintptr_t address() const noexcept { return _impl; }
+		[[nodiscard]] std::size_t			   offset() const { offset() - base(); }
 
-		[[nodiscard]] std::uintptr_t address() const
-		{
-			return unrestricted_cast<std::uintptr_t>(_impl);
-		}
-		[[nodiscard]] std::size_t offset() const
-		{
-			offset() - base();
-		}
+		[[nodiscard]] value_type get() const noexcept(std::is_nothrow_copy_constructible_v<value_type>) { return unrestricted_cast<value_type>(_impl); }
+		[[nodiscard]] value_type type() const noexcept(std::is_nothrow_copy_constructible_v<value_type>) { return get(); }
 
 	private:
-		[[nodiscard]] static std::uintptr_t base()
-		{
-			return Module::BaseAddr();
-		}
+		[[nodiscard]] static std::uintptr_t base() { return Module::BaseAddr(); }
 
-		value_type _impl;
+		std::uintptr_t _impl{ 0 };
 	};
 }
 
