@@ -2,6 +2,8 @@
 
 #include "RE/BSHavok/hkBaseObject/hkReferencedObject/hkpShape/hkpShapeCollection/hkpCompressedMeshShape/hkpCompressedMeshShape.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObject.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/bhkMeshMaterial.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/bhkRefObject/bhkSerializable/bhkShape/Enums/HAVOK_MATERIAL.h"
 
 
 namespace RE
@@ -38,7 +40,7 @@ namespace RE
 		hkArray<std::uint16_t>												 materials16;	  // 60
 		hkArray<std::uint8_t>												 materials8;	  // 70
 		hkArray<hkpNamedMeshMaterial>										 namedMaterials;  // 80
-		hkArray<hkpMeshMaterial>											 meshMaterials;	  // 90
+		hkArray<bhkMeshMaterial>											 meshMaterials;	  // 90
 		hkArray<hkQsTransform>												 transforms;	  // A0
 		hkArray<hkpCompressedMeshShape::BigTriangle>						 bigTriangles;	  // B0
 		hkArray<hkVector4>													 bigVertices;	  // C0

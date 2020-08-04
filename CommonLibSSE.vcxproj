@@ -556,6 +556,7 @@
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection\hkpCompressedMeshShape\hkpCompressedMeshShape.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection\hkpCompressedMeshShape\hkpCompressedMeshShapeShared.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection\hkpListShape.h" />
+    <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection\hkpMeshShape\hkpMeshMaterial.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection\hkpShapeCollection.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpBoxShape.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpConvexShape.h" />
@@ -1250,6 +1251,7 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector\CombatTargetSelector.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector\CombatTargetSelectorStandard.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkCompressedMeshShapeData.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkMeshMaterial.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkRefObject.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkCharacterProxy.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkSerializable.h" />
@@ -1262,6 +1264,7 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkConvexShape\bhkBoxShape.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkConvexShape\bhkConvexShape.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkSphereRepShape.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\Enums\HAVOK_MATERIAL.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkEntity\bhkEntity.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkEntity\bhkRigidBody.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkPhantom\bhkPhantom.h" />

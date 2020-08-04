@@ -4743,6 +4743,15 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkCompressedMeshShapeData.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\Enums\HAVOK_MATERIAL.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection\hkpMeshShape\hkpMeshMaterial.h">
+      <Filter>include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection\hkpMeshShape</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkMeshMaterial.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />
@@ -6034,6 +6043,12 @@
     </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection\hkpCompressedMeshShape">
       <UniqueIdentifier>{e7932a9a-c6e7-4cb7-a0a9-1618334e30d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\Enums">
+      <UniqueIdentifier>{b098f32d-2425-40cd-a5c6-c20c13e6cedd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection\hkpMeshShape">
+      <UniqueIdentifier>{9a643195-2878-4c49-a0db-f9cae458195c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
