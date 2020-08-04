@@ -553,6 +553,8 @@
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpBvTreeShape\hkMoppBvTreeShapeBase\hkpMoppBvTreeShape.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpBvTreeShape\hkpBvTreeShape.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShape.h" />
+    <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection\hkpCompressedMeshShape\hkpCompressedMeshShape.h" />
+    <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection\hkpCompressedMeshShape\hkpCompressedMeshShapeShared.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection\hkpListShape.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection\hkpShapeCollection.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpBoxShape.h" />
@@ -608,6 +610,7 @@
     <ClInclude Include="include\RE\BSHavok\hkpSimplexSolver.h" />
     <ClInclude Include="include\RE\BSHavok\hkpSolverInfo.h" />
     <ClInclude Include="include\RE\BSHavok\hkpWeldingUtility.h" />
+    <ClInclude Include="include\RE\BSHavok\hkQsTransform.h" />
     <ClInclude Include="include\RE\BSHavok\hkQuaternion.h" />
     <ClInclude Include="include\RE\BSHavok\hkRefPtr\hkRefPtr.h" />
     <ClInclude Include="include\RE\BSHavok\hkRefPtr\hkRefVariant.h" />
@@ -1246,10 +1249,14 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatObject.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector\CombatTargetSelector.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector\CombatTargetSelectorStandard.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkCompressedMeshShapeData.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkRefObject.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkCharacterProxy.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkSerializable.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkBvTreeShape\bhkBvTreeShape.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkBvTreeShape\bhkMoppBvTreeShape.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkShape.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkShapeCollection\bhkCompressedMeshShape.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkShapeCollection\bhkListShape.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkShapeCollection\bhkShapeCollection.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkConvexShape\bhkBoxShape.h" />

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiNode/NiNode.h"
+#include "RE/NetImmerse/NiSmartPointer.h"
 
 
 namespace RE
@@ -29,8 +30,8 @@ namespace RE
 
 
 		// members
-		BSTArray<BSTempEffect*> decals;		// 128
-		std::uint8_t			isSkinned;	// 140
+		BSTArray<NiPointer<BSTempEffect>> decals;	  // 128
+		std::uint8_t					  isSkinned;  // 140
 	};
 	static_assert(sizeof(BGSDecalNode) == 0x148);
 }

@@ -21,6 +21,17 @@ namespace RE
 
 	struct REFR_LOCK
 	{
+		enum class BaseLevel
+		{
+			kNovice = 1,
+			kApprentice = 25,
+			kAdept = 50,
+			kExpert = 75,
+			kMaster = 100,
+			kRequiresKey = 255
+		};
+
+
 		enum class Flag
 		{
 			kNone = 0,
@@ -28,24 +39,30 @@ namespace RE
 			kLeveled = 1 << 2
 		};
 
+		REFR_LOCK();
+		REFR_LOCK(BaseLevel a_lockType);
+		~REFR_LOCK() = default;
+
+		TES_HEAP_REDEFINE_NEW();
 
 		LOCK_LEVEL	   GetLockLevel(const TESObjectREFR* a_containerRef) const;
 		constexpr bool IsLocked() const noexcept { return flags.all(Flag::kLocked); }
-		void SetLocked(bool a_locked);
+		void		   SetLocked(bool a_locked);
+		void		   SetBaseLevel(LOCK_LEVEL a_lockLevel);
 
 
 		// members
-		std::int8_t							 baseLevel;	 // 00
-		std::uint8_t						 pad01;		 // 01
-		std::uint16_t						 pad02;		 // 02
-		std::uint32_t						 pad04;		 // 04
-		TESKey*								 key;		 // 08
-		stl::enumeration<Flag, std::uint8_t> flags;		 // 10
-		std::uint8_t						 pad11;		 // 11
-		std::uint16_t						 pad12;		 // 12
-		std::uint32_t						 numTries;	 // 14
-		std::uint32_t						 unk18;		 // 18
-		std::uint32_t						 pad1C;		 // 1C
+		stl::enumeration<BaseLevel, std::uint8_t> baseLevel;  // 00
+		std::uint8_t							  pad01;	  // 01
+		std::uint16_t							  pad02;	  // 02
+		std::uint32_t							  pad04;	  // 04
+		TESKey*									  key;		  // 08
+		stl::enumeration<Flag, std::uint8_t>	  flags;	  // 10
+		std::uint8_t							  pad11;	  // 11
+		std::uint16_t							  pad12;	  // 12
+		std::uint32_t							  numTries;	  // 14
+		std::uint32_t							  unk18;	  // 18
+		std::uint32_t							  pad1C;	  // 1C
 	};
 	static_assert(sizeof(REFR_LOCK) == 0x20);
 
@@ -57,7 +74,10 @@ namespace RE
 		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kLock;
 
 
-		virtual ~ExtraLock();  // 00
+		ExtraLock();
+		virtual ~ExtraLock() = default;	 // 00
+
+		TES_HEAP_REDEFINE_NEW();
 
 		// override (BSExtraData)
 		virtual ExtraDataType GetType() const override;								// 01 - { return kLock; }

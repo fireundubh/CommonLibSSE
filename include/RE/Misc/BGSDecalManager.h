@@ -14,26 +14,26 @@ namespace RE
 	class NiAVObject;
 
 
-	class BGSDecalManager
+	class BGSDecalManager : public BSTSingletonSDM<BGSDecalManager>
 	{
 	public:
 		static BGSDecalManager* GetSingleton();
 
 
 		// members
-		std::uint32_t					unk00;				 // 00
-		std::uint32_t					unk04;				 // 04
-		std::uint32_t					unk08;				 // 08
-		std::uint32_t					unk0C;				 // 0C - simpleDecal count?
-		std::uint32_t					geometryDecalCount;	 // 10
-		std::uint32_t					unk14;				 // 14
-		BSTArray<BSTempEffect*>			decals;				 // 18
-		BSTArray<void*>					unk30;				 // 30
-		BSTArray<BGSDecalNode*>			decalNodes;			 // 48
-		BSTArray<NiPointer<NiAVObject>> unk60;				 // 60
-		NiCamera*						niCamera;			 // 78
-		BSShaderAccumulator*			shaderAccumulator;	 // 80
-		std::uint32_t					unk88;				 // 88
+		//std::uint32_t					  unk00;					// 00
+		std::uint32_t					  decalsPerFrameCount;		// 04
+		std::uint32_t					  skinDecalsPerFrameCount;	// 08
+		std::uint32_t					  decalCount;				// 0C
+		std::uint32_t					  skinDecalCount;			// 10
+		std::uint8_t					  unk14;					// 14
+		BSTArray<NiPointer<BSTempEffect>> decals;					// 18
+		BSTArray<void*>					  unk30;					// 30
+		BSTArray<NiPointer<BGSDecalNode>> decalNodes;				// 48
+		BSTArray<NiPointer<BSTempEffect>> unk60;					// 60
+		NiPointer<NiCamera>				  camera;					// 78
+		NiPointer<BSShaderAccumulator>	  shaderAccumulator;		// 80
+		std::uint32_t					  unk88;					// 88
 	};
 	static_assert(sizeof(BGSDecalManager) == 0x90);
 };

@@ -26,85 +26,78 @@ namespace RE
 
 	BSGeometry* NiAVObject::GetFirstGeometryOfShaderType(BSShaderMaterial::Feature a_type)
 	{
-		auto node = AsNode();
-		if (node) {
-			for (auto& child : node->children) {
-				if (child.get()) {
-					auto geometry = child->GetFirstGeometryOfShaderType(a_type);
-					if (geometry) {
-						return geometry;
+		BSGeometry* firstGeometry = nullptr;
+		
+		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl {
+			if (a_type == BSShaderMaterial::Feature::kNone) {
+				firstGeometry = a_geometry;
+				return BSVisit::BSVisitControl::kStop;
+			}
+			
+			auto effect = a_geometry->properties[BSGeometry::States::kEffect].get();
+			if (effect) {
+				auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
+				if (lightingShader) {
+					const auto material = lightingShader->material;
+					if (material && material->GetFeature() == a_type) {
+						firstGeometry = a_geometry;
+						return BSVisit::BSVisitControl::kStop;
 					}
 				}
 			}
-		} else {
-			auto geometry = AsGeometry();
-			if (geometry) {
-				auto effect = geometry->properties[BSGeometry::States::kEffect].get();
-				if (effect) {
-					auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
-					if (lightingShader) {
-						if (a_type == BSShaderMaterial::Feature::kNone) {
-							return geometry;
-						}
-						const auto material = lightingShader->material;
-						if (material && material->GetFeature() == a_type) {
-							return geometry;
-						}
-					}
-				}
-			}
-		}
 
-		return nullptr;
+			return BSVisit::BSVisitControl::kContinue;
+		});
+
+		return firstGeometry;
 	}
 
 
-	TESObjectREFR* NiAVObject::GetUserData() const
+	const TESObjectREFR* NiAVObject::GetUserData()
 	{
 		if (userData) {
 			return userData;
 		}
+
 		if (parent) {
-			parent->GetUserData();
+			return parent->GetUserData();
 		}
+
 		return nullptr;
 	}
 
 
 	bool NiAVObject::HasShaderType(BSShaderMaterial::Feature a_type)
 	{
-		auto node = AsNode();
-		if (node) {
-			for (auto& child : node->children) {
-				if (child.get()) {
-					if (child->HasShaderType(a_type)) {
-						return true;
-					}
-				}
-			}
-		} else {
-			const auto geometry = AsGeometry();
-			if (geometry) {
-				auto effect = geometry->properties[BSGeometry::States::kEffect].get();
-				if (effect) {
-					auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
-					if (lightingShader) {
-						const auto material = lightingShader->material;
-						if (material && material->GetFeature() == a_type) {
-							return true;
-						}
-					}
-				}
-			}
-		}
+		bool hasShaderType = false;
 
-		return false;
+		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl {
+			auto effect = a_geometry->properties[BSGeometry::States::kEffect].get();
+			if (effect) {
+				auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
+				if (lightingShader) {
+					const auto material = lightingShader->material;
+					if (material && material->GetFeature() == a_type) {
+						hasShaderType = true;
+						return BSVisit::BSVisitControl::kStop;
+					}
+				}
+			}
+
+			return BSVisit::BSVisitControl::kContinue;
+		});
+
+		return hasShaderType;
 	}
 
 
 	void NiAVObject::SetAppCulled(bool cull)
 	{
-		cull ? flags.set(Flag::kHidden) : flags.reset(Flag::kHidden);
+		if (cull) {
+			flags.set(Flag::kHidden);
+		} else {
+			flags.reset(Flag::kHidden);
+		}
 	}
 
 
@@ -222,15 +215,10 @@ namespace RE
 
 	void NiAVObject::UpdateVisibility(bool a_cull)
 	{
-		SetAppCulled(a_cull);
+		BSVisit::TraverseScenegraphObjects(this, [&](NiAVObject* a_object) -> BSVisit::BSVisitControl {			
+			a_object->SetAppCulled(a_cull);
 
-		auto node = AsNode();
-		if (node) {
-			for (auto& child : node->children) {
-				if (child.get()) {
-					child->UpdateVisibility(a_cull);
-				}
-			}
-		}
+			return BSVisit::BSVisitControl::kContinue;
+		});
 	}
 }

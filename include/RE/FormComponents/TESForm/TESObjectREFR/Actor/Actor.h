@@ -339,7 +339,7 @@ namespace RE
 		virtual void					Unk_9C(void) override;																																																  // 09C
 		virtual void					Unk_9D(void) override;																																																  // 09D
 		virtual TESAmmo*				GetCurrentAmmo() const override;																																													  // 09E
-		virtual void					UnequipItem(std::uint64_t a_arg1, TESBoundObject* a_object, std::int32_t a_count, ExtraDataList* a_extraList) override;																																				  // 0A1
+		virtual void					UnequipItem(std::uint64_t a_arg1, TESBoundObject* a_object, std::int32_t a_count, ExtraDataList* a_extraList) override;																								  // 0A1
 
 		// override (MagicTarget)
 		virtual Actor*						 GetTargetStatsObject() override;	   // 002 - { return this; }
@@ -495,10 +495,10 @@ namespace RE
 		void						 ClearExpressionOverride();
 		inline void					 ClearExtraArrows() { RemoveExtraArrows3D(); }
 		ActorHandle					 CreateRefHandle();
-		void					  Decapitate();
+		void						 Decapitate();
 		void						 DispelWornItemEnchantments();
 		void						 DoReset3D(bool a_updateWeight);
-		void					  EnableAI(bool a_enable);
+		void						 EnableAI(bool a_enable);
 		void						 EvaluatePackage(bool a_arg1 = false, bool a_arg2 = false);
 		TESNPC*						 GetActorBase();
 		const TESNPC*				 GetActorBase() const;
@@ -512,28 +512,28 @@ namespace RE
 		TESForm*					 GetEquippedObject(bool a_leftHand) const;
 		std::int32_t				 GetGoldAmount();
 		ActorHandle					 GetHandle();
-		NiAVObject*				  GetHeadPartObject(BGSHeadPart::HeadPartType a_type);
+		NiAVObject*					 GetHeadPartObject(BGSHeadPart::HeadPartType a_type);
 		float						 GetHeight();
-		Actor*					  GetKiller();
+		Actor*						 GetKiller();
 		std::uint16_t				 GetLevel() const;
 		ObjectRefHandle				 GetOccupiedFurniture() const;
 		TESRace*					 GetRace() const;
-		TESObjectARMO*			  GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot);
-		SOUL_LEVEL				  GetSoulLevel() const;
-		TESObjectARMO*			  GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot);
-		TESObjectARMO*			  GetWornArmor(FormID a_ID);
-		bool					  HasKeyword(const BGSKeyword* a_keyword) const;
-		bool					  HasKeyword(const char* a_formEditorID) const;
+		TESObjectARMO*				 GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot);
+		SOUL_LEVEL					 GetSoulLevel() const;
+		TESObjectARMO*				 GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot);
+		TESObjectARMO*				 GetWornArmor(FormID a_ID);
+		bool						 HasKeyword(const BGSKeyword* a_keyword) const;
+		bool						 HasKeyword(const char* a_formEditorID) const;
 		bool						 HasPerk(BGSPerk* a_perk) const;
-		bool					  HasSpell(SpellItem* a_spell) const;
-		bool					  InstantKill();
+		bool						 HasSpell(SpellItem* a_spell) const;
+		bool						 InstantKill();
 		bool						 IsAIEnabled() const;
 		bool						 IsAMount() const;
 		bool						 IsAnimationDriven() const;
 		bool						 IsBeingRidden() const;
 		bool						 IsCommandedActor() const;
 		bool						 IsEssential() const;
-		bool					  IsProtected() const;
+		bool						 IsProtected() const;
 		bool						 IsFactionInCrimeGroup(const TESFaction* a_faction) const;
 		bool						 IsGhost() const;
 		bool						 IsGuard() const;
@@ -546,7 +546,7 @@ namespace RE
 		bool						 IsSummoned() const;
 		bool						 IsTrespassing() const;
 		void						 RemoveExtraArrows3D();
-		bool					  RemoveSpell(SpellItem* a_spell);
+		bool						 RemoveSpell(SpellItem* a_spell);
 		std::int32_t				 RequestDetectionLevel(Actor* a_target, DETECTION_PRIORITY a_priority = DETECTION_PRIORITY::kNormal);
 		void						 StealAlarm(TESObjectREFR* a_ref, TESForm* a_object, std::int32_t a_num, std::int32_t a_total, TESForm* a_owner, bool a_allowWarning);
 		void						 SwitchRace(TESRace* a_race, bool a_player);
@@ -555,7 +555,7 @@ namespace RE
 		void						 UpdateHairColor();
 		void						 UpdateSkinColor();
 		void						 UpdateWeaponAbility(TESForm* a_weapon, ExtraDataList* a_extraData, bool a_leftHand);
-		NiAVObject*				  VisitArmorAddon(TESObjectARMO* a_armor, TESObjectARMA* a_arma);
+		NiAVObject*					 VisitArmorAddon(TESObjectARMO* a_armor, TESObjectARMA* a_arma);
 		bool						 VisitFactions(std::function<bool(TESFaction* a_faction, std::int8_t a_rank)> a_visitor);
 		bool						 WouldBeStealing(const TESObjectREFR* a_target) const;
 

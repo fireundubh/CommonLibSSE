@@ -8,6 +8,7 @@
 
 namespace RE
 {
+	class bhkShape;
 	class hkAabb;
 	class hkSphere;
 	class hkTransform;
@@ -122,7 +123,7 @@ namespace RE
 
 
 		// members
-		std::uint64_t userData;	 // 10
+		bhkShape* userData;	 // 10
 		hkpShapeType  type;		 // 18
 		std::uint32_t pad1C;	 // 1C
 	};

@@ -10,6 +10,7 @@
 
 namespace RE
 {
+	class bhkWorldObject;
 	class hkMotionState;
 	class hkpCollidable;
 	class hkpShapeModifier;
@@ -67,7 +68,7 @@ namespace RE
 
 		// members
 		hkpWorld*			 world;				// 10
-		std::uint64_t		 userData;			// 18 - bhkWorldObject*?
+		bhkWorldObject*		 userData;			// 18 - bhkWorldObject*?
 		hkpLinkedCollidable	 collidable;		// 20
 		hkMultiThreadCheck	 multiThreadCheck;	// A0
 		std::uint32_t		 padAC;				// AC

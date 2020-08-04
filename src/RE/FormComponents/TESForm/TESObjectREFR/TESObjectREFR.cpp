@@ -457,6 +457,18 @@ namespace RE
 	}
 
 
+	REFR_LOCK* TESObjectREFR::GetOrCreateLock()
+	{
+		auto lock = extraList.GetByType<ExtraLock>();
+		if (!lock) {
+			lock = new RE::ExtraLock();
+			lock->lock = new RE::REFR_LOCK();
+			extraList.Add(lock);
+		}
+		return lock->lock;
+	}
+
+
 	TESForm* TESObjectREFR::GetOwner() const
 	{
 		using func_t = decltype(&TESObjectREFR::GetOwner);

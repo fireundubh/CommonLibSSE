@@ -25,7 +25,7 @@ namespace RE
 		InventoryEntryData& operator=(InventoryEntryData&& a_rhs);
 
 		void										  AddExtraList(ExtraDataList* a_extra);
-		bool				  CanItemBeTaken(bool a_noEquipped, bool a_noFavourited, bool a_noQuestItem);
+		bool										  CanItemBeTaken(bool a_noEquipped, bool a_noFavourited, bool a_noQuestItem);
 		const char*									  GetDisplayName();
 		std::optional<double>						  GetEnchantmentCharge() const;
 		[[nodiscard]] constexpr TESBoundObject*		  GetObject() noexcept { return object; }
@@ -34,7 +34,7 @@ namespace RE
 		SOUL_LEVEL									  GetSoulLevel() const;
 		std::int32_t								  GetValue();
 		float										  GetWeight() const;
-		bool				  GetWorn() const;
+		bool										  GetWorn() const;
 		bool										  IsEnchanted() const;
 		bool										  IsLeveled() const;
 		bool										  IsOwnedBy(Actor* a_testOwner, bool a_defaultTo = true);

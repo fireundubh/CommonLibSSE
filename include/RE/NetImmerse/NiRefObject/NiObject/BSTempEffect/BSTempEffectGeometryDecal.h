@@ -37,7 +37,7 @@ namespace RE
 		NiPointer<BSTriShape>			  attachedShape;		// 38
 		NiPointer<NiNode>				  attachedShapeParent;	// 40
 		NiPointer<NiNode>				  skinnedDecalNode;		// 48
-		BSTSmartPointer<QueuedTempEffect> queuedEffect;			// 50
+		BSTSmartPointer<QueuedTempEffect> queuedGeometryDecal;	// 50
 		BGSTextureSet*					  texSet;				// 58
 		BGSTextureSet*					  texSet2;				// 60
 		NiMatrix3						  rotation;				// 68

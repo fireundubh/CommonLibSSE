@@ -396,6 +396,7 @@ namespace RE
 		const char*						  GetName() const;
 		NiAVObject*						  GetNodeByName(const BSFixedString& a_nodeName);
 		TESBoundObject*					  GetObjectReference() const;
+		REFR_LOCK*						  GetOrCreateLock();
 		TESForm*						  GetOwner() const;
 		TESObjectCELL*					  GetParentCell() const;
 		NiPoint3						  GetPosition() const;

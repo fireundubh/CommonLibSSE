@@ -9,6 +9,32 @@ namespace RE
 {
 	namespace BSVisit
 	{
+		BSVisitControl TraverseScenegraphCollision(NiAVObject* a_object, std::function<BSVisitControl(NiCollisionObject*)> a_func)
+		{
+			if (!a_object) {
+				return BSVisitControl::kContinue;
+			}
+
+			auto collision = a_object->collisionObject.get();
+			if (collision) {
+				return a_func(collision);
+			}
+
+			auto result = BSVisitControl::kContinue;
+			auto node = a_object->AsNode();
+			if (node) {
+				for (auto& child : node->children) {
+					result = TraverseScenegraphCollision(child.get(), a_func);
+					if (result == BSVisitControl::kStop) {
+						break;
+					}
+				}
+			}
+
+			return result;
+		}
+
+
 		BSVisitControl TraverseScenegraphGeometries(NiAVObject* a_object, std::function<BSVisitControl(BSGeometry*)> a_func)
 		{
 			if (!a_object) {
@@ -35,22 +61,22 @@ namespace RE
 		}
 
 
-		BSVisitControl TraverseScenegraphCollision(NiAVObject* a_object, std::function<BSVisitControl(NiCollisionObject*)> a_func)
+		BSVisitControl TraverseScenegraphObjects(NiAVObject* a_object, std::function<BSVisitControl(NiAVObject*)> a_func)
 		{
 			if (!a_object) {
 				return BSVisitControl::kContinue;
 			}
 
-			auto collision = a_object->collisionObject.get();
-			if (collision) {
-				return a_func(collision);
+			auto result = a_func(a_object);
+			if (result == BSVisitControl::kStop) {
+				return result;
 			}
 
-			auto result = BSVisitControl::kContinue;
+			result = BSVisitControl::kContinue;
 			auto node = a_object->AsNode();
 			if (node) {
 				for (auto& child : node->children) {
-					result = TraverseScenegraphCollision(child.get(), a_func);
+					result = TraverseScenegraphObjects(child.get(), a_func);
 					if (result == BSVisitControl::kStop) {
 						break;
 					}

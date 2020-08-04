@@ -124,18 +124,18 @@ namespace RE
 		virtual void		PostAttachUpdate();																					// 33
 		virtual void		OnVisible(NiCullingProcess& a_process);																// 34 - { return; }
 
-		bool		   GetAppCulled() const;
-		BSGeometry*	   GetFirstGeometryOfShaderType(BSShaderMaterial::Feature a_type);
-		TESObjectREFR* GetUserData() const;
-		bool		   HasShaderType(BSShaderMaterial::Feature a_type);
-		void		   SetAppCulled(bool a_cull);
-		bool		   SetMotionType(std::uint32_t a_motionType, bool a_arg2 = true, bool a_arg3 = false, bool a_allowActivate = true);
-		void		   TintScenegraph(const NiColorA& a_color);
-		void		   Update(NiUpdateData& a_data);
-		void		   UpdateAlpha(float a_alpha, ALPHA_MODE a_type);
-		void		   UpdateBodyTint(const NiColor& a_color);
-		void		   UpdateHairColor(const NiColor& a_color);
-		void		   UpdateVisibility(bool a_cull);
+		bool				 GetAppCulled() const;
+		BSGeometry*			 GetFirstGeometryOfShaderType(BSShaderMaterial::Feature a_type);
+		const TESObjectREFR* GetUserData();
+		bool				 HasShaderType(BSShaderMaterial::Feature a_type);
+		void				 SetAppCulled(bool a_cull);
+		bool				 SetMotionType(std::uint32_t a_motionType, bool a_arg2 = true, bool a_arg3 = false, bool a_allowActivate = true);
+		void				 TintScenegraph(const NiColorA& a_color);
+		void				 Update(NiUpdateData& a_data);
+		void				 UpdateAlpha(float a_alpha, ALPHA_MODE a_type);
+		void				 UpdateBodyTint(const NiColor& a_color);
+		void				 UpdateHairColor(const NiColor& a_color);
+		void				 UpdateVisibility(bool a_cull);
 
 
 		// members

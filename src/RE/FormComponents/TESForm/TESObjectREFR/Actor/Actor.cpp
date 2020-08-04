@@ -400,14 +400,14 @@ namespace RE
 
 	TESObjectARMO* Actor::GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot)
 	{
-		auto inv = GetInventory([](RE::TESBoundObject* a_object) -> bool {
+		auto inv = GetInventory([](TESBoundObject* a_object) -> bool {
 			return a_object->IsArmor();
 		});
 
 		for (auto& item : inv) {
 			auto& [count, entry] = item.second;
 			if (entry->GetWorn()) {
-				auto armor = static_cast<RE::TESObjectARMO*>(item.first);
+				auto armor = static_cast<TESObjectARMO*>(item.first);
 				for (const auto& armorAddon : armor->armorAddons) {
 					if (armorAddon && armorAddon->HasPartOf(a_slot)) {
 						return armor;
@@ -422,14 +422,14 @@ namespace RE
 
 	TESObjectARMO* Actor::GetWornArmor(FormID id)
 	{
-		auto inv = GetInventory([id](RE::TESBoundObject* a_object) -> bool {
+		auto inv = GetInventory([id](TESBoundObject* a_object) -> bool {
 			return a_object->IsArmor() && a_object->GetFormID() == id;
 		});
 
 		for (auto& item : inv) {
 			auto& [count, entry] = item.second;
 			if (entry->GetWorn()) {
-				return static_cast<RE::TESObjectARMO*>(item.first);
+				return static_cast<TESObjectARMO*>(item.first);
 			}
 		}
 
