@@ -202,6 +202,7 @@ namespace RE
 		{
 			kNone = 0,
 			kIsSunGazing = 1 << 1
+			kEverModded = 1 << 3
 		};
 
 

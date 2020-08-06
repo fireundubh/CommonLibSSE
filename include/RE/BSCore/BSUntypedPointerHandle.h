@@ -109,7 +109,7 @@ namespace RE
 	private:
 		static std::uint32_t get_null_handle()
 		{
-			REL::Offset<std::uint32_t*> invalidHandle{ REL::ID(514164) };
+			REL::Relocation<std::uint32_t*> invalidHandle{ REL::ID(514164) };
 			return *invalidHandle;
 		}
 

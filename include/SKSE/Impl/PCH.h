@@ -106,6 +106,7 @@
 
 #include <nonstd/span.hpp>
 #include <spdlog/spdlog.h>
+#include <xbyak/xbyak.h>
 
 #undef far
 #undef GetClassName
@@ -143,6 +144,7 @@
 namespace SKSE
 {
 	using namespace std::literals;
+
 
 	inline namespace util
 	{
