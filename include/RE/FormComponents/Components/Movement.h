@@ -10,14 +10,14 @@ namespace RE
 		enum class DIRECTION : std::uint32_t
 		{
 			kInvalid = static_cast<std::uint32_t>(-1),
-			kStanding = 0,
-			kDiagonallyForwardRight,
+			kForward = 0,
+			kForwardRightDiagonal,
 			kRight,
-			kDiagonallyRight,
-			kBack,
-			kDiagonallyLeft,
+			kBackwardRightDiagonal,
+			kBackward,
+			kBackwardLeftDiagonal,
 			kLeft,
-			kFront
+			kForwardLeftDiagonal
 		};
 
 

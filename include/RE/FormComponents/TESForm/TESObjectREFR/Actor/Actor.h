@@ -508,6 +508,7 @@ namespace RE
 		ActorHandle					 GetCommandingActor() const;
 		TESFaction*					 GetCrimeFaction();
 		const TESFaction*			 GetCrimeFaction() const;
+		Direction					 GetDirection() const;
 		InventoryEntryData*			 GetEquippedEntryData(bool a_leftHand) const;
 		TESForm*					 GetEquippedObject(bool a_leftHand) const;
 		std::int32_t				 GetGoldAmount();

@@ -200,6 +200,10 @@ namespace RE
 		ACTOR_LIFE_STATE  GetLifeState() const;
 		SIT_SLEEP_STATE	  GetSitSleepState() const;
 		WEAPON_STATE	  GetWeaponState() const;
+		bool			  IsMovingBack() const;
+		bool			  IsMovingForward() const;
+		bool			  IsMovingLeft() const;
+		bool			  IsMovingRight() const;
 		bool			  IsBleedingOut() const;
 		bool			  IsFlying() const;
 		bool			  IsSneaking() const;

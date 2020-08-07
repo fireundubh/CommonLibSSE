@@ -39,6 +39,30 @@ namespace RE
 	}
 
 
+	bool ActorState::IsMovingBack() const
+	{
+		return actorState1.movingBack;
+	}
+
+
+	bool ActorState::IsMovingForward() const
+	{
+		return actorState1.movingForward;
+	}
+
+
+	bool ActorState::IsMovingLeft() const
+	{
+		return actorState1.movingLeft;
+	}
+
+
+	bool ActorState::IsMovingRight() const
+	{
+		return actorState1.movingRight;
+	}
+
+
 	bool ActorState::IsBleedingOut() const
 	{
 		switch (GetLifeState()) {

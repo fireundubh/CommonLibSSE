@@ -142,7 +142,7 @@ namespace RE
 		virtual bool HasKeyword(const BGSKeyword* a_keyword) const override;  // 04
 
 		[[nodiscard]] constexpr Archetype	 GetArchetype() const noexcept { return data.archetype; }
-		BSFixedString GetArchetypeAsString() const;
+		BSFixedString						 GetArchetypeAsString() const;
 		[[nodiscard]] constexpr ActorValue	 GetMagickSkill() const noexcept { return data.associatedSkill; }
 		[[nodiscard]] constexpr std::int32_t GetMinimumSkillLevel() const noexcept { return data.minimumSkill; }
 		[[nodiscard]] constexpr bool		 HasArchetype(Archetype a_type) const noexcept { return data.archetype == a_type; }

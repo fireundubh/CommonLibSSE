@@ -375,7 +375,6 @@ namespace RE
 		const BSTSmartPointer<BipedAnim>& GetBiped() const;
 		const BSTSmartPointer<BipedAnim>& GetBiped(bool a_firstPerson) const;
 		TESContainer*					  GetContainer() const;
-		Direction						  GetDirection();
 		const char*						  GetDisplayFullName();
 		InventoryDropMap				  GetDroppedInventory();
 		InventoryDropMap				  GetDroppedInventory(std::function<bool(TESBoundObject*)> a_filter);

@@ -194,12 +194,12 @@ namespace RE
 		BSTArray<TESForm*>								forms;							// 0A0
 		Data0B8											unk0B8;							// 0B8
 		TESForm*										equippedObjects[Hand::kTotal];	// 0F0
-		TESBoundObject*								 unk100;						 // 100
-		AITimer										 unk108;						 // 108
+		TESBoundObject*									unk100;							// 100
+		AITimer											unk108;							// 108
 		std::uint32_t									unk110;							// 110
 		RefHandle										target;							// 114
 		std::uint64_t									unk118;							// 118
-		BGSListForm*								 unk120;						 // 120
+		BGSListForm*									unk120;							// 120
 		std::uint64_t									unk128;							// 128
 		std::uint32_t									unk130;							// 130
 		std::uint16_t									unk134;							// 134

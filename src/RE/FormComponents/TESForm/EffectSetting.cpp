@@ -1,17 +1,8 @@
 #include "RE/FormComponents/TESForm/EffectSetting.h"
 
-#include "SKSE/Logger.h"
-
 
 namespace RE
 {
-	auto EffectSetting::GetArchetype() const
-		-> Archetype
-	{
-		return data.archetype;
-	}
-
-
 	BSFixedString EffectSetting::GetArchetypeAsString() const
 	{
 		auto archetype = BSFixedString();
@@ -154,23 +145,5 @@ namespace RE
 		}
 
 		return archetype;
-	}
-
-
-	ActorValue EffectSetting::GetMagickSkill() const
-	{
-		return data.associatedSkill;
-	}
-
-
-	std::uint32_t EffectSetting::GetMinimumSkillLevel() const
-	{
-		return data.minimumSkill;
-	}
-
-
-	bool EffectSetting::HasArchetype(Archetype a_type) const
-	{
-		return data.archetype == a_type;
 	}
 }

@@ -244,6 +244,33 @@ namespace RE
 	}
 
 
+	auto Actor::GetDirection() const -> Direction
+	{
+		float directionOut = 0.0f;
+		if (GetGraphVariableFloat("Direction", directionOut)) {
+			if (directionOut == 0.0f || directionOut == 1.0f) {
+				return Direction::kForward;
+			} else if (directionOut == 0.125f) {
+				return Direction::kForwardRightDiagonal;
+			} else if (directionOut == 0.25f) {
+				return Direction::kRight;
+			} else if (directionOut == 0.375f) {
+				return Direction::kBackwardRightDiagonal;
+			} else if (directionOut == 0.5f) {
+				return Direction::kBackward;
+			} else if (directionOut == 0.625f) {
+				return Direction::kBackwardLeftDiagonal;
+			} else if (directionOut == 0.75f) {
+				return Direction::kLeft;
+			} else if (directionOut == 0.875f) {
+				return Direction::kForwardLeftDiagonal;
+			}
+		}
+
+		return Direction::kInvalid;
+	}
+
+
 	InventoryEntryData* Actor::GetEquippedEntryData(bool a_leftHand) const
 	{
 		if (!currentProcess || !currentProcess->middleHigh) {
