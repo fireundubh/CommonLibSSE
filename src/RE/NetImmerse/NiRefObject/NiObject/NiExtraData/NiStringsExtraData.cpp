@@ -7,7 +7,7 @@ namespace RE
 {
 	NiStringsExtraData* NiStringsExtraData::Create(const BSFixedString& a_name, const std::vector<BSFixedString>& a_strings)
 	{
-		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiStringsExtraData::Vtbl);
+		REL::Relocation<std::uintptr_t> vtbl{ RE::Offset::NiStringsExtraData::Vtbl };
 
 		auto data = NiExtraData::Create<NiStringsExtraData>(vtbl.address());
 		if (data) {

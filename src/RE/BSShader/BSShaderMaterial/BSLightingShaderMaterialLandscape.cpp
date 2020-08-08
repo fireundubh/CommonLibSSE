@@ -14,7 +14,7 @@ namespace RE
 	BSLightingShaderMaterialLandscape* BSLightingShaderMaterialLandscape::ctor()
 	{
 		using func_t = decltype(&BSLightingShaderMaterialLandscape::ctor);
-		REL::Offset<func_t> func(Offset::BSLightingShaderMaterialLandscape::Ctor);
+		REL::Relocation<func_t> func{ Offset::BSLightingShaderMaterialLandscape::Ctor };
 		return func(this);
 	}
 }

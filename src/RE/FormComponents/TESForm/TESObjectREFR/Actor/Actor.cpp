@@ -132,7 +132,7 @@ namespace RE
 	void Actor::Decapitate()
 	{
 		using func_t = decltype(&Actor::Decapitate);
-		REL::Offset<func_t> func(Offset::Actor::Decapitate);
+		REL::Relocation<func_t> func{ Offset::Actor::Decapitate };
 		return func(this);
 	}
 
@@ -420,7 +420,7 @@ namespace RE
 	SOUL_LEVEL Actor::GetSoulLevel() const
 	{
 		using func_t = decltype(&Actor::GetSoulLevel);
-		REL::Offset<func_t> func(Offset::Actor::GetSoulLevel);
+		REL::Relocation<func_t> func{ Offset::Actor::GetSoulLevel };
 		return func(this);
 	}
 
@@ -488,7 +488,7 @@ namespace RE
 	bool Actor::HasSpell(SpellItem* a_spell) const
 	{
 		using func_t = decltype(&Actor::HasSpell);
-		REL::Offset<func_t> func(Offset::Actor::HasSpell);
+		REL::Relocation<func_t> func{ Offset::Actor::HasSpell };
 		return func(this, a_spell);
 	}
 
@@ -496,7 +496,7 @@ namespace RE
 	bool Actor::InstantKill()
 	{
 		using func_t = decltype(&Actor::InstantKill);
-		REL::Offset<func_t> func(Offset::Actor::InstantKill);
+		REL::Relocation<func_t> func{ Offset::Actor::InstantKill };
 		return func(this);
 	}
 
@@ -640,8 +640,7 @@ namespace RE
 	bool Actor::RemoveSpell(SpellItem* a_spell)
 	{
 		using func_t = decltype(&Actor::RemoveSpell);
-		REL::Offset<func_t> func(Offset::Actor::RemoveSpell);
-		;
+		REL::Relocation<func_t> func{ Offset::Actor::RemoveSpell };
 		return func(this, a_spell);
 	}
 

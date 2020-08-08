@@ -14,7 +14,7 @@ namespace RE
 	BSLightingShaderMaterialParallax* BSLightingShaderMaterialParallax::ctor()
 	{
 		using func_t = decltype(&BSLightingShaderMaterialParallax::ctor);
-		REL::Offset<func_t> func(Offset::BSLightingShaderMaterialParallax::Ctor);
+		REL::Relocation<func_t> func{ Offset::BSLightingShaderMaterialParallax::Ctor };
 		return func(this);
 	}
 }

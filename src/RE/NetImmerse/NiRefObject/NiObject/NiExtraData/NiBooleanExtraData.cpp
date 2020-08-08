@@ -5,7 +5,7 @@ namespace RE
 {
 	NiBooleanExtraData* NiBooleanExtraData::Create(const BSFixedString& a_name, bool a_value)
 	{
-		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiBooleanExtraData::Vtbl);
+		REL::Relocation<std::uintptr_t> vtbl{ RE::Offset::NiBooleanExtraData::Vtbl };
 
 		auto data = NiExtraData::Create<NiBooleanExtraData>(vtbl.address());
 		if (data) {

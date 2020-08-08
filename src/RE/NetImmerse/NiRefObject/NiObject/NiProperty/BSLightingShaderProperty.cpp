@@ -28,7 +28,7 @@ namespace RE
 	void BSLightingShaderProperty::InvalidateTextures(std::uint32_t unk1)
 	{
 		using func_t = decltype(&BSLightingShaderProperty::InvalidateTextures);
-		REL::Offset<func_t> func(Offset::BSLightingShaderProperty::InvalidateTextures);
+		REL::Relocation<func_t> func{ Offset::BSLightingShaderProperty::InvalidateTextures };
 		return func(this, unk1);
 	}
 }

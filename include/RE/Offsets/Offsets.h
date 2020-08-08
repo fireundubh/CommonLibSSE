@@ -1086,7 +1086,5 @@ namespace RE
 		inline constexpr REL::ID PlaySound(static_cast<std::uint64_t>(52054));
 		inline constexpr REL::ID ShakeCamera(static_cast<std::uint64_t>(32275));
 		inline constexpr REL::ID TlsIndex(static_cast<std::uint64_t>(528600));
-		// FEC
-		inline constexpr REL::ID func2E9950(static_cast<std::uint64_t>(21434));
 	}
 }

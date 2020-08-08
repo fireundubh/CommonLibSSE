@@ -5,7 +5,7 @@ namespace RE
 {
 	BSLightingShaderMaterial* BSLightingShaderMaterial::CreateMaterial()
 	{
-		REL::Offset<std::uintptr_t> vtbl(RE::Offset::BSLightingShaderMaterial::Vtbl);
+		REL::Relocation<std::uintptr_t> vtbl{ RE::Offset::BSLightingShaderMaterial::Vtbl };
 		size_t size = sizeof(BSLightingShaderMaterial);
 
 		void* memory = malloc(size);
@@ -21,7 +21,7 @@ namespace RE
 	BSLightingShaderMaterialBase* BSLightingShaderMaterial::ctor()
 	{
 		using func_t = decltype(&BSLightingShaderMaterial::ctor);
-		REL::Offset<func_t> func(Offset::BSLightingShaderMaterialBase::Ctor);
+		REL::Relocation<func_t> func{ Offset::BSLightingShaderMaterialBase::Ctor };
 		return func(this);
 	}
 }

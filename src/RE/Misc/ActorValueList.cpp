@@ -7,7 +7,7 @@ namespace RE
 {
 	ActorValueList* ActorValueList::GetSingleton()
 	{
-		REL::Offset<ActorValueList**> singleton(Offset::ActorValueList::Singleton);
+		REL::Relocation<ActorValueList**> singleton{ Offset::ActorValueList::Singleton };
 		return *singleton;
 	}
 

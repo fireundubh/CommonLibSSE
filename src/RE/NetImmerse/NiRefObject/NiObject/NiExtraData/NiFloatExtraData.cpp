@@ -5,7 +5,7 @@ namespace RE
 {
 	NiFloatExtraData* NiFloatExtraData::Create(const BSFixedString& a_name, float a_value)
 	{
-		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiFloatExtraData::Vtbl);
+		REL::Relocation<std::uintptr_t> vtbl{ RE::Offset::NiFloatExtraData::Vtbl };
 
 		auto data = NiExtraData::Create<NiFloatExtraData>(vtbl.address());
 		if (data) {

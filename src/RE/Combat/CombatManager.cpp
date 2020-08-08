@@ -5,7 +5,7 @@ namespace RE
 {
 	CombatManager* CombatManager::GetSingleton()
 	{
-		REL::Offset<CombatManager**> singleton(Offset::CombatManager::Singleton);
+		REL::Relocation<CombatManager**> singleton{ Offset::CombatManager::Singleton };
 		return *singleton;
 	}
 }

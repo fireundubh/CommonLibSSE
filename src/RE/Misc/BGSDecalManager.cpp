@@ -5,7 +5,7 @@ namespace RE
 {
 	BGSDecalManager* BGSDecalManager::GetSingleton()
 	{
-		REL::Offset<BGSDecalManager**> singleton(Offset::BGSDecalManager::Singleton);
+		REL::Relocation<BGSDecalManager**> singleton{ Offset::BGSDecalManager::Singleton };
 		return *singleton;
 	}
 }

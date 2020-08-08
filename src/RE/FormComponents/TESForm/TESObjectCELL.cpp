@@ -50,7 +50,7 @@ namespace RE
 	bhkWorld* TESObjectCELL::GetHavokWorld()
 	{
 		using func_t = decltype(&TESObjectCELL::GetHavokWorld);
-		REL::Offset<func_t> func = REL::ID(18536);
+		REL::Relocation<func_t> func{ REL::ID(18536) };
 		return func(this);
 	}
 

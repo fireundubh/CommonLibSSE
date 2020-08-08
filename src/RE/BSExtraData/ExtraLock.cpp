@@ -37,7 +37,7 @@ namespace RE
 		BSExtraData(),
 		lock(nullptr)
 	{
-		REL::Offset<std::uintptr_t> vtbl(Offset::ExtraLock::Vtbl);
+		REL::Relocation<std::uintptr_t> vtbl{ Offset::ExtraLock::Vtbl };
 		((std::uintptr_t*)this)[0] = vtbl.address();
 	}
 

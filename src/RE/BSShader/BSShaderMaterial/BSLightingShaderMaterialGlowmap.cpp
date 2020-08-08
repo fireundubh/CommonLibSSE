@@ -14,7 +14,7 @@ namespace RE
 	BSLightingShaderMaterialGlowmap* BSLightingShaderMaterialGlowmap::ctor()
 	{
 		using func_t = decltype(&BSLightingShaderMaterialGlowmap::ctor);
-		REL::Offset<func_t> func(Offset::BSLightingShaderMaterialGlowmap::Ctor);
+		REL::Relocation<func_t> func{ Offset::BSLightingShaderMaterialGlowmap::Ctor };
 		return func(this);
 	}
 }

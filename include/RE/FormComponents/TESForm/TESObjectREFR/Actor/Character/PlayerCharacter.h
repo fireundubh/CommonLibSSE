@@ -201,7 +201,7 @@ namespace RE
 		enum class FlagBDD
 		{
 			kNone = 0,
-			kIsSunGazing = 1 << 1
+			kIsSunGazing = 1 << 1,
 			kEverModded = 1 << 3
 		};
 

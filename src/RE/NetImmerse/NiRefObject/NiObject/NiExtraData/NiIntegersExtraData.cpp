@@ -7,7 +7,7 @@ namespace RE
 {
 	NiIntegersExtraData* NiIntegersExtraData::Create(const BSFixedString& a_name, const std::vector<std::int32_t>& a_integers)
 	{
-		REL::Offset<std::uintptr_t> vtbl(RE::Offset::NiIntegersExtraData::Vtbl);
+		REL::Relocation<std::uintptr_t> vtbl{ RE::Offset::NiIntegersExtraData::Vtbl };
 
 		auto data = NiExtraData::Create<NiIntegersExtraData>(vtbl.address());
 		if (data) {
