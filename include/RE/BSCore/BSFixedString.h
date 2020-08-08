@@ -2,292 +2,230 @@
 
 #include "RE/BSCore/BSStringPool.h"
 #include "RE/BSCore/CRC.h"
-#include "RE/Memory/MemoryManager.h"
-
 
 namespace RE
 {
-	class BSFixedString
+	namespace detail
 	{
-	public:
-		using value_type = char;
-		using size_type = std::uint32_t;
-		using const_reference = const value_type&;
-
-
-		// (constructor)
-		BSFixedString();
-		BSFixedString(const BSFixedString& a_rhs);
-		BSFixedString(BSFixedString&& a_rhs) noexcept;
-		BSFixedString(const char* a_rhs);
-		BSFixedString(const std::string_view& a_rhs);  // must be null terminated
-
-		// (destructor)
-		~BSFixedString();
-
-		// operator=
-		BSFixedString& operator=(const BSFixedString& a_rhs);
-		BSFixedString& operator=(BSFixedString&& a_rhs);
-		BSFixedString& operator=(const char* a_rhs);
-		BSFixedString& operator=(const std::string_view& a_rhs);  // must be null terminated
-
-		// Element access
-		const_reference at(size_type a_pos) const;
-
-		const_reference operator[](size_type a_pos) const;
-
-		const char& front() const;
-
-		const char& back() const;
-
-		const char* data() const;
-
-		const char* c_str() const;
-
-		operator std::string_view() const;
-
-		// Capacity
-		bool empty() const;
-
-		size_type size() const;
-
-		size_type length() const;
-
-		static size_type max_size() noexcept;
-
-		// Operations
-		void clear();
-
-		inline friend bool operator==(const BSFixedString& a_lhs, const char* a_rhs)
+		template <class CharT>
+		class BSFixedString
 		{
-			return a_lhs.c_str() == a_rhs || _stricmp(a_lhs.c_str(), a_rhs) == 0;
-		}
-		inline friend bool operator!=(const BSFixedString& a_lhs, const char* a_rhs)
-		{
-			return !(a_lhs == a_rhs);
-		}
-		inline friend bool operator<(const BSFixedString& a_lhs, const char* a_rhs)
-		{
-			return _stricmp(a_lhs.c_str(), a_rhs) < 0;
-		}
-		inline friend bool operator>(const BSFixedString& a_lhs, const char* a_rhs)
-		{
-			return _stricmp(a_lhs.c_str(), a_rhs) > 0;
-		}
+		public:
+			using size_type = std::uint32_t;
+			using value_type = CharT;
+			using pointer = value_type*;
+			using const_pointer = const value_type*;
+			using reference = value_type&;
+			using const_reference = const value_type&;
 
-		inline friend bool operator==(const char* a_lhs, const BSFixedString& a_rhs)
-		{
-			return a_rhs == a_lhs;
-		}
-		inline friend bool operator!=(const char* a_lhs, const BSFixedString& a_rhs)
-		{
-			return !(a_lhs == a_rhs);
-		}
-		inline friend bool operator<(const char* a_lhs, const BSFixedString& a_rhs)
-		{
-			return _stricmp(a_lhs, a_rhs.c_str()) < 0;
-		}
-		inline friend bool operator>(const char* a_lhs, const BSFixedString& a_rhs)
-		{
-			return _stricmp(a_lhs, a_rhs.c_str()) > 0;
-		}
+			constexpr BSFixedString() noexcept = default;
 
-		inline friend bool operator==(const BSFixedString& a_lhs, const BSFixedString& a_rhs)
-		{
-			return (a_lhs.empty() && a_rhs.empty()) || a_lhs._data == a_rhs._data;
-		}
-		inline friend bool operator!=(const BSFixedString& a_lhs, const BSFixedString& a_rhs)
-		{
-			return !(a_lhs == a_rhs);
-		}
-		inline friend bool operator<(const BSFixedString& a_lhs, const BSFixedString& a_rhs)
-		{
-			return _stricmp(a_lhs.c_str(), a_rhs.c_str()) < 0;
-		}
-		inline friend bool operator>(const BSFixedString& a_lhs, const BSFixedString& a_rhs)
-		{
-			return _stricmp(a_lhs.c_str(), a_rhs.c_str()) > 0;
-		}
+			inline BSFixedString(const BSFixedString& a_rhs) :
+				_data(a_rhs._data)
+			{
+				try_acquire();
+			}
 
-		inline friend bool operator==(const BSFixedString& a_lhs, const std::string_view& a_rhs)
-		{
-			return a_lhs == a_rhs.data();
-		}
-		inline friend bool operator!=(const BSFixedString& a_lhs, const std::string_view& a_rhs)
-		{
-			return !(a_lhs == a_rhs);
-		}
-		inline friend bool operator<(const BSFixedString& a_lhs, const std::string_view& a_rhs)
-		{
-			return _stricmp(a_lhs.c_str(), a_rhs.data()) < 0;
-		}
-		inline friend bool operator>(const BSFixedString& a_lhs, const std::string_view& a_rhs)
-		{
-			return _stricmp(a_lhs.c_str(), a_rhs.data()) > 0;
-		}
+			inline BSFixedString(BSFixedString&& a_rhs) :
+				_data(a_rhs._data)
+			{
+				a_rhs._data = nullptr;
+			}
 
-		inline friend bool operator==(const std::string_view& a_lhs, const BSFixedString& a_rhs)
-		{
-			return a_rhs == a_lhs;
-		}
-		inline friend bool operator!=(const std::string_view& a_lhs, const BSFixedString& a_rhs)
-		{
-			return !(a_rhs == a_lhs);
-		}
-		inline friend bool operator<(const std::string_view& a_lhs, const BSFixedString& a_rhs)
-		{
-			return _stricmp(a_lhs.data(), a_rhs.c_str()) < 0;
-		}
-		inline friend bool operator>(const std::string_view& a_lhs, const BSFixedString& a_rhs)
-		{
-			return _stricmp(a_lhs.data(), a_rhs.c_str()) > 0;
-		}
+			inline BSFixedString(const_pointer a_string)
+			{
+				if (a_string) {
+					ctor(a_string);
+				}
+			}
 
-		TES_HEAP_REDEFINE_NEW();
+			template <
+				class T,
+				std::enable_if_t<
+					std::conjunction_v<
+						std::is_convertible<const T&, std::basic_string_view<value_type>>,
+						std::negation<
+							std::is_convertible<const T&, const_pointer>>>,
+					int> = 0>
+			inline BSFixedString(const T& a_string)
+			{
+				if (!a_string.empty()) {
+					ctor(a_string.data());
+				}
+			}
 
+			inline BSFixedString& operator=(const BSFixedString& a_rhs)
+			{
+				if (this != std::addressof(a_rhs)) {
+					try_release();
+					_data = a_rhs._data;
+					try_acquire();
+				}
+				return *this;
+			}
 
-	protected:
-		using proxy_t = BSStringPool::Entry;
+			inline BSFixedString& operator=(BSFixedString&& a_rhs)
+			{
+				if (this != std::addressof(a_rhs)) {
+					_data = a_rhs._data;
+					a_rhs._data = nullptr;
+				}
+				return *this;
+			}
 
+			inline BSFixedString& operator=(const_pointer a_string)
+			{
+				try_release();
+				if (a_string) {
+					ctor(a_string);
+				}
+				return *this;
+			}
 
-		BSFixedString* ctor_cstr(const char* a_rhs);
-		BSFixedString* ctor_copy(const BSFixedString& a_rhs);
-		void		   dtor();
-		BSFixedString* set_cstr(const char* a_rhs);
-		BSFixedString* set_copy(const BSFixedString& a_rhs);
-		proxy_t*	   get_proxy() const;
+			template <
+				class T,
+				std::enable_if_t<
+					std::conjunction_v<
+						std::is_convertible<const T&, std::basic_string_view<value_type>>,
+						std::negation<
+							std::is_convertible<const T&, const_pointer>>>,
+					int> = 0>
+			inline BSFixedString& operator=(const T& a_string)
+			{
+				try_release();
+				if (!a_string.empty()) {
+					ctor(a_string.data());
+				}
+				return *this;
+			}
 
+			[[nodiscard]] inline const_reference operator[](size_type a_pos) const noexcept
+			{
+				assert(a_pos < size());
+				return _data[a_pos];
+			}
 
-		// members
-		GlobalStringHandle _data;  // 0
-	};
-	static_assert(sizeof(BSFixedString) == 0x8);
+			[[nodiscard]] inline const_reference front() const noexcept { return _data[0]; }
 
+			[[nodiscard]] inline const_reference back() const noexcept { return _data[size() - 1]; }
 
-	template <>
-	struct CRC32Hash<BSFixedString>
-	{
-	public:
-		std::uint32_t operator()(const BSFixedString& a_key) const
-		{
-			return CRC32Hash<const char*>()(a_key.c_str());
-		}
-	};
+			[[nodiscard]] inline const_pointer data() const noexcept
+			{
+				const auto proxy = get_proxy();
+				const auto cstr = proxy ? proxy->data<value_type>() : nullptr;
+				return cstr ? cstr : EMPTY;
+			}
 
+			[[nodiscard]] inline const_pointer c_str() const noexcept { return data(); }
 
-	class BSFixedStringW
-	{
-	public:
-		using value_type = wchar_t;
-		using size_type = std::uint32_t;
-		using const_reference = const value_type&;
+			[[nodiscard]] constexpr operator std::basic_string_view<value_type>() const { return { c_str(), length() }; }
 
-		// (constructor)
-		BSFixedStringW();
-		BSFixedStringW(const BSFixedStringW& a_rhs);
-		BSFixedStringW(BSFixedStringW&& a_rhs) noexcept;
-		BSFixedStringW(const wchar_t* a_rhs);
-		BSFixedStringW(const std::wstring_view& a_rhs);	 // must be null terminated
+			[[nodiscard]] constexpr bool empty() const noexcept { return size() == 0; }
 
-		// (destructor)
-		~BSFixedStringW();
+			[[nodiscard]] constexpr size_type size() const noexcept
+			{
+				const auto proxy = get_proxy();
+				return proxy ? proxy->size() : 0;
+			}
 
-		// operator=
-		BSFixedStringW& operator=(const BSFixedStringW& a_rhs);
-		BSFixedStringW& operator=(BSFixedStringW&& a_rhs);
-		BSFixedStringW& operator=(const wchar_t* a_rhs);
-		BSFixedStringW& operator=(const std::wstring_view& a_rhs);	// must be null terminated
+			[[nodiscard]] constexpr size_type length() const noexcept { return size(); }
 
-		// Element access
-		const_reference at(size_type a_pos) const;
+			[[nodiscard]] inline friend bool operator==(const BSFixedString& a_lhs, const BSFixedString& a_rhs) noexcept
+			{
+				if (a_lhs._data == a_rhs._data) {
+					return true;
+				} else if (a_lhs.empty() && a_rhs.empty()) {
+					return true;
+				} else {
+					return false;
+				}
+			}
 
-		const_reference operator[](size_type a_pos) const;
+			[[nodiscard]] inline friend bool operator!=(const BSFixedString& a_lhs, const BSFixedString& a_rhs) noexcept { return !(a_lhs == a_rhs); }
 
-		const wchar_t& front() const;
+			[[nodiscard]] inline friend bool operator==(const BSFixedString& a_lhs, std::basic_string_view<value_type> a_rhs)
+			{
+				if (a_lhs.empty() && a_rhs.empty()) {
+					return true;
+				} else if (const auto length = a_lhs.length(); length != a_rhs.length()) {
+					return false;
+				} else {
+					return strncmp(a_lhs.c_str(), a_rhs.data(), length) == 0;
+				}
+			}
 
-		const wchar_t& back() const;
+			[[nodiscard]] inline friend bool operator!=(const BSFixedString& a_lhs, std::basic_string_view<value_type> a_rhs) { return !(a_lhs == a_rhs); }
+			[[nodiscard]] inline friend bool operator==(std::basic_string_view<value_type> a_lhs, const BSFixedString& a_rhs) { return a_rhs == a_lhs; }
+			[[nodiscard]] inline friend bool operator!=(std::basic_string_view<value_type> a_lhs, const BSFixedString& a_rhs) { return !(a_lhs == a_rhs); }
 
-		const wchar_t* data() const;
+			[[nodiscard]] inline friend bool operator==(const BSFixedString& a_lhs, const_pointer a_rhs) { return a_lhs == std::basic_string_view<value_type>(a_rhs ? a_rhs : EMPTY); }
+			[[nodiscard]] inline friend bool operator!=(const BSFixedString& a_lhs, const_pointer a_rhs) { return !(a_lhs == a_rhs); }
+			[[nodiscard]] inline friend bool operator==(const_pointer a_lhs, const BSFixedString& a_rhs) { return a_rhs == a_lhs; }
+			[[nodiscard]] inline friend bool operator!=(const_pointer a_lhs, const BSFixedString& a_rhs) { return !(a_lhs == a_rhs); }
 
-		const wchar_t* c_str() const;
+		private:
+			[[nodiscard]] static inline int strncmp(const char* a_lhs, const char* a_rhs, std::size_t a_length)
+			{
+				return _strnicmp(a_lhs, a_rhs, a_length);
+			}
 
-		operator std::wstring_view() const;
+			[[nodiscard]] static inline int strncmp(const wchar_t* a_lhs, const wchar_t* a_rhs, std::size_t a_length)
+			{
+				return _wcsnicmp(a_lhs, a_rhs, a_length);
+			}
 
-		// Capacity
-		bool empty() const;
+			inline BSFixedString* ctor(const char* a_data) { return ctor8(a_data); }
+			inline BSFixedString* ctor(const wchar_t* a_data) { return ctor16(a_data); }
 
-		size_type size() const;
+			inline BSFixedString* ctor8(const char* a_data)
+			{
+				using func_t = decltype(&BSFixedString::ctor8);
+				REL::Relocation<func_t> func{ REL::ID(67819) };
+				return func(this, a_data);
+			}
 
-		size_type length() const;
+			inline BSFixedString* ctor16(const wchar_t* a_data)
+			{
+				using func_t = decltype(&BSFixedString::ctor16);
+				REL::Relocation<func_t> func{ REL::ID(67834) };
+				return func(this, a_data);
+			}
 
-		// Operations
-		void clear();
+			[[nodiscard]] inline BSStringPool::Entry* get_proxy() noexcept
+			{
+				return _data ?
+						   reinterpret_cast<BSStringPool::Entry*>(const_cast<pointer>(_data)) - 1 :
+						   nullptr;
+			}
 
-		inline friend bool operator==(const BSFixedStringW& a_lhs, const wchar_t* a_rhs)
-		{
-			return std::wcscmp(a_lhs.c_str(), a_rhs) == 0;
-		}
-		inline friend bool operator!=(const BSFixedStringW& a_lhs, const wchar_t* a_rhs)
-		{
-			return !(a_lhs == a_rhs);
-		}
-		inline friend bool operator==(const wchar_t* a_lhs, const BSFixedStringW& a_rhs)
-		{
-			return a_rhs == a_lhs;
-		}
-		inline friend bool operator!=(const wchar_t* a_lhs, const BSFixedStringW& a_rhs)
-		{
-			return !(a_lhs == a_rhs);
-		}
-		inline friend bool operator==(const BSFixedStringW& a_lhs, const BSFixedStringW& a_rhs)
-		{
-			return (a_lhs.empty() && a_rhs.empty()) || a_lhs._data == a_rhs._data;
-		}
-		inline friend bool operator!=(const BSFixedStringW& a_lhs, const BSFixedStringW& a_rhs)
-		{
-			return !(a_lhs == a_rhs);
-		}
-		inline friend bool operator==(const BSFixedStringW& a_lhs, const std::wstring_view& a_rhs)
-		{
-			return a_lhs == a_rhs.data();
-		}
-		inline friend bool operator!=(const BSFixedStringW& a_lhs, const std::wstring_view& a_rhs)
-		{
-			return !(a_lhs == a_rhs);
-		}
-		inline friend bool operator==(const std::wstring_view& a_lhs, const BSFixedStringW& a_rhs)
-		{
-			return a_rhs == a_lhs;
-		}
-		inline friend bool operator!=(const std::wstring_view& a_lhs, const BSFixedStringW& a_rhs)
-		{
-			return !(a_rhs == a_lhs);
-		}
+			[[nodiscard]] inline const BSStringPool::Entry* get_proxy() const noexcept
+			{
+				return _data ?
+						   reinterpret_cast<const BSStringPool::Entry*>(_data) - 1 :
+						   nullptr;
+			}
 
-		TES_HEAP_REDEFINE_NEW();
+			inline void try_acquire()
+			{
+				const auto proxy = get_proxy();
+				if (proxy) {
+					proxy->acquire();
+				}
+			}
 
-	private:
-		using proxy_t = BSStringPool::Entry;
+			inline void try_release() { BSStringPool::Entry::release(_data); }
 
+			static constexpr const value_type EMPTY[]{ 0 };
 
-		void	 ctor(const wchar_t* a_string);
-		void	 dtor();  // post: _data == 0
-		proxy_t* get_proxy() const;
+			// members
+			const_pointer _data{ nullptr };	 // 0
+		};
 
+		extern template class BSFixedString<char>;
+		extern template class BSFixedString<wchar_t>;
+	}
 
-		// members
-		GlobalStringHandleW _data;	// 00
-	};
-	static_assert(sizeof(BSFixedStringW) == 0x8);
-
-
-	template <>
-	struct CRC32Hash<BSFixedStringW>
-	{
-	public:
-		std::uint32_t operator()(const BSFixedStringW& a_key) const
-		{
-			return CRC32Hash<const wchar_t*>()(a_key.c_str());
-		}
-	};
+	using BSFixedString = detail::BSFixedString<char>;
+	using BSFixedStringCI = BSFixedString;
+	using BSFixedStringW = detail::BSFixedString<wchar_t>;
 }

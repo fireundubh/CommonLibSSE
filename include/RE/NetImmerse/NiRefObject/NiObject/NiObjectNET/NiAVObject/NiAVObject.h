@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/BSCore/BSFixedString.h"
 #include "RE/BSShader/BSShaderMaterial/BSShaderMaterial.h"
 #include "RE/NetImmerse/NiBound.h"
 #include "RE/NetImmerse/NiColor.h"
@@ -10,7 +11,6 @@
 
 namespace RE
 {
-	class BSFixedString;
 	class NiAlphaProperty;
 	class NiAVObject;
 	class NiCollisionObject;
