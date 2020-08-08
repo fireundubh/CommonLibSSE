@@ -181,13 +181,13 @@ namespace RE
 	auto TESObjectREFR::GetDroppedInventory()
 		-> InventoryDropMap
 	{
-		return GetDroppedInventory([]([[maybe_unused]] TESBoundObject*) -> bool {
+		return GetDroppedInventory([]([[maybe_unused]] TESBoundObject&) -> bool {
 			return true;
 		});
 	}
 
 
-	auto TESObjectREFR::GetDroppedInventory(std::function<bool(TESBoundObject*)> a_filter)
+	auto TESObjectREFR::GetDroppedInventory(std::function<bool(TESBoundObject&)> a_filter)
 		-> InventoryDropMap
 	{
 		using container_t = InventoryDropMap::mapped_type::second_type;
@@ -206,7 +206,7 @@ namespace RE
 			}
 
 			auto object = ref->GetObjectReference();
-			if (!object || !a_filter(object)) {
+			if (!object || !a_filter(*object)) {
 				continue;
 			}
 
@@ -286,11 +286,11 @@ namespace RE
 	auto TESObjectREFR::GetInventory()
 		-> InventoryItemMap
 	{
-		return GetInventory([](TESBoundObject*) { return true; });
+		return GetInventory([](TESBoundObject&) { return true; });
 	}
 
 
-	auto TESObjectREFR::GetInventory(std::function<bool(TESBoundObject*)> a_filter)
+	auto TESObjectREFR::GetInventory(std::function<bool(TESBoundObject&)> a_filter)
 		-> InventoryItemMap
 	{
 		InventoryItemMap results;
@@ -298,7 +298,7 @@ namespace RE
 		auto invChanges = GetInventoryChanges();
 		if (invChanges && invChanges->entryList) {
 			for (auto& entry : *invChanges->entryList) {
-				if (entry && entry->object && a_filter(entry->object)) {
+				if (entry && entry->object && a_filter(*entry->object)) {
 					[[maybe_unused]] auto it =
 						results.emplace(
 							entry->object,
@@ -323,7 +323,7 @@ namespace RE
 
 			container->ForEachContainerObject([&](ContainerObject& a_entry) {
 				auto obj = a_entry.obj;
-				if (obj && !ignore(obj) && a_filter(obj)) {
+				if (obj && !ignore(obj) && a_filter(*obj)) {
 					auto it = results.find(obj);
 					if (it == results.end()) {
 						[[maybe_unused]] auto insIt =
@@ -359,11 +359,11 @@ namespace RE
 	auto TESObjectREFR::GetInventoryCounts()
 		-> InventoryCountMap
 	{
-		return GetInventoryCounts([](TESBoundObject*) { return true; });
+		return GetInventoryCounts([](TESBoundObject&) { return true; });
 	}
 
 
-	auto TESObjectREFR::GetInventoryCounts(std::function<bool(TESBoundObject*)> a_filter)
+	auto TESObjectREFR::GetInventoryCounts(std::function<bool(TESBoundObject&)> a_filter)
 		-> InventoryCountMap
 	{
 		auto itemMap = GetInventory(std::move(a_filter));
