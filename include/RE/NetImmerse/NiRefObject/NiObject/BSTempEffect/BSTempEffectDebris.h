@@ -27,7 +27,7 @@ namespace RE
 		// members;
 		NiPointer<NiAVObject> debris3D;		   // 030
 		const char*			  debrisFileName;  // 038
-		std::uint8_t		  unk40;		   // 040
+		bool				  unk40;		   // 040
 		std::uint8_t		  unk41;		   // 041
 		std::uint8_t		  pad42;		   // 042
 		std::uint8_t		  pad43;		   // 043
