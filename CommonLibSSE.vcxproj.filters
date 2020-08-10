@@ -4713,7 +4713,763 @@
     <ClInclude Include="include\RE\BSDevices\UserEvents.h">
       <Filter>include\RE\BSDevices</Filter>
     </ClInclude>
-    <ClInclude Include="include\SKSE\Utilities.h">
+    <ClInclude Include="include\RE\Misc\Misc.h">
+      <Filter>include\RE\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Misc\TaskQueueInterface.h">
+      <Filter>include\RE\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\BSVisit.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\Components\AttachTechniqueInput\AttachTechniqueInput.h">
+      <Filter>include\RE\NetImmerse\Components\AttachTechniqueInput</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\Components\AttachTechniqueInput\RefAttachTechniqueInput.h">
+      <Filter>include\RE\NetImmerse\Components\AttachTechniqueInput</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\Components\BSFaceGenKeyframe\BSFaceGenKeyframe.h">
+      <Filter>include\RE\NetImmerse\Components\BSFaceGenKeyframe</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\Components\BSFaceGenKeyframe\BSFaceGenKeyframeMultiple.h">
+      <Filter>include\RE\NetImmerse\Components\BSFaceGenKeyframe</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiAllocator\BSNiAllocator.h">
+      <Filter>include\RE\NetImmerse\NiAllocator</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiAllocator\NiAllocator.h">
+      <Filter>include\RE\NetImmerse\NiAllocator</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiAnimationKey\NiAnimationKey.h">
+      <Filter>include\RE\NetImmerse\NiAnimationKey</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiAnimationKey\NiColorKey.h">
+      <Filter>include\RE\NetImmerse\NiAnimationKey</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiAnimationKey\NiFloatKey.h">
+      <Filter>include\RE\NetImmerse\NiAnimationKey</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiBinaryStream\BSResourceNiBinaryStream.h">
+      <Filter>include\RE\NetImmerse\NiBinaryStream</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiBinaryStream\NiBinaryStream.h">
+      <Filter>include\RE\NetImmerse\NiBinaryStream</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiBinaryStream\NiFile\BSFile.h">
+      <Filter>include\RE\NetImmerse\NiBinaryStream\NiFile</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiBinaryStream\NiFile\NiFile.h">
+      <Filter>include\RE\NetImmerse\NiBinaryStream\NiFile</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiBoneMatrixSetterI.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiBound.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiColor.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiCullingProcess\BSCullingProcess.h">
+      <Filter>include\RE\NetImmerse\NiCullingProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiCullingProcess\NiCullingProcess.h">
+      <Filter>include\RE\NetImmerse\NiCullingProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiFrustum.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiFrustumPlanes.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiMath.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiMatrix3.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiMemManager.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiPlane.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiPoint2.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiPoint3.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiQuaternion.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRect.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\BGSAttackData.h">
+      <Filter>include\RE\NetImmerse\NiRefObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\BGSAttackDataMap.h">
+      <Filter>include\RE\NetImmerse\NiRefObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\bhkCharacterController.h">
+      <Filter>include\RE\NetImmerse\NiRefObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkRefObject.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkCharacterProxy.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkSerializable.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkShape.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkShapeCollection\bhkListShape.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkShapeCollection</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkShapeCollection\bhkShapeCollection.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkShapeCollection</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkEntity\bhkEntity.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkEntity\bhkRigidBody.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkPhantom\bhkPhantom.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkPhantom</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkPhantom\bhkShapePhantom\bhkCachingShapePhantom.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkPhantom\bhkShapePhantom</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkPhantom\bhkShapePhantom\bhkShapePhantom.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkPhantom\bhkShapePhantom</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkWorldObject.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSAnimNote.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffect.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectDebris.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectGeometryDecal.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectParticle.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectSimpleDecal.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectSPG.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectWeaponBlood.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect\ModelReferenceEffect.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect\ReferenceEffect.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect\ShaderReferenceEffect.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect\SummonPlacementEffect.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstance.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstanceTemp\ImageSpaceModifierInstanceDOF.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstanceTemp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstanceTemp\ImageSpaceModifierInstanceTemp.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstanceTemp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject\bhkNiCollisionObject\bhkCollisionObject.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject\bhkNiCollisionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject\bhkNiCollisionObject\bhkNiCollisionObject.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject\bhkNiCollisionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject\NiCollisionObject.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiColorData.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiControllerSequence.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData\BSBound.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData\BSFaceGenAnimationData.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData\NiExtraData.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData\NiIntegerExtraData\BSXFlags.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData\NiIntegerExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData\NiIntegerExtraData\NiIntegerExtraData.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData\NiIntegerExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData\NiStringsExtraData.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiFloatData.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiGeometryData.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiInterpolator\NiInterpolator.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiInterpolator</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiInterpolator\NiKeyBasedInterpolator\NiColorInterpolator.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiInterpolator\NiKeyBasedInterpolator</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiInterpolator\NiKeyBasedInterpolator\NiFloatInterpolator.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiInterpolator\NiKeyBasedInterpolator</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiInterpolator\NiKeyBasedInterpolator\NiKeyBasedInterpolator.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiInterpolator\NiKeyBasedInterpolator</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObject.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry\BSGeometry.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry\BSTriShape\BSMultiIndexTriShape.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry\BSTriShape</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry\BSTriShape\BSTriShape.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\BSGeometry\BSTriShape</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiAVObject.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiCamera.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BSFaceGenNiNode.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BSFadeNode.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BSNiNode\BSMultiBoundNode.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BSNiNode</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BSNiNode\BSNiNode.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BSNiNode</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\NiNode.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\ShadowSceneNode.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiObjectNET.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiAlphaProperty.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiProperty.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty\BSLightingShaderProperty.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty\BSShaderProperty.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\NiShadeProperty.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiSkinData.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance\BSDismemberSkinInstance.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance\NiSkinInstance.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiSkinPartition.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiTexture\NiSourceTexture.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiTexture\NiTexture.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiTimeController\NiControllerManager.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiTimeController</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiTimeController\NiInterpController\NiInterpController.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiTimeController\NiInterpController</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiTimeController\NiInterpController\NiMultiTargetTransformController.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiTimeController\NiInterpController</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiTimeController\NiTimeController.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiTimeController</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiRefObject.h">
+      <Filter>include\RE\NetImmerse\NiRefObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRTTI.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiSmartPointer.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiStream.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiSystem.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiTArray.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiTCollection.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiTDefaultAllocator.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiTListBase\NiTListBase.h">
+      <Filter>include\RE\NetImmerse\NiTListBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiTListBase\NiTPointerListBase\NiTList.h">
+      <Filter>include\RE\NetImmerse\NiTListBase\NiTPointerListBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiTListBase\NiTPointerListBase\NiTPointerListBase.h">
+      <Filter>include\RE\NetImmerse\NiTListBase\NiTPointerListBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiTMapBase\NiTMap\NiTMap.h">
+      <Filter>include\RE\NetImmerse\NiTMapBase\NiTMap</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiTMapBase\NiTMap\NiTStringMap.h">
+      <Filter>include\RE\NetImmerse\NiTMapBase\NiTMap</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiTMapBase\NiTMapBase.h">
+      <Filter>include\RE\NetImmerse\NiTMapBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiTMapBase\NiTPointerMap.h">
+      <Filter>include\RE\NetImmerse\NiTMapBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiTPointerAllocator.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiTransform.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiTSet.h">
+      <Filter>include\RE\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Obscript\CommandTable.h">
+      <Filter>include\RE\Obscript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Offsets\Offsets.h">
+      <Filter>include\RE\Offsets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Offsets\Offsets_NiRTTI.h">
+      <Filter>include\RE\Offsets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Offsets\Offsets_RTTI.h">
+      <Filter>include\RE\Offsets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Pathfinding\BSPathingCell\BSPathingCell.h">
+      <Filter>include\RE\Pathfinding\BSPathingCell</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Pathfinding\BSPathingCell\PathingCell.h">
+      <Filter>include\RE\Pathfinding\BSPathingCell</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Pathfinding\IMovementControllerRegisterInterface\IMovementControllerRegisterInterface.h">
+      <Filter>include\RE\Pathfinding\IMovementControllerRegisterInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Pathfinding\IMovementControllerRegisterInterface\MovementControllerAI\MovementControllerAI.h">
+      <Filter>include\RE\Pathfinding\IMovementControllerRegisterInterface\MovementControllerAI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Pathfinding\IMovementControllerRegisterInterface\MovementControllerAI\MovementControllerNPC.h">
+      <Filter>include\RE\Pathfinding\IMovementControllerRegisterInterface\MovementControllerAI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Pathfinding\IMovementInterface\IMovementDirectControl.h">
+      <Filter>include\RE\Pathfinding\IMovementInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Pathfinding\IMovementInterface\IMovementInterface.h">
+      <Filter>include\RE\Pathfinding\IMovementInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Pathfinding\IMovementInterface\IMovementMessageInterface.h">
+      <Filter>include\RE\Pathfinding\IMovementInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Pathfinding\IMovementInterface\IMovementMotionDrivenControl.h">
+      <Filter>include\RE\Pathfinding\IMovementInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Pathfinding\IMovementInterface\IMovementPlannerDirectControl.h">
+      <Filter>include\RE\Pathfinding\IMovementInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Pathfinding\IMovementInterface\IMovementSelectIdle.h">
+      <Filter>include\RE\Pathfinding\IMovementInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Pathfinding\IMovementInterface\IMovementState\ActorState.h">
+      <Filter>include\RE\Pathfinding\IMovementInterface\IMovementState</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Pathfinding\IMovementInterface\IMovementState\IMovementState.h">
+      <Filter>include\RE\Pathfinding\IMovementInterface\IMovementState</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\RadiantStory\BGSStoryTeller.h">
+      <Filter>include\RE\RadiantStory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\rtti.h">
+      <Filter>include\RE</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\BS\BSScaleformManager.h">
+      <Filter>include\RE\Scaleform\BS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\BS\BSScaleformTranslator.h">
+      <Filter>include\RE\Scaleform\BS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\BS\LoggingDisabler.h">
+      <Filter>include\RE\Scaleform\BS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\FxGameDelegate\AddCallbackVisitor.h">
+      <Filter>include\RE\Scaleform\FxGameDelegate</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\FxGameDelegate\FxDelegate.h">
+      <Filter>include\RE\Scaleform\FxGameDelegate</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\FxGameDelegate\FxDelegateArgs.h">
+      <Filter>include\RE\Scaleform\FxGameDelegate</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\FxGameDelegate\FxDelegateHandler.h">
+      <Filter>include\RE\Scaleform\FxGameDelegate</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\FxGameDelegate\FxResponseArgs.h">
+      <Filter>include\RE\Scaleform\FxGameDelegate</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\FxGameDelegate\FxResponseArgsBase.h">
+      <Filter>include\RE\Scaleform\FxGameDelegate</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\FxGameDelegate\RemoveCallbackVisitor.h">
+      <Filter>include\RE\Scaleform\FxGameDelegate</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GAllocator\GAllocator.h">
+      <Filter>include\RE\Scaleform\GAllocator</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GAllocator\GAllocatorBaseGH.h">
+      <Filter>include\RE\Scaleform\GAllocator</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GAllocator\GConstructorMov.h">
+      <Filter>include\RE\Scaleform\GAllocator</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GArray\GArray.h">
+      <Filter>include\RE\Scaleform\GArray</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GArray\GArrayBase.h">
+      <Filter>include\RE\Scaleform\GArray</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GArray\GArrayData.h">
+      <Filter>include\RE\Scaleform\GArray</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GArray\GArrayDataBase.h">
+      <Filter>include\RE\Scaleform\GArray</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GArray\GArrayDefaultPolicy.h">
+      <Filter>include\RE\Scaleform\GArray</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GAtomic\GAtomic.h">
+      <Filter>include\RE\Scaleform\GAtomic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GColor\GColor.h">
+      <Filter>include\RE\Scaleform\GColor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxEvent\GFxEvent.h">
+      <Filter>include\RE\Scaleform\GFxEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxEvent\GFxKey.h">
+      <Filter>include\RE\Scaleform\GFxEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxEvent\GFxKeyboardState.h">
+      <Filter>include\RE\Scaleform\GFxEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxEvent\GFxSpecialKeysState.h">
+      <Filter>include\RE\Scaleform\GFxEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxLoader\GFxActionControl.h">
+      <Filter>include\RE\Scaleform\GFxLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxLoader\GFxLoader.h">
+      <Filter>include\RE\Scaleform\GFxLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxLoader\GFxState.h">
+      <Filter>include\RE\Scaleform\GFxLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxLoader\GFxStateBag.h">
+      <Filter>include\RE\Scaleform\GFxLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxLoader\GFxTranslator.h">
+      <Filter>include\RE\Scaleform\GFxLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxLog\GFxLog.h">
+      <Filter>include\RE\Scaleform\GFxLog</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxLog\GFxLogBase.h">
+      <Filter>include\RE\Scaleform\GFxLog</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxLog\GFxLogConstants.h">
+      <Filter>include\RE\Scaleform\GFxLog</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxMovieRoot.h">
+      <Filter>include\RE\Scaleform</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxPlayer\GFxExternalInterface.h">
+      <Filter>include\RE\Scaleform\GFxPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxPlayer\GFxFunctionHandler.h">
+      <Filter>include\RE\Scaleform\GFxPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxPlayer\GFxMovie.h">
+      <Filter>include\RE\Scaleform\GFxPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxPlayer\GFxMovieDef.h">
+      <Filter>include\RE\Scaleform\GFxPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxPlayer\GFxMovieView.h">
+      <Filter>include\RE\Scaleform\GFxPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxPlayer\GFxValue.h">
+      <Filter>include\RE\Scaleform\GFxPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxPlayerStats\GFxPlayerStats.h">
+      <Filter>include\RE\Scaleform\GFxPlayerStats</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxRenderConfig\GFxRenderConfig.h">
+      <Filter>include\RE\Scaleform\GFxRenderConfig</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxResource\GFxFileConstants.h">
+      <Filter>include\RE\Scaleform\GFxResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxResource\GFxResource.h">
+      <Filter>include\RE\Scaleform\GFxResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxResource\GFxResourceID.h">
+      <Filter>include\RE\Scaleform\GFxResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxResource\GFxResourceKey.h">
+      <Filter>include\RE\Scaleform\GFxResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxString\GFxWStringBuffer.h">
+      <Filter>include\RE\Scaleform\GFxString</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GFxWWHelper\GFxWWHelper.h">
+      <Filter>include\RE\Scaleform\GFxWWHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GHash\GFixedSizeHash.h">
+      <Filter>include\RE\Scaleform\GHash</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GHash\GHash.h">
+      <Filter>include\RE\Scaleform\GHash</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GHash\GHashNode.h">
+      <Filter>include\RE\Scaleform\GHash</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GHash\GHashSet.h">
+      <Filter>include\RE\Scaleform\GHash</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GHash\GHashSetBase.h">
+      <Filter>include\RE\Scaleform\GHash</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GHash\GHashsetCachedEntry.h">
+      <Filter>include\RE\Scaleform\GHash</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GHash\GHashsetCachedNodeEntry.h">
+      <Filter>include\RE\Scaleform\GHash</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GImage\GImage.h">
+      <Filter>include\RE\Scaleform\GImage</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GImage\GImageBase.h">
+      <Filter>include\RE\Scaleform\GImage</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GList\GList.h">
+      <Filter>include\RE\Scaleform\GList</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GMath\GMath.h">
+      <Filter>include\RE\Scaleform\GMath</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GMatrix2D\GMatrix2D.h">
+      <Filter>include\RE\Scaleform\GMatrix2D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GMatrix3D\GMatrix3D.h">
+      <Filter>include\RE\Scaleform\GMatrix3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GMemory\GMemory.h">
+      <Filter>include\RE\Scaleform\GMemory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GMemory\GNewOverrideBase.h">
+      <Filter>include\RE\Scaleform\GMemory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GMemoryHeap\GMemoryHeap.h">
+      <Filter>include\RE\Scaleform\GMemoryHeap</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GRefCount\GPtr.h">
+      <Filter>include\RE\Scaleform\GRefCount</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GRefCount\GRefCountBase.h">
+      <Filter>include\RE\Scaleform\GRefCount</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GRefCount\GRefCountBaseNTS.h">
+      <Filter>include\RE\Scaleform\GRefCount</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GRefCount\GRefCountBaseStatImpl.h">
+      <Filter>include\RE\Scaleform\GRefCount</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GRefCount\GRefCountImpl.h">
+      <Filter>include\RE\Scaleform\GRefCount</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GRefCount\GRefCountImplCore.h">
+      <Filter>include\RE\Scaleform\GRefCount</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GRefCount\GRefCountNTSImpl.h">
+      <Filter>include\RE\Scaleform\GRefCount</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GRenderer\GRenderer.h">
+      <Filter>include\RE\Scaleform\GRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GRenderer\GTexture.h">
+      <Filter>include\RE\Scaleform\GRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GRenderer\GViewport.h">
+      <Filter>include\RE\Scaleform\GRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GRendererEventHandler\GRendererEventHandler.h">
+      <Filter>include\RE\Scaleform\GRendererEventHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GStats\GStats.h">
+      <Filter>include\RE\Scaleform\GStats</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GStd\GStd.h">
+      <Filter>include\RE\Scaleform\GStd</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GString\GString.h">
+      <Filter>include\RE\Scaleform\GString</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GTypes\SFTypes.h">
+      <Filter>include\RE\Scaleform\GTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GTypes2DF\GPoint.h">
+      <Filter>include\RE\Scaleform\GTypes2DF</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Scaleform\GTypes2DF\GRect.h">
+      <Filter>include\RE\Scaleform\GTypes2DF</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Sky\Precipitation.h">
+      <Filter>include\RE\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Sky\Sky.h">
+      <Filter>include\RE\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Sky\SkyEffectController.h">
+      <Filter>include\RE\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Sky\SkyObject\Atmosphere.h">
+      <Filter>include\RE\Sky\SkyObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Sky\SkyObject\Clouds.h">
+      <Filter>include\RE\Sky\SkyObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Sky\SkyObject\Moon.h">
+      <Filter>include\RE\Sky\SkyObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Sky\SkyObject\SkyObject.h">
+      <Filter>include\RE\Sky\SkyObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Sky\SkyObject\Stars.h">
+      <Filter>include\RE\Sky\SkyObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Sky\SkyObject\Sun.h">
+      <Filter>include\RE\Sky\SkyObject</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Skyrim.h">
+      <Filter>include\RE</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SkyrimScript\DelayFunctor\AttachAshPileFunctor.h">
+      <Filter>include\RE\SkyrimScript\DelayFunctor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SkyrimScript\DelayFunctor\DelayFunctor.h">
+      <Filter>include\RE\SkyrimScript\DelayFunctor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SkyrimScript\DelayFunctor\DropObjectFunctor.h">
+      <Filter>include\RE\SkyrimScript\DelayFunctor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SkyrimScript\DelayFunctor\MoveToFunctor.h">
+      <Filter>include\RE\SkyrimScript\DelayFunctor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SkyrimScript\DelayFunctor\RemoveItemFunctor.h">
+      <Filter>include\RE\SkyrimScript\DelayFunctor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SkyrimScript\DelayFunctor\SendPlayerToJailFunctor.h">
+      <Filter>include\RE\SkyrimScript\DelayFunctor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SkyrimScript\DelayFunctor\SetMotionTypeFunctor.h">
+      <Filter>include\RE\SkyrimScript\DelayFunctor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SkyrimScript\DelayFunctor\SetPositionFunctor.h">
+      <Filter>include\RE\SkyrimScript\DelayFunctor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SkyrimScript\FragmentSystem.h">
+      <Filter>include\RE\SkyrimScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SkyrimScript\HandlePolicy.h">
+      <Filter>include\RE\SkyrimScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SkyrimScript\Logger.h">
+      <Filter>include\RE\SkyrimScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SkyrimScript\ObjectBindPolicy.h">
+      <Filter>include\RE\SkyrimScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SkyrimScript\Profiler.h">
+      <Filter>include\RE\SkyrimScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SkyrimScript\SavePatcher.h">
+      <Filter>include\RE\SkyrimScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\SkyrimScript\SkyrimVM.h">
+      <Filter>include\RE\SkyrimScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\REL\Relocation.h">
+      <Filter>include\REL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SKSE\API.h">
+      <Filter>include\SKSE</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SKSE\Events.h">
+      <Filter>include\SKSE</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SKSE\IAT.h">
       <Filter>include\SKSE</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect\ValueModifierEffect.h">
@@ -4739,27 +5495,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\Memory\IMemoryStoreBase\IMemoryStore\IMemoryHeap\ZeroOverheadHeap.h">
       <Filter>include\RE\Memory\IMemoryStoreBase\IMemoryStore\IMemoryHeap</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect\SummonPlacementEffect.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\ReferenceEffect</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectDebris.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectGeometryDecal.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectParticle.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectSimpleDecal.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectSPG.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectWeaponBlood.h">
-      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
