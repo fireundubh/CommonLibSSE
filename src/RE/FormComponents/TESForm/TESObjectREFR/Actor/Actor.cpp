@@ -427,14 +427,14 @@ namespace RE
 
 	TESObjectARMO* Actor::GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot)
 	{
-		auto inv = GetInventory([](TESBoundObject* a_object) -> bool {
-			return a_object->IsArmor();
+		auto inv = GetInventory([](TESBoundObject& a_object) -> bool {
+			return a_object.IsArmor();
 		});
 
-		for (auto& item : inv) {
-			auto& [count, entry] = item.second;
-			if (entry->GetWorn()) {
-				auto armor = static_cast<TESObjectARMO*>(item.first);
+		for (auto& [item, invData] : inv) {
+			auto& [count, entry] = invData;
+			if (count > 0 && entry && entry->GetWorn()) {
+				auto armor = static_cast<TESObjectARMO*>(item);
 				for (const auto& armorAddon : armor->armorAddons) {
 					if (armorAddon && armorAddon->HasPartOf(a_slot)) {
 						return armor;
@@ -446,17 +446,16 @@ namespace RE
 		return nullptr;
 	}
 
-
 	TESObjectARMO* Actor::GetWornArmor(FormID id)
 	{
-		auto inv = GetInventory([id](TESBoundObject* a_object) -> bool {
-			return a_object->IsArmor() && a_object->GetFormID() == id;
+		auto inv = GetInventory([id](TESBoundObject& a_object) -> bool {
+			return a_object.IsArmor() && a_object.GetFormID() == id;
 		});
 
-		for (auto& item : inv) {
-			auto& [count, entry] = item.second;
-			if (entry->GetWorn()) {
-				return static_cast<TESObjectARMO*>(item.first);
+		for (auto& [item, invData] : inv) {
+			auto& [count, entry] = invData;
+			if (count > 0 && entry && entry->GetWorn()) {
+				return static_cast<TESObjectARMO*>(item);
 			}
 		}
 
