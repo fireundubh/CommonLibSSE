@@ -27,15 +27,13 @@ namespace RE
 			BSTScatterTableEntry() :
 				value(),
 				next(0)
-			{
-			}
+			{}
 
 
 			BSTScatterTableEntry(const BSTScatterTableEntry& a_rhs) :
 				value(a_rhs.value),
 				next(a_rhs.next)
-			{
-			}
+			{}
 
 
 			BSTScatterTableEntry(BSTScatterTableEntry&& a_rhs) :
@@ -91,15 +89,13 @@ namespace RE
 			iterator_base() :
 				_entry(nullptr),
 				_end(nullptr)
-			{
-			}
+			{}
 
 
 			iterator_base(const iterator_base& a_rhs) :
 				_entry(a_rhs._entry),
 				_end(a_rhs._end)
-			{
-			}
+			{}
 
 
 			iterator_base(iterator_base&& a_rhs) :
@@ -121,8 +117,7 @@ namespace RE
 
 
 			~iterator_base()
-			{
-			}
+			{}
 
 
 			iterator_base& operator=(const iterator_base& a_rhs)
@@ -195,7 +190,7 @@ namespace RE
 			iterator_base operator++(int)
 			{
 				iterator_base tmp{ *this };
-				operator++();
+							  operator++();
 				return tmp;
 			}
 
@@ -217,8 +212,7 @@ namespace RE
 			_freeIdx(0),
 			_sentinel((const entry_type*)SENTINEL),
 			_allocator()
-		{
-		}
+		{}
 
 
 		TES_HEAP_REDEFINE_NEW();
@@ -624,8 +618,7 @@ namespace RE
 		BSTScatterTableHeapAllocator() :
 			_pad00(0),
 			_entries(nullptr)
-		{
-		}
+		{}
 
 
 		entry_type* allocate(std::size_t a_num)
@@ -674,7 +667,7 @@ namespace RE
 	static_assert(sizeof(BSTScatterTableHeapAllocator<void*, 8>) == 0x10);
 
 
-	template <class Key, class T, class Hash = CRC32Hash<Key>, class KeyEqual = std::equal_to<Key>>
+	template <class Key, class T, class Hash = BSCRC32<Key>, class KeyEqual = std::equal_to<Key>>
 	using BSTHashMap = BSTScatterTable<BSTScatterTableTraits<Key, T>, 8, BSTScatterTableHeapAllocator, Hash, KeyEqual>;
 	static_assert(sizeof(BSTHashMap<std::uint32_t, void*>) == 0x30);
 
@@ -695,7 +688,7 @@ namespace RE
 	};
 
 
-	template <class Key, class Hash = CRC32Hash<Key>, class KeyEqual = std::equal_to<Key>>
+	template <class Key, class Hash = BSCRC32<Key>, class KeyEqual = std::equal_to<Key>>
 	using BSTSet = BSTScatterTable<BSTSetTraits<Key>, 8, BSTScatterTableHeapAllocator, Hash, KeyEqual>;
 	static_assert(sizeof(BSTSet<std::uint32_t, void*>) == 0x30);
 
@@ -760,7 +753,7 @@ namespace RE
 	};
 
 
-	template <class Key, class T, std::uint32_t N, class Hash = CRC32Hash<Key>, class KeyEqual = std::equal_to<Key>>
+	template <class Key, class T, std::uint32_t N, class Hash = BSCRC32<Key>, class KeyEqual = std::equal_to<Key>>
 	using BSTStaticHashMap = BSTScatterTable<BSTScatterTableTraits<Key, T>, N, BSTStaticHashMapBase::Allocator, Hash, KeyEqual>;
 
 
@@ -796,155 +789,4 @@ namespace RE
 	//	| | +-- -
 	// | +-- -
 	//	+-- -
-
-
-#if 0
-	namespace TODO
-	{
-		template <class Traits>
-		struct BSTScatterTableKernel :
-			public Traits,
-			public Traits::hasher
-		{
-		public:
-			using traits_type = Traits;
-			using hasher = typename traits_type::hasher;
-			using allocator_type = typename traits_type::allocator_type;
-			using entry_type = typename allocator_type::value_type;
-
-
-			// members
-			std::uint32_t				_capacity;	// ?? (0C) - this must be 2^n, or else terrible things will happen
-			std::uint32_t				_freeCount;	// ?? (10)
-			std::uint32_t				_freeIdx;	// ?? (14)
-			const entry_type* _sentinel;	// ?? (18)
-		};
-
-
-		template <class Key, class T>
-		struct BSTScatterTableDefaultKVStorage
-		{
-		public:
-			// members
-			Key first;	// 00
-			T second;	// ??
-		};
-
-
-		template <class Key, class T, template <class, class> class Storage>
-		struct BSTScatterTableEntry : public Storage<Key, T>
-		{
-		public:
-			using base = Storage<Key, T>;
-			using value_type = Storage<const Key, T>;
-
-
-			// members
-			BSTScatterTableEntry* next;	// ??
-		};
-
-
-		template <class Key>
-		struct BSTScatterTableDefaultHashPolicy
-		{
-		public:
-			std::uint32_t operator()(const Key& a_key) const
-			{
-				return CRC32Hash<Key>()(a_key);
-			}
-		};
-
-
-		template <class T>
-		struct BSTScatterTableHeapAllocator
-		{
-		public:
-			using entry_type = T;
-		};
-
-
-		template <class Key, class T, class Storage, class Hash, class Allocator, std::uint32_t N>
-		struct BSTScatterTableTraits
-		{
-		public:
-			using key_type = Key;
-			using mapped_type = T;
-			using hasher = Hash;
-			using allocator_type = Allocator;
-			using entry_type = typename allocator_type::entry_type;
-			using value_type = typename entry_type::value_type;
-		};
-
-
-		template <class Traits>
-		struct BSTScatterTableBase :
-			public BSTScatterTableKernel<Traits>,
-			public Traits::allocator_type
-		{
-		public:
-			using kernel_type = BSTScatterTableKernel<Traits>;
-			using traits_type = Traits;
-
-			using key_type = typename traits_type::key_type;
-			using mapped_type = typename traits_type::mapped_type;
-			using value_type = typename traits_type::value_type;
-			using size_type = std::uint32_t;
-			using hasher = Hash;
-			using key_equal = KeyEqual;
-			using allocator_type = typename traits_type::allocator_type;
-
-			using entry_type = typename traits_type::entry_type;
-
-
-			// members
-			entry_type* _entries;	// ?? (28)
-		};
-
-
-		template <class Key, class T, class Storage, class Hash, class Allocator, std::uint32_t N>
-		struct BSTScatterTable :
-			public BSTScatterTableBase<BSTScatterTableTraits<Key, T, Storage, Hash, Allocator, N>>
-		{
-		public:
-			using base = BSTScatterTableBase<BSTScatterTableTraits<Key, T, Storage, Hash, Allocator, N>>;
-			using traits_type = typename base::traits_type;
-		};
-
-
-		template <class Key, class T>
-		struct BSTDefaultScatterTable :
-			public BSTScatterTable<Key, T, BSTScatterTableDefaultKVStorage, BSTScatterTableDefaultHashPolicy, BSTScatterTableHeapAllocator, 8>
-		{
-		public:
-			using base = BSTScatterTable<Key, T, BSTScatterTableDefaultKVStorage, BSTScatterTableDefaultHashPolicy, BSTScatterTableHeapAllocator, 8>;
-			using traits_type = typename base::traits_type;
-		};
-
-
-		template <class Key, class T, class Table>
-		struct BSTHashMapTraits
-		{
-		public:
-			using table_type = Table;
-		};
-
-
-		template <class Traits>
-		struct BSTHashMapBase :
-			public Traits,
-			public Traits::table_type
-		{
-		public:
-		};
-
-
-		template <class Key, class T, template <class, class> class Table = BSTDefaultScatterTable>
-		class BSTHashMap :
-			public BSTHashMapBase<BSTHashMapTraits<Key, T, Table<Key, T>>>
-		{
-		public:
-		};
-		static_assert(sizeof(BSTHashMap<std::uint32_t, void*>) == 0x30);
-	}
-#endif
 }
