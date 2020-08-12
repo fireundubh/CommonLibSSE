@@ -635,6 +635,12 @@ namespace RE
 		extraList.RemoveByType(ExtraDataType::kAttachedArrows3D);
 	}
 
+	bool Actor::RemoveSpell(SpellItem* a_spell)
+	{
+		using func_t = decltype(&Actor::RemoveSpell);
+		REL::Relocation<func_t> func{ REL::ID(37772) };
+		return func(this, a_spell);
+	}
 
 	bool Actor::RemoveSpell(SpellItem* a_spell)
 	{
