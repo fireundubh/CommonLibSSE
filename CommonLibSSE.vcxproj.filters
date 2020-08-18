@@ -241,9 +241,6 @@
     <ClCompile Include="src\RE\Events\BGSStoryEvent\ChestsLooted.cpp">
       <Filter>src\RE\Events\BGSStoryEvent</Filter>
     </ClCompile>
-    <ClCompile Include="src\SKSE\CodeGenerator.cpp">
-      <Filter>src\SKSE</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\FormComponents\Components\Color.cpp">
       <Filter>src\RE\FormComponents\Components</Filter>
     </ClCompile>
@@ -721,9 +718,6 @@
     <ClCompile Include="src\SKSE\RegistrationSet.cpp">
       <Filter>src\SKSE</Filter>
     </ClCompile>
-    <ClCompile Include="src\REL\Relocation.cpp">
-      <Filter>src\REL</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\Scaleform\FxGameDelegate\RemoveCallbackVisitor.cpp">
       <Filter>src\RE\Scaleform\FxGameDelegate</Filter>
     </ClCompile>
@@ -829,9 +823,6 @@
     <ClCompile Include="src\RE\FormComponents\TESForm\TESObjectCELL.cpp">
       <Filter>src\RE\FormComponents\TESForm</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\FormComponents\TESForm\TESObject\TESBoundObject\TESBoundAnimObject\TESObjectLIGH.cpp">
-      <Filter>src\RE\FormComponents\TESForm\TESObject\TESBoundObject\TESBoundAnimObject</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\FormComponents\TESForm\TESObjectREFR\TESObjectREFR.cpp">
       <Filter>src\RE\FormComponents\TESForm\TESObjectREFR</Filter>
     </ClCompile>
@@ -897,6 +888,9 @@
     </ClCompile>
     <ClCompile Include="src\RE\BSScript\IFunctionArguments\ZeroFunctionArguments.cpp">
       <Filter>src\RE\BSScript\IFunctionArguments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Skyrim.cpp">
+      <Filter>src\RE</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2021,9 +2015,6 @@
     </ClInclude>
     <ClInclude Include="include\RE\Sky\SkyObject\Clouds.h">
       <Filter>include\RE\Sky\SkyObject</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SKSE\CodeGenerator.h">
-      <Filter>include\SKSE</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSScript\Internal\IFuncCallQuery\CodeTasklet.h">
       <Filter>include\RE\BSScript\Internal\IFuncCallQuery</Filter>
@@ -4736,9 +4727,6 @@
     </ClInclude>
     <ClInclude Include="include\SKSE\Version.h">
       <Filter>include\SKSE</Filter>
-    </ClInclude>
-    <ClInclude Include="include\REL\Version.h">
-      <Filter>include\REL</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSScript\Internal\VirtualMachine.h">
       <Filter>include\RE\BSScript\Internal</Filter>
