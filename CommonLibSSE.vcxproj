@@ -1513,7 +1513,6 @@
     <ClCompile Include="src\RE\AI\AIProcess.cpp" />
     <ClCompile Include="src\RE\AI\ProcessLists.cpp" />
     <ClCompile Include="src\RE\Animation\IAnimationGraphManagerHolder.cpp" />
-    <ClCompile Include="src\RE\bhkWorld.cpp" />
     <ClCompile Include="src\RE\BSAudio\BSAudioManager.cpp" />
     <ClCompile Include="src\RE\BSAudio\BSSoundHandle.cpp" />
     <ClCompile Include="src\RE\BSCore\BSAtomic.cpp" />
@@ -1729,6 +1728,7 @@
     <ClCompile Include="src\RE\NetImmerse\NiMemManager.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiPoint3.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\BGSAttackData.cpp" />
+    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet\BSShaderTextureSet.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiColorData.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData\BSFaceGenAnimationData.cpp" />

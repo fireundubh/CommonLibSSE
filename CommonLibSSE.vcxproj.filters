@@ -19,9 +19,6 @@
     <ClCompile Include="src\RE\Animation\IAnimationGraphManagerHolder.cpp">
       <Filter>src\RE\Animation</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\bhkWorld.cpp">
-      <Filter>src\RE</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\BSAudio\BSAudioManager.cpp">
       <Filter>src\RE\BSAudio</Filter>
     </ClCompile>
@@ -32,6 +29,9 @@
       <Filter>src\RE\BSCore</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\BSCore\BSFixedString.cpp">
+      <Filter>src\RE\BSCore</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\BSCore\BSPointerHandle.cpp">
       <Filter>src\RE\BSCore</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\BSCore\BSStringPool.cpp">
@@ -664,6 +664,9 @@
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\BGSAttackData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable</Filter>
+    </ClCompile>
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet\BSShaderTextureSet.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>
     </ClCompile>
@@ -1029,9 +1032,6 @@
     <ClInclude Include="include\RE\BSCore\BSPointerHandleManager\HandleManager.h">
       <Filter>include\RE\BSCore\BSPointerHandleManager</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\BSCore\BSPointerHandleManagerInterface.h">
-      <Filter>include\RE\BSCore</Filter>
-    </ClInclude>
     <ClInclude Include="include\RE\BSCore\BSPointerHandleSmartPointer.h">
       <Filter>include\RE\BSCore</Filter>
     </ClInclude>
@@ -1084,9 +1084,6 @@
       <Filter>include\RE\BSCore</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSCore\BSTTuple.h">
-      <Filter>include\RE\BSCore</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RE\BSCore\BSUntypedPointerHandle.h">
       <Filter>include\RE\BSCore</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSCore\CRC.h">
@@ -6667,6 +6664,12 @@
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject">
       <UniqueIdentifier>{9194ba00-1d79-402f-bd32-f789182ae333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject">
+      <UniqueIdentifier>{aa004ffe-7654-4f9b-bb34-f4da74233218}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable">
+      <UniqueIdentifier>{03137da2-c79f-4f5b-9091-1bd2e794fbf5}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet">
       <UniqueIdentifier>{1e4ee1a6-aa45-4b44-b0bf-2f05856147a4}</UniqueIdentifier>
