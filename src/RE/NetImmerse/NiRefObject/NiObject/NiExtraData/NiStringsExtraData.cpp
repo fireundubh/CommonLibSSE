@@ -52,7 +52,7 @@ namespace RE
 				value = NiAlloc<char*>(++size);
 
 				for (std::int32_t i = 0; i < size - 1; i++) {
-					std::uint32_t strLength = strlen(oldData[i]) + 1;
+					size_t strLength = strlen(oldData[i]) + 1;
 					value[i] = NiAlloc<char>(strLength);
 					memcpy(value[i], oldData[i], sizeof(char) * strLength);
 
@@ -84,7 +84,7 @@ namespace RE
 
 				for (std::int32_t i = 0; i < size + 1; i++) {
 					if (i != index) {
-						std::uint32_t strLength = strlen(oldData[i]) + 1;
+						size_t strLength = strlen(oldData[i]) + 1;
 						value[i] = NiAlloc<char>(strLength);
 						memcpy(value[i], oldData[i], sizeof(char) * strLength);
 					}

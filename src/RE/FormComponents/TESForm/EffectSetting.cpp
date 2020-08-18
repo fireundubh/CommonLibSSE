@@ -1,4 +1,5 @@
 #include "RE/FormComponents/TESForm/EffectSetting.h"
+#include "RE/BSCore/BSFixedString.h"
 
 
 namespace RE
