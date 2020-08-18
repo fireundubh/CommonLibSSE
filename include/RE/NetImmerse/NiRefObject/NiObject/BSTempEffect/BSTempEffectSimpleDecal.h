@@ -12,7 +12,6 @@ namespace RE
 {
 	class BGSDecalNode;
 	class BGSTextureSet;
-	class BSTriShape;
 	class NiAVObject;
 
 
@@ -35,23 +34,23 @@ namespace RE
 		// members
 		std::uint8_t			unk30;			  // 030
 		std::uint8_t			unk31;			  // 031
-		bool					unk32;			  // 032
+		std::uint8_t			unk32;			  // 032
 		std::uint16_t			unk36;			  // 036
 		std::uint64_t			unk38;			  // 038
 		std::uint32_t			unk40;			  // 040
 		std::uint32_t			unk44;			  // 044
-		NiPointer<BSGeometry>	effect3D;		  // 048
+		NiPointer<BSGeometry>	effectObject;	  // 048
 		std::uint32_t			unk50;			  // 050
-		bool					permanent;		  // 054
+		bool					permanentDecal;	  // 054;
 		std::uint8_t			unk55;			  // 055
-		bool					unk56;			  // 056
+		std::uint8_t			unk56;			  // 056
 		std::uint8_t			unk57;			  // 057
 		BGSTextureSet*			textureSet;		  // 058
 		BGSTextureSet*			textureSet2;	  // 060
-		NiPoint3				origin1;		  // 068
-		NiPoint3				direction1;		  // 074
-		NiPoint3				origin2;		  // 080 - copy?
-		NiPoint3				direction2;		  // 08C - copy?
+		NiPoint3				origin;			  // 068
+		NiPoint3				direction;		  // 074
+		NiPoint3				surfaceNormal;	  // 080
+		NiPoint3				unk8C;			  // 08C
 		NiFrustumPlanes			planes;			  // 098
 		std::uint64_t			unk108;			  // 108
 		std::uint64_t			unk110;			  // 110
@@ -63,9 +62,9 @@ namespace RE
 		std::uint64_t			unk140;			  // 140
 		std::uint64_t			unk148;			  // 148
 		std::uint64_t			unk150;			  // 150
-		BSTArray<void*>			unk158;			  // 158 - triangle data?
+		BSTArray<void*>			unk158;			  // 158
 		NiPointer<BGSDecalNode> decalNode;		  // 170
-		NiPointer<BSTriShape>	avShape;		  // 178
+		NiPointer<NiAVObject>	avObject;		  // 178
 		float					unk180;			  // 180
 		NiMatrix3				emitterRotation;  // 184
 		std::uint32_t			unk1A8;			  // 1A8
@@ -73,19 +72,19 @@ namespace RE
 		float					height;			  // 1B0
 		float					depth;			  // 1B4;
 		std::uint8_t			subTextureIndex;  // 1B8
-		bool					parallaxOcc;	  // 1B9
+		std::uint8_t			parallaxOcc;	  // 1B9
 		std::uint8_t			unk1BA;			  // 1BA
 		std::uint8_t			unk1BB;			  // 1BB
 		float					parallaxScale;	  // 1BC
 		std::uint8_t			parallaxPasses;	  // 1C0
-		bool					alphaBlending;	  // 1C1
-		bool					enableBlending;	  // 1C2
+		std::uint8_t			alphaBlending;	  // 1C1
+		std::uint8_t			enableBlending;	  // 1C2
 		std::uint8_t			unk1C3;			  // 1C3
 		float					shininess;		  // 1C4
 		NiColor					color;			  // 1C8
-		bool					unk1D4;			  // 1D4
-		bool					twoSided;		  // 1D5
-		bool					unk1D6;			  // 1D6
+		std::uint8_t			unk1D4;			  // 1D4
+		std::uint8_t			twoSided;		  // 1D5
+		std::uint8_t			unk1D6;			  // 1D6
 		std::uint8_t			unk1D7;			  // 1D7
 		std::uint32_t			unk1D8;			  // 1D8
 		std::uint32_t			unk1DC;			  // 1DC

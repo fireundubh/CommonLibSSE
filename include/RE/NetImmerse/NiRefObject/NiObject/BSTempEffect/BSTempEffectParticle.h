@@ -32,22 +32,22 @@ namespace RE
 
 
 		// members
-		NiPointer<NiAVObject>						particle3D;			// 30
-		BSTSmartPointer<BGSParticleObjectCloneTask> cloneTask;			// 38
-		const char*									modelName;			// 40
-		NiPointer<NiNode>							dynamicCellNode;	// 48
-		NiTransform									particleTransform;	// 50
-		std::uint32_t								flags;				// 84
-		NiPointer<NiAVObject>						unk88;				// 88
-		NiTransform									unk88Transform;		// 90
-		std::uint32_t								padC4;				// C4
-		std::uint64_t								unkC8;				// C8
-		BSSoundHandle								sound1;				// D0
-		BSSoundHandle								sound2;				// DC
-		std::uint8_t								unkE8;				// E8
-		std::uint8_t								padE9;				// E9
-		std::uint16_t								unkEA;				// EA
-		std::uint32_t								unkEC;				// EC
+		NiPointer<NiAVObject>						particle3D;	 // 30
+		BSTSmartPointer<BGSParticleObjectCloneTask> cloneTask;	 // 38
+		const char*									modelName;	 // 40
+		NiPointer<NiNode>							unk48;		 // 48	- BSMultiBoundNiNode[4]
+		NiTransform									transform;	 // 50
+		std::uint32_t								unk84;		 // 84
+		NiPointer<NiAVObject>						unk88;		 // 88
+		NiTransform									unk90;		 // 90
+		std::uint32_t								padC4;		 // C4
+		std::uint64_t								unkC8;		 // C8
+		BSSoundHandle								unkD0;		 // D0
+		BSSoundHandle								unkDC;		 // DC
+		std::uint8_t								unkE8;		 // E8
+		std::uint8_t								padE9;		 // E9
+		std::uint16_t								unkEA;		 // EA
+		std::uint32_t								unkEC;		 // EC
 	};
 	static_assert(sizeof(BSTempEffectParticle) == 0xF0);
 };

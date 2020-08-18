@@ -30,10 +30,10 @@ namespace RE
 
 		// members;
 		BGSShaderParticleGeometryData* data;   // 30
-		NiPointer<NiAVObject>		   spg3D;  // 38
+		NiPointer<NiAVObject>		   unk38;  // 38
 		float						   unk40;  // 40
-		float						   unk44;  // 40
-		bool						   unk48;  // 45
+		std::uint32_t				   unk44;  // 40
+		std::uint8_t				   unk48;  // 45
 		std::uint8_t				   pad49;  // 49
 		std::uint16_t				   pad4A;  // 4A
 		std::uint32_t				   pad4C;  // 4C

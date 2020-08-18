@@ -9,7 +9,7 @@
 
 namespace RE
 {
-	class BSGeometry;
+	class BSTriShape;
 	class NiAVObject;
 	class BGSTextureSet;
 	class QueuedTempEffect;
@@ -33,20 +33,20 @@ namespace RE
 
 
 		// members
-		NiPointer<BSGeometry>			  decal;				   // 30
-		NiPointer<BSGeometry>			  attachedGeometry;		   // 38
-		NiPointer<NiNode>				  attachedGeometryParent;  // 40
-		NiPointer<NiNode>				  decalNode;			   // 48
-		BSTSmartPointer<QueuedTempEffect> queuedDecal;			   // 50
-		BGSTextureSet*					  texSet;				   // 58
-		BGSTextureSet*					  texSet2;				   // 60
-		NiMatrix3						  rotation;				   // 68
-		NiPoint3						  origin;				   // 8C
-		NiPoint3						  direction;			   // 98
-		float							  width;				   // A4
-		std::uint32_t					  unkA8;				   // A8
-		std::uint32_t					  flags;				   // AC
-		bool							  unkB0;				   // B0
+		NiPointer<BSGeometry>			  skinnedDecal;			// 30
+		NiPointer<BSTriShape>			  attachedShape;		// 38
+		NiPointer<NiNode>				  attachedShapeParent;	// 40
+		NiPointer<NiNode>				  skinnedDecalNode;		// 48
+		BSTSmartPointer<QueuedTempEffect> queuedGeometryDecal;	// 50
+		BGSTextureSet*					  texSet;				// 58
+		BGSTextureSet*					  texSet2;				// 60
+		NiMatrix3						  rotation;				// 68
+		NiPoint3						  origin;				// 8C
+		NiPoint3						  direction;			// 98
+		float							  width;				// A4
+		std::uint32_t					  unkA8;				// A8
+		std::uint32_t					  flags;				// AC
+		bool							  unkB0;				// B0
 	};
 	static_assert(sizeof(BSTempEffectGeometryDecal) == 0xB8);
 }
