@@ -21,7 +21,7 @@ namespace RE
 
 
 		// member
-		hkQuadReal quad;  // 00
+		hkQuadReal quad{};  // 00
 	};
 	static_assert(sizeof(hkVector4) == 0x10);
 }
