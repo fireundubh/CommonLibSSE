@@ -30,7 +30,7 @@ namespace RE
 	}
 
 
-	std::int32_t NiStringsExtraData::GetIndexOf(const BSFixedString& a_element) const
+	std::optional<std::uint32_t> NiStringsExtraData::GetIndexOf(const BSFixedString& a_element) const
 	{
 		for (std::uint32_t i = 0; i < size; i++) {
 			if (strcmp(a_element.c_str(), value[i]) == 0) {
@@ -38,7 +38,7 @@ namespace RE
 			}
 		}
 
-		return -1;
+		return std::nullopt;
 	}
 
 
@@ -47,11 +47,11 @@ namespace RE
 		if (!a_element.empty()) {
 			auto index = GetIndexOf(a_element);
 
-			if (index == -1) {
+			if (index == std::nullopt) {
 				auto oldData = value;
 				value = NiAlloc<char*>(++size);
 
-				for (std::int32_t i = 0; i < size - 1; i++) {
+				for (std::uint32_t i = 0; i < size - 1; i++) {
 					size_t strLength = strlen(oldData[i]) + 1;
 					value[i] = NiAlloc<char>(strLength);
 					memcpy(value[i], oldData[i], sizeof(char) * strLength);
@@ -78,11 +78,11 @@ namespace RE
 		if (!a_element.empty()) {
 			auto index = GetIndexOf(a_element);
 
-			if (index != -1) {
+			if (index != std::nullopt) {
 				auto oldData = value;
 				value = NiAlloc<char*>(--size);
 
-				for (std::int32_t i = 0; i < size + 1; i++) {
+				for (std::uint32_t i = 0; i < size + 1; i++) {
 					if (i != index) {
 						size_t strLength = strlen(oldData[i]) + 1;
 						value[i] = NiAlloc<char>(strLength);

@@ -17,20 +17,12 @@ namespace RE
 
 	const hkpShape* hkpWorldObject::GetShape() const
 	{
-		auto collidable = GetCollidable();
-		if (collidable) {
-			return collidable->GetShape();
-		}
-		return nullptr;
+		return GetCollidable() ? GetCollidable()->GetShape() : nullptr;
 	}
 
 
 	TESObjectREFR* hkpWorldObject::GetUserData() const
 	{
-		auto collidable = GetCollidable();
-		if (collidable) {
-			return collidable->GetUserData();
-		}
-		return nullptr;
+		return GetCollidable() ? GetCollidable()->GetUserData() : nullptr;
 	}
 }

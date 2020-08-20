@@ -14,7 +14,7 @@ namespace RE
 
 	bool TESNPC::AddPerk(BGSPerk* a_perk, std::int8_t a_rank)
 	{
-		if (GetPerkIndex(a_perk) == -1) {
+		if (GetPerkIndex(a_perk) == std::nullopt) {
 			auto newPerk = new PerkRankData(a_perk, a_rank);
 			if (newPerk) {
 				auto oldData = perks;
@@ -50,9 +50,9 @@ namespace RE
 	}
 
 
-	std::int32_t TESNPC::GetPerkIndex(BGSPerk* a_perk) const
+	std::optional<std::uint32_t> TESNPC::GetPerkIndex(BGSPerk* a_perk) const
 	{
-		std::int32_t index = -1;
+		std::optional<std::uint32_t> index = std::nullopt;
 		if (perks) {
 			for (std::uint32_t i = 0; i < perkCount; i++) {
 				if (perks[i].perk && perks[i].perk == a_perk) {
@@ -202,7 +202,7 @@ namespace RE
 	bool TESNPC::RemovePerk(BGSPerk* a_perk)
 	{
 		auto index = GetPerkIndex(a_perk);
-		if (index != -1) {
+		if (index != std::nullopt) {
 			auto oldData = perks;
 			if (oldData) {
 				perks = calloc<PerkRankData>(--perkCount);

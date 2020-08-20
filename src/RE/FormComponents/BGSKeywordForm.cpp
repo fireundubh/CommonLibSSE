@@ -7,7 +7,7 @@ namespace RE
 {
 	bool BGSKeywordForm::AddKeyword(BGSKeyword* a_keyword)
 	{
-		if (GetKeywordIndex(a_keyword) == -1) {
+		if (GetKeywordIndex(a_keyword) == std::nullopt) {
 			auto oldData = keywords;
 			keywords = calloc<BGSKeyword*>(++numKeywords);
 			if (oldData) {
@@ -64,9 +64,9 @@ namespace RE
 	}
 
 
-	std::int32_t BGSKeywordForm::GetKeywordIndex(BGSKeyword* a_keyword) const
+	std::optional<std::uint32_t> BGSKeywordForm::GetKeywordIndex(BGSKeyword* a_keyword) const
 	{
-		std::int32_t index = -1;
+		std::optional<std::uint32_t> index = std::nullopt;
 		if (keywords) {
 			for (std::uint32_t i = 0; i < numKeywords; ++i) {
 				if (keywords[i] && keywords[i] == a_keyword) {
@@ -88,7 +88,7 @@ namespace RE
 	bool BGSKeywordForm::RemoveKeyword(BGSKeyword* a_keyword)
 	{
 		auto index = GetKeywordIndex(a_keyword);
-		if (index != -1) {
+		if (index != std::nullopt) {
 			auto oldData = keywords;
 			if (oldData) {
 				keywords = calloc<BGSKeyword*>(--numKeywords);

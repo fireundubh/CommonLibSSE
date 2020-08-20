@@ -17,7 +17,7 @@ namespace RE
 
 	bool TESSpellList::SpellData::AddLevSpell(TESLevSpell* a_levSpell)
 	{
-		if (GetIndex(a_levSpell) == -1) {
+		if (GetIndex(a_levSpell) == std::nullopt) {
 			auto oldData = levSpells;
 			levSpells = calloc<TESLevSpell*>(++numlevSpells);
 			if (oldData) {
@@ -36,7 +36,7 @@ namespace RE
 
 	bool TESSpellList::SpellData::AddShout(TESShout* a_shout)
 	{
-		if (GetIndex(a_shout) == -1) {
+		if (GetIndex(a_shout) == std::nullopt) {
 			auto oldData = shouts;
 			shouts = calloc<TESShout*>(++numShouts);
 			if (oldData) {
@@ -55,7 +55,7 @@ namespace RE
 
 	bool TESSpellList::SpellData::AddSpell(SpellItem* a_spell)
 	{
-		if (GetIndex(a_spell) == -1) {
+		if (GetIndex(a_spell) == std::nullopt) {
 			auto oldData = spells;
 			spells = calloc<SpellItem*>(++numSpells);
 			if (oldData) {
@@ -72,9 +72,9 @@ namespace RE
 	}
 
 
-	std::int32_t TESSpellList::SpellData::GetIndex(SpellItem* a_spell)
+	std::optional<std::uint32_t> TESSpellList::SpellData::GetIndex(SpellItem* a_spell)
 	{
-		std::int32_t index = -1;
+		std::optional<std::uint32_t> index = std::nullopt;
 		if (spells) {
 			for (std::uint32_t i = 0; i < numSpells; i++) {
 				if (spells[i] && spells[i] == a_spell) {
@@ -87,9 +87,9 @@ namespace RE
 	}
 
 
-	std::int32_t TESSpellList::SpellData::GetIndex(TESLevSpell* a_lvlSpell)
+	std::optional<std::uint32_t> TESSpellList::SpellData::GetIndex(TESLevSpell* a_lvlSpell)
 	{
-		std::int32_t index = -1;
+		std::optional<std::uint32_t> index = std::nullopt;
 		if (levSpells) {
 			for (std::uint32_t i = 0; i < numlevSpells; i++) {
 				if (levSpells[i] && levSpells[i] == a_lvlSpell) {
@@ -102,9 +102,9 @@ namespace RE
 	}
 
 
-	std::int32_t TESSpellList::SpellData::GetIndex(TESShout* a_shout)
+	std::optional<std::uint32_t> TESSpellList::SpellData::GetIndex(TESShout* a_shout)
 	{
-		std::int32_t index = -1;
+		std::optional<std::uint32_t> index = std::nullopt;
 		if (shouts) {
 			for (std::uint32_t i = 0; i < numShouts; i++) {
 				if (shouts[i] && shouts[i] == a_shout) {
@@ -120,11 +120,11 @@ namespace RE
 	bool TESSpellList::SpellData::RemoveSpell(SpellItem* a_spell)
 	{
 		auto index = GetIndex(a_spell);
-		if (index == -1) {
+		if (index == std::nullopt) {
 			auto oldData = spells;
 			if (oldData) {
 				spells = calloc<SpellItem*>(--numSpells);
-				for (std::int32_t i = 0; i < numSpells + 1; i++) {
+				for (std::uint32_t i = 0; i < numSpells + 1; i++) {
 					if (index != i) {
 						spells[i] = oldData[i];
 					}
