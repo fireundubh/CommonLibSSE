@@ -527,7 +527,6 @@ namespace RE
 		bool						 HasKeyword(const char* a_formEditorID) const;
 		bool						 HasPerk(BGSPerk* a_perk) const;
 		bool						 HasSpell(SpellItem* a_spell) const;
-		bool						 InstantKill();
 		bool						 IsAIEnabled() const;
 		bool						 IsAMount() const;
 		bool						 IsAnimationDriven() const;
@@ -546,6 +545,7 @@ namespace RE
 		bool						 IsSneaking() const;
 		[[nodiscard]] bool			 IsSummoned() const noexcept;
 		bool						 IsTrespassing() const;
+		void						 KillImmediate();
 		void						 RemoveExtraArrows3D();
 		bool						 RemoveSpell(SpellItem* a_spell);
 		std::int32_t				 RequestDetectionLevel(Actor* a_target, DETECTION_PRIORITY a_priority = DETECTION_PRIORITY::kNormal);

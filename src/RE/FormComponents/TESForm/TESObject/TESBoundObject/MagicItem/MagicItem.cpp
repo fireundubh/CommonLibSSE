@@ -49,11 +49,9 @@ namespace RE
 
 	Effect* MagicItem::GetMatchingEffect(EffectSetting* a_base, float a_mag, std::uint32_t a_area, std::uint32_t a_dur, float a_cost)
 	{
-		for (auto& effect : effects) {
-			if (effect->IsMatch(a_base, a_mag, a_area, a_dur, a_cost)) {
-				return effect;
-			}
-		}
-		return nullptr;
+		auto it = std::find_if(effects.begin(), effects.end(),
+			[&](const auto& effect) { return effect->IsMatch(a_base, a_mag, a_area, a_dur, a_cost); }
+		);
+		return it != effects.end() ? *it : nullptr;
 	}
 }

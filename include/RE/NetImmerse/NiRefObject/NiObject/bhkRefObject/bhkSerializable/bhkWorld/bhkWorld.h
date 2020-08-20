@@ -17,6 +17,7 @@ namespace RE
 	public:
 		class bhkConstraintProjector;
 
+
 		inline static constexpr auto RTTI = RTTI_bhkWorld;
 		inline static constexpr auto Ni_RTTI = NiRTTI_bhkWorld;
 
@@ -46,7 +47,6 @@ namespace RE
 
 
 		// members
-		//std::uint8_t				  unk20[0xC5E0];			  // 0020
 		std::uint8_t				  unk0020[0x320];			  // 0020
 		std::uint8_t				  unk0340[0x6400];			  // 0340
 		std::uint8_t				  unk6740[0x5DC0];			  // 6740

@@ -17,9 +17,9 @@ namespace RE
 	public:
 		struct TargetData
 		{
-			ActorHandle	   target;						   // 00
-			std::int32_t   detectLevel;					   // 04 //-1000
-			float		   stealthPoints;				   // 08 //fCombatStealthPointMax - 1.0
+			ActorHandle	   targetHandle;				   // 00
+			std::int32_t   detectLevel;					   // 04
+			float		   stealthPoints;				   // 08
 			float		   unk0C;						   // 0C
 			CombatLocation unk10;						   // 10
 			CombatLocation unk28;						   // 28
@@ -33,19 +33,19 @@ namespace RE
 			AITimeStamp	   stealthPointRegenAttackedTime;  // 98
 			AITimeStamp	   stealthPointRegenDetectTime;	   // 9C
 			ActorHandle	   attackedMember;				   // A0
-			std::uint16_t  unkA4;						   // A4 //target count
-			std::uint16_t  unkA6;						   // A6 //flags
+			std::uint16_t  unkA4;						   // A4 - target count
+			std::uint16_t  unkA6;						   // A6 - flags
 		};
 		static_assert(sizeof(TargetData) == 0xA8);
 
 
-		struct MemberData
+		struct AllyData
 		{
-			ActorHandle member;	 // 00
-			float		unk04;	 // 04
-			float		unk08;	 // 08
+			ActorHandle allyHandle;	 // 00
+			float		unk04;		 // 04
+			float		unk08;		 // 08
 		};
-		static_assert(sizeof(MemberData) == 0x0C);
+		static_assert(sizeof(AllyData) == 0x0C);
 
 
 		struct Data120
@@ -72,7 +72,7 @@ namespace RE
 		std::uint32_t				  unk00;					 // 000
 		std::uint32_t				  groupIndex;				 // 004
 		BSTArray<TargetData>		  targets;					 // 008
-		BSTArray<MemberData>		  members;					 // 020
+		BSTArray<AllyData>			  allies;					 // 020
 		CombatGroupDetectionListener* detectionListener;		 // 038
 		AITimer						  allyKilledDialogueTimer;	 // 040
 		AITimer						  avoidThreatDialogueTimer;	 // 048
@@ -80,11 +80,11 @@ namespace RE
 		AITimer						  dialogues[11];			 // 058
 		AITimer						  unkB0;					 // 0B0
 		AITimer						  musicThreatRatioTimer;	 // 0B8
-		AITimer						  unkC0;					 // 0C0 // -1.0
-		float						  unkC8;					 // 0C8 // -1.0
-		float						  unkCC;					 // 0CC // -1.0
-		float						  unkD0;					 // 0D0 // -1.0
-		float						  unkD4;					 // 0D4 // -1.0
+		AITimer						  unkC0;					 // 0C0
+		float						  unkC8;					 // 0C8
+		float						  unkCC;					 // 0CC
+		float						  unkD0;					 // 0D0
+		float						  unkD4;					 // 0D4
 		std::uint32_t				  searchStatus;				 // 0D8
 		std::uint32_t				  padDC;					 // 0DC
 		BSPathingLOSGridMap*		  gridMap;					 // 0E0
@@ -97,9 +97,9 @@ namespace RE
 		std::uint32_t				  unk11C;					 // 11C
 		BSTArray<Data120>			  unk120;					 // 120
 		BSTArray<Data138>			  unk138;					 // 138
-		std::uint32_t				  unk150;					 // 150 // count
-		std::uint32_t				  unk154;					 // 154 // count
-		std::uint32_t				  unk158;					 // 158 // count
+		std::uint32_t				  unk150;					 // 150 - count
+		std::uint32_t				  unk154;					 // 154 - count
+		std::uint32_t				  unk158;					 // 158 - count
 		std::int8_t					  unk15C;					 // 15C
 		std::uint8_t				  unk15D;					 // 15D
 		std::uint8_t				  unk15E;					 // 15E

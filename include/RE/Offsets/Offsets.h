@@ -26,7 +26,6 @@ namespace RE
 			inline constexpr REL::ID GetSoulLevel(static_cast<std::uint64_t>(37862));
 			inline constexpr REL::ID HasPerk(static_cast<std::uint64_t>(36690));
 			inline constexpr REL::ID HasSpell(static_cast<std::uint64_t>(37828));
-			inline constexpr REL::ID InstantKill(static_cast<std::uint64_t>(36723));
 			inline constexpr REL::ID IsRunning(static_cast<std::uint64_t>(36252));
 			inline constexpr REL::ID RequestDetectionLevel(static_cast<std::uint64_t>(36748));
 			inline constexpr REL::ID SwitchRace(static_cast<std::uint64_t>(36901));

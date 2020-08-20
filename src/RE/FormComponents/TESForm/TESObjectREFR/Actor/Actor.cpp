@@ -492,14 +492,6 @@ namespace RE
 	}
 
 
-	bool Actor::InstantKill()
-	{
-		using func_t = decltype(&Actor::InstantKill);
-		REL::Relocation<func_t> func{ Offset::Actor::InstantKill };
-		return func(this);
-	}
-
-
 	bool Actor::IsAIEnabled() const
 	{
 		return boolBits.all(BOOL_BITS::kProcessMe);
@@ -627,6 +619,14 @@ namespace RE
 	bool Actor::IsTrespassing() const
 	{
 		return boolFlags.all(BOOL_FLAGS::kIsTrespassing);
+	}
+
+
+	void Actor::KillImmediate()
+	{
+		using func_t = decltype(&Actor::KillImmediate);
+		REL::Relocation<func_t> func{ REL::ID(36723) };
+		return func(this);
 	}
 
 

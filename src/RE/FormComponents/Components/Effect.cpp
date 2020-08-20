@@ -20,8 +20,14 @@ namespace RE
 	{}
 
 
+	inline bool essentiallyEqual(const float a, const float b)
+	{
+		return std::fabs(a - b) <= ((std::fabs(a) > std::fabs(b) ? std::fabs(b) : std::fabs(a)) * std::numeric_limits<float>::epsilon());
+	}
+
+
 	bool Effect::IsMatch(EffectSetting* a_base, float a_mag, std::uint32_t a_area, std::uint32_t a_dur, float a_cost)
 	{
-		return baseEffect == a_base && effectItem.magnitude == a_mag && effectItem.area == a_area && effectItem.duration == a_dur && cost == a_cost;
+		return baseEffect == a_base && essentiallyEqual(effectItem.magnitude, a_mag) && effectItem.area == a_area && effectItem.duration == a_dur && essentiallyEqual(cost, a_cost);
 	}
 }
