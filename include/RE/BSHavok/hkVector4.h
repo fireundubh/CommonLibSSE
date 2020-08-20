@@ -20,8 +20,8 @@ namespace RE
 		hkVector4  operator/(const hkVector4& a_rhs) const;
 
 
-		// member
-		hkQuadReal quad;  // 00
+		// members
+        hkQuadReal quad{}; // 00
 	};
 	static_assert(sizeof(hkVector4) == 0x10);
 }
