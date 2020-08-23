@@ -60,14 +60,6 @@ namespace RE
 	}
 
 
-	RefHandle* TESObjectREFR::CreateRefHandle_Native(RefHandle* handle)
-	{
-		using func_t = decltype(&TESObjectREFR::CreateRefHandle_Native);
-		REL::Relocation<func_t> func{ Offset::TESObjectREFR::CreateRefHandle_Native };
-		return func(this, handle);
-	}
-
-
 	void TESObjectREFR::DoTrap(TrapData& a_data)
 	{
 		return DoTrap1(a_data);
@@ -465,30 +457,6 @@ namespace RE
 		using func_t = decltype(&TESObjectREFR::GetStealValue);
 		REL::Relocation<func_t> func{ Offset::TESObjectREFR::GetStealValue };
 		return func(this, a_entryData, a_numItems, a_useMult);
-	}
-
-
-	NiPoint3 TESObjectREFR::GetRotation() const
-	{
-		return data.angle;
-	}
-
-
-	float TESObjectREFR::GetRotationX() const
-	{
-		return data.angle.x;
-	}
-
-
-	float TESObjectREFR::GetRotationY() const
-	{
-		return data.angle.y;
-	}
-
-
-	float TESObjectREFR::GetRotationZ() const
-	{
-		return data.angle.z;
 	}
 
 

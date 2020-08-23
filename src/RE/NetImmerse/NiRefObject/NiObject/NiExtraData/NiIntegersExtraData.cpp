@@ -41,7 +41,7 @@ namespace RE
 		if (index == std::nullopt) {
 			auto temp = NiAlloc<std::int32_t>(++size);
 
-			for (std::int32_t i = 0; i < size - 1; i++) {
+			for (std::uint32_t i = 0; i < size - 1; i++) {
 				temp[i] = value[i];
 			}
 			temp[size - 1] = a_element;

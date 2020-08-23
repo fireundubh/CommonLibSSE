@@ -393,6 +393,7 @@ namespace RE
 		LOCK_LEVEL								GetLockLevel() const;
 		const char*								GetName() const;
 		NiAVObject*								GetNodeByName(const BSFixedString& a_nodeName);
+		REFR_LOCK*								GetOrCreateLock();
 		[[nodiscard]] constexpr TESBoundObject* GetObjectReference() const noexcept { return data.objectReference; }
 		TESForm*								GetOwner() const;
 		[[nodiscard]] constexpr TESObjectCELL*	GetParentCell() const noexcept { return parentCell; }
@@ -400,6 +401,10 @@ namespace RE
 		[[nodiscard]] constexpr float			GetPositionX() const noexcept { return data.location.x; }
 		[[nodiscard]] constexpr float			GetPositionY() const noexcept { return data.location.y; }
 		[[nodiscard]] constexpr float			GetPositionZ() const noexcept { return data.location.z; }
+		[[nodiscard]] constexpr NiPoint3		GetRotation() const noexcept { return data.angle; }
+		[[nodiscard]] constexpr float			GetRotationX() const noexcept { return data.angle.x; }
+		[[nodiscard]] constexpr float			GetRotationY() const noexcept { return data.angle.y; }
+		[[nodiscard]] constexpr float			GetRotationZ() const noexcept { return data.angle.z; }
 		NiControllerSequence*					GetSequence(stl::zstring a_name) const;
 		std::uint32_t							GetStealValue(const InventoryEntryData* a_entryData, std::uint32_t a_numItems, bool a_useMult) const;
 		float									GetWeight() const;
