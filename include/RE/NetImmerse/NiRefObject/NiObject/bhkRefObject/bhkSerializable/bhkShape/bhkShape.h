@@ -1,7 +1,7 @@
 #pragma once
 
+#include "RE/FormComponents/TESForm/BGSMaterialType.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/bhkRefObject/bhkSerializable/bhkSerializable.h"
-#include "RE/NetImmerse/NiRefObject/NiObject/bhkRefObject/bhkSerializable/bhkShape/Enums/HAVOK_MATERIAL.h"
 
 
 namespace RE
@@ -32,7 +32,8 @@ namespace RE
 
 
 		// members
-		HAVOK_MATERIAL material;  // 20
+		MATERIAL_ID	  materialID;  // 20
+		std::uint32_t filterInfo;  // 24
 	};
 	static_assert(sizeof(bhkShape) == 0x28);
 }

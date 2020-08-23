@@ -204,6 +204,7 @@ namespace RE
 		bool		   IsAttached() const;
 		bool		   IsExteriorCell() const;
 		bool		   IsInteriorCell() const;
+		void		   LockHavokWorld();
 		void		   SetActorOwner(TESNPC* a_owner);
 		void		   SetFactionOwner(TESFaction* a_owner);
 		void		   SetFogColor(Color a_near, Color a_far);
@@ -213,6 +214,7 @@ namespace RE
 		void		   SetOwner(TESForm* a_owner);
 		void		   SetPublic(bool a_public);
 		bool		   UsesSkyLighting() const;
+		void		   UnlockHavokWorld();
 
 
 		// members

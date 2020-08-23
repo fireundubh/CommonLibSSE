@@ -3,7 +3,6 @@
 #include "RE/BSHavok/hkBaseObject/hkReferencedObject/hkpShape/hkpShapeCollection/hkpCompressedMeshShape/hkpCompressedMeshShape.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObject.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/bhkMeshMaterial.h"
-#include "RE/NetImmerse/NiRefObject/NiObject/bhkRefObject/bhkSerializable/bhkShape/Enums/HAVOK_MATERIAL.h"
 
 
 namespace RE

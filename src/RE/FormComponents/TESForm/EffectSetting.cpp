@@ -48,6 +48,12 @@ namespace RE
 		case Archetype::kLight:
 			archetype = "Light";
 			break;
+		case Archetype::kDarkness:
+			archetype = "Darkness";
+			break;
+		case Archetype::kNightEye:
+			archetype = "NightEye";
+			break;
 		case Archetype::kLock:
 			archetype = "Lock";
 			break;
@@ -131,6 +137,9 @@ namespace RE
 			break;
 		case Archetype::kBanish:
 			archetype = "Banish";
+			break;
+		case Archetype::kSpawnScriptedRef:
+			archetype = "SpawnScriptedRef";
 			break;
 		case Archetype::kDisguise:
 			archetype = "Disguise";
