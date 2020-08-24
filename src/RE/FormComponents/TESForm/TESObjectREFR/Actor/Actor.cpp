@@ -433,18 +433,17 @@ namespace RE
 
 		for (auto& [item, invData] : inv) {
 			auto& [count, entry] = invData;
-			if (count > 0 && entry && entry->GetWorn()) {
+			if (count > 0 && entry) {
 				auto armor = static_cast<TESObjectARMO*>(item);
-				for (const auto& armorAddon : armor->armorAddons) {
-					if (armorAddon && armorAddon->HasPartOf(a_slot)) {
-						return armor;
-					}
+				if (armor && armor->HasPartOf(a_slot) && entry->GetWorn()) {
+					return armor;
 				}
 			}
 		}
 
 		return nullptr;
 	}
+
 
 	TESObjectARMO* Actor::GetWornArmor(FormID id)
 	{

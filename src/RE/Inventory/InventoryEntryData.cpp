@@ -256,6 +256,25 @@ namespace RE
 	}
 
 
+	bool InventoryEntryData::GetWorn() const
+	{
+		bool worn = false;
+
+		if (extraLists) {
+			for (auto& xList : *extraLists) {
+				if (xList) {
+					worn = xList->GetWorn();
+					if (worn) {
+						break;
+					}
+				}
+			}
+		}
+
+		return worn;
+	}
+
+
 	bool InventoryEntryData::IsEnchanted() const
 	{
 		if (object) {
@@ -289,27 +308,6 @@ namespace RE
 		}
 
 		return false;
-	}
-
-
-	bool InventoryEntryData::GetWorn() const
-	{
-		bool worn = false;
-
-		if (extraLists) {
-			for (auto& xList : *extraLists) {
-				if (!xList) {
-					continue;
-				}
-
-				worn = xList->GetWorn();
-				if (worn) {
-					break;
-				}
-			}
-		}
-
-		return worn;
 	}
 
 
