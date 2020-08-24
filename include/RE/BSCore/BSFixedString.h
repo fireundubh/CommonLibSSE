@@ -55,8 +55,6 @@ namespace RE
 				}
 			}
 
-			inline ~BSFixedString() { try_release(); }
-
 			inline BSFixedString& operator=(const BSFixedString& a_rhs)
 			{
 				if (this != std::addressof(a_rhs)) {

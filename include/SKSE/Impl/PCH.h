@@ -595,7 +595,7 @@ namespace SKSE
 	[[nodiscard]] constexpr auto operator a_op##a_op(enumeration<E, U>& a_lhs, int) noexcept \
 		->enumeration<E, U>                                                                  \
 	{                                                                                        \
-		const auto tmp = a_lhs;                                                              \
+		auto	   tmp = a_lhs;                                                              \
 		a_op##a_op a_lhs;                                                                    \
 		return tmp;                                                                          \
 	}
