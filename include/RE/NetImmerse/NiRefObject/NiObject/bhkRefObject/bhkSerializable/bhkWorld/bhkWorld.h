@@ -1,7 +1,7 @@
 #pragma once
 
-#include "RE/BSCore/BSTArray.h"
 #include "RE/BSCore/BSAtomic.h"
+#include "RE/BSCore/BSTArray.h"
 #include "RE/BSHavok/hkVector4.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/bhkRefObject/bhkSerializable/bhkSerializable.h"
 
@@ -42,8 +42,10 @@ namespace RE
 		virtual void Unk_35(void);	// 35
 		virtual void Unk_36(void);	// 36
 
-		void LockWorld();
-		void UnlockWorld();
+		void LockWorldForRead();
+		void LockWorldForWrite();
+		void UnlockWorldForRead();
+		void UnlockWorldForWrite();
 
 
 		// members
@@ -70,10 +72,12 @@ namespace RE
 		std::uint64_t				  unkC5C0;					  // C5C0
 		BGSAcousticSpaceListener*	  acousticSpaceListener;	  // C5C8
 		hkpSuspendInactiveAgentsUtil* suspendInactiveAgentsUtil;  // C5D0
-		std::uint32_t				  unkC5D8;					  // C5D8
-		std::uint32_t				  unkC5DC;					  // C5D8 - incremented per frame
-		std::uint64_t				  unkC5E0;					  // C5E0
-		std::uint64_t				  unkC5E8;					  // C5E8
+		std::uint32_t				  unkC5D8;					  // C5D8 - incremented per frame
+		std::uint32_t				  unkC5DC;					  // C5DC 
+		std::uint32_t				  unkC5E0;					  // C5E0
+		std::uint32_t				  unkC5E4;					  // C5E4
+		std::uint32_t				  unkC5E8;					  // C5E8
+		std::uint32_t				  unkC5EC;					  // C5EC
 		float						  tau;						  // C5F0
 		float						  damping;					  // C5F4
 		std::uint8_t				  unkC5F8;					  // C5F8

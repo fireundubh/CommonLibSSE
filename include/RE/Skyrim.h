@@ -381,7 +381,7 @@
 #include "RE/BSHavok/hkpCollisionInput/hkpCollisionInput.h"
 #include "RE/BSHavok/hkpCollisionInput/hkpLinearCastCollisionInput.h"
 #include "RE/BSHavok/hkpConstraintInfo.h"
-#include "RE/BSHavok/hkpEntityListener.h"
+#include "RE/BSHavok/hkpEntityListener/hkpEntityListener.h"
 #include "RE/BSHavok/hkpLinearCastInput.h"
 #include "RE/BSHavok/hkpMaterial.h"
 #include "RE/BSHavok/hkpMoppAabbCastVirtualMachine.h"

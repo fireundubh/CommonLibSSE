@@ -42,9 +42,7 @@ namespace RE
 		static_assert(sizeof(BoundingVolumeData) == 0x38);
 
 
-		void*		   GetOwner() const;
-		TESObjectREFR* GetUserData() const;
-		
+		void* GetOwner() const;
 		template <class T>
 		T* GetOwner() const
 		{

@@ -152,45 +152,46 @@ namespace RE
 
 	bool TESForm::HasAllKeywords(BGSListForm* a_keywords) const
 	{
-		auto keywordForm = As<BGSKeywordForm>();
-		if (keywordForm) {
-			bool failed = false;
-			if (!a_keywords->forms.empty()) {
-				for (auto& form : a_keywords->forms) {
-					if (form) {
-						auto keyword = form->As<BGSKeyword>();
-						if (!keyword || !keywordForm->HasKeyword(keyword)) {
+		if (a_keywords) {
+			auto keywordForm = As<BGSKeywordForm>();
+			if (keywordForm) {
+				bool failed = false;
+				if (!a_keywords->forms.empty()) {
+					for (const auto& form : a_keywords->forms) {
+						if (form) {
+							auto keyword = form->As<BGSKeyword>();
+							if (keyword && !keywordForm->HasKeyword(keyword)) {
+								failed = true;
+								break;
+							}
+						}
+					}
+				}
+				if (a_keywords->scriptAddedTempForms) {
+					for (const auto& ID : *a_keywords->scriptAddedTempForms) {
+						auto keyword = TESForm::LookupByID<BGSKeyword>(ID);
+						if (keyword && !keywordForm->HasKeyword(keyword)) {
 							failed = true;
 							break;
 						}
 					}
 				}
-			}
-			if (a_keywords->scriptAddedTempForms) {
-				for (const auto& id : *a_keywords->scriptAddedTempForms) {
-					auto keyword = TESForm::LookupByID<BGSKeyword>(id);
-					if (!keyword || !keywordForm->HasKeyword(keyword)) {
-						failed = true;
-						break;
-					}
+				if (failed) {
+					return false;
 				}
 			}
-			if (failed) {
-				return false;
-			}
-			return true;
 		}
-		return false;
+		return true;
 	}
 
 
 	bool TESForm::HasAllKeywords(const std::vector<BGSKeyword*>& a_keywords) const
 	{
-		auto keywordForm = As<BGSKeywordForm>();
-		if (keywordForm) {
-			if (!a_keywords.empty()) {
+		if (!a_keywords.empty()) {
+			auto keywordForm = As<BGSKeywordForm>();
+			if (keywordForm) {
 				bool failed = false;
-				for (auto& keyword : a_keywords) {
+				for (const auto& keyword : a_keywords) {
 					if (keyword && !keywordForm->HasKeyword(keyword)) {
 						failed = true;
 						break;
@@ -200,36 +201,38 @@ namespace RE
 					return false;
 				}
 			}
-			return true;
 		}
-		return false;
+		return true;
 	}
 
 
 	bool TESForm::HasKeywords(BGSListForm* a_keywords) const
 	{
-		auto keywordForm = As<BGSKeywordForm>();
-		if (keywordForm) {
-			if (!a_keywords->forms.empty()) {
-				for (auto& form : a_keywords->forms) {
-					if (form) {
-						auto keyword = form->As<BGSKeyword>();
+		if (a_keywords) {
+			auto keywordForm = As<BGSKeywordForm>();
+			if (keywordForm) {
+				if (!a_keywords->forms.empty()) {
+					for (const auto& form : a_keywords->forms) {
+						if (form) {
+							auto keyword = form->As<BGSKeyword>();
+							if (keyword && keywordForm->HasKeyword(keyword)) {
+								return true;
+							}
+						}
+					}
+				}
+				if (a_keywords->scriptAddedTempForms) {
+					for (const auto& ID : *a_keywords->scriptAddedTempForms) {
+						auto keyword = TESForm::LookupByID<BGSKeyword>(ID);
 						if (keyword && keywordForm->HasKeyword(keyword)) {
 							return true;
 						}
 					}
 				}
-			}
-			if (a_keywords->scriptAddedTempForms) {
-				for (const auto& id : *a_keywords->scriptAddedTempForms) {
-					auto keyword = TESForm::LookupByID<BGSKeyword>(id);
-					if (keyword && keywordForm->HasKeyword(keyword)) {
-						return true;
-					}
-				}
+				return false;
 			}
 		}
-		return false;
+		return true;
 	}
 
 
@@ -238,14 +241,15 @@ namespace RE
 		if (!a_keywords.empty()) {
 			auto keywordForm = As<BGSKeywordForm>();
 			if (keywordForm) {
-				for (auto& keyword : a_keywords) {
+				for (const auto& keyword : a_keywords) {
 					if (keyword && keywordForm->HasKeyword(keyword)) {
 						return true;
 					}
 				}
+				return false;
 			}
 		}
-		return false;
+		return true;
 	}
 
 

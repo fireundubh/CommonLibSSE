@@ -120,7 +120,7 @@ namespace RE
 		void SanitizeTexturePath(std::string& a_path)
 		{
 			std::transform(a_path.begin(), a_path.end(), a_path.begin(),
-				[](unsigned char c) { return std::tolower(c); });
+				[](char c) { return static_cast<char>(std::tolower(c)); });
 
 			a_path = std::regex_replace(a_path, std::regex("/+|\\\\+"), "\\");
 			a_path = std::regex_replace(a_path, std::regex("^\\\\+"), "");

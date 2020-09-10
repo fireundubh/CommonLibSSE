@@ -3,7 +3,7 @@
 #include "RE/BSHavok/hkArray.h"
 #include "RE/BSHavok/hkBaseObject/hkReferencedObject/hkReferencedObject.h"
 #include "RE/BSHavok/hkVector4.h"
-#include "RE/BSHavok/hkpEntityListener.h"
+#include "RE/BSHavok/hkpEntityListener/hkpEntityListener.h"
 #include "RE/BSHavok/hkpPhantomListener.h"
 
 

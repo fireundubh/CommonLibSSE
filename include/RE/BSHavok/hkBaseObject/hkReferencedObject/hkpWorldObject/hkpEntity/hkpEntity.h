@@ -4,6 +4,7 @@
 #include "RE/BSHavok/hkBaseObject/hkReferencedObject/hkpMotion/hkpKeyframedRigidMotion/hkpFixedRigidMotion.h"
 #include "RE/BSHavok/hkBaseObject/hkReferencedObject/hkpWorldObject/hkpWorldObject.h"
 #include "RE/BSHavok/hkBaseTypes.h"
+#include "RE/BSHavok/hkRefPtr/hkRefPtr.h"
 #include "RE/BSHavok/hkSmallArray.h"
 #include "RE/BSHavok/hkpMaterial.h"
 
@@ -15,6 +16,7 @@ namespace RE
 	class hkpAction;
 	class hkpBreakableBody;
 	class hkpContactListener;
+	class hkpConstraintInstance;
 	class hkpEntityActivationListener;
 	class hkpEntityListener;
 	class hkpSimulationIsland;
@@ -80,6 +82,9 @@ namespace RE
 
 		// add
 		virtual void DeallocateInternalArrays();  // 06
+
+		void Activate();
+		void Deactivate();
 
 
 		// members

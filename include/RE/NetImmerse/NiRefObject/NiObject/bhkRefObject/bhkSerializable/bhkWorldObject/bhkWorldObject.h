@@ -29,6 +29,11 @@ namespace RE
 		// add
 		virtual void Unk_32(void);	// 32 - { return Unk_29(); }
 
+		void EnterCriticalOperationRead();
+		void EnterCriticalOperationWrite();
+		void ExitCriticalOperationRead();
+		void ExitCriticalOperationWrite();
+
 
 		// members
 		hkpWorld* world;  // 20

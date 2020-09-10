@@ -591,7 +591,9 @@
     <ClInclude Include="include\RE\BSHavok\hkpCollisionInput\hkpCollisionInput.h" />
     <ClInclude Include="include\RE\BSHavok\hkpCollisionInput\hkpLinearCastCollisionInput.h" />
     <ClInclude Include="include\RE\BSHavok\hkpConstraintInfo.h" />
-    <ClInclude Include="include\RE\BSHavok\hkpEntityListener.h" />
+    <ClInclude Include="include\RE\BSHavok\hkpEntityListener\bhkEntityListener\bhkEntityListener.h" />
+    <ClInclude Include="include\RE\BSHavok\hkpEntityListener\bhkEntityListener\bhkTrapListener.h" />
+    <ClInclude Include="include\RE\BSHavok\hkpEntityListener\hkpEntityListener.h" />
     <ClInclude Include="include\RE\BSHavok\hkpLinearCastInput.h" />
     <ClInclude Include="include\RE\BSHavok\hkpMaterial.h" />
     <ClInclude Include="include\RE\BSHavok\hkpMoppAabbCastVirtualMachine.h" />
@@ -1555,6 +1557,7 @@
     <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpBroadPhase\hkpBroadPhase.cpp" />
     <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpBoxShape.cpp" />
     <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpConvexShape.cpp" />
+    <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject\hkpEntity\hkpEntity.cpp" />
     <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject\hkpWorldObject.cpp" />
     <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkReferencedObject.cpp" />
     <ClCompile Include="src\RE\BSHavok\hkBaseTypes.cpp" />
@@ -1727,7 +1730,8 @@
     <ClCompile Include="src\RE\NetImmerse\NiMemManager.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiPoint3.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\BGSAttackData.cpp" />
-    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld.cpp" />
+    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkWorldObject.cpp" />
+    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld\bhkWorld.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet\BSShaderTextureSet.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiColorData.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData\BSFaceGenAnimationData.cpp" />

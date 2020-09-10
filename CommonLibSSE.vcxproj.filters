@@ -148,6 +148,9 @@
     <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpConvexShape.cpp">
       <Filter>src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject\hkpEntity\hkpEntity.cpp">
+      <Filter>src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject\hkpEntity</Filter>
+    </ClCompile>
     <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject\hkpWorldObject.cpp">
       <Filter>src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject</Filter>
     </ClCompile>
@@ -664,8 +667,11 @@
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\BGSAttackData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable</Filter>
+    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld\bhkWorld.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkWorldObject.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet\BSShaderTextureSet.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet</Filter>
@@ -1998,8 +2004,14 @@
     <ClInclude Include="include\RE\BSHavok\hkpConstraintInfo.h">
       <Filter>include\RE\BSHavok</Filter>
     </ClInclude>
-    <ClInclude Include="include\RE\BSHavok\hkpEntityListener.h">
-      <Filter>include\RE\BSHavok</Filter>
+    <ClInclude Include="include\RE\BSHavok\hkpEntityListener\bhkEntityListener\bhkEntityListener.h">
+      <Filter>include\RE\BSHavok\hkpEntityListener\bhkEntityListener</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSHavok\hkpEntityListener\bhkEntityListener\bhkTrapListener.h">
+      <Filter>include\RE\BSHavok\hkpEntityListener\bhkEntityListener</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\BSHavok\hkpEntityListener\hkpEntityListener.h">
+      <Filter>include\RE\BSHavok\hkpEntityListener</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\BSHavok\hkpLinearCastInput.h">
       <Filter>include\RE\BSHavok</Filter>
@@ -5729,6 +5741,12 @@
     <Filter Include="include\RE\BSHavok\hkpCollisionInput">
       <UniqueIdentifier>{6e507d8b-799a-4be5-bcf4-9c01807e2fe4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\RE\BSHavok\hkpEntityListener">
+      <UniqueIdentifier>{14c0f4d3-6c78-467d-87e3-f2b0963956f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\BSHavok\hkpEntityListener\bhkEntityListener">
+      <UniqueIdentifier>{02f4109d-91e5-45ac-aaea-75a2d06d4e97}</UniqueIdentifier>
+    </Filter>
     <Filter Include="include\RE\BSHavok\hkpShapeContainer">
       <UniqueIdentifier>{e594e055-dd1f-4f60-b8a4-8b1c6a720d6e}</UniqueIdentifier>
     </Filter>
@@ -6479,6 +6497,9 @@
     <Filter Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject">
       <UniqueIdentifier>{cd4d76fe-3105-46ed-964f-69376ee36b2e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject\hkpEntity">
+      <UniqueIdentifier>{812e7ecf-d59a-4e58-a500-b5fdea0e6c44}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\RE\BSHavok\hkMemoryAllocator">
       <UniqueIdentifier>{13d5d91b-9126-45b1-ab9c-b849960bd60f}</UniqueIdentifier>
     </Filter>
@@ -6682,6 +6703,12 @@
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable">
       <UniqueIdentifier>{03137da2-c79f-4f5b-9091-1bd2e794fbf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld">
+      <UniqueIdentifier>{3cec7460-31d5-47eb-a762-ffce581204bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject">
+      <UniqueIdentifier>{b814ecc1-643e-4a2b-b1d8-d3d3343b0331}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet">
       <UniqueIdentifier>{1e4ee1a6-aa45-4b44-b0bf-2f05856147a4}</UniqueIdentifier>

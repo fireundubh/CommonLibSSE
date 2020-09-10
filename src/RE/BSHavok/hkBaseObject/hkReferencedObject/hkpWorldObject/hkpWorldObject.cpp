@@ -1,4 +1,5 @@
 #include "RE/BSHavok/hkBaseObject/hkReferencedObject/hkpWorldObject/hkpWorldObject.h"
+#include "RE/BSHavok/TESHavokUtilities.h"
 
 
 namespace RE
@@ -17,12 +18,20 @@ namespace RE
 
 	const hkpShape* hkpWorldObject::GetShape() const
 	{
-		return GetCollidable() ? GetCollidable()->GetShape() : nullptr;
+		auto hkpCollidable = GetCollidable();
+		if (hkpCollidable) {
+			return hkpCollidable->GetShape();
+		}
+		return nullptr;
 	}
 
 
 	TESObjectREFR* hkpWorldObject::GetUserData() const
 	{
-		return GetCollidable() ? GetCollidable()->GetUserData() : nullptr;
+		auto hkpCollidable = GetCollidable();
+		if (hkpCollidable) {
+			return TESHavokUtilities::FindCollidableRef(*hkpCollidable);
+		}
+		return nullptr;
 	}
 }

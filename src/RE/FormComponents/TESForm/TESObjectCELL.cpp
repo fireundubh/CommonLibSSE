@@ -123,15 +123,6 @@ namespace RE
 	}
 
 
-	void TESObjectCELL::LockHavokWorld()
-	{
-		auto havokWorld = GetHavokWorld();
-		if (havokWorld) {
-			havokWorld->LockWorld();
-		}
-	}
-
-
 	void TESObjectCELL::SetActorOwner(TESNPC* a_owner)
 	{
 		SetOwner(a_owner);
@@ -211,14 +202,5 @@ namespace RE
 	bool TESObjectCELL::UsesSkyLighting() const
 	{
 		return cellFlags.all(Flag::kUseSkyLighting);
-	}
-
-
-	void TESObjectCELL::UnlockHavokWorld()
-	{
-		auto havokWorld = GetHavokWorld();
-		if (havokWorld) {
-			havokWorld->UnlockWorld();
-		}
 	}
 }
