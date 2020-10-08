@@ -4,9 +4,6 @@
     <Natvis Include="CommonLibSSE.natvis" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="include\RE\FormComponents\Components\BGSOpenCloseForm.cpp">
-      <Filter>include\RE\FormComponents\Components</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\AI\AIFormulas.cpp">
       <Filter>src\RE\AI</Filter>
     </ClCompile>
@@ -406,6 +403,9 @@
     <ClCompile Include="src\RE\FormComponents\Components\BGSEntryPointFunctionData\BGSEntryPointFunctionDataActivateChoice.cpp">
       <Filter>src\RE\FormComponents\Components\BGSEntryPointFunctionData</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\FormComponents\Components\BGSOpenCloseForm.cpp">
+      <Filter>src\RE\FormComponents\Components</Filter>
+    </ClCompile>
     <ClCompile Include="src\RE\FormComponents\Components\BGSPerkEntry\BGSEntryPointPerkEntry.cpp">
       <Filter>src\RE\FormComponents\Components\BGSPerkEntry</Filter>
     </ClCompile>
@@ -463,6 +463,9 @@
     <ClCompile Include="src\RE\FormComponents\TESForm\BGSHeadPart.cpp">
       <Filter>src\RE\FormComponents\TESForm</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\FormComponents\TESForm\BGSKeyword\BGSKeyword.cpp">
+      <Filter>src\RE\FormComponents\TESForm\BGSKeyword</Filter>
+    </ClCompile>
     <ClCompile Include="src\RE\FormComponents\TESForm\BGSListForm.cpp">
       <Filter>src\RE\FormComponents\TESForm</Filter>
     </ClCompile>
@@ -486,6 +489,9 @@
     </ClCompile>
     <ClCompile Include="src\RE\FormComponents\TESForm\TESFaction.cpp">
       <Filter>src\RE\FormComponents\TESForm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\FormComponents\TESForm\TESObject\TESBoundObject\BGSProjectile.cpp">
+      <Filter>src\RE\FormComponents\TESForm\TESObject\TESBoundObject</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\FormComponents\TESForm\TESObject\TESBoundObject\MagicItem\MagicItem.cpp">
       <Filter>src\RE\FormComponents\TESForm\TESObject\TESBoundObject\MagicItem</Filter>
@@ -2632,6 +2638,9 @@
       <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Events\ScriptEvent\TESOpenCloseEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\ScriptEvent\TESQuestStartStopEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Events\ScriptEvent\TESResetEvent.h">
@@ -6619,6 +6628,9 @@
     </Filter>
     <Filter Include="src\RE\FormComponents\TESForm">
       <UniqueIdentifier>{330aeebe-fc68-439e-893b-c0a978b12d80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\FormComponents\TESForm\BGSKeyword">
+      <UniqueIdentifier>{53f48811-f757-4bcc-8227-d148dd72a78c}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\FormComponents\TESForm\BGSStoryManagerTreeForm">
       <UniqueIdentifier>{728833e0-c50b-4348-9a21-e0cddf6ab6ee}</UniqueIdentifier>

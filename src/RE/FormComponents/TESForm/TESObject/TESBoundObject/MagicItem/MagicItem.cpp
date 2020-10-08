@@ -47,7 +47,17 @@ namespace RE
 	}
 
 
-	Effect* MagicItem::GetMatchingEffect(EffectSetting* a_base, float a_mag, std::uint32_t a_area, std::uint32_t a_dur, float a_cost)
+	EffectSetting* MagicItem::GetEffectItem(std::uint32_t a_index)
+	{
+		if (a_index < effects.size()) {
+			auto effect = effects[a_index];
+			return effect ? effect->baseEffect : nullptr;
+		}
+		return nullptr;
+	}
+
+
+	Effect* MagicItem::GetEffectIsMatch(EffectSetting* a_base, float a_mag, std::uint32_t a_area, std::uint32_t a_dur, float a_cost)
 	{
 		auto it = std::find_if(effects.begin(), effects.end(),
 			[&](const auto& effect) { return effect->IsMatch(a_base, a_mag, a_area, a_dur, a_cost); }

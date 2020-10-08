@@ -2,8 +2,6 @@
 
 #include "SKSE/Logger.h"
 
-#include <filesystem>
-
 
 namespace SKSE
 {
@@ -97,5 +95,24 @@ namespace SKSE
 	{
 		std::uniform_real_distribution<float> distr(a_min, a_max);
 		return distr(twister);
+	}
+
+
+	namespace UTIL
+	{
+		std::vector<std::string> STRING::split(const std::string& a_str, const std::string& a_delimiter)
+		{
+			std::vector<std::string> list;
+			std::string strCopy = a_str;
+			size_t pos = 0;
+			std::string token;
+			while ((pos = strCopy.find(a_delimiter)) != std::string::npos) {
+				token = strCopy.substr(0, pos);
+				list.push_back(token);
+				strCopy.erase(0, pos + a_delimiter.length());
+			}
+			list.push_back(strCopy);
+			return list;
+		}
 	}
 }

@@ -147,7 +147,7 @@ namespace RE
 		float												  unk028;						  // 028
 		std::uint32_t										  unk02C;						  // 02C
 		BSTArray<ActorHandle>								  lastSpokenToArray;			  // 030
-		std::uint64_t										  unk048;						  // 048
+		mutable BSSpinLock									  animSequencerLock;			  // 048
 		BGSAnimationSequencer								  animSequencer;				  // 050
 		NiPoint3											  pathingCurrentMovementSpeed;	  // 088
 		NiPoint3											  pathingCurrentRotationSpeed;	  // 094
@@ -255,7 +255,8 @@ namespace RE
 		float												  dyingTimer;					  // 32C
 		std::uint64_t										  unk330;						  // 330
 		std::uint64_t										  unk338;						  // 338
-		std::uint64_t										  unk340;						  // 340
+		float												  unk340;						  // 340
+		std::uint32_t										  unk344;						  // 344
 		std::uint64_t										  unk348;						  // 348
 		RefHandle											  unk350;						  // 350
 		std::uint32_t										  unk354;						  // 354
@@ -284,7 +285,7 @@ namespace RE
 		std::uint32_t										  pad3D4;						  // 3D4
 		DetectionEvent*										  actorsGeneratedDetectionEvent;  // 3D8
 		NiPointer<StandardDetectionListener>				  detectionListener;			  // 3E0
-		AITimer												  unk3E8;						  // 3E8
+		AITimer												  detectionUpdateTimer;			  // 3E8
 		void*												  unk3F0;						  // 3F0 - smart ptr
 		std::uint64_t										  unk3F8;						  // 3F8
 		BSTSmallArray<std::uint64_t>						  unk400;						  // 400

@@ -33,6 +33,7 @@ namespace RE
 
 		float	 SqrLength() const;
 		float	 Length() const;
+		void	 Reset();
 		float	 Unitize();
 		NiPoint3 Cross(const NiPoint3& pt) const;
 		NiPoint3 UnitCross(const NiPoint3& a_pt) const;

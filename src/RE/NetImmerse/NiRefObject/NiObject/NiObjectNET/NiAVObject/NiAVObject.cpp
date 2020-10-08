@@ -139,7 +139,7 @@ namespace RE
 	}
 
 
-	void NiAVObject::UpdateAlpha(float a_alpha, ALPHA_MODE a_type)
+	void NiAVObject::UpdateAlpha(float a_alpha, bool a_onlySkin)
 	{
 		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl {
 			using State = BSGeometry::States;
@@ -151,7 +151,7 @@ namespace RE
 				if (lightingShader) {
 					auto material = static_cast<BSLightingShaderMaterialBase*>(lightingShader->material);
 					if (material) {
-						if (a_type == ALPHA_MODE::kSkin) {
+						if (a_onlySkin) {
 							auto const feature = material->GetFeature();
 							if (feature != Feature::kFaceGen && feature != Feature::kFaceGenRGBTint) {
 								return BSVisit::BSVisitControl::kContinue;

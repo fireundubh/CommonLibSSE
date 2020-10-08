@@ -88,13 +88,6 @@ namespace RE
 		};
 
 
-		enum class ALPHA_MODE : std::uint8_t
-		{
-			kAll = 0,
-			kSkin
-		};
-
-
 		virtual ~NiAVObject();	// 00
 
 		// override (NiObjectNET)
@@ -132,7 +125,7 @@ namespace RE
 		bool				 SetMotionType(std::uint32_t a_motionType, bool a_arg2 = true, bool a_arg3 = false, bool a_allowActivate = true);
 		void				 TintScenegraph(const NiColorA& a_color);
 		void				 Update(NiUpdateData& a_data);
-		void				 UpdateAlpha(float a_alpha, ALPHA_MODE a_type);
+		void				 UpdateAlpha(float a_alpha, bool a_onlySkin);
 		void				 UpdateBodyTint(const NiColor& a_color);
 		void				 UpdateHairColor(const NiColor& a_color);
 		void				 UpdateVisibility(bool a_cull);

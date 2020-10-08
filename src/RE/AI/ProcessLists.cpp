@@ -1,4 +1,7 @@
 #include "RE/AI/ProcessLists.h"
+#include "RE/FormComponents/TESForm/TESObjectREFR/TESObjectREFR.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/BSTempEffect/ReferenceEffect/ReferenceEffect.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/BSTempEffect/TempEffectTraits.h"
 
 
 namespace RE
@@ -18,7 +21,7 @@ namespace RE
 	}
 
 
-	void ProcessLists::GetMagicEffects(std::function<bool(RE::BSTempEffect* a_tempEffect)> a_fn)
+	void ProcessLists::GetMagicEffects(std::function<bool(BSTempEffect* a_tempEffect)> a_fn)
 	{
 		magicEffectsLock.Lock();
 		for (auto& tempEffectPtr : magicEffects) {
@@ -38,6 +41,21 @@ namespace RE
 		using func_t = decltype(&ProcessLists::StopCombatAndAlarmOnActor);
 		REL::Relocation<func_t> func{ REL::ID(40330) };
 		return func(this, a_actor, a_notAlarm);
+	}
+
+
+	void ProcessLists::StopAllShaders(TESObjectREFR* a_ref)
+	{
+		GetMagicEffects([&](BSTempEffect* a_tempEffect) {
+			auto referenceEffect = a_tempEffect->As<ReferenceEffect>();
+			if (referenceEffect) {
+				auto handle = a_ref->CreateRefHandle();
+				if (referenceEffect->target == handle) {
+					referenceEffect->finished = true;
+				}
+			}
+			return true;
+		});
 	}
 
 }

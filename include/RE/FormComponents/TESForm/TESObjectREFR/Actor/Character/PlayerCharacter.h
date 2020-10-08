@@ -397,7 +397,7 @@ namespace RE
 		ActorHandle												lightTarget;								  // 918
 		float													sortActorDistanceTimer;						  // 91C
 		float													sitHeadingDelta;							  // 920
-		std::uint32_t											unk924;										  // 924
+		ObjectRefHandle											unk924;										  // 924
 		Data928*												unk928;										  // 928
 		std::uint32_t											skillTrainingsThisLevel;					  // 930
 		std::uint32_t											unk934;										  // 934

@@ -5,6 +5,7 @@
 #include "RE/NetImmerse/NiRefObject/NiObject/NiTimeController/NiTimeController.h"
 #include "RE/NetImmerse/NiSystem.h"
 #include "RE/NetImmerse/NiTCollection.h"
+#include "SKSE/Utilities.h"
 
 
 namespace RE
@@ -147,18 +148,17 @@ namespace RE
 
 
 	bool NiObjectNET::HasExtraData(const BSFixedString& a_match)
-	{
+	{	
+		using namespace SKSE::UTIL::STRING;
+		
 		if (a_match.empty() || !extra || extraDataSize == 0) {
 			return false;
 		}
 
 		for (std::uint16_t i = 0; i < extraDataSize; i++) {
 			auto extraData = extra[i];
-			if (extraData) {
-				std::string extraName = extraData->GetName().c_str();
-				if (!extraName.empty() && extraName.find(a_match.c_str()) != std::string::npos) {
+			if (extraData && insenstiveStringCompare(extraData->GetName(), a_match)) {
 					return true;
-				}
 			}
 		}
 

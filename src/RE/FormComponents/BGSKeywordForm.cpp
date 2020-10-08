@@ -27,7 +27,7 @@ namespace RE
 	bool BGSKeywordForm::HasKeyword(FormID a_formID) const
 	{
 		if (keywords) {
-			stl::span<RE::BGSKeyword*> span(keywords, numKeywords);
+			stl::span<BGSKeyword*> span(keywords, numKeywords);
 			for (auto& keyword : span) {
 				if (keyword && keyword->formID == a_formID) {
 					return true;
@@ -42,7 +42,7 @@ namespace RE
 	bool BGSKeywordForm::HasKeywordString(const char* a_formEditorID) const
 	{
 		if (keywords) {
-			stl::span<RE::BGSKeyword*> span(keywords, numKeywords);
+			stl::span<BGSKeyword*> span(keywords, numKeywords);
 			for (auto& keyword : span) {
 				if (keyword && keyword->formEditorID == a_formEditorID) {
 					return true;

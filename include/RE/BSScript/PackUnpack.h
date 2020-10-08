@@ -44,6 +44,17 @@ namespace RE
 		template <
 			class T,
 			std::enable_if_t<
+				is_runtime_form_pointer_v<T>,
+				int> = 0>
+		[[nodiscard]] inline TypeInfo::RawType GetRawType()
+		{
+			return GetRawTypeFromVMType(static_cast<VMTypeID>(decay_pointer_t<T>::VMTYPEID));
+		}
+
+
+		template <
+			class T,
+			std::enable_if_t<
 				std::disjunction_v<
 					is_array<T>,
 					is_reference_wrapper<T>>,
@@ -55,6 +66,8 @@ namespace RE
 				return vm_type_v<T> + TypeInfo::RawType::kNoneArray;
 			} else if constexpr (is_form_pointer_v<value_type>) {
 				return GetRawTypeFromVMType(static_cast<VMTypeID>(unwrapped_type_t<T>::FORMTYPE)) + TypeInfo::RawType::kObject;
+			} else if constexpr (is_runtime_form_pointer_v<value_type>) {
+				return GetRawTypeFromVMType(static_cast<VMTypeID>(unwrapped_type_t<T>::VMTYPEID)) + TypeInfo::RawType::kObject;
 			} else {
 				static_assert(false);
 			}
@@ -140,7 +153,7 @@ namespace RE
 			class T,
 			class U = std::decay_t<T>,
 			std::enable_if_t<
-				is_alias_pointer_v<U>,
+				is_runtime_form_pointer_v<U>,
 				int> = 0>
 		inline void PackValue(Variable* a_dst, T&& a_src)
 		{
@@ -242,7 +255,7 @@ namespace RE
 		template <
 			class T,
 			std::enable_if_t<
-				is_alias_pointer_v<T>,
+				is_runtime_form_pointer_v<T>,
 				int> = 0>
 		[[nodiscard]] inline T UnpackValue(const Variable* a_src)
 		{

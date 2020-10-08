@@ -252,7 +252,7 @@ namespace RE
 		// override (BSTEventSink<MenuOpenCloseEvent>)
 		virtual BSEventNotifyControl ProcessEvent(const MenuOpenCloseEvent* a_event, BSTEventSource<MenuOpenCloseEvent>* a_eventSource) override;  // 01
 
-		bool						 AddPerk(BGSPerk* a_perk, std::int8_t a_rank);
+		bool						 AddPerk(BGSPerk* a_perk, std::int8_t a_rank = 1);
 		void						 ChangeHeadPart(BGSHeadPart* a_target);
 		BGSHeadPart**				 GetBaseOverlays() const;
 		BGSHeadPart*				 GetCurrentHeadPartByType(HeadPartType a_type);

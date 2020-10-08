@@ -117,6 +117,13 @@ namespace SKSE
 		}
 
 
+		bool RegistrationSetBase::Register(const RE::ActiveEffect* a_activeEffect)
+		{
+			assert(a_activeEffect);
+			return Register(a_activeEffect, RE::ActiveEffect::VMTYPEID);
+		}
+
+
 		bool RegistrationSetBase::Unregister(const RE::TESForm* a_form)
 		{
 			assert(a_form);
@@ -128,6 +135,13 @@ namespace SKSE
 		{
 			assert(a_alias);
 			return Unregister(a_alias, a_alias->GetVMTypeID());
+		}
+
+
+		bool RegistrationSetBase::Unregister(const RE::ActiveEffect* a_activeEffect)
+		{
+			assert(a_activeEffect);
+			return Unregister(a_activeEffect, RE::ActiveEffect::VMTYPEID);
 		}
 
 

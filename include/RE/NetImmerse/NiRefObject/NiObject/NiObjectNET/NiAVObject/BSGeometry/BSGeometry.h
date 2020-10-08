@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiAVObject.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiSkinPartition.h"
 #include "RE/NetImmerse/NiSmartPointer.h"
 
 
@@ -76,6 +77,7 @@ namespace RE
 		virtual BSSkinnedDecalTriShape* AsSkinnedDecalTriShape();  // 36 - { return 0; }
 		virtual void					Unk_37(void);			   // 37 - { return 0; }
 
+		bool HasVertexFlag(NiSkinPartition::Vertex::Flags a_flag);
 		void SwitchToFaceTint();
 
 

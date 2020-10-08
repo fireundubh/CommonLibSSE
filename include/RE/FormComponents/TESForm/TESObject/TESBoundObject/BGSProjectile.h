@@ -108,6 +108,8 @@ namespace RE
 		virtual void		UnClone3D(TESObjectREFR* a_ref) override;																												  // 41
 		virtual bool		GetActivateText(TESObjectREFR* a_activator, BSString& a_dst) override;																					  // 4C
 
+		std::uint32_t GetType() const;
+
 
 		// members
 		BGSProjectileData data;				 // 080 - DATA

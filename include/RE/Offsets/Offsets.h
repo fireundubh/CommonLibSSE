@@ -100,6 +100,12 @@ namespace RE
 		}
 
 
+		namespace BGSKeyword
+		{
+			inline constexpr REL::ID Ctor(static_cast<std::uint64_t>(23234));
+		}
+
+
 		namespace BGSListForm
 		{
 			inline constexpr REL::ID AddForm(static_cast<std::uint64_t>(20470));

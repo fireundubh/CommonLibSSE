@@ -33,7 +33,7 @@ namespace RE
 	std::optional<std::uint32_t> NiStringsExtraData::GetIndexOf(const BSFixedString& a_element) const
 	{
 		for (std::uint32_t i = 0; i < size; i++) {
-			if (strcmp(a_element.c_str(), value[i]) == 0) {
+			if (_strnicmp(a_element.c_str(), value[i], a_element.length()) == 0) {
 				return i;
 			}
 		}

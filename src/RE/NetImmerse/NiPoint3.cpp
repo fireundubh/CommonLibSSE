@@ -130,6 +130,14 @@ namespace RE
 	}
 
 
+	void NiPoint3::Reset()
+	{
+		x += -x;
+		y += -y;
+		z += -z;
+	}
+
+
 	float NiPoint3::Unitize()
 	{
 		auto length = Length();

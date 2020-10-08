@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RE/BSCore/BSFixedString.h"
+#include "RE/FormComponents/Components/ActiveEffect/ActiveEffect.h"
 #include "RE/FormComponents/Components/BGSBaseAlias/BGSBaseAlias.h"
 #include "RE/FormComponents/TESForm/TESForm.h"
 
@@ -418,26 +419,30 @@ namespace RE
 
 
 		template <class T>
-		struct is_alias :
-			std::is_base_of<
-				RE::BGSBaseAlias,
-				std::remove_cv_t<T>>
+		struct is_runtime_form :
+			std::disjunction<
+				std::is_base_of<
+					RE::BGSBaseAlias,
+					std::remove_cv_t<T>>,
+				std::is_base_of<
+					RE::ActiveEffect,
+					std::remove_cv_t<T>>>
 		{};
 
 		template <class T>
-		inline constexpr bool is_alias_v = is_alias<T>::value;
+		inline constexpr bool is_runtime_form_v = is_runtime_form<T>::value;
 
 
 		template <class T>
-		struct is_alias_pointer :
+		struct is_runtime_form_pointer :
 			std::conjunction<
-				is_alias<
+				is_runtime_form<
 					std::remove_pointer_t<T>>,
 				std::is_pointer<T>>
 		{};
 
 		template <class T>
-		inline constexpr bool is_alias_pointer_v = is_alias_pointer<T>::value;
+		inline constexpr bool is_runtime_form_pointer_v = is_runtime_form_pointer<T>::value;
 
 
 		template <class T>

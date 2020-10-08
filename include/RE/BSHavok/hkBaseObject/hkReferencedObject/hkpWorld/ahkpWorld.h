@@ -18,8 +18,8 @@ namespace RE
 
 
 		// members
-		bhkWorld*	  unk430;  // 430
-		std::uint64_t unk438;  // 438
+		bhkWorld*	  physicsWorld;	 // 430
+		std::uint64_t unk438;		 // 438
 	};
 	static_assert(sizeof(ahkpWorld) == 0x440);
 }

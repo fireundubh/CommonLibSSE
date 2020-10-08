@@ -9,7 +9,7 @@ namespace RE
 	{
 		auto ahkpWorld = GetWorld2();
 		if (ahkpWorld) {
-			auto bhkWorld = ahkpWorld->unk430;
+			auto bhkWorld = ahkpWorld->physicsWorld;
 			if (bhkWorld) {
 				bhkWorld->LockWorldForRead();
 			}
@@ -21,7 +21,7 @@ namespace RE
 	{
 		auto ahkpWorld = GetWorld2();
 		if (ahkpWorld) {
-			auto bhkWorld = ahkpWorld->unk430;
+			auto bhkWorld = ahkpWorld->physicsWorld;
 			if (bhkWorld) {
 				bhkWorld->LockWorldForWrite();
 			}
@@ -33,7 +33,7 @@ namespace RE
 	{
 		auto ahkpWorld = GetWorld2();
 		if (ahkpWorld) {
-			auto bhkWorld = ahkpWorld->unk430;
+			auto bhkWorld = ahkpWorld->physicsWorld;
 			if (bhkWorld) {
 				bhkWorld->UnlockWorldForRead();
 			}
@@ -45,7 +45,7 @@ namespace RE
 	{
 		auto ahkpWorld = GetWorld2();
 		if (ahkpWorld) {
-			auto bhkWorld = ahkpWorld->unk430;
+			auto bhkWorld = ahkpWorld->physicsWorld;
 			if (bhkWorld) {
 				bhkWorld->UnlockWorldForWrite();
 			}

@@ -8,6 +8,12 @@
 
 namespace RE
 {
+	bool BSGeometry::HasVertexFlag(NiSkinPartition::Vertex::Flags a_flag)
+	{
+		return (NiSkinPartition::GetVertexFlags(vertexDesc) & a_flag) == a_flag;
+	}
+
+
 	void BSGeometry::SwitchToFaceTint()
 	{
 		using Feature = BSShaderMaterial::Feature;

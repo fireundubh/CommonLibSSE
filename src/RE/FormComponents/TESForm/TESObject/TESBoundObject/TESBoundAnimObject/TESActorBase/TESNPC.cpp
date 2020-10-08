@@ -179,15 +179,11 @@ namespace RE
 
 	bool TESNPC::HasKeyword(const char* a_formEditorID) const
 	{
-		auto keywordForm = As<BGSKeywordForm>();
-		if (keywordForm) {
-			bool hasKeyword = keywordForm->HasKeywordString(a_formEditorID);
-			if (!hasKeyword && race) {
-				hasKeyword = race->HasKeywordString(a_formEditorID);
-			}
-			return hasKeyword;
+		bool hasKeyword = HasKeywordString(a_formEditorID);
+		if (!hasKeyword && race) {
+			hasKeyword = race->HasKeywordString(a_formEditorID);
 		}
-		return false;
+		return hasKeyword;
 	}
 
 

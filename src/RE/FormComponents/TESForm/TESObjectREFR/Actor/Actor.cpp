@@ -194,6 +194,26 @@ namespace RE
 	}
 
 
+	TESObjectARMO* Actor::GetArmor(BGSBipedObjectForm::BipedObjectSlot a_slot)
+	{
+		auto inv = GetInventory([](TESBoundObject& a_object) -> bool {
+			return a_object.IsArmor();
+		});
+
+		for (auto& [item, invData] : inv) {
+			auto& [count, entry] = invData;
+			if (count > 0 && entry) {
+				auto armor = static_cast<TESObjectARMO*>(item);
+				if (armor && armor->HasPartOf(a_slot)) {
+					return armor;
+				}
+			}
+		}
+
+		return nullptr;
+	}
+	
+	
 	InventoryEntryData* Actor::GetAttackingWeapon()
 	{
 		if (!currentProcess || !currentProcess->high || !currentProcess->high->attackData || !currentProcess->middleHigh) {

@@ -502,6 +502,7 @@ namespace RE
 		void						 EvaluatePackage(bool a_arg1 = false, bool a_arg2 = false);
 		TESNPC*						 GetActorBase();
 		const TESNPC*				 GetActorBase() const;
+		TESObjectARMO*				 GetArmor(BGSBipedObjectForm::BipedObjectSlot a_slot);
 		InventoryEntryData*			 GetAttackingWeapon();
 		const InventoryEntryData*	 GetAttackingWeapon() const;
 		bhkCharacterController*		 GetCharController() const;

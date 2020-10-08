@@ -111,12 +111,13 @@ namespace RE
 		virtual void					 InitFromChunk(TESFile* a_mod) = 0;							   // 6F
 		virtual void					 InitChunk() = 0;											   // 70
 
-		float		CalculateMagickaCost(Actor* a_caster) const;
-		float		CalculateTotalGoldValue(Actor* a_caster = nullptr) const;
-		Effect*		GetCostliestEffectItem(std::uint32_t a_arg1 = 5, bool a_arg2 = false);
-		Data*		GetData();
-		const Data* GetData() const;
-		Effect*		GetMatchingEffect(EffectSetting* a_base, float a_mag, std::uint32_t a_area, std::uint32_t a_dur, float a_cost);
+		float		   CalculateMagickaCost(Actor* a_caster) const;
+		float		   CalculateTotalGoldValue(Actor* a_caster = nullptr) const;
+		Effect*		   GetCostliestEffectItem(std::uint32_t a_arg1 = 5, bool a_arg2 = false);
+		Data*		   GetData();
+		const Data*	   GetData() const;
+		EffectSetting* GetEffectItem(std::uint32_t a_index);
+		Effect*		   GetEffectIsMatch(EffectSetting* a_base, float a_mag, std::uint32_t a_area, std::uint32_t a_dur, float a_cost);
 
 
 		// members
