@@ -3,14 +3,14 @@
 
 namespace RE
 {
-	struct TESQuestStartStop
+	struct TESQuestStartStopEvent
 	{
 	public:
 		// members
 		std::uint32_t questFormID;	// 00
-		bool		  unk04;		// 04
+		bool		  started;		// 04
 		std::uint8_t  unk05;		// 05
 		std::uint16_t pad06;		// 06
 	};
-	static_assert(sizeof(TESQuestStartStop) == 0x8);
+	static_assert(sizeof(TESQuestStartStopEvent) == 0x8);
 }

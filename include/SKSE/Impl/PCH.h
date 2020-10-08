@@ -60,6 +60,7 @@
 #include <d3d9types.h>
 
 #include <algorithm>
+#include <any>
 #include <array>
 #include <bitset>
 #include <cassert>

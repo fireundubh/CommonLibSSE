@@ -5,6 +5,7 @@
 #include "RE/BSScript/IObjectHandlePolicy.h"
 #include "RE/BSScript/Internal/VirtualMachine.h"
 #include "RE/BSScript/Traits/TypeTraits.h"
+#include "RE/FormComponents/Components//ActiveEffect/ActiveEffect.h"
 #include "RE/FormComponents/Components/BGSBaseAlias/BGSBaseAlias.h"
 #include "RE/FormComponents/TESForm/TESForm.h"
 
@@ -30,8 +31,10 @@ namespace SKSE
 
 			bool Register(const RE::TESForm* a_form, RE::BSFixedString a_callback);
 			bool Register(const RE::BGSBaseAlias* a_alias, RE::BSFixedString a_callback);
+			bool Register(const RE::ActiveEffect* a_activeEffect, RE::BSFixedString a_callback);
 			bool Unregister(const RE::TESForm* a_form);
 			bool Unregister(const RE::BGSBaseAlias* a_alias);
+			bool Unregister(const RE::ActiveEffect* a_activeEffect);
 			void Clear();
 			bool Save(SerializationInterface* a_intfc, std::uint32_t a_type, std::uint32_t a_version);
 			bool Save(SerializationInterface* a_intfc);
