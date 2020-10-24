@@ -57,7 +57,8 @@ namespace RE
 
 		namespace AIProcess
 		{
-			inline constexpr REL::ID SetActorRefraction(static_cast<std::uint64_t>(38916));
+			inline constexpr REL::ID SetParalyzed(static_cast<std::uint64_t>(38857));
+			inline constexpr REL::ID SetRefraction(static_cast<std::uint64_t>(38916));
 			inline constexpr REL::ID SetBaseScale(static_cast<std::uint64_t>(38568));
 			inline constexpr REL::ID Update3DModel(static_cast<std::uint64_t>(38404));
 		}
@@ -478,6 +479,12 @@ namespace RE
 		}
 
 
+		namespace ExtraNorthRotation
+		{
+			inline constexpr REL::ID Vtbl(static_cast<std::uint64_t>(229646));
+		}
+
+
 		namespace ExtraOwnership
 		{
 			inline constexpr REL::ID Vtbl(static_cast<std::uint64_t>(229534));
@@ -713,7 +720,6 @@ namespace RE
 		namespace Main
 		{
 			inline constexpr REL::ID DoFrame(static_cast<std::uint64_t>(35565));
-			inline constexpr REL::ID ProcessTasks(static_cast<std::uint64_t>(35582));
 			inline constexpr REL::ID Singleton(static_cast<std::uint64_t>(516943));
 		}
 

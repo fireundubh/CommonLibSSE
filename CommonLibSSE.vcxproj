@@ -55,6 +55,7 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <EnableASAN>false</EnableASAN>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -536,6 +537,7 @@
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpCharacterState\bhkCharacterState\bhkCharacterStateOnGround.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpCharacterState\bhkCharacterState\bhkCharacterStateSwimming.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpCharacterState\hkpCharacterState.h" />
+    <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpConstraintInstance\hkpConstraintInstance.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpConstraintOwner\hkpConstraintOwner.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpConstraintOwner\hkpSimulationIsland.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpMoppCode.h" />
@@ -766,11 +768,23 @@
     <ClInclude Include="include\RE\Events\BGSActorEvent\BGSFootstepEvent.h" />
     <ClInclude Include="include\RE\Events\BGSFootstepManager.h" />
     <ClInclude Include="include\RE\Events\BGSImpactManager.h" />
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\ActorKill.h" />
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\BooksRead.h" />
     <ClInclude Include="include\RE\Events\BGSStoryEvent\ChestsLooted.h" />
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\CriticalHit.h" />
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\DisarmedEvent.h" />
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\DragonSoulsGained.h" />
     <ClInclude Include="include\RE\Events\BGSStoryEvent\Inventory.h" />
     <ClInclude Include="include\RE\Events\BGSStoryEvent\ItemCrafted.h" />
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\ItemHarvested.h" />
     <ClInclude Include="include\RE\Events\BGSStoryEvent\ItemsPickpocketed.h" />
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\LevelIncrease.h" />
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\LocationDiscovery.h" />
     <ClInclude Include="include\RE\Events\BGSStoryEvent\PoisonedWeapon.h" />
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\ShoutAttack.h" />
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\SkillIncrease.h" />
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\SoulsTrapped.h" />
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\SpellsLearned.h" />
     <ClInclude Include="include\RE\Events\BSAnimationGraphEvent.h" />
     <ClInclude Include="include\RE\Events\DefaultObjectsReadyEvent.h" />
     <ClInclude Include="include\RE\Events\InputEvent\DeviceConnectEvent.h" />
@@ -801,6 +815,7 @@
     <ClInclude Include="include\RE\Events\ScriptEvent\TESMoveAttachDetachEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESObjectLoadedEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESOpenCloseEvent.h" />
+    <ClInclude Include="include\RE\Events\ScriptEvent\TESQuestStageEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESQuestStartStopEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESResetEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESSwitchRaceCompleteEvent.h" />
@@ -1255,6 +1270,7 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkMeshMaterial.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkRefObject.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkCharacterProxy.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkConstraint\bhkConstraint.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkSerializable.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkBvTreeShape\bhkBvTreeShape.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkBvTreeShape\bhkMoppBvTreeShape.h" />
@@ -1329,6 +1345,7 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BSNiNode\BSMultiBoundNode.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BSNiNode\BSNiNode.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BSNiNode\BSValueNode.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\NiBillboardNode.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\NiNode.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\ShadowSceneNode.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiObjectNET.h" />
@@ -1546,6 +1563,7 @@
     <ClCompile Include="src\RE\BSExtraData\ExtraLightData.cpp" />
     <ClCompile Include="src\RE\BSExtraData\ExtraLock.cpp" />
     <ClCompile Include="src\RE\BSExtraData\ExtraMissingLinkedRefIDs.cpp" />
+    <ClCompile Include="src\RE\BSExtraData\ExtraNorthRotation.cpp" />
     <ClCompile Include="src\RE\BSExtraData\ExtraOwnership.cpp" />
     <ClCompile Include="src\RE\BSExtraData\ExtraPoison.cpp" />
     <ClCompile Include="src\RE\BSExtraData\ExtraRank.cpp" />
@@ -1623,10 +1641,22 @@
     <ClCompile Include="src\RE\Color\ColorBlending.cpp" />
     <ClCompile Include="src\RE\Combat\CombatManager.cpp" />
     <ClCompile Include="src\RE\Events\BGSFootstepManager.cpp" />
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\ActorKill.cpp" />
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\BooksRead.cpp" />
     <ClCompile Include="src\RE\Events\BGSStoryEvent\ChestsLooted.cpp" />
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\CriticalHit.cpp" />
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\DisarmedEvent.cpp" />
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\DragonSoulsGained.cpp" />
     <ClCompile Include="src\RE\Events\BGSStoryEvent\Inventory.cpp" />
     <ClCompile Include="src\RE\Events\BGSStoryEvent\ItemCrafted.cpp" />
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\ItemHarvested.cpp" />
     <ClCompile Include="src\RE\Events\BGSStoryEvent\ItemsPickpocketed.cpp" />
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\LevelIncrease.cpp" />
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\LocationDiscovery.cpp" />
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\ShoutAttack.cpp" />
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\SkillIncrease.cpp" />
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\SoulsTrapped.cpp" />
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\SpellsLearned.cpp" />
     <ClCompile Include="src\RE\Events\InputEvent\InputEvent.cpp" />
     <ClCompile Include="src\RE\Events\InputEvent\ThumbstickEvent.cpp" />
     <ClCompile Include="src\RE\Events\ScriptEvent\ScriptEventSourceHolder.cpp" />

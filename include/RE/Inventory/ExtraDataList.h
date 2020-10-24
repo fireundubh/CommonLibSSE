@@ -169,11 +169,13 @@ namespace RE
 		BGSEncounterZone*	  GetEncounterZone();
 		ExtraTextDisplayData* GetExtraTextDisplayData();
 		TESObjectREFR*		  GetLinkedRef(BGSKeyword* a_keyword);
+		ObjectRefHandle		  GetOriginalRef();
 		TESForm*			  GetOwner();
 		SOUL_LEVEL			  GetSoulLevel() const;
 		bool				  GetWorn() const;
 		void				  SetExtraFlags(ExtraFlags::Flag a_flags, bool a_enable);
 		void				  SetInventoryChanges(InventoryChanges* a_changes);
+		void				  SetLinkedRef(TESObjectREFR* a_targetRef, BGSKeyword* a_keyword);
 		void				  SetOwner(TESForm* a_owner);
 
 	protected:

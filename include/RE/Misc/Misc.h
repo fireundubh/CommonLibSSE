@@ -20,7 +20,6 @@ namespace RE
 	void	 PlaySound(const char* a_editorID);
 	void	 ShowMessageBox(const std::string& a_message);
 
-	void func2E9950();
 
 	namespace Util
 	{

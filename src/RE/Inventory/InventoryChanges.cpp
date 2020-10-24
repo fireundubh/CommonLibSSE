@@ -40,6 +40,14 @@ namespace RE
 	}
 
 
+	std::int16_t InventoryChanges::GetItemCount(TESBoundObject* a_obj)
+	{
+		using func_t = decltype(&InventoryChanges::GetItemCount);
+		REL::Relocation<func_t> func{ REL::ID(15868) };
+		return func(this, a_obj);
+	}
+
+
 	std::uint16_t InventoryChanges::GetNextUniqueID()
 	{
 		using func_t = decltype(&InventoryChanges::GetNextUniqueID);

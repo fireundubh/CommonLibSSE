@@ -655,6 +655,14 @@ namespace RE
 	}
 
 
+	void Actor::RemoveSelectedSpell(SpellItem* a_spell)
+	{
+		using func_t = decltype(&Actor::RemoveSelectedSpell);
+		REL::Relocation<func_t> func{ REL::ID(37820) };
+		return func(this, a_spell);
+	}
+
+
 	bool Actor::RemoveSpell(SpellItem* a_spell)
 	{
 		using func_t = decltype(&Actor::RemoveSpell);

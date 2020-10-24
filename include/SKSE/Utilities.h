@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RE\BSCore\BSFixedString.h"
+#include <type_traits>
 
 
 namespace SKSE
@@ -8,20 +9,22 @@ namespace SKSE
 	class RNG
 	{
 	public:
-		static RNG* GetSingleton()
+		static RNG* GetSingleton();
+
+		template <class T, class = typename std::enable_if<std::is_arithmetic<T>::value>::type>
+		T GenerateRandomNumber(T a_min, T a_max)
 		{
-			static RNG singleton;
-			return &singleton;
+			if constexpr (std::is_integral_v<T>) {
+				std::uniform_int_distribution<T> distr(a_min, a_max);
+				return distr(twister);
+			} else {
+				std::uniform_real_distribution<T> distr(a_min, a_max);
+				return distr(twister);
+			}
 		}
-
-		std::uint32_t GenerateRandomNumber(std::uint32_t a_min, std::uint32_t a_max);
-		float		  GenerateRandomNumber(float a_min, float a_max);
-
+		
 	private:
-		RNG() :
-			twister(std::random_device{}())
-		{
-		}
+		RNG();
 		RNG(RNG const&) = delete;
 		RNG(RNG&&) = delete;
 		~RNG() = default;

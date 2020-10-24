@@ -20,9 +20,9 @@ namespace RE
 			for (size_t i = 0; i < size; i++) {
 				auto string = a_strings[i];
 				if (!string.empty()) {
-					std::uint32_t strLength = string.length() + 1;
+					size_t strLength = string.length() + 1;
 					data->value[i] = NiAlloc<char>(strLength);
-					memcpy(data->value[i], string.c_str(), sizeof(char) * strLength);
+					std::memcpy(data->value[i], string.c_str(), sizeof(char) * strLength);
 				}
 			}
 		}
@@ -51,19 +51,21 @@ namespace RE
 				auto oldData = value;
 				value = NiAlloc<char*>(++size);
 
-				for (std::uint32_t i = 0; i < size - 1; i++) {
-					size_t strLength = strlen(oldData[i]) + 1;
-					value[i] = NiAlloc<char>(strLength);
-					memcpy(value[i], oldData[i], sizeof(char) * strLength);
+				if (oldData) {
+					for (std::uint32_t i = 0; i < size - 1; i++) {
+						size_t strLength = strlen(oldData[i]) + 1;
+						value[i] = NiAlloc<char>(strLength);
+						std::memcpy(value[i], oldData[i], sizeof(char) * strLength);
 
-					NiFree(oldData[i]);
-					oldData[i] = nullptr;
+						NiFree(oldData[i]);
+					}
+					NiFree(oldData);
+					oldData = nullptr;
 				}
-				NiFree(oldData);
 
-				std::uint32_t strLength = a_element.length() + 1;
+				size_t strLength = a_element.length() + 1;
 				value[size - 1] = NiAlloc<char>(strLength);
-				memcpy(value[size - 1], a_element.data(), sizeof(char) * strLength);
+				std::memcpy(value[size - 1], a_element.data(), sizeof(char) * strLength);
 
 				return true;
 			}
@@ -86,12 +88,12 @@ namespace RE
 					if (i != index) {
 						size_t strLength = strlen(oldData[i]) + 1;
 						value[i] = NiAlloc<char>(strLength);
-						memcpy(value[i], oldData[i], sizeof(char) * strLength);
+						std::memcpy(value[i], oldData[i], sizeof(char) * strLength);
 					}
 					NiFree(oldData[i]);
-					oldData[i] = nullptr;
 				}
 				NiFree(oldData);
+				oldData = nullptr;
 
 				return true;
 			}

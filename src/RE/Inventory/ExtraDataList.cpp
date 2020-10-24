@@ -7,6 +7,7 @@
 #include "RE/BSExtraData/ExtraHealth.h"
 #include "RE/BSExtraData/ExtraLinkedRef.h"
 #include "RE/BSExtraData/ExtraMissingLinkedRefIDs.h"
+#include "RE/BSExtraData/ExtraOriginalReference.h"
 #include "RE/BSExtraData/ExtraOwnership.h"
 #include "RE/BSExtraData/ExtraReferenceHandle.h"
 #include "RE/BSExtraData/ExtraSoul.h"
@@ -265,6 +266,13 @@ namespace RE
 	}
 
 
+	ObjectRefHandle ExtraDataList::GetOriginalRef()
+	{
+		auto xOrigRef = GetByType<ExtraOriginalReference>();
+		return xOrigRef ? xOrigRef->reference : ObjectRefHandle();
+	}
+
+
 	TESForm* ExtraDataList::GetOwner()
 	{
 		auto xOwner = GetByType<ExtraOwnership>();
@@ -302,6 +310,14 @@ namespace RE
 		using func_t = decltype(&ExtraDataList::SetInventoryChanges);
 		REL::Relocation<func_t> func{ Offset::ExtraDataList::SetInventoryChanges };
 		return func(this, a_changes);
+	}
+
+	
+	void ExtraDataList::SetLinkedRef(TESObjectREFR* a_targetRef, BGSKeyword* a_keyword)
+	{
+		using func_t = decltype(&ExtraDataList::SetLinkedRef);
+		REL::Relocation<func_t> func{ REL::ID(11633) };
+		return func(this, a_targetRef, a_keyword);
 	}
 
 

@@ -12,8 +12,8 @@ namespace RE
 		inline static constexpr auto RTTI = RTTI_ExtraNorthRotation;
 		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kNorthRotation;
 
-
-		virtual ~ExtraNorthRotation();	// 00
+		ExtraNorthRotation();
+		virtual ~ExtraNorthRotation() = default;  // 00
 
 		// override (BSExtraData)
 		virtual ExtraDataType GetType() const override;	 // 01 - { return kNorthRotation; }

@@ -264,6 +264,17 @@ namespace RE
 		};
 
 
+		struct GreaterPowers
+		{
+		public:
+			// members
+			SpellItem*	  spell;  // 00
+			float		  timer;  // 08
+			std::uint32_t pad0C;  // 0C
+		};
+		static_assert(sizeof(GreaterPowers) == 0x10);
+
+
 		virtual ~Actor();  // 000
 
 		// override (TESObjectREFR)
@@ -548,6 +559,7 @@ namespace RE
 		bool						 IsTrespassing() const;
 		void						 KillImmediate();
 		void						 RemoveExtraArrows3D();
+		void						 RemoveSelectedSpell(SpellItem* a_spell);
 		bool						 RemoveSpell(SpellItem* a_spell);
 		std::int32_t				 RequestDetectionLevel(Actor* a_target, DETECTION_PRIORITY a_priority = DETECTION_PRIORITY::kNormal);
 		void						 StealAlarm(TESObjectREFR* a_ref, TESForm* a_object, std::int32_t a_num, std::int32_t a_total, TESForm* a_owner, bool a_allowWarning);
@@ -593,7 +605,7 @@ namespace RE
 		std::uint32_t										  unk174;							  // 174
 		std::uint32_t										  unk178;							  // 178
 		std::uint32_t										  intimidateBribeDayStamp;			  // 17C
-		std::uint64_t										  unk180;							  // 180
+		BSSimpleList<GreaterPowers>*						  greaterPowers;					  // 180
 		BSTSmallArray<SpellItem*>							  addedSpells;						  // 188
 		ActorMagicCaster*									  magicCasters[SlotTypes::kTotal];	  // 1A0
 		MagicItem*											  selectedSpells[SlotTypes::kTotal];  // 1C0

@@ -14,6 +14,7 @@ namespace RE
 	class TESFile;
 	class TESRegionDataManager;
 	class TESRegionList;
+	class InventoryChanges;
 
 
 	struct TESObjectList
@@ -92,7 +93,7 @@ namespace RE
 		std::uint8_t					  padDAB;									 // DAB
 		std::uint32_t					  padDAC;									 // DAC
 		TESRegionDataManager*			  regionDataManager;						 // DB0
-		std::uint64_t					  unkDB8;									 // DB8
+		InventoryChanges*				  unkDB8;									 // DB8
 	};
 	static_assert(sizeof(TESDataHandler) == 0xDC0);
 

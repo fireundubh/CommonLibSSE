@@ -107,14 +107,6 @@ namespace RE
 	}
 
 
-	void func2E9950()  //FEC frame hook
-	{
-		using func_t = decltype(&func2E9950);
-		REL::Relocation<func_t> func{ REL::ID(21434) };
-		return func();
-	}
-
-
 	namespace Util
 	{
 		void SanitizeTexturePath(std::string& a_path)

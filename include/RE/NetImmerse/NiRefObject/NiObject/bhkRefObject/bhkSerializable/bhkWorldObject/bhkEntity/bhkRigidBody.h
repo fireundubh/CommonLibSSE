@@ -6,6 +6,9 @@
 
 namespace RE
 {
+	class bhkConstraint;
+
+
 	class bhkRigidBody : public bhkEntity
 	{
 	public:
@@ -48,7 +51,7 @@ namespace RE
 
 
 		// members
-		BSTArray<void*> unk28;	// 28 - array of smart ptrs
+		BSTArray<bhkConstraint*> contraints;  // 28
 	};
 	static_assert(sizeof(bhkRigidBody) == 0x40);
 }

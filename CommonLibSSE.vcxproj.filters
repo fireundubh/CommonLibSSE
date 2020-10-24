@@ -112,6 +112,9 @@
     <ClCompile Include="src\RE\BSExtraData\ExtraMissingLinkedRefIDs.cpp">
       <Filter>src\RE\BSExtraData</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\BSExtraData\ExtraNorthRotation.cpp">
+      <Filter>src\RE\BSExtraData</Filter>
+    </ClCompile>
     <ClCompile Include="src\RE\BSExtraData\ExtraOwnership.cpp">
       <Filter>src\RE\BSExtraData</Filter>
     </ClCompile>
@@ -343,7 +346,22 @@
     <ClCompile Include="src\RE\Events\BGSFootstepManager.cpp">
       <Filter>src\RE\Events</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\ActorKill.cpp">
+      <Filter>src\RE\Events\BGSStoryEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\BooksRead.cpp">
+      <Filter>src\RE\Events\BGSStoryEvent</Filter>
+    </ClCompile>
     <ClCompile Include="src\RE\Events\BGSStoryEvent\ChestsLooted.cpp">
+      <Filter>src\RE\Events\BGSStoryEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\CriticalHit.cpp">
+      <Filter>src\RE\Events\BGSStoryEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\DisarmedEvent.cpp">
+      <Filter>src\RE\Events\BGSStoryEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\DragonSoulsGained.cpp">
       <Filter>src\RE\Events\BGSStoryEvent</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\Events\BGSStoryEvent\Inventory.cpp">
@@ -352,7 +370,28 @@
     <ClCompile Include="src\RE\Events\BGSStoryEvent\ItemCrafted.cpp">
       <Filter>src\RE\Events\BGSStoryEvent</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\ItemHarvested.cpp">
+      <Filter>src\RE\Events\BGSStoryEvent</Filter>
+    </ClCompile>
     <ClCompile Include="src\RE\Events\BGSStoryEvent\ItemsPickpocketed.cpp">
+      <Filter>src\RE\Events\BGSStoryEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\LevelIncrease.cpp">
+      <Filter>src\RE\Events\BGSStoryEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\LocationDiscovery.cpp">
+      <Filter>src\RE\Events\BGSStoryEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\ShoutAttack.cpp">
+      <Filter>src\RE\Events\BGSStoryEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\SkillIncrease.cpp">
+      <Filter>src\RE\Events\BGSStoryEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\SoulsTrapped.cpp">
+      <Filter>src\RE\Events\BGSStoryEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\Events\BGSStoryEvent\SpellsLearned.cpp">
       <Filter>src\RE\Events\BGSStoryEvent</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\Events\InputEvent\InputEvent.cpp">
@@ -1845,6 +1884,9 @@
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpCharacterStateManager.h">
       <Filter>include\RE\BSHavok\hkBaseObject\hkReferencedObject</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpConstraintInstance\hkpConstraintInstance.h">
+      <Filter>include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpConstraintInstance</Filter>
+    </ClInclude>
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpConstraintOwner\hkpConstraintOwner.h">
       <Filter>include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpConstraintOwner</Filter>
     </ClInclude>
@@ -2535,7 +2577,22 @@
     <ClInclude Include="include\RE\Events\BGSImpactManager.h">
       <Filter>include\RE\Events</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\ActorKill.h">
+      <Filter>include\RE\Events\BGSStoryEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\BooksRead.h">
+      <Filter>include\RE\Events\BGSStoryEvent</Filter>
+    </ClInclude>
     <ClInclude Include="include\RE\Events\BGSStoryEvent\ChestsLooted.h">
+      <Filter>include\RE\Events\BGSStoryEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\CriticalHit.h">
+      <Filter>include\RE\Events\BGSStoryEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\DisarmedEvent.h">
+      <Filter>include\RE\Events\BGSStoryEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\DragonSoulsGained.h">
       <Filter>include\RE\Events\BGSStoryEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Events\BGSStoryEvent\Inventory.h">
@@ -2544,10 +2601,31 @@
     <ClInclude Include="include\RE\Events\BGSStoryEvent\ItemCrafted.h">
       <Filter>include\RE\Events\BGSStoryEvent</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\ItemHarvested.h">
+      <Filter>include\RE\Events\BGSStoryEvent</Filter>
+    </ClInclude>
     <ClInclude Include="include\RE\Events\BGSStoryEvent\ItemsPickpocketed.h">
       <Filter>include\RE\Events\BGSStoryEvent</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\LevelIncrease.h">
+      <Filter>include\RE\Events\BGSStoryEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\LocationDiscovery.h">
+      <Filter>include\RE\Events\BGSStoryEvent</Filter>
+    </ClInclude>
     <ClInclude Include="include\RE\Events\BGSStoryEvent\PoisonedWeapon.h">
+      <Filter>include\RE\Events\BGSStoryEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\ShoutAttack.h">
+      <Filter>include\RE\Events\BGSStoryEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\SkillIncrease.h">
+      <Filter>include\RE\Events\BGSStoryEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\SoulsTrapped.h">
+      <Filter>include\RE\Events\BGSStoryEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\BGSStoryEvent\SpellsLearned.h">
       <Filter>include\RE\Events\BGSStoryEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Events\BSAnimationGraphEvent.h">
@@ -2638,6 +2716,9 @@
       <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Events\ScriptEvent\TESOpenCloseEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\ScriptEvent\TESQuestStageEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Events\ScriptEvent\TESQuestStartStopEvent.h">
@@ -4110,6 +4191,9 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkCharacterProxy.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkConstraint\bhkConstraint.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkConstraint</Filter>
+    </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkSerializable.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable</Filter>
     </ClInclude>
@@ -4487,6 +4571,9 @@
     </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BSNiNode\BSValueNode.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\BSNiNode</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\NiBillboardNode.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode\NiNode.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiAVObject\NiNode</Filter>
@@ -5669,6 +5756,9 @@
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpCharacterState\bhkCharacterState">
       <UniqueIdentifier>{3a91bd0d-ff28-4f7e-b969-6e4a532444ea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpConstraintInstance">
+      <UniqueIdentifier>{67a81dd9-9a0f-4f99-bb36-0879c6c9923f}</UniqueIdentifier>
+    </Filter>
     <Filter Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpConstraintOwner">
       <UniqueIdentifier>{b1593307-00b6-48c9-baa0-02359dce78d1}</UniqueIdentifier>
     </Filter>
@@ -6178,6 +6268,9 @@
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable">
       <UniqueIdentifier>{131d167b-f1a3-4bda-a9e4-a0d91cb0f850}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkConstraint">
+      <UniqueIdentifier>{754a043f-ae8b-42b0-b48a-cae056ecdd3a}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape">
       <UniqueIdentifier>{878f1eae-d118-4cca-9104-c2b990c4a304}</UniqueIdentifier>

@@ -115,10 +115,18 @@ namespace RE
 	}
 
 
-	void AIProcess::SetActorRefraction(float a_refraction)
+	void AIProcess::SetParalyzed(Actor* a_actor)
 	{
-		using func_t = decltype(&AIProcess::SetActorRefraction);
-		REL::Relocation<func_t> func{ Offset::AIProcess::SetActorRefraction };
+		using func_t = decltype(&AIProcess::SetParalyzed);
+		REL::Relocation<func_t> func{ Offset::AIProcess::SetParalyzed };
+		return func(this, a_actor);
+	}
+
+
+	void AIProcess::SetRefraction(float a_refraction)
+	{
+		using func_t = decltype(&AIProcess::SetRefraction);
+		REL::Relocation<func_t> func{ Offset::AIProcess::SetRefraction };
 		return func(this, a_refraction);
 	}
 

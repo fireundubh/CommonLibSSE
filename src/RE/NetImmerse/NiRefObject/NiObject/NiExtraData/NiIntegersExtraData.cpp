@@ -39,14 +39,17 @@ namespace RE
 		auto index = GetIndexOf(a_element);
 
 		if (index == std::nullopt) {
-			auto temp = NiAlloc<std::int32_t>(++size);
+			auto oldData = value;
+			value = NiAlloc<std::int32_t>(++size);
 
-			for (std::uint32_t i = 0; i < size - 1; i++) {
-				temp[i] = value[i];
+			if (oldData) {
+				for (std::uint32_t i = 0; i < size - 1; i++) {
+					value[i] = oldData[i];
+				}
+				NiFree(oldData);
+				oldData = nullptr;
 			}
-			temp[size - 1] = a_element;
-			NiFree(value);
-			value = temp;
+			value[size - 1] = a_element;
 
 			return true;
 		}
@@ -60,15 +63,16 @@ namespace RE
 		auto index = GetIndexOf(a_element);
 
 		if (index != std::nullopt) {
-			auto temp = NiAlloc<std::int32_t>(--size);
+			auto oldData = value;
+			value = NiAlloc<std::int32_t>(--size);
 
 			for (std::uint32_t i = 0; i < size + 1; i++) {
 				if (i != index) {
-					temp[i] = value[i];
+					value[i] = oldData[i];
 				}
 			}
-			NiFree(value);
-			value = temp;
+			NiFree(oldData);
+			oldData = nullptr;
 
 			return true;
 		}
