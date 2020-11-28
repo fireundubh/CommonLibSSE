@@ -844,6 +844,8 @@
     <ClInclude Include="include\RE\FormComponents\BGSPreloadable.h" />
     <ClInclude Include="include\RE\FormComponents\BGSSkinForm.h" />
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\ActiveEffect.h" />
+    <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\CommandEffect\CommandEffect.h" />
+    <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\CommandEffect\ReanimateEffect.h" />
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\SummonCreatureEffect.h" />
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect\AbsorbEffect.h" />
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect\ValueModifierEffect.h" />
@@ -1306,6 +1308,7 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet\BSShaderTextureSet.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet\BSTextureSet.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstance.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstanceForm.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstanceTemp\ImageSpaceModifierInstanceDOF.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstanceTemp\ImageSpaceModifierInstanceTemp.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiCollisionObject\bhkNiCollisionObject\bhkBlendCollisionObject.h" />

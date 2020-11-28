@@ -506,7 +506,7 @@ namespace RE
 		void						 ClearExpressionOverride();
 		inline void					 ClearExtraArrows() { RemoveExtraArrows3D(); }
 		ActorHandle					 CreateRefHandle();
-		void						 Decapitate();
+		bool						 Decapitate();
 		void						 DispelWornItemEnchantments();
 		void						 DoReset3D(bool a_updateWeight);
 		void						 EnableAI(bool a_enable);
@@ -551,6 +551,7 @@ namespace RE
 		bool						 IsGuard() const;
 		bool						 IsHostileToActor(Actor* a_actor);
 		[[nodiscard]] constexpr bool IsInKillMove() const noexcept { return boolFlags.all(BOOL_FLAGS::kIsInKillMove); }
+		bool						 IsLimbGone(std::uint32_t a_limb);
 		bool						 IsOnMount() const;
 		bool						 IsPlayerTeammate() const;
 		bool						 IsRunning() const;

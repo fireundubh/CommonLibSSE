@@ -113,6 +113,7 @@ namespace RE
 			kOncePerDay = 1 << 10,
 			kDeleteWhenDone = 1 << 11,
 			kPreferredSpeed = 1 << 13,
+			kUnkCommand = 1 << 14,
 			kAlwaysSneak = 1 << 17,
 			kAllowSwimming = 1 << 18,
 			kIgnoreCombat = 1 << 20,

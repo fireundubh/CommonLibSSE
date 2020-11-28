@@ -269,7 +269,7 @@ namespace RE
 		float										   unk2AC;								 // 2AC
 		float										   explosionKnockStateExplodeDownTimer;	 // 2B0
 		float										   unk2B4;								 // 2B4
-		float										   unk2B8;								 // 2B8
+		float										   defaultBleedout;						 // 2B8
 		float										   unk2BC;								 // 2BC
 		float										   unk2C0;								 // 2C0
 		float										   unk2C4;								 // 2C4

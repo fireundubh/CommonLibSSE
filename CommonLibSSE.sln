@@ -25,7 +25,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_SpellPerkItemDistributo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_SalesOverflowSolved", "..\Projects\SOS\SOS.vcxproj", "{417E7705-46BC-4933-BE9F-899DA3FC1D09}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_BloodOnFace", "..\Projects\BloodOnFace\BloodOnFace.vcxproj", "{6A02570E-C383-42F7-A063-DAA03A6EEB6C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_SimpleOffenceSuppression", "..\Projects\BloodOnFace\BloodOnFace.vcxproj", "{6A02570E-C383-42F7-A063-DAA03A6EEB6C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_NoAttackMessages", "..\Projects\StoreDecap\StoreDecap.vcxproj", "{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_RepeatablePickpocketing", "..\Projects\RepeatablePickpocketing\RepeatablePickpocketing.vcxproj", "{B0761B7B-D86D-403F-A22E-72C589D24BF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -189,6 +193,38 @@ Global
 		{6A02570E-C383-42F7-A063-DAA03A6EEB6C}.Release|x64.Build.0 = Release|x64
 		{6A02570E-C383-42F7-A063-DAA03A6EEB6C}.Release|x86.ActiveCfg = Release|Win32
 		{6A02570E-C383-42F7-A063-DAA03A6EEB6C}.Release|x86.Build.0 = Release|Win32
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}.Debug Unicode|x64.ActiveCfg = Debug|x64
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}.Debug Unicode|x64.Build.0 = Debug|x64
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}.Debug Unicode|x86.ActiveCfg = Debug|Win32
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}.Debug Unicode|x86.Build.0 = Debug|Win32
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}.Debug|x64.ActiveCfg = Debug|x64
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}.Debug|x64.Build.0 = Debug|x64
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}.Debug|x86.ActiveCfg = Debug|Win32
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}.Debug|x86.Build.0 = Debug|Win32
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}.Release Unicode|x64.ActiveCfg = Release|x64
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}.Release Unicode|x64.Build.0 = Release|x64
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}.Release Unicode|x86.ActiveCfg = Release|Win32
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}.Release Unicode|x86.Build.0 = Release|Win32
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}.Release|x64.ActiveCfg = Release|x64
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}.Release|x64.Build.0 = Release|x64
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}.Release|x86.ActiveCfg = Release|Win32
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8}.Release|x86.Build.0 = Release|Win32
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7}.Debug Unicode|x64.ActiveCfg = Debug|x64
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7}.Debug Unicode|x64.Build.0 = Debug|x64
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7}.Debug Unicode|x86.ActiveCfg = Debug|Win32
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7}.Debug Unicode|x86.Build.0 = Debug|Win32
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7}.Debug|x64.ActiveCfg = Debug|x64
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7}.Debug|x64.Build.0 = Debug|x64
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7}.Debug|x86.ActiveCfg = Debug|Win32
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7}.Debug|x86.Build.0 = Debug|Win32
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7}.Release Unicode|x64.ActiveCfg = Release|x64
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7}.Release Unicode|x64.Build.0 = Release|x64
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7}.Release Unicode|x86.ActiveCfg = Release|Win32
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7}.Release Unicode|x86.Build.0 = Release|Win32
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7}.Release|x64.ActiveCfg = Release|x64
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7}.Release|x64.Build.0 = Release|x64
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7}.Release|x86.ActiveCfg = Release|Win32
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -204,6 +240,8 @@ Global
 		{5747ABEE-7310-4410-A567-0080A148BDF9} = {F6F21BCD-77A1-4DFC-8BED-CD689BB66866}
 		{417E7705-46BC-4933-BE9F-899DA3FC1D09} = {F6F21BCD-77A1-4DFC-8BED-CD689BB66866}
 		{6A02570E-C383-42F7-A063-DAA03A6EEB6C} = {F6F21BCD-77A1-4DFC-8BED-CD689BB66866}
+		{8A31A5DF-ED73-4ED7-8866-729A2B7C97E8} = {F6F21BCD-77A1-4DFC-8BED-CD689BB66866}
+		{B0761B7B-D86D-403F-A22E-72C589D24BF7} = {F6F21BCD-77A1-4DFC-8BED-CD689BB66866}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {37148EF4-32F4-49AB-B9CA-77AAB26BF4A6}

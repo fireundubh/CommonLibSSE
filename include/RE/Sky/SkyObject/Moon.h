@@ -63,7 +63,7 @@ namespace RE
 		float										  zOffset;						 // C0
 		std::uint32_t								  size;							 // C4
 		stl::enumeration<UpdateStatus, std::uint32_t> updateMoonTexture;			 // C8
-		float										  unkCC;						 // CC
+		float										  currentAngle;					 // CC
 		float										  unkD0;						 // D0
 		std::uint32_t								  padD4;						 // D4
 	};

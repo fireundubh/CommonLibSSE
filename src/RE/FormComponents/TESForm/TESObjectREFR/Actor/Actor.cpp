@@ -129,7 +129,7 @@ namespace RE
 	}
 
 
-	void Actor::Decapitate()
+	bool Actor::Decapitate()
 	{
 		using func_t = decltype(&Actor::Decapitate);
 		REL::Relocation<func_t> func{ Offset::Actor::Decapitate };
@@ -202,7 +202,7 @@ namespace RE
 
 		for (auto& [item, invData] : inv) {
 			auto& [count, entry] = invData;
-			if (count > 0 && entry) {
+			if (count > 0) {
 				auto armor = static_cast<TESObjectARMO*>(item);
 				if (armor && armor->HasPartOf(a_slot)) {
 					return armor;
@@ -212,8 +212,8 @@ namespace RE
 
 		return nullptr;
 	}
-	
-	
+
+
 	InventoryEntryData* Actor::GetAttackingWeapon()
 	{
 		if (!currentProcess || !currentProcess->high || !currentProcess->high->attackData || !currentProcess->middleHigh) {
@@ -417,22 +417,24 @@ namespace RE
 
 	TESObjectARMO* Actor::GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot)
 	{
-		TESObjectARMO* equipped = nullptr;
+		if (a_slot == BGSBipedObjectForm::BipedObjectSlot::kNone) {
+			return nullptr;
+		}
 
-		if (a_slot != BGSBipedObjectForm::BipedObjectSlot::kNone) {
-			equipped = GetWornArmor(a_slot);
+		TESObjectARMO* equipped = nullptr;
+		equipped = GetWornArmor(a_slot);
+		if (!equipped) {
+			auto actorBase = GetActorBase();
+			if (actorBase) {
+				equipped = actorBase->skin;
+			}
 			if (!equipped) {
-				auto actorBase = GetActorBase();
-				if (actorBase) {
-					equipped = actorBase->skin;
-					auto baseRace = actorBase->race;
-					if (!equipped && baseRace) {
-						equipped = baseRace->skin;
-					}
+				auto baseRace = GetRace();
+				if (baseRace) {
+					equipped = baseRace->skin;
 				}
 			}
 		}
-
 		return equipped;
 	}
 
@@ -453,9 +455,9 @@ namespace RE
 
 		for (auto& [item, invData] : inv) {
 			auto& [count, entry] = invData;
-			if (count > 0 && entry) {
+			if (count > 0 && entry->GetWorn()) {
 				auto armor = static_cast<TESObjectARMO*>(item);
-				if (armor && armor->HasPartOf(a_slot) && entry->GetWorn()) {
+				if (armor && armor->HasPartOf(a_slot)) {
 					return armor;
 				}
 			}
@@ -473,7 +475,7 @@ namespace RE
 
 		for (auto& [item, invData] : inv) {
 			auto& [count, entry] = invData;
-			if (count > 0 && entry && entry->GetWorn()) {
+			if (count > 0 && entry->GetWorn()) {
 				return static_cast<TESObjectARMO*>(item);
 			}
 		}
@@ -588,6 +590,14 @@ namespace RE
 		using func_t = decltype(&Actor::IsHostileToActor);
 		REL::Relocation<func_t> func{ Offset::Actor::GetHostileToActor };
 		return func(this, a_actor);
+	}
+
+
+	bool Actor::IsLimbGone(std::uint32_t a_limb)
+	{
+		using func_t = decltype(&Actor::IsLimbGone);
+		REL::Relocation<func_t> func{ REL::ID(19338) };
+		return func(this, a_limb);
 	}
 
 
@@ -765,7 +775,7 @@ namespace RE
 	NiAVObject* Actor::VisitArmorAddon(TESObjectARMO* a_armor, TESObjectARMA* a_arma)
 	{
 		char addonString[MAX_PATH];
-		memset(addonString, 0, MAX_PATH);
+		std::memset(addonString, 0, MAX_PATH);
 		a_arma->GetNodeName(addonString, this, a_armor, -1);
 
 		NiNode* skeletonRoot[2];

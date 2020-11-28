@@ -152,22 +152,23 @@ namespace RE
 
 	void NiMatrix3::SetEulerAnglesXYZ(float a_x, float a_y, float a_z)
 	{
-		float sX = std::sinf(a_x);
-		float cX = std::cosf(a_x);
-		float sY = std::sinf(a_y);
-		float cY = std::cosf(a_y);
-		float sZ = std::sinf(a_z);
-		float cZ = std::cosf(a_z);
+		float sinX = std::sinf(a_x);
+		float sinY = std::sinf(a_y);
+		float sinZ = std::sinf(a_z);
 
-		entry[0][0] = cY * cZ;
-		entry[0][1] = -cY * sZ;
-		entry[0][2] = sY;
-		entry[1][0] = sX * sY * cZ + sZ * cX;
-		entry[1][1] = cX * cZ - sX * sY * sZ;
-		entry[1][2] = -sX * cY;
-		entry[2][0] = sX * sZ - cX * sY * cZ;
-		entry[2][1] = cX * sY * sZ + sX * cZ;
-		entry[2][2] = cX * cY;
+		float cosX = std::cosf(a_x);
+		float cosY = std::cosf(a_y);
+		float cosZ = std::cosf(a_z);
+
+		entry[0][0] = cosY * cosZ;
+		entry[0][1] = cosY * sinZ;
+		entry[0][2] = -sinY;
+		entry[1][0] = sinX * sinY * cosZ - cosX * sinZ;
+		entry[1][1] = sinX * sinY * sinZ + cosX * cosZ;
+		entry[1][2] = sinX * cosY;
+		entry[2][0] = cosX * sinY * cosZ + sinX * sinZ;
+		entry[2][1] = cosX * sinY * sinZ - sinX * cosZ;
+		entry[2][2] = cosX * cosY;
 	}
 
 

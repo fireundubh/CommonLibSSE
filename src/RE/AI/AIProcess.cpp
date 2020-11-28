@@ -2,6 +2,7 @@
 
 #include "RE/AI/HighProcessData.h"
 #include "RE/AI/MiddleHighProcessData.h"
+#include "RE/FormComponents/TESForm/TESPackage/TESPackage.h"
 #include "SKSE/API.h"
 
 
@@ -50,6 +51,19 @@ namespace RE
 		} else {
 			return {};
 		}
+	}
+
+
+	TESPackage* AIProcess::GetRunningPackage() const
+	{
+		TESPackage* package = nullptr;
+		if (middleHigh) {
+			package = middleHigh->runOncePackage.package;
+		}
+		if (!package) {
+			package = currentPackage.package;
+		}
+		return package;
 	}
 
 

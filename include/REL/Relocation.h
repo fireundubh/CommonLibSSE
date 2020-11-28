@@ -467,7 +467,7 @@ namespace REL
 		{
 			auto handle = GetModuleHandleW(FILENAME.data());
 			if (handle == nullptr) {
-				stl::report_and_fail("failed to obtain module handle"sv);
+				stl::report_and_fail("Failed to obtain module handle! SkyrimSE.exe has either been renamed or is missing from the game folder"sv);
 			}
 			_base = reinterpret_cast<std::uintptr_t>(handle);
 			_natvis = _base;
@@ -614,7 +614,7 @@ namespace REL
 				_stream(a_filename.data(), a_mode)
 			{
 				if (!_stream.is_open()) {
-					stl::report_and_fail("failed to open file"sv);
+					stl::report_and_fail("Failed to open file! Address Library For SKSE Plugins is not installed"sv);
 				}
 
 				_stream.exceptions(std::ios::badbit | std::ios::failbit | std::ios::eofbit);

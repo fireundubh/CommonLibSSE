@@ -166,6 +166,8 @@ namespace RE
 			[[nodiscard]] inline friend bool operator==(const_pointer a_lhs, const BSFixedString& a_rhs) { return a_rhs == a_lhs; }
 			[[nodiscard]] inline friend bool operator!=(const_pointer a_lhs, const BSFixedString& a_rhs) { return !(a_lhs == a_rhs); }
 
+			[[nodiscard]] inline friend bool operator<(const BSFixedString& a_lhs, const BSFixedString& a_rhs) { return strncmp(a_lhs.c_str(), a_rhs.c_str(), a_lhs.length()) < 0; }
+
 		private:
 			[[nodiscard]] static inline int strncmp(const char* a_lhs, const char* a_rhs, std::size_t a_length)
 			{

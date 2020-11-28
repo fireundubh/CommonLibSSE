@@ -36,17 +36,25 @@ namespace SKSE
 	}
 
 
-		const std::string& GetRuntimeDirectory()
+	const std::string& GetRuntimeDirectory()
 	{
 		static std::string s_runtimeDirectory;
 
 		if (s_runtimeDirectory.empty()) {
-			char runtimePathBuf[MAX_PATH];
-			auto runtimePathLength = GetModuleFileName(GetModuleHandle(nullptr), runtimePathBuf, sizeof(runtimePathBuf));
+			std::vector<char> buf;
+			buf.reserve(MAX_PATH);
+			buf.resize(MAX_PATH / 2);
+			std::uint32_t result = 0;
+			do {
+				buf.resize(buf.size() * 2);
+				result = GetModuleFileName(
+					GetModuleHandleA("SkyrimSE.exe"),
+					buf.data(),
+					static_cast<std::uint32_t>(buf.size()));
+			} while (result && result == buf.size() && buf.size() <= std::numeric_limits<std::uint32_t>::max());
 
-			if (runtimePathLength && (runtimePathLength < sizeof(runtimePathBuf))) {
-				std::string runtimePath(runtimePathBuf, runtimePathLength);
-
+			if (result && result != buf.size()) {
+				std::string runtimePath(buf.data(), result);
 				auto lastSlash = runtimePath.rfind('\\');
 				if (lastSlash != std::string::npos) {
 					s_runtimeDirectory = runtimePath.substr(0, lastSlash + 1);
@@ -67,7 +75,7 @@ namespace SKSE
 			if (!runtimePath.empty()) {
 				s_pluginPath = runtimePath + R"(Data\SKSE\Plugins\)";
 			} else {
-				SKSE::log::error("couldn't get runtime directory path!");
+				SKSE::log::error("couldn't get runtime directory path!"sv);
 			}
 		}
 
@@ -82,9 +90,9 @@ namespace SKSE
 		const auto& pluginPath = GetPluginFolderPath();
 		if (!pluginPath.empty()) {
 			s_configPath = pluginPath + modName + R"(.ini)";
-			SKSE::log::info("config path = {}", s_configPath);
+			SKSE::log::info("config path = {}"sv, s_configPath);
 		} else {
-			SKSE::log::error("couldn't get plugin folder path!");
+			SKSE::log::error("couldn't get plugin folder path!"sv);
 		}
 
 		return s_configPath;
@@ -100,7 +108,7 @@ namespace SKSE
 		if (!runtimePath.empty()) {
 			std::string configPath = runtimePath + a_folder;
 			for (const auto& entry : fs::directory_iterator(configPath)) {
-				if (entry.exists() && entry.path().extension() == ".ini") {
+				if (entry.exists() && entry.path().extension() == ".ini"sv) {
 					auto path = entry.path().string();
 					if (path.find(a_suffix) != std::string::npos) {
 						vec.push_back(path);

@@ -14,6 +14,7 @@
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiProperty.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/BSShaderProperty/BSLightingShaderProperty.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/BSShaderProperty/BSShaderProperty.h"
+#include "SKSE/Logger.h"
 
 
 namespace RE
@@ -27,13 +28,13 @@ namespace RE
 	BSGeometry* NiAVObject::GetFirstGeometryOfShaderType(BSShaderMaterial::Feature a_type)
 	{
 		BSGeometry* firstGeometry = nullptr;
-		
+
 		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl {
 			if (a_type == BSShaderMaterial::Feature::kNone) {
 				firstGeometry = a_geometry;
 				return BSVisit::BSVisitControl::kStop;
 			}
-			
+
 			auto effect = a_geometry->properties[BSGeometry::States::kEffect].get();
 			if (effect) {
 				auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
@@ -106,6 +107,22 @@ namespace RE
 		using func_t = decltype(&NiAVObject::SetMotionType);
 		REL::Relocation<func_t> func{ Offset::NiAVObject::SetMotionType };
 		return func(this, a_motionType, a_arg2, a_arg3, a_allowActivate);
+	}
+
+
+	void NiAVObject::SetRigidConstraints(bool a_enable, std::uint8_t a_arg2, std::uint32_t a_arg3)
+	{
+		using func_t = decltype(&NiAVObject::SetRigidConstraints);
+		REL::Relocation<func_t> func{ REL::ID(76271) };
+		return func(this, a_enable, a_arg2, a_arg3);
+	}
+
+
+	void NiAVObject::SetStiffSpringConstraints(std::uint8_t a_arg2)
+	{
+		using func_t = decltype(&NiAVObject::SetStiffSpringConstraints);
+		REL::Relocation<func_t> func{ REL::ID(76167) };
+		return func(this, a_arg2);
 	}
 
 
@@ -213,10 +230,18 @@ namespace RE
 	}
 
 
-	void NiAVObject::UpdateVisibility(bool a_cull)
+	void NiAVObject::UpdateRigidBodySettings(std::uint32_t a_type, std::uint32_t a_arg2)
 	{
-		BSVisit::TraverseScenegraphObjects(this, [&](NiAVObject* a_object) -> BSVisit::BSVisitControl {			
-			a_object->SetAppCulled(a_cull);
+		using func_t = decltype(&NiAVObject::UpdateRigidBodySettings);
+		REL::Relocation<func_t> func{ REL::ID(76171) };
+		return func(this, a_type, a_arg2);
+	}
+
+
+	void NiAVObject::UpdateVisibility(bool a_hide)
+	{
+		BSVisit::TraverseScenegraphObjects(this, [&](NiAVObject* a_object) -> BSVisit::BSVisitControl {
+			a_object->SetAppCulled(a_hide);
 
 			return BSVisit::BSVisitControl::kContinue;
 		});

@@ -49,7 +49,7 @@ namespace RE
 		kStage = 0x17,
 		kMapMarker = 0x18,
 		kActorBase = 0x19,
-		kCoontainerRef = 0x1A,
+		kContainerRef = 0x1A,
 		kWorldOrList = 0x1B,
 		kCrimeType = 0x1C,
 		kPackage = 0x1D,
@@ -101,7 +101,7 @@ namespace RE
 		kVMScriptVar = 0x4C,
 		kReferenceEffect = 0x4D,
 		kPackageData = 0x4E,
-		kSoundCategory = 0x50,
+		kSkillAction = 0x50,
 		kKnowableForm = 0x51,
 		kRegion = 0x52
 	};

@@ -350,7 +350,7 @@ namespace SKSE
 			_lock.unlock();
 
 			if (!result.second) {
-				log::warn("Handle already registered in key : ({})", handle);
+				//log::warn("Handle already registered in key : ({})", handle);
 			} else {
 				policy->PersistHandle(handle);
 			}
@@ -378,7 +378,7 @@ namespace SKSE
 			Locker locker(_lock);
 			auto it = _regs[a_key].find(handle);
 			if (it == _regs[a_key].end()) {
-				log::warn("Could not find registration");
+				//log::warn("Could not find registration");
 				return false;
 			} else {
 				policy->ReleaseHandle(*it);

@@ -22,7 +22,7 @@ namespace SKSE
 				return distr(twister);
 			}
 		}
-		
+
 	private:
 		RNG();
 		RNG(RNG const&) = delete;
@@ -69,8 +69,8 @@ namespace SKSE
 		namespace STRING
 		{
 			std::vector<std::string> split(const std::string& a_str, const std::string& a_delimiter);
-			
-		
+
+
 			inline std::string& ltrim(std::string& a_str, const std::string& a_chars = "\t\n\v\f\r ")
 			{
 				return a_str.erase(0, a_str.find_first_not_of(a_chars));
@@ -95,6 +95,11 @@ namespace SKSE
 			}
 
 
+			inline bool is_only_digit(const std::string& a_str) {
+				return a_str.find_first_not_of("0123456789") == std::string::npos;
+			}
+
+
 			inline std::string& removeNonAlphaNumeric(std::string& a_str)
 			{
 				std::replace_if(
@@ -108,6 +113,19 @@ namespace SKSE
 				return ((a_str1.size() == a_str2.size()) && std::equal(a_str1.begin(), a_str1.end(), a_str2.begin(), [](const auto& c1, const auto& c2) {
 					return (c1 == c2 || std::toupper(c1) == std::toupper(c2));
 				}));
+			}
+
+
+			inline bool bool_cast(std::string& a_str)
+			{
+				bool b = false;
+
+				std::transform(a_str.begin(), a_str.end(), a_str.begin(),
+					[](char c) { return static_cast<char>(std::tolower(c)); });
+				std::istringstream is(a_str);
+				is >> std::boolalpha >> b;
+
+				return b;
 			}
 		}
 	}

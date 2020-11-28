@@ -181,6 +181,13 @@ namespace RE
 		};
 
 
+		enum class FlagBDA
+		{
+			kNone = 0,
+			kIsAIDriven = 1 << 8,
+		};
+
+
 		enum class FlagBDB
 		{
 			kNone = 0,
@@ -201,8 +208,10 @@ namespace RE
 		enum class FlagBDD
 		{
 			kNone = 0,
-			kIsSunGazing = 1 << 1,
-			kEverModded = 1 << 3
+			kSprinting = 1 << 0,
+			kDragonRideTargetLocked = 1 << 2,
+			kEverModded = 1 << 3,
+			kServingJailTime = 1 << 4
 		};
 
 
@@ -474,7 +483,7 @@ namespace RE
 		std::uint64_t											unkBD0;										  // BD0
 		std::uint8_t											unkBD8;										  // BD8
 		stl::enumeration<FlagBD9, std::uint8_t>					unkBD9;										  // BD9
-		std::uint8_t											unkBDA;										  // BDA
+		stl::enumeration<FlagBDA, std::uint8_t>					unkBDA;										  // BDA
 		stl::enumeration<FlagBDB, std::uint8_t>					unkBDB;										  // BDB
 		stl::enumeration<FlagBDC, std::uint8_t>					unkBDC;										  // BDC
 		stl::enumeration<FlagBDD, std::uint8_t>					unkBDD;										  // BDD

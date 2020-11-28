@@ -261,7 +261,7 @@ namespace RE
 		bool worn = false;
 
 		if (extraLists) {
-			for (auto& xList : *extraLists) {
+			for (const auto& xList : *extraLists) {
 				if (xList) {
 					worn = xList->GetWorn();
 					if (worn) {

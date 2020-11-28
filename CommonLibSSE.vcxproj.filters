@@ -2805,6 +2805,12 @@
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\ActiveEffect.h">
       <Filter>include\RE\FormComponents\Components\ActiveEffect</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\CommandEffect\CommandEffect.h">
+      <Filter>include\RE\FormComponents\Components\ActiveEffect\CommandEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\CommandEffect\ReanimateEffect.h">
+      <Filter>include\RE\FormComponents\Components\ActiveEffect\CommandEffect</Filter>
+    </ClInclude>
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\SummonCreatureEffect.h">
       <Filter>include\RE\FormComponents\Components\ActiveEffect</Filter>
     </ClInclude>
@@ -4366,6 +4372,9 @@
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstance.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstanceForm.h">
       <Filter>include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\ImageSpaceModifierInstance\ImageSpaceModifierInstanceTemp\ImageSpaceModifierInstanceDOF.h">
@@ -6031,6 +6040,9 @@
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\ActiveEffect">
       <UniqueIdentifier>{8170deee-7a0f-47eb-aa92-7d89e3e31322}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\RE\FormComponents\Components\ActiveEffect\CommandEffect">
+      <UniqueIdentifier>{e3d54ec5-56b3-4a9e-9d4f-b8ac9f9bb792}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect">
       <UniqueIdentifier>{4cd7a1f2-f65e-4e5f-96ec-05786dbb1a05}</UniqueIdentifier>

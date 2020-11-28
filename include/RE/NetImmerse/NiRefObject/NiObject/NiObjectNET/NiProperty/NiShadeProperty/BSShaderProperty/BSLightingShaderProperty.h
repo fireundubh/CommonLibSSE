@@ -66,7 +66,7 @@ namespace RE
 		std::uint64_t	unk0E8;				// 0E8
 		NiColor*		emissiveColor;		// 0F0
 		float			emissiveMult;		// 0F8
-		std::uint32_t	unk0FC;				// 0FC
+		float			darknessValue;		// 0FC
 		float			specularLODFade;	// 100
 		float			envmapLODFade;		// 104
 		std::uint32_t	unk108;				// 108

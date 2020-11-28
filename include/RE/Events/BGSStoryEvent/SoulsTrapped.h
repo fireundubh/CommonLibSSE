@@ -5,7 +5,7 @@
 
 namespace RE
 {
-	class TESObjectREFR;
+	class Actor;
 
 
 	struct SoulsTrapped
@@ -15,12 +15,13 @@ namespace RE
 		{
 		public:
 			// members
-			TESObjectREFR* trapper;	 // 00
-			TESObjectREFR* target;	 // 08
+			Actor* trapper;	 // 00
+			Actor* target;	 // 08
 		};
 		static_assert(sizeof(Event) == 0x10);
 
 
 		static BSTEventSource<SoulsTrapped::Event>* GetEventSource();
+		static void									SendEvent(Actor* a_trapper, Actor* a_target);
 	};
 }

@@ -10,6 +10,7 @@ namespace RE
 {
 	class Actor;
 	class ActiveEffect;
+	struct Effect;
 	class EffectItem;
 	class EffectSetting;
 	class MagicItem;
@@ -54,17 +55,17 @@ namespace RE
 		virtual ~MagicTarget();	 // 00
 
 		// add
-		virtual void						 Unk_01(void);																			   // 01
-		virtual TESObjectREFR*				 GetTargetStatsObject();																   // 02 - { return false; }
-		virtual bool						 MagicTargetIsActor() const;															   // 03 - { return false; }
-		virtual bool						 IsInvulnerable();																		   // 04 - { return false; }
-		virtual void						 InvalidateCommandedActorEffect(ActiveEffect* a_effect);								   // 05 - { return; }
-		virtual bool						 CanAddActiveEffect() = 0;																   // 06
-		virtual BSSimpleList<ActiveEffect*>* GetActiveEffectList() = 0;																   // 07
-		virtual void						 Unk_08(void);																			   // 08 - { return; }
-		virtual void						 Unk_09(void);																			   // 09 - { return; }
-		virtual void						 CheckResistance(MagicItem* a_magicItem, EffectItem* a_effect, TESBoundObject* a_object);  // 0A - { return 1.0; }
-		virtual void						 CheckAbsorb(Actor* a_actor, MagicItem* a_magicItem, const EffectItem* a_effect);		   // 0B - { return false; }
+		virtual void						 Unk_01(void);																		   // 01
+		virtual TESObjectREFR*				 GetTargetStatsObject();															   // 02 - { return false; }
+		virtual bool						 MagicTargetIsActor() const;														   // 03 - { return false; }
+		virtual bool						 IsInvulnerable();																	   // 04 - { return false; }
+		virtual void						 InvalidateCommandedActorEffect(ActiveEffect* a_effect);							   // 05 - { return; }
+		virtual bool						 CanAddActiveEffect() = 0;															   // 06
+		virtual BSSimpleList<ActiveEffect*>* GetActiveEffectList() = 0;															   // 07
+		virtual void						 Unk_08(void);																		   // 08 - { return; }
+		virtual void						 Unk_09(void);																		   // 09 - { return; }
+		virtual float						 CheckResistance(MagicItem* a_magicItem, Effect* a_effect, TESBoundObject* a_object);  // 0A - { return 1.0; }
+		virtual void						 CheckAbsorb(Actor* a_actor, MagicItem* a_magicItem, const EffectItem* a_effect);	   // 0B - { return false; }
 
 		void DispelEffectsWithArchetype(Archetype a_type, bool a_force);
 		bool HasEffectWithArchetype(Archetype a_type);

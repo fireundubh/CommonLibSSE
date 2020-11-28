@@ -14,6 +14,6 @@ namespace RE
 
 	ActorValueInfo* ActorValueList::GetActorValue(ActorValue a_actorValue)
 	{
-		return (a_actorValue < ActorValue::kTotal) ? actorValues[to_underlying(a_actorValue)] : nullptr;
+		return actorValues && (a_actorValue < ActorValue::kTotal) ? actorValues[to_underlying(a_actorValue)] : nullptr;
 	}
 }

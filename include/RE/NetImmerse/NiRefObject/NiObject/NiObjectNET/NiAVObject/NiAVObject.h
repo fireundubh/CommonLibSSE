@@ -123,12 +123,15 @@ namespace RE
 		bool				 HasShaderType(BSShaderMaterial::Feature a_type);
 		void				 SetAppCulled(bool a_cull);
 		bool				 SetMotionType(std::uint32_t a_motionType, bool a_arg2 = true, bool a_arg3 = false, bool a_allowActivate = true);
+		void				 SetRigidConstraints(bool a_enable, std::uint8_t a_arg2 = 1, std::uint32_t a_arg3 = 1);
+		void				 SetStiffSpringConstraints(std::uint8_t a_arg2 = 8);
 		void				 TintScenegraph(const NiColorA& a_color);
 		void				 Update(NiUpdateData& a_data);
 		void				 UpdateAlpha(float a_alpha, bool a_onlySkin);
 		void				 UpdateBodyTint(const NiColor& a_color);
 		void				 UpdateHairColor(const NiColor& a_color);
-		void				 UpdateVisibility(bool a_cull);
+		void				 UpdateRigidBodySettings(std::uint32_t a_type, std::uint32_t a_arg2);
+		void				 UpdateVisibility(bool a_hide);
 
 
 		// members

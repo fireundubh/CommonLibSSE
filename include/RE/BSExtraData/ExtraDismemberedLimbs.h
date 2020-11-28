@@ -36,12 +36,13 @@ namespace RE
 		// override (BSExtraData)
 		virtual ExtraDataType GetType() const override;	 // 01 - { return kDismemberedLimbs; }
 
+		bool IsLimbGone(std::uint32_t a_limb);
 
 		// members
 		std::uint16_t												limbs;			   // 10
 		bool														eaten;			   // 12
 		std::uint8_t												unk13;			   // 13
-		std::uint32_t												unk14;			   // 14
+		std::uint32_t												causeOfDeath;	   // 14
 		TESForm*													deathObject;	   // 18
 		BSTArray<DismemberedLimb*>									dismemberedLimbs;  // 20
 		stl::enumeration<BGSBodyPartDefs::LIMB_ENUM, std::uint32_t> lastHitLimb;	   // 38

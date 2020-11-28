@@ -14,6 +14,7 @@ namespace RE
 	class bhkCharacterController;
 	class HighProcess;
 	class TESBoundObject;
+	class TESPackage;
 	class TESForm;
 	struct HighProcessData;
 	struct MiddleHighProcessData;
@@ -160,6 +161,7 @@ namespace RE
 		TESForm*				GetEquippedRightHand();
 		[[nodiscard]] bool		GetIsSummonedCreature() const noexcept;
 		ObjectRefHandle			GetOccupiedFurniture() const;
+		TESPackage*				GetRunningPackage() const;
 		bool					InHighProcess() const;
 		bool					InMiddleHighProcess() const;
 		bool					InMiddleLowProcess() const;
