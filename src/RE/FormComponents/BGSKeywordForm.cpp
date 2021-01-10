@@ -7,7 +7,7 @@ namespace RE
 {
 	bool BGSKeywordForm::AddKeyword(BGSKeyword* a_keyword)
 	{
-		if (GetKeywordIndex(a_keyword) == std::nullopt) {
+		if (!GetKeywordIndex(a_keyword).has_value()) {
 			auto oldData = keywords;
 			keywords = calloc<BGSKeyword*>(++numKeywords);
 			if (oldData) {
@@ -39,7 +39,7 @@ namespace RE
 	}
 
 
-	bool BGSKeywordForm::HasKeywordString(const char* a_formEditorID) const
+	bool BGSKeywordForm::HasKeywordString(std::string_view a_formEditorID) const
 	{
 		if (keywords) {
 			stl::span<BGSKeyword*> span(keywords, numKeywords);
@@ -79,6 +79,21 @@ namespace RE
 	}
 
 
+	std::optional<std::uint32_t> BGSKeywordForm::GetKeywordIndex(std::string_view a_formEditorID) const
+	{
+		std::optional<std::uint32_t> index = std::nullopt;
+		if (keywords) {
+			for (std::uint32_t i = 0; i < numKeywords; ++i) {
+				if (keywords[i] && keywords[i]->formEditorID == a_formEditorID) {
+					index = i;
+					break;
+				}
+			}
+		}
+		return index;
+	}
+
+
 	std::uint32_t BGSKeywordForm::GetNumKeywords() const
 	{
 		return numKeywords;
@@ -88,12 +103,34 @@ namespace RE
 	bool BGSKeywordForm::RemoveKeyword(BGSKeyword* a_keyword)
 	{
 		auto index = GetKeywordIndex(a_keyword);
-		if (index != std::nullopt) {
+		if (index.has_value()) {
 			auto oldData = keywords;
 			if (oldData) {
 				keywords = calloc<BGSKeyword*>(--numKeywords);
 				for (std::uint32_t i = 0; i < numKeywords + 1; ++i) {
-					if (index != i) {
+					if (i != index.value()) {
+						keywords[i] = oldData[i];
+					}
+				}
+				free(oldData);
+				oldData = nullptr;
+
+				return true;
+			}
+		}
+		return false;
+	}
+
+
+	bool BGSKeywordForm::RemoveKeyword(std::string_view a_formEditorID)
+	{
+		auto index = GetKeywordIndex(a_formEditorID);
+		if (index.has_value()) {
+			auto oldData = keywords;
+			if (oldData) {
+				keywords = calloc<BGSKeyword*>(--numKeywords);
+				for (std::uint32_t i = 0; i < numKeywords + 1; ++i) {
+					if (i != index.value()) {
 						keywords[i] = oldData[i];
 					}
 				}

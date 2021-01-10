@@ -207,10 +207,13 @@
       <ForcedIncludeFiles>$(ProjectDir)include\SKSE\Impl\PCH.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <CompileAs>CompileAsCpp</CompileAs>
       <UseFullPaths>false</UseFullPaths>
-      <AdditionalOptions>/experimental:external /external:anglebrackets /external:W0 /Zc:alignedNew /Zc:auto /Zc:char8_t /Zc:__cplusplus /Zc:externC /Zc:externConstexpr /Zc:forScope /Zc:hiddenFriend /Zc:implicitNoexcept /Zc:lambda /Zc:noexceptTypes /Zc:preprocessor /Zc:referenceBinding /Zc:rvalueCast /Zc:sizedDealloc /Zc:strictStrings /Zc:ternary /Zc:threadSafeInit /Zc:tlsGuards /Zc:trigraphs /Zc:wchar_t %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:alignedNew /Zc:auto /Zc:char8_t /Zc:__cplusplus /Zc:externC /Zc:externConstexpr /Zc:hiddenFriend /Zc:implicitNoexcept /Zc:lambda /Zc:noexceptTypes /Zc:preprocessor /Zc:referenceBinding /Zc:sizedDealloc /Zc:strictStrings /Zc:ternary /Zc:threadSafeInit /Zc:tlsGuards /Zc:trigraphs /experimental:external /external:anglebrackets /external:W0</AdditionalOptions>
       <TreatSpecificWarningsAsErrors>4099;4717;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -764,6 +767,7 @@
     <ClInclude Include="include\RE\Combat\CombatManager.h" />
     <ClInclude Include="include\RE\Combat\Components\CombatLocation.h" />
     <ClInclude Include="include\RE\DistantTerrain\BGSDistantTreeBlock.h" />
+    <ClInclude Include="include\RE\Events\BGSActorEvent\BGSActorCellEvent.h" />
     <ClInclude Include="include\RE\Events\BGSActorEvent\BGSActorEvent.h" />
     <ClInclude Include="include\RE\Events\BGSActorEvent\BGSFootstepEvent.h" />
     <ClInclude Include="include\RE\Events\BGSFootstepManager.h" />
@@ -800,6 +804,7 @@
     <ClInclude Include="include\RE\Events\ScriptEvent\ScriptEventSourceHolder.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESActivateEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESActiveEffectApplyRemoveEvent.h" />
+    <ClInclude Include="include\RE\Events\ScriptEvent\TESActorLocationChangeEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESCellFullyLoadedEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESCombatEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESContainerChangedEvent.h" />
@@ -848,6 +853,7 @@
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\CommandEffect\ReanimateEffect.h" />
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\SummonCreatureEffect.h" />
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect\AbsorbEffect.h" />
+    <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect\ParalysisEffect.h" />
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect\ValueModifierEffect.h" />
     <ClInclude Include="include\RE\FormComponents\Components\ActorCause.h" />
     <ClInclude Include="include\RE\FormComponents\Components\ActorKnowledge.h" />
@@ -1225,6 +1231,7 @@
     <ClInclude Include="include\RE\Misc\BSTaskPool.h" />
     <ClInclude Include="include\RE\Misc\Calendar.h" />
     <ClInclude Include="include\RE\Misc\FaceGen.h" />
+    <ClInclude Include="include\RE\Misc\FixedStrings.h" />
     <ClInclude Include="include\RE\Misc\ImageData.h" />
     <ClInclude Include="include\RE\Misc\Misc.h" />
     <ClInclude Include="include\RE\Misc\TaskQueueInterface.h" />
@@ -1265,6 +1272,7 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea\CombatArea.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea\CombatAreaRadius.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea\CombatAreaStandard.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatMagicCaster\CombatMagicCaster.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatObject.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector\CombatTargetSelector.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector\CombatTargetSelectorStandard.h" />
@@ -1516,10 +1524,10 @@
     <ClInclude Include="include\SKSE\API.h" />
     <ClInclude Include="include\SKSE\Events.h" />
     <ClInclude Include="include\SKSE\IAT.h" />
-    <ClInclude Include="include\SKSE\Impl\Atomic.h" />
     <ClInclude Include="include\SKSE\Impl\PCH.h" />
     <ClInclude Include="include\SKSE\Impl\RegistrationTraits.h" />
     <ClInclude Include="include\SKSE\Impl\Stubs.h" />
+    <ClInclude Include="include\SKSE\Impl\WinAPI.h" />
     <ClInclude Include="include\SKSE\Interfaces.h" />
     <ClInclude Include="include\SKSE\Logger.h" />
     <ClInclude Include="include\SKSE\RegistrationMap.h" />
@@ -1597,7 +1605,6 @@
     <ClCompile Include="src\RE\BSMain\SettingCollection\INIPrefSettingCollection.cpp" />
     <ClCompile Include="src\RE\BSMain\SettingCollection\INISettingCollection.cpp" />
     <ClCompile Include="src\RE\BSMain\Setting\Setting.cpp" />
-    <ClCompile Include="src\RE\BSResource\BSSystemFile.cpp" />
     <ClCompile Include="src\RE\BSResource\Location\Location.cpp" />
     <ClCompile Include="src\RE\BSResource\StreamBase\StreamBase.cpp" />
     <ClCompile Include="src\RE\BSResource\StreamBase\Stream\LooseFileStream.cpp" />
@@ -1752,6 +1759,7 @@
     <ClCompile Include="src\RE\Misc\BSTaskPool.cpp" />
     <ClCompile Include="src\RE\Misc\Calendar.cpp" />
     <ClCompile Include="src\RE\Misc\FaceGen.cpp" />
+    <ClCompile Include="src\RE\Misc\FixedStrings.cpp" />
     <ClCompile Include="src\RE\Misc\Misc.cpp" />
     <ClCompile Include="src\RE\Misc\TaskQueueInterface.cpp" />
     <ClCompile Include="src\RE\NetImmerse\BSVisit.cpp" />
@@ -1790,6 +1798,7 @@
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty\BSShaderProperty.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiProperty\BSLightingShaderProperty.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance.cpp" />
+    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance\BSDismemberSkinInstance.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiSkinPartition.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiTexture\NiSourceTexture.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiTexture\NiTexture.cpp" />

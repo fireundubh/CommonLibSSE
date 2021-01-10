@@ -280,7 +280,7 @@ namespace RE
 		virtual void							  SetStartingPosition(const NiPoint3& a_pos);																																								   // 54
 		virtual void							  UpdateRefLight();																																															   // 55
 		virtual ObjectRefHandle					  RemoveItem(TESBoundObject* a_item, std::int32_t a_count, ITEM_REMOVE_REASON a_reason, ExtraDataList* a_extraList, TESObjectREFR* a_moveToRef, const NiPoint3* a_dropLoc = 0, const NiPoint3* a_rotate = 0);  // 56
-		virtual bool							  AddWornItem(TESBoundObject* a_item, std::int32_t a_count, bool a_forceEquip, std::uint32_t a_arg4, std::uint32_t a_arg5);																					   // 57
+		virtual bool							  AddWornItem(TESBoundObject* a_item, std::int32_t a_count, RE::ExtraDataList* a_list, bool a_forceEquip, bool a_arg4, bool a_equipLeft);																					   // 57
 		virtual void							  DoTrap1(TrapData& a_data);																																												   // 58 - { return; }
 		virtual void							  DoTrap2(TrapEntry* a_trap, TargetEntry* a_target);																																						   // 59 - { return; }
 		virtual void							  AddObjectToContainer(TESBoundObject* a_object, ExtraDataList* a_extraList, std::int32_t a_count, TESObjectREFR* a_fromRefr);																				   // 5A
@@ -376,6 +376,7 @@ namespace RE
 		const BSTSmartPointer<BipedAnim>&		GetBiped() const;
 		const BSTSmartPointer<BipedAnim>&		GetBiped(bool a_firstPerson) const;
 		TESContainer*							GetContainer() const;
+		BGSLocation*							GetCurrentLocation() const;
 		const char*								GetDisplayFullName();
 		InventoryDropMap						GetDroppedInventory();
 		InventoryDropMap						GetDroppedInventory(std::function<bool(TESBoundObject&)> a_filter);
@@ -409,6 +410,7 @@ namespace RE
 		[[nodiscard]] constexpr float			GetRotationZ() const noexcept { return data.angle.z; }
 		NiControllerSequence*					GetSequence(stl::zstring a_name) const;
 		std::uint32_t							GetStealValue(const InventoryEntryData* a_entryData, std::uint32_t a_numItems, bool a_useMult) const;
+		float									GetSubmergedWaterLevel(float a_zPos, TESObjectCELL* a_cell);
 		float									GetWeight() const;
 		float									GetWeightInContainer();
 		TESWorldSpace*							GetWorldspace() const;
@@ -429,6 +431,7 @@ namespace RE
 		bool									IsLocked() const;
 		bool									IsMarkedForDeletion() const;
 		bool									IsOffLimits();
+		void									MoveTo(TESObjectREFR* a_target);
 		bool									MoveToNode(TESObjectREFR* a_target, const BSFixedString& a_nodeName);
 		bool									MoveToNode(TESObjectREFR* a_target, NiAVObject* a_node);
 		void									PlayAnimation(stl::zstring a_from, stl::zstring a_to);

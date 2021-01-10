@@ -205,9 +205,6 @@
     <ClCompile Include="src\RE\BSMain\SettingCollection\INISettingCollection.cpp">
       <Filter>src\RE\BSMain\SettingCollection</Filter>
     </ClCompile>
-    <ClCompile Include="src\RE\BSResource\BSSystemFile.cpp">
-      <Filter>src\RE\BSResource</Filter>
-    </ClCompile>
     <ClCompile Include="src\RE\BSResource\Location\Location.cpp">
       <Filter>src\RE\BSResource\Location</Filter>
     </ClCompile>
@@ -670,6 +667,9 @@
     <ClCompile Include="src\RE\Misc\FaceGen.cpp">
       <Filter>src\RE\Misc</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\Misc\FixedStrings.cpp">
+      <Filter>src\RE\Misc</Filter>
+    </ClCompile>
     <ClCompile Include="src\RE\Misc\Misc.cpp">
       <Filter>src\RE\Misc</Filter>
     </ClCompile>
@@ -783,6 +783,9 @@
     </ClCompile>
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance\BSDismemberSkinInstance.cpp">
+      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiSkinPartition.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject</Filter>
@@ -2565,6 +2568,9 @@
     <ClInclude Include="include\RE\DistantTerrain\BGSDistantTreeBlock.h">
       <Filter>include\RE\DistantTerrain</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\Events\BGSActorEvent\BGSActorCellEvent.h">
+      <Filter>include\RE\Events\BGSActorEvent</Filter>
+    </ClInclude>
     <ClInclude Include="include\RE\Events\BGSActorEvent\BGSActorEvent.h">
       <Filter>include\RE\Events\BGSActorEvent</Filter>
     </ClInclude>
@@ -2671,6 +2677,9 @@
       <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Events\ScriptEvent\TESActiveEffectApplyRemoveEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\ScriptEvent\TESActorLocationChangeEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Events\ScriptEvent\TESCellFullyLoadedEvent.h">
@@ -2815,6 +2824,9 @@
       <Filter>include\RE\FormComponents\Components\ActiveEffect</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect\AbsorbEffect.h">
+      <Filter>include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect\ParalysisEffect.h">
       <Filter>include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\FormComponents\Components\ActiveEffect\ValueModifierEffect\ValueModifierEffect.h">
@@ -3948,6 +3960,9 @@
     <ClInclude Include="include\RE\Misc\FaceGen.h">
       <Filter>include\RE\Misc</Filter>
     </ClInclude>
+    <ClInclude Include="include\RE\Misc\FixedStrings.h">
+      <Filter>include\RE\Misc</Filter>
+    </ClInclude>
     <ClInclude Include="include\RE\Misc\ImageData.h">
       <Filter>include\RE\Misc</Filter>
     </ClInclude>
@@ -4169,6 +4184,9 @@
     </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea\CombatAreaStandard.h">
       <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatMagicCaster\CombatMagicCaster.h">
+      <Filter>include\RE\NetImmerse\NiRefObject\CombatObject\CombatMagicCaster</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatObject.h">
       <Filter>include\RE\NetImmerse\NiRefObject\CombatObject</Filter>
@@ -5580,9 +5598,6 @@
     <ClInclude Include="include\SKSE\IAT.h">
       <Filter>include\SKSE</Filter>
     </ClInclude>
-    <ClInclude Include="include\SKSE\Impl\Atomic.h">
-      <Filter>include\SKSE\Impl</Filter>
-    </ClInclude>
     <ClInclude Include="include\SKSE\Impl\PCH.h">
       <Filter>include\SKSE\Impl</Filter>
     </ClInclude>
@@ -5590,6 +5605,9 @@
       <Filter>include\SKSE\Impl</Filter>
     </ClInclude>
     <ClInclude Include="include\SKSE\Impl\Stubs.h">
+      <Filter>include\SKSE\Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SKSE\Impl\WinAPI.h">
       <Filter>include\SKSE\Impl</Filter>
     </ClInclude>
     <ClInclude Include="include\SKSE\Interfaces.h">
@@ -6269,6 +6287,9 @@
     <Filter Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea">
       <UniqueIdentifier>{7d2dc016-cd4e-4353-97ae-1edc2bbb2ed7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatMagicCaster">
+      <UniqueIdentifier>{2a60c97d-5daf-438a-9057-836ac4a86b63}</UniqueIdentifier>
+    </Filter>
     <Filter Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatTargetSelector">
       <UniqueIdentifier>{777bf214-8e32-4e32-a84c-6b6c64112329}</UniqueIdentifier>
     </Filter>
@@ -6862,6 +6883,9 @@
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiProperty">
       <UniqueIdentifier>{16ca5d4c-62ad-4009-bcb9-1484200cde32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance">
+      <UniqueIdentifier>{db434047-0135-4c56-8e82-8a2e07e8b486}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\NiTexture">
       <UniqueIdentifier>{e0a7f043-cd71-4f2d-b529-08773fc593cd}</UniqueIdentifier>

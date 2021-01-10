@@ -297,6 +297,21 @@ namespace RE
 	}
 
 
+	bool InventoryEntryData::IsFavorited() const
+	{
+		if (extraLists) {
+			for (const auto& xList : *extraLists) {
+				auto favorited = xList->HasType<ExtraHotkey>();
+				if (favorited) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
+
 	bool InventoryEntryData::IsLeveled() const
 	{
 		if (extraLists) {

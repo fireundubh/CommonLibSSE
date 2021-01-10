@@ -4,6 +4,7 @@
 #include "RE/NetImmerse/NiColor.h"
 #include "RE/NetImmerse/NiRTTI.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/BSShaderProperty/BSLightingShaderProperty.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiSkinInstance/BSDismemberSkinInstance.h"
 
 
 namespace RE
@@ -37,6 +38,28 @@ namespace RE
 						free(facegenTint);
 					}
 				}
+			}
+		}
+	}
+
+
+	void BSGeometry::UpdateDismemberPartion(bool a_enable)
+	{
+		if (auto skin = skinInstance.get(); skin) {
+			auto dismemberSkin = netimmerse_cast<RE::BSDismemberSkinInstance*>(skin);
+			if (dismemberSkin) {
+				dismemberSkin->UpdateDismemberPartion(a_enable);
+			}
+		}
+	}
+
+
+	void BSGeometry::UpdateDismemberPartion(std::uint16_t a_slot, bool a_enable)
+	{
+		if (auto skin = skinInstance.get(); skin) {
+			auto dismemberSkin = netimmerse_cast<RE::BSDismemberSkinInstance*>(skin);
+			if (dismemberSkin) {
+				dismemberSkin->UpdateDismemberPartion(a_slot, a_enable);
 			}
 		}
 	}

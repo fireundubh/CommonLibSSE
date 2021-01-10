@@ -2,6 +2,7 @@
 
 #include "RE/AI/HighProcessData.h"
 #include "RE/AI/MiddleHighProcessData.h"
+#include "RE/FormComponents/TESForm/TESObject/TESBoundObject/MagicItem/MagicItem.h"
 #include "RE/FormComponents/TESForm/TESPackage/TESPackage.h"
 #include "SKSE/API.h"
 
@@ -51,6 +52,12 @@ namespace RE
 		} else {
 			return {};
 		}
+	}
+
+
+	MagicItem* AIProcess::GetReanimateSpell() const
+	{
+		return high ? high->reanimateSpell : nullptr;
 	}
 
 
@@ -126,6 +133,14 @@ namespace RE
 	bool AIProcess::IsGhost() const
 	{
 		return cachedValues && cachedValues->flags.all(CachedValues::Flags::kActorIsGhost);
+	}
+
+
+	void AIProcess::PushActorAway(Actor* a_actor, const NiPoint3& a_pos, float a_power)
+	{
+		using func_t = decltype(&AIProcess::PushActorAway);
+		REL::Relocation<func_t> func{ REL::ID(38858) };
+		return func(this, a_actor, a_pos, a_power);
 	}
 
 

@@ -54,7 +54,7 @@ namespace RE
 	}
 
 
-	const TESObjectREFR* NiAVObject::GetUserData()
+	TESObjectREFR* NiAVObject::GetUserData() const
 	{
 		if (userData) {
 			return userData;
@@ -148,6 +148,24 @@ namespace RE
 	}
 
 
+	void NiAVObject::ToggleNode(bool a_hide)
+	{
+		BSVisit::TraverseScenegraphObjects(this, [&](NiAVObject* a_object) -> BSVisit::BSVisitControl {
+			a_object->SetAppCulled(a_hide);
+
+			return BSVisit::BSVisitControl::kContinue;
+		});
+	}
+
+
+	void NiAVObject::ToggleWeaponBlood(bool a_enable)
+	{
+		using func_t = decltype(&NiAVObject::ToggleWeaponBlood);
+		REL::Relocation<func_t> func{ REL::ID(99792) };
+		return func(this, a_enable);
+	}
+
+
 	void NiAVObject::Update(NiUpdateData& a_data)
 	{
 		using func_t = decltype(&NiAVObject::Update);
@@ -156,7 +174,7 @@ namespace RE
 	}
 
 
-	void NiAVObject::UpdateAlpha(float a_alpha, bool a_onlySkin)
+	void NiAVObject::UpdateMaterialAlpha(float a_alpha, bool a_onlySkin)
 	{
 		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl {
 			using State = BSGeometry::States;
@@ -174,6 +192,7 @@ namespace RE
 								return BSVisit::BSVisitControl::kContinue;
 							}
 						}
+						SKSE::log::info("{} : {}", a_geometry->name, a_alpha);
 						material->materialAlpha = a_alpha;
 					}
 				}
@@ -235,15 +254,5 @@ namespace RE
 		using func_t = decltype(&NiAVObject::UpdateRigidBodySettings);
 		REL::Relocation<func_t> func{ REL::ID(76171) };
 		return func(this, a_type, a_arg2);
-	}
-
-
-	void NiAVObject::UpdateVisibility(bool a_hide)
-	{
-		BSVisit::TraverseScenegraphObjects(this, [&](NiAVObject* a_object) -> BSVisit::BSVisitControl {
-			a_object->SetAppCulled(a_hide);
-
-			return BSVisit::BSVisitControl::kContinue;
-		});
 	}
 }

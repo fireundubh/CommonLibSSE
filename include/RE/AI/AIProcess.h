@@ -4,6 +4,7 @@
 #include "RE/BSCore/BSTList.h"
 #include "RE/FormComponents/Components/AITimer.h"
 #include "RE/FormComponents/Components/ActorPackage.h"
+#include "RE/NetImmerse/NiPoint3.h"
 
 
 namespace RE
@@ -13,6 +14,7 @@ namespace RE
 	class BGSListForm;
 	class bhkCharacterController;
 	class HighProcess;
+	class MagicItem;
 	class TESBoundObject;
 	class TESPackage;
 	class TESForm;
@@ -153,7 +155,6 @@ namespace RE
 		};
 		static_assert(sizeof(Data0B8) == 0x38);
 
-
 		float					GetCachedHeight() const;
 		bhkCharacterController* GetCharController();
 		ActorHandle				GetCommandingActor() const;
@@ -161,6 +162,7 @@ namespace RE
 		TESForm*				GetEquippedRightHand();
 		[[nodiscard]] bool		GetIsSummonedCreature() const noexcept;
 		ObjectRefHandle			GetOccupiedFurniture() const;
+		MagicItem*				GetReanimateSpell() const;
 		TESPackage*				GetRunningPackage() const;
 		bool					InHighProcess() const;
 		bool					InMiddleHighProcess() const;
@@ -168,6 +170,7 @@ namespace RE
 		bool					InLowProcess() const;
 		bool					IsArrested() const;
 		bool					IsGhost() const;
+		void					PushActorAway(Actor* a_actor, const NiPoint3& a_pos, float a_power);
 		void					SetParalyzed(Actor* a_actor);
 		void					SetRefraction(float a_refraction);
 		void					SetArrested(bool a_arrested);
@@ -200,7 +203,7 @@ namespace RE
 		TESBoundObject*									unk100;							// 100
 		AITimer											unk108;							// 108
 		std::uint32_t									unk110;							// 110
-		RefHandle										target;							// 114
+		ObjectRefHandle									target;							// 114
 		std::uint64_t									unk118;							// 118
 		BGSListForm*									unk120;							// 120
 		std::uint64_t									unk128;							// 128

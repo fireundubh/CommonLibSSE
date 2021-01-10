@@ -1,6 +1,5 @@
 #pragma once
 
-
 namespace RE
 {
 	class NiPoint3
@@ -28,16 +27,13 @@ namespace RE
 		NiPoint3&	 operator*=(float a_scalar);
 		NiPoint3&	 operator/=(float a_scalar);
 
-		static float GetDistance(const NiPoint3& a_lhs, const NiPoint3& a_rhs);
-		static float GetSquaredDistance(const NiPoint3& a_lhs, const NiPoint3& a_rhs);
-
-		float	 SqrLength() const;
-		float	 Length() const;
-		void	 Reset();
-		float	 Unitize();
-		NiPoint3 Cross(const NiPoint3& pt) const;
-		NiPoint3 UnitCross(const NiPoint3& a_pt) const;
-
+		NiPoint3			Cross(const NiPoint3& pt) const;
+		[[nodiscard]] float GetDistance(const NiPoint3& a_pt) const noexcept;
+		[[nodiscard]] float GetSquaredDistance(const NiPoint3& a_pt) const noexcept;
+		float				Length() const;
+		float				SqrLength() const;
+		NiPoint3			UnitCross(const NiPoint3& a_pt) const;
+		float				Unitize();
 
 		// members
 		float x{ 0.0F };  // 0

@@ -36,6 +36,14 @@ namespace RE
 	}
 
 
+	BGSLocation* TESObjectCELL::GetLocation() const
+	{
+		using func_t = decltype(&TESObjectCELL::GetLocation);
+		REL::Relocation<func_t> func{ REL::ID(18474) };
+		return func(this);
+	}
+
+
 	float TESObjectCELL::GetNorthRotation()
 	{
 		if (IsExteriorCell()) {
@@ -76,31 +84,25 @@ namespace RE
 	}
 
 
-	void TESObjectCELL::ForEachReference(std::function<bool(RE::TESObjectREFR* a_ref)> a_fn) const
+	void TESObjectCELL::ForEachReference(std::function<bool(RE::TESObjectREFR&)> a_callback) const
 	{
-		spinLock.Lock();
-		for (auto& refPtr : references) {
+		BSSpinLockGuard locker(spinLock);
+		for (const auto& refPtr : references) {
 			auto ref = refPtr.get();
-			if (ref) {
-				if (!a_fn(ref)) {
-					break;
-				}
+			if (ref && !a_callback(*ref)) {
+				break;
 			}
 		}
-		spinLock.Unlock();
 	}
 
 
-	void TESObjectCELL::ForEachReferenceInRange(const NiPoint3& a_origin, float a_radius, std::function<bool(TESObjectREFR* a_ref)> a_fn) const
+	void TESObjectCELL::ForEachReferenceInRange(const NiPoint3& a_origin, float a_radius, std::function<bool(TESObjectREFR&)> a_callback) const
 	{
-		ForEachReference([&](TESObjectREFR* ref) {
-			auto distance = NiPoint3::GetSquaredDistance(a_origin, ref->GetPosition());
-			if (distance <= a_radius) {
-				if (!a_fn(ref)) {
-					return false;
-				}
-			}
-			return true;
+		ForEachReference([&](TESObjectREFR& ref) {
+			const auto distance = a_origin.GetSquaredDistance(ref.GetPosition());
+			return distance <= a_radius ?
+						 a_callback(ref) :
+						 true;
 		});
 	}
 

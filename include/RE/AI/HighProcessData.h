@@ -159,9 +159,9 @@ namespace RE
 		float												  lastBumpDirection;			  // 0D4 - radians
 		ObjectRefHandle										  lastExtDoorActivated;			  // 0D8
 		float												  activationHeight;				  // 0DC
-		ActorHandle											  unk0E0;						  // 0E0
+		ActorHandle											  reanimateCommander;			  // 0E0
 		std::uint32_t										  unk0E4;						  // 0E4
-		MagicItem*											  unk0E8;						  // 0E8
+		MagicItem*											  reanimateSpell;				  // 0E8
 		BSFixedString										  voiceSubtitle;				  // 0F0
 		float												  unk0F8;						  // 0F8
 		float												  unk0FC;						  // 0FC

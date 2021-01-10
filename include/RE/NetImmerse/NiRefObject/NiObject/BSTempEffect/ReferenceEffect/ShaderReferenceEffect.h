@@ -66,7 +66,7 @@ namespace RE
 		virtual void			 Push() override;											// 34 - { if (effectShaderData) ++pushCount; }
 		virtual void			 Pop() override;											// 35
 		virtual void			 Unk_36(void) override;										// 36
-		virtual void			 Unk_37(void) override;										// 37
+		virtual void			 Clear() override;											// 37
 		virtual void			 Unk_38(void) override;										// 38
 		virtual void			 Unk_39(void) override;										// 39
 		virtual void			 UpdatePosition() override;									// 3B

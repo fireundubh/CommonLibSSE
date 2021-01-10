@@ -118,6 +118,14 @@ namespace RE
 	}
 
 
+	ObjectRefHandle& TESDataHandler::PlaceAtMe(ObjectRefHandle& a_targetHandle, TESBoundObject* a_form, const NiPoint3& a_loc, const NiPoint3& a_angle, TESObjectCELL* a_cell, TESWorldSpace* a_worldspace, TESObjectREFR* a_ref, std::uint32_t a_unk9, std::uint64_t a_unk10, bool a_persist, bool a_unk12)
+	{
+		using func_t = decltype(&TESDataHandler::PlaceAtMe);
+		REL::Relocation<func_t> func{ REL::ID(13625) };
+		return func(this, a_targetHandle, a_form, a_loc, a_angle, a_cell, a_worldspace, a_ref, a_unk9, a_unk10, a_persist, a_unk12);
+	}
+
+
 	BSTArray<TESForm*>& TESDataHandler::GetFormArray(FormType a_formType)
 	{
 		return formArrays[to_underlying(a_formType)];

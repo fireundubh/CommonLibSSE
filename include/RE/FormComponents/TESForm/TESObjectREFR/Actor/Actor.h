@@ -304,7 +304,7 @@ namespace RE
 		virtual NiPoint3				GetStartingAngle() const override;																																													  // 052
 		virtual NiPoint3				GetStartingLocation() const override;																																												  // 053
 		virtual ObjectRefHandle			RemoveItem(TESBoundObject* a_item, std::int32_t a_count, ITEM_REMOVE_REASON a_reason, ExtraDataList* a_extraList, TESObjectREFR* a_moveToRef, const NiPoint3* a_dropLoc = 0, const NiPoint3* a_rotate = 0) override;  // 056
-		virtual bool					AddWornItem(TESBoundObject* a_item, std::int32_t a_count, bool a_forceEquip, std::uint32_t a_arg4, std::uint32_t a_arg5) override;																					  // 057
+		virtual bool					AddWornItem(TESBoundObject* a_item, std::int32_t a_count, RE::ExtraDataList* a_list, bool a_forceEquip, bool a_arg4, bool a_equipLeft) override;																	  // 057
 		virtual void					DoTrap1(TrapData& a_data) override;																																													  // 058
 		virtual void					DoTrap2(TrapEntry* a_trap, TargetEntry* a_target) override;																																							  // 059
 		virtual void					AddObjectToContainer(TESBoundObject* a_object, ExtraDataList* a_extraList, std::int32_t a_count, TESObjectREFR* a_fromRefr) override;																				  // 05A
@@ -497,6 +497,7 @@ namespace RE
 		static bool				LookupByHandle(RefHandle a_refHandle, NiPointer<Actor>& a_refrOut);
 
 		bool						 AddSpell(SpellItem* a_spell);
+		bool						 ApplySpell(SpellItem* a_spell);
 		void						 AllowBleedoutDialogue(bool a_canTalk);
 		void						 AllowPCDialogue(bool a_talk);
 		bool						 CanFlyHere() const;
@@ -507,6 +508,7 @@ namespace RE
 		inline void					 ClearExtraArrows() { RemoveExtraArrows3D(); }
 		ActorHandle					 CreateRefHandle();
 		bool						 Decapitate();
+		bool						 Dismount();
 		void						 DispelWornItemEnchantments();
 		void						 DoReset3D(bool a_updateWeight);
 		void						 EnableAI(bool a_enable);
@@ -531,12 +533,14 @@ namespace RE
 		std::uint16_t				 GetLevel() const;
 		ObjectRefHandle				 GetOccupiedFurniture() const;
 		TESRace*					 GetRace() const;
-		TESObjectARMO*				 GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot);
+		SEX							 GetSex() const;
+		RE::TESObjectARMO*			 GetSkin() const;
+		TESObjectARMO*				 GetSkin(BIPED_MODEL::BipedObjectSlot a_slot);
 		SOUL_LEVEL					 GetSoulLevel() const;
-		TESObjectARMO*				 GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot);
+		TESObjectARMO*				 GetWornArmor(BIPED_MODEL::BipedObjectSlot a_slot);
 		TESObjectARMO*				 GetWornArmor(FormID a_ID);
 		bool						 HasKeyword(const BGSKeyword* a_keyword) const;
-		bool						 HasKeyword(const char* a_formEditorID) const;
+		bool						 HasKeyword(std::string_view a_formEditorID) const;
 		bool						 HasPerk(BGSPerk* a_perk) const;
 		bool						 HasSpell(SpellItem* a_spell) const;
 		bool						 IsAIEnabled() const;
@@ -570,6 +574,7 @@ namespace RE
 		void						 UpdateHairColor();
 		void						 UpdateSkinColor();
 		void						 UpdateWeaponAbility(TESForm* a_weapon, ExtraDataList* a_extraData, bool a_leftHand);
+		bool						 VisitAddedFactions(std::function<bool(TESFaction* a_faction, std::int8_t a_rank)> a_visitor);
 		NiAVObject*					 VisitArmorAddon(TESObjectARMO* a_armor, TESObjectARMA* a_arma);
 		bool						 VisitFactions(std::function<bool(TESFaction* a_faction, std::int8_t a_rank)> a_visitor);
 		bool						 WouldBeStealing(const TESObjectREFR* a_target) const;

@@ -22,7 +22,7 @@ namespace RE
 	}
 
 
-	std::optional<std::uint32_t> NiIntegersExtraData::GetIndexOf(std::int32_t a_element) const
+	std::optional<std::uint32_t> NiIntegersExtraData::GetIndex(std::int32_t a_element) const
 	{
 		for (std::uint32_t i = 0; i < size; i++) {
 			if (value[i] == a_element) {
@@ -34,11 +34,9 @@ namespace RE
 	}
 
 
-	bool NiIntegersExtraData::InsertElement(std::int32_t a_element)
+	bool NiIntegersExtraData::Insert(std::int32_t a_element)
 	{
-		auto index = GetIndexOf(a_element);
-
-		if (index == std::nullopt) {
+		if (GetIndex(a_element) == std::nullopt) {
 			auto oldData = value;
 			value = NiAlloc<std::int32_t>(++size);
 
@@ -58,11 +56,9 @@ namespace RE
 	}
 
 
-	bool NiIntegersExtraData::RemoveElement(std::int32_t a_element)
+	bool NiIntegersExtraData::Remove(std::int32_t a_element)
 	{
-		auto index = GetIndexOf(a_element);
-
-		if (index != std::nullopt) {
+		if (auto index = GetIndex(a_element); index != std::nullopt) {
 			auto oldData = value;
 			value = NiAlloc<std::int32_t>(--size);
 

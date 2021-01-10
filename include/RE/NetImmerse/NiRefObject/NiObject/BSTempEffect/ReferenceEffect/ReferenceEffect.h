@@ -31,7 +31,7 @@ namespace RE
 
 		// add
 		virtual void Unk_36(void);		// 36 - { return 0; }
-		virtual void Unk_37(void);		// 37 - { return; }
+		virtual void Clear(void);		// 37 - { return; }
 		virtual void Unk_38(void);		// 38 - { return; }
 		virtual void Unk_39(void);		// 39
 		virtual void Unk_3A(void);		// 3A

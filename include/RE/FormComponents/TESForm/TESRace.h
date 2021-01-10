@@ -11,6 +11,7 @@
 #include "RE/FormComponents/Enums/FormTypes.h"
 #include "RE/FormComponents/Enums/Sexes.h"
 #include "RE/FormComponents/TESDescription.h"
+#include "RE/FormComponents/TESForm/BGSHeadPart.h"
 #include "RE/FormComponents/TESForm/TESForm.h"
 #include "RE/FormComponents/TESFullName.h"
 #include "RE/FormComponents/TESModel/BGSBehaviorGraphModel.h"
@@ -24,6 +25,8 @@
 namespace RE
 {
 	class AttackAnimationArrayMap;
+
+	using HeadPartType = BGSHeadPart::HeadPartType;
 
 
 	namespace BSResource
@@ -329,6 +332,7 @@ namespace RE
 		bool					 AllowsPCDialogue() const;
 		bool					 AllowsPickpocket() const;
 		TESSpellList::SpellData* GetOrCreateSpellList();
+		BGSHeadPart*			 GetHeadPartByType(HeadPartType a_type, SEX a_sex);
 
 
 		// members

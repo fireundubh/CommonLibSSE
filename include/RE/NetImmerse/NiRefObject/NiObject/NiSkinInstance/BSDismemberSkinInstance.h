@@ -35,6 +35,9 @@ namespace RE
 		virtual bool		  IsEqual(NiObject* a_object) override;				  // 1C
 		virtual void		  Unk_25(void) override;							  // 25
 
+		void UpdateDismemberPartion(bool a_enable);
+		void UpdateDismemberPartion(std::uint16_t a_slot, bool a_enable);
+
 
 		// members
 		std::int32_t  numPartitions;  // 88

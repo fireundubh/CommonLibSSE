@@ -22,4 +22,19 @@ namespace RE
 		}
 		return actorEffects;
 	}
+	
+	
+	BGSHeadPart* TESRace::GetHeadPartByType(HeadPartType a_type, SEX a_sex)
+	{
+		auto faceData = faceRelatedData[a_sex];
+		if (faceData && faceData->headParts) {
+			for (auto& headpart : *faceData->headParts) {
+				if (headpart && headpart->type == a_type) {
+					return headpart;
+				}
+			}
+		}
+
+		return nullptr;
+	}
 }

@@ -165,6 +165,18 @@ namespace RE
 	}
 
 
+	RE::TESObjectARMO* TESNPC::GetSkin() const
+	{
+		if (skin) {
+			return skin;
+		}
+		if (race && race->skin) {
+			return race->skin;
+		}
+		return nullptr;
+	}
+
+
 	float TESNPC::Layer::GetInterpolationValue() const
 	{
 		return static_cast<float>(interpolationValue) / static_cast<float>(100.0);
@@ -177,7 +189,7 @@ namespace RE
 	}
 
 
-	bool TESNPC::HasKeyword(const char* a_formEditorID) const
+	bool TESNPC::HasKeyword(std::string_view a_formEditorID) const
 	{
 		bool hasKeyword = HasKeywordString(a_formEditorID);
 		if (!hasKeyword && race) {

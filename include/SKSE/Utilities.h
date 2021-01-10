@@ -100,10 +100,26 @@ namespace SKSE
 			}
 
 
+			inline std::string& removeNonAlpha(std::string& a_str)
+			{
+				std::replace_if(
+					a_str.begin(), a_str.end(), [](unsigned char c) { return !std::isalpha(c); }, ' ');
+				return trim(a_str);
+			}
+
+
 			inline std::string& removeNonAlphaNumeric(std::string& a_str)
 			{
 				std::replace_if(
 					a_str.begin(), a_str.end(), [](unsigned char c) { return !std::isalnum(c); }, ' ');
+				return trim(a_str);
+			}
+
+
+			inline std::string& removeNonNumeric(std::string& a_str)
+			{
+				std::replace_if(
+					a_str.begin(), a_str.end(), [](unsigned char c) { return !std::isdigit(c); }, ' ');
 				return trim(a_str);
 			}
 
@@ -126,6 +142,17 @@ namespace SKSE
 				is >> std::boolalpha >> b;
 
 				return b;
+			}
+
+
+			template <typename T>
+			T to_int(const std::string& a_str)
+			{
+				if constexpr (!std::is_unsigned_v<T>) {
+					return static_cast<T>(std::stoi(a_str));
+				} else if constexpr (std::is_unsigned_v<T>) {
+					return static_cast<T>(std::stoul(a_str));
+				}
 			}
 		}
 	}

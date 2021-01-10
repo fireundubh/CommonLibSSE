@@ -6,7 +6,22 @@
 
 namespace RE
 {
-	class ActorPackageData;
+	class ActorPackageData
+	{
+	public:
+		virtual ~ActorPackageData();   // 00
+		virtual void Unk01(void) = 0;  // 01
+		virtual void Unk02(void);	   // 02
+		virtual void Unk03(void);	   // 03
+		virtual void Unk04(void);	   // 04
+		virtual void Unk05(void) = 0;  // 05
+		virtual void Unk06(void) = 0;  // 06
+		virtual void Unk07(void);	   // 07
+		virtual void Unk08(void);	   // 08
+	};
+	static_assert(sizeof(ActorPackageData) == 0x08);
+
+
 	class TESPackage;
 
 

@@ -25,9 +25,9 @@ namespace RE
 
 		static NiIntegersExtraData* Create(const BSFixedString& a_name, const std::vector<std::int32_t>& a_integers);
 
-		std::optional<std::uint32_t> GetIndexOf(std::int32_t a_element) const;
-		bool						 InsertElement(std::int32_t a_element);
-		bool						 RemoveElement(std::int32_t a_element);
+		std::optional<std::uint32_t> GetIndex(std::int32_t a_element) const;
+		bool						 Insert(std::int32_t a_element);
+		bool						 Remove(std::int32_t a_element);
 
 
 		// members

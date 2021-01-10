@@ -12,16 +12,10 @@ namespace RE
 		using element_type = T;
 
 		// 1
-		inline constexpr NiPointer() noexcept :
-			_ptr(nullptr)
-		{
-		}
+		constexpr NiPointer() noexcept = default;
 
 		// 2
-		inline constexpr NiPointer(std::nullptr_t) noexcept :
-			_ptr(nullptr)
-		{
-		}
+		constexpr NiPointer(std::nullptr_t) noexcept {}
 
 		// 3
 		template <
@@ -31,14 +25,14 @@ namespace RE
 					Y*,
 					element_type*>,
 				int> = 0>
-		inline explicit NiPointer(Y* a_rhs) :
+		explicit NiPointer(Y* a_rhs) :
 			_ptr(a_rhs)
 		{
 			TryAttach();
 		}
 
 		// 9a
-		inline NiPointer(const NiPointer& a_rhs) :
+		NiPointer(const NiPointer& a_rhs) :
 			_ptr(a_rhs._ptr)
 		{
 			TryAttach();
@@ -52,15 +46,15 @@ namespace RE
 					Y*,
 					element_type*>,
 				int> = 0>
-		inline NiPointer(const NiPointer<Y>& a_rhs) :
+		NiPointer(const NiPointer<Y>& a_rhs) :
 			_ptr(a_rhs._ptr)
 		{
 			TryAttach();
 		}
 
 		// 10a
-		inline NiPointer(NiPointer&& a_rhs) noexcept :
-			_ptr(std::move(a_rhs._ptr))
+		NiPointer(NiPointer&& a_rhs) noexcept :
+			_ptr(a_rhs._ptr)
 		{
 			a_rhs._ptr = nullptr;
 		}
@@ -73,19 +67,16 @@ namespace RE
 					Y*,
 					element_type*>,
 				int> = 0>
-		inline NiPointer(NiPointer<Y>&& a_rhs) noexcept :
-			_ptr(std::move(a_rhs._ptr))
+		NiPointer(NiPointer<Y>&& a_rhs) noexcept :
+			_ptr(a_rhs._ptr)
 		{
 			a_rhs._ptr = nullptr;
 		}
 
-		inline ~NiPointer()
-		{
-			TryDetach();
-		}
+		~NiPointer() { TryDetach(); }
 
 		// 1a
-		inline NiPointer& operator=(const NiPointer& a_rhs)
+		NiPointer& operator=(const NiPointer& a_rhs)
 		{
 			if (this != std::addressof(a_rhs)) {
 				TryDetach();
@@ -103,7 +94,7 @@ namespace RE
 					Y*,
 					element_type*>,
 				int> = 0>
-		inline NiPointer& operator=(const NiPointer<Y>& a_rhs)
+		NiPointer& operator=(const NiPointer<Y>& a_rhs)
 		{
 			TryDetach();
 			_ptr = a_rhs._ptr;
@@ -112,11 +103,11 @@ namespace RE
 		}
 
 		// 2a
-		inline NiPointer& operator=(NiPointer&& a_rhs)
+		NiPointer& operator=(NiPointer&& a_rhs)
 		{
 			if (this != std::addressof(a_rhs)) {
 				TryDetach();
-				_ptr = std::move(a_rhs._ptr);
+				_ptr = a_rhs._ptr;
 				a_rhs._ptr = nullptr;
 			}
 			return *this;
@@ -130,18 +121,15 @@ namespace RE
 					Y*,
 					element_type*>,
 				int> = 0>
-		inline NiPointer& operator=(NiPointer<Y>&& a_rhs)
+		NiPointer& operator=(NiPointer<Y>&& a_rhs)
 		{
 			TryDetach();
-			_ptr = std::move(a_rhs._ptr);
+			_ptr = a_rhs._ptr;
 			a_rhs._ptr = nullptr;
 			return *this;
 		}
 
-		inline void reset()
-		{
-			TryDetach();
-		}
+		void reset() { TryDetach(); }
 
 		template <
 			class Y,
@@ -150,7 +138,7 @@ namespace RE
 					Y*,
 					element_type*>,
 				int> = 0>
-		inline void reset(Y* a_ptr)
+		void reset(Y* a_ptr)
 		{
 			if (_ptr != a_ptr) {
 				TryDetach();
@@ -185,14 +173,14 @@ namespace RE
 		template <class>
 		friend class NiPointer;
 
-		inline void TryAttach()
+		void TryAttach()
 		{
 			if (_ptr) {
 				_ptr->IncRefCount();
 			}
 		}
 
-		inline void TryDetach()
+		void TryDetach()
 		{
 			if (_ptr) {
 				_ptr->DecRefCount();
@@ -201,12 +189,12 @@ namespace RE
 		}
 
 		// members
-		element_type* _ptr;	 // 0
+		element_type* _ptr{ nullptr };	// 0
 	};
 	//static_assert(sizeof(NiPointer<void*>) == 0x8);
 
 	template <class T, class... Args>
-	[[nodiscard]] inline NiPointer<T> make_nismart(Args&&... a_args)
+	[[nodiscard]] NiPointer<T> make_nismart(Args&&... a_args)
 	{
 		return NiPointer<T>{ new T(std::forward<Args>(a_args)...) };
 	}
@@ -250,7 +238,6 @@ namespace RE
 	template <class T>
 	NiPointer(T*) -> NiPointer<T>;
 
-
 	template <class T>
 	struct BSCRC32_<NiPointer<T>>
 	{
@@ -261,7 +248,6 @@ namespace RE
 		}
 	};
 }
-
 
 #define NiSmartPointer(className) \
 	class className;              \

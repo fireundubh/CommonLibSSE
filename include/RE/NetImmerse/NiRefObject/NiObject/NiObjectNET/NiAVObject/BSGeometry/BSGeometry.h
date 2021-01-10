@@ -79,6 +79,8 @@ namespace RE
 
 		bool HasVertexFlag(NiSkinPartition::Vertex::Flags a_flag);
 		void SwitchToFaceTint();
+		void UpdateDismemberPartion(bool a_enable);
+		void UpdateDismemberPartion(std::uint16_t a_slot, bool a_enable);
 
 
 		// members

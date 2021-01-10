@@ -51,6 +51,14 @@ namespace RE
 	}
 
 
+	bool Actor::ApplySpell(SpellItem* a_spell)
+	{
+		using func_t = decltype(&Actor::AddSpell);
+		REL::Relocation<func_t> func{ REL::ID(37817) };
+		return func(this, a_spell);
+	}
+
+
 	void Actor::AllowBleedoutDialogue(bool a_canTalk)
 	{
 		if (a_canTalk) {
@@ -133,6 +141,14 @@ namespace RE
 	{
 		using func_t = decltype(&Actor::Decapitate);
 		REL::Relocation<func_t> func{ Offset::Actor::Decapitate };
+		return func(this);
+	}
+
+
+	bool Actor::Dismount()
+	{
+		using func_t = decltype(&Actor::Dismount);
+		REL::Relocation<func_t> func{ REL::ID(36882) };
 		return func(this);
 	}
 
@@ -390,7 +406,6 @@ namespace RE
 
 
 	std::uint16_t Actor::GetLevel() const
-
 	{
 		using func_t = decltype(&Actor::GetLevel);
 		REL::Relocation<func_t> func{ Offset::Actor::GetLevel };
@@ -415,26 +430,31 @@ namespace RE
 	}
 
 
-	TESObjectARMO* Actor::GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot)
+	SEX Actor::GetSex() const
 	{
-		if (a_slot == BGSBipedObjectForm::BipedObjectSlot::kNone) {
+		const auto npc = GetActorBase();
+		return npc ? npc->GetSex() : SEX::kMale;
+	}
+
+
+	RE::TESObjectARMO* Actor::GetSkin() const
+	{
+		const auto npc = GetActorBase();
+		return npc ? npc->GetSkin() : nullptr;
+	}
+
+
+	TESObjectARMO* Actor::GetSkin(BIPED_MODEL::BipedObjectSlot a_slot)
+	{
+		if (a_slot == BIPED_MODEL::BipedObjectSlot::kNone) {
 			return nullptr;
 		}
 
-		TESObjectARMO* equipped = nullptr;
-		equipped = GetWornArmor(a_slot);
+		auto equipped = GetWornArmor(a_slot);
 		if (!equipped) {
-			auto actorBase = GetActorBase();
-			if (actorBase) {
-				equipped = actorBase->skin;
-			}
-			if (!equipped) {
-				auto baseRace = GetRace();
-				if (baseRace) {
-					equipped = baseRace->skin;
-				}
-			}
+			equipped = GetSkin();
 		}
+		
 		return equipped;
 	}
 
@@ -490,7 +510,7 @@ namespace RE
 	}
 
 
-	bool Actor::HasKeyword(const char* a_formEditorID) const
+	bool Actor::HasKeyword(std::string_view a_formEditorID) const
 	{
 		auto base = GetActorBase();
 		return base ? base->HasKeyword(a_formEditorID) : false;
@@ -772,15 +792,41 @@ namespace RE
 	}
 
 
+	bool Actor::VisitAddedFactions(std::function<bool(TESFaction* a_faction, std::int8_t a_rank)> a_visitor)
+	{
+		auto base = GetActorBase();
+		if (base) {
+			if (base->IsUnique()) {
+				for (auto& factionInfo : base->factions) {
+					if (a_visitor(factionInfo.faction, factionInfo.rank)) {
+						return true;
+					}
+				}
+			} else {
+				auto factionChanges = extraList.GetByType<ExtraFactionChanges>();
+				if (factionChanges) {
+					for (auto& change : factionChanges->factionChanges) {
+						if (a_visitor(change.faction, change.rank)) {
+							return true;
+						}
+					}
+				}
+			}
+		}
+
+		return false;
+	}
+
+
 	NiAVObject* Actor::VisitArmorAddon(TESObjectARMO* a_armor, TESObjectARMA* a_arma)
 	{
 		char addonString[MAX_PATH];
 		std::memset(addonString, 0, MAX_PATH);
 		a_arma->GetNodeName(addonString, this, a_armor, -1);
 
-		NiNode* skeletonRoot[2];
-		skeletonRoot[0] = Get3D(0)->AsNode();
-		skeletonRoot[1] = Get3D(1)->AsNode();
+		NiAVObject* skeletonRoot[2];
+		skeletonRoot[0] = Get3D(0);
+		skeletonRoot[1] = Get3D(1);
 
 		if (skeletonRoot[1] == skeletonRoot[0]) {
 			skeletonRoot[1] = nullptr;
@@ -788,8 +834,7 @@ namespace RE
 
 		for (std::uint32_t i = 0; i <= 1; i++) {
 			if (skeletonRoot[i]) {
-				BSFixedString addonName(addonString);
-				auto armorObject = skeletonRoot[i]->GetObjectByName(addonName);
+				auto armorObject = skeletonRoot[i]->GetObjectByName(addonString);
 				if (armorObject) {
 					return armorObject;
 				}

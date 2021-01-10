@@ -162,6 +162,14 @@ namespace RE
 	}
 
 
+	BGSLocation* TESObjectREFR::GetCurrentLocation() const
+	{
+		using func_t = decltype(&TESObjectREFR::GetCurrentLocation);
+		REL::Relocation<func_t> func{ REL::ID(19385) };
+		return func(this);
+	}
+
+
 	const char* TESObjectREFR::GetDisplayFullName()
 	{
 		using func_t = decltype(&TESObjectREFR::GetDisplayFullName);
@@ -460,6 +468,14 @@ namespace RE
 	}
 
 
+	float TESObjectREFR::GetSubmergedWaterLevel(float a_zPos, TESObjectCELL* a_cell)
+	{
+		using func_t = decltype(&TESObjectREFR::GetSubmergedWaterLevel);
+		REL::Relocation<func_t> func{ REL::ID(36452) };
+		return func(this, a_zPos, a_cell);
+	}
+
+
 	float TESObjectREFR::GetWeight() const
 	{
 		auto obj = GetObjectReference();
@@ -619,6 +635,15 @@ namespace RE
 	bool TESObjectREFR::IsOffLimits()
 	{
 		return IsCrimeToActivate();
+	}
+
+
+	void TESObjectREFR::MoveTo(TESObjectREFR* a_target)
+	{
+		assert(a_target);
+
+		auto handle = a_target->GetHandle();
+		MoveTo_Impl(handle, a_target->GetParentCell(), a_target->GetWorldspace(), a_target->GetPosition(), a_target->GetRotation());
 	}
 
 

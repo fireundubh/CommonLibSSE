@@ -27,11 +27,13 @@ namespace RE
 
 		bool						 AddKeyword(BGSKeyword* a_keyword);
 		bool						 HasKeyword(FormID a_formID) const;
-		bool						 HasKeywordString(const char* a_formEditorID) const;
+		bool						 HasKeywordString(std::string_view a_formEditorID) const;
 		std::optional<BGSKeyword*>	 GetKeywordAt(std::uint32_t a_idx) const;
 		std::uint32_t				 GetNumKeywords() const;
 		std::optional<std::uint32_t> GetKeywordIndex(BGSKeyword* a_keyword) const;
+		std::optional<std::uint32_t> GetKeywordIndex(std::string_view a_formEditorID) const;
 		bool						 RemoveKeyword(BGSKeyword* a_keyword);
+		bool						 RemoveKeyword(std::string_view a_formEditorID);
 
 
 		// members

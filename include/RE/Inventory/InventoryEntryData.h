@@ -36,6 +36,7 @@ namespace RE
 		float										  GetWeight() const;
 		bool										  GetWorn() const;
 		bool										  IsEnchanted() const;
+		bool										  IsFavorited() const;
 		bool										  IsLeveled() const;
 		bool										  IsOwnedBy(Actor* a_testOwner, bool a_defaultTo = true);
 		bool										  IsOwnedBy(Actor* a_testOwner, TESForm* a_itemOwner, bool a_defaultTo = true);

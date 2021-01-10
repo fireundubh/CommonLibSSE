@@ -266,9 +266,10 @@ namespace RE
 		TESNPC*						 GetRootFaceNPC();
 		const TESNPC*				 GetRootFaceNPC() const;
 		SEX							 GetSex() const;
+		RE::TESObjectARMO*			 GetSkin() const;
 		bool						 IsInClass(TESClass* a_class) const;
 		bool						 HasOverlays();
-		bool						 HasKeyword(const char* a_formEditorID) const;
+		bool						 HasKeyword(std::string_view a_formEditorID) const;
 		bool						 RemovePerk(BGSPerk* a_perk);
 		void						 SetFaceTexture(BGSTextureSet* a_textureSet);
 		void						 SetHairColor(BGSColorForm* a_hairColor);

@@ -30,57 +30,49 @@ namespace RE
 	}
 
 
-	std::optional<std::uint32_t> NiStringsExtraData::GetIndexOf(const BSFixedString& a_element) const
+	std::optional<std::uint32_t> NiStringsExtraData::GetIndex(const BSFixedString& a_element) const
 	{
 		for (std::uint32_t i = 0; i < size; i++) {
 			if (_strnicmp(a_element.c_str(), value[i], a_element.length()) == 0) {
 				return i;
 			}
 		}
-
 		return std::nullopt;
 	}
 
 
-	bool NiStringsExtraData::InsertElement(const BSFixedString& a_element)
+	bool NiStringsExtraData::Insert(const BSFixedString& a_element)
 	{
-		if (!a_element.empty()) {
-			auto index = GetIndexOf(a_element);
+		if (!a_element.empty() && GetIndex(a_element) == std::nullopt) {
+			auto oldData = value;
+			value = NiAlloc<char*>(++size);
 
-			if (index == std::nullopt) {
-				auto oldData = value;
-				value = NiAlloc<char*>(++size);
+			if (oldData) {
+				for (std::uint32_t i = 0; i < size - 1; i++) {
+					size_t strLength = strlen(oldData[i]) + 1;
+					value[i] = NiAlloc<char>(strLength);
+					std::memcpy(value[i], oldData[i], sizeof(char) * strLength);
 
-				if (oldData) {
-					for (std::uint32_t i = 0; i < size - 1; i++) {
-						size_t strLength = strlen(oldData[i]) + 1;
-						value[i] = NiAlloc<char>(strLength);
-						std::memcpy(value[i], oldData[i], sizeof(char) * strLength);
-
-						NiFree(oldData[i]);
-					}
-					NiFree(oldData);
-					oldData = nullptr;
+					NiFree(oldData[i]);
 				}
-
-				size_t strLength = a_element.length() + 1;
-				value[size - 1] = NiAlloc<char>(strLength);
-				std::memcpy(value[size - 1], a_element.data(), sizeof(char) * strLength);
-
-				return true;
+				NiFree(oldData);
+				oldData = nullptr;
 			}
-		}
 
+			size_t strLength = a_element.length() + 1;
+			value[size - 1] = NiAlloc<char>(strLength);
+			std::memcpy(value[size - 1], a_element.data(), sizeof(char) * strLength);
+
+			return true;
+		}
 		return false;
 	}
 
 
-	bool NiStringsExtraData::RemoveElement(const BSFixedString& a_element)
+	bool NiStringsExtraData::Remove(const BSFixedString& a_element)
 	{
 		if (!a_element.empty()) {
-			auto index = GetIndexOf(a_element);
-
-			if (index != std::nullopt) {
+			if (auto index = GetIndex(a_element); index != std::nullopt) {
 				auto oldData = value;
 				value = NiAlloc<char*>(--size);
 
@@ -98,7 +90,6 @@ namespace RE
 				return true;
 			}
 		}
-
 		return false;
 	}
 }

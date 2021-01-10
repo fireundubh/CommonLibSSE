@@ -1,10 +1,12 @@
 #pragma once
 
+#include "RE/BSCore/BSPointerHandle.h"
 #include "RE/BSCore/BSTArray.h"
 #include "RE/BSCore/BSTList.h"
 #include "RE/BSCore/BSTSingleton.h"
 #include "RE/FormComponents/Enums/FormTypes.h"
 #include "RE/FormComponents/TESForm/TESForm.h"
+#include "RE/NetImmerse/NiPoint3.h"
 #include "RE/NetImmerse/NiTArray.h"
 #include "RE/NetImmerse/NiTListBase/NiTPointerListBase/NiTList.h"
 
@@ -58,6 +60,8 @@ namespace RE
 		std::optional<std::uint16_t> GetLoadedLightModIndex(std::string_view a_modName);
 
 		bool IsGeneratedID(FormID a_formID);
+
+		ObjectRefHandle& PlaceAtMe(ObjectRefHandle& a_targetHandle, TESBoundObject* a_form, const NiPoint3& a_loc, const NiPoint3& a_angle, TESObjectCELL* a_cell, TESWorldSpace* a_worldspace, TESObjectREFR* a_ref, std::uint32_t a_unk09, std::uint64_t a_unk10, bool a_persist, bool a_unk12);
 
 		BSTArray<TESForm*>& GetFormArray(FormType a_formType);
 		template <class T>

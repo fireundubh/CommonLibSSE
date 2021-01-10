@@ -137,7 +137,7 @@ namespace RE
 		NiPointer<BGSAttackData> attackData;			  // 28
 		TESObjectWEAP*			 weapon;				  // 30
 		std::uint64_t			 unk38;					  // 38
-		std::uint64_t			 unk40;					  // 40
+		SpellItem*				 attackSpell;			  // 40
 		std::uint32_t			 unk48;					  // 48
 		float					 healthDamage;			  // 4C
 		float					 totalDamage;			  // 50
@@ -217,7 +217,7 @@ namespace RE
 		BSTSmartPointer<AnimResponse>				   animResponse;						 // 0F8
 		BSTArray<CommandedActorData>				   commandedActors;						 // 100
 		NiNode*										   damageRootNode[6];					 // 118
-		std::uint64_t								   unk148;								 // 148
+		NiNode*										   unk148;								 // 148
 		NiNode*										   weaponBone;							 // 150
 		NiAVObject*									   headNode;							 // 158
 		NiAVObject*									   torsoNode;							 // 160

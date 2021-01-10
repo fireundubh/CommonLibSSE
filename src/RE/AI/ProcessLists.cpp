@@ -23,16 +23,14 @@ namespace RE
 
 	void ProcessLists::GetMagicEffects(std::function<bool(BSTempEffect* a_tempEffect)> a_fn)
 	{
-		magicEffectsLock.Lock();
+		BSSpinLockGuard locker(magicEffectsLock);
+
 		for (auto& tempEffectPtr : magicEffects) {
 			auto tempEffect = tempEffectPtr.get();
-			if (tempEffect) {
-				if (!a_fn(tempEffect)) {
-					break;
-				}
+			if (tempEffect && !a_fn(tempEffect)) {
+				break;
 			}
 		}
-		magicEffectsLock.Unlock();
 	}
 
 
@@ -52,6 +50,7 @@ namespace RE
 				auto handle = a_ref->CreateRefHandle();
 				if (referenceEffect->target == handle) {
 					referenceEffect->finished = true;
+					referenceEffect->Clear();
 				}
 			}
 			return true;
