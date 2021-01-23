@@ -127,14 +127,13 @@ namespace RE
 					if (a_noQuestItem) {
 						auto xAliases = xList->GetByType<ExtraAliasInstanceArray>();
 						if (xAliases) {
-							xAliases->lock.LockForRead();
+							BSReadLockGuard(xAliases->lock);
 							for (const auto& alias : xAliases->aliases) {
 								const auto refAlias = alias->alias;
 								if (refAlias && refAlias->IsQuestObject()) {
 									return false;
 								}
 							}
-							xAliases->lock.UnlockForRead();
 						}
 					}
 				}

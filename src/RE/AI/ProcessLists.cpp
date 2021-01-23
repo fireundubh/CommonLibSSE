@@ -21,11 +21,31 @@ namespace RE
 	}
 
 
+	void ProcessLists::ClearTempEffect(BSTempEffect* a_tempEffect)
+	{
+		using func_t = decltype(&ProcessLists::ClearTempEffect);
+		REL::Relocation<func_t> func{ REL::ID(40373) };
+		return func(this, a_tempEffect);
+	}
+
+
 	void ProcessLists::GetMagicEffects(std::function<bool(BSTempEffect* a_tempEffect)> a_fn)
 	{
 		BSSpinLockGuard locker(magicEffectsLock);
 
 		for (auto& tempEffectPtr : magicEffects) {
+			auto tempEffect = tempEffectPtr.get();
+			if (tempEffect && !a_fn(tempEffect)) {
+				break;
+			}
+		}
+	}
+
+	void ProcessLists::GetGlobalEffects(std::function<bool(BSTempEffect* a_tempEffect)> a_fn)
+	{
+		BSSpinLockGuard locker(globalEffectsLock);
+
+		for (auto& tempEffectPtr : globalTempEffects) {
 			auto tempEffect = tempEffectPtr.get();
 			if (tempEffect && !a_fn(tempEffect)) {
 				break;

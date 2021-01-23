@@ -192,7 +192,6 @@ namespace RE
 								return BSVisit::BSVisitControl::kContinue;
 							}
 						}
-						SKSE::log::info("{} : {}", a_geometry->name, a_alpha);
 						material->materialAlpha = a_alpha;
 					}
 				}

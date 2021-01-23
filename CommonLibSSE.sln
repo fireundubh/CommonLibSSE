@@ -41,6 +41,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_EnhancedReanimation", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_EquipmentToggle", "..\Projects\HelmetToggle\EquipmentToggle.vcxproj", "{709EB09E-11A6-44A0-92C5-8007257FB2D5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_ScrollingSpeed", "..\Projects\ScrollingSpeed\ScrollingSpeed.vcxproj", "{5D826D00-CE56-4880-BEC0-7B7E19014925}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug Unicode|x64 = Debug Unicode|x64
@@ -315,6 +317,22 @@ Global
 		{709EB09E-11A6-44A0-92C5-8007257FB2D5}.Release|x64.Build.0 = Release|x64
 		{709EB09E-11A6-44A0-92C5-8007257FB2D5}.Release|x86.ActiveCfg = Release|Win32
 		{709EB09E-11A6-44A0-92C5-8007257FB2D5}.Release|x86.Build.0 = Release|Win32
+		{5D826D00-CE56-4880-BEC0-7B7E19014925}.Debug Unicode|x64.ActiveCfg = Debug|x64
+		{5D826D00-CE56-4880-BEC0-7B7E19014925}.Debug Unicode|x64.Build.0 = Debug|x64
+		{5D826D00-CE56-4880-BEC0-7B7E19014925}.Debug Unicode|x86.ActiveCfg = Debug|Win32
+		{5D826D00-CE56-4880-BEC0-7B7E19014925}.Debug Unicode|x86.Build.0 = Debug|Win32
+		{5D826D00-CE56-4880-BEC0-7B7E19014925}.Debug|x64.ActiveCfg = Debug|x64
+		{5D826D00-CE56-4880-BEC0-7B7E19014925}.Debug|x64.Build.0 = Debug|x64
+		{5D826D00-CE56-4880-BEC0-7B7E19014925}.Debug|x86.ActiveCfg = Debug|Win32
+		{5D826D00-CE56-4880-BEC0-7B7E19014925}.Debug|x86.Build.0 = Debug|Win32
+		{5D826D00-CE56-4880-BEC0-7B7E19014925}.Release Unicode|x64.ActiveCfg = Release|x64
+		{5D826D00-CE56-4880-BEC0-7B7E19014925}.Release Unicode|x64.Build.0 = Release|x64
+		{5D826D00-CE56-4880-BEC0-7B7E19014925}.Release Unicode|x86.ActiveCfg = Release|Win32
+		{5D826D00-CE56-4880-BEC0-7B7E19014925}.Release Unicode|x86.Build.0 = Release|Win32
+		{5D826D00-CE56-4880-BEC0-7B7E19014925}.Release|x64.ActiveCfg = Release|x64
+		{5D826D00-CE56-4880-BEC0-7B7E19014925}.Release|x64.Build.0 = Release|x64
+		{5D826D00-CE56-4880-BEC0-7B7E19014925}.Release|x86.ActiveCfg = Release|Win32
+		{5D826D00-CE56-4880-BEC0-7B7E19014925}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -337,6 +355,7 @@ Global
 		{A482A83C-6CEB-4445-B461-44FEB035F436} = {F6F21BCD-77A1-4DFC-8BED-CD689BB66866}
 		{A34729DC-BB8B-4343-9EE9-4AB78E7449E3} = {F6F21BCD-77A1-4DFC-8BED-CD689BB66866}
 		{709EB09E-11A6-44A0-92C5-8007257FB2D5} = {F6F21BCD-77A1-4DFC-8BED-CD689BB66866}
+		{5D826D00-CE56-4880-BEC0-7B7E19014925} = {F6F21BCD-77A1-4DFC-8BED-CD689BB66866}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {37148EF4-32F4-49AB-B9CA-77AAB26BF4A6}

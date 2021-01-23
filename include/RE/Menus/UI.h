@@ -78,6 +78,8 @@ namespace RE
 
 		static UI* GetSingleton();
 
+		static bool IsInMenuMode();
+
 		template <class T>
 		void AddEventSink(BSTEventSink<T>* a_sink);
 		bool GameIsPaused();

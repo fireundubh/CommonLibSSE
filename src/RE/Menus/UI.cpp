@@ -12,6 +12,14 @@ namespace RE
 	}
 
 
+	bool UI::IsInMenuMode()
+	{
+		using func_t = decltype(&IsInMenuMode);
+		REL::Relocation<func_t> func{ REL::ID(56476) };
+		return func();
+	}
+
+
 	bool UI::GameIsPaused()
 	{
 		return numPausesGame > 0;

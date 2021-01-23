@@ -146,12 +146,14 @@ namespace SKSE
 
 
 			template <typename T>
-			T to_int(const std::string& a_str)
+			T to_num(const std::string& a_str)
 			{
-				if constexpr (!std::is_unsigned_v<T>) {
+				if constexpr (!std::is_signed_v<T>) {
 					return static_cast<T>(std::stoi(a_str));
 				} else if constexpr (std::is_unsigned_v<T>) {
 					return static_cast<T>(std::stoul(a_str));
+				} else if constexpr (std::is_floating_point_v<T>) {
+					return static_cast<T>(std::stof(a_str));
 				}
 			}
 		}
