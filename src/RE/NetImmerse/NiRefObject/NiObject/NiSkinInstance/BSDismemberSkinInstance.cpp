@@ -3,26 +3,10 @@
 
 namespace RE
 {
-	void BSDismemberSkinInstance::UpdateDismemberPartion(std::uint16_t a_slot, bool a_enable)
+	void BSDismemberSkinInstance::UpdateDismemberPartion(std::uint16_t a_slot, bool a_enable) const
 	{
-		if (partitions) {
-			stl::span<Data> span(partitions, numPartitions);
-			for (auto& data : span) {				
-				if (data.slot == a_slot) {
-					data.editorVisible = a_enable;
-				}
-			}
-		}
-	}
-
-
-	void BSDismemberSkinInstance::UpdateDismemberPartion(bool a_enable)
-	{
-		if (partitions) {
-			stl::span<Data> span(partitions, numPartitions);
-			for (auto& data : span) {
-				data.editorVisible = a_enable;
-			}
-		}
+		using func_t = decltype(&BSDismemberSkinInstance::UpdateDismemberPartion);
+		REL::Relocation<func_t> func{ REL::ID(15576) };
+		return func(this, a_slot, a_enable);
 	}
 }

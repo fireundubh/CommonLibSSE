@@ -823,6 +823,7 @@
     <ClInclude Include="include\RE\Events\ScriptEvent\TESQuestStageEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESQuestStartStopEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESResetEvent.h" />
+    <ClInclude Include="include\RE\Events\ScriptEvent\TESResolveNPCTemplatesEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESSwitchRaceCompleteEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESTrackedStatsEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESUniqueIDChangeEvent.h" />
@@ -1580,6 +1581,7 @@
     <ClCompile Include="src\RE\BSExtraData\ExtraRank.cpp" />
     <ClCompile Include="src\RE\BSExtraData\ExtraReferenceHandle.cpp" />
     <ClCompile Include="src\RE\BSExtraData\ExtraSoul.cpp" />
+    <ClCompile Include="src\RE\BSExtraData\ExtraTerminalState.cpp" />
     <ClCompile Include="src\RE\BSExtraData\ExtraTextDisplayData.cpp" />
     <ClCompile Include="src\RE\BSExtraData\ExtraUniqueID.cpp" />
     <ClCompile Include="src\RE\BSGraphics\State.cpp" />
@@ -1775,7 +1777,6 @@
     <ClCompile Include="src\RE\NetImmerse\NiPoint3.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\BGSAttackData.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkWorldObject.cpp" />
-    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld\bhkWorld.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\BSTextureSet\BSShaderTextureSet.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiColorData.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiExtraData\BSFaceGenAnimationData.cpp" />

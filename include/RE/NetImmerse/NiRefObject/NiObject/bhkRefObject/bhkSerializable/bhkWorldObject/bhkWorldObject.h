@@ -5,6 +5,9 @@
 
 namespace RE
 {
+	class bhkWorld;
+
+
 	class bhkWorldObject : public bhkSerializable
 	{
 	public:
@@ -25,14 +28,10 @@ namespace RE
 		virtual ahkpWorld*	  GetWorld2() override;								 // 28 - { return world; }
 		virtual void		  Unk_29(void) override;							 // 29
 
-
 		// add
 		virtual void Unk_32(void);	// 32 - { return Unk_29(); }
 
-		void EnterCriticalOperationRead();
-		void EnterCriticalOperationWrite();
-		void ExitCriticalOperationRead();
-		void ExitCriticalOperationWrite();
+		bhkWorld* GetbhkWorld();
 
 
 		// members

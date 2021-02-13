@@ -35,9 +35,9 @@ namespace RE
 	}
 
 
-	bool NiMatrix3::operator!=(const NiMatrix3& mat) const
+	bool NiMatrix3::operator!=(const NiMatrix3& a_mat) const
 	{
-		return !operator==(mat);
+		return !operator==(a_mat);
 	}
 
 
@@ -125,28 +125,73 @@ namespace RE
 	}
 
 
-	NiMatrix3 NiMatrix3::operator*(float a_scalar) const
-	{
-		NiMatrix3 result;
-		result.entry[0][0] = entry[0][0] * a_scalar;
-		result.entry[0][1] = entry[0][1] * a_scalar;
-		result.entry[0][2] = entry[0][2] * a_scalar;
-		result.entry[1][0] = entry[1][0] * a_scalar;
-		result.entry[1][1] = entry[1][1] * a_scalar;
-		result.entry[1][2] = entry[1][2] * a_scalar;
-		result.entry[2][0] = entry[2][0] * a_scalar;
-		result.entry[2][1] = entry[2][1] * a_scalar;
-		result.entry[2][2] = entry[2][2] * a_scalar;
-		return result;
-	}
-
-
 	NiPoint3 NiMatrix3::operator*(const NiPoint3& a_pt) const
 	{
 		return NiPoint3(
 			entry[0][0] * a_pt.x + entry[0][1] * a_pt.y + entry[0][2] * a_pt.z,
 			entry[1][0] * a_pt.x + entry[1][1] * a_pt.y + entry[1][2] * a_pt.z,
 			entry[2][0] * a_pt.x + entry[2][1] * a_pt.y + entry[2][2] * a_pt.z);
+	}
+
+
+	NiMatrix3 NiMatrix3::operator+(float a_scalar) const
+	{
+		NiMatrix3 result;
+		result.entry[0][0] += a_scalar;
+		result.entry[0][1] += a_scalar;
+		result.entry[0][2] += a_scalar;
+		result.entry[1][0] += a_scalar;
+		result.entry[1][1] += a_scalar;
+		result.entry[1][2] += a_scalar;
+		result.entry[2][0] += a_scalar;
+		result.entry[2][1] += a_scalar;
+		result.entry[2][2] += a_scalar;
+		return result;
+	}
+
+
+	NiMatrix3 NiMatrix3::operator*(float a_scalar) const
+	{
+		NiMatrix3 result;
+		result.entry[0][0] *= a_scalar;
+		result.entry[0][1] *= a_scalar;
+		result.entry[0][2] *= a_scalar;
+		result.entry[1][0] *= a_scalar;
+		result.entry[1][1] *= a_scalar;
+		result.entry[1][2] *= a_scalar;
+		result.entry[2][0] *= a_scalar;
+		result.entry[2][1] *= a_scalar;
+		result.entry[2][2] *= a_scalar;
+		return result;
+	}
+
+	NiMatrix3& NiMatrix3::operator+=(float a_scalar)
+	{
+		entry[0][0] += a_scalar;
+		entry[0][1] += a_scalar;
+		entry[0][2] += a_scalar;
+		entry[1][0] += a_scalar;
+		entry[1][1] += a_scalar;
+		entry[1][2] += a_scalar;
+		entry[2][0] += a_scalar;
+		entry[2][1] += a_scalar;
+		entry[2][2] += a_scalar;
+		return *this;
+	}
+
+
+	NiMatrix3& NiMatrix3::operator*=(float a_scalar)
+	{
+		entry[0][0] *= a_scalar;
+		entry[0][1] *= a_scalar;
+		entry[0][2] *= a_scalar;
+		entry[1][0] *= a_scalar;
+		entry[1][1] *= a_scalar;
+		entry[1][2] *= a_scalar;
+		entry[2][0] *= a_scalar;
+		entry[2][1] *= a_scalar;
+		entry[2][2] *= a_scalar;
+		return *this;
 	}
 
 

@@ -29,25 +29,26 @@ namespace RE
 	}
 
 
-	void ProcessLists::GetMagicEffects(std::function<bool(BSTempEffect* a_tempEffect)> a_fn)
+	void ProcessLists::GetMagicEffects(std::function<bool(BSTempEffect& a_tempEffect)> a_fn)
 	{
 		BSSpinLockGuard locker(magicEffectsLock);
 
 		for (auto& tempEffectPtr : magicEffects) {
-			auto tempEffect = tempEffectPtr.get();
-			if (tempEffect && !a_fn(tempEffect)) {
+			const auto& tempEffect = tempEffectPtr.get();
+			if (tempEffect && !a_fn(*tempEffect)) {
 				break;
 			}
 		}
 	}
 
-	void ProcessLists::GetGlobalEffects(std::function<bool(BSTempEffect* a_tempEffect)> a_fn)
+
+	void ProcessLists::GetGlobalEffects(std::function<bool(BSTempEffect& a_tempEffect)> a_fn)
 	{
 		BSSpinLockGuard locker(globalEffectsLock);
 
 		for (auto& tempEffectPtr : globalTempEffects) {
-			auto tempEffect = tempEffectPtr.get();
-			if (tempEffect && !a_fn(tempEffect)) {
+			const auto& tempEffect = tempEffectPtr.get();
+			if (tempEffect && !a_fn(*tempEffect)) {
 				break;
 			}
 		}
@@ -62,19 +63,15 @@ namespace RE
 	}
 
 
-	void ProcessLists::StopAllShaders(TESObjectREFR* a_ref)
+	void ProcessLists::StopAllShaders(TESObjectREFR& a_ref)
 	{
-		GetMagicEffects([&](BSTempEffect* a_tempEffect) {
-			auto referenceEffect = a_tempEffect->As<ReferenceEffect>();
-			if (referenceEffect) {
-				auto handle = a_ref->CreateRefHandle();
-				if (referenceEffect->target == handle) {
-					referenceEffect->finished = true;
-					referenceEffect->Clear();
-				}
+		auto handle = a_ref.CreateRefHandle();
+		GetMagicEffects([&](RE::BSTempEffect& a_tempEffect) {
+			auto referenceEffect = a_tempEffect.As<ReferenceEffect>();
+			if (referenceEffect && referenceEffect->target == handle) {
+				referenceEffect->finished = true;
 			}
 			return true;
 		});
 	}
-
 }

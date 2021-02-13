@@ -78,17 +78,16 @@ namespace RE
 
 		static UI* GetSingleton();
 
-		static bool IsInMenuMode();
-
 		template <class T>
 		void AddEventSink(BSTEventSink<T>* a_sink);
-		bool GameIsPaused();
+		bool GameIsPaused() const;
 		template <class T>
 		BSTEventSource<T>* GetEventSource();
 		GPtr<IMenu>		   GetMenu(const std::string_view& a_menuName);
 		GPtr<GFxMovieView> GetMovieView(const std::string_view& a_menuName);
 		bool			   IsApplicationMenuOpen() const;
 		bool			   IsCursorHiddenWhenTopmost() const;
+		static bool		   IsInMenuMode();
 		bool			   IsItemMenuOpen() const;
 		bool			   IsMenuOpen(const std::string_view& a_menuName);
 		bool			   IsModalMenuOpen() const;

@@ -335,3 +335,5 @@ ASALocalRun/
 
 .leu
 vc-fileutils.settings 
+/out/build/x64-Debug (default)/.cmake/api/v1/query/client-MicrosoftVS/query.json
+/out/build/x64-Debug (default)/VSInheritEnvironments.txt

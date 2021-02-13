@@ -130,6 +130,9 @@
     <ClCompile Include="src\RE\BSExtraData\ExtraSoul.cpp">
       <Filter>src\RE\BSExtraData</Filter>
     </ClCompile>
+    <ClCompile Include="src\RE\BSExtraData\ExtraTerminalState.cpp">
+      <Filter>src\RE\BSExtraData</Filter>
+    </ClCompile>
     <ClCompile Include="src\RE\BSExtraData\ExtraTextDisplayData.cpp">
       <Filter>src\RE\BSExtraData</Filter>
     </ClCompile>
@@ -711,9 +714,6 @@
     </ClCompile>
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\BGSAttackData.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld\bhkWorld.cpp">
-      <Filter>src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld</Filter>
     </ClCompile>
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkWorldObject.cpp">
       <Filter>src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject</Filter>
@@ -2734,6 +2734,9 @@
       <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Events\ScriptEvent\TESResetEvent.h">
+      <Filter>include\RE\Events\ScriptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RE\Events\ScriptEvent\TESResolveNPCTemplatesEvent.h">
       <Filter>include\RE\Events\ScriptEvent</Filter>
     </ClInclude>
     <ClInclude Include="include\RE\Events\ScriptEvent\TESSwitchRaceCompleteEvent.h">
@@ -6841,9 +6844,6 @@
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable">
       <UniqueIdentifier>{03137da2-c79f-4f5b-9091-1bd2e794fbf5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld">
-      <UniqueIdentifier>{3cec7460-31d5-47eb-a762-ffce581204bc}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject">
       <UniqueIdentifier>{b814ecc1-643e-4a2b-b1d8-d3d3343b0331}</UniqueIdentifier>

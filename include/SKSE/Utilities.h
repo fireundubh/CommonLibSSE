@@ -12,7 +12,7 @@ namespace SKSE
 		static RNG* GetSingleton();
 
 		template <class T, class = typename std::enable_if<std::is_arithmetic<T>::value>::type>
-		T GenerateRandomNumber(T a_min, T a_max)
+		T Generate(T a_min, T a_max)
 		{
 			if constexpr (std::is_integral_v<T>) {
 				std::uniform_int_distribution<T> distr(a_min, a_max);
@@ -95,7 +95,8 @@ namespace SKSE
 			}
 
 
-			inline bool is_only_digit(const std::string& a_str) {
+			inline bool is_only_digit(const std::string& a_str)
+			{
 				return a_str.find_first_not_of("0123456789") == std::string::npos;
 			}
 
@@ -145,15 +146,15 @@ namespace SKSE
 			}
 
 
-			template <typename T>
+			template <class T>
 			T to_num(const std::string& a_str)
 			{
-				if constexpr (!std::is_signed_v<T>) {
-					return static_cast<T>(std::stoi(a_str));
-				} else if constexpr (std::is_unsigned_v<T>) {
-					return static_cast<T>(std::stoul(a_str));
-				} else if constexpr (std::is_floating_point_v<T>) {
+				if constexpr (std::is_floating_point_v<T>) {
 					return static_cast<T>(std::stof(a_str));
+				} else if constexpr (std::is_signed_v<T>) {
+					return static_cast<T>(std::stoi(a_str));
+				} else {
+					return static_cast<T>(std::stoul(a_str));
 				}
 			}
 		}

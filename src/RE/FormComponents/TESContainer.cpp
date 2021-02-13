@@ -2,6 +2,8 @@
 
 #include "RE/FormComponents/Enums/FormTypes.h"
 #include "RE/FormComponents/TESForm/TESForm.h"
+#include "RE/FormComponents/TESForm/TESObject/TESBoundObject/TESBoundObject.h"
+#include "SKSE/Logger.h"
 
 
 namespace RE
@@ -35,9 +37,8 @@ namespace RE
 			return true;
 		});
 		if (!added) {
-			auto newObj = new ContainerObject(a_object, a_count);
-			if (newObj) {
-				auto itemExtra = newObj->itemExtra;
+			if (const auto newObj = new ContainerObject(a_object, a_count); newObj) {
+				const auto itemExtra = newObj->itemExtra;
 				if (itemExtra) {
 					itemExtra->owner = a_owner;
 				}
@@ -79,5 +80,34 @@ namespace RE
 			return true;
 		});
 		return count;
+	}
+
+
+	void TESContainer::RemoveObjectFromContainer(TESBoundObject* a_obj, std::int32_t a_count)
+	{
+		std::vector<std::uint32_t> indexes;
+
+		for (std::uint32_t i = 0; i < numContainerObjects; ++i) {
+			auto entry = containerObjects[i];
+			if (entry && entry->obj == a_obj) {
+				entry->count -= a_count;
+				if (entry->count < 1) {
+					indexes.push_back(i);
+				}
+			}
+		}
+
+		if (!indexes.empty()) {
+			auto oldData = containerObjects;
+			containerObjects = RE::malloc<ContainerObject*>(numContainerObjects - indexes.size());
+
+			for (std::uint32_t i = 0; i < numContainerObjects + indexes.size(); i++) {
+				if (std::none_of(indexes.begin(), indexes.end(), [i](const auto& index) { return i == index; })) {
+					containerObjects[i] = oldData[i];
+				}
+			}
+			RE::free(oldData);
+			oldData = nullptr;
+		}
 	}
 }

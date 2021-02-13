@@ -1,8 +1,11 @@
 #include "RE/NetImmerse/BSVisit.h"
 
+
+#include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialBase.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiCollisionObject/NiCollisionObject.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/BSGeometry/BSGeometry.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiAVObject.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiNode/NiNode.h"
-#include "RE/NetImmerse/NiRefObject/NiObject/NiCollisionObject/NiCollisionObject.h"
 
 
 namespace RE

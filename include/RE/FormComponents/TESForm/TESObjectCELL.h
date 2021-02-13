@@ -207,7 +207,6 @@ namespace RE
 		INTERIOR_DATA* GetLighting();
 		BGSLocation*   GetLocation() const;
 		float		   GetNorthRotation();
-		bhkWorld*	   GetHavokWorld();
 		TESForm*	   GetOwner();
 		void		   ForEachReference(std::function<bool(TESObjectREFR&)> a_callback) const;
 		void		   ForEachReferenceInRange(const NiPoint3& a_origin, float a_radius, std::function<bool(TESObjectREFR&)> a_callback) const;

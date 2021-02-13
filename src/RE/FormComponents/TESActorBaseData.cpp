@@ -7,11 +7,8 @@ namespace RE
 {
 	bool TESActorBaseData::IsInFaction(TESFaction* a_faction) const
 	{
-		for (const auto& faction : factions) {
-			if (faction.faction && faction.faction == a_faction) {
-				return true;
-			}
-		}
-		return false;
+		return std::any_of(factions.begin(), factions.end(), [&a_faction](const auto& faction) {
+			return faction.faction == a_faction;
+		});
 	}
 }

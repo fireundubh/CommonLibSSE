@@ -8,16 +8,13 @@ namespace RE
 		flags = a_other->flags;
 		alpha = a_other->alpha;
 		lastRenderPassState = std::numeric_limits<std::int32_t>::max();
-		if ((a_other->flags & EShaderPropertyFlag::kOwnEmit) == EShaderPropertyFlag::kOwnEmit) {
+		if (flags.all(EShaderPropertyFlag::kOwnEmit) && a_other->emissiveColor) {
+			if (!emissiveColor) {
+				emissiveColor = new NiColor();
+			}
 			emissiveColor->red = a_other->emissiveColor->red;
 			emissiveColor->green = a_other->emissiveColor->green;
 			emissiveColor->blue = a_other->emissiveColor->blue;
-		} else {
-			if ((flags & EShaderPropertyFlag::kOwnEmit) == EShaderPropertyFlag::kOwnEmit) {
-				free(emissiveColor);
-			}
-			emissiveColor = a_other->emissiveColor;
-			SetFlags(EShaderPropertyFlag8::kOwnEmit, false);
 		}
 		projectedUVParams = a_other->projectedUVParams;
 		projectedUVColor = a_other->projectedUVColor;

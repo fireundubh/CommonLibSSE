@@ -25,24 +25,12 @@ namespace RE
 		texCoordScale[0] = a_other->texCoordScale[0];
 		texCoordScale[1] = a_other->texCoordScale[1];
 
-		if (a_other->diffuseTexture.get()) {
-			diffuseTexture = a_other->diffuseTexture;
-		}
-		if (a_other->normalTexture.get()) {
-			normalTexture = a_other->normalTexture;
-		}
-		if (a_other->rimSoftLightingTexture.get()) {
-			rimSoftLightingTexture = a_other->rimSoftLightingTexture;
-		}
-		if (a_other->specularBackLightingTexture.get()) {
-			specularBackLightingTexture = a_other->specularBackLightingTexture;
-		}
-
+		diffuseTexture = a_other->diffuseTexture;
+		normalTexture = a_other->normalTexture;
+		rimSoftLightingTexture = a_other->rimSoftLightingTexture;
+		specularBackLightingTexture = a_other->specularBackLightingTexture;
 		textureClampMode = a_other->textureClampMode;
-
-		if (a_other->textureSet.get()) {
-			textureSet = a_other->textureSet;
-		}
+		textureSet = a_other->textureSet;
 
 		materialAlpha = a_other->materialAlpha;
 		specularPower = a_other->specularPower;

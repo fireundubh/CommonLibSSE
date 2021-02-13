@@ -73,8 +73,8 @@ namespace RE
 			delete extraLists;
 			extraLists =
 				a_rhs.extraLists ?
-					new BSSimpleList<ExtraDataList*>(*a_rhs.extraLists) :
-					nullptr;
+					  new BSSimpleList<ExtraDataList*>(*a_rhs.extraLists) :
+					  nullptr;
 
 			countDelta = a_rhs.countDelta;
 		}
@@ -115,29 +115,14 @@ namespace RE
 
 	bool InventoryEntryData::CanItemBeTaken(bool a_noEquipped, bool a_noFavourited, bool a_noQuestItem)
 	{
-		if (extraLists) {
-			for (auto& xList : *extraLists) {
-				if (xList) {
-					if (a_noEquipped && xList->GetWorn()) {
-						return false;
-					}
-					if (a_noFavourited && xList->HasType<ExtraHotkey>()) {
-						return false;
-					}
-					if (a_noQuestItem) {
-						auto xAliases = xList->GetByType<ExtraAliasInstanceArray>();
-						if (xAliases) {
-							BSReadLockGuard(xAliases->lock);
-							for (const auto& alias : xAliases->aliases) {
-								const auto refAlias = alias->alias;
-								if (refAlias && refAlias->IsQuestObject()) {
-									return false;
-								}
-							}
-						}
-					}
-				}
-			}
+		if (a_noEquipped && GetWorn()) {
+			return false;
+		}
+		if (a_noFavourited && IsFavorited()) {
+			return false;
+		}
+		if (a_noQuestItem && IsQuestObject()) {
+			return false;
 		}
 		return true;
 	}
@@ -257,20 +242,17 @@ namespace RE
 
 	bool InventoryEntryData::GetWorn() const
 	{
-		bool worn = false;
-
 		if (extraLists) {
-			for (const auto& xList : *extraLists) {
+			for (auto& xList : *extraLists) {
 				if (xList) {
-					worn = xList->GetWorn();
+					auto worn = xList->GetWorn();
 					if (worn) {
-						break;
+						return true;
 					}
 				}
 			}
 		}
-
-		return worn;
+		return false;
 	}
 
 

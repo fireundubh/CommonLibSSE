@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RE/BSCore/BSFixedString.h"
+#include "RE/NetImmerse/NiRTTI.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObject.h"
 #include "RE/NetImmerse/NiSmartPointer.h"
 
@@ -35,19 +36,19 @@ namespace RE
 		void			  DeleteExtraData(std::uint16_t a_extraDataIndex);
 		NiTimeController* GetControllers() const;
 		NiTimeController* GetController(const NiRTTI* a_rtti) const;
-		NiExtraData* GetExtraData(const BSFixedString& a_key) const;
+		NiExtraData*	  GetExtraData(const BSFixedString& a_key) const;
 		template <class T>
 		T* GetExtraData(const BSFixedString& a_key) const;
 
 		NiExtraData*  GetExtraDataAt(std::uint16_t a_extraDataIndex) const;
 		std::uint16_t GetExtraDataSize() const;
-		bool		  HasExtraData(const BSFixedString& a_key);
-		bool		  InsertExtraData(NiExtraData* a_extra);
-		void		  RemoveAllExtraData();
-		bool		  RemoveExtraData(const BSFixedString& a_key);
-		bool		  RemoveExtraData(NiExtraData* a_extra);
-		bool		  RemoveExtraDataAt(std::uint16_t a_extraDataIndex);
-		bool		  SetExtraDataSize(std::uint16_t a_size);
+		bool          HasExtraData(const BSFixedString& a_key) const;
+		bool          InsertExtraData(NiExtraData* a_extra);
+		void          RemoveAllExtraData();
+		bool          RemoveExtraData(const BSFixedString& a_key);
+		bool          RemoveExtraData(NiExtraData* a_extra);
+		bool          RemoveExtraDataAt(std::uint16_t a_extraDataIndex);
+		bool          SetExtraDataSize(std::uint16_t a_size);
 
 
 		// members
@@ -65,9 +66,6 @@ namespace RE
 	T* NiObjectNET::GetExtraData(const BSFixedString& a_key) const
 	{
 		auto data = GetExtraData(a_key);
-		if (!data) {
-			return nullptr;
-		}
-		return static_cast<T*>(data);
+		return data ? static_cast<T*>(data) : nullptr;
 	}
 }

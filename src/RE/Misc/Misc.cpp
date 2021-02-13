@@ -123,7 +123,7 @@ namespace RE
 		std::string GetTextureName(std::string& a_path)
 		{
 			const auto idx = a_path.find_last_of("\\/");
-			if (std::string::npos != idx) {
+			if (idx != std::string::npos) {
 				return a_path.substr(idx + 1);
 			}
 			return std::string();

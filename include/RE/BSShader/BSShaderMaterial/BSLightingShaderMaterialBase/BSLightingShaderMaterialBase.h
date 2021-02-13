@@ -40,7 +40,7 @@ namespace RE
 
 		static BSLightingShaderMaterialBase* CreateMaterial(Feature a_feature);
 
-		void					CopyBaseMembers(BSLightingShaderMaterialBase* other);
+		void					CopyBaseMembers(BSLightingShaderMaterialBase* a_other);
 		NiPointer<BSTextureSet> GetTextureSet() const;
 		void					SetTextureSet(BSTextureSet* a_textureSet);
 

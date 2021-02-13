@@ -51,6 +51,14 @@ namespace RE
 	}
 
 
+	void Actor::AddToFaction(TESFaction* a_faction, std::int8_t a_rank)
+	{
+		using func_t = decltype(&Actor::AddToFaction);
+		REL::Relocation<func_t> func{ REL::ID(36678) };
+		return func(this, a_faction, a_rank);
+	}
+
+
 	bool Actor::ApplySpell(SpellItem* a_spell)
 	{
 		using func_t = decltype(&Actor::AddSpell);
@@ -360,20 +368,10 @@ namespace RE
 
 	NiAVObject* Actor::GetHeadPartObject(BGSHeadPart::HeadPartType a_type)
 	{
-		auto faceNode = GetFaceNodeSkinned();
-		auto actorBase = GetActorBase();
-
-		if (faceNode && actorBase) {
-			const auto facePart = actorBase->GetCurrentHeadPartByType(a_type);
-			if (facePart) {
-				auto headNode = faceNode->GetObjectByName(facePart->formEditorID);
-				if (headNode) {
-					return headNode;
-				}
-			}
-		}
-
-		return nullptr;
+		const auto actorBase = GetActorBase();
+		const auto faceNode = GetFaceNodeSkinned();
+		const auto facePart = actorBase ? actorBase->GetCurrentHeadPartByType(a_type) : nullptr;
+		return faceNode && facePart ? faceNode->GetObjectByName(facePart->formEditorID) : nullptr;
 	}
 
 
@@ -446,15 +444,11 @@ namespace RE
 
 	TESObjectARMO* Actor::GetSkin(BIPED_MODEL::BipedObjectSlot a_slot)
 	{
-		if (a_slot == BIPED_MODEL::BipedObjectSlot::kNone) {
-			return nullptr;
-		}
-
 		auto equipped = GetWornArmor(a_slot);
 		if (!equipped) {
 			equipped = GetSkin();
 		}
-		
+
 		return equipped;
 	}
 
@@ -469,17 +463,15 @@ namespace RE
 
 	TESObjectARMO* Actor::GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot)
 	{
-		auto inv = GetInventory([](TESBoundObject& a_object) -> bool {
-			return a_object.IsArmor();
+		auto inv = GetInventory([a_slot](TESBoundObject& a_object) -> bool {
+			auto armor = a_object.As<RE::TESObjectARMO>();
+			return armor && armor->HasPartOf(a_slot);
 		});
 
 		for (auto& [item, invData] : inv) {
 			auto& [count, entry] = invData;
 			if (count > 0 && entry->GetWorn()) {
-				auto armor = static_cast<TESObjectARMO*>(item);
-				if (armor && armor->HasPartOf(a_slot)) {
-					return armor;
-				}
+				return static_cast<TESObjectARMO*>(item);
 			}
 		}
 
@@ -685,6 +677,14 @@ namespace RE
 	}
 
 
+	void Actor::RemoveFromFaction(TESFaction* a_faction)
+	{
+		using func_t = decltype(&Actor::RemoveFromFaction);
+		REL::Relocation<func_t> func{ REL::ID(36680) };
+		return func(this, a_faction);
+	}
+
+
 	void Actor::RemoveSelectedSpell(SpellItem* a_spell)
 	{
 		using func_t = decltype(&Actor::RemoveSelectedSpell);
@@ -795,20 +795,18 @@ namespace RE
 	bool Actor::VisitAddedFactions(std::function<bool(TESFaction* a_faction, std::int8_t a_rank)> a_visitor)
 	{
 		auto base = GetActorBase();
-		if (base) {
-			if (base->IsUnique()) {
-				for (auto& factionInfo : base->factions) {
-					if (a_visitor(factionInfo.faction, factionInfo.rank)) {
-						return true;
-					}
+		if (base && base->IsUnique()) {
+			for (auto& factionInfo : base->factions) {
+				if (a_visitor(factionInfo.faction, factionInfo.rank)) {
+					return true;
 				}
-			} else {
-				auto factionChanges = extraList.GetByType<ExtraFactionChanges>();
-				if (factionChanges) {
-					for (auto& change : factionChanges->factionChanges) {
-						if (a_visitor(change.faction, change.rank)) {
-							return true;
-						}
+			}
+		} else {
+			auto factionChanges = extraList.GetByType<ExtraFactionChanges>();
+			if (factionChanges) {
+				for (auto& change : factionChanges->factionChanges) {
+					if (a_visitor(change.faction, change.rank)) {
+						return true;
 					}
 				}
 			}
@@ -824,9 +822,7 @@ namespace RE
 		std::memset(addonString, 0, MAX_PATH);
 		a_arma->GetNodeName(addonString, this, a_armor, -1);
 
-		NiAVObject* skeletonRoot[2];
-		skeletonRoot[0] = Get3D(0);
-		skeletonRoot[1] = Get3D(1);
+		NiAVObject* skeletonRoot[2] = { Get3D(0), Get3D(1) };
 
 		if (skeletonRoot[1] == skeletonRoot[0]) {
 			skeletonRoot[1] = nullptr;

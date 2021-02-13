@@ -597,6 +597,7 @@
 #include "RE/Events/ScriptEvent/TESQuestStageEvent.h"
 #include "RE/Events/ScriptEvent/TESQuestStartStopEvent.h"
 #include "RE/Events/ScriptEvent/TESResetEvent.h"
+#include "RE/Events/ScriptEvent/TESResolveNPCTemplatesEvent.h"
 #include "RE/Events/ScriptEvent/TESSwitchRaceCompleteEvent.h"
 #include "RE/Events/ScriptEvent/TESTrackedStatsEvent.h"
 #include "RE/Events/ScriptEvent/TESUniqueIDChangeEvent.h"

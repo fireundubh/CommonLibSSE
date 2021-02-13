@@ -41,7 +41,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_EnhancedReanimation", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_EquipmentToggle", "..\Projects\HelmetToggle\EquipmentToggle.vcxproj", "{709EB09E-11A6-44A0-92C5-8007257FB2D5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_ScrollingSpeed", "..\Projects\ScrollingSpeed\ScrollingSpeed.vcxproj", "{5D826D00-CE56-4880-BEC0-7B7E19014925}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "po3_ScrollingSpeed", "..\Projects\VampiresCastNoShadows2\VampiresCastNoShadows2.vcxproj", "{5D826D00-CE56-4880-BEC0-7B7E19014925}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

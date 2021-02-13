@@ -29,7 +29,7 @@ namespace RE
 			kUnique = 1 << 5,
 			kDoesntAffectStealthMeter = 1 << 6,
 			kPCLevelMult = 1 << 7,
-			kUsesTemplate = 1 << 8,
+			kUsesAudioTemplate = 1 << 8,
 			kProtected = 1 << 11,
 			kSummonable = 1 << 14,
 			kDoesntBleed = 1 << 16,
@@ -115,7 +115,7 @@ namespace RE
 		[[nodiscard]] constexpr bool HasPCLevelMult() const noexcept { return actorData.actorBaseFlags.all(ACTOR_BASE_DATA::Flag::kPCLevelMult); }
 		[[nodiscard]] constexpr bool Respawns() const noexcept { return actorData.actorBaseFlags.all(ACTOR_BASE_DATA::Flag::kRespawn); }
 		[[nodiscard]] constexpr bool UsesOppositeGenderAnims() const noexcept { return actorData.actorBaseFlags.all(ACTOR_BASE_DATA::Flag::kOppositeGenderanims); }
-		[[nodiscard]] constexpr bool UsesTemplate() const noexcept { return actorData.actorBaseFlags.all(ACTOR_BASE_DATA::Flag::kUsesTemplate); }
+		[[nodiscard]] constexpr bool UsesAudioTemplate() const noexcept { return actorData.actorBaseFlags.all(ACTOR_BASE_DATA::Flag::kUsesAudioTemplate); }
 
 
 		// members

@@ -77,10 +77,8 @@ namespace RE
 		virtual BSSkinnedDecalTriShape* AsSkinnedDecalTriShape();  // 36 - { return 0; }
 		virtual void					Unk_37(void);			   // 37 - { return 0; }
 
-		bool HasVertexFlag(NiSkinPartition::Vertex::Flags a_flag);
+		bool HasVertexFlag(NiSkinPartition::Vertex::Flags a_flag) const;
 		void SwitchToFaceTint();
-		void UpdateDismemberPartion(bool a_enable);
-		void UpdateDismemberPartion(std::uint16_t a_slot, bool a_enable);
 
 
 		// members

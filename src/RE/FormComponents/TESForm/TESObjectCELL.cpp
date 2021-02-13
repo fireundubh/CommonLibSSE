@@ -55,14 +55,6 @@ namespace RE
 	}
 
 
-	bhkWorld* TESObjectCELL::GetHavokWorld()
-	{
-		using func_t = decltype(&TESObjectCELL::GetHavokWorld);
-		REL::Relocation<func_t> func{ REL::ID(18536) };
-		return func(this);
-	}
-
-
 	TESForm* TESObjectCELL::GetOwner()
 	{
 		auto owner = extraList.GetOwner();

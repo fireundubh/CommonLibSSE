@@ -31,7 +31,7 @@ namespace RE
 
 		// members
 		BSTArray<NiPointer<BSTempEffect>> decals;	  // 128
-		std::uint8_t					  isSkinned;  // 140
+		bool							  isSkinned;  // 140
 	};
 	static_assert(sizeof(BGSDecalNode) == 0x148);
 }

@@ -14,7 +14,6 @@
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiProperty.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/BSShaderProperty/BSLightingShaderProperty.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/BSShaderProperty/BSShaderProperty.h"
-#include "SKSE/Logger.h"
 
 
 namespace RE
@@ -35,15 +34,13 @@ namespace RE
 				return BSVisit::BSVisitControl::kStop;
 			}
 
-			auto effect = a_geometry->properties[BSGeometry::States::kEffect].get();
-			if (effect) {
-				auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
-				if (lightingShader) {
-					const auto material = lightingShader->material;
-					if (material && material->GetFeature() == a_type) {
-						firstGeometry = a_geometry;
-						return BSVisit::BSVisitControl::kStop;
-					}
+			auto effect = a_geometry->properties[BSGeometry::States::kEffect];
+			auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect.get());
+			if (lightingShader) {
+				const auto material = lightingShader->material;
+				if (material && material->GetFeature() == a_type) {
+					firstGeometry = a_geometry;
+					return BSVisit::BSVisitControl::kStop;
 				}
 			}
 
@@ -73,18 +70,15 @@ namespace RE
 		bool hasShaderType = false;
 
 		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl {
-			auto effect = a_geometry->properties[BSGeometry::States::kEffect].get();
-			if (effect) {
-				auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
-				if (lightingShader) {
-					const auto material = lightingShader->material;
-					if (material && material->GetFeature() == a_type) {
-						hasShaderType = true;
-						return BSVisit::BSVisitControl::kStop;
-					}
+			auto effect = a_geometry->properties[BSGeometry::States::kEffect];
+			auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect.get());
+			if (lightingShader) {
+				auto material = lightingShader->material;
+				if (material && material->GetFeature() == a_type) {
+					hasShaderType = true;
+					return BSVisit::BSVisitControl::kStop;
 				}
 			}
-
 			return BSVisit::BSVisitControl::kContinue;
 		});
 
@@ -94,11 +88,7 @@ namespace RE
 
 	void NiAVObject::SetAppCulled(bool cull)
 	{
-		if (cull) {
-			flags.set(Flag::kHidden);
-		} else {
-			flags.reset(Flag::kHidden);
-		}
+		cull ? flags.set(Flag::kHidden) : flags.reset(Flag::kHidden);
 	}
 
 
@@ -177,10 +167,9 @@ namespace RE
 	void NiAVObject::UpdateMaterialAlpha(float a_alpha, bool a_onlySkin)
 	{
 		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl {
-			using State = BSGeometry::States;
 			using Feature = BSShaderMaterial::Feature;
 
-			auto effect = a_geometry->properties[State::kEffect].get();
+			auto effect = a_geometry->properties[BSGeometry::States::kEffect].get();
 			if (effect) {
 				auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
 				if (lightingShader) {
@@ -208,15 +197,13 @@ namespace RE
 			using State = BSGeometry::States;
 			using Feature = BSShaderMaterial::Feature;
 
-			auto effect = a_geometry->properties[State::kEffect].get();
-			if (effect) {
-				auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
-				if (lightingShader) {
-					auto material = lightingShader->material;
-					if (material && material->GetFeature() == Feature::kFaceGenRGBTint) {
-						auto facegenTint = static_cast<BSLightingShaderMaterialFacegenTint*>(material);
-						facegenTint->tintColor = a_color;
-					}
+			auto effect = a_geometry->properties[State::kEffect];
+			auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect.get());
+			if (lightingShader) {
+				auto material = lightingShader->material;
+				if (material && material->GetFeature() == Feature::kFaceGenRGBTint) {
+					auto facegenTint = static_cast<BSLightingShaderMaterialFacegenTint*>(material);
+					facegenTint->tintColor = a_color;
 				}
 			}
 
@@ -231,15 +218,13 @@ namespace RE
 			using State = BSGeometry::States;
 			using Feature = BSShaderMaterial::Feature;
 
-			auto effect = a_geometry->properties[State::kEffect].get();
-			if (effect) {
-				auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
-				if (lightingShader) {
-					auto material = lightingShader->material;
-					if (material && material->GetFeature() == Feature::kHairTint) {
-						auto hairTint = static_cast<BSLightingShaderMaterialHairTint*>(material);
-						hairTint->tintColor = a_color;
-					}
+			auto effect = a_geometry->properties[State::kEffect];
+			auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect.get());
+			if (lightingShader) {
+				auto material = lightingShader->material;
+				if (material && material->GetFeature() == Feature::kHairTint) {
+					auto hairTint = static_cast<BSLightingShaderMaterialHairTint*>(material);
+					hairTint->tintColor = a_color;
 				}
 			}
 

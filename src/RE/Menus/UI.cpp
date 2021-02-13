@@ -12,15 +12,7 @@ namespace RE
 	}
 
 
-	bool UI::IsInMenuMode()
-	{
-		using func_t = decltype(&IsInMenuMode);
-		REL::Relocation<func_t> func{ REL::ID(56476) };
-		return func();
-	}
-
-
-	bool UI::GameIsPaused()
+	bool UI::GameIsPaused() const
 	{
 		return numPausesGame > 0;
 	}
@@ -49,6 +41,14 @@ namespace RE
 	bool UI::IsCursorHiddenWhenTopmost() const
 	{
 		return numDontHideCursorWhenTopmost == 0;
+	}
+
+
+	bool UI::IsInMenuMode()
+	{
+		using func_t = decltype(&UI::IsInMenuMode);
+		REL::Relocation<func_t> func{ REL::ID(56476) };
+		return func();
 	}
 
 

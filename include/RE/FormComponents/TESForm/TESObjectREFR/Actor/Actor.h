@@ -497,6 +497,7 @@ namespace RE
 		static bool				LookupByHandle(RefHandle a_refHandle, NiPointer<Actor>& a_refrOut);
 
 		bool						 AddSpell(SpellItem* a_spell);
+		void						 AddToFaction(TESFaction* a_faction, std::int8_t a_rank);
 		bool						 ApplySpell(SpellItem* a_spell);
 		void						 AllowBleedoutDialogue(bool a_canTalk);
 		void						 AllowPCDialogue(bool a_talk);
@@ -564,6 +565,7 @@ namespace RE
 		bool						 IsTrespassing() const;
 		void						 KillImmediate();
 		void						 RemoveExtraArrows3D();
+		void						 RemoveFromFaction(TESFaction* a_faction);
 		void						 RemoveSelectedSpell(SpellItem* a_spell);
 		bool						 RemoveSpell(SpellItem* a_spell);
 		std::int32_t				 RequestDetectionLevel(Actor* a_target, DETECTION_PRIORITY a_priority = DETECTION_PRIORITY::kNormal);

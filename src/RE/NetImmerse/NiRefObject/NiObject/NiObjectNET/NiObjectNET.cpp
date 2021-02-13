@@ -147,18 +147,18 @@ namespace RE
 	}
 
 
-	bool NiObjectNET::HasExtraData(const BSFixedString& a_match)
-	{	
+	bool NiObjectNET::HasExtraData(const BSFixedString& a_key) const
+	{
 		using namespace SKSE::UTIL::STRING;
-		
-		if (a_match.empty() || !extra || extraDataSize == 0) {
+
+		if (a_key.empty() || !extra || extraDataSize == 0) {
 			return false;
 		}
 
 		for (std::uint16_t i = 0; i < extraDataSize; i++) {
 			auto extraData = extra[i];
-			if (extraData && insenstiveStringCompare(extraData->GetName(), a_match)) {
-					return true;
+			if (extraData && insenstiveStringCompare(extraData->GetName(), a_key)) {
+				return true;
 			}
 		}
 
@@ -272,7 +272,12 @@ namespace RE
 			return false;
 		}
 
-		if (a_extra == nullptr) {
+		if (!a_extra) {
+			return false;
+		}
+
+		auto key = a_extra->GetName();
+		if (key.empty()) {
 			return false;
 		}
 
@@ -285,7 +290,7 @@ namespace RE
 		while (bottom <= top) {
 			middle = (top + bottom) >> 1;
 
-			std::ptrdiff_t compare = a_extra->GetName().c_str() - extra[middle]->GetName().c_str();
+			std::ptrdiff_t compare = key.c_str() - extra[middle]->GetName().c_str();
 
 			if (compare == 0) {
 				DeleteExtraData(middle);

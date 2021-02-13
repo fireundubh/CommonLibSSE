@@ -42,11 +42,6 @@ namespace RE
 		virtual void Unk_35(void);	// 35
 		virtual void Unk_36(void);	// 36
 
-		void LockWorldForRead();
-		void LockWorldForWrite();
-		void UnlockWorldForRead();
-		void UnlockWorldForWrite();
-
 
 		// members
 		std::uint8_t				  unk0020[0x320];			  // 0020

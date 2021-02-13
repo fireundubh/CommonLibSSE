@@ -66,30 +66,36 @@ namespace RE
 		}
 
 
-		inline float GetEntry(std::size_t a_row, std::size_t a_col) const
-		{
-			return entry[a_row][a_col];
-		}
-		inline void SetEntry(std::size_t a_row, std::size_t a_col, float f)
-		{
-			entry[a_row][a_col] = f;
-		}
-		inline float& operator()(std::size_t a_row, std::size_t a_col)
-		{
-			return entry[a_row][a_col];
-		}
-		inline const float& operator()(std::size_t a_row, std::size_t a_col) const
+		float GetEntry(std::size_t a_row, std::size_t a_col) const
 		{
 			return entry[a_row][a_col];
 		}
 
-		bool	  operator==(const NiMatrix3& a_mat) const;
-		bool	  operator!=(const NiMatrix3& a_mat) const;
-		NiMatrix3 operator+(const NiMatrix3& a_mat) const;
-		NiMatrix3 operator-(const NiMatrix3& a_mat) const;
-		NiMatrix3 operator*(const NiMatrix3& a_mat) const;
-		NiPoint3  operator*(const NiPoint3& a_pt) const;
-		NiMatrix3 operator*(float a_fScalar) const;
+		void SetEntry(std::size_t a_row, std::size_t a_col, float f)
+		{
+			entry[a_row][a_col] = f;
+		}
+
+		float& operator()(std::size_t a_row, std::size_t a_col)
+		{
+			return entry[a_row][a_col];
+		}
+
+		const float& operator()(std::size_t a_row, std::size_t a_col) const
+		{
+			return entry[a_row][a_col];
+		}
+
+		bool       operator==(const NiMatrix3& a_mat) const;
+		bool       operator!=(const NiMatrix3& a_mat) const;
+		NiMatrix3  operator+(const NiMatrix3& a_mat) const;
+		NiMatrix3  operator-(const NiMatrix3& a_mat) const;
+		NiMatrix3  operator*(const NiMatrix3& a_rhs) const;
+		NiPoint3   operator*(const NiPoint3& a_pt) const;
+		NiMatrix3  operator+(float a_scalar) const;
+		NiMatrix3  operator*(float a_scalar) const;
+		NiMatrix3& operator+=(float a_scalar);
+		NiMatrix3& operator*=(float a_scalar);
 
 		void Zero();
 		void Identity();

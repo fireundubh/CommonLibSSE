@@ -252,29 +252,29 @@ namespace RE
 		// override (BSTEventSink<MenuOpenCloseEvent>)
 		virtual BSEventNotifyControl ProcessEvent(const MenuOpenCloseEvent* a_event, BSTEventSource<MenuOpenCloseEvent>* a_eventSource) override;  // 01
 
-		bool						 AddPerk(BGSPerk* a_perk, std::int8_t a_rank = 1);
-		void						 ChangeHeadPart(BGSHeadPart* a_target);
-		BGSHeadPart**				 GetBaseOverlays() const;
-		BGSHeadPart*				 GetCurrentHeadPartByType(HeadPartType a_type);
-		BGSHeadPart*				 GetHeadPartByType(HeadPartType a_type);
-		BGSHeadPart*				 GetHeadPartOverlayByType(HeadPartType a_type);
-		float						 GetHeight() const;
-		std::uint32_t				 GetNumBaseOverlays() const;
-		TESSpellList::SpellData*	 GetOrCreateSpellList();
+		bool                         AddPerk(BGSPerk* a_perk, std::int8_t a_rank = 1);
+		void                         ChangeHeadPart(BGSHeadPart* a_target);
+		BGSHeadPart**                GetBaseOverlays() const;
+		BGSHeadPart*                 GetCurrentHeadPartByType(HeadPartType a_type);
+		BGSHeadPart*                 GetHeadPartByType(HeadPartType a_type);
+		BGSHeadPart*                 GetHeadPartOverlayByType(HeadPartType a_type);
+		float                        GetHeight() const;
+		std::uint32_t                GetNumBaseOverlays() const;
+		TESSpellList::SpellData*     GetOrCreateSpellList();
 		std::optional<std::uint32_t> GetPerkIndex(BGSPerk* a_perk) const;
-		TESRace*					 GetRace();
-		TESNPC*						 GetRootFaceNPC();
-		const TESNPC*				 GetRootFaceNPC() const;
-		SEX							 GetSex() const;
-		RE::TESObjectARMO*			 GetSkin() const;
-		bool						 IsInClass(TESClass* a_class) const;
-		bool						 HasOverlays();
-		bool						 HasKeyword(std::string_view a_formEditorID) const;
-		bool						 RemovePerk(BGSPerk* a_perk);
-		void						 SetFaceTexture(BGSTextureSet* a_textureSet);
-		void						 SetHairColor(BGSColorForm* a_hairColor);
-		void						 SetSkinFromTint(NiColorA* a_result, TintMask* a_tintMask, bool a_fromTint);
-		void						 UpdateNeck(BSFaceGenNiNode* a_faceNode);
+		TESRace*                     GetRace() const;
+		TESNPC*                      GetRootFaceNPC();
+		const TESNPC*                GetRootFaceNPC() const;
+		SEX                          GetSex() const;
+		RE::TESObjectARMO*           GetSkin() const;
+		bool                         IsInClass(TESClass* a_class) const;
+		bool                         HasOverlays();
+		bool                         HasKeyword(std::string_view a_formEditorID) const;
+		bool                         RemovePerk(BGSPerk* a_perk);
+		void                         SetFaceTexture(BGSTextureSet* a_textureSet);
+		void                         SetHairColor(BGSColorForm* a_hairColor);
+		void                         SetSkinFromTint(NiColorA* a_result, TintMask* a_tintMask, bool a_fromTint);
+		void                         UpdateNeck(BSFaceGenNiNode* a_faceNode);
 
 
 		// members

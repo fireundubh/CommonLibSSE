@@ -67,7 +67,11 @@ namespace RE
 
 	BGSHeadPart* TESNPC::GetCurrentHeadPartByType(HeadPartType a_type)
 	{
-		return HasOverlays() ? GetHeadPartOverlayByType(a_type) : GetHeadPartByType(a_type);
+		auto headpart = HasOverlays() ? GetHeadPartOverlayByType(a_type) : GetHeadPartByType(a_type);
+		if (!headpart && race) {
+			headpart = race->GetHeadPartByType(a_type, GetSex());
+		}
+		return headpart;
 	}
 
 
@@ -127,13 +131,13 @@ namespace RE
 	TESSpellList::SpellData* TESNPC::GetOrCreateSpellList()
 	{
 		if (!actorEffects) {
-			actorEffects = new TESSpellList::SpellData();
+			actorEffects = new SpellData();
 		}
 		return actorEffects;
 	}
 
 
-	TESRace* TESNPC::GetRace()
+	TESRace* TESNPC::GetRace() const
 	{
 		return race;
 	}
@@ -191,11 +195,11 @@ namespace RE
 
 	bool TESNPC::HasKeyword(std::string_view a_formEditorID) const
 	{
-		bool hasKeyword = HasKeywordString(a_formEditorID);
-		if (!hasKeyword && race) {
-			hasKeyword = race->HasKeywordString(a_formEditorID);
+		auto result = HasKeywordString(a_formEditorID);
+		if (!result) {
+			result = race ? race->HasKeywordString(a_formEditorID) : false;
 		}
-		return hasKeyword;
+		return result;
 	}
 
 

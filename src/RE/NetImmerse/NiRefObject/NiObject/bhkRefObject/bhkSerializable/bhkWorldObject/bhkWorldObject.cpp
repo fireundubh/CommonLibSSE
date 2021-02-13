@@ -5,50 +5,9 @@
 
 namespace RE
 {
-	void bhkWorldObject::EnterCriticalOperationRead()
+	bhkWorld* bhkWorldObject::GetbhkWorld()
 	{
 		auto ahkpWorld = GetWorld2();
-		if (ahkpWorld) {
-			auto bhkWorld = ahkpWorld->physicsWorld;
-			if (bhkWorld) {
-				bhkWorld->LockWorldForRead();
-			}
-		}
-	}
-
-
-	void bhkWorldObject::EnterCriticalOperationWrite()
-	{
-		auto ahkpWorld = GetWorld2();
-		if (ahkpWorld) {
-			auto bhkWorld = ahkpWorld->physicsWorld;
-			if (bhkWorld) {
-				bhkWorld->LockWorldForWrite();
-			}
-		}
-	}
-
-
-	void bhkWorldObject::ExitCriticalOperationRead()
-	{
-		auto ahkpWorld = GetWorld2();
-		if (ahkpWorld) {
-			auto bhkWorld = ahkpWorld->physicsWorld;
-			if (bhkWorld) {
-				bhkWorld->UnlockWorldForRead();
-			}
-		}
-	}
-
-
-	void bhkWorldObject::ExitCriticalOperationWrite()
-	{
-		auto ahkpWorld = GetWorld2();
-		if (ahkpWorld) {
-			auto bhkWorld = ahkpWorld->physicsWorld;
-			if (bhkWorld) {
-				bhkWorld->UnlockWorldForWrite();
-			}
-		}
+		return ahkpWorld ? ahkpWorld->physicsWorld : nullptr;
 	}
 }
