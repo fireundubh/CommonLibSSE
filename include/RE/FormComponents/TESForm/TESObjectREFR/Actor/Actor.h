@@ -337,7 +337,7 @@ namespace RE
 		virtual void					SetActionComplete(bool a_set) override;																																												  // 087
 		virtual void					Disable() override;																																																	  // 089
 		virtual void					ResetInventory(bool a_leveledOnly) override;																																										  // 08A
-		virtual void					Unk_8B(void) override;																																																  // 08B
+		virtual NiNode*					GetWeaponBone() override;																																															  // 08B
 		virtual void					Unk_8C(void) override;																																																  // 08C
 		virtual bool					OnAddCellPerformQueueReference(TESObjectCELL& a_cell) const override;																																				  // 090
 		virtual void					DoMoveToHigh() override;																																															  // 091
@@ -530,16 +530,17 @@ namespace RE
 		ActorHandle					 GetHandle();
 		NiAVObject*					 GetHeadPartObject(BGSHeadPart::HeadPartType a_type);
 		float						 GetHeight();
-		Actor*						 GetKiller();
+		Actor*						 GetKiller() const;
 		std::uint16_t				 GetLevel() const;
 		ObjectRefHandle				 GetOccupiedFurniture() const;
 		TESRace*					 GetRace() const;
 		SEX							 GetSex() const;
-		RE::TESObjectARMO*			 GetSkin() const;
+		TESObjectARMO*				 GetSkin() const;
 		TESObjectARMO*				 GetSkin(BIPED_MODEL::BipedObjectSlot a_slot);
 		SOUL_LEVEL					 GetSoulLevel() const;
 		TESObjectARMO*				 GetWornArmor(BIPED_MODEL::BipedObjectSlot a_slot);
 		TESObjectARMO*				 GetWornArmor(FormID a_ID);
+		bool						 HasLOS(TESObjectREFR* a_ref, std::uint8_t* a_unk02);
 		bool						 HasKeyword(const BGSKeyword* a_keyword) const;
 		bool						 HasKeyword(std::string_view a_formEditorID) const;
 		bool						 HasPerk(BGSPerk* a_perk) const;
@@ -570,10 +571,12 @@ namespace RE
 		bool						 RemoveSpell(SpellItem* a_spell);
 		std::int32_t				 RequestDetectionLevel(Actor* a_target, DETECTION_PRIORITY a_priority = DETECTION_PRIORITY::kNormal);
 		void						 StealAlarm(TESObjectREFR* a_ref, TESForm* a_object, std::int32_t a_num, std::int32_t a_total, TESForm* a_owner, bool a_allowWarning);
+		void						 StopSelectedSpells();
 		void						 SwitchRace(TESRace* a_race, bool a_player);
 		void						 UpdateArmorAbility(TESForm* a_armor, ExtraDataList* a_extraData);
 		void						 Update3DModel();
 		void						 UpdateHairColor();
+		void						 UpdateLifeState(ACTOR_LIFE_STATE a_lifeState);
 		void						 UpdateSkinColor();
 		void						 UpdateWeaponAbility(TESForm* a_weapon, ExtraDataList* a_extraData, bool a_leftHand);
 		bool						 VisitAddedFactions(std::function<bool(TESFaction* a_faction, std::int8_t a_rank)> a_visitor);

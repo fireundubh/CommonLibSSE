@@ -40,10 +40,15 @@ namespace RE
 		virtual bool		  IsEqual(NiObject* a_object) override;				  // 1C
 		virtual Type		  GetType() const override;							  // 25 - { return Type::kAlpha; }
 
-
+		static NiAlphaProperty* Create();
+		
+		
 		// members
 		std::uint16_t alphaFlags;	   // 30
 		std::uint8_t  alphaThreshold;  // 32
+
+	private:
+		NiAlphaProperty* ctor();
 	};
 	static_assert(sizeof(NiAlphaProperty) == 0x38);
 }

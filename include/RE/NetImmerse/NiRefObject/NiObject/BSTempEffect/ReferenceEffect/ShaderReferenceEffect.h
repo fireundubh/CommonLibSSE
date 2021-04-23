@@ -66,12 +66,12 @@ namespace RE
 		virtual void			 Push() override;											// 34 - { if (effectShaderData) ++pushCount; }
 		virtual void			 Pop() override;											// 35
 		virtual void			 Unk_36(void) override;										// 36
-		virtual void			 Clear() override;											// 37
-		virtual void			 Unk_38(void) override;										// 38
-		virtual void			 Unk_39(void) override;										// 39
+		virtual void			 RemoveEffectShaderData() override;								// 37
+		virtual void			 AddEffectShaderData() override;						// 38
+		virtual void			 InvalidateTarget() override;								// 39
 		virtual void			 UpdatePosition() override;									// 3B
-		virtual void			 Unk_3C(void) override;										// 3C
-		virtual void			 Unk_3E(void) override;										// 3E
+		virtual NiAVObject*		 GetAttachRoot() override;									// 3C
+		virtual void			 Clear() override;											// 3E
 
 
 		// members

@@ -12,6 +12,14 @@ namespace RE
 	}
 
 
+	ObjectRefHandle& TESQuest::CreateRefHandleByAliasID(ObjectRefHandle& a_handle, std::uint32_t a_aliasID)
+	{
+		using func_t = decltype(&TESQuest::CreateRefHandleByAliasID);
+		REL::Relocation<func_t> func{ REL::ID(24537) };
+		return func(this, a_handle, a_aliasID);
+	}
+
+
 	bool TESQuest::EnsureQuestStarted(bool& a_result, bool a_startNow)
 	{
 		using func_t = decltype(&TESQuest::EnsureQuestStarted);

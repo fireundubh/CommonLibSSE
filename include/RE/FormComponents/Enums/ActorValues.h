@@ -6,7 +6,7 @@ namespace RE
 	enum class ActorValue
 	{
 		kNone = static_cast<std::underlying_type_t<ActorValue>>(-1),
-		kAggresion = 0,
+		kAggression = 0,
 		kConfidence = 1,
 		kEnergy = 2,
 		kMorality = 3,

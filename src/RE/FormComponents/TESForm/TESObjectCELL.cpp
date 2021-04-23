@@ -5,6 +5,7 @@
 #include "RE/FormComponents/TESForm/TESFaction.h"
 #include "RE/FormComponents/TESForm/TESObject/TESBoundObject/TESBoundAnimObject/TESActorBase/TESNPC.h"
 #include "RE/FormComponents/TESForm/TESWorldSpace.h"
+#include "RE/NetImmerse/NiMath.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/bhkRefObject/bhkSerializable/bhkWorld/bhkWorld.h"
 
 
@@ -76,13 +77,31 @@ namespace RE
 	}
 
 
+	float TESObjectCELL::GetWaterHeight() const
+	{
+		auto height = -NI_INFINITY;
+		
+		if (cellFlags.none(Flag::kHasWater) || cellFlags.any(Flag::kIsInteriorCell)) {
+			return height;
+		}
+
+		if (waterHeight < 2147483600.0f) {
+			return waterHeight;
+		}
+
+		return worldSpace ? worldSpace->GetWaterHeight() : height;
+	}
+
+
 	void TESObjectCELL::ForEachReference(std::function<bool(RE::TESObjectREFR&)> a_callback) const
 	{
 		BSSpinLockGuard locker(spinLock);
 		for (const auto& refPtr : references) {
 			auto ref = refPtr.get();
-			if (ref && !a_callback(*ref)) {
-				break;
+			if (ref) {
+				if (!a_callback(*ref)) {
+					break;
+				}
 			}
 		}
 	}
@@ -114,6 +133,14 @@ namespace RE
 	bool TESObjectCELL::IsInteriorCell() const
 	{
 		return cellFlags.all(Flag::kIsInteriorCell);
+	}
+
+
+	BSTempEffectParticle* TESObjectCELL::PlaceParticleEffect(float a_lifetime, const char* a_modelName, const RE::NiMatrix3& a_normal, const RE::NiPoint3& a_pos, float a_scale, std::uint32_t a_flags, RE::NiAVObject* a_target)
+	{
+		using func_t = decltype(&TESObjectCELL::PlaceParticleEffect);
+		REL::Relocation<func_t> func{ REL::ID(29219) };
+		return func(this, a_lifetime, a_modelName, a_normal, a_pos, a_scale, a_flags, a_target);
 	}
 
 
@@ -196,5 +223,9 @@ namespace RE
 	bool TESObjectCELL::UsesSkyLighting() const
 	{
 		return cellFlags.all(Flag::kUseSkyLighting);
+	}
+	BSTempEffectParticle* CreateParticleEffect(RE::TESObjectCELL* a_cell, float a_lifetime, const char* a_modelName, const RE::NiMatrix3& a_rot, const RE::NiPoint3& a_pos, float a_scale, std::uint32_t a_flags, RE::NiAVObject* a_unk88)
+	{
+		return nullptr;
 	}
 }

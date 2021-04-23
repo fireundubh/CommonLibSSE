@@ -97,9 +97,13 @@ namespace RE
 		NiMatrix3& operator+=(float a_scalar);
 		NiMatrix3& operator*=(float a_scalar);
 
+		void EulerAnglesToAxesZXY(const NiPoint3& a_angle);
+		void EulerAnglesToAxesZXY(float a_xAngle, float a_yAngle, float a_zAngle);
+
 		void Zero();
 		void Identity();
 		void SetEulerAnglesXYZ(float a_xAngle, float a_yAngle, float a_zAngle);
+		void SetEulerAnglesXYZ(const NiPoint3& a_point);
 		bool ToEulerAnglesXYZ(NiPoint3& a_angle) const;
 		bool ToEulerAnglesXYZ(float& a_xAngle, float& a_yAngle, float& a_zAngle) const;
 

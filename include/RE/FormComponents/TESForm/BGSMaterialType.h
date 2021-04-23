@@ -134,6 +134,8 @@ namespace RE
 		virtual bool Load(TESFile* a_mod) override;	 // 06
 		virtual void InitItemImpl() override;		 // 13
 
+		static BGSMaterialType* GetMaterialType(MATERIAL_ID a_matID);
+
 
 		// members
 		BGSMaterialType*					  parentType;		   // 20 - PNAM

@@ -3,6 +3,7 @@
 #include "RE/BSCore/BSAtomic.h"
 #include "RE/BSCore/BSTArray.h"
 #include "RE/BSHavok/hkVector4.h"
+#include "RE/BSHavok/hkpWorldRayCastInput.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/bhkRefObject/bhkSerializable/bhkSerializable.h"
 
 
@@ -10,12 +11,34 @@ namespace RE
 {
 	class BGSAcousticSpaceListener;
 	class hkpSuspendInactiveAgentsUtil;
+	class NiAVObject;
 
 
 	class bhkWorld : public bhkSerializable
 	{
 	public:
 		class bhkConstraintProjector;
+		class hkpClosestRayHitCollector;
+
+
+		struct RAYCAST_DATA
+		{
+		public:
+			// members
+			hkpWorldRayCastInput	   rayInput;					  // 00
+			hkpWorldRayCastOutput	   rayOutput;					  // 30
+			hkVector4				   ray;							  // 90
+			hkpClosestRayHitCollector* rayHitCollectorA0{ nullptr };  // A0
+			hkpClosestRayHitCollector* rayHitCollectorA8{ nullptr };  // A8
+			hkpClosestRayHitCollector* rayHitCollectorB0{ nullptr };  // B0
+			hkpClosestRayHitCollector* rayHitCollectorB8{ nullptr };  // B8
+			bool					   unkC0{ false };				  // C0
+			std::uint8_t			   padC1;						  // C1
+			std::uint16_t			   padC2;						  // C2
+			std::uint32_t			   padC4;						  // C4
+			std::uint32_t			   padC8;						  // C8
+		};
+		static_assert(sizeof(RAYCAST_DATA) == 0xD0);
 
 
 		inline static constexpr auto RTTI = RTTI_bhkWorld;
@@ -36,11 +59,11 @@ namespace RE
 		virtual void		  Unk_2F(void) override;									   // 2F
 
 		// add
-		virtual void Unk_32(void);	// 32
-		virtual void Unk_33(void);	// 33
-		virtual void Unk_34(void);	// 34
-		virtual void Unk_35(void);	// 35
-		virtual void Unk_36(void);	// 36
+		virtual void Unk_32(void);												// 32
+		virtual bool CastRay(RAYCAST_DATA& a_worldRayCast);						// 33
+		virtual void Unk_34(void);												// 34
+		virtual void Unk_35(void);												// 35
+		virtual void InitHavok(NiAVObject* a_sceneObject, NiAVObject* a_root);	// 36
 
 
 		// members
@@ -68,7 +91,7 @@ namespace RE
 		BGSAcousticSpaceListener*	  acousticSpaceListener;	  // C5C8
 		hkpSuspendInactiveAgentsUtil* suspendInactiveAgentsUtil;  // C5D0
 		std::uint32_t				  unkC5D8;					  // C5D8 - incremented per frame
-		std::uint32_t				  unkC5DC;					  // C5DC 
+		std::uint32_t				  unkC5DC;					  // C5DC
 		std::uint32_t				  unkC5E0;					  // C5E0
 		std::uint32_t				  unkC5E4;					  // C5E4
 		std::uint32_t				  unkC5E8;					  // C5E8

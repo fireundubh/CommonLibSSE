@@ -125,6 +125,7 @@ namespace RE
 
 		static std::string	 ColorToString(const Color& a_rhs);
 		static std::uint32_t ColorToInt(const Color& a_rhs);
+		std::uint32_t		 ColorToInt() const;
 
 
 		// members

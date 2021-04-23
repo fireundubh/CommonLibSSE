@@ -4,6 +4,8 @@
 #include "RE/BSCore/BSTList.h"
 #include "RE/BSCore/BSTTuple.h"
 #include "RE/FileIO/ICellAttachDetachEventSource/ICellAttachDetachEventSource.h"
+#include "RE/FormComponents/TESForm/TESObjectREFR/TESObjectREFR.h"
+#include "RE/NetImmerse/NiPoint3.h"
 
 
 namespace RE
@@ -63,6 +65,10 @@ namespace RE
 
 		static TES* GetSingleton();
 
+		void ForEachReference(std::function<bool(TESObjectREFR& a_ref)> a_callback);
+		void ForEachReferenceInRange(const NiPoint3& a_origin, float a_radius, std::function<bool(TESObjectREFR& a_ref)> a_callback);
+		float GetWaterHeight(const RE::NiPoint3& a_pos, TESObjectCELL* a_cell);
+
 
 		// members
 		std::uint64_t									unk070;				 // 070
@@ -73,7 +79,8 @@ namespace RE
 		BSTempNodeManager*								tempNodeManager;	 // 098
 		std::uint64_t									unk0A0;				 // 0A0
 		std::uint64_t									unk0A8;				 // 0A8
-		std::uint64_t									unk0B0;				 // 0B0
+		std::uint32_t									unk0B0;				 // 0B0
+		std::uint32_t									unk0B4;				 // 0B4
 		std::uint64_t									unk0B8;				 // 0B8
 		TESObjectCELL*									interiorCell;		 // 0C0
 		TESObjectCELL**									interiorCellBuffer;	 // 0C8
@@ -143,7 +150,8 @@ namespace RE
 		std::uint64_t									unk280;				 // 280
 		std::uint64_t									unk288;				 // 288
 		SystemEventAdapter								unk290;				 // 290
-		std::uint64_t									unk2A0;				 // 2A0
+		std::uint32_t									waterLoadedCount;	 // 2A0
+		std::uint32_t									unk2A0;				 // 2A4
 		std::uint64_t									unk2A8;				 // 2A8
 		std::uint64_t									unk2B0;				 // 2B0
 	};

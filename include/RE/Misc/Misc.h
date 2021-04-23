@@ -20,6 +20,8 @@ namespace RE
 	void	 PlaySound(const char* a_editorID);
 	void	 ShowMessageBox(const std::string& a_message);
 
+	float GetDurationOfApplicationRunTime();
+
 
 	namespace Util
 	{

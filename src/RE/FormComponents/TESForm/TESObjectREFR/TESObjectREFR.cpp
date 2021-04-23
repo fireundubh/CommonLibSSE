@@ -1,5 +1,6 @@
 #include "RE/FormComponents/TESForm/TESObjectREFR/TESObjectREFR.h"
 
+#include "RE/AI/AIProcess.h"
 #include "RE/AI/ProcessLists.h"
 #include "RE/BSCore/BSFixedString.h"
 #include "RE/BSExtraData/ExtraCharge.h"
@@ -18,9 +19,11 @@
 #include "RE/FormComponents/TESForm/BGSKeyword/BGSKeyword.h"
 #include "RE/FormComponents/TESForm/TESFaction.h"
 #include "RE/FormComponents/TESForm/TESObject/TESBoundObject/TESBoundAnimObject/TESActorBase/TESNPC.h"
+#include "RE/FormComponents/TESForm/TESObjectCELL.h"
 #include "RE/Inventory/InventoryChanges.h"
 #include "RE/Inventory/InventoryEntryData.h"
 #include "RE/Misc/Misc.h"
+#include "RE/NetImmerse/NiMath.h"
 #include "RE/NetImmerse/NiRTTI.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/BSTempEffect/ReferenceEffect/ReferenceEffect.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiControllerSequence.h"
@@ -140,6 +143,12 @@ namespace RE
 	const TESBoundObject* TESObjectREFR::GetBaseObject() const
 	{
 		return data.objectReference;
+	}
+
+
+	bhkWorld* TESObjectREFR::GetbhkWorld() const
+	{
+		return parentCell ? parentCell->GetbhkWorld() : nullptr;
 	}
 
 
@@ -280,6 +289,34 @@ namespace RE
 	ObjectRefHandle TESObjectREFR::GetHandle()
 	{
 		return ObjectRefHandle(this);
+	}
+
+
+	float TESObjectREFR::GetHeadingAngle(const RE::NiPoint3& a_pos, bool a_abs)
+	{
+		float theta = NiFastATan2(a_pos.x - GetPositionX(), a_pos.y - GetPositionY());
+		float heading = 180 / NI_PI * (theta - GetAngleZ());
+
+		if (heading < -180) {
+			heading += 360;
+		}
+
+		if (heading > 180) {
+			heading -= 360;
+		}
+
+		return a_abs ? NiAbs(heading) : heading;
+	}
+
+
+	float TESObjectREFR::GetHeight() const
+	{
+		const auto min = GetBoundMin();
+		const auto max = GetBoundMax();
+		const auto diff = max.z - min.z;
+		const auto height = GetBaseHeight() * diff;
+
+		return height;
 	}
 
 
@@ -468,11 +505,35 @@ namespace RE
 	}
 
 
-	float TESObjectREFR::GetSubmergedWaterLevel(float a_zPos, TESObjectCELL* a_cell)
+	float TESObjectREFR::GetSubmergedWaterLevel(float a_zPos, TESObjectCELL* a_cell) const
 	{
-		using func_t = decltype(&TESObjectREFR::GetSubmergedWaterLevel);
-		REL::Relocation<func_t> func{ REL::ID(36452) };
-		return func(this, a_zPos, a_cell);
+		auto waterHeight = a_cell && a_cell != parentCell ? a_cell->GetWaterHeight() : GetWaterHeight();
+
+		if (waterHeight == -NI_INFINITY && a_cell) {
+			waterHeight = a_cell->GetWaterHeight();
+		}
+
+		if (waterHeight <= a_zPos) {
+			return 0.0f;
+		}
+
+		auto level = (waterHeight - a_zPos) / GetHeight();
+		return level <= 1.0f ? level : 1.0f;
+	}
+
+
+	float TESObjectREFR::GetWaterHeight() const
+	{
+		float waterHeight, flt_max = -NI_INFINITY;
+
+		if (loadedData) {
+			waterHeight = loadedData->relevantWaterHeight;
+			if (waterHeight != flt_max) {
+				return waterHeight;
+			}
+		}
+
+		return parentCell ? parentCell->GetWaterHeight() : waterHeight;
 	}
 
 
@@ -719,10 +780,10 @@ namespace RE
 
 	void TESObjectREFR::SetCollision(bool a_enable)
 	{
-		if (a_enable) {
-			formFlags &= ~RecordFlags::kCollisionsDisabled;
-		} else {
+		if (!a_enable) {
 			formFlags |= RecordFlags::kCollisionsDisabled;
+		} else {
+			formFlags &= ~RecordFlags::kCollisionsDisabled;
 		}
 	}
 

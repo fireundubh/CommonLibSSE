@@ -4,6 +4,8 @@
 #include "RE/BSCore/BSTList.h"
 #include "RE/BSCore/BSTSmartPointer.h"
 #include "RE/FormComponents/Components/EffectArchetypes.h"
+#include "RE/FormComponents/Enums/MagicSystem.h"
+#include "RE/NetImmerse/NiPoint3.h"
 
 
 namespace RE
@@ -52,6 +54,26 @@ namespace RE
 		static_assert(sizeof(SpellDispelData) == 0x20);
 
 
+		struct CreationData
+		{
+			TESObjectREFR*			   caster;			// 00
+			MagicItem*				   magicItem;		// 08
+			Effect*					   effect;			// 10
+			TESBoundObject*			   source;			// 18
+			std::uint64_t			   unk20;			// 20 - MagicCaster::PostCreationCallback
+			std::uint64_t			   unk28;			// 28 - MagicTarget**
+			NiPoint3				   explosionPoint;	// 30
+			float					   magnitude;		// 3C
+			float					   unk40;			// 40
+			MagicSystem::CastingSource castingSource;	// 44
+			std::uint8_t			   unk48;			// 48
+			bool					   dualCasted;		// 49
+			std::uint16_t			   pad4A;			// 4A
+			std::uint32_t			   pad4C;			// 4C
+		};
+		static_assert(sizeof(CreationData) == 0x50);
+
+
 		virtual ~MagicTarget();	 // 00
 
 		// add
@@ -65,7 +87,7 @@ namespace RE
 		virtual void						 Unk_08(void);																		   // 08 - { return; }
 		virtual void						 Unk_09(void);																		   // 09 - { return; }
 		virtual float						 CheckResistance(MagicItem* a_magicItem, Effect* a_effect, TESBoundObject* a_object);  // 0A - { return 1.0; }
-		virtual void						 CheckAbsorb(Actor* a_actor, MagicItem* a_magicItem, const EffectItem* a_effect);	   // 0B - { return false; }
+		virtual void						 CheckAbsorb(Actor* a_actor, MagicItem* a_magicItem, const Effect* a_effect);		   // 0B - { return false; }
 
 		void DispelEffectsWithArchetype(Archetype a_type, bool a_force);
 		bool HasEffectWithArchetype(Archetype a_type);

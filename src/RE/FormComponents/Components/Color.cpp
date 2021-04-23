@@ -19,6 +19,12 @@ namespace RE
 	}
 
 
+	std::uint32_t Color::ColorToInt() const
+	{
+		return ((red & 0xFF) << 16) + ((green & 0xFF) << 8) + (blue & 0xFF);
+	}
+
+
 	std::string Color::ColorToString(const Color& a_rhs)
 	{
 		char hexcol[16];

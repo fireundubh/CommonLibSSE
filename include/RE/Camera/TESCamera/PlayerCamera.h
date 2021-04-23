@@ -64,6 +64,9 @@ namespace RE
 
 		static PlayerCamera* GetSingleton();
 
+		void EnterFirstPerson();
+		void EnterThirdPerson();
+		void EnterFreeCameraState(bool a_freezeTime);
 		void UpdateThirdPerson(bool a_weaponDrawn);
 
 

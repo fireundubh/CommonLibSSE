@@ -25,6 +25,7 @@
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiNode/BSFaceGenNiNode.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiNode/NiNode.h"
 #include "RE/NetImmerse/NiRefObject/bhkCharacterController.h"
+#include <RE/NetImmerse/NiMath.h>
 
 
 namespace RE
@@ -183,14 +184,9 @@ namespace RE
 			boolBits.set(Actor::BOOL_BITS::kProcessMe);
 		} else {
 			boolBits.reset(Actor::BOOL_BITS::kProcessMe);
-			if (currentProcess) {
-				auto middleHigh = currentProcess->middleHigh;
-				if (middleHigh) {
-					auto controller = middleHigh->charController.get();
-					if (controller) {
-						controller->SetLinearVelocityImpl(hkVector4());
-					}
-				}
+			auto controller = GetCharController();
+			if (controller) {
+				controller->SetLinearVelocityImpl(0.0f);
 			}
 		}
 	}
@@ -396,10 +392,10 @@ namespace RE
 	}
 
 
-	Actor* Actor::GetKiller()
+	Actor* Actor::GetKiller() const
 	{
-		auto killerPtr = myKiller.get();
-		return killerPtr.get() ? killerPtr.get() : nullptr;
+		const auto killerPtr = myKiller.get();
+		return killerPtr.get();
 	}
 
 
@@ -493,6 +489,14 @@ namespace RE
 		}
 
 		return nullptr;
+	}
+
+
+	bool Actor::HasLOS(TESObjectREFR* a_ref, std::uint8_t* a_unk02)
+	{
+		using func_t = decltype(&Actor::HasLOS);
+		REL::Relocation<func_t> func{ REL::ID(53029) };
+		return func(this, a_ref, a_unk02);
 	}
 
 
@@ -718,6 +722,14 @@ namespace RE
 	}
 
 
+	void Actor::StopSelectedSpells()
+	{
+		using func_t = decltype(&Actor::StopSelectedSpells);
+		REL::Relocation<func_t> func{ REL::ID(37808) };
+		return func(this);
+	}
+
+
 	void Actor::SwitchRace(TESRace* a_race, bool a_player)
 	{
 		using func_t = decltype(&Actor::SwitchRace);
@@ -759,6 +771,14 @@ namespace RE
 				}
 			}
 		}
+	}
+
+
+	void Actor::UpdateLifeState(ACTOR_LIFE_STATE a_lifeState)
+	{
+		using func_t = decltype(&Actor::UpdateLifeState);
+		REL::Relocation<func_t> func{ REL::ID(36604) };
+		return func(this, a_lifeState);
 	}
 
 
@@ -818,21 +838,20 @@ namespace RE
 
 	NiAVObject* Actor::VisitArmorAddon(TESObjectARMO* a_armor, TESObjectARMA* a_arma)
 	{
-		char addonString[MAX_PATH];
-		std::memset(addonString, 0, MAX_PATH);
+		char addonString[MAX_PATH]{ '\0' };
 		a_arma->GetNodeName(addonString, this, a_armor, -1);
 
-		NiAVObject* skeletonRoot[2] = { Get3D(0), Get3D(1) };
+		std::array<NiAVObject*, 2> skeletonRoot{ Get3D(false), Get3D(true) };
 
 		if (skeletonRoot[1] == skeletonRoot[0]) {
 			skeletonRoot[1] = nullptr;
 		}
 
-		for (std::uint32_t i = 0; i <= 1; i++) {
+		for (std::size_t i = 0; i < skeletonRoot.size(); i++) {
 			if (skeletonRoot[i]) {
-				auto armorObject = skeletonRoot[i]->GetObjectByName(addonString);
-				if (armorObject) {
-					return armorObject;
+				const auto obj = skeletonRoot[i]->GetObjectByName(addonString);
+				if (obj) {
+					return obj;
 				}
 			}
 		}

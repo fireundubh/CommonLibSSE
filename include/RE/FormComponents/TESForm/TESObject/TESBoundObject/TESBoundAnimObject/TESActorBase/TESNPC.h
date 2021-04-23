@@ -268,6 +268,7 @@ namespace RE
 		SEX                          GetSex() const;
 		RE::TESObjectARMO*           GetSkin() const;
 		bool                         IsInClass(TESClass* a_class) const;
+		bool						 IsChild() const;
 		bool                         HasOverlays();
 		bool                         HasKeyword(std::string_view a_formEditorID) const;
 		bool                         RemovePerk(BGSPerk* a_perk);

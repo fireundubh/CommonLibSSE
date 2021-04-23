@@ -133,6 +133,15 @@ namespace SKSE
 			}
 
 
+			inline bool insenstiveStringFind(std::string& a_str1, std::string_view a_str2, size_t pos = 0)
+			{
+				std::transform(a_str1.begin(), a_str1.end(), a_str1.begin(),
+					[](char c) { return static_cast<char>(std::tolower(c)); });
+
+				return a_str1.find(a_str2, pos) != std::string::npos;
+			}
+
+
 			inline bool bool_cast(std::string& a_str)
 			{
 				bool b = false;
@@ -147,12 +156,14 @@ namespace SKSE
 
 
 			template <class T>
-			T to_num(const std::string& a_str)
+			T to_num(const std::string& a_str, bool a_hex = false)
 			{
 				if constexpr (std::is_floating_point_v<T>) {
 					return static_cast<T>(std::stof(a_str));
 				} else if constexpr (std::is_signed_v<T>) {
 					return static_cast<T>(std::stoi(a_str));
+				} else if (a_hex) {
+					return static_cast<T>(std::stoul(a_str, nullptr, 16));
 				} else {
 					return static_cast<T>(std::stoul(a_str));
 				}
@@ -162,7 +173,5 @@ namespace SKSE
 
 
 	const std::string&		 GetRuntimeDirectory();
-	const std::string&		 GetPluginFolderPath();
-	std::string				 GetPluginConfigPath(const char* modName);
 	std::vector<std::string> GetAllConfigPaths(const std::string& a_folder, const std::string& a_suffix);
 };

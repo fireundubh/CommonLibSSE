@@ -31,22 +31,24 @@ namespace RE
 		virtual ~ConeProjectile();	// 00
 
 		// override (Projectile)
-		virtual void SaveGame(BGSSaveFormBuffer* a_buf) override;		 // 0E
-		virtual void LoadGame(BGSLoadFormBuffer* a_buf) override;		 // 0F
-		virtual void InitLoadGame(BGSLoadFormBuffer* a_buf) override;	 // 10
-		virtual void FinishLoadGame(BGSLoadFormBuffer* a_buf) override;	 // 11
-		virtual void Revert(BGSLoadFormBuffer* a_buf) override;			 // 12
-		virtual void Unk_A9(void) override;								 // A9
-		virtual void UpdateImpl(float a_delta) override;				 // AB
-		virtual void Unk_AC(void) override;								 // AC
-		virtual void Unk_B8(void) override;								 // B8 - { return 0; }
-		virtual void Unk_BC(void) override;								 // BC
-		virtual void Unk_BD(void) override;								 // BD
-		virtual void Unk_BE(void) override;								 // BE
-		virtual void Handle3DLoaded() override;							 // C0
+		virtual void			SaveGame(BGSSaveFormBuffer* a_buf) override;																															  // 0E
+		virtual void			LoadGame(BGSLoadFormBuffer* a_buf) override;																															  // 0F
+		virtual void			InitLoadGame(BGSLoadFormBuffer* a_buf) override;																														  // 10
+		virtual void			FinishLoadGame(BGSLoadFormBuffer* a_buf) override;																														  // 11
+		virtual void			Revert(BGSLoadFormBuffer* a_buf) override;																																  // 12
+		virtual void			Unk_A9(void) override;																																					  // A9
+		virtual void			UpdateImpl(float a_delta) override;																																		  // AB
+		virtual void			Unk_AC(void) override;																																					  // AC
+		virtual void			Unk_B8(void) override;																																					  // B8 - { return 0; }
+		virtual bhkSphereShape* GetCollisionShape();																																					  // BC
+		virtual void			CreateImpactData(TESObjectREFR* a_ref, const NiPoint3& a_targetLoc, const NiPoint3& a_velocity, hkpCollidable* a_collidable, std::int32_t a_arg6, std::uint32_t a_arg7);  // BD
+		virtual void			ProcessHit(std::uint64_t a_arg1);																																		  // BE
+		virtual void			Handle3DLoaded() override;																																				  // C0
 
 		// add
 		virtual void Unk_C2(void);	// C2 - { return 1; }
+
+		float GetHeight() const;
 
 
 		// members

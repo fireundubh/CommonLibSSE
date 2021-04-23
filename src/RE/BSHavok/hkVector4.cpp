@@ -14,7 +14,12 @@ namespace RE
 
 
 	hkVector4::hkVector4(const float& a_x, const float& a_y, const float& a_z, const float& a_w) :
-		quad(_mm_set_ps(a_w, a_z, a_y, a_x))
+		quad(_mm_setr_ps(a_x, a_y, a_z, a_w))
+	{}
+
+
+	hkVector4::hkVector4(const hkVector4& a_rhs) :
+		quad(a_rhs.quad)
 	{}
 
 

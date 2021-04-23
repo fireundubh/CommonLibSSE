@@ -18,7 +18,9 @@ namespace RE
 	class BGSMaterialType;
 	class bhkCollisionObject;
 	class bhkSimpleShapePhantom;
+	class bhkSphereShape;
 	class EffectSetting;
+	class hkpCollidable;
 	class MagicItem;
 	class QueuedFile;
 
@@ -49,7 +51,7 @@ namespace RE
 			BGSMaterialType*			  material;			   // 28
 			std::int32_t				  damageRootNodeType;  // 30
 			std::uint32_t				  unk34;			   // 34
-			std::uint64_t				  unk38;			   // 38
+			NiNode*						  damageRootNode;	   // 38
 			ImpactResult				  impactResult;		   // 40
 			std::uint16_t				  unk44;			   // 44
 			std::uint16_t				  unk46;			   // 46
@@ -79,43 +81,45 @@ namespace RE
 		virtual void		 Set3D(NiAVObject* a_object, bool a_queue3DTasks = true) override;		// 6C
 		virtual void		 MoveHavok(bool a_forceRec) override;									// 85 - { return; }
 		virtual void		 GetLinearVelocity(NiPoint3& a_velocity) const override;				// 86
-		virtual void		 Unk_8B(void) override;													// 8B
+		virtual NiNode*		 GetWeaponBone() override;												// 8B
 		virtual Projectile*	 AsProjectile() override;												// 8F - { return this; }
 		virtual bool		 OnAddCellPerformQueueReference(TESObjectCELL& a_cell) const override;	// 90 - { return false; }
 
 		// add
-		virtual void  Unk_A2(void);					  // A2 - { return 0; }
-		virtual void  Unk_A3(void);					  // A3 - { return 0; }
-		virtual void  Unk_A4(void);					  // A4 - { return 0; }
-		virtual void  Unk_A5(void);					  // A5 - { return 0; }
-		virtual void  Unk_A6(void);					  // A6 - { return 0; }
-		virtual void  Unk_A7(void);					  // A7 - { return 0; }
-		virtual void  Unk_A8(void);					  // A8 - { return; }
-		virtual void  Unk_A9(void);					  // A9 - { return; }
-		virtual void  Unk_AA(void);					  // AA
-		virtual void  UpdateImpl(float a_delta) = 0;  // AB
-		virtual void  Unk_AC(void);					  // AC
-		virtual void  Unk_AD(void);					  // AD
-		virtual bool  CanExplode();					  // AE - { return 0; }
-		virtual float GetPower();					  // AF - { if (unk158) return 1.0; else return unk188; } - "float GetSpeed()"?
-		virtual void  Unk_B0(void);					  // B0 - { return 1.0; }
-		virtual void  Unk_B1(void);					  // B1 - { return 0; }
-		virtual void  Unk_B2(void);					  // B2 - { return; }
-		virtual void  Unk_B3(void);					  // B3
-		virtual bool  IsNotGeneratedForm() const;	  // B4 - { return TESDataHandler::GetSingleton()->IsGeneratedFormID(formID) == 0; }
-		virtual float GetGravity();					  // B5 - { BGSProjectile* var = objectReference; if ((var->flags >> 17) & 1) return 1.0; else return var->gravity; }
-		virtual void  Unk_B6(void);					  // B6
-		virtual void  Unk_B7(void);					  // B7
-		virtual void  Unk_B8(void);					  // B8 - { return 1; }
-		virtual void  Unk_B9(void);					  // B9 - { return 0; }
-		virtual void  Unk_BA(void);					  // BA - { return 0; }
-		virtual void  Unk_BB(void);					  // BB
-		virtual void  Unk_BC(void);					  // BC
-		virtual void  Unk_BD(void);					  // BD
-		virtual void  Unk_BE(void);					  // BE
-		virtual void  Unk_BF(void);					  // BF - { return; }
-		virtual void  Handle3DLoaded();				  // C0 - { return; }
-		virtual void  Unk_C1(void);					  // C1 - { return 0; }
+		virtual void			Unk_A2(void);																																							  // A2 - { return 0; }
+		virtual void			Unk_A3(void);																																							  // A3 - { return 0; }
+		virtual void			Unk_A4(void);																																							  // A4 - { return 0; }
+		virtual void			Unk_A5(void);																																							  // A5 - { return 0; }
+		virtual void			Unk_A6(void);																																							  // A6 - { return 0; }
+		virtual void			Unk_A7(void);																																							  // A7 - { return 0; }
+		virtual void			Unk_A8(void);																																							  // A8 - { return; }
+		virtual void			Unk_A9(void);																																							  // A9 - { return; }
+		virtual void			Unk_AA(void);																																							  // AA
+		virtual void			UpdateImpl(float a_delta) = 0;																																			  // AB
+		virtual void			Unk_AC(void);																																							  // AC
+		virtual void			Unk_AD(void);																																							  // AD
+		virtual bool			CanExplode() const;																																						  // AE - { return 0; }
+		virtual float			GetPower() const;																																						  // AF - { if (unk158) return 1.0; else return unk188; } - "float GetSpeed()"?
+		virtual void			Unk_B0(void);																																							  // B0 - { return 1.0; }
+		virtual void			Unk_B1(void);																																							  // B1 - { return 0; }
+		virtual void			Unk_B2(void);																																							  // B2 - { return; }
+		virtual void			Unk_B3(void);																																							  // B3
+		virtual bool			IsNotGeneratedForm() const;																																				  // B4 - { return TESDataHandler::GetSingleton()->IsGeneratedFormID(formID) == 0; }
+		virtual float			GetGravity() const;																																						  // B5 - { BGSProjectile* var = objectReference; if ((var->flags >> 17) & 1) return 1.0; else return var->gravity; }
+		virtual void			ClearData(void);																																						  // B6
+		virtual void			Unk_B7(void);																																							  // B7
+		virtual void			Unk_B8(void);																																							  // B8 - { return 1; }
+		virtual void			Unk_B9(void);																																							  // B9 - { return 0; }
+		virtual void			Unk_BA(void);																																							  // BA - { return 0; }
+		virtual std::uint32_t	GetCollisionFilter() const;																																				  // BB
+		virtual bhkSphereShape* GetCollisionShape() const;																																				  // BC
+		virtual void			CreateImpactData(TESObjectREFR* a_ref, const NiPoint3& a_targetLoc, const NiPoint3& a_velocity, hkpCollidable* a_collidable, std::int32_t a_arg6, std::uint32_t a_arg7);  // BD
+		virtual void			ProcessHit(std::uint64_t a_arg1);																																		  // BE
+		virtual void			Unk_BF(void);																																							  // BF - { return; }
+		virtual void			Handle3DLoaded();																																						  // C0 - { return; }
+		virtual bool			GetPlayerIsShooter() const;																																				  // C1 - { return 0; }
+
+		float GetHeight() const;
 
 
 		// members
@@ -149,8 +153,8 @@ namespace RE
 		float								   lifeRemaining;	   // 194
 		float								   unk198;			   // 198
 		float								   unk19C;			   // 19C
-		float								   timer;			   // 1A0
-		float								   unk1A4;			   // 1A4
+		float								   explosionTimer;	   // 1A0
+		float								   minesBlinkRate;	   // 1A4
 		std::uint32_t						   unk1A8;			   // 1A8
 		std::uint32_t						   unk1AC;			   // 1AC
 		TESObjectWEAP*						   weaponSource;	   // 1B0

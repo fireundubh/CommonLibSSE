@@ -19,7 +19,7 @@ namespace RE
 	}
 	
 	
-	TESObjectARMA* TESObjectARMO::GetArmorAddonByMask(TESRace* a_race, BGSBipedObjectForm::BipedObjectSlot a_slot)
+	TESObjectARMA* TESObjectARMO::GetArmorAddonByMask(TESRace* a_race, BipedObjectSlot a_slot)
 	{
 		if (a_race) {
 			for (auto& currentAddon : armorAddons) {

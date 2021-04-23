@@ -122,6 +122,7 @@ namespace RE
 		BSGeometry*                  GetFirstGeometryOfShaderType(BSShaderMaterial::Feature a_type);
 		[[nodiscard]] TESObjectREFR* GetUserData() const;
 		bool                         HasShaderType(BSShaderMaterial::Feature a_type);
+		bool						 RemoveHavok(bool a_unk01, bool a_unk02);
 		void                         SetAppCulled(bool a_cull);
 		bool                         SetMotionType(std::uint32_t a_motionType, bool a_arg2 = true, bool a_arg3 = false, bool a_allowActivate = true);
 		void                         SetRigidConstraints(bool a_enable, std::uint8_t a_arg2 = 1, std::uint32_t a_arg3 = 1);

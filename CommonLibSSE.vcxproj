@@ -558,6 +558,7 @@
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpShapeCollection\hkpShapeCollection.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpBoxShape.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpConvexShape.h" />
+    <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpConvexShape\hkpSphereShape.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpShape\hkpSphereRepShape\hkpSphereRepShape.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldCinfo.h" />
     <ClInclude Include="include\RE\BSHavok\hkBaseObject\hkReferencedObject\hkpWorldObject\hkpEntity\hkpEntity.h" />
@@ -582,6 +583,8 @@
     <ClInclude Include="include\RE\BSHavok\hkpAgentNnTrack.h" />
     <ClInclude Include="include\RE\BSHavok\hkpBroadPhaseCastCollector\hkpBroadPhaseCastCollector.h" />
     <ClInclude Include="include\RE\BSHavok\hkpBroadPhaseCastCollector\hkpWorldLinearCaster.h" />
+    <ClInclude Include="include\RE\BSHavok\hkpBroadPhaseHandlePair\hkpBroadPhaseHandlePair.h" />
+    <ClInclude Include="include\RE\BSHavok\hkpBroadPhaseHandlePair\hkpTypedBroadPhaseHandlePair.h" />
     <ClInclude Include="include\RE\BSHavok\hkpBroadPhaseHandle\hkpBroadPhaseHandle.h" />
     <ClInclude Include="include\RE\BSHavok\hkpBroadPhaseHandle\hkpTypedBroadPhaseHandle.h" />
     <ClInclude Include="include\RE\BSHavok\hkpCdBody\hkpCdBody.h" />
@@ -604,6 +607,8 @@
     <ClInclude Include="include\RE\BSHavok\hkpMoppAabbCastVirtualMachine.h" />
     <ClInclude Include="include\RE\BSHavok\hkpPhantomListener.h" />
     <ClInclude Include="include\RE\BSHavok\hkpProperty.h" />
+    <ClInclude Include="include\RE\BSHavok\hkpRayHitCollector\hkpClosestRayHitCollector.h" />
+    <ClInclude Include="include\RE\BSHavok\hkpRayHitCollector\hkpRayHitCollector.h" />
     <ClInclude Include="include\RE\BSHavok\hkpRootCdPoint.h" />
     <ClInclude Include="include\RE\BSHavok\hkpShapeBuffer.h" />
     <ClInclude Include="include\RE\BSHavok\hkpShapeContainer\hkpShapeContainer.h" />
@@ -820,10 +825,12 @@
     <ClInclude Include="include\RE\Events\ScriptEvent\TESMoveAttachDetachEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESObjectLoadedEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESOpenCloseEvent.h" />
+    <ClInclude Include="include\RE\Events\ScriptEvent\TESPlayerBowShotEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESQuestStageEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESQuestStartStopEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESResetEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESResolveNPCTemplatesEvent.h" />
+    <ClInclude Include="include\RE\Events\ScriptEvent\TESSpellCastEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESSwitchRaceCompleteEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESTrackedStatsEvent.h" />
     <ClInclude Include="include\RE\Events\ScriptEvent\TESUniqueIDChangeEvent.h" />
@@ -1047,6 +1054,7 @@
     <ClInclude Include="include\RE\FormComponents\TESForm\TESObjectREFR\Actor\Actor.h" />
     <ClInclude Include="include\RE\FormComponents\TESForm\TESObjectREFR\Actor\Character\Character.h" />
     <ClInclude Include="include\RE\FormComponents\TESForm\TESObjectREFR\Actor\Character\PlayerCharacter.h" />
+    <ClInclude Include="include\RE\FormComponents\TESForm\TESObjectREFR\Explosion.h" />
     <ClInclude Include="include\RE\FormComponents\TESForm\TESObjectREFR\Hazard.h" />
     <ClInclude Include="include\RE\FormComponents\TESForm\TESObjectREFR\Projectile\BarrierProjectile.h" />
     <ClInclude Include="include\RE\FormComponents\TESForm\TESObjectREFR\Projectile\BeamProjectile.h" />
@@ -1229,6 +1237,7 @@
     <ClInclude Include="include\RE\Menus\UISaveLoadManager.h" />
     <ClInclude Include="include\RE\Misc\ActorValueList.h" />
     <ClInclude Include="include\RE\Misc\BGSDecalManager.h" />
+    <ClInclude Include="include\RE\Misc\BGSWaterSystemManager.h" />
     <ClInclude Include="include\RE\Misc\BSTaskPool.h" />
     <ClInclude Include="include\RE\Misc\Calendar.h" />
     <ClInclude Include="include\RE\Misc\FaceGen.h" />
@@ -1236,6 +1245,7 @@
     <ClInclude Include="include\RE\Misc\ImageData.h" />
     <ClInclude Include="include\RE\Misc\Misc.h" />
     <ClInclude Include="include\RE\Misc\TaskQueueInterface.h" />
+    <ClInclude Include="include\RE\Misc\VATSManager.h" />
     <ClInclude Include="include\RE\NetImmerse\BSVisit.h" />
     <ClInclude Include="include\RE\NetImmerse\Components\AttachTechniqueInput\AttachTechniqueInput.h" />
     <ClInclude Include="include\RE\NetImmerse\Components\AttachTechniqueInput\RefAttachTechniqueInput.h" />
@@ -1268,6 +1278,8 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\BGSAttackData.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\BGSAttackDataMap.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\bhkCharacterController.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\BSLight\BSLight.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\BSLight\BSShadowLight\BSShadowLight.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\BSParticleShaderEmitter\BSParticleShaderEmitter.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\BSParticleShaderEmitter\BSParticleShaderObjectEmitter.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\CombatObject\CombatArea\CombatArea.h" />
@@ -1291,6 +1303,7 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkShapeCollection\bhkShapeCollection.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkConvexShape\bhkBoxShape.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkConvexShape\bhkConvexShape.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkConvexShape\bhkSphereShape.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkShape\bhkSphereRepShape\bhkSphereRepShape.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkEntity\bhkEntity.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorldObject\bhkEntity\bhkRigidBody.h" />
@@ -1302,6 +1315,10 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld\bhkWorld.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSAnimNote.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\bhkRefObject\bhkSerializable\bhkWorld\bhkWorldM.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSMultiBound.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSMultiBoundShape\BSMultiBoundAABB\BSMultiBoundAABB.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSMultiBoundShape\BSMultiBoundAABB\BSMultiBoundOBB.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSMultiBoundShape\BSMultiBoundShape.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffect.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectDebris.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\BSTempEffect\BSTempEffectGeometryDecal.h" />
@@ -1381,6 +1398,7 @@
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiTimeController\NiInterpController\NiMultiTargetTransformController.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiObject\NiTimeController\NiTimeController.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRefObject\NiRefObject.h" />
+    <ClInclude Include="include\RE\NetImmerse\NiRefObject\TESWater\TESWaterObject.h" />
     <ClInclude Include="include\RE\NetImmerse\NiRTTI.h" />
     <ClInclude Include="include\RE\NetImmerse\NiSmartPointer.h" />
     <ClInclude Include="include\RE\NetImmerse\NiStream.h" />
@@ -1533,10 +1551,12 @@
     <ClInclude Include="include\SKSE\Logger.h" />
     <ClInclude Include="include\SKSE\RegistrationMap.h" />
     <ClInclude Include="include\SKSE\RegistrationSet.h" />
+    <ClInclude Include="include\SKSE\RegistrationSetUnique.h" />
     <ClInclude Include="include\SKSE\SKSE.h" />
     <ClInclude Include="include\SKSE\Trampoline.h" />
     <ClInclude Include="include\SKSE\Utilities.h" />
     <ClInclude Include="include\SKSE\Version.h" />
+    <ClInclude Include="include\SKSE\RegistrationMapUnique.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\RE\AI\AIFormulas.cpp" />
@@ -1593,6 +1613,8 @@
     <ClCompile Include="src\RE\BSHavok\hkBaseObject\hkReferencedObject\hkReferencedObject.cpp" />
     <ClCompile Include="src\RE\BSHavok\hkBaseTypes.cpp" />
     <ClCompile Include="src\RE\BSHavok\hkMemoryAllocator\hkContainerAllocators.cpp" />
+    <ClCompile Include="src\RE\BSHavok\hkpBroadPhaseHandlePair\hkpTypedBroadPhaseHandlePair.cpp" />
+    <ClCompile Include="src\RE\BSHavok\hkpBroadPhaseHandle\hkpTypedBroadPhaseHandle.cpp" />
     <ClCompile Include="src\RE\BSHavok\hkpCdBody\hkpCdBody.cpp" />
     <ClCompile Include="src\RE\BSHavok\hkpCdBody\hkpCollidable\hkpCollidable.cpp" />
     <ClCompile Include="src\RE\BSHavok\hkpCharacterProxyListener\bhkCharProxyController.cpp" />
@@ -1650,6 +1672,7 @@
     <ClCompile Include="src\RE\Camera\TESCamera\LocalMapCamera.cpp" />
     <ClCompile Include="src\RE\Camera\TESCamera\PlayerCamera.cpp" />
     <ClCompile Include="src\RE\Camera\TESCamera\TESCamera.cpp" />
+    <ClCompile Include="src\RE\Camera\TESCamera\ThirdPersonState.cpp" />
     <ClCompile Include="src\RE\Color\ColorBlending.cpp" />
     <ClCompile Include="src\RE\Combat\CombatManager.cpp" />
     <ClCompile Include="src\RE\Events\BGSFootstepManager.cpp" />
@@ -1684,6 +1707,7 @@
     <ClCompile Include="src\RE\FormComponents\Components\ActorCause.cpp" />
     <ClCompile Include="src\RE\FormComponents\Components\ActorValueOwner.cpp" />
     <ClCompile Include="src\RE\FormComponents\Components\BGSBaseAlias\BGSBaseAlias.cpp" />
+    <ClCompile Include="src\RE\FormComponents\Components\BGSBaseAlias\BGSRefAlias.cpp" />
     <ClCompile Include="src\RE\FormComponents\Components\BGSEntryPointFunctionData\BGSEntryPointFunctionDataActivateChoice.cpp" />
     <ClCompile Include="src\RE\FormComponents\Components\BGSOpenCloseForm.cpp" />
     <ClCompile Include="src\RE\FormComponents\Components\BGSPerkEntry\BGSEntryPointPerkEntry.cpp" />
@@ -1708,6 +1732,7 @@
     <ClCompile Include="src\RE\FormComponents\TESForm\BGSKeyword\BGSKeyword.cpp" />
     <ClCompile Include="src\RE\FormComponents\TESForm\BGSListForm.cpp" />
     <ClCompile Include="src\RE\FormComponents\TESForm\BGSLocation.cpp" />
+    <ClCompile Include="src\RE\FormComponents\TESForm\BGSMaterialType.cpp" />
     <ClCompile Include="src\RE\FormComponents\TESForm\BGSSoundCategory.cpp" />
     <ClCompile Include="src\RE\FormComponents\TESForm\BGSStoryManagerTreeForm\TESQuest.cpp" />
     <ClCompile Include="src\RE\FormComponents\TESForm\EffectSetting.cpp" />
@@ -1717,6 +1742,8 @@
     <ClCompile Include="src\RE\FormComponents\TESForm\TESObjectCELL.cpp" />
     <ClCompile Include="src\RE\FormComponents\TESForm\TESObjectREFR\Actor\Actor.cpp" />
     <ClCompile Include="src\RE\FormComponents\TESForm\TESObjectREFR\Actor\Character\PlayerCharacter.cpp" />
+    <ClCompile Include="src\RE\FormComponents\TESForm\TESObjectREFR\Projectile\ConeProjectile.cpp" />
+    <ClCompile Include="src\RE\FormComponents\TESForm\TESObjectREFR\Projectile\Projectile.cpp" />
     <ClCompile Include="src\RE\FormComponents\TESForm\TESObjectREFR\TESObjectREFR.cpp" />
     <ClCompile Include="src\RE\FormComponents\TESForm\TESObject\TESBoundObject\BGSProjectile.cpp" />
     <ClCompile Include="src\RE\FormComponents\TESForm\TESObject\TESBoundObject\MagicItem\MagicItem.cpp" />
@@ -1758,12 +1785,14 @@
     <ClCompile Include="src\RE\Misc\ActorValueList.cpp" />
     <ClCompile Include="src\RE\Misc\BGSDecalManager.cpp" />
     <ClCompile Include="src\RE\Misc\BGSImpactManager.cpp" />
+    <ClCompile Include="src\RE\Misc\BGSWaterSystemManager.cpp" />
     <ClCompile Include="src\RE\Misc\BSTaskPool.cpp" />
     <ClCompile Include="src\RE\Misc\Calendar.cpp" />
     <ClCompile Include="src\RE\Misc\FaceGen.cpp" />
     <ClCompile Include="src\RE\Misc\FixedStrings.cpp" />
     <ClCompile Include="src\RE\Misc\Misc.cpp" />
     <ClCompile Include="src\RE\Misc\TaskQueueInterface.cpp" />
+    <ClCompile Include="src\RE\Misc\VATSManager.cpp" />
     <ClCompile Include="src\RE\NetImmerse\BSVisit.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiAnimationKey\NiAnimationKey.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiAnimationKey\NiColorKey.cpp" />
@@ -1798,6 +1827,7 @@
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiObjectNET.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiObjectNET\NiProperty\NiShadeProperty\BSShaderProperty\BSShaderProperty.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiProperty\BSLightingShaderProperty.cpp" />
+    <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiProperty\NiAlphaProperty.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiSkinInstance\BSDismemberSkinInstance.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiRefObject\NiObject\NiSkinPartition.cpp" />
@@ -1809,7 +1839,6 @@
     <ClCompile Include="src\RE\NetImmerse\NiSystem.cpp" />
     <ClCompile Include="src\RE\NetImmerse\NiTCollection.cpp" />
     <ClCompile Include="src\RE\Obscript\CommandTable.cpp" />
-    <ClCompile Include="src\RE\Pathfinding\IMovementInterface\IMovementState\ActorState.cpp" />
     <ClCompile Include="src\RE\RadiantStory\BGSStoryTeller.cpp" />
     <ClCompile Include="src\RE\RTTI.cpp" />
     <ClCompile Include="src\RE\Scaleform\BS\BSScaleformManager.cpp" />
@@ -1863,7 +1892,9 @@
     <ClCompile Include="src\SKSE\Interfaces.cpp" />
     <ClCompile Include="src\SKSE\Logger.cpp" />
     <ClCompile Include="src\SKSE\RegistrationMap.cpp" />
+    <ClCompile Include="src\SKSE\RegistrationMapUnique.cpp" />
     <ClCompile Include="src\SKSE\RegistrationSet.cpp" />
+    <ClCompile Include="src\SKSE\RegistrationSetUnique.cpp" />
     <ClCompile Include="src\SKSE\Trampoline.cpp" />
     <ClCompile Include="src\SKSE\Utilities.cpp" />
   </ItemGroup>

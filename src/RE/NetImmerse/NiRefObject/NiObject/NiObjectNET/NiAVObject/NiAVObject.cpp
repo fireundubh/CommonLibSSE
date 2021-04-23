@@ -3,6 +3,7 @@
 #include "RE/BSCore/BSTSmartPointer.h"
 #include "RE/BSGraphics/State.h"
 #include "RE/BSShader/BSEffectShaderData.h"
+#include "RE/BSShader/BSShaderMaterial/BSEffectShaderMaterial.h"
 #include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialFacegenTint.h"
 #include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialHairTint.h"
 #include "RE/BSShader/BSShaderMaterial/BSShaderMaterial.h"
@@ -12,6 +13,7 @@
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/BSGeometry/BSGeometry.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiNode/NiNode.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiProperty.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/BSShaderProperty/BSEffectShaderProperty.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/BSShaderProperty/BSLightingShaderProperty.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiProperty/NiShadeProperty/BSShaderProperty/BSShaderProperty.h"
 
@@ -83,6 +85,14 @@ namespace RE
 		});
 
 		return hasShaderType;
+	}
+
+
+	bool NiAVObject::RemoveHavok(bool a_unk01, bool a_unk02)
+	{
+		using func_t = decltype(&NiAVObject::RemoveHavok);
+		REL::Relocation<func_t> func{ REL::ID(76031) };
+		return func(this, a_unk01, a_unk02);
 	}
 
 
@@ -169,20 +179,18 @@ namespace RE
 		BSVisit::TraverseScenegraphGeometries(this, [&](BSGeometry* a_geometry) -> BSVisit::BSVisitControl {
 			using Feature = BSShaderMaterial::Feature;
 
-			auto effect = a_geometry->properties[BSGeometry::States::kEffect].get();
-			if (effect) {
-				auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect);
-				if (lightingShader) {
-					auto material = static_cast<BSLightingShaderMaterialBase*>(lightingShader->material);
-					if (material) {
-						if (a_onlySkin) {
-							auto const feature = material->GetFeature();
-							if (feature != Feature::kFaceGen && feature != Feature::kFaceGenRGBTint) {
-								return BSVisit::BSVisitControl::kContinue;
-							}
+			auto effect = a_geometry->properties[BSGeometry::States::kEffect];
+			auto lightingShader = netimmerse_cast<BSLightingShaderProperty*>(effect.get());
+			if (lightingShader) {
+				auto material = static_cast<BSLightingShaderMaterialBase*>(lightingShader->material);
+				if (material) {
+					if (a_onlySkin) {
+						auto const feature = material->GetFeature();
+						if (feature != Feature::kFaceGen && feature != Feature::kFaceGenRGBTint) {
+							return BSVisit::BSVisitControl::kContinue;
 						}
-						material->materialAlpha = a_alpha;
 					}
+					material->materialAlpha = a_alpha;
 				}
 			}
 

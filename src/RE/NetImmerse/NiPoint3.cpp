@@ -8,51 +8,67 @@ namespace RE
 		return std::addressof(x)[a_idx];
 	}
 
+
 	const float& NiPoint3::operator[](std::size_t a_idx) const
 	{
 		assert(a_idx < 3);
 		return std::addressof(x)[a_idx];
 	}
 
+
 	bool NiPoint3::operator==(const NiPoint3& a_rhs) const
 	{
 		return (x == a_rhs.x && y == a_rhs.y && z == a_rhs.z);
 	}
+
 
 	bool NiPoint3::operator!=(const NiPoint3& a_rhs) const
 	{
 		return !operator==(a_rhs);
 	}
 
+
 	NiPoint3 NiPoint3::operator+(const NiPoint3& a_rhs) const
 	{
 		return NiPoint3(x + a_rhs.x, y + a_rhs.y, z + a_rhs.z);
 	}
+
 
 	NiPoint3 NiPoint3::operator-(const NiPoint3& a_rhs) const
 	{
 		return NiPoint3(x - a_rhs.x, y - a_rhs.y, z - a_rhs.z);
 	}
 
+
 	float NiPoint3::operator*(const NiPoint3& a_rhs) const
 	{
 		return x * a_rhs.x + y * a_rhs.y + z * a_rhs.z;
 	}
+
+
+	NiPoint3 NiPoint3::operator+(float a_scalar) const
+	{
+		return NiPoint3(x + a_scalar, y + a_scalar, z + a_scalar);
+	}
+
 
 	NiPoint3 NiPoint3::operator*(float a_scalar) const
 	{
 		return NiPoint3(x * a_scalar, y * a_scalar, z * a_scalar);
 	}
 
+
 	NiPoint3 NiPoint3::operator/(float a_scalar) const
 	{
 		return operator*(static_cast<float>(1.0) / a_scalar);
 	}
 
+
 	NiPoint3 NiPoint3::operator-() const
 	{
 		return NiPoint3(-x, -y, -z);
 	}
+
 
 	NiPoint3& NiPoint3::operator+=(const NiPoint3& a_rhs)
 	{
@@ -62,11 +78,21 @@ namespace RE
 		return *this;
 	}
 
+
 	NiPoint3& NiPoint3::operator-=(const NiPoint3& a_rhs)
 	{
 		x -= a_rhs.x;
 		y -= a_rhs.y;
 		z -= a_rhs.z;
+		return *this;
+	}
+
+
+	NiPoint3& NiPoint3::operator*=(const NiPoint3& a_rhs)
+	{
+		x *= a_rhs.x;
+		y *= a_rhs.y;
+		z *= a_rhs.z;
 		return *this;
 	}
 
@@ -114,6 +140,7 @@ namespace RE
 		const float dz = a_pt.z - z;
 		return dx * dx + dy * dy + dz * dz;
 	}
+
 
 	float NiPoint3::Length() const
 	{

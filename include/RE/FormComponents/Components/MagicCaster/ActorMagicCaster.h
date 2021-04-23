@@ -15,6 +15,7 @@ namespace RE
 	class NiNode;
 	class ReferenceEffectController;
 	class TESObjectREFR;
+	class BSLight;
 
 
 	class ActorMagicCaster :
@@ -24,6 +25,14 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ActorMagicCaster;
+
+
+		enum class Flags
+		{
+			kNone = 0,
+			kDualCasting = 1 << 0,
+			kUsesHands = 1 << 4
+		};
 
 
 		virtual ~ActorMagicCaster();  // 00
@@ -47,8 +56,8 @@ namespace RE
 		virtual void		   Unk_13(void) override;						 // 13 - { return; }
 		virtual void		   CalculateMagickaCost() override;				 // 14
 		virtual CastingSource  GetCastingSource() override;					 // 15 - { return castingSource; }
-		virtual void		   Unk_16(void) override;						 // 16 - { return 0; }
-		virtual void		   Unk_17(void) override;						 // 17 - { return; }
+		virtual bool		   IsDualCasting() override;					 // 16 - { return flags & 1; }
+		virtual void		   SetDualCasting(bool a_set) override;			 // 17
 		virtual void		   SaveGame(BGSSaveGameBuffer* a_buf) override;	 // 18
 		virtual void		   LoadGame(BGSLoadGameBuffer* a_buf) override;	 // 19
 		virtual void		   Unk_1A(void) override;						 // 1A
@@ -60,18 +69,18 @@ namespace RE
 
 
 		// members
-		RefAttachTechniqueInput	   unk64;		   // 64
-		std::uint64_t			   unkB0;		   // B0
-		Actor*					   actor;		   // B8
-		NiNode*					   magicNode;	   // C0
-		std::uint64_t			   unkC8;		   // C8
-		std::uint64_t			   unkD0;		   // D0
-		std::uint64_t			   unkD8;		   // D8
-		BGSArtObject*			   unkE0;		   // E0
-		ReferenceEffectController* unkE8;		   // E8
-		std::uint32_t			   unkF0;		   // F0
-		MagicSystem::CastingSource castingSource;  // F4
-		std::uint32_t			   unkF8;		   // F8
+		RefAttachTechniqueInput				   unk64;		   // 64
+		std::uint64_t						   unkB0;		   // B0
+		Actor*								   actor;		   // B8
+		NiNode*								   magicNode;	   // C0
+		NiPointer<BSLight>					   light;		   // C8
+		std::uint64_t						   unkD0;		   // D0
+		std::uint64_t						   unkD8;		   // D8
+		BGSArtObject*						   unkE0;		   // E0
+		ReferenceEffectController*			   unkE8;		   // E8
+		std::uint32_t						   unkF0;		   // F0
+		MagicSystem::CastingSource			   castingSource;  // F4
+		stl::enumeration<Flags, std::uint32_t> flags;		   // F8
 	};
 	static_assert(sizeof(ActorMagicCaster) == 0x100);
 }

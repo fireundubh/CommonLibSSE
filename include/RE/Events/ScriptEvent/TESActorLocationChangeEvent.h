@@ -1,5 +1,7 @@
 #pragma once
 
+#include "RE/NetImmerse/NiSmartPointer.h"
+
 
 namespace RE
 {
@@ -11,9 +13,9 @@ namespace RE
 	{
 	public:
 		// members
-		TESObjectREFR* actor;
-		BGSLocation*   oldLoc;
-		BGSLocation*   newLoc;
+		NiPointer<TESObjectREFR> actor;
+		BGSLocation*			 oldLoc;
+		BGSLocation*			 newLoc;
 	};
 	static_assert(sizeof(TESActorLocationChangeEvent) == 0x18);
 }

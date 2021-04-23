@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/FormComponents/Enums/MagicSystem.h"
 #include "RE/NetImmerse/NiSmartPointer.h"
 
 
@@ -23,10 +24,10 @@ namespace RE
 
 
 			// members
-			NiPointer<NiNode> current3DRoot;  // 08 - smart ptr
-			NiPointer<NiNode> attachedArt;	  // 10 - smart ptr
-			std::uint32_t	  unk18;		  // 18
-			std::uint32_t	  unk1C;		  // 1C
+			NiPointer<NiNode>		   current3DRoot;  // 08 - smart ptr
+			NiPointer<NiNode>		   attachedArt;	   // 10 - smart ptr
+			MagicSystem::CastingSource castingSource;  // 18
+			std::uint32_t			   unk1C;		   // 1C
 		};
 		static_assert(sizeof(AttachTechniqueInput) == 0x20);
 	}

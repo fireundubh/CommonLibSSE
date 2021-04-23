@@ -66,39 +66,6 @@ namespace SKSE
 	}
 
 
-	const std::string& GetPluginFolderPath()
-	{
-		static std::string s_pluginPath;
-
-		if (s_pluginPath.empty()) {
-			const auto& runtimePath = GetRuntimeDirectory();
-			if (!runtimePath.empty()) {
-				s_pluginPath = runtimePath + R"(Data\SKSE\Plugins\)";
-			} else {
-				SKSE::log::error("couldn't get runtime directory path!"sv);
-			}
-		}
-
-		return s_pluginPath;
-	}
-
-
-	std::string GetPluginConfigPath(const char* modName)
-	{
-		std::string s_configPath;
-
-		const auto& pluginPath = GetPluginFolderPath();
-		if (!pluginPath.empty()) {
-			s_configPath = pluginPath + modName + R"(.ini)";
-			SKSE::log::info("config path = {}"sv, s_configPath);
-		} else {
-			SKSE::log::error("couldn't get plugin folder path!"sv);
-		}
-
-		return s_configPath;
-	}
-
-
 	std::vector<std::string> GetAllConfigPaths(const std::string& a_folder, const std::string& a_suffix)
 	{
 		namespace fs = std::filesystem;

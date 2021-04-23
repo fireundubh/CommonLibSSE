@@ -23,6 +23,12 @@ namespace RE
 		inline static constexpr auto Ni_RTTI = NiRTTI_BSTempEffectParticle;
 
 
+		enum class Flags
+		{
+			kIgnoreDuration = 7
+		};
+
+
 		virtual ~BSTempEffectParticle();  // 00
 
 		virtual const NiRTTI*	 GetRTTI() const override;		 // 02
@@ -37,7 +43,7 @@ namespace RE
 		const char*									modelName;			// 40
 		NiPointer<NiNode>							dynamicCellNode;	// 48
 		NiTransform									particleTransform;	// 50
-		std::uint32_t								flags;				// 84
+		stl::enumeration<Flags, std::uint32_t>		flags;				// 84
 		NiPointer<NiAVObject>						unk88;				// 88
 		NiTransform									unk88Transform;		// 90
 		std::uint32_t								padC4;				// C4

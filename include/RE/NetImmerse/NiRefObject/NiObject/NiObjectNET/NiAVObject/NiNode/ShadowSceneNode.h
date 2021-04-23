@@ -46,8 +46,8 @@ namespace RE
 		BSTArray<NiPointer<NiAVObject>> particleNodes;			 // 1C8
 		BSTArray<NiPointer<NiAVObject>> actorRootNodes;			 // 1E0
 		mutable BSSpinLock				unk1F8;					 // 1F8
-		BSLight*						unk200;					 // 200
-		std::uint64_t					unk208;					 // 208
+		BSLight*						sunLight;				 // 200
+		BSLight*						cloudLight;				 // 208
 		BSLight*						shadowDirectionalLight;	 // 210
 		std::uint64_t					unk218;					 // 218
 		owner<void*>					unk220;					 // 220 - smart ptr

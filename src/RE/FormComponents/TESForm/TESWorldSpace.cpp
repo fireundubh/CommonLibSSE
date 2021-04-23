@@ -15,4 +15,14 @@ namespace RE
 		REL::Relocation<func_t> func{ Offset::TESWorldSpace::GetOrCreateSkyCell };
 		return func(this);
 	}
+	
+	
+	float TESWorldSpace::GetWaterHeight() const
+	{
+		auto world = this;		
+		while (world->parentWorld && world->parentUseFlags.any(ParentUseFlag::kUseLandData)) {
+			world = world->parentWorld;
+		}					
+		return world->defaultWaterHeight;
+	}
 }

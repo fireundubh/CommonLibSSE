@@ -107,6 +107,13 @@ namespace RE
 	}
 
 
+	float GetDurationOfApplicationRunTime()
+	{
+		REL::Relocation<float*> runtime{ REL::ID(523662) };
+		return *runtime;
+	}
+
+
 	namespace Util
 	{
 		void SanitizeTexturePath(std::string& a_path)

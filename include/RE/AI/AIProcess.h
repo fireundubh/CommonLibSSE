@@ -155,28 +155,28 @@ namespace RE
 		};
 		static_assert(sizeof(Data0B8) == 0x38);
 
-		float					GetCachedHeight() const;
+		float                   GetCachedHeight() const;
 		bhkCharacterController* GetCharController();
-		ActorHandle				GetCommandingActor() const;
-		TESForm*				GetEquippedLeftHand();
-		TESForm*				GetEquippedRightHand();
-		[[nodiscard]] bool		GetIsSummonedCreature() const noexcept;
-		ObjectRefHandle			GetOccupiedFurniture() const;
-		MagicItem*				GetReanimateSpell() const;
-		TESPackage*				GetRunningPackage() const;
-		bool					InHighProcess() const;
-		bool					InMiddleHighProcess() const;
-		bool					InMiddleLowProcess() const;
-		bool					InLowProcess() const;
-		bool					IsArrested() const;
-		bool					IsGhost() const;
-		void					PushActorAway(Actor* a_actor, const NiPoint3& a_pos, float a_power);
-		void					SetParalyzed(Actor* a_actor);
-		void					SetRefraction(float a_refraction);
-		void					SetArrested(bool a_arrested);
-		void					SetCachedHeight(float a_height);
-		void					Set3DUpdateFlag(RESET_3D_FLAGS a_flags);
-		void					Update3DModel(Actor* a_actor);
+		ActorHandle             GetCommandingActor() const;
+		TESForm*                GetEquippedLeftHand();
+		TESForm*                GetEquippedRightHand();
+		[[nodiscard]] bool      GetIsSummonedCreature() const noexcept;
+		ObjectRefHandle         GetOccupiedFurniture() const;
+		MagicItem*              GetReanimateSpell() const;
+		TESPackage*             GetRunningPackage() const;
+		bool                    InHighProcess() const;
+		bool                    InMiddleHighProcess() const;
+		bool                    InMiddleLowProcess() const;
+		bool                    InLowProcess() const;
+		bool                    IsArrested() const;
+		bool                    IsGhost() const;
+		void                    PushActorAway(Actor* a_actor, const NiPoint3& a_pos, float a_power);
+		void                    SetParalyzed(Actor* a_actor);
+		void                    SetRefraction(float a_refraction);
+		void                    SetArrested(bool a_arrested);
+		void                    SetCachedHeight(float a_height);
+		void                    Set3DUpdateFlag(RESET_3D_FLAGS a_flags);
+		void                    Update3DModel(Actor* a_actor);
 
 
 		// members

@@ -32,18 +32,18 @@ namespace RE
 		virtual ~BeamProjectile();	// 00
 
 		// override (Projectile)
-		virtual void SaveGame(BGSSaveFormBuffer* a_buf) override;		 // 0E
-		virtual void LoadGame(BGSLoadFormBuffer* a_buf) override;		 // 0F
-		virtual void InitLoadGame(BGSLoadFormBuffer* a_buf) override;	 // 10
-		virtual void FinishLoadGame(BGSLoadFormBuffer* a_buf) override;	 // 11
-		virtual void Revert(BGSLoadFormBuffer* a_buf) override;			 // 12
-		virtual void Unk_A5(void) override;								 // A5
-		virtual void Unk_A9(void) override;								 // A9
-		virtual void UpdateImpl(float a_delta) override;				 // AB
-		virtual void Unk_B8(void) override;								 // B8
-		virtual void Unk_BD(void) override;								 // BD
-		virtual void Handle3DLoaded() override;							 // C0
-		virtual void Unk_C1(void) override;								 // C1
+		virtual void SaveGame(BGSSaveFormBuffer* a_buf) override;																																	   // 0E
+		virtual void LoadGame(BGSLoadFormBuffer* a_buf) override;																																	   // 0F
+		virtual void InitLoadGame(BGSLoadFormBuffer* a_buf) override;																																   // 10
+		virtual void FinishLoadGame(BGSLoadFormBuffer* a_buf) override;																																   // 11
+		virtual void Revert(BGSLoadFormBuffer* a_buf) override;																																		   // 12
+		virtual void Unk_A5(void) override;																																							   // A5
+		virtual void Unk_A9(void) override;																																							   // A9
+		virtual void UpdateImpl(float a_delta) override;																																			   // AB
+		virtual void Unk_B8(void) override;																																							   // B8
+		virtual void CreateImpactData(TESObjectREFR* a_ref, const RE::NiPoint3& a_targetLoc, const RE::NiPoint3& a_velocity, hkpCollidable* a_collidable, std::int32_t a_arg6, std::uint32_t a_arg7);  // BD
+		virtual void Handle3DLoaded() override;																																						   // C0
+		virtual bool GetPlayerIsShooter() const override;																																			   // C1
 
 		// override (BSTEventSink<BSProceduralGeomEvent>)
 		virtual BSEventNotifyControl ProcessEvent(const BSProceduralGeomEvent* a_event, BSTEventSource<BSProceduralGeomEvent>* a_eventSource) override;	 // 01

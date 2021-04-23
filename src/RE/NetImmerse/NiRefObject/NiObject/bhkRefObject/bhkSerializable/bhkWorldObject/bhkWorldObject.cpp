@@ -8,6 +8,6 @@ namespace RE
 	bhkWorld* bhkWorldObject::GetbhkWorld()
 	{
 		auto ahkpWorld = GetWorld2();
-		return ahkpWorld ? ahkpWorld->physicsWorld : nullptr;
+		return ahkpWorld ? ahkpWorld->userData : nullptr;
 	}
 }

@@ -5,7 +5,7 @@ namespace RE
 {
 	class BSGeometry;
 	class NiAVObject;
-	class NiCollisionObject;
+	class bhkNiCollisionObject;
 
 
 	namespace BSVisit
@@ -17,7 +17,7 @@ namespace RE
 		};
 
 
-		BSVisitControl TraverseScenegraphCollision(NiAVObject* a_object, std::function<BSVisitControl(NiCollisionObject*)> a_func);
+		BSVisitControl TraverseScenegraphCollision(NiAVObject* a_object, std::function<BSVisitControl(bhkNiCollisionObject*)> a_func);
 		BSVisitControl TraverseScenegraphGeometries(NiAVObject* a_object, std::function<BSVisitControl(BSGeometry*)> a_func);
 		BSVisitControl TraverseScenegraphObjects(NiAVObject* a_object, std::function<BSVisitControl(NiAVObject*)> a_func);
 	}

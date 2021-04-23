@@ -18,20 +18,14 @@ namespace RE
 
 	const hkpShape* hkpWorldObject::GetShape() const
 	{
-		auto hkpCollidable = GetCollidable();
-		if (hkpCollidable) {
-			return hkpCollidable->GetShape();
-		}
-		return nullptr;
+		const auto hkpCollidable = GetCollidable();
+		return hkpCollidable ? hkpCollidable->GetShape() : nullptr;
 	}
 
 
 	TESObjectREFR* hkpWorldObject::GetUserData() const
 	{
-		auto hkpCollidable = GetCollidable();
-		if (hkpCollidable) {
-			return TESHavokUtilities::FindCollidableRef(*hkpCollidable);
-		}
-		return nullptr;
+		const auto hkpCollidable = GetCollidable();
+		return hkpCollidable ? TESHavokUtilities::FindCollidableRef(*hkpCollidable) : nullptr;
 	}
 }

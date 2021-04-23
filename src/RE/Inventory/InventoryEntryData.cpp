@@ -113,7 +113,7 @@ namespace RE
 	}
 
 
-	bool InventoryEntryData::CanItemBeTaken(bool a_noEquipped, bool a_noFavourited, bool a_noQuestItem)
+	bool InventoryEntryData::CanItemBeTaken(bool a_noEquipped, bool a_noFavourited, bool a_noQuestItem) const
 	{
 		if (a_noEquipped && GetWorn()) {
 			return false;

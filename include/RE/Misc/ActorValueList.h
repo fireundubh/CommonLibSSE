@@ -14,6 +14,7 @@ namespace RE
 		static ActorValueList* GetSingleton();
 
 		ActorValueInfo* GetActorValue(ActorValue a_actorValue);
+		ActorValue		LookupActorValueByName(std::string_view a_enumName);
 
 
 		// members

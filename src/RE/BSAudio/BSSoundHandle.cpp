@@ -19,12 +19,20 @@ namespace RE
 		return func(this);
 	}
 
+	
+	bool BSSoundHandle::IsPlaying() const
+	{
+		using func_t = decltype(&BSSoundHandle::IsPlaying);
+		REL::Relocation<func_t> func{ REL::ID(66359) };
+		return func(this);
+	}
 
-	bool BSSoundHandle::SetPosition(NiPoint3 a_pos)
+
+	bool BSSoundHandle::SetPosition(float a_x, float a_y, float a_z)
 	{
 		using func_t = decltype(&BSSoundHandle::SetPosition);
 		REL::Relocation<func_t> func{ Offset::BSSoundHandle::SetPosition };
-		return func(this, a_pos);
+		return func(this, a_x, a_y, a_z);
 	}
 
 

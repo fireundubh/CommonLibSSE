@@ -21,6 +21,6 @@ namespace RE
 		static_assert(sizeof(Event) == 0x10);
 
 
-		static BSTEventSource<ActorKill::Event>* GetEventSource();
+		static BSTEventSource<Event>* GetEventSource();
 	};
 }

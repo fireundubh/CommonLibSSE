@@ -15,11 +15,27 @@ namespace RE
 		static CombatManager* GetSingleton();
 
 
+		struct CombatThreats
+		{
+			std::uint64_t			unk00;		// 00
+			std::uint32_t			unk08;		// 08
+			std::uint32_t			unk0C;		// 0C
+			std::uint32_t			pad10;		// 10
+			std::uint32_t			unk14;		// 14
+			std::uint64_t			unk18;		// 18
+			std::uint64_t			unk20;		// 20
+			std::uint64_t			unk28;		// 28
+			mutable BSReadWriteLock lock;		// 30
+			AITimeStamp				timeStamp;	// 38
+		};
+		static_assert(sizeof(CombatThreats) == 0x40);
+
+
 		// members
 		NiTPrimitiveArray<CombatGroup*> combatGroups;	   // 00
-		BSReadWriteLock					lock;			   // 18
+		mutable BSReadWriteLock			lock;			   // 18
 		std::uint64_t					unk20;			   // 20
-		std::uint64_t					unk28;			   // 28
+		CombatThreats*					combatThreats;	   // 28
 		std::uint64_t					unk30;			   // 30
 		std::uint64_t					unk38;			   // 38
 		std::uint64_t					unk40;			   // 40

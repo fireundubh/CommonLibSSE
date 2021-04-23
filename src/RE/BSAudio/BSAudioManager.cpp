@@ -29,6 +29,14 @@ namespace RE
 	}
 
 
+	void BSAudioManager::BuildSoundDataFromEditorID(BSSoundHandle& a_soundHandle, const char* a_editorID, std::uint32_t a_flags)
+	{
+		using func_t = decltype(&BSAudioManager::BuildSoundDataFromEditorID);
+		REL::Relocation<func_t> func{ REL::ID(66403) };
+		return func(this, a_soundHandle, a_editorID, a_flags);
+	}
+
+
 	bool BSAudioManager::BuildSoundDataFromDescriptor(BSSoundHandle& a_soundHandle, BSISoundDescriptor* a_descriptor, std::uint32_t a_flags)
 	{
 		using func_t = decltype(&BSAudioManager::BuildSoundDataFromDescriptor);

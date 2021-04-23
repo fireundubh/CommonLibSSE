@@ -11,6 +11,7 @@
 #include "RE/FormComponents/Enums/FormTypes.h"
 #include "RE/FormComponents/TESForm/TESForm.h"
 #include "RE/FormComponents/TESForm/TESObjectREFR/TESObjectREFR.h"
+#include "RE/FormComponents/TESForm/TESWaterForm.h"
 #include "RE/FormComponents/TESFullName.h"
 #include "RE/Inventory/ExtraDataList.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiNode/BSNiNode/BSMultiBoundNode.h"
@@ -25,6 +26,8 @@ namespace RE
 	class NiNode;
 	class bhkWorld;
 	class BGSLocation;
+	class BSTempEffectParticle;
+
 
 	class BGSTerrainVisibilityData
 	{
@@ -203,25 +206,28 @@ namespace RE
 
 		EXTERIOR_DATA* GetCoordinates();
 		TESFaction*	   GetFactionOwner();
-
 		INTERIOR_DATA* GetLighting();
 		BGSLocation*   GetLocation() const;
 		float		   GetNorthRotation();
 		TESForm*	   GetOwner();
+		float		   GetWaterHeight() const;
 		void		   ForEachReference(std::function<bool(TESObjectREFR&)> a_callback) const;
 		void		   ForEachReferenceInRange(const NiPoint3& a_origin, float a_radius, std::function<bool(TESObjectREFR&)> a_callback) const;
 		bool		   IsAttached() const;
 		bool		   IsExteriorCell() const;
 		bool		   IsInteriorCell() const;
-		void		   SetActorOwner(TESNPC* a_owner);
-		void		   SetFactionOwner(TESFaction* a_owner);
-		void		   SetFogColor(Color a_near, Color a_far);
-		void		   SetFogPlanes(float a_near, float a_far);
-		void		   SetFogPower(float a_power);
-		void		   SetHandChanged(bool a_changed);
-		void		   SetOwner(TESForm* a_owner);
-		void		   SetPublic(bool a_public);
-		bool		   UsesSkyLighting() const;
+
+		BSTempEffectParticle* PlaceParticleEffect(float a_lifetime, const char* a_modelName, const RE::NiMatrix3& a_normal, const RE::NiPoint3& a_pos, float a_scale, std::uint32_t a_flags, RE::NiAVObject* a_target);
+
+		void SetActorOwner(TESNPC* a_owner);
+		void SetFactionOwner(TESFaction* a_owner);
+		void SetFogColor(Color a_near, Color a_far);
+		void SetFogPlanes(float a_near, float a_far);
+		void SetFogPower(float a_power);
+		void SetHandChanged(bool a_changed);
+		void SetOwner(TESForm* a_owner);
+		void SetPublic(bool a_public);
+		bool UsesSkyLighting() const;
 
 
 		// members

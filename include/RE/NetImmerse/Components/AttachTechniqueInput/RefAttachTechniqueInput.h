@@ -22,14 +22,13 @@ namespace RE
 		virtual void Unk_01(void) override;	 // 01
 
 
-
 		// members
-		std::uint64_t unk20;		 // 20
-		TESRace*	  actorRace;	 // 28
-		bhkWorld*	  physicsWorld;	 // 30
-		std::uint32_t unk38;		 // 38
-		std::uint32_t unk3C;		 // 3C
-		BSFixedString nodeName;		 // 40
+		std::uint64_t unk20;			// 20
+		TESRace*	  actorRace;		// 28
+		bhkWorld*	  physicsWorld;		// 30
+		std::uint32_t collisionFilter;	// 38
+		std::uint32_t unk3C;			// 3C
+		BSFixedString nodeName;			// 40
 	};
 	static_assert(sizeof(RefAttachTechniqueInput) == 0x48);
 }

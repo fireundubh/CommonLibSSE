@@ -9,11 +9,25 @@ namespace RE
 {
 	struct hkAabbUint32;
 	class TESObjectREFR;
+	class NiAVObject;
 
 
 	class hkpCollidable : public hkpCdBody
 	{
 	public:
+		enum BelongsTo : std::uint32_t
+		{
+			kTerrain = 1 << 16
+		};
+
+
+		enum CollisionFilterInfo : std::uint32_t
+		{
+			kBelongsToMask = 0xFFFF0000,
+			kCollidesWithMask = 0x0000FFFF
+		};
+
+	
 		enum class ForceCollideOntoPpuReasons
 		{
 			kUserRequest = 1 << 0,
@@ -48,6 +62,7 @@ namespace RE
 		{
 			return static_cast<T*>(GetOwner());
 		}
+		NiAVObject* GetUserNode();
 
 
 		// members

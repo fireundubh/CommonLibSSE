@@ -13,6 +13,13 @@ namespace RE
 			kInvalidOffset = 127
 		};
 
+		void* GetOwner() const;
+		template <class T>
+		T* GetOwner() const
+		{
+			return static_cast<T*>(GetOwner());
+		}
+
 
 		std::int8_t	  type;					// 4
 		std::int8_t	  ownerOffset;			// 5

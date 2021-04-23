@@ -2,7 +2,7 @@
 
 
 #include "RE/BSShader/BSShaderMaterial/BSLightingShaderMaterialBase/BSLightingShaderMaterialBase.h"
-#include "RE/NetImmerse/NiRefObject/NiObject/NiCollisionObject/NiCollisionObject.h"
+#include "RE/NetImmerse/NiRefObject/NiObject/NiCollisionObject/bhkNiCollisionObject/bhkNiCollisionObject.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/BSGeometry/BSGeometry.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiAVObject.h"
 #include "RE/NetImmerse/NiRefObject/NiObject/NiObjectNET/NiAVObject/NiNode/NiNode.h"
@@ -12,13 +12,13 @@ namespace RE
 {
 	namespace BSVisit
 	{
-		BSVisitControl TraverseScenegraphCollision(NiAVObject* a_object, std::function<BSVisitControl(NiCollisionObject*)> a_func)
+		BSVisitControl TraverseScenegraphCollision(NiAVObject* a_object, std::function<BSVisitControl(bhkNiCollisionObject*)> a_func)
 		{
 			if (!a_object) {
 				return BSVisitControl::kContinue;
 			}
 
-			auto collision = a_object->collisionObject.get();
+			auto collision = static_cast<bhkNiCollisionObject*>(a_object->collisionObject.get());
 			if (collision) {
 				return a_func(collision);
 			}

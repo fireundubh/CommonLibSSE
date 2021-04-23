@@ -49,7 +49,6 @@ namespace SKSE
 		protected:
 			using Lock = std::recursive_mutex;
 			using Locker = std::lock_guard<Lock>;
-			using EventName = std::string;
 
 			bool Register(const void* a_object, Key a_key, RE::VMTypeID a_typeID);
 			bool Unregister(const void* a_object, Key a_key, RE::VMTypeID a_typeID);

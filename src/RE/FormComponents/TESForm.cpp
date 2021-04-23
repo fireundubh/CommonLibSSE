@@ -169,7 +169,7 @@ namespace RE
 				}
 				if (a_keywords->scriptAddedTempForms) {
 					for (const auto& ID : *a_keywords->scriptAddedTempForms) {
-						auto keyword = TESForm::LookupByID<BGSKeyword>(ID);
+						auto keyword = LookupByID<BGSKeyword>(ID);
 						if (keyword && !keywordForm->HasKeyword(keyword)) {
 							failed = true;
 							break;
@@ -211,19 +211,17 @@ namespace RE
 		if (a_keywords) {
 			auto keywordForm = As<BGSKeywordForm>();
 			if (keywordForm) {
-				if (!a_keywords->forms.empty()) {
-					for (const auto& form : a_keywords->forms) {
-						if (form) {
-							auto keyword = form->As<BGSKeyword>();
-							if (keyword && keywordForm->HasKeyword(keyword)) {
-								return true;
-							}
+				for (const auto& form : a_keywords->forms) {
+					if (form) {
+						auto keyword = form->As<BGSKeyword>();
+						if (keyword && keywordForm->HasKeyword(keyword)) {
+							return true;
 						}
 					}
 				}
 				if (a_keywords->scriptAddedTempForms) {
 					for (const auto& ID : *a_keywords->scriptAddedTempForms) {
-						auto keyword = TESForm::LookupByID<BGSKeyword>(ID);
+						auto keyword = LookupByID<BGSKeyword>(ID);
 						if (keyword && keywordForm->HasKeyword(keyword)) {
 							return true;
 						}

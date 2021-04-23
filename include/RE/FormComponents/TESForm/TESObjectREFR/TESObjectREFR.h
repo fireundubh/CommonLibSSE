@@ -24,6 +24,7 @@ namespace RE
 	class ActorCause;
 	class BGSAnimationSequencer;
 	class BGSDialogueBranch;
+	class bhkWorld;
 	class BipedAnim;
 	class BSAnimNoteReceiver;
 	class BSFaceGenAnimationData;
@@ -332,7 +333,7 @@ namespace RE
 		virtual void							  SetMovementComplete(bool a_set);																																											   // 88 - { return; }
 		virtual void							  Disable();																																																   // 89
 		virtual void							  ResetInventory(bool a_leveledOnly);																																										   // 8A
-		virtual void							  Unk_8B(void);																																																   // 8B - { return 0; }
+		virtual NiNode*							  GetWeaponBone();																																															   // 8B - { return 0; }
 		virtual void							  Unk_8C(void);																																																   // 8C - { return; }
 		virtual NiAVObject*						  GetCurrent3D() const;																																														   // 8D - { return Get3D2(); }
 		virtual Explosion*						  AsExplosion();																																															   // 8E - { return 0; }
@@ -373,6 +374,7 @@ namespace RE
 		float									GetBaseHeight() const;
 		TESBoundObject*							GetBaseObject();
 		const TESBoundObject*					GetBaseObject() const;
+		bhkWorld*								GetbhkWorld() const;
 		const BSTSmartPointer<BipedAnim>&		GetBiped() const;
 		const BSTSmartPointer<BipedAnim>&		GetBiped(bool a_firstPerson) const;
 		TESContainer*							GetContainer() const;
@@ -385,6 +387,8 @@ namespace RE
 		std::optional<double>					GetEnchantmentCharge() const;
 		TESFaction*								GetFactionOwner();
 		ObjectRefHandle							GetHandle();
+		float									GetHeadingAngle(const RE::NiPoint3& a_pos, bool a_abs);
+		float									GetHeight() const;
 		InventoryItemMap						GetInventory();
 		InventoryItemMap						GetInventory(std::function<bool(TESBoundObject&)> a_filter);
 		std::int32_t							GetInventoryCount();
@@ -410,7 +414,8 @@ namespace RE
 		[[nodiscard]] constexpr float			GetRotationZ() const noexcept { return data.angle.z; }
 		NiControllerSequence*					GetSequence(stl::zstring a_name) const;
 		std::uint32_t							GetStealValue(const InventoryEntryData* a_entryData, std::uint32_t a_numItems, bool a_useMult) const;
-		float									GetSubmergedWaterLevel(float a_zPos, TESObjectCELL* a_cell);
+		float									GetSubmergedWaterLevel(float a_zPos, TESObjectCELL* a_cell) const;
+		float									GetWaterHeight() const;
 		float									GetWeight() const;
 		float									GetWeightInContainer();
 		TESWorldSpace*							GetWorldspace() const;

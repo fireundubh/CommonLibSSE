@@ -133,21 +133,21 @@ namespace SKSE
 		bool RegistrationMapBase::Unregister(const RE::TESForm* a_form, Key a_key)
 		{
 			assert(a_form);
-			return Unregister(a_form, a_key, static_cast<RE::VMTypeID>(a_form->GetFormType()));
+			return Unregister(a_form, std::move(a_key), static_cast<RE::VMTypeID>(a_form->GetFormType()));
 		}
 
 
 		bool RegistrationMapBase::Unregister(const RE::BGSBaseAlias* a_alias, Key a_key)
 		{
 			assert(a_alias);
-			return Unregister(a_alias, a_key, a_alias->GetVMTypeID());
+			return Unregister(a_alias, std::move(a_key), a_alias->GetVMTypeID());
 		}
 
 
 		bool RegistrationMapBase::Unregister(const RE::ActiveEffect* a_activeEffect, Key a_key)
 		{
 			assert(a_activeEffect);
-			return Unregister(a_activeEffect, a_key, RE::ActiveEffect::VMTYPEID);
+			return Unregister(a_activeEffect, std::move(a_key), RE::ActiveEffect::VMTYPEID);
 		}
 
 

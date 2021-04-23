@@ -154,9 +154,9 @@ namespace RE
 
 	void AIProcess::SetRefraction(float a_refraction)
 	{
-		using func_t = decltype(&AIProcess::SetRefraction);
-		REL::Relocation<func_t> func{ Offset::AIProcess::SetRefraction };
-		return func(this, a_refraction);
+		if (middleHigh) {
+			middleHigh->scriptRefractPower = a_refraction;
+		}
 	}
 
 

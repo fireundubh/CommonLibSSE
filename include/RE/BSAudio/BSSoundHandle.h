@@ -39,7 +39,8 @@ namespace RE
 		~BSSoundHandle() = default;
 
 		bool IsValid() const;
-		bool SetPosition(NiPoint3 a_pos);
+		bool IsPlaying() const;
+		bool SetPosition(float a_x, float a_y, float a_z);
 		void SetObjectToFollow(NiAVObject* a_node);
 		bool Stop();
 		bool Play();

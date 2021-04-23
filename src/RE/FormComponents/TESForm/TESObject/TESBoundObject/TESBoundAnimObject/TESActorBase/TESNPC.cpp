@@ -169,7 +169,7 @@ namespace RE
 	}
 
 
-	RE::TESObjectARMO* TESNPC::GetSkin() const
+	TESObjectARMO* TESNPC::GetSkin() const
 	{
 		if (skin) {
 			return skin;
@@ -190,6 +190,12 @@ namespace RE
 	bool TESNPC::IsInClass(TESClass* a_class) const
 	{
 		return npcClass ? npcClass == a_class : false;
+	}
+
+
+	bool TESNPC::IsChild() const
+	{
+		return race ? race->data.flags.all(RE::RACE_DATA::Flag::kChild) : false;
 	}
 
 

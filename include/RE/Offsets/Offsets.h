@@ -58,7 +58,6 @@ namespace RE
 		namespace AIProcess
 		{
 			inline constexpr REL::ID SetParalyzed(static_cast<std::uint64_t>(38857));
-			inline constexpr REL::ID SetRefraction(static_cast<std::uint64_t>(38916));
 			inline constexpr REL::ID SetBaseScale(static_cast<std::uint64_t>(38568));
 			inline constexpr REL::ID Update3DModel(static_cast<std::uint64_t>(38404));
 		}
@@ -593,6 +592,12 @@ namespace RE
 		namespace GMemory
 		{
 			inline constexpr REL::ID GlobalHeap(static_cast<std::uint64_t>(525584));
+		}
+
+
+		namespace hkpClosestRayHitCollector
+		{
+			inline constexpr REL::ID Vtbl(static_cast<std::uint64_t>(242710));
 		}
 
 

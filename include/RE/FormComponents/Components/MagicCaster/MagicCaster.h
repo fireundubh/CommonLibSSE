@@ -2,6 +2,8 @@
 
 #include "RE/BSAudio/BSSoundHandle.h"
 #include "RE/BSCore/BSPointerHandle.h"
+#include "RE/BSCore/BSTArray.h"
+#include "RE/FormComponents/Enums/MagicSystem.h"
 
 
 namespace RE
@@ -49,8 +51,8 @@ namespace RE
 		virtual void		   Unk_13(void);						// 13 - { return; }
 		virtual void		   CalculateMagickaCost();				// 14
 		virtual CastingSource  GetCastingSource();					// 15 - { return 0; }
-		virtual void		   Unk_16(void);						// 16 - { return 0; }
-		virtual void		   Unk_17(void);						// 17 - { return; }
+		virtual bool		   IsDualCasting();						// 16 - { return 0; }
+		virtual void		   SetDualCasting(bool a_set);			// 17 - { return; }
 		virtual void		   SaveGame(BGSSaveGameBuffer* a_buf);	// 18
 		virtual void		   LoadGame(BGSLoadGameBuffer* a_buf);	// 19
 		virtual void		   Unk_1A(void);						// 1A
